@@ -1,0 +1,136 @@
+//
+	//DNA
+//
+/**********
+	LAYOUT
+**********/
+
+// Layouts are made up of regions. Regions will have widgets in them.
+
+// Set up the basic layout region
+.col {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	float: left;
+	width: 100%;
+}
+// Set default styles for all P1s
+.l1 {
+	&.p1 {
+		> .col {
+			width: 100%;
+		}
+	}
+}
+.l2 {
+	&.p1 {
+		> .col {
+			width: 50%;
+		}
+	}
+}
+.l3 {
+	&.p1 {
+		> .col {
+			width: 33%;
+		}
+	}
+}
+.l4 {
+	&.p1 {
+		> .col {
+			width: 25%;
+		}
+	}
+}
+// Divide the patterns into two master classes that go in the body tag
+.alpha {
+	.l2 {
+		&.p2 {
+			> .col:nth-child(1) {
+				width: 33%;
+			}
+			> .col:nth-child(2) {
+				width: 66%;
+			}
+		}
+		&.p3 {
+			> .col:nth-child(1) {
+				width: 25%;
+			}
+			> .col:nth-child(2) {
+				width: 75%;
+			}
+		}
+	}
+	.l3 {
+		&.p2 {
+			> .col:nth-child(1) {
+				width: 25%;
+			}
+			> .col:nth-child(2) {
+				width: 25%;
+			}
+			> .col:nth-child(3) {
+				width: 50%;
+			}
+		}
+		&.p3 {
+			> .col:nth-child(1) {
+				width: 25%;
+			}
+			> .col:nth-child(2) {
+				width: 50%;
+			}
+			> .col:nth-child(3) {
+				width: 25%;
+			}
+		}
+	}
+}
+// the second master class for the body tag
+.beta {
+	.l2 {
+		&.p2 {
+			> .col:nth-child(1) {
+				width: 66%;
+			}
+			> .col:nth-child(2) {
+				width: 33%;
+			}
+		}
+		&.p3 {
+			> .col:nth-child(1) {
+				width: 75%;
+			}
+			> .col:nth-child(2) {
+				width: 25%;
+			}
+		}
+	}
+	.l3 {
+		&.p2 {
+			> .col:nth-child(1) {
+				width: 25%;
+			}
+			> .col:nth-child(2) {
+				width: 25%;
+			}
+			> .col:nth-child(3) {
+				width: 50%;
+			}
+		}
+		&.p3 { // yes, this pattern is the same as .alpha .l3.p3, don't worry about it
+			> .col:nth-child(1) {
+				width: 25%;
+			}
+			> .col:nth-child(2) {
+				width: 50%;
+			}
+			> .col:nth-child(3) {
+				width: 25%;
+			}
+		}
+	}
+}
