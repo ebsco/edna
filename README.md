@@ -3,7 +3,7 @@
 It comes in three parts:
 
  1. **DNA**
-	- An HTML reset based on the [Eric Meyer Reset][3].
+	- An HTML reset: [normalize.css][3].
 	- CSS styling for basic HTML elements.
 	- A page layout system.
  2. **Plus**
@@ -40,7 +40,7 @@ If your project already incorporates [LESS][4] then using any of the three parts
 
 [1]: http://nodejs.org/
 [2]: http://gruntjs.com/
-[3]: http://meyerweb.com/eric/tools/css/reset/
+[3]: http://necolas.github.io/normalize.css/
 [4]: http://lesscss.org/
 [5]: http://github.com/thewendee
 [6]: http://twitter.com/thewendee
