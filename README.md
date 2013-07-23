@@ -13,10 +13,6 @@ It comes in three parts:
 
 ---
 
-##Basic Set Up
-Clone this repo: `git clone https://github.com/wylie/DNA.git`
-
----
 
 ##Usage
 
@@ -41,19 +37,6 @@ If your project already incorporates [LESS][4] then using any of the three parts
 ```LESS
 @import "turbo/turbo.less";
 ```
-
----
-
-##Contributers
-Wendee
-
-- [github.com/thewendee][5]
-- [twitter.com/thewendee][6]
-
-Wylie
-
-- [github.com/wylie][7]
-- [twitter.com/wylie][8]
 
 [1]: http://nodejs.org/
 [2]: http://gruntjs.com/
