@@ -1,6 +1,64 @@
-//
-	//DNA
-//
-/**********
-	FORMS
-**********/
+// BUTTONS 
+button,
+input[type=submit],
+input[type=reset],
+.btn
+{
+	padding: .25em .5em;
+	color: #333;
+	background-color: #e9e9e9;
+	border: solid 1px #aaa;
+	border-radius: @radius-sm;
+	cursor: pointer
+}
+
+// BUTTON STATES
+.primary-action
+{
+	color: #111;
+	background-color: #f4d007;
+}
+.disabled,
+button[disabled],
+input[type=submit][disabled],
+input[type=reset][disabled]
+{
+	color: #ccc;
+	background-color: #f1f1f1;
+	border-color: #ccc;
+	cursor: pointer;
+}
+
+// TEXT INPUTS
+input[type=text],
+input[type=search],
+textarea
+{
+	padding: .25em .5em;
+	color: #333;
+	border: solid 1px #aaa;
+	border-radius: @radius-sm;	
+}
+
+// RADIO / CHECKBOXES
+input[type=radio],
+input[type=checkbox]
+{
+	margin-right: 5px;
+}
+label
+{
+	padding-right: 1em;
+}
+
+// RADIO / CHECKBOXES
+.cb-list
+{
+	list-style: none;
+	padding-left: 0;
+}
+.cb-inline li
+{
+	display: inline;
+	padding: 0 0 1em;
+}

@@ -5,27 +5,32 @@
 	TABLES
 **********/
 
-table {
-	border-collapse: collapse;
+table 
+{
+	border-collapse: separate;
 	border-spacing: 0;
-	color: @color;
-	thead {
-		tr {
-			th {
-				background-color: @lt-bg;
-				border: 1px solid @lt-border;
-				font-weight: bold;
-				padding: 10px 20px;
-				text-align: left;
-			}
-		}
-	}
-	tbody {
-		tr {
-			td {
-				border: 1px solid @lt-border;
-				padding: 10px 20px;
-			}
-		}
-	}
+	border: 1px solid @lt-border;
+	border-radius: @radius-sm;
+}
+thead tr
+{
+	background-color: @lt-bg;
+	border-radius: @radius-lg  @radius-lg 0 0;
+}
+th 
+{
+	font-weight: bold;
+	padding: 10px 20px;
+	text-align: left;
+	border-left: 1px solid @lt-border;
+}
+td 
+{
+	padding: 10px 20px;
+	border-left: 1px solid @lt-border;
+}
+th:first-child,
+td:first-child
+{
+	border-left: none;
 }

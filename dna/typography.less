@@ -5,42 +5,55 @@
 	TYPOGRAPHY
 **********/
 
-body {
-	//font-size: .938em;
+body 
+{
+	font-size: .938em;
 	line-height: 1.5;
 	color: #333;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: .25em 0 1em;
-	margin: .5em 0 .75em;
+// HEADING LEVELS
+h1, h2, h3, h4, h5, h6 
+{
+	margin: .75em 0 .5em;
 	line-height: 1.25;
+	font-weight: normal;
 }
-h1 {
+h1 
+{
+
 	font-size: 2.75em;
 	line-height: 1;
 	margin: 0 0 .636em;
 }
-h2 {
+h2 
+{
 	font-size: 2.25em;
 }
-h3 {
+h3 
+{
 	font-size: 1.625em;
 }
-h4 {
+h4 
+{
 	font-size: 1.375em;
 	font-style: italic;
 }
-h5 {
+h5 
+{
 	font-size: 1.125em;
 	font-weight: bold;
 }
-h6 {
+h6 
+{
 	font-size: 1em;
 	font-weight: bold;
 	font-style: italic;
 }
-p {
+
+// PARAGRAPH STYLES
+p 
+{
 	margin: 0 0 1em;
 }
 .lead
@@ -48,12 +61,50 @@ p {
 	font-size: 1.375em;
 	margin-bottom: .725em;
 }
+
+// LINK STYLES
 a {
 	color: #08C;
-	&:hover {
+	&:visited {
+		color: desaturate(#08C, 75%);
+	}
+	&:hover,
+	&:focus {
 		color: darken(#08C, 10%);
 	}
+	&:focus {
+		text-decoration: underline;
+	}
+	&:active {
+		color: #FF530D;
+	}
 }
+
+a:active
+{
+	
+}
+// STRONG
+strong {
+	font-weight: bold;
+}
+
+// em
+em {
+	font-style: italic;
+}
+
+
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+
 
 // BLOCKQUOTES
 blockquote {
@@ -62,10 +113,10 @@ blockquote {
 	padding-left: .5rem;
 	margin-bottom: 1em;
 }
-
 // PRE
 pre {
-
+	margin: 1em 0;
+	font-family: monospace;
 }
 
 // CODE
@@ -73,9 +124,4 @@ code {
 	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 	color: #696;
 	font-weight: normal;
-}
-
-// STRONG
-strong {
-	font-weight: bold;
 }
