@@ -1,0 +1,17 @@
+{
+  "name": "DNA",
+  "version": "0.1.0",
+  "dependencies": {
+    "grunt": "~0.4.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "git://github.com/gruntjs/grunt-contrib-less.git",
+    "grunt-express": "~0.3.6",
+    "express": "~3.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wylie/DNA.git"
+  }
+}

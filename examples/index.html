@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-us"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en-us"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en-us"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+	<title>DNA</title>
+
+	<link rel="stylesheet" type="text/css" href="dna.css" />
+		<style>
+		html, body { padding: 1em; font-family: Arial, Helvetica, Sans-serif; font-size: 1em; color: #333; }
+		.header { border-bottom: 1px solid #999; margin-bottom: 1.5em; }
+		.header h1 { font-weight: bold; }
+		h1 a { text-decoration: none; }
+		.col { box-sizing: border-box; padding: 0 1em 1em; }
+		.col:first-child { padding-left: 0; }
+		.nav-list {padding: 0 0 1em; margin: 0; list-style: none;}
+		.nav-heading, 
+		.nav-item { padding: .25em 5px; margin: 0;}
+		.nav-heading { font-size: 1em; font-weight: bold;}
+		.nav-item { padding: 0 5px; color: #aaa; cursor: pointer; }
+		.nav-item:hover { background-color: #efefef; }
+		.nav-item:active { color: #333; }
+		.soon { padding: .25em 5px; color: #999; }
+		.soon:hover { background-color: transparent; cursor: default; }
+	</style>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+
+</head>
+<body>
+
+	<div class="alpha">
+		<div class="header">
+			<h1><a href="/examples">DNA</a></h1>
+			<p>Really nice typography for HTML elements and really nice design for graphical HTML elements (forms, blockquote, pre, etc.).</p>
+		</div>
+		<div class="l2 p3">
+			<nav role="navigation" aria-label="DNA parts" class="col">
+
+				<h2 class="nav-heading">DNA</h2>
+				<ul class="nav-list">
+					<li class="nav-item" data-kind="dna-fonts">Typography</li>
+					<li class="nav-item" data-kind="dna-Forms">Forms</li>
+					<li class="nav-item" data-kind="dna-Lists">Lists</li>
+					<li class="nav-item" data-kind="dna-Tables">Tables</li>
+				</ul>
+				<h2 class="nav-heading">DNA Plus</h2>
+				<ul class="nav-list">
+					<li class="nav-item" data-kind="plus-Carousel">Carousel</li>
+					<li class="nav-item" data-kind="plus-Lists">Lists</li>
+					<li class="nav-item" data-kind="plus-Messaging">Messaging</li>
+					<li class="nav-item" data-kind="plus-Navbar">Navbar</li>
+					<li class="nav-item" data-kind="plus-Pagination">Pagination</li>
+					<li class="nav-item" data-kind="plus-Tabs">Tabs</li>
+					<li class="nav-item" data-kind="plus-Toggles">Toggles</li>
+				</ul>
+				<h2 class="nav-heading">DNA Plus Turbo</h2>
+				<ul class="nav-list">
+					<li class="soon">Coming Shortly!</li>
+				</ul>
+
+				<h2 class="nav-heading">Extra Bits</h2>
+				<ul class="nav-list">
+					<li class="nav-item"><a href="https://github.com/wylie/DNA" target="_blank">GitHub Repo</a></li>
+				</ul>
+			</nav>
+			<div class="col">
+				<section role="main" aria-label="Main Content" class="result"></section>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

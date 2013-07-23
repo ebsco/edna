@@ -1,0 +1,81 @@
+//
+	//PLUS
+//
+/**********
+	TABS
+**********/
+.tabs {
+	padding-bottom: 15px;
+	ul {
+		width: 500px;
+		list-style-type: none;
+		position: relative;
+		li {
+			box-sizing: border-box;
+			float: left;
+			padding: 12px 30px;
+			margin-right: -1px;
+			cursor: pointer;
+			.border-color;
+			.border-width(1px, 1px, 0, 1px);
+			.border-style;
+			font-weight: bold;
+
+			.gradient(#EFEFEF);
+			&:hover {
+				.gradient(#D0D0D0);
+				cursor: pointer;
+			}
+			// for using on click
+			&:active,
+			// for using an active class
+			&.active {
+				border-bottom: 1px solid #FFF;
+				margin-bottom: -1px;
+				background: #FFF;
+				cursor: default;
+			}
+			&.content {
+				background: #FFF;
+			}
+			&:nth-child(1) {
+				.border-radius-tl(3px);
+			}
+			&:last-child {
+				float: none;
+				clear: both;
+				width: 100%;
+				padding: 25px;
+				cursor: default;
+				.border-width;
+				.border-radius-tl(0);
+				.border-radius-tr(0);
+				.border-radius-br(3px);
+				.border-radius-bl(3px);
+			}
+		}
+	}
+
+	//.displayM; // for display purposes only
+
+	// CONFIGURATION 1
+	&.conA {
+
+	}
+	// END CONFIGURATION 1
+
+
+	// CONFIGURATION 2
+	&.conB {
+
+	}
+	// END CONFIGURATION 2
+
+
+	// CONFIGURATION 3
+	&.conC {
+
+	}
+	// END CONFIGURATION 2
+
+}

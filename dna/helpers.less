@@ -1,0 +1,46 @@
+//
+	//DNA
+//
+
+// CSS helpers
+
+// CLEARFIX 
+// IE7
+.clearfix 
+{
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after 
+{
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.clearfix:after 
+{
+  clear: both;
+}
+
+// HIDING THINGS
+// DO NOT DISPLAY (inaccessible by screen readers)
+.display-none
+{
+	display: none;
+}
+// HIDDEN (accessible by screen readers)
+.hidden
+{
+	position: absolute !important;
+	height: 1px; width: 1px; 
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+// MIXINS
+.rounded
+{
+	border-radius: 3px;
+}

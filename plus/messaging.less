@@ -1,0 +1,101 @@
+//
+	//Plus
+//
+/**********
+	MESSAGING
+**********/
+.message {
+	padding: 15px;
+	margin: 0 0 1em;
+	border: solid 1px #CCC; // #CCC
+	background-color: #EFEFEF; // #FFF
+	// color: #333; // #333
+	border-radius: 3px;
+	position: relative;
+	> .icon {
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		float: left;
+		margin-right: 10px;
+		font-size: 2.5rem;
+		line-height: 2.5rem;
+		~ .message-txt {
+			padding-left: 50px;
+		}
+		&:after {
+			content: '\2601';
+		}
+		background-position: center center;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+		position: absolute;
+		left: 15px;
+	} // end icon
+	> .close {
+		cursor: pointer;
+		&:after {
+			color: #333; // #333
+			content: '✕';
+			position: absolute;
+			right: 20px;
+		}
+	} // end close
+	.msg-action {
+		margin-left: 20px;
+		&:after {
+			content: '»';
+			display: inline-block;
+			margin-left: 5px;
+		}
+	} // end msg-action
+	&.msg-info {
+		border-color: #c7dbf0; // #c7dbf0
+		background-color: #e4f1ff; // #e4f1ff
+		color: #546f8e; // #546f8e
+		> .icon {
+			background-position: 0 0;
+		}
+		> .close:after {
+			color: #546f8e; // #546f8e
+		}
+	} // end info
+	&.msg-success {
+		border-color: #c7dbf0; // #c7dbf0
+		background-color: #e6fadf; // #e6fadf
+		color: #607f56; // #607f56
+		> .icon {
+			background-position: 0 0;
+		}
+		> .close:after {
+			color: #607f56; // #607f56
+		}
+	} // end success
+	&.msg-note {
+		border-color: #e7e7b1; // #e7e7b1
+		background-color: #ffffcc; // #ffffcc
+		color: #70703a; // #70703a
+		> .icon {
+			background-position: 0 0;
+		}
+		> .close:after {
+			color: @colorP1; // #70703a
+		}
+	} // end note
+	&.msg-alert {
+		border-color: #edbdb6; // #edbdb6
+		background-color: #fee3e3; // #fee3e3
+		color: #a94848; // #a94848
+		> .icon {
+			background-position: 0 0;
+		}
+		> .close:after {
+			color: #a94848; // #a94848
+		}
+	} // end alert
+
+}
