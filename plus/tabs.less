@@ -5,77 +5,113 @@
 	TABS
 **********/
 .tabs {
-	padding-bottom: 15px;
-	ul {
-		width: 500px;
+	position: relative;
+	* {
+		box-sizing: border-box;
+	}
+	.tab-list,
+	.tab-content {
+		margin: 0;
+		padding: 0;
 		list-style-type: none;
-		position: relative;
-		li {
-			box-sizing: border-box;
+	}
+	.tab-list {
+		.tab-list-item {
+			background-color: #FFF;
+			display: inline;
 			float: left;
-			padding: 12px 30px;
+			border-width: 1px 1px 0 1px;
+			border-style: solid;
+			border-color: #CCC;
+			padding: 10px 20px;
 			margin-right: -1px;
+			margin-bottom: -1px;
+			position: relative;
+			z-index: 30;
+			.gradient(#D0D0D0);
 			cursor: pointer;
-			.border-color;
-			.border-width(1px, 1px, 0, 1px);
-			.border-style;
-			font-weight: bold;
-
-			.gradient(#EFEFEF);
-			&:hover {
-				.gradient(#D0D0D0);
-				cursor: pointer;
-			}
-			// for using on click
-			&:active,
-			// for using an active class
-			&.active {
-				border-bottom: 1px solid #FFF;
-				margin-bottom: -1px;
-				background: #FFF;
-				cursor: default;
-			}
-			&.content {
-				background: #FFF;
-			}
-			&:nth-child(1) {
+			&:first-child {
 				.border-radius-tl(3px);
 			}
-			&:last-child {
-				float: none;
-				clear: both;
-				width: 100%;
-				padding: 25px;
+			&.active {
 				cursor: default;
-				.border-width;
-				.border-radius-tl(0);
-				.border-radius-tr(0);
-				.border-radius-br(3px);
-				.border-radius-bl(3px);
+				cursor: default;
+				border-bottom: 1px solid #FFF;
+				.gradient(#FFF);
+			}
+			&:hover {
+				.gradient(#C0C0C0);
+			}
+		}
+	}
+	.tab-content {
+		.tab-content-item {
+			.border-radius-tl(0);
+			.border-radius-tr(0);
+			.border-radius-br(3px);
+			.border-radius-bl(3px);
+			width: 100%;
+			border: 1px solid #CCC;
+			padding: 10px 20px;
+			display: none;
+			&.active {
+				background-color: #FFF;
+				display: inline-block;
+				position: relative;
+				z-index: 25;				
 			}
 		}
 	}
 
-	//.displayM; // for display purposes only
 
-	// CONFIGURATION 1
-	&.conA {
-
-	}
-	// END CONFIGURATION 1
+	
 
 
-	// CONFIGURATION 2
-	&.conB {
+	// padding-bottom: 15px;
+	// .tab-list {
+	// 	width: 500px;
+	// 	list-style-type: none;
+	// 	position: relative;
+	// 	.tab-list-item {
+	// 		box-sizing: border-box;
+	// 		float: left;
+	// 		padding: 12px 30px;
+	// 		margin-right: -1px;
+	// 		cursor: pointer;
+	// 		.border-color;
+	// 		.border-width(1px, 1px, 0, 1px);
+	// 		.border-style;
+	// 		font-weight: bold;
 
-	}
-	// END CONFIGURATION 2
-
-
-	// CONFIGURATION 3
-	&.conC {
-
-	}
-	// END CONFIGURATION 2
-
+	// 		.gradient(#EFEFEF);
+	// 		&:hover {
+	// 			.gradient(#D0D0D0);
+	// 			cursor: pointer;
+	// 		}
+	// 		&.active {
+	// 			border-bottom: 1px solid #FFF;
+	// 			margin-bottom: -1px;
+	// 			background: #FFF;
+	// 			cursor: default;
+	// 		}
+	// 		&.content {
+	// 			background: #FFF;
+	// 		}
+	// 		&:nth-child(1) {
+	// 			.border-radius-tl(3px);
+	// 		}
+	// 	}
+	// 	.tab-content {
+	// 		float: none;
+	// 		clear: both;
+	// 		width: 100%;
+	// 		padding: 25px;
+	// 		cursor: default;
+	// 		.border-width;
+	// 		.border-radius-tl(0);
+	// 		.border-radius-tr(0);
+	// 		.border-radius-br(3px);
+	// 		.border-radius-bl(3px);
+	// 	}
+	// }
 }
