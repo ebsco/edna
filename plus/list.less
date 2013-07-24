@@ -5,119 +5,55 @@
 	LISTS
 **********/
 .list {
-	padding-right: 20px;
-
-	+ .list {
-		margin-top: 25px;
-	}
-
+	list-style-type:  none;
+	margin:  0;
+	padding:  0;
 	> .list {
-		margin: 13px 0 13px 30px;
-		padding-right: 0;
+		margin-left:  15px;
 	}
-
-	// CONFIGURATION 1
-	&.conA {
-		display: inline-block;
-		.list-item {
-			// line-height: 1.5rem;
+	.list-item {
+		a {
+			text-decoration: none;
+		}
+		&:before {
+			display: inline-block;
+			content: '\25FC';
+			width: 5px;
+			height: 10px;
+			padding-right: 10px;
+			color: #CCC;
+			margin-bottom: 3px;
+			position: relative;
+			font-size: 10px;
+		}
+		&.expand {
 			&:before {
-				display: inline-block;
-				content: '\25FC';
-				width: 9px;
-				height: 9px;
-				padding-right: 10px;
-				color: #CCC;
-				margin-bottom: 3px;
-				position: relative;
-				top: -5px;
-			}
-			a {
-				cursor: pointer;
-			}
-			&.expand {
-				&:before {
-					content: '+';
-					margin-bottom: 2px;
-					margin-left: 2px;
-				}
-				a {
-					text-decoration: underline;
-				}
-			}
-			&.collapse {
-				&:before {
-					content: '-';
-					margin-bottom: 2px;
-					margin-left: 2px;
-				}
-				a {
-					text-decoration: underline;
-				}
-			}
-			+ li {
-				margin-top: 13px;
+				content: '\229E';
+				font-size: 16px;
+				color: #666;
+				height: 14px;
 			}
 		}
-		.more {
-			// font-weight: bold;
-			&:after {
-				display: inline-block;
-				content: '\25BC';
-				// font-size: .8rem;
-				margin-left: 5px;
-				// color: @colorP1;
+		&.collapse {
+			&:before {
+				content: '\229F';
+				font-size: 16px;
+				color: #666;
+				height: 14px;
 			}
 		}
 	}
-	// END CONFIGURATION 1
-
-
-	// CONFIGURATION 2
-	&.conB {
-		height: 70px;
-		display: inline-block;
-		h2 {
-			// font-size: 1.8rem;
+	.more {
+		text-decoration: none;
+		&:after {
+			display: inline-block;
+			content: '\25BC';
+			margin-left: 5px;
+			color: #08C;
+			font-size: 12px;
 		}
-		.img-wrap {
-			width: 80px;
-			height: 65px;
-			float: left;
-			margin-right: 15px;
+		a {
+			text-decoration: none;
 		}
 	}
-	// END CONFIGURATION 2
-
-
-	// CONFIGURATION 3
-	&.conC {
-		display: inline-block;
-		h2 {
-			// font-size: 2.4rem;
-		}
-		h3 {
-			// font-size: 1.8rem;
-			margin: 0;
-		}
-		.transport {
-			float: right;
-			.up,
-			.down {
-				width: 15px;
-				height: 15px;
-				background-position: -5px -155px;
-			}
-
-			.up {
-				background-position-y: -155px;
-			}
-			.down {
-				background-position-y: -180px;
-			}
-		}
-	}
-	// END CONFIGURATION 2
-
 }
-
