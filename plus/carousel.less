@@ -10,17 +10,20 @@
 	width: 300px;
 	min-width: 250px;
 	.carousel-img {
+		moz-box-sizing: border-box;
+		box-sizing: border-box;
 		width: 100%;
-		height: 275px;
 		border: 1px solid #CCC;
 		> .img {
+			display: block;
 			border: none;
+			width: 100%;
 		}
 	}
 	.carousel-nav {
 		.clearfix;
 		width: 100%;
-		margin: 10px 0 0 0;
+		margin: 15px 0 0;
 		overflow: hidden;
 	}
 	.transport {
@@ -29,13 +32,6 @@
 		float: left;
 		padding: 15px 0 14px 0;
 		position: relative;
-		z-index: 100; // for the shadow on the transport
-		&:nth-child(1) {
-			box-shadow: 1px 0 10px rgba(0,0,0,.5);
-		}
-		&:nth-child(3) {
-			box-shadow: -1px 0 10px rgba(0,0,0,.5);
-		}
 	}
 	.carousel-thumbs {
 		width: 86%;
@@ -44,7 +40,6 @@
 		overflow: hidden;
 		height: 53px;
 		position: relative;
-		z-index: 50; // for the shadow on the transport
 		.carousel-list {
 			list-style-type: none;
 			margin: 0;
@@ -57,10 +52,14 @@
 				padding: 0;
 				display: inline-block;
 				cursor: pointer;
+				border: 1px solid #CCC;
+				width: 67px;
+				moz-box-sizing: border-box;
+				box-sizing: border-box;
 				.img {
+					display: block;
 					border: none;
-					width: 67px;
-					height: 53px;
+					width: 100%;
 				}
 			}
 		}
