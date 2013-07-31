@@ -1,6 +1,6 @@
 # DIRECTORIES *
 node_modules/
-examples/dna.css
 
 # FILES
+*.css
 examples/plus-transport.html
