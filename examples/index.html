@@ -16,8 +16,9 @@
 		.col { box-sizing: border-box; padding: 0 1em 1em; }
 		.col:first-child { padding-left: 0; }
 		.nav-list {padding: 0 0 1em; margin: 0; list-style: none;}
-		.nav-heading, 
-		.nav-item { padding: .25em 5px; margin: 0;}
+		.nav-list .nav-heading { margin: 0 0 0 .5em; color: #666; }
+		.nav-list .nav-list { margin: 0 0 0 .5em; }
+		.nav-heading, .nav-item { padding: .25em 5px; margin: 0;}
 		.nav-heading { font-size: 1em; font-weight: bold;}
 		.nav-item { padding: 0 5px; color: #aaa; cursor: pointer; }
 		.nav-item:hover { background-color: #efefef; }
@@ -57,14 +58,25 @@
 				</ul>
 				<h2 class="nav-heading">DNA Plus</h2>
 				<ul class="nav-list">
-					<li class="nav-item" data-kind="plus-Forms">Form Widgets</li>
-					<li class="nav-item" data-kind="plus-Lists">Lists</li>
-					<li class="nav-item" data-kind="plus-Carousel">Carousel</li>
-					<li class="nav-item" data-kind="plus-Messaging">Messaging</li>
-					<li class="nav-item" data-kind="plus-Navbar">Navbar</li>
-					<li class="nav-item" data-kind="plus-Pagination">Pagination</li>
-					<li class="nav-item" data-kind="plus-Tabs">Tabs</li>
-					<li class="nav-item" data-kind="plus-Toggles">Toggles</li>
+					<li>
+						<h3 class="nav-heading">Widgets</h3>
+						<ul class="nav-list">
+							<li class="nav-item" data-kind="plus-Transport">Transport</li>
+						</ul>
+					</li>
+					<li>
+						<h3 class="nav-heading">Composite Widgets</h3>
+						<ul class="nav-list">
+							<li class="nav-item" data-kind="plus-Forms">Form Widgets</li>
+							<li class="nav-item" data-kind="plus-Lists">Lists</li>
+							<li class="nav-item" data-kind="plus-Carousel">Carousel</li>
+							<li class="nav-item" data-kind="plus-Messaging">Messaging</li>
+							<li class="nav-item" data-kind="plus-Navbar">Navbar</li>
+							<li class="nav-item" data-kind="plus-Pagination">Pagination</li>
+							<li class="nav-item" data-kind="plus-Tabs">Tabs</li>
+							<li class="nav-item" data-kind="plus-Toggles">Toggles</li>
+						</ul>
+					</li>
 				</ul>
 				<h2 class="nav-heading">DNA Plus Turbo</h2>
 				<ul class="nav-list">
