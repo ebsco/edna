@@ -1,0 +1,33 @@
+//
+	//DNA
+//
+/**********
+	FORM WIDGETS
+**********/
+
+// BUTTONS GROUPS
+.btn-group 
+{
+	margin-bottom: 1em;
+	.grp-btn,
+	.grp-input
+	{
+		float: left;
+		border-radius: 0;
+		border-left-width: 0;
+	}
+}
+
+.btn-group :last-child,
+.btn-group .last //IE support
+{
+	border-radius: 0 @radius-sm @radius-sm 0;
+}
+
+.btn-group :first-child,
+.btn-group .first //IE support
+{
+	border-left-width: 1px;
+	border-radius: @radius-sm 0 0 @radius-sm;
+}
+
