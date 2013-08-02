@@ -4,6 +4,11 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		bootstrap: {
+			js: [
+				"bootstrap-dropdown.js"
+			]
+		},
 		less: {
 			compile: {
 				options: {
@@ -29,10 +34,12 @@ module.exports = function(grunt) {
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-bootstrap');
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks('grunt-express');
-
+	
 	grunt.registerTask("compile", [
+		"bootstrap",
 		"less"
 	]);
 
