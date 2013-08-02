@@ -1,5 +1,6 @@
 # DIRECTORIES *
 node_modules/
+js/
 
 # FILES
 *.css
