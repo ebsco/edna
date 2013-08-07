@@ -82,13 +82,13 @@ module.exports = function(grunt) {
 	grunt.registerTask("compile", [
 		"md2html",
 		"less",
-		"watch",
 		"bootstrap"
 	]);
 
 	grunt.registerTask("server", [
 		"express",
-		"express-keepalive"
+		"watch"
+		// "express-keepalive"
 	]);
 	
 };
