@@ -6,7 +6,7 @@ $(function() {
 			splitKind = kind.split('-');
 			lowerKind = kind.toLowerCase();
 		// get the page stuff
-		$.get('../examples/' + kind + '.html', function(data) {
+		$.get(kind + '.html', function(data) {
 			$('.result').html(data);
 			document.title = 'DNA - ' + splitKind[1];
 		});
