@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					port: 8001,
-					bases: 'examples'
+					bases: "examples"
 				}
 			}
 		},
@@ -47,10 +47,26 @@ module.exports = function(grunt) {
 				options: {},
 				files: [
 					{
-						src: ['*.md'],
-						dest: 'examples/readme.html'
+						src: ["*.md"],
+						dest: "examples/readme.html"
 					}
 				]
+			}
+		},
+		watch: {
+			css: {
+				files: ["dna/*.less", "plus/*.less", "turbo/*.less"],
+				tasks: ["less"],
+				options: {
+					livereload: true
+				}
+			},
+			markdown: {
+				files: ["*.md"],
+				tasks: ["md2html"],
+				options: {
+					livereload: true
+				}
 			}
 		}
 
@@ -58,19 +74,21 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-bootstrap');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-md2html');
 	
 	grunt.registerTask("compile", [
 		"md2html",
-		"bootstrap",
-		"less"
+		"less",
+		"bootstrap"
 	]);
 
 	grunt.registerTask("server", [
 		"express",
-		"express-keepalive"
+		"watch"
+		// "express-keepalive"
 	]);
 	
 };

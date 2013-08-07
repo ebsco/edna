@@ -54,6 +54,9 @@
 			border: 1px solid #CCC;
 			padding: 10px 20px;
 			display: none;
+			> *:last-child { // remove any extra margin on the last item for better parent padding
+				margin: 0;
+			}		
 			&.active {
 				background-color: #FFF;
 				display: inline-block;
@@ -62,56 +65,4 @@
 			}
 		}
 	}
-
-
-	
-
-
-	// padding-bottom: 15px;
-	// .tab-list {
-	// 	width: 500px;
-	// 	list-style-type: none;
-	// 	position: relative;
-	// 	.tab-list-item {
-	// 		box-sizing: border-box;
-	// 		float: left;
-	// 		padding: 12px 30px;
-	// 		margin-right: -1px;
-	// 		cursor: pointer;
-	// 		.border-color;
-	// 		.border-width(1px, 1px, 0, 1px);
-	// 		.border-style;
-	// 		font-weight: bold;
-
-	// 		.gradient(#EFEFEF);
-	// 		&:hover {
-	// 			.gradient(#D0D0D0);
-	// 			cursor: pointer;
-	// 		}
-	// 		&.active {
-	// 			border-bottom: 1px solid #FFF;
-	// 			margin-bottom: -1px;
-	// 			background: #FFF;
-	// 			cursor: default;
-	// 		}
-	// 		&.content {
-	// 			background: #FFF;
-	// 		}
-	// 		&:nth-child(1) {
-	// 			.border-radius-tl(3px);
-	// 		}
-	// 	}
-	// 	.tab-content {
-	// 		float: none;
-	// 		clear: both;
-	// 		width: 100%;
-	// 		padding: 25px;
-	// 		cursor: default;
-	// 		.border-width;
-	// 		.border-radius-tl(0);
-	// 		.border-radius-tr(0);
-	// 		.border-radius-br(3px);
-	// 		.border-radius-bl(3px);
-	// 	}
-	// }
 }
