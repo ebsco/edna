@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		bootstrap: {
+			dest: 'examples',
 			js: [
 				"bootstrap-dropdown.js",
 				// "bootstrap-transition.js",

@@ -1,6 +1,7 @@
 # DIRECTORIES *
 node_modules/
-js/
 
 # FILES
+examples/js/bootstrap.js
+examples/js/bootstrap.min.js
 *.css
