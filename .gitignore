@@ -4,4 +4,5 @@ node_modules/
 # FILES
 examples/js/bootstrap.js
 examples/js/bootstrap.min.js
+examples/readme.html
 *.css

@@ -41,14 +41,29 @@ module.exports = function(grunt) {
 					bases: 'examples'
 				}
 			}
+		},
+		md2html: {
+			one_file: {
+				options: {},
+				files: [
+					{
+						src: ['*.md'],
+						dest: 'examples/readme.html'
+					}
+				]
+			}
 		}
+
+
 	});
 
 	grunt.loadNpmTasks('grunt-bootstrap');
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks('grunt-express');
+	grunt.loadNpmTasks('grunt-md2html');
 	
 	grunt.registerTask("compile", [
+		"md2html",
 		"bootstrap",
 		"less"
 	]);

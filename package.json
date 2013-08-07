@@ -9,7 +9,8 @@
     "grunt-contrib-less": "git://github.com/gruntjs/grunt-contrib-less.git",
     "grunt-express": "~0.3.6",
     "express": "~3.3.1",
-    "grunt-bootstrap": "~0.1.0"
+    "grunt-bootstrap": "~0.1.0",
+    "grunt-md2html": "~0.1.4"
   },
   "repository": {
     "type": "git",
