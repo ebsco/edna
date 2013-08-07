@@ -5,18 +5,29 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		bootstrap: {
+			dest: 'examples',
 			js: [
-				"bootstrap-dropdown.js"
+				"bootstrap-dropdown.js",
+				// "bootstrap-transition.js",
+				// "bootstrap-modal.js",
+				// "bootstrap-dropdown.js",
+				// "bootstrap-scrollspy.js",
+				// "bootstrap-tab.js",
+				// "bootstrap-tooltip.js",
+				// "bootstrap-popover.js",
+				// "bootstrap-affix.js",
+				// "bootstrap-alert.js",
+				// "bootstrap-button.js",
+				// "bootstrap-collapse.js",
+				"bootstrap-carousel.js"
+				// "bootstrap-typeahead.js"
+
 			]
 		},
 		less: {
 			compile: {
 				options: {
-					path: ["dna/, plus/, turbo/"],
-					compress: true,
-					yuicompress: true,
-					optimization: 0,
-					report: 'gzip'
+					path: ["dna/, plus/, turbo/"]
 				},
 				files: {
 					"examples/dna.css": "dna/dna.less"
@@ -27,18 +38,32 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					port: 8001,
-					bases: '.',
-					baseURL: '/examples'
+					bases: 'examples'
 				}
 			}
+		},
+		md2html: {
+			one_file: {
+				options: {},
+				files: [
+					{
+						src: ['*.md'],
+						dest: 'examples/readme.html'
+					}
+				]
+			}
 		}
+
+
 	});
 
 	grunt.loadNpmTasks('grunt-bootstrap');
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks('grunt-express');
+	grunt.loadNpmTasks('grunt-md2html');
 	
 	grunt.registerTask("compile", [
+		"md2html",
 		"bootstrap",
 		"less"
 	]);
