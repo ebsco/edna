@@ -33,8 +33,20 @@
 		.layouts .col:nth-child(2) { background-color: #bbb; }
 		.layouts .col:nth-child(3) { background-color: #aaa; }
 		.layouts .section hr { margin: 30px 0 20px; border: 1px solid #CCC; }
-		pre { background: #E0E0E0; padding: 10px; border-radius: 10px; overflow-y: auto; font-size: .8em; }
-		code {  }
+		pre { background-color: #E0E0E0; padding: 10px; border-radius: 10px; overflow-y: auto; font-size: .8em; }
+		
+		.display { border: 1px solid #E0E0E0; padding: 10px; border-radius: 5px; }
+		.display-text {  }
+		.display-code { background-color: #E0E0E0; 
+			background-color: #E0E0E0;
+			display: block;
+			margin: 0 -10px -10px;
+			padding: 10px;
+			border-top: 1px solid #FFF;
+			box-shadow: 0 -1px 0px #CCC;
+		}
+		code.display-code * { margin-bottom: 0; }
+		pre + code.display-code { background: none; }
 	</style>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -53,11 +65,16 @@
 
 				<h2 class="nav-heading">DNA</h2>
 				<ul class="nav-list">
-					<li class="nav-item" data-kind="dna-fonts">Typography</li>
-					<li class="nav-item" data-kind="dna-Forms">Forms</li>
-					<li class="nav-item" data-kind="dna-Lists">Lists</li>
-					<li class="nav-item" data-kind="dna-Tables">Tables</li>
 					<li class="nav-item" data-kind="dna-Layouts">Layouts</li>
+					<li>
+						<h3 class="nav-heading">Content Styles</h3>
+						<ul class="nav-list">
+							<li class="nav-item" data-kind="dna-fonts">Typography</li>
+							<li class="nav-item" data-kind="dna-Forms">Forms</li>
+							<li class="nav-item" data-kind="dna-Lists">Lists</li>
+							<li class="nav-item" data-kind="dna-Tables">Tables</li>
+						</ul>
+					</li>
 				</ul>
 				<h2 class="nav-heading">DNA Plus</h2>
 				<ul class="nav-list">
