@@ -5,52 +5,41 @@
 	TYPOGRAPHY
 **********/
 
-body 
-{
-	font-size: .938em;
+body {
+	font-size: @base-font;
 	line-height: 1.5;
 	color: #333;
 }
-
 // HEADING LEVELS
-h1, h2, h3, h4, h5, h6 
-{
+h1, h2, h3, h4, h5, h6 {
 	margin: .75em 0 .5em;
 	line-height: 1.25;
 	font-weight: normal;
 }
-h1 
-{
-
+h1 {
 	font-size: 2.75em;
 	line-height: 1;
 	margin: 0 0 .636em;
 }
-h2 
-{
+h2 {
 	font-size: 2.25em;
 }
-h3 
-{
+h3 {
 	font-size: 1.625em;
 }
-h4 
-{
+h4 {
 	font-size: 1.375em;
 	font-style: italic;
 }
-h5 
-{
+h5 {
 	font-size: 1.125em;
 	font-weight: bold;
 }
-h6 
-{
+h6 {
 	font-size: 1em;
 	font-weight: bold;
 	font-style: italic;
 }
-
 // PARAGRAPH STYLES
 p {
 	margin: 0 0 1em;
@@ -59,7 +48,6 @@ p {
 		margin-bottom: .725em;
 	}
 }
-
 // LINK STYLES
 a {
 	color: #08C;
@@ -77,33 +65,25 @@ a {
 		color: #FF530D;
 	}
 }
-
-a:active
-{
+a:active {
 	
 }
 // STRONG
 strong {
 	font-weight: bold;
 }
-
-// em
+// EM
 em {
 	font-style: italic;
 }
-
-
-
+// SUP
 sup {
   top: -0.5em;
 }
-
+// SUB
 sub {
   bottom: -0.25em;
 }
-
-
-
 // BLOCKQUOTES
 blockquote {
 	margin-left: 1.5rem;
@@ -113,10 +93,10 @@ blockquote {
 }
 // PRE
 pre {
-	margin: 1em 0;
+	margin: 0 0 1em;
 	font-family: monospace;
+	font-size: (@base-font * 1.4);
 }
-
 // CODE
 code {
 	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
