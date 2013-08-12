@@ -48,14 +48,26 @@
 		padding: 0;
 		min-width: 100px;
 		z-index: 10;
-		.dd-list-item {
-			padding: .25em .5em;
-			border-radius: 0 !important;
-			cursor: pointer;
+	}
+	.dd-input {
+		position: absolute;
+		left: -9999px;
+		&:checked + .dd-label {
+			background-color: lighten(#089, 10%);
+			color: white;
 			&:hover {
 				background-color: #089;
-				color: white;
 			}
+		}
+	}
+	.dd-label {
+		display: block;
+		padding: .25em .5em;
+		border-radius: 0 !important;
+		cursor: pointer;
+		&:hover {
+			background-color: #089;
+			color: white;
 		}
 	}
 	.dd-active {
@@ -66,10 +78,12 @@
 		background-color: #E9E9E9;
 		text-decoration: none;
 		color: inherit;
+		cursor: pointer;
 		&.open {
 			~ .dd-list {
 				display: inline-block;
 			}
 		}
 	}
+
 }
