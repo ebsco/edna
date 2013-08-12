@@ -9,8 +9,10 @@
 .btn-group 
 {
 	margin-bottom: 1em;
+	.clearfix;
 	.grp-btn,
-	.grp-input
+	.grp-input,
+	.grp-dropdown
 	{
 		float: left;
 		border-radius: 0;
@@ -31,3 +33,43 @@
 	border-radius: @radius-sm 0 0 @radius-sm;
 }
 
+.dd {
+	position: relative;
+	.dd-list {
+		display: none;
+		position: absolute;
+		top: 27px;
+		left: 0;
+		border: 1px solid #AAA;
+		background-color: #FFF;
+		border-radius: 3px;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		min-width: 100px;
+		z-index: 10;
+		.dd-list-item {
+			padding: .25em .5em;
+			border-radius: 0 !important;
+			cursor: pointer;
+			&:hover {
+				background-color: #089;
+				color: white;
+			}
+		}
+	}
+	.dd-active {
+		display: inline-block;
+		float: left;
+		border: 1px solid #AAA;
+		padding: .06em .5em;
+		background-color: #E9E9E9;
+		text-decoration: none;
+		color: inherit;
+		&.open {
+			~ .dd-list {
+				display: inline-block;
+			}
+		}
+	}
+}

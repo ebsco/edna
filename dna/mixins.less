@@ -6,40 +6,34 @@
 
 
 // CLEAR 
-.clear
-{
+.clear {
   clear: both;
 }
 
 // CLEARFIX 
 // IE7
-.clearfix 
-{
+.clearfix {
   *zoom: 1;
-}
 
-.clearfix:before,
-.clearfix:after 
-{
-  display: table;
-  line-height: 0;
-  content: "";
-}
-.clearfix:after 
-{
-  clear: both;
+	&:before,
+	&:after {
+	  display: table;
+	  line-height: 0;
+	  content: "";
+	}
+	&:after {
+	  clear: both;
+	}
 }
 
 
 // HIDING THINGS
 // DO NOT DISPLAY (inaccessible by screen readers)
-.display-none
-{
+.display-none {
 	display: none;
 }
 // HIDDEN (accessible by screen readers)
-.hidden
-{
+.hidden {
 	position: absolute !important;
 	height: 1px; width: 1px; 
 	overflow: hidden;
@@ -48,7 +42,6 @@
 }
 
 // MIXINS
-.rounded
-{
+.rounded {
 	border-radius: 3px;
 }

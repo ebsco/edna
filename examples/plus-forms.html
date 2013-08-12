@@ -1,25 +1,63 @@
-<h1>Buttons</h1>
+<h1>Form Widgets</h1>
 
-<h3>Combos</h3>
+<h2>Dropdowns</h2>
+<p></p>
+<div class="dis">
 
-<p>Search with Button</p>
-<p>To create the Search and Button combo, the elements need to be wrapped within a container with a class="btn-group clearfix"</p>
-<div class="btn-group clearfix">
-	<input class="grp-input" type="search" />
-	<input class="grp-btn" type="submit" />
+	<div class="btn-group">
+		<div class="dd">
+			<a href="#" class="dd-active">One</a>
+			<ul class="dd-list">
+				<li class="dd-list-item">One</li>
+				<li class="dd-list-item">Two</li>
+				<li class="dd-list-item">Three</li>
+				<li class="dd-list-item">Four</li>
+				<li class="dd-list-item">Five</li>
+			</ul>
+		</div>
+		<input class="grp-input" type="search" />
+		<input class="grp-btn" type="submit" />
+		<input class="grp-btn" type="reset" />
+	</div>
+	<pre><code class="dis-code">BOOM!</code></pre>
 </div>
 
-<p>Multi Buttons</p>
-<p>To create the multi button combo, the elements need to be wrapped within a container with a class="btn-group clearfix"</p>
-<div class="btn-group clearfix">
-	<input class="grp-input" type="search" />
-	<input class="grp-btn" type="submit" />
-	<input class="grp-btn" type="reset" />
+
+
+
+
+<h2>Search with Button</h2>
+<p>To create the Search and Button combo, the elements need to be wrapped within a container with a class="btn-group"</p>
+<div class="dis">
+	<div class="btn-group">
+		<input class="grp-input" type="search" />
+		<input class="grp-btn" type="submit" />
+	</div>
+<pre><code class="dis-code">&lt;div class="btn-group"&gt;
+	&lt;input class="grp-input" type="search" /&gt;
+	&lt;input class="grp-btn" type="submit" /&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+<h2>Multi Buttons</h2>
+<p>To create the multi button combo, the elements need to be wrapped within a container with a class="btn-group"</p>
+<div class="dis">
+	<div class="btn-group">
+		<input class="grp-input" type="search" />
+		<input class="grp-btn" type="submit" />
+		<input class="grp-btn" type="reset" />
+	</div>
+<pre><code class="dis-code">&lt;div class="btn-group"&gt;
+	&lt;input class="grp-input" type="search" /&gt;
+	&lt;input class="grp-btn" type="submit" /&gt;
+	&lt;input class="grp-btn" type="reset" /&gt;
+&lt;/div&gt;</code></pre>
 </div>
 
 <p>Using "first" and "last" classes</p>
 <p>If the first and last items within the "btn-group" are not the form elements, the classes "first" and "last" should be added to the first form element and the last form element respectively.</p>
-<div class="btn-group clearfix">
+<div class="btn-group">
 	<p>This is the :first-child in "btn-group".</p>
 	<input class="grp-input first" type="search" />
 	<input class="grp-btn" type="submit" />
