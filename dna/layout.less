@@ -16,8 +16,11 @@
 	width: 100%;
 }
 // Set default styles for all P1s
-.l1, .l2 {max-width: 960px;}
+.l1, .l2 {
+	max-width: 960px;
+}
 .l1 {
+	.clearfix;
 	&.p1 {
 		> .col {
 			width: 100%;
@@ -25,6 +28,7 @@
 	}
 }
 .l2 {
+	.clearfix;
 	&.p1 {
 		> .col {
 			width: 50%;
@@ -32,6 +36,7 @@
 	}
 }
 .l3 {
+	.clearfix;
 	&.p1 {
 		> .col {
 			width: 33%;
@@ -39,6 +44,7 @@
 	}
 }
 .l4 {
+	.clearfix;
 	&.p1 {
 		> .col {
 			width: 25%;
@@ -50,42 +56,50 @@
 	.l2 {
 		&.p2 {
 			> .col:nth-child(1) {
-				width: 33%;
+				width: 40%;
 			}
 			> .col:nth-child(2) {
-				width: 66%;
+				width: 60%;
 			}
 		}
 		&.p3 {
 			> .col:nth-child(1) {
-				width: 25%;
+				width: 30%;
 			}
 			> .col:nth-child(2) {
-				width: 75%;
+				width: 70%;
+			}
+		}
+		&.p4 {
+			> .col:nth-child(1) {
+				width: 20%;
+			}
+			> .col:nth-child(2) {
+				width: 80%;
 			}
 		}
 	}
 	.l3 {
 		&.p2 {
 			> .col:nth-child(1) {
-				width: 25%;
+				width: 20%;
 			}
 			> .col:nth-child(2) {
-				width: 25%;
+				width: 20%;
 			}
 			> .col:nth-child(3) {
-				width: 50%;
+				width: 60%;
 			}
 		}
 		&.p3 {
 			> .col:nth-child(1) {
-				width: 25%;
+				width: 20%;
 			}
 			> .col:nth-child(2) {
-				width: 50%;
+				width: 60%;
 			}
 			> .col:nth-child(3) {
-				width: 25%;
+				width: 20%;
 			}
 		}
 	}
@@ -95,42 +109,50 @@
 	.l2 {
 		&.p2 {
 			> .col:nth-child(1) {
-				width: 66%;
+				width: 60%;
 			}
 			> .col:nth-child(2) {
-				width: 33%;
+				width: 40%;
 			}
 		}
 		&.p3 {
 			> .col:nth-child(1) {
-				width: 75%;
+				width: 70%;
 			}
 			> .col:nth-child(2) {
-				width: 25%;
+				width: 30%;
+			}
+		}
+		&.p4 {
+			> .col:nth-child(1) {
+				width: 80%;
+			}
+			> .col:nth-child(2) {
+				width: 20%;
 			}
 		}
 	}
 	.l3 {
 		&.p2 {
 			> .col:nth-child(1) {
-				width: 25%;
+				width: 60%;
 			}
 			> .col:nth-child(2) {
-				width: 25%;
+				width: 20%;
 			}
 			> .col:nth-child(3) {
-				width: 50%;
+				width: 20%;
 			}
 		}
 		&.p3 { // yes, this pattern is the same as .alpha .l3.p3, don't worry about it
 			> .col:nth-child(1) {
-				width: 25%;
+				width: 20%;
 			}
 			> .col:nth-child(2) {
-				width: 50%;
+				width: 60%;
 			}
 			> .col:nth-child(3) {
-				width: 25%;
+				width: 20%;
 			}
 		}
 	}
