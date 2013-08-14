@@ -5,6 +5,7 @@
 	TRANSPORT
 **********/
 .transport {
+	@border-width: 10px;
 	> .top,
 	> .right,
 	> .bottom,
@@ -12,32 +13,37 @@
 		color: #CCC;
 		cursor: pointer;
 		display: inline-block;
-		width: 20px;
-		height: 20px;
+		width: 0;
+		height: 0;
 		text-align: center;
+
+		border-top: @border-width solid transparent;
+		border-right: @border-width solid transparent;
+		border-bottom: @border-width solid transparent;
+		border-left: @border-width solid transparent;
 		&:hover {
 			color: #999;
 		}
 	}
 	> .top {
-		&:after {
-			content: '\25B2';
-		}
+		border-bottom: @border-width solid #CCC;
+		border-top-width: 0;
+		margin-bottom: 5px;
 	}
 	> .right {
-		&:after {
-			content: '\25B6';
-		}
+		border-left: @border-width solid #CCC;
+		border-right-width: 0;
+		margin-left: 5px;
 	}
 	> .bottom {
-		&:after {
-			content: '\25BC';
-		}
+		border-top: @border-width solid #CCC;
+		border-bottom-width: 0;
+		margin-bottom: 5px;
 	}
 	> .left {
-		&:after {
-			content: '\25C0';
-		}
+		border-right: @border-width solid #CCC;
+		border-left-width: 0;
+		margin-left: 5px;
 	}
 
 	&.inactive {
