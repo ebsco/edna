@@ -1,0 +1,59 @@
+//
+	//DNA
+//
+/**********
+	BUTTONS
+**********/
+
+button,
+input[type=submit],
+input[type=reset],
+.btn {
+	padding: .25em .5em;
+	color: @color;
+	background-color: @lt-gray2;
+	border: solid 1px @med-gray2;
+	border-radius: @radius-sm;
+	cursor: pointer;
+}
+
+// STATES
+.primary-action {
+	color: @dk-gray2;
+	background-color: #f4d007;
+}
+.disabled,
+button[disabled],
+input[type=submit][disabled],
+input[type=reset][disabled] {
+	color: @med-gray1;
+	background-color: @lt-gray1;
+	border-color: @med-gray1;
+	cursor: pointer;
+}
+
+// BUTTON GROUPS
+.btn-group {
+	margin-bottom: 1em;
+	.clearfix;
+	.grp-btn,
+	.grp-input,
+	.grp-dropdown {
+		float: left;
+		border-radius: 0;
+		border-left-width: 0;
+	}
+
+	:last-child,
+	.last //IE support
+	{
+		border-radius: 0 @radius-sm @radius-sm 0;
+	}
+
+	:first-child,
+	.first //IE support
+	{
+		border-left-width: 1px;
+		border-radius: @radius-sm 0 0 @radius-sm;
+	}	
+}

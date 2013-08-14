@@ -1,0 +1,93 @@
+//
+	//DNA
+//
+/**********
+	DROPDOWNS
+**********/
+.dd {
+	position: relative;
+	background-color: @lt-gray2;
+	border: solid 1px @med-gray2;
+	border-radius: @radius-sm;
+	display: inline-block;
+	line-height: normal;
+	.dd-list {
+		display: none;
+		position: absolute;
+		top: 26px;
+		left: 0;
+		border: solid 1px @med-gray2;
+		background-color: #FFF;
+		border-radius: 3px;
+		list-style-type: none;
+		padding: 0;
+		z-index: 10;
+		min-width: 100px;
+	}
+	.dd-label {
+		display: block;
+		padding: .25em .5em;
+		border-radius: 0;
+		cursor: pointer;
+		&:hover {
+			background-color: @lt-gray2;
+			color: darken(@color, 10%);
+		}
+	}
+	.dd-input {
+		position: absolute;
+		left: -9999px;
+		&:checked + .dd-label {
+			background-color: darken(@lt-gray2, 10%);
+			color: @color;
+			&:hover {
+				background-color: @lt-gray2;
+			}
+		}
+	}
+	.dd-active {
+		color: @color;
+		cursor: pointer;
+		text-decoration: none;
+		cursor: pointer;
+		padding: .25em .5em;
+		display: inline-block;
+		&.open {
+			~ .dd-list {
+				display: inline-block;
+			}
+		}
+	}
+	.transport {
+		display: inline-block;
+		font-size: .5em;
+		line-height: normal;
+		> .bottom {
+			height: inherit;
+			width: inherit;
+		}
+	}
+}
+
+// when a dropdown is in a button group
+.btn-group {
+	.dd {
+		float: left;
+		border-radius: 0;
+		border-left-width: 0;
+	}
+	:last-child,
+	.last //IE support
+	{
+		border-radius: 0 @radius-sm @radius-sm 0;
+		.dd-list { border-radius: @radius-sm; }
+	}
+
+	:first-child,
+	.first //IE support
+	{
+		border-left-width: 1px;
+		border-radius: @radius-sm 0 0 @radius-sm;
+		.dd-list { border-radius: @radius-sm; }
+	}
+}
