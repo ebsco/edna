@@ -18,9 +18,10 @@
 		.layouts .col:first-child { padding-left: 0; }
 		.layouts .dis > pre { margin-top: 15px; }
 */
-		.nav-list {padding: 0 0 1em; margin: 0; list-style: none;}
+		.nav-list { padding: 0 0 1em; margin: 0; list-style: none; }
+		.nav-item > .nav-list { padding: 0; }
 		.nav-list .nav-heading { margin: 0 0 0 .5em; color: #666; }
-		.nav-list .nav-list { margin: 0 0 0 .5em; }
+		.nav-list .nav-list { margin: 0 0 0 1em; }
 		.nav-heading, .nav-item { padding: .25em 5px; margin: 0;}
 		.nav-heading { font-size: 1em; font-weight: bold;}
 		.nav-item { padding: 0 5px; color: #aaa; cursor: pointer; }
@@ -95,16 +96,16 @@
 				</ul>
 				<h2 class="nav-heading">DNA Plus</h2>
 				<ul class="nav-list">
-					<li>
+					<li class="nav-item">
 						<h3 class="nav-item nav-heading">Base Widgets</h3>
 						<ul class="nav-list">
 							<li class="nav-item" data-kind="plus-Transport">Transport</li>
 						</ul>
 					</li>
-					<li>
+					<li class="nav-item">
 						<h3 class="nav-heading">Composite Widgets</h3>
 						<ul class="nav-list">
-							<li class="nav-item" data-kind="plus-Forms">Form Widgets</li>
+							<li class="nav-item" data-kind="plus-Forms">Forms</li>
 							<li class="nav-item" data-kind="plus-Lists">Lists</li>
 							<li class="nav-item" data-kind="plus-Carousel">Carousel</li>
 							<li class="nav-item" data-kind="plus-Messaging">Messaging</li>
