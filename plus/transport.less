@@ -5,14 +5,13 @@
 	TRANSPORT
 **********/
 .transport {
-	@border-width: 10px;
+	@border-width: 15px;
 	> .top,
 	> .right,
 	> .bottom,
 	> .left {
 		color: #CCC;
 		cursor: pointer;
-		display: inline-block;
 		width: 0;
 		height: 0;
 		text-align: center;
@@ -28,22 +27,26 @@
 	> .top {
 		border-bottom: @border-width solid #CCC;
 		border-top-width: 0;
-		margin-bottom: 5px;
+		margin-bottom: (@border-width / 2);
+		margin-top: -(@border-width / 2);
 	}
 	> .right {
 		border-left: @border-width solid #CCC;
 		border-right-width: 0;
-		margin-left: 5px;
+		margin-left: (@border-width / 2);
+		margin-right: -(@border-width / 2);
 	}
 	> .bottom {
 		border-top: @border-width solid #CCC;
 		border-bottom-width: 0;
-		margin-bottom: 5px;
+		margin-bottom: (@border-width / 2);
+		margin-top: -(@border-width / 2);
 	}
 	> .left {
 		border-right: @border-width solid #CCC;
 		border-left-width: 0;
-		margin-left: 5px;
+		margin-left: (@border-width / 2);
+		margin-right: -(@border-width / 2);
 	}
 
 	&.inactive {
