@@ -10,14 +10,18 @@
 	<link rel="stylesheet" type="text/css" href="dna.css" />
 	<style>
 		html, body { padding: 1em; background-color: #EFEFEF; }
-		.header { border-bottom: 1px solid #999; margin-bottom: 1.5em; }
-		.header h1 { font-weight: bold; }
 		h1 a { text-decoration: none; }
-		.col { box-sizing: border-box; padding: 0 1em 1em; }
-		.col:first-child { padding-left: 0; }
-		.nav-list {padding: 0 0 1em; margin: 0; list-style: none;}
+
+/*		.layouts .header { border-bottom: 1px solid #999; margin-bottom: 1.5em; }
+		.layouts .header h1 { font-weight: bold; }
+		.layouts .col { box-sizing: border-box; padding: 0 1em 1em; }
+		.layouts .col:first-child { padding-left: 0; }
+		.layouts .dis > pre { margin-top: 15px; }
+*/
+		.nav-list { padding: 0 0 1em; margin: 0; list-style: none; }
+		.nav-item > .nav-list { padding: 0; }
 		.nav-list .nav-heading { margin: 0 0 0 .5em; color: #666; }
-		.nav-list .nav-list { margin: 0 0 0 .5em; }
+		.nav-list .nav-list { margin: 0 0 0 1em; }
 		.nav-heading, .nav-item { padding: .25em 5px; margin: 0;}
 		.nav-heading { font-size: 1em; font-weight: bold;}
 		.nav-item { padding: 0 5px; color: #aaa; cursor: pointer; }
@@ -26,13 +30,17 @@
 		.soon { padding: .25em 5px; color: #999; }
 		.soon:hover { background-color: transparent; cursor: default; }
 		/*for the layouts section*/ 
-		.layouts .section. { margin: 1em 0; padding: 1em; xborder: solid 1px #ccc;border-radius: 5px; }
-		.layouts .header, .layouts .footer { margin: .25em 0; padding: .25em; background-color: #ddd; border: none; }
-		.layouts .col { border-right: solid 1px #fff; text-align: center; margin: .5em 0; }
-		.layouts .col:nth-child(1) { background-color: #ccc; }
-		.layouts .col:nth-child(2) { background-color: #bbb; }
-		.layouts .col:nth-child(3) { background-color: #aaa; }
-		.layouts .section hr { margin: 30px 0 20px; border: 1px solid #CCC; }
+	
+		.layouts .header, .layouts .col, .layouts .footer { box-sizing: border-box; text-align: center; font-weight: bold; background-color: #FFAB5C; border: 1px solid #FFF; padding: .25em; }
+		.layouts .col {  }
+		.layouts .header > p, .layouts .col > p, .layouts .footer > p { margin: 0; }
+		.layouts .col:nth-child(1) { background-color: #EE5500; }
+		.layouts .col:nth-child(2) { background-color: #EE5500; }
+		.layouts .col:nth-child(3) { background-color: #EE5500; }
+		.layouts .col:last-child { border-right: none; }
+/*		.layouts .section hr { margin: 30px 0 20px; border: 1px solid #CCC; }
+*/		.layouts .dis > pre { margin-top: 15px; }
+	
 		/* DISPLAY STYLES */
 		.dis { background-color: #FFF; border: 1px solid #E0E0E0; padding: 10px; border-radius: 5px; }
 		.dis .dis-text {  }
@@ -46,10 +54,6 @@
 			font-size: .85em;
 		}
 		.dis > pre { margin: 0; font-size: 1em; }
-		/*
-		.dis .dis-code > pre { background-color: #FFF; margin: 0; font-size: .85em; }
-		code.dis-code * { margin-bottom: 0; }
-		*/
 	</style>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -70,9 +74,18 @@
 
 				<h2 class="nav-heading">DNA</h2>
 				<ul class="nav-list">
-					<li class="nav-item" data-kind="dna-Layouts">Layouts</li>
+					<li class="nav-item">
+						<h3 class="nav-item nav-heading" data-kind="dna-Layouts">Layouts</h3>
+						<ul class="nav-list">
+							<li class="nav-item" data-kind="dna-Layouts-l1">One Column</li>
+							<li class="nav-item" data-kind="dna-Layouts-l2">Two Column</li>
+							<li class="nav-item" data-kind="dna-Layouts-l3">Three Column</li>
+							<!-- <li class="nav-item" data-kind="dna-Layouts-l4">Four Column</li> -->
+							<!-- <li class="nav-item" data-kind="dna-test">Test</li> -->
+						</ul>
+					</li>
 					<li>
-						<h3 class="nav-heading">Content Styles</h3>
+						<h3 class="nav-item nav-heading">Content Styles</h3>
 						<ul class="nav-list">
 							<li class="nav-item" data-kind="dna-fonts">Typography</li>
 							<li class="nav-item" data-kind="dna-Forms">Forms</li>
@@ -83,16 +96,16 @@
 				</ul>
 				<h2 class="nav-heading">DNA Plus</h2>
 				<ul class="nav-list">
-					<li>
-						<h3 class="nav-heading">Base Widgets</h3>
+					<li class="nav-item">
+						<h3 class="nav-item nav-heading">Base Widgets</h3>
 						<ul class="nav-list">
 							<li class="nav-item" data-kind="plus-Transport">Transport</li>
 						</ul>
 					</li>
-					<li>
+					<li class="nav-item">
 						<h3 class="nav-heading">Composite Widgets</h3>
 						<ul class="nav-list">
-							<li class="nav-item" data-kind="plus-Forms">Form Widgets</li>
+							<li class="nav-item" data-kind="plus-Forms">Forms</li>
 							<li class="nav-item" data-kind="plus-Lists">Lists</li>
 							<li class="nav-item" data-kind="plus-Carousel">Carousel</li>
 							<li class="nav-item" data-kind="plus-Messaging">Messaging</li>
