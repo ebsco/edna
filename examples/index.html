@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="dna.css" />
 	<style>
 		html, body { padding: 1em; background-color: #EFEFEF; }
+		.rtl, .rtl * { direction: rtl; unicode-bidi: bidi-override; }
 		h1 a { text-decoration: none; }
 
 /*		.layouts .header { border-bottom: 1px solid #999; margin-bottom: 1.5em; }
@@ -38,11 +39,11 @@
 		.layouts .col:nth-child(2) { background-color: #EE5500; }
 		.layouts .col:nth-child(3) { background-color: #EE5500; }
 		.layouts .col:last-child { border-right: none; }
-/*		.layouts .section hr { margin: 30px 0 20px; border: 1px solid #CCC; }
-*/		.layouts .dis > pre { margin-top: 15px; }
+		.layouts .dis > pre { margin-top: 15px; }
 	
 		/* DISPLAY STYLES */
 		.dis { background-color: #FFF; border: 1px solid #E0E0E0; padding: 10px; border-radius: 5px; }
+		.dis + .dis { margin-top: 15px; }
 		.dis .dis-text {  }
 		.dis .dis-code {
 			background-color: #E0E0E0;
@@ -51,7 +52,7 @@
 			padding: 10px;
 			border-top: 1px solid #FFF;
 			box-shadow: 0 -1px 0px #CCC;
-			font-size: .85em;
+			font-size: .8em;
 		}
 		.dis > pre { margin: 0; font-size: 1em; }
 	</style>
