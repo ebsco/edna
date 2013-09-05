@@ -1,0 +1,69 @@
+//
+	//PLUS
+//
+/**********
+	TABS
+**********/
+
+.tabs {
+	position: relative;
+	* {
+		box-sizing: border-box;
+	}
+	.tab-list,
+	.tab-content {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	.tab-list {
+		.tab-list-item {
+			background-color: #FFF;
+			display: inline;
+			float: left;
+			border-width: 1px 1px 0 1px;
+			border-style: solid;
+			border-color: #CCC;
+			padding: 10px 20px;
+			margin-right: -1px;
+			margin-bottom: -1px;
+			position: relative;
+			z-index: 30;
+			.gradient(#D0D0D0);
+			cursor: pointer;
+			&:first-child {
+				.border-radius-tl(3px);
+			}
+			&.active {
+				cursor: default;
+				cursor: default;
+				border-bottom: 1px solid #FFF;
+				.gradient(#FFF);
+			}
+			&:hover {
+				.gradient(#C0C0C0);
+			}
+		}
+	}
+	.tab-content {
+		.tab-content-item {
+			.border-radius-tl(0);
+			.border-radius-tr(0);
+			.border-radius-br(3px);
+			.border-radius-bl(3px);
+			width: 100%;
+			border: 1px solid #CCC;
+			padding: 10px 20px;
+			display: none;
+			> *:last-child { // remove any extra margin on the last item for better parent padding
+				margin: 0;
+			}		
+			&.active {
+				background-color: #FFF;
+				display: inline-block;
+				position: relative;
+				z-index: 25;				
+			}
+		}
+	}
+}

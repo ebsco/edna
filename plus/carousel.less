@@ -1,0 +1,67 @@
+//
+	//PLUS
+//
+/**********
+	CAROUSEL
+**********/
+.carousel {
+	border: 1px solid #CCC;
+	padding: 15px;
+	width: 300px;
+	min-width: 250px;
+	.carousel-img {
+		moz-box-sizing: border-box;
+		box-sizing: border-box;
+		width: 100%;
+		border: 1px solid #CCC;
+		> .img {
+			display: block;
+			border: none;
+			width: 100%;
+		}
+	}
+	.carousel-nav {
+		.clearfix;
+		width: 100%;
+		margin: 15px 0 0;
+		overflow: hidden;
+	}
+	.transport {
+		width: 7%;
+		display: inline-block;
+		float: left;
+		padding: 15px 0 14px 0;
+		position: relative;
+	}
+	.carousel-thumbs {
+		width: 86%;
+		display: inline-block;
+		float: left;
+		overflow: hidden;
+		height: 53px;
+		position: relative;
+		.carousel-list {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			width: 1000px;
+			position: relative;
+			.carousel-list-item {
+				float: left;
+				margin: 0 5px 0 0;
+				padding: 0;
+				display: inline-block;
+				cursor: pointer;
+				border: 1px solid #CCC;
+				width: 67px;
+				moz-box-sizing: border-box;
+				box-sizing: border-box;
+				.img {
+					display: block;
+					border: none;
+					width: 100%;
+				}
+			}
+		}
+	}
+}

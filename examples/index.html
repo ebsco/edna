@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-us"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en-us"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en-us"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+	<title>DNA</title>
+
+	<link rel="stylesheet" type="text/css" href="dna.css" />
+	<style>
+		html, body { padding: 1em; background-color: #EFEFEF; }
+		.rtl, .rtl * { direction: rtl; unicode-bidi: bidi-override; }
+		h1 a { text-decoration: none; }
+
+/*		.layouts .header { border-bottom: 1px solid #999; margin-bottom: 1.5em; }
+		.layouts .header h1 { font-weight: bold; }
+		.layouts .col { box-sizing: border-box; padding: 0 1em 1em; }
+		.layouts .col:first-child { padding-left: 0; }
+		.layouts .dis > pre { margin-top: 15px; }
+*/
+		.nav-list { padding: 0 0 1em; margin: 0; list-style: none; }
+		.nav-item > .nav-list { padding: 0; }
+		.nav-list .nav-heading { margin: 0 0 0 .5em; color: #666; }
+		.nav-list .nav-list { margin: 0 0 0 1em; }
+		.nav-heading, .nav-item { padding: .25em 5px; margin: 0;}
+		.nav-heading { font-size: 1em; font-weight: bold;}
+		.nav-item { padding: 0 5px; color: #aaa; cursor: pointer; }
+		.nav-item:hover { background-color: #efefef; }
+		.nav-item:active { color: #333; }
+		.soon { padding: .25em 5px; color: #999; }
+		.soon:hover { background-color: transparent; cursor: default; }
+		/*for the layouts section*/ 
+	
+		.layouts .header, .layouts .col, .layouts .footer { box-sizing: border-box; text-align: center; font-weight: bold; background-color: #FFAB5C; border: 1px solid #FFF; padding: .25em; }
+		.layouts .col {  }
+		.layouts .header > p, .layouts .col > p, .layouts .footer > p { margin: 0; }
+		.layouts .col:nth-child(1) { background-color: #EE5500; }
+		.layouts .col:nth-child(2) { background-color: #EE5500; }
+		.layouts .col:nth-child(3) { background-color: #EE5500; }
+		.layouts .col:last-child { border-right: none; }
+		.layouts .dis > pre { margin-top: 15px; }
+	
+		/* DISPLAY STYLES */
+		.dis { background-color: #FFF; border: 1px solid #E0E0E0; padding: 10px; border-radius: 5px; }
+		.dis + .dis, .dis + p { margin-top: 15px; }
+		.dis .dis-text {  }
+		.dis .dis-code {
+			background-color: #E0E0E0;
+			display: block;
+			margin: 0 -10px -10px;
+			padding: 10px;
+			border-top: 1px solid #FFF;
+			box-shadow: 0 -1px 0px #CCC;
+			font-size: .8em;
+		}
+		.dis > pre { margin: 0; font-size: 1em; }
+	</style>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/bootstrap.js"></script>
+
+	<script src="../turbo/dropdowns.js"></script>
+
+</head>
+<body>
+	<div class="alpha">
+		<div class="header">
+			<h1><a href="/">DNA</a></h1>
+			<p>Really nice typography for HTML elements and really nice design for graphical HTML elements (forms, blockquote, pre, etc.).</p>
+		</div>
+		<div class="l2 p3">
+			<nav role="navigation" aria-label="DNA parts" class="col">
+
+				<h2 class="nav-heading">DNA</h2>
+				<ul class="nav-list">
+					<li class="nav-item">
+						<h3 class="nav-item nav-heading" data-kind="dna-Layouts">Layouts</h3>
+						<ul class="nav-list">
+							<li class="nav-item" data-kind="dna-Layouts-l1">One Column</li>
+							<li class="nav-item" data-kind="dna-Layouts-l2">Two Column</li>
+							<li class="nav-item" data-kind="dna-Layouts-l3">Three Column</li>
+							<!-- <li class="nav-item" data-kind="dna-Layouts-l4">Four Column</li> -->
+							<!-- <li class="nav-item" data-kind="dna-test">Test</li> -->
+						</ul>
+					</li>
+					<li>
+						<h3 class="nav-item nav-heading">Content Styles</h3>
+						<ul class="nav-list">
+							<li class="nav-item" data-kind="dna-fonts">Typography</li>
+							<li class="nav-item" data-kind="dna-Forms">Forms</li>
+							<li class="nav-item" data-kind="dna-Lists">Lists</li>
+							<li class="nav-item" data-kind="dna-Tables">Tables</li>
+						</ul>
+					</li>
+				</ul>
+				<h2 class="nav-heading">DNA Plus</h2>
+				<ul class="nav-list">
+					<li class="nav-item">
+						<h3 class="nav-item nav-heading">Base Widgets</h3>
+						<ul class="nav-list">
+							<li class="nav-item" data-kind="plus-Transport">Transport</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<h3 class="nav-heading">Composite Widgets</h3>
+						<ul class="nav-list">
+							<li class="nav-item" data-kind="plus-Forms">Forms</li>
+							<li class="nav-item" data-kind="plus-Lists">Lists</li>
+							<li class="nav-item" data-kind="plus-Carousel">Carousel</li>
+							<li class="nav-item" data-kind="plus-Messaging">Messaging</li>
+							<li class="nav-item" data-kind="plus-Navbar">Navbar</li>
+							<li class="nav-item" data-kind="plus-Pagination">Pagination</li>
+							<li class="nav-item" data-kind="plus-Tabs">Tabs</li>
+							<li class="nav-item" data-kind="plus-Toggles">Toggles</li>
+						</ul>
+					</li>
+				</ul>
+				<h2 class="nav-heading">DNA Plus Turbo</h2>
+				<ul class="nav-list">
+					<li class="soon">Coming Shortly!</li>
+				</ul>
+			</nav>
+			<div class="col">
+				<section role="main" aria-label="Main Content" class="result"></section>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

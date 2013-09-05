@@ -1,0 +1,159 @@
+//
+	//EDNA
+//
+/**********
+	LAYOUT
+**********/
+
+// Layouts are made up of regions. Regions will have widgets in them.
+
+// Set up the basic layout region
+.col {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	float: left;
+	width: 100%;
+}
+// Set default styles for all P1s
+.l1, .l2 {
+	max-width: 960px;
+}
+.l1 {
+	.clearfix;
+	&.p1 {
+		> .col {
+			width: 100%;
+		}
+	}
+}
+.l2 {
+	.clearfix;
+	&.p1 {
+		> .col {
+			width: 50%;
+		}
+	}
+}
+.l3 {
+	.clearfix;
+	&.p1 {
+		> .col {
+			width: 33%;
+		}
+	}
+}
+.l4 {
+	.clearfix;
+	&.p1 {
+		> .col {
+			width: 25%;
+		}
+	}
+}
+// Divide the patterns into two master classes that go in the body tag
+.alpha {
+	.l2 {
+		&.p2 {
+			> .col:nth-child(1) {
+				width: 40%;
+			}
+			> .col:nth-child(2) {
+				width: 60%;
+			}
+		}
+		&.p3 {
+			> .col:nth-child(1) {
+				width: 30%;
+			}
+			> .col:nth-child(2) {
+				width: 70%;
+			}
+		}
+		&.p4 {
+			> .col:nth-child(1) {
+				width: 20%;
+			}
+			> .col:nth-child(2) {
+				width: 80%;
+			}
+		}
+	}
+	.l3 {
+		&.p2 {
+			> .col:nth-child(1) {
+				width: 20%;
+			}
+			> .col:nth-child(2) {
+				width: 20%;
+			}
+			> .col:nth-child(3) {
+				width: 60%;
+			}
+		}
+		&.p3 {
+			> .col:nth-child(1) {
+				width: 20%;
+			}
+			> .col:nth-child(2) {
+				width: 60%;
+			}
+			> .col:nth-child(3) {
+				width: 20%;
+			}
+		}
+	}
+}
+// the second master class for the body tag
+.beta {
+	.l2 {
+		&.p2 {
+			> .col:nth-child(1) {
+				width: 60%;
+			}
+			> .col:nth-child(2) {
+				width: 40%;
+			}
+		}
+		&.p3 {
+			> .col:nth-child(1) {
+				width: 70%;
+			}
+			> .col:nth-child(2) {
+				width: 30%;
+			}
+		}
+		&.p4 {
+			> .col:nth-child(1) {
+				width: 80%;
+			}
+			> .col:nth-child(2) {
+				width: 20%;
+			}
+		}
+	}
+	.l3 {
+		&.p2 {
+			> .col:nth-child(1) {
+				width: 60%;
+			}
+			> .col:nth-child(2) {
+				width: 20%;
+			}
+			> .col:nth-child(3) {
+				width: 20%;
+			}
+		}
+		&.p3 { // yes, this pattern is the same as .alpha .l3.p3, don't worry about it
+			> .col:nth-child(1) {
+				width: 20%;
+			}
+			> .col:nth-child(2) {
+				width: 60%;
+			}
+			> .col:nth-child(3) {
+				width: 20%;
+			}
+		}
+	}
+}

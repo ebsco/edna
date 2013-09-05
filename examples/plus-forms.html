@@ -1,0 +1,160 @@
+<h1>Form Widgets</h1>
+
+<h2>Search with Button</h2>
+<p>To create the Search and Button combo, the elements need to be wrapped within a container with a class="btn-group"</p>
+<div class="dis">
+	<div class="btn-group">
+		<input class="grp-input" type="search" />
+		<input class="grp-btn" type="submit" />
+	</div>
+<pre><code class="dis-code">&lt;div class="btn-group"&gt;
+	&lt;input class="grp-input" type="search" /&gt;
+	&lt;input class="grp-btn" type="submit" /&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+<h2>Multi Buttons</h2>
+<p>To create the multi button combo, the elements need to be wrapped within a container with a class="btn-group"</p>
+<p>This example uses <code>:first-child</code> and <code>:last-child</code> to position the Submit and Rest buttons.</p>
+<div class="dis">
+	<div class="btn-group">
+		<input class="grp-input" type="search" />
+		<input class="grp-btn" type="submit" />
+		<input class="grp-btn" type="reset" />
+	</div>
+<pre><code class="dis-code">&lt;div class="btn-group"&gt;
+	&lt;input class="grp-input" type="search" /&gt;
+	&lt;input class="grp-btn" type="submit" /&gt;
+	&lt;input class="grp-btn" type="reset" /&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<p><strong>Note:</strong> <code>:last-child</code> does not work IE8 and earlier.</p>
+<p>For IE8 and earlier we utilize <code>.first</code> and <code>.last</code> classes.</p>
+<div class="dis">
+	<div class="btn-group">
+		<input class="grp-input first" type="search" />
+		<input class="grp-btn" type="submit" />
+		<input class="grp-btn last" type="reset" />
+	</div>
+<pre><code class="dis-code">&lt;div class="btn-group">
+	&lt;input class="grp-input first" type="search" />
+	&lt;input class="grp-btn" type="submit" />
+	&lt;input class="grp-btn last" type="reset" />
+&lt;/div></code></pre>
+</div>
+
+<h2>Dropdowns</h2>
+<p>In order to use styled dropdowns we are creating our own rather then use a <code>select</code> menu.</p>
+<p>These use hidden radio buttons (or checkboxes if you desire a multi-select dropdown) with a selectable <code>label</code>.</p>
+<div class="dis">
+	<div class="dd">
+		<button class="dd-active">
+			<span class="txt">One</span>
+			<div class="transport"><div class="bottom"></div></div>
+		</button>
+		<ul class="dd-list">
+			<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="one" /><label class="dd-label" for="one">One</label></li>
+			<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="two" /><label class="dd-label" for="two">Two</label></li>
+			<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="three" /><label class="dd-label" for="three">Three</label></li>
+			<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="four" /><label class="dd-label" for="four">Four</label></li>
+			<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="five" /><label class="dd-label" for="five">Five</label></li>
+			<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="six" /><label class="dd-label" for="six">And one really long one</label></li>
+		</ul>
+	</div>
+<pre><code class="dis-code">&lt;div class="dd"&gt;
+	&lt;button class="dd-active"&gt;
+		&lt;span class="txt"&gt;One&lt;/span&gt;
+		&lt;div class="transport"&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/button&gt;
+	&lt;ul class="dd-list"&gt;
+		&lt;li class="dd-list-item"&gt;
+			&lt;input class="dd-input" type="radio" name="list" id="one" /&gt;
+			&lt;label class="dd-label" for="one"&gt;One&lt;/label&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<p>These will seamlessly fit into our multi-button groups.</p>
+<div class="dis">
+	<div class="btn-group">
+		<div class="dd">
+			<button class="dd-active">
+				<span class="txt">One</span>
+				<div class="transport"><div class="bottom"></div></div>
+			</button>
+			<ul class="dd-list">
+				<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="one" /><label class="dd-label" for="one">One</label></li>
+				<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="two" /><label class="dd-label" for="two">Two</label></li>
+				<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="three" /><label class="dd-label" for="three">Three</label></li>
+				<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="four" /><label class="dd-label" for="four">Four</label></li>
+				<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="five" /><label class="dd-label" for="five">Five</label></li>
+				<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="six" /><label class="dd-label" for="six">And one really long one</label></li>
+			</ul>
+		</div>
+		<input class="grp-btn" type="submit" />
+	</div>
+<pre><code class="dis-code">&lt;div class="btn-group">
+	&lt;div class="dd">
+		&lt;button class="dd-active">
+			&lt;span class="txt">One&lt;/span>
+			&lt;div class="transport">
+				&lt;div class="bottom">&lt;/div>
+			&lt;/div>
+		&lt;/button>
+		&lt;ul class="dd-list">
+			&lt;li class="dd-list-item">
+				&lt;input class="dd-input" type="radio" name="list" id="one" />
+				&lt;label class="dd-label" for="one">One&lt;/label>
+			&lt;/li>
+		&lt;/ul>
+	&lt;/div>
+	&lt;input class="grp-btn" type="submit" />
+&lt;/div></code></pre>
+</div>
+
+<p>Even if they have a search field.</p>
+<div class="dis">
+	<div class="btn-group">
+		<div class="dd">
+			<button class="dd-active">
+				<span class="txt">One</span>
+				<div class="transport"><div class="bottom"></div></div>
+			</button>
+			<ul class="dd-list">
+				<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="one" /><label class="dd-label" for="one">One</label></li>
+				<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="two" /><label class="dd-label" for="two">Two</label></li>
+				<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="three" /><label class="dd-label" for="three">Three</label></li>
+				<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="four" /><label class="dd-label" for="four">Four</label></li>
+				<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="five" /><label class="dd-label" for="five">Five</label></li>
+				<li class="dd-list-item"><input class="dd-input" type="radio" name="test-list" id="six" /><label class="dd-label" for="six">And one really long one</label></li>
+			</ul>
+		</div>
+		<input class="grp-input" type="search" />
+		<input class="grp-btn" type="submit" />
+		<input class="grp-btn" type="reset" />
+	</div>
+<pre><code class="dis-code">&lt;div class="btn-group">
+	&lt;div class="dd">
+		&lt;button class="dd-active">
+			&lt;span class="txt">One&lt;/span>
+			&lt;div class="transport">
+				&lt;div class="bottom">&lt;/div>
+			&lt;/div>
+		&lt;/button>
+		&lt;ul class="dd-list">
+			&lt;li class="dd-list-item">
+				&lt;input class="dd-input" type="radio" name="list" id="one" />
+				&lt;label class="dd-label" for="one">One&lt;/label>
+			&lt;/li>
+		&lt;/ul>
+	&lt;/div>
+	&lt;input class="grp-input" type="search" />
+	&lt;input class="grp-btn" type="submit" />
+	&lt;input class="grp-btn" type="reset" />
+&lt;/div></code></pre>
+</div>

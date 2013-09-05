@@ -1,0 +1,53 @@
+//
+	//PLUS
+//
+/**********
+	PAGINATION
+**********/
+
+.pagination {
+	.pag-list {
+		list-style-type: none;
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		float: left;
+		.pag-list-item {
+			display: inline-block;
+			float: left;
+			border-right: 1px solid #CCC;
+			padding: 0px 10px;
+			cursor: pointer;
+			color: #666;
+			&:nth-last-child(1) {
+				border-right: none;
+			}
+			&:hover {
+				background-color: #EFEFEF;
+			}
+			&.inactive {
+				cursor: default;
+				color: #999;
+				&:hover {
+					background-color: transparent;
+					color: #999;
+				}
+			}
+			&.active {
+				cursor: default;
+				color: #333;
+				background-color: #CCC;
+			}
+		}
+	}
+	.transport {
+		display: inline-block;
+		float: left;
+		cursor: pointer;
+		.left,
+		.right {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}

@@ -1,0 +1,62 @@
+//
+	//PLUS
+//
+/**********
+	TOGGLES
+**********/
+.toggle {
+	padding: 0;
+	list-style-type: none;
+	+ .toggle {
+		padding-top: 15px;
+	}
+	.toggle-content {
+		display: none;
+		.border-width(0, 1px, 1px, 1px);
+		.border-style;
+		.border-color;
+		.border-radius-br(3px);
+		.border-radius-bl(3px);
+		padding: 30px;
+		> *:last-child { // remove any extra margin on the last item for better parent padding
+			margin: 0;
+		}		
+	}
+	.toggle-tab {
+		.border;
+		.border-radius(3px);
+		padding: 12px 8px;
+		.gradient(#FAFAFA);
+		font-weight: bold;
+		cursor: pointer;
+		.icon {
+			.border-radius(3px);
+			.border;
+			display: inline-block;
+			margin-right: 10px;
+			background-color: #FFF;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			font-weight: bold;
+
+			&:before {
+				content: '+';
+				display: block;
+				vertical-align: center
+			}
+		}
+		&.active {
+			.icon {
+				&:before {
+					cursor: default;
+					content: '–';
+					line-height: 1.25rem;
+				}
+			}
+			+ .toggle-content {
+				display: inline-block;
+			}
+		}
+	}
+}

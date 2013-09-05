@@ -1,0 +1,61 @@
+//
+	//PLUS
+//
+/**********
+	TRANSPORT
+**********/
+.transport {
+	@border-width: 15px;
+	> .top,
+	> .right,
+	> .bottom,
+	> .left {
+		color: #CCC;
+		cursor: pointer;
+		width: 0;
+		height: 0;
+		text-align: center;
+
+		border-top: @border-width solid transparent;
+		border-right: @border-width solid transparent;
+		border-bottom: @border-width solid transparent;
+		border-left: @border-width solid transparent;
+		&:hover {
+			color: #999;
+		}
+	}
+	> .top {
+		border-bottom: @border-width solid #CCC;
+		border-top-width: 0;
+		margin-bottom: (@border-width / 2);
+		margin-top: -(@border-width / 2);
+	}
+	> .right {
+		border-left: @border-width solid #CCC;
+		border-right-width: 0;
+		margin-left: (@border-width / 2);
+		margin-right: -(@border-width / 2);
+	}
+	> .bottom {
+		border-top: @border-width solid #CCC;
+		border-bottom-width: 0;
+		margin-bottom: (@border-width / 2);
+		margin-top: -(@border-width / 2);
+	}
+	> .left {
+		border-right: @border-width solid #CCC;
+		border-left-width: 0;
+		margin-left: (@border-width / 2);
+		margin-right: -(@border-width / 2);
+	}
+
+	&.inactive {
+		> * {
+			color: #CCC;
+			cursor: default;
+			&:hover {
+				color: #CCC;
+			}
+		}
+	}
+}
