@@ -24,16 +24,6 @@ module.exports = function(grunt) {
 
 			]
 		},
-		less: {
-			compile: {
-				options: {
-					path: ["dna/, plus/, turbo/"]
-				},
-				files: {
-					"examples/dna.css": "dna/dna.less"
-				}
-			}
-		},
 		express: {
 			server: {
 				options: {
