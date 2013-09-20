@@ -44,6 +44,16 @@ module.exports = function(grunt) {
 				]
 			}
 		},
+		less: {
+			compile: {
+				options: {
+					path: ["dna/, plus/, turbo/"]
+				},
+				files: {
+					"examples/dna.css": "edna.less"
+				}
+			}
+		},
 		watch: {
 			css: {
 				files: ["dna/*.less", "plus/*.less", "turbo/*.less"],
