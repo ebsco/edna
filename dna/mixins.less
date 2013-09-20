@@ -4,9 +4,19 @@
 
 // CSS helpers
 
+// MAIN MIXINS
+.font-family {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.font-color {
+	color: @font-color;
+}
 
-.displayM() {
-	color: red;
+.base-font {
+	.font-family;
+	.font-color;
+	font-size: @font-size;
+	line-height: (@1em * 1.5);
 }
 
 // CLEAR 
