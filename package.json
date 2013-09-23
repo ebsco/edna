@@ -2,9 +2,6 @@
   "name": "DNA",
   "version": "0.1.0",
   "dependencies": {
-    "grunt": "~0.4.1"
-  },
-  "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-less": "git://github.com/gruntjs/grunt-contrib-less.git",
     "grunt-express": "~0.3.6",
@@ -15,6 +12,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://gitdev1.epnet.com:7990/scm/edna/dna.git"
+    "url": "http://as-gitmaster.epnet.com:7990/scm/buzz/edna.git"
   }
 }
