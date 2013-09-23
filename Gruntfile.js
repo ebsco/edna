@@ -28,8 +28,6 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					port: 8001
-					// port: 8001,
-					// bases: "examples"
 				}
 			}
 		},
@@ -44,9 +42,19 @@ module.exports = function(grunt) {
 				]
 			}
 		},
+		less: {
+			compile: {
+				options: {
+					path: ["dna/, plus/, turbo/"]
+				},
+				files: {
+					"edna.css": "edna.less"
+				}
+			}
+		},
 		watch: {
 			css: {
-				files: ["dna/*.less", "plus/*.less", "turbo/*.less"],
+				files: ["*.less", "dna/*.less", "plus/*.less", "turbo/*.less", "examples/*.html"],
 				tasks: ["less"],
 				options: {
 					livereload: true
@@ -79,7 +87,6 @@ module.exports = function(grunt) {
 	grunt.registerTask("server", [
 		"express",
 		"watch"
-		// "express-keepalive"
 	]);
 	
 };

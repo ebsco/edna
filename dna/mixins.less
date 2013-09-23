@@ -4,9 +4,25 @@
 
 // CSS helpers
 
+// MAIN MIXINS
+.font-family {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.code-font-family {
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+.monospace-font-family {
+	font-family: monospace;
+}
+.font-color {
+	color: @font-color;
+}
 
-.displayM() {
-	color: red;
+.base-font {
+	.font-family;
+	.font-color;
+	font-size: @font-size;
+	line-height: (@1em * 1.5);
 }
 
 // CLEAR 
@@ -144,13 +160,13 @@
 	border-style: @style;	
 }
 .border-color(@color: #CCC) {
-	border-color: @color;
+	border-color: @colorP1;
 }
 //.border(@width: 1px, @style: solid, @color: #CCC) {
 .border(@widthT: 1px, @widthR: 1px, @widthB: 1px, @widthL: 1px, @style: solid, @color: #CCC) {
 	border-width: @widthT @widthR @widthB @widthL;
 	border-style: @style;
-	border-color: @color;
+	border-color: @colorP1;
 }
 
 //----- BORDER RADIUS ----------------------------------------//
