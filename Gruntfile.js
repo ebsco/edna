@@ -48,7 +48,7 @@ module.exports = function(grunt) {
 					path: ["dna/, plus/, turbo/"]
 				},
 				files: {
-					"edna.css": "theme-base.less"
+					"edna.css": "edna.less"
 				}
 			}
 		},
