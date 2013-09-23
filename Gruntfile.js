@@ -50,13 +50,13 @@ module.exports = function(grunt) {
 					path: ["dna/, plus/, turbo/"]
 				},
 				files: {
-					"examples/dna.css": "edna.less"
+					"edna.css": "theme-base.less"
 				}
 			}
 		},
 		watch: {
 			css: {
-				files: ["dna/*.less", "plus/*.less", "turbo/*.less"],
+				files: ["*.less", "dna/*.less", "plus/*.less", "turbo/*.less", "examples/*.html"],
 				tasks: ["less"],
 				options: {
 					livereload: true
