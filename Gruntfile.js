@@ -28,8 +28,6 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					port: 8001
-					// port: 8001,
-					// bases: "examples"
 				}
 			}
 		},
@@ -89,7 +87,6 @@ module.exports = function(grunt) {
 	grunt.registerTask("server", [
 		"express",
 		"watch"
-		// "express-keepalive"
 	]);
 	
 };
