@@ -7,57 +7,57 @@
 
 // HEADING LEVELS
 h1, h2, h3, h4, h5, h6 {
-	margin: .75em 0 .5em;
+	margin: (@em * .75) 0 (@em * .5);
 	line-height: 1.25;
 	font-weight: normal;
 }
 h1 {
-	font-size: (@1em * 2.75);
+	font-size: (@em * 2.75);
 	line-height: 1;
-	margin: 0 0 (@1em * .636);
+	margin: 0 0 (@em * .636);
 }
 h2 {
-	font-size: (@1em*2.25);
+	font-size: (@em * 2.25);
 }
 h3 {
-	font-size: (@1em * 1.625);
+	font-size: (@em * 1.625);
 }
 h4 {
-	font-size: (@1em * 1.375);
+	font-size: (@em * 1.375);
 	font-style: italic;
 }
 h5 {
-	font-size: (@1em * 1.125);
+	font-size: (@em * 1.125);
 	font-weight: bold;
 }
 h6 {
-	font-size: @1em;
+	font-size: @em;
 	font-weight: bold;
 	font-style: italic;
 }
 // PARAGRAPH STYLES
 p {
-	margin: 0 0 @1em;
+	margin: 0 0 @em;
 	&.lead {
-		font-size: (@1em * 1.375);
-		margin-bottom: (@1em * .725);
+		font-size: (@em * 1.375);
+		margin-bottom: (@em * .725);
 	}
 }
 // LINK STYLES
 a {
-	color: #08C;
+	color: @link-color;
 	&:visited {
-		color: desaturate(#08C, 75%);
+		color: desaturate(@link-color, (@pct * .75));
 	}
 	&:hover,
 	&:focus {
-		color: darken(#08C, 10%);
+		color: darken(@link-color, (@pct * .1));
 	}
 	&:focus {
 		text-decoration: underline;
 	}
 	&:active {
-		color: #FF530D;
+		color: @link-color-active;
 	}
 }
 a:active {
@@ -73,22 +73,22 @@ em {
 }
 // SUP
 sup {
-  top: -(@1em * .5);
+  top: -(@em * .5);
 }
 // SUB
 sub {
-  bottom: -(@1em * .25);
+  bottom: -(@em * .25);
 }
 // BLOCKQUOTES
 blockquote {
 	margin-left: 1.5rem;
-	border-left: (@1em * .25) solid #CCC;
+	border-left: (@em * .25) solid @colorS3;
 	padding-left: .5rem;
-	margin-bottom: @1em;
+	margin-bottom: @em;
 }
 // PRE
 pre {
-	margin: 0 0 @1em;
+	margin: 0 0 @em;
 	.monospace-font-family;
 	font-size: (@font-size * 1.4);
 }

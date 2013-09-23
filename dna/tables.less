@@ -8,7 +8,7 @@
 table {
 	border-collapse: separate;
 	border-spacing: 0;
-	border: 1px solid @colorP2;
+	border: (@px * .1) solid @colorP2;
 	border-radius: @radius;
 }
 thead tr {
@@ -17,13 +17,13 @@ thead tr {
 }
 th {
 	font-weight: bold;
-	padding: 10px 20px;
+	padding: @px (@px * 2);
 	text-align: left;
-	border-left: 1px solid @colorP2;
+	border-left: (@px * .1) solid @colorP2;
 }
 td {
-	padding: 10px 20px;
-	border-left: 1px solid @colorP2;
+	padding: @px (@px * 2);
+	border-left: (@px * .1) solid @colorP2;
 }
 th:first-child,
 td:first-child {

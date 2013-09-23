@@ -4,26 +4,6 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		bootstrap: {
-			dest: 'examples',
-			js: [
-				"bootstrap-dropdown.js",
-				// "bootstrap-transition.js",
-				// "bootstrap-modal.js",
-				// "bootstrap-dropdown.js",
-				// "bootstrap-scrollspy.js",
-				// "bootstrap-tab.js",
-				// "bootstrap-tooltip.js",
-				// "bootstrap-popover.js",
-				// "bootstrap-affix.js",
-				// "bootstrap-alert.js",
-				// "bootstrap-button.js",
-				// "bootstrap-collapse.js",
-				"bootstrap-carousel.js"
-				// "bootstrap-typeahead.js"
-
-			]
-		},
 		express: {
 			server: {
 				options: {
@@ -72,7 +52,6 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.loadNpmTasks('grunt-bootstrap');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks('grunt-express');
@@ -80,8 +59,7 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask("compile", [
 		"md2html",
-		"less",
-		"bootstrap"
+		"less"
 	]);
 
 	grunt.registerTask("server", [

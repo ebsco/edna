@@ -22,7 +22,7 @@
 	.font-family;
 	.font-color;
 	font-size: @font-size;
-	line-height: (@1em * 1.5);
+	line-height: (@em * 1.5);
 }
 
 // CLEAR 
@@ -55,18 +55,18 @@
 // HIDDEN (accessible by screen readers)
 .hidden() {
 	position: absolute !important;
-	height: 1px; width: 1px; 
+	height: (@px * .1); width: (@px * .1); 
 	overflow: hidden;
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-	clip: rect(1px, 1px, 1px, 1px);
+	clip: rect((@px * .1) (@px * .1) (@px * .1) (@px * .1)); /* IE6, IE7 */
+	clip: rect((@px * .1), (@px * .1), (@px * .1), (@px * .1));
 }
 
 // MIXINS
 .rounded() {
-	border-radius: 3px;
+	border-radius: (@px * .3);
 }
 
-.transport-top(@w: 5px) {
+.transport-top(@w: (@px * .5)) {
 	border-right-width: @w;
 	border-bottom-width: @w;
 	border-left-width: @w;
@@ -74,7 +74,7 @@
 	margin-bottom: (@w / 2);
 	margin-top: -(@w / 2);
 }
-.transport-right(@w: 5px) {
+.transport-right(@w: (@px * .5)) {
 	border-top-width: @w;
 	border-bottom-width: @w;
 	border-left-width: @w;
@@ -82,7 +82,7 @@
 	margin-left: (@w / 2);
 	margin-right: -(@w / 2);
 }
-.transport-bottom(@w: 5px) {
+.transport-bottom(@w: (@px * .5)) {
 	border-top-width: @w;
 	border-right-width: @w;
 	border-left-width: @w;
@@ -90,7 +90,7 @@
 	margin-bottom: (@w / 2);
 	margin-top: -(@w / 2);
 }
-.transport-left(@w: 5px) {
+.transport-left(@w: (@px * .5)) {
 	border-top-width: @w;
 	border-right-width: @w;
 	border-bottom-width: @w;
@@ -147,23 +147,23 @@
 .font-family() {
 	font-family: Helvetica, Arial, sans-serif;
 }
-.font-size(@fs: .625em) {
+.font-size(@fs: (@em * .625) ) {
 	font-size: @fs;
 }
 
 //----- BORDERS ----------------------------------------//
 
-.border-width(@widthT: 1px, @widthR: 1px, @widthB: 1px, @widthL: 1px) {
+.border-width(@widthT: (@px * .1), @widthR: (@px * .1), @widthB: (@px * .1), @widthL: (@px * .1)) {
 	border-width: @widthT @widthR @widthB @widthL;
 }
 .border-style(@style: solid) {
 	border-style: @style;	
 }
-.border-color(@color: #CCC) {
+.border-color(@color: @colorS3) {
 	border-color: @colorP1;
 }
-//.border(@width: 1px, @style: solid, @color: #CCC) {
-.border(@widthT: 1px, @widthR: 1px, @widthB: 1px, @widthL: 1px, @style: solid, @color: #CCC) {
+//.border(@width: (@px * .1), @style: solid, @color: @colorS3) {
+.border(@widthT: (@px * .1), @widthR: (@px * .1), @widthB: (@px * .1), @widthL: (@px * .1), @style: solid, @color: @colorS3) {
 	border-width: @widthT @widthR @widthB @widthL;
 	border-style: @style;
 	border-color: @colorP1;
@@ -196,42 +196,42 @@
 //----- LIGHTEN & DARKEN ----------------------------------------//
 
 // TEXT
-.lightTxt1(@color) { color: lighten(@color, 10%); }
-.darkTxt1(@color) { color: darken(@color, 10%); }
-.lightTxt2(@color) { color: lighten(@color, 20%); }
-.darkTxt2(@color) { color: darken(@color, 20%); }
-.lightTxt3(@color) { color: lighten(@color, 30%); }
-.darkTxt3(@color) { color: darken(@color, 30%); }
+.lightTxt1(@color) { color: lighten(@color, (@pct * .1) ); }
+.darkTxt1(@color) { color: darken(@color, (@pct * .1) ); }
+.lightTxt2(@color) { color: lighten(@color, (@pct * .2) ); }
+.darkTxt2(@color) { color: darken(@color, (@pct * .2) ); }
+.lightTxt3(@color) { color: lighten(@color, (@pct * .2) ); }
+.darkTxt3(@color) { color: darken(@color, (@pct * .2) ); }
 
 // BACKGROUND
-.lightBg1(@color) { background-color: lighten(@color, 10%); }
-.darkBg1(@color) { background-color: darken(@color, 10%); }
-.lightBg2(@color) { background-color: lighten(@color, 20%); }
-.darkBg2(@color) { background-color: darken(@color, 20%); }
-.lightBg3(@color) { background-color: lighten(@color, 30%); }
-.darkBg3(@color) { background-color: darken(@color, 30%); }
+.lightBg1(@color) { background-color: lighten(@color, (@pct * .1) ); }
+.darkBg1(@color) { background-color: darken(@color, (@pct * .1) ); }
+.lightBg2(@color) { background-color: lighten(@color, (@pct * .2) ); }
+.darkBg2(@color) { background-color: darken(@color, (@pct * .2) ); }
+.lightBg3(@color) { background-color: lighten(@color, (@pct * .2) ); }
+.darkBg3(@color) { background-color: darken(@color, (@pct * .2) ); }
 
 // BORDER
-.lightBorder1(@color) { border-color: lighten(@color, 10%); }
-.darkBorder1(@color) { border-color: darken(@color, 10%); }
-.lightBorder2(@color) { border-color: lighten(@color, 20%); }
-.darkBorder2(@color) { border-color: darken(@color, 20%); }
-.lightBorder3(@color) { border-color: lighten(@color, 30%); }
-.darkBorder3(@color) { border-color: darken(@color, 30%); }
+.lightBorder1(@color) { border-color: lighten(@color, (@pct * .1) ); }
+.darkBorder1(@color) { border-color: darken(@color, (@pct * .1) ); }
+.lightBorder2(@color) { border-color: lighten(@color, (@pct * .2) ); }
+.darkBorder2(@color) { border-color: darken(@color, (@pct * .2) ); }
+.lightBorder3(@color) { border-color: lighten(@color, (@pct * .2) ); }
+.darkBorder3(@color) { border-color: darken(@color, (@pct * .2) ); }
 
 
 //----- GRADIENTS ----------------------------------------//
 
 .gradient(@stop: #EFEFEF) {
-	@start: lighten(@stop, 10%);
+	@start: lighten(@stop, (@pct * .1) );
 
 	background: @start;
-	background: -moz-linear-gradient(top,  @start 0%, @stop 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(100%,@stop));
-	background: -webkit-linear-gradient(top,  @start 0%,@stop 100%);
-	background: -o-linear-gradient(top,  @start 0%,@stop 100%);
-	background: -ms-linear-gradient(top,  @start 0%,@stop 100%);
-	background: linear-gradient(to bottom,  @start 0%,@stop 100%);
+	background: -moz-linear-gradient(top,  @start 0%, @stop @pct);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(@pct,@stop));
+	background: -webkit-linear-gradient(top,  @start 0%,@stop @pct);
+	background: -o-linear-gradient(top,  @start 0%,@stop @pct);
+	background: -ms-linear-gradient(top,  @start 0%,@stop @pct);
+	background: linear-gradient(to bottom,  @start 0%,@stop @pct);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@start', endColorstr='@stop',GradientType=0 );
 }
 
