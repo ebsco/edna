@@ -6,8 +6,8 @@
 **********/
 .dd {
 	position: relative;
-	background-color: @lt-gray2;
-	border-radius: @radius-sm;
+	background-color: @colorS2;
+	border-radius: @radius;
 	display: inline-block;
 	line-height: normal;
 	margin-bottom: 1em;
@@ -18,7 +18,7 @@
 		position: absolute;
 		top: 28px;
 		left: -1px;
-		border: solid 1px @med-gray2;
+		border: solid 1px @colorP2;
 		background-color: #FFF;
 		border-radius: 3px;
 		list-style-type: none;
@@ -32,23 +32,23 @@
 		cursor: pointer;
 		white-space: nowrap;
 		&:hover {
-			background-color: @lt-gray2;
-			color: darken(@color, 10%);
+			background-color: @colorS2;
+			color: darken(@font-color, 10%);
 		}
 	}
 	.dd-input {
 		position: absolute;
 		left: -9999px;
 		&:checked + .dd-label {
-			background-color: darken(@lt-gray2, 10%);
-			color: @color;
+			background-color: darken(@colorS2, 10%);
+			color: @font-color;
 			&:hover {
-				background-color: @lt-gray2;
+				background-color: @colorS2;
 			}
 		}
 	}
 	.dd-active {
-		color: @color;
+		color: @font-color;
 		cursor: pointer;
 		text-decoration: none;
 		cursor: pointer;
@@ -79,7 +79,7 @@
 		&.last {
 			.dd-active {
 				border-left-width: 0;
-				border-radius: 0 @radius-sm @radius-sm 0;
+				border-radius: 0 @radius @radius 0;
 			}
 		}
 
@@ -88,7 +88,7 @@
 			float: left;
 			.dd-active {
 				border-left-width: 1px;
-				border-radius: @radius-sm 0 0 @radius-sm;
+				border-radius: @radius 0 0 @radius;
 			}
 		}	
 	}

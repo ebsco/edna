@@ -50,7 +50,11 @@ module.exports = function(grunt) {
 					path: ["dna/, plus/, turbo/"]
 				},
 				files: {
+<<<<<<< HEAD
 					"edna.css": "edna.less"
+=======
+					"examples/dna.css": "edna.less"
+>>>>>>> buzz/variables
 				}
 			}
 		},
