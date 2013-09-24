@@ -1,31 +1,27 @@
 //
-	//EDNA
+	// EDNA
 //
 /**********
 	INPUTS
 **********/
-hr 
-{
-	margin: 1em 0;
-}
 
 // TEXT INPUTS
 input[type=text],
 input[type=search],
 textarea {
-	padding: .25em .5em;
+	padding: (@em * .25) (@em * .5);
 	color: @font-color;
-	border: solid 1px @colorP2;
+	border: solid (@px * .1) @colorP2;
 	border-radius: @radius;	
 }
 
 // RADIO / CHECKBOXES
 input[type=radio],
 input[type=checkbox] {
-	margin-right: 5px;
+	margin-right: (@px * .5);
 }
 label {
-	padding-right: 1em;
+	padding-right: @em;
 }
 
 // RADIO / CHECKBOXES
@@ -35,5 +31,5 @@ label {
 }
 .cb-inline li {
 	display: inline;
-	padding: 0 0 1em;
+	padding: 0 0 @em;
 }

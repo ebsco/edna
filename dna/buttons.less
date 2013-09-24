@@ -1,5 +1,5 @@
 //
-	//EDNA
+	// EDNA
 //
 /**********
 	BUTTONS
@@ -9,10 +9,10 @@ button,
 input[type=submit],
 input[type=reset],
 .btn {
-	padding: .25em .5em;
+	padding: (@em * .25) (@em * .5);
 	color: @colorP1;
 	background-color: @colorS2;
-	border: solid 1px @colorP4;
+	border: solid (@px / 10) @colorP4;
 	border-radius: @radius;
 	cursor: pointer;
 }
@@ -34,7 +34,7 @@ input[type=reset][disabled] {
 
 // BUTTON GROUPS
 .btn-group {
-	margin-bottom: 1em;
+	margin-bottom: @em;
 	.clearfix;
 	.grp-btn,
 	.grp-input,
@@ -53,7 +53,7 @@ input[type=reset][disabled] {
 	:first-child,
 	.first //IE support 
 	{
-		border-left-width: 1px;
+		border-left-width: (@px / 10);
 		border-radius: @radius 0 0 @radius;
 	}	
 }

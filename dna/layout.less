@@ -1,5 +1,5 @@
 //
-	//EDNA
+	// EDNA
 //
 /**********
 	LAYOUT
@@ -13,17 +13,17 @@
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
 	float: left;
-	width: 100%;
+	width: @pct;
 }
 // Set default styles for all P1s
 .l1, .l2 {
-	max-width: 960px;
+	max-width: (@px * 96);
 }
 .l1 {
 	.clearfix;
 	&.p1 {
 		> .col {
-			width: 100%;
+			width: @pct;
 		}
 	}
 }
@@ -31,7 +31,7 @@
 	.clearfix;
 	&.p1 {
 		> .col {
-			width: 50%;
+			width: (@pct * .5);
 		}
 	}
 }
@@ -39,7 +39,7 @@
 	.clearfix;
 	&.p1 {
 		> .col {
-			width: 33%;
+			width: (@pct * .33);
 		}
 	}
 }
@@ -47,7 +47,7 @@
 	.clearfix;
 	&.p1 {
 		> .col {
-			width: 25%;
+			width: (@pct * .25);
 		}
 	}
 }
@@ -56,50 +56,50 @@
 	.l2 {
 		&.p2 {
 			> .col:nth-child(1) {
-				width: 40%;
+				width: (@pct * .4);
 			}
 			> .col:nth-child(2) {
-				width: 60%;
+				width: (@pct * .6);
 			}
 		}
 		&.p3 {
 			> .col:nth-child(1) {
-				width: 30%;
+				width: (@pct * .3);
 			}
 			> .col:nth-child(2) {
-				width: 70%;
+				width: (@pct * .7);
 			}
 		}
 		&.p4 {
 			> .col:nth-child(1) {
-				width: 20%;
+				width: (@pct * .2);
 			}
 			> .col:nth-child(2) {
-				width: 80%;
+				width: (@pct * .8);
 			}
 		}
 	}
 	.l3 {
 		&.p2 {
 			> .col:nth-child(1) {
-				width: 20%;
+				width: (@pct * .2);
 			}
 			> .col:nth-child(2) {
-				width: 20%;
+				width: (@pct * .2);
 			}
 			> .col:nth-child(3) {
-				width: 60%;
+				width: (@pct * .6);
 			}
 		}
 		&.p3 {
 			> .col:nth-child(1) {
-				width: 20%;
+				width: (@pct * .2);
 			}
 			> .col:nth-child(2) {
-				width: 60%;
+				width: (@pct * .6);
 			}
 			> .col:nth-child(3) {
-				width: 20%;
+				width: (@pct * .2);
 			}
 		}
 	}
@@ -109,50 +109,50 @@
 	.l2 {
 		&.p2 {
 			> .col:nth-child(1) {
-				width: 60%;
+				width: (@pct * .6);
 			}
 			> .col:nth-child(2) {
-				width: 40%;
+				width: (@pct * .4);
 			}
 		}
 		&.p3 {
 			> .col:nth-child(1) {
-				width: 70%;
+				width: (@pct * .7);
 			}
 			> .col:nth-child(2) {
-				width: 30%;
+				width: (@pct * .3);
 			}
 		}
 		&.p4 {
 			> .col:nth-child(1) {
-				width: 80%;
+				width: (@pct * .8);
 			}
 			> .col:nth-child(2) {
-				width: 20%;
+				width: (@pct * .2);
 			}
 		}
 	}
 	.l3 {
 		&.p2 {
 			> .col:nth-child(1) {
-				width: 60%;
+				width: (@pct * .6);
 			}
 			> .col:nth-child(2) {
-				width: 20%;
+				width: (@pct * .2);
 			}
 			> .col:nth-child(3) {
-				width: 20%;
+				width: (@pct * .2);
 			}
 		}
 		&.p3 { // yes, this pattern is the same as .alpha .l3.p3, don't worry about it
 			> .col:nth-child(1) {
-				width: 20%;
+				width: (@pct * .2);
 			}
 			> .col:nth-child(2) {
-				width: 60%;
+				width: (@pct * .6);
 			}
 			> .col:nth-child(3) {
-				width: 20%;
+				width: (@pct * .2);
 			}
 		}
 	}

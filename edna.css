@@ -1,6 +1,6 @@
 /**********/
 /**********
-	EDNA
+	NORMALIZE
 **********/
 /**********/
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
@@ -359,24 +359,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.font-family {
-  font-family: Helvetica, Arial, sans-serif;
-}
-.code-font-family {
-  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-}
-.monospace-font-family {
-  font-family: monospace;
-}
-.font-color {
-  color: #333333;
-}
-.base-font {
-  font-family: Helvetica, Arial, sans-serif;
-  color: #333333;
-  font-size: 0.938em;
-  line-height: 1.5em;
-}
+/**********/
+/**********
+	EDNA
+**********/
+/**********/
 /**********
 	LAYOUT
 **********/
@@ -538,7 +525,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: .75em 0 .5em;
+  margin: 0.75em 0 0.5em;
   line-height: 1.25;
   font-weight: normal;
 }
@@ -574,7 +561,7 @@ p.lead {
   margin-bottom: 0.725em;
 }
 a {
-  color: #08C;
+  color: #0088cc;
 }
 a:visited {
   color: #4d6e80;
@@ -587,7 +574,7 @@ a:focus {
   text-decoration: underline;
 }
 a:active {
-  color: #FF530D;
+  color: #ff530d;
 }
 strong {
   font-weight: bold;
@@ -603,7 +590,7 @@ sub {
 }
 blockquote {
   margin-left: 1.5rem;
-  border-left: 0.25em solid #cccccc;
+  border-left: 0.25em solid #d6d6d6;
   padding-left: .5rem;
   margin-bottom: 1em;
 }
@@ -620,13 +607,10 @@ code {
 /**********
 	INPUTS
 **********/
-hr {
-  margin: 1em 0;
-}
 input[type=text],
 input[type=search],
 textarea {
-  padding: .25em .5em;
+  padding: 0.25em 0.5em;
   color: #333333;
   border: solid 1px #474747;
   border-radius: 3px;
@@ -672,7 +656,7 @@ label {
 }
 .dd .dd-label {
   display: block;
-  padding: .25em .5em;
+  padding: 0.25em 0.5em;
   cursor: pointer;
   white-space: nowrap;
 }
@@ -695,7 +679,7 @@ label {
   color: #333333;
   text-decoration: none;
   cursor: pointer;
-  padding: .25em .5em;
+  padding: 0.25em 0.5em;
   display: inline-block;
 }
 .dd .dd-active.open ~ .dd-list {
