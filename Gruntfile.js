@@ -47,17 +47,6 @@ module.exports = function(grunt) {
 					livereload: true
 				}
 			}
-		},
-		edna_theme_compile: {
-			compile: {
-				options: {
-					test: true
-				},
-				files: {
-					src: "_theme.less",
-					dest: "theme.less"
-				}
-			}
 		}
 
 
@@ -67,7 +56,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-md2html');
-	grunt.loadTasks('tasks');
 
 	grunt.registerTask("compile", [
 		"md2html",
