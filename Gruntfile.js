@@ -56,7 +56,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-md2html');
-	
+
 	grunt.registerTask("compile", [
 		"md2html",
 		"less"
@@ -66,5 +66,5 @@ module.exports = function(grunt) {
 		"express",
 		"watch"
 	]);
-	
+
 };

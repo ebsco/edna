@@ -7,8 +7,10 @@
     "grunt-express": "~0.3.6",
     "express": "~3.3.1",
     "grunt-md2html": "~0.1.4",
-    "grunt-contrib-watch": "~0.5.1"
+    "grunt-express": "~0.3.6",
+    "express": "~3.3.1"
   },
+  "main": "Gruntfile.js",
   "repository": {
     "type": "git",
     "url": "http://as-gitmaster.epnet.com:7990/scm/buzz/edna.git"
