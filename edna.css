@@ -1,6 +1,6 @@
 /**********/
 /**********
-	EDNA
+	NORMALIZE
 **********/
 /**********/
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
@@ -359,134 +359,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.font-family {
-  font-family: Helvetica, Arial, sans-serif;
-}
-.code-font-family {
-  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-}
-.monospace-font-family {
-  font-family: monospace;
-}
-.font-color {
-  color: #333333;
-}
-.base-font {
-  font-family: Helvetica, Arial, sans-serif;
-  color: #333333;
-  font-size: 0.938em;
-  line-height: 1.5em;
-}
-html,
-body {
-  padding: 1em;
-  background-color: #EFEFEF;
-}
-.rtl,
-.rtl * {
-  direction: rtl;
-  unicode-bidi: bidi-override;
-}
-h1 a {
-  text-decoration: none;
-}
-.nav-list {
-  padding: 0 0 1em;
-  margin: 0;
-  list-style: none;
-}
-.nav-item > .nav-list {
-  padding: 0;
-}
-.nav-list .nav-heading {
-  margin: 0 0 0 .5em;
-  color: #666;
-}
-.nav-list .nav-list {
-  margin: 0 0 0 1em;
-}
-.nav-heading,
-.nav-item {
-  padding: .25em 5px;
-  margin: 0;
-}
-.nav-heading {
-  font-size: 1em;
-  font-weight: bold;
-}
-.nav-item {
-  padding: 0 5px;
-  color: #aaa;
-  cursor: pointer;
-}
-.nav-item:hover {
-  background-color: #efefef;
-}
-.nav-item:active {
-  color: #333;
-}
-.soon {
-  padding: .25em 5px;
-  color: #999;
-}
-.soon:hover {
-  background-color: transparent;
-  cursor: default;
-}
-.layouts .header,
-.layouts .col,
-.layouts .footer {
-  box-sizing: border-box;
-  text-align: center;
-  font-weight: bold;
-  background-color: #FFAB5C;
-  border: 1px solid #FFF;
-  padding: .25em;
-}
-.layouts .header > p,
-.layouts .col > p,
-.layouts .footer > p {
-  margin: 0;
-}
-.layouts .col:nth-child(1) {
-  background-color: #EE5500;
-}
-.layouts .col:nth-child(2) {
-  background-color: #EE5500;
-}
-.layouts .col:nth-child(3) {
-  background-color: #EE5500;
-}
-.layouts .col:last-child {
-  border-right: none;
-}
-.layouts .dis > pre {
-  margin-top: 15px;
-}
-/* DISPLAY STYLES */
-.dis {
-  background-color: #FFF;
-  border: 1px solid #E0E0E0;
-  padding: 10px;
-  border-radius: 5px;
-}
-.dis + .dis,
-.dis + p {
-  margin-top: 15px;
-}
-.dis .dis-code {
-  background-color: #E0E0E0;
-  display: block;
-  margin: 0 -10px -10px;
-  padding: 10px;
-  border-top: 1px solid #FFF;
-  box-shadow: 0 -1px 0px #cccccc;
-  font-size: .8em;
-}
-.dis > pre {
-  margin: 0;
-  font-size: 1em;
-}
+/**********/
+/**********
+	EDNA
+**********/
+/**********/
 /**********
 	LAYOUT
 **********/
@@ -730,9 +607,6 @@ code {
 /**********
 	INPUTS
 **********/
-hr {
-  margin: 1em 0;
-}
 input[type=text],
 input[type=search],
 textarea {
