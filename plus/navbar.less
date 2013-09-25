@@ -9,141 +9,35 @@
 
 	.bar {
 		position: relative;
-		// font-size: 1.7rem;
 	}
 
 	.nav {
+		padding: 0;
+		margin: 0;
 		display: inline-block;
 		.nav-item {
 			display: inline-block;
 			cursor: pointer;
+			padding-right: @px;
 		}
 	}
 
 	.user-nav {
 		display: inline-block;
-		position: absolute;
-		right: 0;
-		top: 0;
+		padding: 0;
+		margin: 0;
 		.user-nav-item {
-			width: 30px;
-			height: 30px;
+			padding-right: @px;
+			width: (@px * 3);
+			height: (@px * 3);
 			display: inline-block;
-			font-size: 0;
-			padding: 13px 5px;
 			cursor: pointer;
 			> .icon {
 				display: inline-block;
-				width: 30px;
-				height: 30px;
-				overflow: hidden;					
-			}
-			&:nth-child(1) {
-				> .icon {
-					background-position: 0 0;						
-				}
-			}
-			&:nth-child(2) {
-				> .icon {
-					background-position: 0 -30px;
-				}
-			}
-			&:nth-child(3) {
-				> .icon {
-					background-position: 0 -60px;
-				}
-			}
-			&:nth-child(4) {
-				padding-right: 15px;
-				padding-left: 15px;
-				vertical-align: top;
-				> .icon {
-					background-position: 0 -90px;
-					font-size: 1.5rem;
-					text-align: center;
-					line-height: 3rem;
-				}
+				width: @pct;
+				height: @pct;
+				overflow: hidden;	
 			}
 		}
 	}
-
-	// CONFIGURATION 1
-	&.conA {
-		// overflow: hidden;
-		.bar {
-			background-color: @colorP1;
-			color: @colorS1;
-		}
-		.nav {
-			margin:  0 20px 0 0;
-			.nav-item {
-				padding: 15px 10px;
-				> a {
-					color: @colorS1;
-				}
-				&:hover {
-					background-color: darken(@colorP1, 20%);
-				}
-				+ .nav-item {
-					//margin-left: 25px;
-				}
-			}
-		}
-		.user-nav-item {
-			background-color: #ECDF4A;
-			> .icon {
-				&:after {
-					content: '\2601';
-					display: inline-block;
-					height: 100%;
-					width: 100%;
-					color: white;
-					box-sizing: border-box;
-					margin: 0 10px 0 -432;
-					font-size: 2rem;
-					line-height: 2rem;
-					margin: 0 0 0 -1px;
-  				}
-			}
-		}
-	}
-	// END CONFIGURATION 1
-
-
-	// CONFIGURATION 2
-	&.conB {
-		.bar {
-			.border;
-			.border-radius(3px);
-		}
-		.nav {
-			margin:  0 20px 0 0;
-			.nav-item {
-				padding: 15px 10px;
-				&:last-child:after {
-					content: '\25BE';
-					display: inline-block;
-					font-size: 1.2rem;
-					margin-left: 5px;
-				}				
-			}
-		}
-		.user-nav-item {
-			> .icon {
-				background: transparent url('image/user-nav-light.png') no-repeat 0 0;
-			}
-			&:nth-child(4) {
-				color: @colorS1;
-			}
-		}
-	}
-	// END CONFIGURATION 2
-
-
-	// CONFIGURATION 3
-	&.conC {
-
-	}
-	// END CONFIGURATION 2
-
 }

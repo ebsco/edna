@@ -1,0 +1,23 @@
+.searchbox {
+	position: relative;
+
+	.searchbox-input {
+
+	}
+
+	.searchbox-reset {
+		color: @colorP3;
+		border: none;
+		background: none;
+		margin-left: -(@px * 2.5);
+		width: (@px * 2);
+		cursor: pointer;
+		text-align: center;
+		&:hover {
+			color: darken(@colorP3, ( @pct * .2 ));
+		}
+	}
+	.searchbox-extras {
+		display: inline-block;
+	}	
+}
