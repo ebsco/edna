@@ -12,9 +12,18 @@ input[type=reset],
 	padding: (@em * .25) (@em * .5);
 	color: @colorP1;
 	background-color: @colorS2;
-	border: solid (@px / 10) @colorP4;
+	border: solid (@px * .1) @colorS4;
 	border-radius: @radius;
 	cursor: pointer;
+	+ button,
+	+ input[type=submit],
+	+ input[type=reset],
+	+ .btn {
+		margin-left: @px;
+	}
+	&:hover {
+		background-color: darken(@colorS2, 10%);
+	}
 }
 
 // STATES
