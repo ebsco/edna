@@ -12,36 +12,36 @@
 	}
 	.tab-list,
 	.tab-content {
-		margin: 0;
 		padding: 0;
 		list-style-type: none;
 	}
 	.tab-list {
 		.tab-list-item {
-			background-color: #FFF;
-			display: inline;
 			float: left;
-			border-width: 1px 1px 0 1px;
+			border-width: (@px * .1) (@px * .1) 0 (@px * .1);
 			border-style: solid;
-			border-color: #CCC;
-			padding: 10px 20px;
-			margin-right: -1px;
-			margin-bottom: -1px;
+			border-color: @colorS3;
+			padding: @px (@px * 2);
+			margin-right: -(@px * .1);
+			margin-bottom: -(@px * .1);
 			position: relative;
 			z-index: 30;
-			.gradient(#D0D0D0);
+			background-color: @colorS2;
 			cursor: pointer;
+			&:hover {
+				background-color: darken(@colorS2, (@pct * .2));
+			}
 			&:first-child {
-				.border-radius-tl(3px);
+				.border-radius-tl((@px * .3));
 			}
 			&.active {
 				cursor: default;
 				cursor: default;
-				border-bottom: 1px solid #FFF;
-				.gradient(#FFF);
-			}
-			&:hover {
-				.gradient(#C0C0C0);
+				border-bottom: (@px * .1) solid @colorS1;
+				background-color: @colorS1;
+				&:hover {
+					background-color: @colorS1;
+				}
 			}
 		}
 	}
@@ -49,17 +49,17 @@
 		.tab-content-item {
 			.border-radius-tl(0);
 			.border-radius-tr(0);
-			.border-radius-br(3px);
-			.border-radius-bl(3px);
-			width: 100%;
-			border: 1px solid #CCC;
-			padding: 10px 20px;
+			.border-radius-br((@px * .3));
+			.border-radius-bl((@px * .3));
+			width: @pct;
+			border: (@px * .1) solid @colorS3;
+			padding: @px (@px * 2);
 			display: none;
 			> *:last-child { // remove any extra margin on the last item for better parent padding
 				margin: 0;
 			}		
 			&.active {
-				background-color: #FFF;
+				background-color: @colorS1;
 				display: inline-block;
 				position: relative;
 				z-index: 25;				

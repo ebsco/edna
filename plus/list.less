@@ -1,3 +1,6 @@
+// DONT EDIT THIS IMPORT //
+ 	@import "../dna/list.less";
+// YOU CAN EDIT BELOW HERE //
 //
 	//PLUS
 //
@@ -6,51 +9,52 @@
 **********/
 .list {
 	list-style-type:  none;
-	margin:  0;
 	padding:  0;
 	> .list {
-		margin-left:  15px;
+		margin-left:  (@px * 1.5);
 	}
 	.list-item {
+		margin-bottom: (@px * .3);
 		a {
 			text-decoration: none;
 		}
 		&:before {
 			display: inline-block;
 			content: '\25FC';
-			width: 5px;
-			height: 10px;
-			padding-right: 10px;
-			color: #CCC;
-			margin-bottom: 3px;
-			position: relative;
-			font-size: 10px;
+			width: (@px * .5);
+			padding-right: @px;
+			color: @colorS4;
+			font-size: @px;
+		}
+		.before { // local mixin
+			font-size: (@px * 1.6);
+			color: @colorS4;
+			height: (@px * 1.4);
 		}
 		&.expand {
 			&:before {
 				content: '\229E';
-				font-size: 16px;
-				color: #666;
-				height: 14px;
+				.before;
 			}
 		}
 		&.collapse {
 			&:before {
 				content: '\229F';
-				font-size: 16px;
-				color: #666;
-				height: 14px;
+				.before;
 			}
 		}
 	}
 	.more {
-		text-decoration: none;
+		margin-left: (@px * 1.5);
 		&:after {
 			display: inline-block;
 			content: '\25BC';
-			margin-left: 5px;
-			color: #08C;
-			font-size: 12px;
+			margin-left: (@px * .5);
+			color: @link-color;
+			font-size: (@px * 1.2);
+			&:hover {
+				color: @link-color-active;
+			}
 		}
 		a {
 			text-decoration: none;
