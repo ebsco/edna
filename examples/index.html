@@ -8,28 +8,25 @@
 	<title>DNA</title>
 
 	<link rel="stylesheet" type="text/css" href="../edna.css" />
+	<link rel="stylesheet" type="text/css" href="../plus/plus.css" />
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="js/script.js"></script>
 	<style>
 		html, body { padding: 1em; background-color: #EFEFEF; }
-		.rtl, .rtl * { direction: rtl; unicode-bidi: bidi-override; }
 		h1 a { text-decoration: none; }
-
 		.nav-list { padding: 0 0 1em; margin: 0; list-style: none; }
 		.nav-item > .nav-list { padding: 0; }
 		.nav-list .nav-heading { margin: 0 0 0 .5em; color: #666; }
 		.nav-list .nav-list { margin: 0 0 0 1em; }
 		.nav-heading, .nav-item { padding: .25em 5px; margin: 0;}
 		.nav-heading { font-size: 1em; font-weight: bold;}
-		.nav-item { padding: 0 5px; color: #aaa; cursor: pointer; }
-		.nav-item:hover { background-color: #efefef; }
-		.nav-item:active { color: #333; }
+		.nav-item { padding: 3px 5px 3px 5px; color: #aaa; cursor: pointer; }
+		.nav-item > .nav-list .nav-item:hover { background-color: #CCC; color: #666; }
 		.soon { padding: .25em 5px; color: #999; }
 		.soon:hover { background-color: transparent; cursor: default; }
 
 		.layouts .header, .layouts .col, .layouts .footer { box-sizing: border-box; text-align: center; font-weight: bold; background-color: #FFAB5C; border: 1px solid #FFF; padding: .25em; }
-		.layouts .col {  }
 		.layouts .header > p, .layouts .col > p, .layouts .footer > p { margin: 0; }
 		.layouts .col:nth-child(1) { background-color: #EE5500; }
 		.layouts .col:nth-child(2) { background-color: #EE5500; }
@@ -37,7 +34,6 @@
 		.layouts .col:last-child { border-right: none; }
 		.layouts .dis > pre { margin-top: 15px; }
 
-		/* DISPLAY STYLES */
 		.dis { background-color: #FFF; border: 1px solid #E0E0E0; padding: 10px; border-radius: 5px; }
 		.dis + .dis, .dis + p { margin-top: 15px; }
 		.dis .dis-text {  }

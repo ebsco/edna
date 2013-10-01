@@ -9,45 +9,63 @@
 	.pag-list {
 		list-style-type: none;
 		display: inline-block;
-		margin: 0;
 		padding: 0;
 		float: left;
 		.pag-list-item {
 			display: inline-block;
 			float: left;
-			border-right: 1px solid #CCC;
-			padding: 0px 10px;
+			border-right: (@px * .1) solid @colorS4;
+			padding: 0 @px;
 			cursor: pointer;
-			color: #666;
+			color: lighten(@font-color, 20%);
 			&:nth-last-child(1) {
 				border-right: none;
 			}
 			&:hover {
-				background-color: #EFEFEF;
+				background-color: @bg2;
+				color: @font-color;
 			}
 			&.inactive {
 				cursor: default;
-				color: #999;
+				color: lighten(@font-color, 20%);
 				&:hover {
 					background-color: transparent;
-					color: #999;
+					color: lighten(@font-color, 20%);
 				}
 			}
 			&.active {
 				cursor: default;
-				color: #333;
-				background-color: #CCC;
+				color: @font-color;
+				background-color: @colorS4;
+				&:hover {
+					background-color: @colorS4;
+					color: @font-color;
+				}
 			}
 		}
 	}
+
 	.transport {
+		@newPX: (@px * 1);
 		display: inline-block;
 		float: left;
-		cursor: pointer;
-		.left,
-		.right {
-			width: 20px;
-			height: 20px;
+
+		> .right,
+		> .left {
+			color: @colorS4;
+			border-top: (@newPX * .9) solid rgba(0, 0, 0, 0);
+			border-bottom: (@newPX * .9) solid rgba(0, 0, 0, 0);
 		}
+		> .right {
+			border-left: @newPX solid @colorS4;
+			margin-left: (@newPX * .5);
+			margin-right: 0;
+		}
+		> .left {
+			border-right: @newPX solid @colorS4;
+			margin-left: 0;
+			margin-right: (@newPX * .5);
+		}
+
 	}
 }
