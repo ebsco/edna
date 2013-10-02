@@ -1,0 +1,39 @@
+//
+	//PLUS
+//
+/**********
+	MODALS
+**********/
+
+.modal {
+	border: (@px * .1) solid @colorS3;
+	border-radius: (@px * .3);
+	.modal-header,
+	.modal-body,
+	.modal-footer {
+		padding: (@px * 1.5);
+	}
+	.modal-header {
+		border-bottom: (@px * .1) solid @colorS3;
+		.modal-title {
+			margin: 0;
+		}
+		> .btn.close {
+			float: right;
+			font-size: (@em * 1.25);
+			line-height: (@em * .625);
+			color: @colorS3;
+			vertical-align: middle;
+			padding: @px 0;
+			border: none;
+			background-color: transparent;
+			&:hover {
+				color: @colorS4;
+			}
+		}
+	}
+	.modal-footer {
+		border-top: (@px * .1) solid @colorS3;
+		text-align: right;
+	}
+}
