@@ -8,45 +8,44 @@
 	padding: 0;
 	list-style-type: none;
 	+ .toggle {
-		padding-top: 15px;
+		padding-top: (@px * 1.5);
 	}
 	.toggle-content {
 		display: none;
-		.border-width(0, 1px, 1px, 1px);
-		.border-style;
-		.border-color;
-		.border-radius-br(3px);
-		.border-radius-bl(3px);
-		padding: 30px;
+		border: (@px * .1) solid @colorS3;
+		.border-radius-br((@px * .3));
+		.border-radius-bl((@px * .3));
+		padding: (@px * 3);
+		background-color: @colorS1;
 		> *:last-child { // remove any extra margin on the last item for better parent padding
 			margin: 0;
 		}		
 	}
 	.toggle-tab {
-		.border;
-		.border-radius(3px);
-		padding: 12px 8px;
-		.gradient(#FAFAFA);
+		.border-radius((@px * .3));
+		border: (@px * .1) solid @colorS3;
+		padding: (@px * 1.2) (@px * .8);
+		background-color: @colorS1;
 		font-weight: bold;
 		cursor: pointer;
 		.icon {
-			.border-radius(3px);
-			.border;
+			.border-radius((@px * .3));
+			border: (@px * .1) solid @colorS3;
 			display: inline-block;
-			margin-right: 10px;
-			background-color: #FFF;
-			width: 20px;
-			height: 20px;
+			margin-right: @px;
+			width: (@px * 2);
+			height: (@px * 2);
 			text-align: center;
-			font-weight: bold;
 
 			&:before {
+				color: @colorP4;
 				content: '+';
 				display: block;
-				vertical-align: center
 			}
 		}
 		&.active {
+			.border-radius-br(0);
+			.border-radius-bl(0);
 			.icon {
 				&:before {
 					cursor: default;
@@ -56,6 +55,8 @@
 			}
 			+ .toggle-content {
 				display: inline-block;
+				margin-top: -(@px * .1);
+				z-index: 10;
 			}
 		}
 	}
