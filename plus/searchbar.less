@@ -1,0 +1,26 @@
+.searchbar {
+	position: relative;
+
+	.searchbar-wrap {
+		position: relative;
+		display: inline;
+		input {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+		.reset {
+			position: absolute;
+			background-color: rgba(0, 0, 0, 0);
+			border: none;
+			right: (@px * .5);
+		}
+	}
+	.searchbar-extras {
+		display: inline-block;
+	}
+	.btn.search {
+		margin-left: -(@px * .5);
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;		
+	}
+}

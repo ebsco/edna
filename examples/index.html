@@ -8,36 +8,31 @@
 	<title>DNA</title>
 
 	<link rel="stylesheet" type="text/css" href="../edna.css" />
+	<link rel="stylesheet" type="text/css" href="../plus/plus.css" />
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="js/script.js"></script>
 	<style>
 		html, body { padding: 1em; background-color: #EFEFEF; }
-		.rtl, .rtl * { direction: rtl; unicode-bidi: bidi-override; }
 		h1 a { text-decoration: none; }
-
 		.nav-list { padding: 0 0 1em; margin: 0; list-style: none; }
 		.nav-item > .nav-list { padding: 0; }
 		.nav-list .nav-heading { margin: 0 0 0 .5em; color: #666; }
 		.nav-list .nav-list { margin: 0 0 0 1em; }
 		.nav-heading, .nav-item { padding: .25em 5px; margin: 0;}
 		.nav-heading { font-size: 1em; font-weight: bold;}
-		.nav-item { padding: 0 5px; color: #aaa; cursor: pointer; }
-		.nav-item:hover { background-color: #efefef; }
-		.nav-item:active { color: #333; }
+		.nav-item { padding: 3px 5px 3px 5px; color: #aaa; cursor: pointer; }
+		.nav-item > .nav-list .nav-item:hover { background-color: #CCC; color: #666; }
 		.soon { padding: .25em 5px; color: #999; }
 		.soon:hover { background-color: transparent; cursor: default; }
 
 		.layouts .header, .layouts .col, .layouts .footer { box-sizing: border-box; text-align: center; font-weight: bold; background-color: #FFAB5C; border: 1px solid #FFF; padding: .25em; }
-		.layouts .col {  }
 		.layouts .header > p, .layouts .col > p, .layouts .footer > p { margin: 0; }
 		.layouts .col:nth-child(1) { background-color: #EE5500; }
 		.layouts .col:nth-child(2) { background-color: #EE5500; }
 		.layouts .col:nth-child(3) { background-color: #EE5500; }
 		.layouts .col:last-child { border-right: none; }
-		.layouts .dis > pre { margin-top: 15px; }
 
-		/* DISPLAY STYLES */
 		.dis { background-color: #FFF; border: 1px solid #E0E0E0; padding: 10px; border-radius: 5px; }
 		.dis + .dis, .dis + p { margin-top: 15px; }
 		.dis .dis-text {  }
@@ -50,7 +45,7 @@
 			box-shadow: 0 -1px 0px #CCC;
 			font-size: .8em;
 		}
-		.dis > pre { margin: 0; font-size: 1em; }
+		.dis > pre { font-size: 1em; margin: 10px 0 0 0; }
 	</style>
 
 </head>
@@ -96,20 +91,20 @@
 					<li class="nav-item">
 						<h3 class="nav-heading">Composite Widgets</h3>
 						<ul class="nav-list">
+							<li class="nav-item" data-kind="plus-carousel">Carousel</li>
+							<li class="nav-item" data-kind="plus-contentbox">Content Box</li>
 							<li class="nav-item" data-kind="plus-forms">Forms</li>
 							<li class="nav-item" data-kind="plus-lists">Lists</li>
-							<li class="nav-item" data-kind="plus-carousel">Carousel</li>
 							<li class="nav-item" data-kind="plus-messaging">Messaging</li>
+							<li class="nav-item" data-kind="plus-modals">Modals</li>
 							<li class="nav-item" data-kind="plus-navbar">Navbar</li>
 							<li class="nav-item" data-kind="plus-pagination">Pagination</li>
+							<li class="nav-item" data-kind="plus-resultbox">Result Box</li>
+							<li class="nav-item" data-kind="plus-searchbar">Search Bar</li>
 							<li class="nav-item" data-kind="plus-tabs">Tabs</li>
 							<li class="nav-item" data-kind="plus-toggles">Toggles</li>
 						</ul>
 					</li>
-				</ul>
-				<h2 class="nav-heading">DNA Plus Turbo</h2>
-				<ul class="nav-list">
-					<li class="soon">Coming Shortly!</li>
 				</ul>
 			</nav>
 			<div class="col">

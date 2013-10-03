@@ -23,19 +23,34 @@ module.exports = function(grunt) {
 			}
 		},
 		less: {
-			compile: {
+			edna: {
 				options: {
-					path: ["dna/, plus/, turbo/"]
+					path: ["dna/"]
 				},
 				files: {
 					"edna.css": "edna.less"
 				}
+			},
+			plus: {
+				options: {
+					path: ["plus/"]
+				},
+				files: {
+					"plus/plus.css": "plus/plus.less"
+				}
 			}
 		},
 		watch: {
-			css: {
-				files: ["*.less", "dna/*.less", "plus/*.less", "turbo/*.less", "examples/*.html"],
-				tasks: ["less"],
+			edna: {
+				files: ["*.less", "dna/*.less", "examples/*.html"],
+				tasks: ["less:edna"],
+				options: {
+					livereload: true
+				}
+			},
+			plus: {
+				files: ["*.less", "plus/*.less","examples/*.html"],
+				tasks: ["less:plus"],
 				options: {
 					livereload: true
 				}

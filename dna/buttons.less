@@ -13,32 +13,82 @@ input[type=reset],
 	color: @colorP1;
 	background-color: @colorS2;
 	border: solid (@px * .1) @colorS4;
-	border-radius: @radius;
+	.border-radius( (@px * .3) );
 	cursor: pointer;
+	
+	// HOVER STATES
+	&:hover {
+		background-color: darken(@colorS2, (@pct * .1));
+	}
+
+	// TEXT ONLY BUTTONS
+	&.txt {
+		border: none;
+		background-color: transparent;
+		color: @link-color;
+		&:hover {
+			color: @link-color-active;
+			text-decoration: underline;
+		}
+	}
+
+	// LEFT MARGIN FOR BUTTON ROWS
 	+ button,
 	+ input[type=submit],
 	+ input[type=reset],
 	+ .btn {
 		margin-left: @px;
 	}
-	&:hover {
-		background-color: darken(@colorS2, 10%);
-	}
-}
 
-// STATES
-.primary-action {
-	color: @colorP2;
-	background-color: #f4d007;
-}
-.disabled,
-button[disabled],
-input[type=submit][disabled],
-input[type=reset][disabled] {
-	color: @colorP3;
-	background-color: @colorS3;
-	border-color: @colorP3;
-	cursor: pointer;
+	// STATES
+	&.action {
+		color: @colorP2;
+		background-color: @btn-action;
+		border-color: darken(@btn-action, (@pct * .2));
+		&:hover {
+			background-color: darken(@btn-action, (@pct * .2));
+			border-color: darken(@btn-action, (@pct * .3));
+		}
+	}
+	&.primary {
+		color: @colorS2;
+		background-color: @btn-primary;
+		border-color: darken(@btn-primary, (@pct * .05));
+		&:hover {
+			background-color: darken(@btn-primary, (@pct * .07));
+			border-color: darken(@btn-primary, (@pct * .06));
+		}
+	}
+	&.cancel {
+		color: @colorP2;
+		background-color: @btn-cancel;
+		border-color: darken(@btn-cancel, (@pct * .2));
+		&:hover {
+			background-color: darken(@btn-cancel, (@pct * .1));
+			border-color: darken(@btn-cancel, (@pct * .2));
+		}
+	}
+	&.search {
+		color: @colorS2;
+		background-color: @btn-search;
+		border-color: darken(@btn-search, (@pct * .1));
+		&:hover {
+			background-color: darken(@btn-search, (@pct * .1));
+			border-color: darken(@btn-search, (@pct * .2));
+		}
+	}
+	&.disabled,
+	button[disabled],
+	input[type=submit][disabled],
+	input[type=reset][disabled] {
+		color: @colorS4;
+		background-color: @colorS3;
+		border-color: @colorS4;
+		cursor: default;
+		&:hover {
+			background-color: @colorS3;
+		}
+	}
 }
 
 // BUTTON GROUPS
@@ -52,17 +102,18 @@ input[type=reset][disabled] {
 		border-radius: 0;
 		border-left-width: 0;
 	}
-
+	.grp-btn + .grp-btn {
+		margin-left: 0;
+	}
 	:last-child,
 	.last //IE support
 	{
 		border-radius: 0 @radius @radius 0;
 	}
-
 	:first-child,
 	.first //IE support 
 	{
-		border-left-width: (@px / 10);
+		border-left-width: (@px * .1);
 		border-radius: @radius 0 0 @radius;
 	}	
 }
