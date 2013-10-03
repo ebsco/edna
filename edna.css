@@ -612,7 +612,7 @@ input[type=search],
 textarea {
   padding: 0.25em 0.5em;
   color: #333333;
-  border: solid 1px #474747;
+  border: solid 1px #c1c1c1;
   border-radius: 3px;
 }
 input[type=radio],
@@ -803,6 +803,9 @@ input[type=reset] input[type=reset][disabled]:hover,
   border-radius: 0;
   border-left-width: 0;
 }
+.btn-group .grp-btn + .grp-btn {
+  margin-left: 0;
+}
 .btn-group :last-child,
 .btn-group .last {
   border-radius: 0 3px 3px 0;
@@ -821,7 +824,6 @@ input[type=reset] input[type=reset][disabled]:hover,
   border-radius: 3px;
   display: inline-block;
   line-height: normal;
-  margin-bottom: 1em;
 }
 .dd .dd-list {
   display: none;
@@ -884,6 +886,7 @@ input[type=reset] input[type=reset][disabled]:hover,
   border-left-width: 5px;
   margin-bottom: 2.5px;
   margin-top: -2.5px;
+  border-top-color: #707070;
 }
 .btn-group .dd:last-child .dd-active,
 .btn-group .dd.last .dd-active {

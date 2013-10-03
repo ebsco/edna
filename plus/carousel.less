@@ -5,61 +5,75 @@
 	CAROUSEL
 **********/
 .carousel {
-	border: 1px solid #CCC;
-	padding: 15px;
-	width: 300px;
-	min-width: 250px;
+	border: (@px * .1) solid @colorS4;
+	padding: (@px * 1.5);
+	width: (@px * 30);
+	min-width: (@px * 25);
+	background-color: @colorS1;
 	.carousel-img {
 		moz-box-sizing: border-box;
 		box-sizing: border-box;
-		width: 100%;
-		border: 1px solid #CCC;
+		width: @pct;
+		border: (@px * .1) solid @colorS4;
 		> .img {
 			display: block;
 			border: none;
-			width: 100%;
+			width: @pct;
 		}
 	}
 	.carousel-nav {
 		.clearfix;
-		width: 100%;
-		margin: 15px 0 0;
+		width: @pct;
+		margin: (@px * 1.5) 0 0;
 		overflow: hidden;
+		height: (@px * 5.5);
+		position: relative;
 	}
 	.transport {
-		width: 7%;
-		display: inline-block;
-		float: left;
-		padding: 15px 0 14px 0;
-		position: relative;
+		position: absolute;
+		&:nth-child(1),
+		&.first {
+			left: 0;
+			.left {
+				margin: @px 0 0 (@px * .1);
+			}			
+		}
+		&:nth-child(3),
+		.last {
+			right: 0;
+			.right {
+				margin: @px 0 0 (@px * .5);
+			}
+		}
 	}
 	.carousel-thumbs {
-		width: 86%;
 		display: inline-block;
 		float: left;
 		overflow: hidden;
-		height: 53px;
-		position: relative;
+		height: (@px * 5.3);
+		position: absolute;
+		left: (@px * 2);
+		right: (@px * 2);
 		.carousel-list {
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
-			width: 1000px;
+			width: (@px * 100);
 			position: relative;
 			.carousel-list-item {
 				float: left;
-				margin: 0 5px 0 0;
+				margin: 0 (@px * .5) 0 0;
 				padding: 0;
 				display: inline-block;
 				cursor: pointer;
-				border: 1px solid #CCC;
-				width: 67px;
+				border: (@px * .1) solid @colorS4;
+				width: (@px * 6.7);
 				moz-box-sizing: border-box;
 				box-sizing: border-box;
 				.img {
 					display: block;
 					border: none;
-					width: 100%;
+					width: @pct;
 				}
 			}
 		}
