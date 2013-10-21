@@ -975,6 +975,6 @@ dd {
 [dir="rtl"] > * {
   unicode-bidi: bidi-override;
 }
-[dir="rtl"] > .bidi-embed {
+[dir="rtl"] > .bidi {
   unicode-bidi: embed;
 }

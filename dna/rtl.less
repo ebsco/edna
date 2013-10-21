@@ -7,10 +7,11 @@
 
 [dir="rtl"] {
 	> * {
+		// set the direction of all text to RTL
 		unicode-bidi: bidi-override;
 	}
-	> .bidi-embed {
+	> .bidi {
+		// override RTL for bidirectional strings
 		unicode-bidi: embed;
 	}
-
 }
