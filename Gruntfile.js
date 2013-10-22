@@ -23,20 +23,26 @@ module.exports = function(grunt) {
 			}
 		},
 		less: {
-			edna: {
+			dev: {
 				options: {
-					path: ["dna/"]
+					path: ["dna/"],
+					compress: false,
+					dumpLineNumbers: true
 				},
 				files: {
 					"edna.css": "edna.less"
 				}
 			},
-			plus: {
+			edna: {
 				options: {
-					path: ["plus/"]
+					path: ["dna/"],
+					compress: true,
+					dumpLineNumbers: false,
+					yuicompress: true,
+					report: 'gzip'
 				},
 				files: {
-					"plus/plus.css": "plus/plus.less"
+					"edna.min.css": "edna.less"
 				}
 			}
 		},
@@ -80,6 +86,10 @@ module.exports = function(grunt) {
 	grunt.registerTask("server", [
 		"express",
 		"watch"
+	]);
+
+	grunt.registerTask("min", [
+		"less:edna"
 	]);
 
 };
