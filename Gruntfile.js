@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 			}
 		},
 		md2html: {
-			one_file: {
+			dist: {
 				options: {},
 				files: [
 					{
@@ -23,34 +23,42 @@ module.exports = function(grunt) {
 			}
 		},
 		less: {
-			edna: {
+			dev: {
 				options: {
-					path: ["dna/"]
+					path: ["dna/", "plus/"],
+					compress: false,
+					dumpLineNumbers: true
 				},
 				files: {
-					"edna.css": "edna.less"
+					"edna.css": "edna.less",
+					"plus/plus.css": "plus/plus.less"
 				}
 			},
-			plus: {
+			dist: {
 				options: {
-					path: ["plus/"]
+					path: ["dna/", "plus/"],
+					compress: true,
+					dumpLineNumbers: false,
+					yuicompress: true,
+					report: 'gzip'
 				},
 				files: {
-					"plus/plus.css": "plus/plus.less"
+					"edna.min.css": "edna.less",
+					"plus/plus.min.css": "plus/plus.less"
 				}
 			}
 		},
 		watch: {
-			edna: {
-				files: ["*.less", "dna/*.less", "examples/*.html"],
-				tasks: ["less:edna"],
+			dev: {
+				files: ["*.less", "dna/*.less", "examples/*.html", "Gruntfile.js"],
+				tasks: ["less:dev"],
 				options: {
 					livereload: true
 				}
 			},
-			plus: {
-				files: ["*.less", "plus/*.less","examples/*.html"],
-				tasks: ["less:plus"],
+			dist: {
+				files: ["*.less", "dna/*.less", "examples/*.html", "Gruntfile.js"],
+				tasks: ["less:dist"],
 				options: {
 					livereload: true
 				}
@@ -72,14 +80,20 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-md2html');
 
-	grunt.registerTask("compile", [
+	grunt.registerTask("dev", [
+		"md2html",
+		"less:dev"
+	]);
+
+	grunt.registerTask("dist", [
 		"md2html",
 		"less"
 	]);
 
 	grunt.registerTask("server", [
 		"express",
-		"watch"
+		"watch:dev",
+		"watch:markdown"
 	]);
 
 };
