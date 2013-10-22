@@ -364,6 +364,9 @@ table {
 	EDNA
 **********/
 /**********/
+/**********
+	RTL
+**********/
 [dir="rtl"] {
   direction: rtl;
   unicode-bidi: bidi-override;
