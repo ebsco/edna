@@ -4,6 +4,6 @@ node_modules/
 # FILES
 examples/js/bootstrap.js
 examples/js/bootstrap.min.js
-examples/readme.html
+#examples/readme.html
 examples/dna.css
 plus/plus.css

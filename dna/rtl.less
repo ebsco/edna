@@ -1,41 +1,41 @@
-//
-	// EDNA
-//
-/**********
-	RTL
-**********/
+// //
+// 	// EDNA
+// //
+// /**********
+// 	RTL
+// **********/
 
 [dir="rtl"] {
-
 	// this is a mixin for use below
 	.international(@dir, @uni) {
 		direction: @dir;
 		unicode-bidi: @uni;
 	}
-	// // set the direction of all text to RTL
-	// > * {
-	// 	unicode-bidi: bidi-override;
-	// }
-	// // override RTL for bidirectional strings
-	// > .bidi {
-	// 	unicode-bidi: embed;
-	// }
-	// // these will let you use
-	// > * {
-	// 	&[dir="ltr"] {
-	// 		.international(ltr, embed);
-	// 	}
-	// 	&[dir="rtl"] {
-	// 		.international(rtl, embed);
-	// 	}
-	// }
-	// // want to use the <bdo> element? go right ahead!
-	// > bdo {
-	// 	&[dir="ltr"] {
-	// 		.international(ltr, bidi-override);
-	// 	}
-	// 	&[dir="rtl"] {
-	// 		.international(rtl, bidi-override);
-	// 	}
-	// }
+	.international(rtl, bidi-override);
+	// set the direction of all text to RTL
+	> * {
+		unicode-bidi: bidi-override;
+	}
+	// override RTL for bidirectional strings
+	> .bidi {
+		unicode-bidi: embed;
+	}
+	// these will let you use
+	> * {
+		&[dir="ltr"] {
+			.international(ltr, embed);
+		}
+		&[dir="rtl"] {
+			.international(rtl, embed);
+		}
+	}
+	// want to use the <bdo> element? go right ahead!
+	> bdo {
+		&[dir="ltr"] {
+			.international(ltr, bidi-override);
+		}
+		&[dir="rtl"] {
+			.international(rtl, bidi-override);
+		}
+	}
 }
