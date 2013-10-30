@@ -9,34 +9,11 @@ ol {
 	margin: 0;
 	padding: 0 0 @em @em;
 }
-// UNORDERED LISTS
-.disc {
-	list-style: disc;
+// nested list
+li > ul,
+li > ol {
+	padding: (@em * .5) 0 (@em * .5) @em;
 }
-.circle {
-	list-style: circle
-}
-.square {
-	list-style: square;
-}
-
-// ORDERED LISTS
-.decimal {
-	list-style: decimal;	
-}
-.lower-alpha {
-	list-style: lower-alpha;	
-}
-.upper-alpha {
-	list-style: upper-alpha;	
-}
-.lower-roman {
-	list-style: lower-roman;	
-}
-.upper-roman {
-	list-style: upper-roman;	
-}
-
 // DEFINITION List
 dl {
 	margin: 0;
@@ -49,3 +26,4 @@ dd {
 	padding: 0 0 (@em * .125) (@em * 2);
 	margin: 0;
 }
+
