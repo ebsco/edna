@@ -1,101 +1,119 @@
 <h1>Lists</h1>
-<p>With the use of the CSS reset and to make it simple to change the list type, DNA includes classes to quickly render the differnt style for ordered and unordered lists.</p>
+<p>DNA Plus includes classes to allow for changing the list style types of ordered (OL) and unordered (UL) lists.</p>
 
 
-<h3>UL Style Types </h3>
-<p>The following classes can be used to define/change the "list-style-type" of a UL. Class names: <em>disc, circle, square.</em></p>
-<ul class="disc">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-</ul>
+<h2>UL Style Types </h2>
+<p>The following classes can be used to define/change the list-style-type of a UL: <em>disc, circle, square.</em></p>
 
-<ul class="circle">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-</ul>
+<div class="dis">
+	<ul class="disc">
+		<li>Disc List Item 1</li>
+		<li>Disc List Item 2</li>
+		<li>Disc List Item 3</li>
+	</ul>
 
-<ul class="square">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-</ul>
+	<ul class="circle">
+		<li>Circle List Item 1</li>
+		<li>Circle List Item 2</li>
+		<li>Circle List Item 3</li>
+	</ul>
+
+	<ul class="square">
+		<li>Square List Item 1</li>
+		<li>Square List Item 2</li>
+		<li>Square List Item 3</li>
+	</ul>
+</div>
+
+<p>These classes can be used on nested lists to make them all the same, change the order or extend the pattern.</p>
+
+<div class="dis">
+	<ul class="square">
+		<li>Square List Style
+			<ul class="disc">
+				<li>Disc List Style
+					<ul class="circle">
+						<li>Circle List Style
+							<ul class="circle">
+								<li>Circle List Style</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<h2>OL Style Types</h2>
+
+<p><p>The following classes can be used to define/change the list-style-type of a OL: <em>decimal, lower-alpha, upper-alpha, lower-roman, upper-roman.</em></p>
+
+<div class="dis">
+	<ol class="decimal">
+		<li>Decimal (default) List Item 1</li>
+		<li>Decimal (default) List Item 2</li>
+		<li>Decimal (default) List Item 3</li>
+	</ol>
+	<ol class="lower-alpha">
+		<li>Lower Alpha List Item 1</li>
+		<li>Lower Alpha List Item 2</li>
+		<li>Lower Alpha List Item 3</li>
+	</ol>
+
+	<ol class="upper-alpha">
+		<li>Upper Alpha List Item 1</li>
+		<li>Upper Alpha List Item 2</li>
+		<li>Upper Alpha List Item 3</li>
+	</ol>
+
+	<ol class="lower-roman">
+		<li>Lower Roman List Item 1</li>
+		<li>Lower Roman List Item 2</li>
+		<li>Lower Roman List Item 3</li>
+	</ol>
+
+	<ol class="upper-roman">
+		<li>Upper Roman List Item 1</li>
+		<li>Upper Roman List Item 2</li>
+		<li>Upper Roman List Item 3</li>
+	</ol>
+</div>
 
 <p>These classes can be used on nested lists to make them all the same or change the order or extend the pattern.</p>
-<ul class="square">
-	<li>Square List Style
-		<ul class="disc">
-			<li>Disc List Style
-				<ul class="circle">
-					<li>Circle List Style
-						<ul class="circle">
-							<li>Circle List Style</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
 
+<div class="dis">
+	<ol class="upper-roman">
+		<li>Upper Roman List Style
+			<ol class="upper-alpha">
+				<li>Upper Alpha List Style
+					<ol class="lower-roman">
+						<li>Lower Roman List Style
+							<ol class="lower-alpha">
+								<li>Lower Alpha List Style
+									<ol class="decimal">
+										<li>Decimal List Style</li>
+									</ol>
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</li>
+	</ol>
+</div>
+<h2>Under Developement</h2>
+<h3>DL Styles</h3>
+<p>This will expand on the default style of a DL to include different layout patterns. Example: </p>
 
-<p><strong>Ordered List Styles</strong></p>
-
-<p>The following classes can be used to define/change the "list-style-type" of a OL. Class names: <em>decimal, lower-alpha, upper-alpha, lower-roman, upper-roman.</em></p>
-<ol class="decimal">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-	<li>List Item 4</li>
-</ol>
-<ol class="lower-alpha">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-	<li>List Item 4</li>
-</ol>
-
-<ol class="upper-alpha">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-	<li>List Item 4</li>
-</ol>
-
-<ol class="lower-roman">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-	<li>List Item 4</li>
-</ol>
-
-<ol class="upper-roman">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-	<li>List Item 4</li>
-</ol>
-
-<p>These classes can be used on nested lists to make them all the same or change the order or extend the pattern.</p>
-<ol class="upper-roman">
-	<li>Upper Roman List Style
-		<ol class="upper-alpha">
-			<li>Upper Alpha List Style
-				<ol class="lower-roman">
-					<li>Lower Roman List Style
-						<ol class="lower-alpha">
-							<li>Lower Alpha List Style
-								<ol class="decimal">
-									<li>Decimal List Style</li>
-								</ol>
-							</li>
-						</ol>
-					</li>
-				</ol>
-			</li>
-		</ol>
-	</li>
-</ol>
-
-
+<div class="dis">
+	<dl class="citation">
+		<dt>Term</dt>
+		<dd>Definition</dd>
+	</dl>
+</div>
+<h3>Treelist</h3>
 <div class="dis">
 	<ul class="list">
 		<li class="list-item"><a>This is a sample link and it is pretty cool</a></li>
@@ -112,18 +130,18 @@
 		<li class="more"><a href="#">More</a></li>
 	</ul>
 
-<pre>
-<code class="dis-code">&lt;ul class="list"&gt;
-	&lt;li class="list-item"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
-	&lt;li class="list-item collapse"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
-	&lt;ul class="list"&gt;
+	<pre>
+	<code class="dis-code">&lt;ul class="list"&gt;
 		&lt;li class="list-item"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-	&lt;li class="list-item"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
-	&lt;li class="list-item expand"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
-	&lt;ul class="list"&gt;
+		&lt;li class="list-item collapse"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
+		&lt;ul class="list"&gt;
+			&lt;li class="list-item"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
 		&lt;li class="list-item"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-	&lt;li class="more"&gt;&lt;a href="#"&gt;More&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+		&lt;li class="list-item expand"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
+		&lt;ul class="list"&gt;
+			&lt;li class="list-item"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+		&lt;li class="more"&gt;&lt;a href="#"&gt;More&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;</code></pre>
 </div>

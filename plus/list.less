@@ -8,7 +8,7 @@
 	LISTS
 **********/
 
-// UNORDERED LISTS
+// UNORDERED LIST STYLE TYPES
 .disc {
 	list-style: disc;
 }
@@ -19,7 +19,7 @@
 	list-style: square;
 }
 
-// ORDERED LISTS
+// ORDERED LIST STYLE TYPES
 .decimal {
 	list-style: decimal;	
 }
@@ -36,7 +36,22 @@
 	list-style: upper-roman;	
 }
 
-// 
+// CITATION EXAMPLE
+.citation > dt
+{
+	padding: (@em * .5);
+	padding-left: 0;
+	float: left;
+	font-weight: bold;
+	clear: left;
+}
+
+.citation > dd
+{
+	padding: (@em * .5);
+}
+
+// TREELIST EXAMPLE
 .list
 {
 	padding: 0;
