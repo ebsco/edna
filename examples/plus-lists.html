@@ -1,5 +1,5 @@
 <h1>Lists</h1>
-<p>Text here</p>
+<p>With the use of the CSS reset and to make it simple to change the list type, DNA includes classes to quickly render the differnt style for ordered and unordered lists.</p>
 
 
 <h3>UL Style Types </h3>
@@ -38,6 +38,8 @@
 
 
 <p><strong>Ordered List Styles</strong></p>
+
+<p>The following classes can be used to define/change the "list-style-type" of a OL. Class names: <em>decimal, lower-alpha, upper-alpha, lower-roman, upper-roman.</em></p>
 <ol class="decimal">
 	<li>List Item 1</li>
 	<li>List Item 2</li>
@@ -70,6 +72,27 @@
 	<li>List Item 2</li>
 	<li>List Item 3</li>
 	<li>List Item 4</li>
+</ol>
+
+<p>These classes can be used on nested lists to make them all the same or change the order or extend the pattern.</p>
+<ol class="upper-roman">
+	<li>Upper Roman List Style
+		<ol class="upper-alpha">
+			<li>Upper Alpha List Style
+				<ol class="lower-roman">
+					<li>Lower Roman List Style
+						<ol class="lower-alpha">
+							<li>Lower Alpha List Style
+								<ol class="decimal">
+									<li>Decimal List Style</li>
+								</ol>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</li>
 </ol>
 
 
