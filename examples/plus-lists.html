@@ -1,10 +1,8 @@
 <h1>Lists</h1>
 <p>DNA Plus includes classes to allow for changing the list style types of ordered (OL) and unordered (UL) lists.</p>
 
-
-<h2>UL Style Types </h2>
+<h2>UL Style Types</h2>
 <p>The following classes can be used to define/change the list-style-type of a UL: <em>disc, circle, square.</em></p>
-
 <div class="dis">
 	<ul class="disc">
 		<li>Disc List Item 1</li>
@@ -26,7 +24,6 @@
 </div>
 
 <p>These classes can be used on nested lists to make them all the same, change the order or extend the pattern.</p>
-
 <div class="dis">
 	<ul class="square">
 		<li>Square List Style
@@ -46,9 +43,7 @@
 </div>
 
 <h2>OL Style Types</h2>
-
-<p><p>The following classes can be used to define/change the list-style-type of a OL: <em>decimal, lower-alpha, upper-alpha, lower-roman, upper-roman.</em></p>
-
+<p>The following classes can be used to define/change the list-style-type of a OL: <em>decimal, lower-alpha, upper-alpha, lower-roman, upper-roman.</em></p>
 <div class="dis">
 	<ol class="decimal">
 		<li>Decimal (default) List Item 1</li>
@@ -81,7 +76,6 @@
 </div>
 
 <p>These classes can be used on nested lists to make them all the same or change the order or extend the pattern.</p>
-
 <div class="dis">
 	<ol class="upper-roman">
 		<li>Upper Roman List Style
@@ -103,22 +97,36 @@
 		</li>
 	</ol>
 </div>
+
+
+<h2>Base List</h2>
+<p>The following class can be used to completely reset a list so it has no margin and no padding.</p>
+<div class="dis">
+	<ul class="base">
+		<li>Decimal (default) List Item 1</li>
+		<li>Decimal (default) List Item 2</li>
+		<li>Decimal (default) List Item 3</li>
+	</ul>
+</div>
+
+
+
 <h2>Under Developement</h2>
 <h3>DL Styles</h3>
 <p>This will expand on the default style of a DL to include different layout patterns. Example: </p>
-
 <div class="dis">
 	<dl class="citation">
 		<dt>Term</dt>
 		<dd>Definition</dd>
 	</dl>
 </div>
+
 <h3>Treelist</h3>
 <div class="dis">
-	<ul class="list">
+	<ul class="tree-tree-list">
 		<li class="list-item"><a>This is a sample link and it is pretty cool</a></li>
 		<li class="list-item collapse"><a>A sample link and it is pretty cool</a></li>
-		<ul class="list">
+		<ul class="tree-list">
 			<li class="list-item"><a>This is a sample link and it is pretty cool</a></li>
 			<li class="list-item"><a>This is a sample link and it is pretty cool</a></li>
 			<li class="list-item"><a>This is a sample link and it is pretty cool</a></li>
@@ -131,15 +139,15 @@
 	</ul>
 
 	<pre>
-	<code class="dis-code">&lt;ul class="list"&gt;
+	<code class="dis-code">&lt;ul class="tree-list"&gt;
 		&lt;li class="list-item"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
 		&lt;li class="list-item collapse"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
-		&lt;ul class="list"&gt;
+		&lt;ul class="tree-list"&gt;
 			&lt;li class="list-item"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
 		&lt;/ul&gt;
 		&lt;li class="list-item"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
 		&lt;li class="list-item expand"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
-		&lt;ul class="list"&gt;
+		&lt;ul class="tree-list"&gt;
 			&lt;li class="list-item"&gt;&lt;a&gt;This is a sample link&lt;/a&gt;&lt;/li&gt;
 		&lt;/ul&gt;
 		&lt;li class="more"&gt;&lt;a href="#"&gt;More&lt;/a&gt;&lt;/li&gt;
