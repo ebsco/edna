@@ -9,19 +9,21 @@
 **********/
 
 // RESET LIST
-.base {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	-webkit-margin-before: 0;
-	-webkit-margin-after: 0;
-	-webkit-margin-start: 0;
-	-webkit-margin-end: 0;
-	-webkit-padding-start: 0;
-	> li {
+ul,ol {
+	&.base {
 		margin: 0;
 		padding: 0;
-	}	
+		list-style-type: none;
+		-webkit-margin-before: 0;
+		-webkit-margin-after: 0;
+		-webkit-margin-start: 0;
+		-webkit-margin-end: 0;
+		-webkit-padding-start: 0;
+		> li {
+			margin: 0;
+			padding: 0;
+		}	
+	}
 }
 
 // UNORDERED LIST STYLE TYPES
