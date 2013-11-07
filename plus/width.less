@@ -4,18 +4,28 @@
 /**********
 	WIDTH
 **********/
-.quarter {
-	width: 25% !important;
-}
-.threequarter {
-	width: 75% !important;
-}
-.third {
-	width: 33% !important;
-}
-.twothird {
-	width: 66% !important;	
-}
-.half {
-	width: 50% !important;
+.hundred {
+	width: @pct;
+	display: block;
+	.clearfix;
+	> .quarter {
+		width: 25% !important;
+		float: left;
+	}
+	> .threequarter {
+		width: 75% !important;
+		float: left;
+	}
+	> .third {
+		width: 33% !important;
+		float: left;
+	}
+	> .twothird {
+		width: 66% !important;	
+		float: left;
+	}
+	> .half {
+		width: 50% !important;
+		float: left;
+	}
 }
