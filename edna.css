@@ -1022,3 +1022,10 @@ dd {
   width: 50% !important;
   float: left;
 }
+[dir="rtl"] .quarter,
+[dir="rtl"] .threequarter,
+[dir="rtl"] .third,
+[dir="rtl"] .twothird,
+[dir="rtl"] .half {
+  float: right;
+}
