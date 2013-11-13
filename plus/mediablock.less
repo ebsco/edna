@@ -1,34 +1,49 @@
 //
 	//PLUS
 //
+
+/**********
+	MEDIA FLOAT
+**********/
+/* [content] [content] side by side and allow for growth without wrapping */
+/* CONTENT ALIGNED AT TOP */ 
+.media-content {
+	overflow: hidden;
+}
+/* CONTENT CAN FLOAT LEFT OR RIGHT */ 
+.media-left {
+	float: left;
+}
+.media-right {
+	float: right;
+}
+/* END MEDIA FLOAT */
+
+
+
 /**********
 	MEDIA BLOCK
 **********/
-
 /* [content] [content] side by side and allow for growth without wrapping */
 /* CONTENT VERTICALLY ALIGNED CENTER BY DEFAULT */ 
- .media-block 
- {
-    display: table;
-    width: 100%;
- }s
- .media-row
- {
-    display: table-row;
- }
- .media-content
- {
-    display: table-cell;
-    vertical-align: middle;
- }
+.media-block {
+	display: table;
+	width: 100%;
+}
+.media-row {
+	display: table-row;
+}
+.media-cell {
+	display: table-cell;
+	vertical-align: middle; 
+}
 /* EXTENDING ALIGNMENT */
- .media-btm
- {
-    vertical-align: bottom;
- }
- .media-top
- {
-    vertical-align: top;
- }
+.media-btm {
+	vertical-align: bottom;
+}
+.media-top {
+	vertical-align: top;
+}
 /* END EXTENDING ALIGNMENT */
- /* END MEDIA BLOCK */
+/* END MEDIA BLOCK */
+
