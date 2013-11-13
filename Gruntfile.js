@@ -72,7 +72,6 @@ module.exports = function(grunt) {
 			}
 		}
 
-
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -81,14 +80,18 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-md2html');
 
 	grunt.registerTask("dev", [
+	]);
+
+	grunt.registerTask("dist", [
 		"md2html",
 		"less"
 	]);
 
 	grunt.registerTask("server", [
 		"express",
-		"less",
-		"watch"
+		"md2html",
+		"less:dev",
+		"watch:dev"
 	]);
 
 };

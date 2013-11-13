@@ -674,12 +674,15 @@ input[type=reset],
   -moz-border-radius: 3px;
   border-radius: 3px;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 button:hover,
 input[type=submit]:hover,
 input[type=reset]:hover,
 .btn:hover {
   background-color: #d1d1d1;
+  color: #333333;
 }
 button.txt,
 input[type=submit].txt,
