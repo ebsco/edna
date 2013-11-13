@@ -50,14 +50,14 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			dev: {
-				files: ["*.less", "dna/*.less", "examples/*.html", "Gruntfile.js"],
+				files: ["*.less", "dna/*.less", "examples/*.html", "Gruntfile.js", "plus/*.less"],
 				tasks: ["less:dev"],
 				options: {
 					livereload: true
 				}
 			},
 			dist: {
-				files: ["*.less", "dna/*.less", "examples/*.html", "Gruntfile.js"],
+				files: ["*.less", "dna/*.less", "examples/*.html", "Gruntfile.js", "plus/*.less"],
 				tasks: ["less:dist"],
 				options: {
 					livereload: true
@@ -81,8 +81,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-md2html');
 
 	grunt.registerTask("dev", [
-		"md2html",
-		"less:dev"
 	]);
 
 	grunt.registerTask("dist", [
@@ -92,8 +90,9 @@ module.exports = function(grunt) {
 
 	grunt.registerTask("server", [
 		"express",
-		"watch:dev",
-		"watch:markdown"
+		"md2html",
+		"less:dev",
+		"watch:dev"
 	]);
 
 };

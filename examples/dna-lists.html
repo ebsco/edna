@@ -1,58 +1,77 @@
-<h1>List</h1>
-<p>With the use of the CSS reset and to make it simple to change the list type, DNA includes classes to quickly render the differnt style for ordered and unordered lists.</p>
-<p><strong>Unordered List Styles</strong></p>
-<ul class="disc">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-	<li>List Item 4</li>
-</ul>
+<h1>Lists</h1>
+<p>Below are examples of how unordered (UL), ordered (OL) and definition (DL) lists are rendered by default.</p>
 
-<ul class="circle">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-	<li>List Item 4</li>
-</ul>
+<h2>UL List Styles</h2>
 
-<ul class="square">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-	<li>List Item 4</li>
-</ul>
+<p>By default, the list-style-type of nested unordered lists will change from disc to circle and then square. Lists further nested will maintain the square list-style-stype.</p>
+<div class="dis">
+	<ul>
+		<li>List Item 1</li>
+		<li>List Item 2
+			<ul>
+				<li>List Item 1</li>
+				<li>List Item 2
+					<ul>
+						<li>List Item 1</li>
+						<li>List Item 2
+							<ul>
+								<li>List Item 1</li>
+								<li>List Item 2</li>
+								<li>List Item 3</li>
+								<li>List Item 4</li>
+							</ul>
+						</li>
+						<li>List Item 3</li>
+						<li>List Item 4</li>
+					</ul>
+				</li>
+				<li>List Item 3</li>
+				<li>List Item 4</li>
+			</ul>
+		</li>
+		<li>List Item 3</li>
+		<li>List Item 4</li>
+	</ul>
+</div>
 
-<p><strong>Ordered List Styles</strong></p>
-<ol class="decimal">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-	<li>List Item 4</li>
-</ol>
-<ol class="lower-alpha">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-	<li>List Item 4</li>
-</ol>
+<h2>OL List Styles</h2>
+<p>By default, ordered lists have the decimal list-style-type and will not changed when nested.</p>
 
-<ol class="upper-alpha">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-	<li>List Item 4</li>
-</ol>
+<div class="dis">
+	<ol>
+		<li>List Item 1</li>
+		<li>List Item 2
+			<ol>
+				<li>List Item 1</li>
+				<li>List Item 2
+					<ol>
+						<li>List Item 1</li>
+						<li>List Item 2
+							<ol>
+								<li>List Item 1</li>
+								<li>List Item 2</li>
+								<li>List Item 3</li>
+								<li>List Item 4</li>
+							</ol>
+						</li>
+						<li>List Item 3</li>
+						<li>List Item 4</li>
+					</ol>
+				</li>
+				<li>List Item 3</li>
+				<li>List Item 4</li>
+			</ol>
+		</li>
+		<li>List Item 3</li>
+		<li>List Item 4</li>
+	</ol>
+</div>
+<h2>DL List Styles</h2>
+<p>By default, definition lists will indent the definition (&lt;dd&gt;).</p>
 
-<ol class="lower-roman">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-	<li>List Item 4</li>
-</ol>
-
-<ol class="upper-roman">
-	<li>List Item 1</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-	<li>List Item 4</li>
-</ol>
+<div class="dis">
+	<dl>
+		<dt>Term</dt>
+		<dd>Definition</dd>
+	</dl>
+</div>
