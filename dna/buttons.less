@@ -15,10 +15,13 @@ input[type=reset],
 	border: solid (@px * .1) @colorS4;
 	.border-radius( (@px * .3) );
 	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
 	
 	// HOVER STATES
 	&:hover {
 		background-color: darken(@colorS2, (@pct * .1));
+		color: @colorP1;
 	}
 
 	// TEXT ONLY BUTTONS
