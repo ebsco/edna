@@ -7,12 +7,11 @@
 
 // BASE FONT SIZE
 html {
-  font-size: 62.5%; /* Sets up the Base 10 stuff */
+	font-size: @font-size; /* set base font to 10 */
 }
 body {
-	.font-size(1.6);
+	.fontsize(1.6);
 }
-
 // HEADING LEVELS
 h1, h2, h3, h4, h5, h6 {
 	margin: (@em * .75) 0 (@em * .5);
@@ -22,29 +21,28 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	line-height: 1;
 	margin: 0 0 (@em * .636);
-	.font-size(4.4);
+	.fontsize(4.4);
 }
 h2 {
-	.font-size(3.6);
+	.fontsize(3.6);
 }
 h3 {
-	.font-size(2.6);
+	.fontsize(2.6);
 }
 h4 {
-	.font-size(2.2);
+	.fontsize(2.2);
 }
 h5 {
-	.font-size(1.8);
+	.fontsize(1.8);
 	font-weight: bold;
 }
 h6 {
-	.font-size(1.6);
+	.fontsize(1.6);
 	font-weight: bold;
 	font-style: italic;
 }
 // PARAGRAPH STYLES
 p {
-	//.font-size(1.6);	
 	margin: 0 0 @em;
 	&.lead {
 		font-size: (@em * 1.375);
@@ -98,7 +96,6 @@ blockquote {
 pre {
 	margin: 0 0 @em;
 	.monospace-font-family;
-	//.font-size(1.4);
 }
 // CODE
 code {
