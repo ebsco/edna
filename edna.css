@@ -103,7 +103,6 @@ a:hover {
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
 h1 {
-  font-size: 2em;
   margin: 0.67em 0;
 }
 /**
@@ -148,7 +147,6 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  font-size: 1em;
 }
 /**
  * Improve readability of pre-formatted text in all browsers.
@@ -165,15 +163,11 @@ q {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-small {
-  font-size: 80%;
-}
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
 sub,
 sup {
-  font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
@@ -242,9 +236,6 @@ select,
 textarea {
   font-family: inherit;
   /* 1 */
-
-  font-size: 100%;
-  /* 2 */
 
   margin: 0;
   /* 3 */
@@ -549,6 +540,16 @@ table {
 /**********
 	TYPOGRAPHY
 **********/
+html {
+  font-size: 62.5%;
+  /* Sets up the Base 10 stuff */
+
+}
+body {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-size: 1.6;
+}
 h1,
 h2,
 h3,
@@ -560,26 +561,37 @@ h6 {
   font-weight: normal;
 }
 h1 {
-  font-size: 2.75em;
   line-height: 1;
   margin: 0 0 0.636em;
+  font-size: 44px;
+  font-size: 4.4rem;
+  font-size: 4.4;
 }
 h2 {
-  font-size: 2.25em;
+  font-size: 36px;
+  font-size: 3.6rem;
+  font-size: 3.6;
 }
 h3 {
-  font-size: 1.625em;
+  font-size: 26px;
+  font-size: 2.6rem;
+  font-size: 2.6;
 }
 h4 {
-  font-size: 1.375em;
-  font-style: italic;
+  font-size: 22px;
+  font-size: 2.2rem;
+  font-size: 2.2;
 }
 h5 {
-  font-size: 1.125em;
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-size: 1.8;
   font-weight: bold;
 }
 h6 {
-  font-size: 1em;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-size: 1.6;
   font-weight: bold;
   font-style: italic;
 }
@@ -627,7 +639,6 @@ blockquote {
 pre {
   margin: 0 0 1em;
   font-family: monospace;
-  font-size: 1.3132em;
 }
 code {
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;

@@ -28,6 +28,13 @@
 	line-height: (@1em * 1.5);
 }
 
+.font-size(@sizeValue) {
+	@remValue: @sizeValue;
+	@pxValue: (@sizeValue * 10);
+	font-size: ~"@{pxValue}px"; 
+	font-size: ~"@{remValue}rem";
+}
+
 // CLEAR 
 .clear() {
   clear: both;
