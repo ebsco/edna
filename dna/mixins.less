@@ -20,12 +20,11 @@
 .font-color() {
 	color: @font-color;
 }
-
-.base-font() {
-	.font-family;
-	.font-color;
-	font-size: @font-size;
-	line-height: (@1em * 1.5);
+.fontsize(@sizeValue) {
+	@remValue: @sizeValue;
+	@pxValue: (@sizeValue * 10);
+	font-size: ~"@{pxValue}px"; // fallback for IE8
+	font-size: ~"@{remValue}rem"; // REMs for awesome browsers
 }
 
 // CLEAR 

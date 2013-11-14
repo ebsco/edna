@@ -59,10 +59,13 @@ template {
 html {
   font-family: sans-serif;
   /* 1 */
+
   -ms-text-size-adjust: 100%;
   /* 2 */
+
   -webkit-text-size-adjust: 100%;
   /* 2 */
+
 }
 /**
  * Remove default margin.
@@ -100,7 +103,6 @@ a:hover {
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
 h1 {
-  font-size: 2em;
   margin: 0.67em 0;
 }
 /**
@@ -145,7 +147,6 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  font-size: 1em;
 }
 /**
  * Improve readability of pre-formatted text in all browsers.
@@ -162,15 +163,11 @@ q {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-small {
-  font-size: 80%;
-}
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
 sub,
 sup {
-  font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
@@ -223,8 +220,10 @@ fieldset {
 legend {
   border: 0;
   /* 1 */
+
   padding: 0;
   /* 2 */
+
 }
 /**
  * 1. Correct font family not being inherited in all browsers.
@@ -237,10 +236,10 @@ select,
 textarea {
   font-family: inherit;
   /* 1 */
-  font-size: 100%;
-  /* 2 */
+
   margin: 0;
   /* 3 */
+
 }
 /**
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
@@ -273,8 +272,10 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
+
   cursor: pointer;
   /* 3 */
+
 }
 /**
  * Re-set default cursor for disabled elements.
@@ -291,8 +292,10 @@ input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
+
   padding: 0;
   /* 2 */
+
 }
 /**
  * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
@@ -302,9 +305,11 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
+
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
+
   box-sizing: content-box;
 }
 /**
@@ -330,8 +335,10 @@ input::-moz-focus-inner {
 textarea {
   overflow: auto;
   /* 1 */
+
   vertical-align: top;
   /* 2 */
+
 }
 /* ==========================================================================
    Tables
@@ -384,10 +391,13 @@ table {
 .col {
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
+
   -moz-box-sizing: border-box;
   /* Firefox, other Gecko */
+
   box-sizing: border-box;
   /* Opera/IE 8+ */
+
   float: left;
   width: 100%;
 }
@@ -530,6 +540,15 @@ table {
 /**********
 	TYPOGRAPHY
 **********/
+html {
+  font-size: 62.5%;
+  /* set base font to 10 */
+
+}
+body {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
 h1,
 h2,
 h3,
@@ -541,26 +560,31 @@ h6 {
   font-weight: normal;
 }
 h1 {
-  font-size: 2.75em;
   line-height: 1;
   margin: 0 0 0.636em;
+  font-size: 44px;
+  font-size: 4.4rem;
 }
 h2 {
-  font-size: 2.25em;
+  font-size: 36px;
+  font-size: 3.6rem;
 }
 h3 {
-  font-size: 1.625em;
+  font-size: 26px;
+  font-size: 2.6rem;
 }
 h4 {
-  font-size: 1.375em;
-  font-style: italic;
+  font-size: 22px;
+  font-size: 2.2rem;
 }
 h5 {
-  font-size: 1.125em;
+  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 h6 {
-  font-size: 1em;
+  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: bold;
   font-style: italic;
 }
@@ -608,7 +632,6 @@ blockquote {
 pre {
   margin: 0 0 1em;
   font-family: monospace;
-  font-size: 1.3132em;
 }
 code {
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
@@ -625,6 +648,8 @@ textarea {
   color: #333333;
   border: solid 1px #c1c1c1;
   border-radius: 3px;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 input[type=radio],
 input[type=checkbox] {
@@ -657,6 +682,8 @@ input[type=reset],
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 button:hover,
 input[type=submit]:hover,
