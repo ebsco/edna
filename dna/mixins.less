@@ -107,6 +107,10 @@
 	@div: 100;
 	@IE8rot: @num/@div;
 
+	// USING THIS BIT OF LESS
+	// unit(@dimension, [@unit: ""]);
+	// remove or change the unit of a dimension
+
 	filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=@IE8rot); // IE8 and lower
 	-ms-transform: rotate( unit(@num, deg) ); // IE 9 and higher
 	-o-transform: rotate( unit(@num, deg) ); // Opera
