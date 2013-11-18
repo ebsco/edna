@@ -14,6 +14,7 @@
 		cursor: pointer;
 		width: 0;
 		height: 0;
+		display: inline-block;
 
 		border-top: @border-width solid transparent;
 		border-right: @border-width solid transparent;
@@ -92,6 +93,51 @@
 			cursor: default;
 			&:hover {
 				border-right-color: @colorS4;
+			}
+		}
+	}
+
+
+	&.slim {
+		> .top,
+		> .right,
+		> .bottom,
+		> .left {
+			border-width: 0;
+			width: 10px;
+			height: 16px;
+			border-color: rgba(0, 0, 0, 0);
+			margin: 0;
+			padding: 0 0 0 3px;
+			&:after {
+				display: inline-block;
+			}
+			&:hover {
+				&:after {
+					color: #999;
+				}
+			}
+		}
+		> .top {
+			.rotate(-90);
+			&:after {
+				content: '❯';
+			}
+		}
+		> .right {
+			&:after {
+				content: '❯';
+			}
+		}
+		> .bottom {
+			.rotate(-90);
+			&:after {
+				content: '❮';
+			}
+		}
+		> .left {
+			&:after {
+				content: '❮';
 			}
 		}
 	}
