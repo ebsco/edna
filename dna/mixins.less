@@ -102,6 +102,18 @@
 }
 
 
+// ROTATION
+.rotate(@num) {
+	@div: 100;
+	@IE8rot: @num/@div;
+
+	filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=@IE8rot); // IE8 and lower
+	-ms-transform: rotate( unit(@num, deg) ); // IE 9 and higher
+	-o-transform: rotate( unit(@num, deg) ); // Opera
+	-moz-transform: rotate( unit(@num, deg) ); // Mozilla
+	-webkit-transform: rotate(unit(@num, deg)); // Safari
+	transform: rotate( unit(@num, deg) );
+}
 
 
 
