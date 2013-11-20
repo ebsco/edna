@@ -387,6 +387,7 @@ body {
 .l3,
 .l4 {
   padding: 0 15px;
+  box-sizing: border-box;
 }
 header,
 .l1,
