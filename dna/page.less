@@ -6,18 +6,19 @@
 **********/
 
 html {
-	height: @pct;
+	height: @pct; // stretch content from top to bottom
 }
 body {
 	min-width: (@px * 60);
 	max-width: (@px * 160);
-	height: @pct;
-	margin: auto;
+	height: @pct; // stretch content from top to bottom
+	margin: auto; // align content in center above max-width
 }
+ //set padding for elements
 .l1, .l2, .l3, .l4 {
 	padding: 0 (@px * 1.5);
 	box-sizing: border-box;
 }
 header, .l1, .l2, .l3, .l4, footer {
-	max-width: @pct;
+	max-width: @pct; // main content blocks width
 }
