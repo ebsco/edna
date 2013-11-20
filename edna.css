@@ -59,13 +59,10 @@ template {
 html {
   font-family: sans-serif;
   /* 1 */
-
   -ms-text-size-adjust: 100%;
   /* 2 */
-
   -webkit-text-size-adjust: 100%;
   /* 2 */
-
 }
 /**
  * Remove default margin.
@@ -220,10 +217,8 @@ fieldset {
 legend {
   border: 0;
   /* 1 */
-
   padding: 0;
   /* 2 */
-
 }
 /**
  * 1. Correct font family not being inherited in all browsers.
@@ -236,10 +231,8 @@ select,
 textarea {
   font-family: inherit;
   /* 1 */
-
   margin: 0;
   /* 3 */
-
 }
 /**
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
@@ -272,10 +265,8 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
-
   cursor: pointer;
   /* 3 */
-
 }
 /**
  * Re-set default cursor for disabled elements.
@@ -292,10 +283,8 @@ input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
-
   padding: 0;
   /* 2 */
-
 }
 /**
  * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
@@ -305,11 +294,9 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
-
   box-sizing: content-box;
 }
 /**
@@ -335,10 +322,8 @@ input::-moz-focus-inner {
 textarea {
   overflow: auto;
   /* 1 */
-
   vertical-align: top;
   /* 2 */
-
 }
 /* ==========================================================================
    Tables
@@ -396,7 +381,21 @@ body {
   max-width: 1600px;
   height: 100%;
   margin: auto;
-  padding: 1em;
+}
+.l1,
+.l2,
+.l3,
+.l4 {
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+header,
+.l1,
+.l2,
+.l3,
+.l4,
+footer {
+  max-width: 100%;
 }
 /**********
 	LAYOUT
@@ -404,13 +403,10 @@ body {
 .col {
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
-
   -moz-box-sizing: border-box;
   /* Firefox, other Gecko */
-
   box-sizing: border-box;
   /* Opera/IE 8+ */
-
   float: left;
   width: 100%;
 }
@@ -558,7 +554,6 @@ body {
 html {
   font-size: 62.5%;
   /* set base font to 10 */
-
 }
 body {
   font-size: 16px;
@@ -1059,10 +1054,12 @@ dd {
 	MEDIA FLOAT
 **********/
 /* [content] [content] side by side and allow for growth without wrapping */
-/* CONTENT ALIGNED AT TOP */.media-content {
+/* CONTENT ALIGNED AT TOP */
+.media-content {
   overflow: hidden;
 }
-/* CONTENT CAN FLOAT LEFT OR RIGHT */.media-left {
+/* CONTENT CAN FLOAT LEFT OR RIGHT */
+.media-left {
   float: left;
 }
 .media-right {
@@ -1073,7 +1070,8 @@ dd {
 	MEDIA BLOCK
 **********/
 /* [content] [content] side by side and allow for growth without wrapping */
-/* CONTENT VERTICALLY ALIGNED CENTER BY DEFAULT */.media-block {
+/* CONTENT VERTICALLY ALIGNED CENTER BY DEFAULT */
+.media-block {
   display: table;
   width: 100%;
 }
