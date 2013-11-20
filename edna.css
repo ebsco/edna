@@ -386,6 +386,16 @@ table {
   unicode-bidi: bidi-override;
 }
 /**********
+	PAGE
+**********/
+html,
+body {
+  min-width: 600px;
+  max-width: 1600px;
+  height: 100%;
+  padding: 1em;
+}
+/**********
 	LAYOUT
 **********/
 .col {
@@ -402,8 +412,10 @@ table {
   width: 100%;
 }
 .l1,
-.l2 {
-  max-width: 960px;
+.l2,
+.l3,
+.l4 {
+  width: 100%;
 }
 .l1 {
   *zoom: 1;
