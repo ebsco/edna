@@ -5,15 +5,18 @@
 // VARIABLES
 
 // COLORS
-@colorP1: #333;
-@colorP2: #474747;
-@colorP3: #5B5B5B;
-@colorP4: #707070;
-
-@colorS1: #FFF;
-@colorS2: #EAEAEA;
-@colorS3: #D6D6D6;
-@colorS4: #C1C1C1;
+@base: #343434;
+@Sbase: spin(@base, 360);
+// primary colors
+@colorP1: lighten(spin(@base, 5), 20%);
+@colorP2: lighten(spin(@base, 10), 10%);
+@colorP3: darken(spin(@base, -5), 10%);
+@colorP4: darken(spin(@base, -10), 20%);
+// secondary colors
+@colorS1: spin(@Sbase, 180);
+@colorS2: darken(spin(@Sbase, 180), 20%);
+@colorS3: lighten(@Sbase, 40%);
+@colorS4: lighten(@Sbase, 60%);
 
 
 // FONTS

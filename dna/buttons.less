@@ -5,6 +5,33 @@
 	BUTTONS
 **********/
 
+.skin {
+	list-style-type: none;
+	> li {
+		display: inline-block;
+		padding: 10px 0;
+		width: 100px;
+		text-align: center;
+		&:nth-child(1) {
+			background-color: @colorP1;
+			color: @colorS1;
+		}
+		&:nth-child(2) {
+			background-color: @colorP2;
+			color: @colorS2;
+		}
+		&:nth-child(3) {
+			background-color: @colorP3;
+			color: @colorS3;
+		}
+		&:nth-child(4) {
+			background-color: @colorP4;
+			color: @colorS4;
+		}
+	}
+}
+
+
 button,
 input[type=submit],
 input[type=reset],
