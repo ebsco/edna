@@ -1026,26 +1026,31 @@ dd {
   width: 25% !important;
   float: left;
   box-sizing: border-box;
+  clear: none;
 }
 .hundred > .threequarter {
   width: 75% !important;
   float: left;
   box-sizing: border-box;
+  clear: none;
 }
 .hundred > .third {
   width: 33% !important;
   float: left;
   box-sizing: border-box;
+  clear: none;
 }
 .hundred > .twothird {
   width: 66% !important;
   float: left;
   box-sizing: border-box;
+  clear: none;
 }
 .hundred > .half {
   width: 50% !important;
   float: left;
   box-sizing: border-box;
+  clear: none;
 }
 [dir="rtl"] .quarter,
 [dir="rtl"] .threequarter,
