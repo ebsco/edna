@@ -4,29 +4,31 @@
 /**********
 	WIDTH
 **********/
+
+.width(@w: @n) {
+	width: percentage(@w/100) !important;
+	float: left;
+	box-sizing: border-box;
+}
+
 .hundred {
 	width: @pct;
 	display: block;
 	.clearfix;
 	> .quarter {
-		width: 25% !important;
-		float: left;
+		.width(25);
 	}
 	> .threequarter {
-		width: 75% !important;
-		float: left;
+		.width(75);
 	}
 	> .third {
-		width: 33% !important;
-		float: left;
+		.width(33);
 	}
 	> .twothird {
-		width: 66% !important;	
-		float: left;
+		.width(66);
 	}
 	> .half {
-		width: 50% !important;
-		float: left;
+		.width(50);
 	}
 }
 

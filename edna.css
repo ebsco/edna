@@ -634,7 +634,7 @@ sub {
 }
 blockquote {
   margin-left: 1.5rem;
-  border-left: 0.25em solid #cc9999;
+  border-left: 0.25em solid #d6d6d6;
   padding-left: .5rem;
   margin-bottom: 1em;
 }
@@ -655,7 +655,7 @@ input[type=search],
 textarea {
   padding: 0.25em 0.5em;
   color: #333333;
-  border: solid 1px #eedddd;
+  border: solid 1px #c1c1c1;
   border-radius: 3px;
   font-size: 16px;
   font-size: 1.6rem;
@@ -683,9 +683,9 @@ input[type=submit],
 input[type=reset],
 .btn {
   padding: 0.25em 0.5em;
-  color: #aa5c55;
-  background-color: #112222;
-  border: solid 1px #eedddd;
+  color: #333333;
+  background-color: #eaeaea;
+  border: solid 1px #c1c1c1;
   -moz-border-radius: 3px;
   border-radius: 3px;
   cursor: pointer;
@@ -698,8 +698,8 @@ button:hover,
 input[type=submit]:hover,
 input[type=reset]:hover,
 .btn:hover {
-  background-color: #000000;
-  color: #aa5c55;
+  background-color: #d1d1d1;
+  color: #333333;
 }
 button.txt,
 input[type=submit].txt,
@@ -738,7 +738,7 @@ button.action,
 input[type=submit].action,
 input[type=reset].action,
 .btn.action {
-  color: #884f44;
+  color: #474747;
   background-color: #f5dd6a;
   border-color: #e9c410;
 }
@@ -753,7 +753,7 @@ button.primary,
 input[type=submit].primary,
 input[type=reset].primary,
 .btn.primary {
-  color: #112222;
+  color: #eaeaea;
   background-color: #007f00;
   border-color: #006600;
 }
@@ -768,22 +768,22 @@ button.cancel,
 input[type=submit].cancel,
 input[type=reset].cancel,
 .btn.cancel {
-  color: #884f44;
-  background-color: #eedddd;
-  border-color: #cc9999;
+  color: #474747;
+  background-color: #c1c1c1;
+  border-color: #8e8e8e;
 }
 button.cancel:hover,
 input[type=submit].cancel:hover,
 input[type=reset].cancel:hover,
 .btn.cancel:hover {
-  background-color: #ddbbbb;
-  border-color: #cc9999;
+  background-color: #a8a8a8;
+  border-color: #8e8e8e;
 }
 button.search,
 input[type=submit].search,
 input[type=reset].search,
 .btn.search {
-  color: #112222;
+  color: #eaeaea;
   background-color: #428bca;
   border-color: #3071a9;
 }
@@ -810,9 +810,9 @@ button input[type=reset][disabled],
 input[type=submit] input[type=reset][disabled],
 input[type=reset] input[type=reset][disabled],
 .btn input[type=reset][disabled] {
-  color: #eedddd;
-  background-color: #cc9999;
-  border-color: #eedddd;
+  color: #c1c1c1;
+  background-color: #d6d6d6;
+  border-color: #c1c1c1;
   cursor: default;
 }
 button.disabled:hover,
@@ -831,7 +831,7 @@ button input[type=reset][disabled]:hover,
 input[type=submit] input[type=reset][disabled]:hover,
 input[type=reset] input[type=reset][disabled]:hover,
 .btn input[type=reset][disabled]:hover {
-  background-color: #cc9999;
+  background-color: #d6d6d6;
 }
 .btn-group {
   margin-bottom: 1em;
@@ -870,7 +870,7 @@ input[type=reset] input[type=reset][disabled]:hover,
 **********/
 .dd {
   position: relative;
-  background-color: #112222;
+  background-color: #eaeaea;
   border-radius: 3px;
   display: inline-block;
   line-height: normal;
@@ -880,7 +880,7 @@ input[type=reset] input[type=reset][disabled]:hover,
   position: absolute;
   top: 28px;
   left: -1px;
-  border: solid 1px #884f44;
+  border: solid 1px #474747;
   background-color: #FFF;
   border-radius: 3px;
   list-style-type: none;
@@ -895,7 +895,7 @@ input[type=reset] input[type=reset][disabled]:hover,
   white-space: nowrap;
 }
 .dd .dd-label:hover {
-  background-color: #112222;
+  background-color: #eaeaea;
   color: #1a1a1a;
 }
 .dd .dd-input {
@@ -903,11 +903,11 @@ input[type=reset] input[type=reset][disabled]:hover,
   left: -9999px;
 }
 .dd .dd-input:checked + .dd-label {
-  background-color: #000000;
+  background-color: #d1d1d1;
   color: #333333;
 }
 .dd .dd-input:checked + .dd-label:hover {
-  background-color: #112222;
+  background-color: #eaeaea;
 }
 .dd .dd-active {
   color: #333333;
@@ -936,7 +936,7 @@ input[type=reset] input[type=reset][disabled]:hover,
   border-left-width: 5px;
   margin-bottom: 2.5px;
   margin-top: -2.5px;
-  border-top-color: #221114;
+  border-top-color: #707070;
 }
 .btn-group .dd:last-child .dd-active,
 .btn-group .dd.last .dd-active {
@@ -958,22 +958,22 @@ input[type=reset] input[type=reset][disabled]:hover,
 table {
   border-collapse: separate;
   border-spacing: 0;
-  border: 1px solid #884f44;
+  border: 1px solid #474747;
   border-radius: 3px;
 }
 thead tr {
-  background-color: #112222;
+  background-color: #eaeaea;
   border-radius: 3px 3px 0 0;
 }
 th {
   font-weight: bold;
   padding: 10px 20px;
   text-align: left;
-  border-left: 1px solid #884f44;
+  border-left: 1px solid #474747;
 }
 td {
   padding: 10px 20px;
-  border-left: 1px solid #884f44;
+  border-left: 1px solid #474747;
 }
 th:first-child,
 td:first-child {
@@ -1025,22 +1025,27 @@ dd {
 .hundred > .quarter {
   width: 25% !important;
   float: left;
+  box-sizing: border-box;
 }
 .hundred > .threequarter {
   width: 75% !important;
   float: left;
+  box-sizing: border-box;
 }
 .hundred > .third {
   width: 33% !important;
   float: left;
+  box-sizing: border-box;
 }
 .hundred > .twothird {
   width: 66% !important;
   float: left;
+  box-sizing: border-box;
 }
 .hundred > .half {
   width: 50% !important;
   float: left;
+  box-sizing: border-box;
 }
 [dir="rtl"] .quarter,
 [dir="rtl"] .threequarter,
