@@ -1076,6 +1076,10 @@ dd {
   box-sizing: border-box;
   clear: none;
 }
+[dir="rtl"] .fifth,
+[dir="rtl"] .twofifth,
+[dir="rtl"] .threefifth,
+[dir="rtl"] .threefifth,
 [dir="rtl"] .quarter,
 [dir="rtl"] .threequarter,
 [dir="rtl"] .third,
