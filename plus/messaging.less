@@ -10,14 +10,14 @@
 	margin: 0 0 @em;
 	border: solid (@px * .1) darken(@msg, (@pct * .2));
 	background-color: @msg;
-	border-radius: (@px * .3);
+	.radius(@radius);
 	position: relative;
 	min-height: (@px * 5);
 	.box(border);
 	> .icon {
 		display: inline-block;
 		float: left;
-		font-size: 2.5rem;
+		.fontsize(2.5);
 		line-height: 1.5rem;
 		// set a constant left padding to accommodate the icon
 		~ .msg-txt {

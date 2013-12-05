@@ -32,7 +32,7 @@
 				background-color: darken(@colorS2, (@pct * .2));
 			}
 			&:first-child {
-				.border-radius-tl((@px * .3));
+				.radius-tl((@px * .3));
 			}
 			&.active {
 				cursor: default;
@@ -47,10 +47,10 @@
 	}
 	.tab-content {
 		.tab-content-item {
-			.border-radius-tl(0);
-			.border-radius-tr(0);
-			.border-radius-br((@px * .3));
-			.border-radius-bl((@px * .3));
+			.radius-tl(0);
+			.radius-tr(0);
+			.radius-br((@px * .3));
+			.radius-bl((@px * .3));
 			width: @pct;
 			border: (@px * .1) solid @colorS3;
 			padding: @px (@px * 2);

@@ -85,10 +85,10 @@ ul,ol {
 			width: (@px * .5);
 			padding-right: @px;
 			color: @colorS4;
-			font-size: @px;
+			.fontsize(1);
 		}
 		.before { // local mixin
-			font-size: (@px * 1.6);
+			.fontsize(1.6);
 			color: @colorS4;
 			height: (@px * 1.4);
 		}
@@ -112,7 +112,7 @@ ul,ol {
 			content: '\25BC';
 			margin-left: (@px * .5);
 			color: @link-color;
-			font-size: (@px * 1.2);
+			.fontsize(1.2);
 			&:hover {
 				color: @link-color-active;
 			}

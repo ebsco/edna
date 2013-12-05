@@ -5,8 +5,8 @@
 		position: relative;
 		display: inline;
 		input {
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
+			.radius-tr(0);
+			.radius-br(0);
 		}
 		.reset {
 			position: absolute;
@@ -20,7 +20,7 @@
 	}
 	.btn.search {
 		margin-left: -(@px * .5);
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;		
+			.radius-tl(0);
+			.radius-bl(0);
 	}
 }

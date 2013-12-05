@@ -188,25 +188,29 @@
 
 //----- BORDER RADIUS ----------------------------------------//
 
-.border-radius(@rad: @m) {
+.radius(@rad: @m) {
 	-moz-border-radius: @rad;
 	border-radius: @rad;
 }
-.border-radius-tl(@rad: @m) {
+.radius-tl(@rad: @m) {
 	-moz-border-radius-topleft: @rad;
 	border-top-left-radius: @rad;
 }
-.border-radius-tr(@rad: @m) {
+.radius-tr(@rad: @m) {
 	-moz-border-radius-topright: @rad;
 	border-top-right-radius: @rad;
 }
-.border-radius-br(@rad: @m) {
+.radius-br(@rad: @m) {
 	-moz-border-radius-bottomright: @rad;
 	border-bottom-right-radius: @rad;
 }
-.border-radius-bl(@rad: @m) {
+.radius-bl(@rad: @m) {
 	-moz-border-radius-bottomleft: @rad;
 	border-bottom-left-radius: @rad;
+}
+.radius-all(@radT: @t, @radR: @r, @radB: @b, @radL: @l) {
+	-moz-border-radius: @radT @radR @radB @radL;
+	border-radius: @radT @radR @radB @radL;
 }
 
 

@@ -13,7 +13,7 @@ input[type=reset],
 	color: @colorP1;
 	background-color: @colorS2;
 	border: solid (@px * .1) @colorS4;
-	.border-radius( (@px * .3) );
+	.radius( (@px * .3) );
 	cursor: pointer;
 	text-decoration: none;
 	display: inline-block;
@@ -103,7 +103,7 @@ input[type=reset],
 	.grp-input,
 	.grp-dropdown {
 		float: left;
-		border-radius: 0;
+		.radius(0);
 		border-left-width: 0;
 	}
 	.grp-btn + .grp-btn {
@@ -112,12 +112,12 @@ input[type=reset],
 	:last-child,
 	.last //IE support
 	{
-		border-radius: 0 @radius @radius 0;
+		.radius-all(0 @radius @radius 0);
 	}
 	:first-child,
 	.first //IE support 
 	{
 		border-left-width: (@px * .1);
-		border-radius: @radius 0 0 @radius;
+		.radius-all(@radius 0 0 @radius);
 	}	
 }

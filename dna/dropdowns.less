@@ -7,7 +7,7 @@
 .dd {
 	position: relative;
 	background-color: @colorS2;
-	border-radius: @radius;
+	.radius(@radius);
 	display: inline-block;
 	line-height: normal;
 
@@ -18,7 +18,7 @@
 		left: -(@px * .1);
 		border: solid (@px * .1) @colorP2;
 		background-color: #FFF;
-		border-radius: (@px * .3);
+		.radius(@radius);
 		list-style-type: none;
 		padding: 0;
 		z-index: 10;
@@ -78,7 +78,7 @@
 		&.last {
 			.dd-active {
 				border-left-width: 0;
-				border-radius: 0 @radius @radius 0;
+				.radius-all(0 @radius @radius 0);
 			}
 		}
 
@@ -87,7 +87,7 @@
 			float: left;
 			.dd-active {
 				border-left-width: (@px * .1);
-				border-radius: @radius 0 0 @radius;
+				.radius-all(@radius 0 0 @radius);
 			}
 		}	
 	}

@@ -9,11 +9,11 @@ table {
 	border-collapse: separate;
 	border-spacing: 0;
 	border: (@px * .1) solid @colorP2;
-	border-radius: @radius;
+	.radius(@radius);
 }
 thead tr {
 	background-color: @colorS2;
-	border-radius: @radius  @radius 0 0;
+	.radius-all(@radius  @radius 0 0);
 }
 th {
 	font-weight: bold;
