@@ -170,7 +170,7 @@
 
 //----- BORDERS ----------------------------------------//
 
-.border-width(@widthT: (@px * .1), @widthR: (@px * .1), @widthB: (@px * .1), @widthL: (@px * .1)) {
+.border-width(@widthT: (@px * .1); @widthR: (@px * .1); @widthB: (@px * .1); @widthL: (@px * .1)) {
 	border-width: @widthT @widthR @widthB @widthL;
 }
 .border-style(@style: solid) {
@@ -180,7 +180,7 @@
 	border-color: @colorP1;
 }
 //.border(@width: (@px * .1), @style: solid, @color: @colorS3) {
-.border(@widthT: (@px * .1), @widthR: (@px * .1), @widthB: (@px * .1), @widthL: (@px * .1), @style: solid, @color: @colorS3) {
+.border(@widthT: (@px * .1); @widthR: (@px * .1); @widthB: (@px * .1); @widthL: (@px * .1); @style: solid; @color: @colorS3) {
 	border-width: @widthT @widthR @widthB @widthL;
 	border-style: @style;
 	border-color: @colorP1;
@@ -208,7 +208,7 @@
 	-moz-border-radius-bottomleft: @rad;
 	border-bottom-left-radius: @rad;
 }
-.radius-all(@radT: @t, @radR: @r, @radB: @b, @radL: @l) {
+.radius-all(@radT: @t; @radR: @r; @radB: @b; @radL: @l) {
 	-moz-border-radius: @radT @radR @radB @radL;
 	border-radius: @radT @radR @radB @radL;
 }

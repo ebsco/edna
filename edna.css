@@ -606,7 +606,8 @@ p {
   margin: 0 0 1em;
 }
 p.lead {
-  font-size: 1.375em;
+  font-size: 16px;
+  font-size: 1.6rem;
   margin-bottom: 0.725em;
 }
 a {
@@ -661,6 +662,7 @@ textarea {
   padding: 0.25em 0.5em;
   color: #333333;
   border: solid 1px #c1c1c1;
+  -moz-border-radius: 3px;
   border-radius: 3px;
   font-size: 16px;
   font-size: 1.6rem;
@@ -855,6 +857,7 @@ input[type=reset] input[type=reset][disabled]:hover,
 .btn-group .grp-input,
 .btn-group .grp-dropdown {
   float: left;
+  -moz-border-radius: 0;
   border-radius: 0;
   border-left-width: 0;
 }
@@ -863,11 +866,13 @@ input[type=reset] input[type=reset][disabled]:hover,
 }
 .btn-group :last-child,
 .btn-group .last {
+  -moz-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
 .btn-group :first-child,
 .btn-group .first {
   border-left-width: 1px;
+  -moz-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
 /**********
@@ -876,6 +881,7 @@ input[type=reset] input[type=reset][disabled]:hover,
 .dd {
   position: relative;
   background-color: #eaeaea;
+  -moz-border-radius: 3px;
   border-radius: 3px;
   display: inline-block;
   line-height: normal;
@@ -887,6 +893,7 @@ input[type=reset] input[type=reset][disabled]:hover,
   left: -1px;
   border: solid 1px #474747;
   background-color: #FFF;
+  -moz-border-radius: 3px;
   border-radius: 3px;
   list-style-type: none;
   padding: 0;
@@ -946,6 +953,7 @@ input[type=reset] input[type=reset][disabled]:hover,
 .btn-group .dd:last-child .dd-active,
 .btn-group .dd.last .dd-active {
   border-left-width: 0;
+  -moz-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
 .btn-group .dd:first-child,
@@ -955,6 +963,7 @@ input[type=reset] input[type=reset][disabled]:hover,
 .btn-group .dd:first-child .dd-active,
 .btn-group .dd.first .dd-active {
   border-left-width: 1px;
+  -moz-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
 /**********
@@ -964,10 +973,12 @@ table {
   border-collapse: separate;
   border-spacing: 0;
   border: 1px solid #474747;
+  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 thead tr {
   background-color: #eaeaea;
+  -moz-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
 }
 th {
