@@ -386,7 +386,12 @@ body {
 .l3,
 .l4 {
   padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
   box-sizing: border-box;
+  /* Opera/IE 8+ */
 }
 header,
 .l1,
@@ -1025,55 +1030,100 @@ dd {
 .hundred > .fifth {
   width: 20% !important;
   float: left;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
   box-sizing: border-box;
+  /* Opera/IE 8+ */
   clear: none;
 }
 .hundred > .twofifth {
   width: 40% !important;
   float: left;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
   box-sizing: border-box;
+  /* Opera/IE 8+ */
   clear: none;
 }
 .hundred > .threefifth {
   width: 60% !important;
   float: left;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
   box-sizing: border-box;
+  /* Opera/IE 8+ */
   clear: none;
 }
 .hundred > .fourfifth {
   width: 80% !important;
   float: left;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
   box-sizing: border-box;
+  /* Opera/IE 8+ */
   clear: none;
 }
 .hundred > .quarter {
   width: 25% !important;
   float: left;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
   box-sizing: border-box;
+  /* Opera/IE 8+ */
   clear: none;
 }
 .hundred > .threequarter {
   width: 75% !important;
   float: left;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
   box-sizing: border-box;
+  /* Opera/IE 8+ */
   clear: none;
 }
 .hundred > .third {
   width: 33% !important;
   float: left;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
   box-sizing: border-box;
+  /* Opera/IE 8+ */
   clear: none;
 }
 .hundred > .twothird {
   width: 66% !important;
   float: left;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
   box-sizing: border-box;
+  /* Opera/IE 8+ */
   clear: none;
 }
 .hundred > .half {
   width: 50% !important;
   float: left;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
   box-sizing: border-box;
+  /* Opera/IE 8+ */
   clear: none;
 }
 [dir="rtl"] .fifth,

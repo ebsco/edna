@@ -63,16 +63,11 @@
 	clip: rect((@px * .1), (@px * .1), (@px * .1), (@px * .1));
 }
 
-// MIXINS
-.rounded() {
-	border-radius: (@px * .3);
-}
-
+// TRANSPORT
 .transport-top(@w: (@px * .5)) {
 	border-right-width: @w;
 	border-bottom-width: @w;
 	border-left-width: @w;
-
 	margin-bottom: (@w / 2);
 	margin-top: -(@w / 2);
 }
@@ -80,7 +75,6 @@
 	border-top-width: @w;
 	border-bottom-width: @w;
 	border-left-width: @w;
-
 	margin-left: (@w / 2);
 	margin-right: -(@w / 2);
 }
@@ -88,7 +82,6 @@
 	border-top-width: @w;
 	border-right-width: @w;
 	border-left-width: @w;
-
 	margin-bottom: (@w / 2);
 	margin-top: -(@w / 2);
 }
@@ -96,7 +89,6 @@
 	border-top-width: @w;
 	border-right-width: @w;
 	border-bottom-width: @w;
-
 	margin-left: (@w / 2);
 	margin-right: -(@w / 2);
 }
@@ -120,6 +112,13 @@
 }
 
 
+// BOX-SIZING
+.box(@sizing) {
+	// should take either CONTENT or BORDER
+	-webkit-box-sizing: escape("@{sizing}-box"); /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: escape("@{sizing}-box");    /* Firefox, other Gecko */
+	box-sizing: escape("@{sizing}-box");         /* Opera/IE 8+ */
+}
 
 
 //----- MARGIN ----------------------------------------//
