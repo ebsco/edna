@@ -5,7 +5,7 @@
 	TRANSPORT
 **********/
 .transport {
-	@border-width: (@px * 1.5);
+	@border-width: (unit( (@px) ) * 1.5);
 	> .top,
 	> .right,
 	> .bottom,
@@ -16,51 +16,51 @@
 		height: 0;
 		display: inline-block;
 
-		border-top: @border-width solid transparent;
-		border-right: @border-width solid transparent;
-		border-bottom: @border-width solid transparent;
-		border-left: @border-width solid transparent;
+		border-top: escape("@{border-width}px") solid transparent;
+		border-right: escape("@{border-width}px") solid transparent;
+		border-bottom: escape("@{border-width}px") solid transparent;
+		border-left: escape("@{border-width}px") solid transparent;
 	}
 	> .top {
-		border-bottom-width: @border-width;
+		border-bottom-width: escape("@{border-width}px");
 		border-bottom-style: solid;
 		border-bottom-color: @colorS3;
 		border-top-width: 0;
-		margin-bottom: (@border-width * .5);
-		margin-top: -(@border-width * .5);
+		.mar-b(@border-width * .5; px);
+		.mar-t(-@border-width * .5; px);
 		&:hover {
 			border-bottom-color: @colorP4;
 		}
 	}
 	> .right {
-		border-left-width: @border-width;
+		border-left-width: escape("@{border-width}px");
 		border-left-style: solid;
 		border-left-color: @colorS3;
 		border-right-width: 0;
-		margin-left: (@border-width * .5);
-		margin-right: -(@border-width * .5);
+		.mar-l(@border-width * .5; px);
+		.mar-r(-@border-width * .5; px);
 		&:hover {
 			border-left-color: @colorP4;
 		}
 	}
 	> .bottom {
-		border-top-width: @border-width;
+		border-top-width: escape("@{border-width}px");
 		border-top-style: solid;
 		border-top-color: @colorS3;
 		border-bottom-width: 0;
-		margin-bottom: (@border-width * .5);
-		margin-top: -(@border-width * .5);
+		.mar-b(@border-width * .5; px);
+		.mar-t(-@border-width * .5; px);
 		&:hover {
 			border-top-color: @colorP4;
 		}
 	}
 	> .left {
-		border-right-width: @border-width;
+		border-right-width: escape("@{border-width}px");
 		border-right-style: solid;
 		border-right-color: @colorS3;
 		border-left-width: 0;
-		margin-left: (@border-width * .5);
-		margin-right: -(@border-width * .5);
+		.mar-l(@border-width * .5; px);
+		.mar-r(-@border-width * .5; px);
 		&:hover {
 			border-right-color: @colorP4;
 		}
@@ -104,11 +104,11 @@
 		> .bottom,
 		> .left {
 			border-width: 0;
-			width: 10px;
-			height: 16px;
+			width: @px;
+			height: (@px * 1.6);
 			border-color: rgba(0, 0, 0, 0);
-			margin: 0;
-			padding: 0 0 0 3px;
+			.mar;
+			.pad-4(0;0;0;3;px);
 			&:after {
 				display: inline-block;
 			}

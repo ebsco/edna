@@ -9,7 +9,7 @@
 input[type=text],
 input[type=search],
 textarea {
-	padding: (@em * .25) (@em * .5);
+	.pad-2(.25; .5);
 	color: @font-color;
 	border: solid (@px * .1) @colorS4;
 	.radius(@radius);
@@ -19,18 +19,18 @@ textarea {
 // RADIO / CHECKBOXES
 input[type=radio],
 input[type=checkbox] {
-	margin-right: (@px * .5);
+	.mar-r(5;px);
 }
 label {
-	padding-right: @em;
+	.pad-r(1);
 }
 
 // RADIO / CHECKBOXES
 .cb-list {
 	list-style: none;
-	padding-left: 0;
+	.pad-l(0);
 }
 .cb-inline li {
 	display: inline;
-	padding: 0 0 @em;
+	.pad-3(0; 0; 1);
 }

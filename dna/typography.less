@@ -14,13 +14,14 @@ body {
 }
 // HEADING LEVELS
 h1, h2, h3, h4, h5, h6 {
-	margin: (@em * .75) 0 (@em * .5);
+	.mar-3(.75; 0; .5);
 	line-height: 1.25;
 	font-weight: normal;
+	color: @colorP2;
 }
 h1 {
 	line-height: 1;
-	margin: 0 0 (@em * .636);
+	.mar-3(0; 0; .636);
 	.fontsize(4.4);
 }
 h2 {
@@ -43,10 +44,10 @@ h6 {
 }
 // PARAGRAPH STYLES
 p {
-	margin: 0 0 @em;
+	.mar-3(0; 0; 1);
 	&.lead {
 		.fontsize(1.6);
-		margin-bottom: (@em * .725);
+		.mar-b(.725);
 	}
 }
 // LINK STYLES
@@ -87,19 +88,18 @@ sub {
 }
 // BLOCKQUOTES
 blockquote {
-	margin-left: 1.5rem;
+	.mar-l(1.5;rem);
 	border-left: (@em * .25) solid @colorS3;
-	padding-left: .5rem;
-	margin-bottom: @em;
+	.pad-l(.5r);
 }
 // PRE
 pre {
-	margin: 0 0 @em;
-	.monospace-font-family;
+	.mar-3(0; 0; 1);
+	.font-family(mono);
 }
 // CODE
 code {
-	.code-font-family;
+	.font-family(code);
 	color: #696;
 	font-weight: normal;
 }

@@ -6,7 +6,7 @@
 **********/
 .carousel {
 	border: (@px * .1) solid @colorS4;
-	padding: (@px * 1.5);
+	.pad(15;px);
 	width: @pct;
 	background-color: @colorS1;
 	.carousel-img {
@@ -22,7 +22,7 @@
 	.carousel-nav {
 		.clearfix;
 		width: @pct;
-		margin: (@px * 1.5) 0 0;
+		.mar-3(15;0;0;px);
 		overflow: hidden;
 		height: (@px * 5.5);
 		position: relative;
@@ -33,14 +33,14 @@
 		&.first {
 			left: 0;
 			.left {
-				margin: @px 0 0 (@px * .1);
+				.mar-3(0;0;1;px);
 			}			
 		}
 		&:nth-child(3),
 		.last {
 			right: 0;
 			.right {
-				margin: @px 0 0 (@px * .5);
+				.mar-3(0;0;5;px);
 			}
 		}
 	}
@@ -54,14 +54,14 @@
 		right: (@px * 2);
 		.carousel-list {
 			list-style-type: none;
-			margin: 0;
-			padding: 0;
+			.mar;
+			.pad(0);
 			width: (@px * 100);
 			position: relative;
 			.carousel-list-item {
 				float: left;
-				margin: 0 (@px * .5) 0 0;
-				padding: 0;
+				.mar-4(0;5;0;0;px);
+				.pad(0);
 				display: inline-block;
 				cursor: pointer;
 				border: (@px * .1) solid @colorS4;

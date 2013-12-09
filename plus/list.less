@@ -11,8 +11,8 @@
 // RESET LIST
 ul,ol {
 	&.base {
-		margin: 0;
-		padding: 0;
+		.mar;
+		.pad;
 		list-style-type: none;
 		-webkit-margin-before: 0;
 		-webkit-margin-after: 0;
@@ -20,8 +20,8 @@ ul,ol {
 		-webkit-margin-end: 0;
 		-webkit-padding-start: 0;
 		> li {
-			margin: 0;
-			padding: 0;
+			.mar;
+			.pad;
 		}	
 	}
 }
@@ -56,26 +56,26 @@ ul,ol {
 
 // CITATION EXAMPLE
 .citation > dt {
-	padding: (@em * .5);
-	padding-left: 0;
+	.pad(5);
+	.pad-l;
 	float: left;
 	font-weight: bold;
 	clear: left;
 }
 
 .citation > dd {
-	padding: (@em * .5);
+	.pad(5);
 }
 
 // TREELIST EXAMPLE
 .tree-list {
 	list-style-type: none;
-	padding:  0;
+	.pad;
 	> .tree-list {
-		margin-left:  (@px * 1.5);
+		.mar-l(15;px);
 	}
 	.list-item {
-		margin-bottom: (@px * .3);
+		.mar-b(3;px);
 		a {
 			text-decoration: none;
 		}
@@ -83,7 +83,7 @@ ul,ol {
 			display: inline-block;
 			content: '\25FC';
 			width: (@px * .5);
-			padding-right: @px;
+			.pad-r;
 			color: @colorS4;
 			.fontsize(1);
 		}
@@ -106,11 +106,11 @@ ul,ol {
 		}
 	}
 	.more {
-		margin-left: (@px * 1.5);
+		.mar-l(15;px);
 		&:after {
 			display: inline-block;
 			content: '\25BC';
-			margin-left: (@px * .5);
+			.mar-l(5;px);
 			color: @link-color;
 			.fontsize(1.2);
 			&:hover {

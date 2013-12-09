@@ -9,7 +9,7 @@ button,
 input[type=submit],
 input[type=reset],
 .btn {
-	padding: (@em * .25) (@em * .5);
+	.pad-2(.25;.5);
 	color: @colorP1;
 	background-color: @colorS2;
 	border: solid (@px * .1) @colorS4;
@@ -107,7 +107,7 @@ input[type=reset],
 		border-left-width: 0;
 	}
 	.grp-btn + .grp-btn {
-		margin-left: 0;
+		.mar-l(0);
 	}
 	:last-child,
 	.last //IE support

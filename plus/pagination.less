@@ -10,13 +10,13 @@
 	.pag-list {
 		list-style-type: none;
 		display: inline-block;
-		padding: 0;
+		.pad(0);
 		float: left;
 		.pag-list-item {
 			display: inline-block;
 			float: left;
 			border-right: (@px * .1) solid @colorS4;
-			padding: 0 @px;
+			.pad-2(0; 10; px);
 			cursor: pointer;
 			color: lighten(@font-color, 20%);
 			&:nth-last-child(1) {

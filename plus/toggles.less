@@ -5,26 +5,26 @@
 	TOGGLES
 **********/
 .toggle {
-	padding: 0;
+	.pad;
 	list-style-type: none;
 	+ .toggle {
-		padding-top: (@px * 1.5);
+		.pad-t(15; px);
 	}
 	.toggle-content {
 		display: none;
 		border: (@px * .1) solid @colorS3;
 		.radius-br((@px * .3));
 		.radius-bl((@px * .3));
-		padding: (@px * 3);
+		.pad(30; px);
 		background-color: @colorS1;
 		> *:last-child { // remove any extra margin on the last item for better parent padding
-			margin: 0;
-		}		
+			.mar;
+		}
 	}
 	.toggle-tab {
 		.radius((@px * .3));
 		border: (@px * .1) solid @colorS3;
-		padding: (@px * 1.2) (@px * .8);
+		.pad-2(12; 8; px);
 		background-color: @colorS1;
 		font-weight: bold;
 		cursor: pointer;
@@ -32,11 +32,10 @@
 			.radius((@px * .3));
 			border: (@px * .1) solid @colorS3;
 			display: inline-block;
-			margin-right: @px;
+			.mar-r(10; px);
 			width: (@px * 2);
 			height: (@px * 2);
 			text-align: center;
-
 			&:before {
 				color: @colorP4;
 				content: '+';
@@ -55,7 +54,7 @@
 			}
 			+ .toggle-content {
 				display: inline-block;
-				margin-top: -(@px * .1);
+				.mar-t(-1; px);
 				z-index: 10;
 			}
 		}

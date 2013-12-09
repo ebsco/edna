@@ -11,10 +11,13 @@
 .font-family() {
 	font-family: Helvetica, Arial, sans-serif;
 }
-.code-font-family() {
+.font-family(@ff) when (@ff = default) {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.font-family(@ff) when (@ff = code) {
 	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
-.monospace-font-family() {
+.font-family(@ff) when (@ff = mono) {
 	font-family: monospace;
 }
 .font-color() {
@@ -26,6 +29,7 @@
 	font-size: ~"@{pxValue}px"; // fallback for IE8
 	font-size: ~"@{remValue}rem"; // REMs for awesome browsers
 }
+
 
 // CLEAR 
 .clear() {
@@ -123,50 +127,103 @@
 
 //----- MARGIN ----------------------------------------//
 
-.margin(@mar: @m) {
-	margin: @mar;
+.mar(@n: 0; @s: em) when (@n = 0) {
+	margin: @n;
 }
-.margin-t(@mar: @m) {
-	margin-top: @mar;
+.mar(@n: 0; @s: em) when not (@n = 0) {
+	margin: escape("@{n}@{s}");
 }
-.margin-r(@mar: @m) {
-	margin-right: @mar;
+// margin top
+.mar-t(@n: 0; @s: em) when (@n = 0) {
+	margin-top: @n;
 }
-.margin-b(@mar: @m) {
-	margin-bottom: @mar;
+.mar-t(@n: 0; @s: em) when not (@n = 0) {
+	margin-top: escape("@{n}@{s}");
 }
-.margin-l(@mar: @m) {
-	margin-left: @mar;
+// margin right
+.mar-r(@n: 0; @s: em) when (@n = 0) {
+	margin-right: @n;
+}
+.mar-r(@n: 0; @s: em) when not (@n = 0) {
+	margin-right: escape("@{n}@{s}");
+}
+// margin bottom
+.mar-b(@n: 0; @s: em) when (@n = 0) {
+	margin-bottom: @n;
+}
+.mar-b(@n: 0; @s: em) when not (@n = 0) {
+	margin-bottom: escape("@{n}@{s}");
+}
+// margin left
+.mar-l(@n: 0; @s: em) when (@n = 0) {
+	margin-left: @n;
+}
+.mar-l(@n: 0; @s: em) when not (@n = 0) {
+	margin-left: escape("@{n}@{s}");
+}
+// margin 2
+.mar-2(@n1; @n2; @s: em) {
+	margin: escape("@{n1}@{s}") escape("@{n2}@{s}");
+}
+// margin 3
+.mar-3(@n1; @n2; @n3; @s: em) {
+	margin: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}");
+}
+// margin 4
+.mar-4(@n1; @n2; @n3; @n4; @s: em) {
+	margin: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}") escape("@{n4}@{s}");
 }
 
 
 //----- PADDING ----------------------------------------//
 
-.padding(@pad: @m) {
-	padding: @pad;
+.pad(@n: 0; @s: em) when (@n = 0) {
+	padding: @n;
 }
-.padding-t(@pad: @m) {
-	padding-top: @pad;
+.pad(@n: 0; @s: em) when not (@n = 0) {
+	padding: escape("@{n}@{s}");
 }
-.padding-r(@pad: @m) {
-	padding-right: @pad;
+// padding top
+.pad-t(@n: 0; @s: em) when (@n = 0) {
+	padding-top: @n;
 }
-.padding-b(@pad: @m) {
-	padding-bottom: @pad;
+.pad-t(@n: 0; @s: em) when not (@n = 0) {
+	padding-top: escape("@{n}@{s}");
 }
-.padding-l(@pad: @m) {
-	padding-left: @pad;
+// padding right
+.pad-r(@n: 0; @s: em) when (@n = 0) {
+	padding-right: @n;
+}
+.pad-r(@n: 0; @s: em) when not (@n = 0) {
+	padding-right: escape("@{n}@{s}");
+}
+// padding bottom
+.pad-b(@n: 0; @s: em) when (@n = 0) {
+	padding-bottom: @n;
+}
+.pad-b(@n: 0; @s: em) when not (@n = 0) {
+	padding-bottom: escape("@{n}@{s}");
+}
+// padding left
+.pad-l(@n: 0; @s: em) when (@n = 0) {
+	padding-left: @n;
+}
+.pad-l(@n: 0; @s: em) when not (@n = 0) {
+	padding-left: escape("@{n}@{s}");
+}
+// padding 2
+.pad-2(@n1; @n2; @s: em) {
+	padding: escape("@{n1}@{s}") escape("@{n2}@{s}");
+}
+// padding 3
+.pad-3(@n1; @n2; @n3; @s: em) {
+	padding: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}");
+}
+// padding 4
+.pad-4(@n1; @n2; @n3; @n4; @s: em) {
+	padding: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}") escape("@{n4}@{s}");
 }
 
-
-//----- FONTS ----------------------------------------//
-
-.font-family() {
-	font-family: Helvetica, Arial, sans-serif;
-}
-.font-size(@fs: (@em * .625) ) {
-	font-size: @fs;
-}
 
 //----- BORDERS ----------------------------------------//
 
@@ -188,31 +245,119 @@
 
 //----- BORDER RADIUS ----------------------------------------//
 
-.radius(@rad: @m) {
-	-moz-border-radius: @rad;
-	border-radius: @rad;
+.radius(@n: unit(@radius); @s: px) when (@n = 0) {
+	-moz-border-radius: @n;
+	border-radius: @n;
 }
-.radius-tl(@rad: @m) {
-	-moz-border-radius-topleft: @rad;
-	border-top-left-radius: @rad;
+.radius(@n: unit(@radius); @s: px) when not (@n = 0) {
+	-moz-border-radius: escape("@{n}@{s}");
+	border-radius: escape("@{n}@{s}");
 }
-.radius-tr(@rad: @m) {
-	-moz-border-radius-topright: @rad;
-	border-top-right-radius: @rad;
+// top radius
+.radius-t(@n: unit(@radius); @s: px) when (@n = 0) {
+	-moz-border-radius-topleft: @n;
+	-moz-border-radius-topright: @n;
+	border-top-left-radius: @n;
+	border-top-right-radius: @n;
 }
-.radius-br(@rad: @m) {
-	-moz-border-radius-bottomright: @rad;
-	border-bottom-right-radius: @rad;
+.radius-t(@n: unit(@radius); @s: px) when not (@n = 0) {
+	-moz-border-radius-topleft: escape("@{n}@{s}");
+	-moz-border-radius-topright: escape("@{n}@{s}");
+	border-top-left-radius: escape("@{n}@{s}");
+	border-top-right-radius: escape("@{n}@{s}");
 }
-.radius-bl(@rad: @m) {
-	-moz-border-radius-bottomleft: @rad;
-	border-bottom-left-radius: @rad;
+// top left radius
+.radius-tl(@n: unit(@radius); @s: px) when (@n = 0) {
+	-moz-border-radius-topleft: @n;
+	border-top-left-radius: @n;
 }
-.radius-all(@radT: @t; @radR: @r; @radB: @b; @radL: @l) {
-	-moz-border-radius: @radT @radR @radB @radL;
-	border-radius: @radT @radR @radB @radL;
+.radius-tl(@n: unit(@radius); @s: px) when not (@n = 0) {
+	-moz-border-radius-topleft: escape("@{n}@{s}");
+	border-top-left-radius: escape("@{n}@{s}");
+}
+// top right radius
+.radius-tr(@n: unit(@radius); @s: px) when (@n = 0) {
+	-moz-border-radius-topright: @n;
+	border-top-right-radius: @n;
+}
+.radius-tr(@n: unit(@radius); @s: px) when not (@n = 0) {
+	-moz-border-radius-topright: escape("@{n}@{s}");
+	border-top-right-radius: escape("@{n}@{s}");
+}
+// bottom radius
+.radius-b(@n: unit(@radius); @s: px) when (@n = 0) {
+	-moz-border-radius-bottomleft: @n;
+	-moz-border-radius-bottomright: @n;
+	border-bottom-left-radius: @n;
+	border-bottom-right-radius: @n;
+}
+.radius-b(@n: unit(@radius); @s: px) when not (@n = 0) {
+	-moz-border-radius-bottomleft: escape("@{n}@{s}");
+	-moz-border-radius-bottomright: escape("@{n}@{s}");
+	border-bottom-left-radius: escape("@{n}@{s}");
+	border-bottom-right-radius: escape("@{n}@{s}");
+}
+// bottom left radius
+.radius-bl(@n: unit(@radius); @s: px) when (@n = 0) {
+	-moz-border-radius-bottomleft: @n;
+	border-bottom-left-radius: @n;
+}
+.radius-bl(@n: unit(@radius); @s: px) when not (@n = 0) {
+	-moz-border-radius-bottomleft: escape("@{n}@{s}");
+	border-bottom-left-radius: escape("@{n}@{s}");
+}
+// bottom right radius
+.radius-br(@n: unit(@radius); @s: px) when (@n = 0) {
+	-moz-border-radius-bottomright: @n;
+	border-bottom-right-radius: @n;
+}
+.radius-br(@n: unit(@radius); @s: px) when not (@n = 0) {
+	-moz-border-radius-bottomright: escape("@{n}@{s}");
+	border-bottom-right-radius: escape("@{n}@{s}");
+}
+// left radius
+.radius-l(@n: unit(@radius); @s: px) when (@n = 0) {
+	-moz-border-radius-topleft: @n;
+	-moz-border-radius-bottomleft: @n;
+	border-top-left-radius: @n;
+	border-bottom-left-radius: @n;
+}
+.radius-l(@n: unit(@radius); @s: px) when not (@n = 0) {
+	-moz-border-radius-topleft: escape("@{n}@{s}");
+	-moz-border-radius-bottomleft: escape("@{n}@{s}");
+	border-top-left-radius: escape("@{n}@{s}");
+	border-bottom-left-radius: escape("@{n}@{s}");
+}
+// right radius
+.radius-r(@n: unit(@radius); @s: px) when (@n = 0) {
+	-moz-border-radius-topright: @n;
+	-moz-border-radius-bottomright: @n;
+	border-top-right-radius: @n;
+	border-bottom-right-radius: @n;
+}
+.radius-r(@n: unit(@radius); @s: px) when not (@n = 0) {
+	-moz-border-radius-topright: escape("@{n}@{s}");
+	-moz-border-radius-bottomright: escape("@{n}@{s}");
+	border-top-right-radius: escape("@{n}@{s}");
+	border-bottom-right-radius: escape("@{n}@{s}");
+}
+// all four radius
+.radius-all(@n1: unit(@radius); @n2: unit(@radius); @n3: unit(@radius); @n4: unit(@radius); @s: px) {
+	-moz-border-radius: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}") escape("@{n4}@{s}");
+	border-radius: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}") escape("@{n4}@{s}");
 }
 
+
+
+.element {
+	.radius-all(2;4;10;2);
+}
+.element {
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
 
 //----- LIGHTEN & DARKEN ----------------------------------------//
 

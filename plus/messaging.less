@@ -6,8 +6,8 @@
 **********/
 .msg {
 	color: @colorP2;
-	padding: (@px * 1.5);
-	margin: 0 0 @em;
+	.pad(15;px);
+	.mar-3(0;0;1);
 	border: solid (@px * .1) darken(@msg, (@pct * .2));
 	background-color: @msg;
 	.radius(@radius);
@@ -21,7 +21,7 @@
 		line-height: 1.5rem;
 		// set a constant left padding to accommodate the icon
 		~ .msg-txt {
-			padding-left: (@px * 5);
+			.pad-l(50;px);
 		}
 		// show an icon
 		&:after {
@@ -29,7 +29,7 @@
 		}
 	} // end icon
 	.msg-txt {
-		margin: 0;
+		.mar;
 	}
 	> .close {
 		cursor: pointer;
@@ -41,7 +41,7 @@
 		}
 	} // end close
 	.msg-action {
-		margin-left: (@px * 2);
+		.mar-l(20;px);
 		&:after {
 			content: '»';
 			display: inline-block;

@@ -12,7 +12,7 @@
 	}
 	.tab-list,
 	.tab-content {
-		padding: 0;
+		.pad;
 		list-style-type: none;
 	}
 	.tab-list {
@@ -21,9 +21,9 @@
 			border-width: (@px * .1) (@px * .1) 0 (@px * .1);
 			border-style: solid;
 			border-color: @colorS3;
-			padding: @px (@px * 2);
-			margin-right: -(@px * .1);
-			margin-bottom: -(@px * .1);
+			.pad-2(10; 20; px);
+			.mar-r(-1; px);
+			.mar-b(-1; px);
 			position: relative;
 			z-index: 30;
 			background-color: @colorS2;
@@ -53,10 +53,10 @@
 			.radius-bl((@px * .3));
 			width: @pct;
 			border: (@px * .1) solid @colorS3;
-			padding: @px (@px * 2);
+			.pad-2(10; 20; px);
 			display: none;
 			> *:last-child { // remove any extra margin on the last item for better parent padding
-				margin: 0;
+				.mar;
 			}		
 			&.active {
 				background-color: @colorS1;

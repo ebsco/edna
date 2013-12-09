@@ -20,13 +20,13 @@
 		background-color: #FFF;
 		.radius(@radius);
 		list-style-type: none;
-		padding: 0;
+		.pad(0);
 		z-index: 10;
 		min-width: (@px * 10);
 	}
 	.dd-label {
 		display: block;
-		padding: (@em * .25) (@em * .5);
+		.pad-2(.25; .5);
 		cursor: pointer;
 		white-space: nowrap;
 		&:hover {
@@ -50,7 +50,7 @@
 		cursor: pointer;
 		text-decoration: none;
 		cursor: pointer;
-		padding: (@em * .25) (@em * .5);
+		.pad-2(.25; .5);
 		display: inline-block;
 		&.open {
 			~ .dd-list {
