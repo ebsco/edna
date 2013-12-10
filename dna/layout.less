@@ -11,17 +11,18 @@
 .col {
 	.box(border);
 	float: left;
-	width: @pct;
+	.wid(100;pct);
+
 }
 // Set default styles for all P1s
 .l1, .l2, .l3, .l4 {
-	width: @pct;
+	.wid(100;pct);
 }
 .l1 {
 	.clearfix;
 	&.p1 {
 		> .col {
-			width: @pct;
+			.wid(100;pct);
 		}
 	}
 }
@@ -29,7 +30,7 @@
 	.clearfix;
 	&.p1 {
 		> .col {
-			width: (@pct * .5);
+			.wid(50;pct);
 		}
 	}
 }
@@ -37,7 +38,7 @@
 	.clearfix;
 	&.p1 {
 		> .col {
-			width: (@pct * .33);
+			.wid(33;pct);
 		}
 	}
 }
@@ -45,7 +46,7 @@
 	.clearfix;
 	&.p1 {
 		> .col {
-			width: (@pct * .25);
+			.wid(25;pct);
 		}
 	}
 }
@@ -54,50 +55,50 @@
 	.l2 {
 		&.p2 {
 			> .col:nth-child(1) {
-				width: (@pct * .4);
+				.wid(40;pct);
 			}
 			> .col:nth-child(2) {
-				width: (@pct * .6);
+				.wid(60;pct);
 			}
 		}
 		&.p3 {
 			> .col:nth-child(1) {
-				width: (@pct * .3);
+				.wid(30;pct);
 			}
 			> .col:nth-child(2) {
-				width: (@pct * .7);
+				.wid(70;pct);
 			}
 		}
 		&.p4 {
 			> .col:nth-child(1) {
-				width: (@pct * .2);
+				.wid(20;pct);
 			}
 			> .col:nth-child(2) {
-				width: (@pct * .8);
+				.wid(80;pct);
 			}
 		}
 	}
 	.l3 {
 		&.p2 {
 			> .col:nth-child(1) {
-				width: (@pct * .2);
+				.wid(20;pct);
 			}
 			> .col:nth-child(2) {
-				width: (@pct * .2);
+				.wid(20;pct);
 			}
 			> .col:nth-child(3) {
-				width: (@pct * .6);
+				.wid(60;pct);
 			}
 		}
 		&.p3 {
 			> .col:nth-child(1) {
-				width: (@pct * .2);
+				.wid(20;pct);
 			}
 			> .col:nth-child(2) {
-				width: (@pct * .6);
+				.wid(60;pct);
 			}
 			> .col:nth-child(3) {
-				width: (@pct * .2);
+				.wid(20;pct);
 			}
 		}
 	}
@@ -107,50 +108,50 @@
 	.l2 {
 		&.p2 {
 			> .col:nth-child(1) {
-				width: (@pct * .6);
+				.wid(60;pct);
 			}
 			> .col:nth-child(2) {
-				width: (@pct * .4);
+				.wid(40;pct);
 			}
 		}
 		&.p3 {
 			> .col:nth-child(1) {
-				width: (@pct * .7);
+				.wid(70;pct);
 			}
 			> .col:nth-child(2) {
-				width: (@pct * .3);
+				.wid(30;pct);
 			}
 		}
 		&.p4 {
 			> .col:nth-child(1) {
-				width: (@pct * .8);
+				.wid(80;pct);
 			}
 			> .col:nth-child(2) {
-				width: (@pct * .2);
+				.wid(20;pct);
 			}
 		}
 	}
 	.l3 {
 		&.p2 {
 			> .col:nth-child(1) {
-				width: (@pct * .6);
+				.wid(60;pct);
 			}
 			> .col:nth-child(2) {
-				width: (@pct * .2);
+				.wid(20;pct);
 			}
 			> .col:nth-child(3) {
-				width: (@pct * .2);
+				.wid(20;pct);
 			}
 		}
 		&.p3 { // yes, this pattern is the same as .alpha .l3.p3, don't worry about it
 			> .col:nth-child(1) {
-				width: (@pct * .2);
+				.wid(20;pct);
 			}
 			> .col:nth-child(2) {
-				width: (@pct * .6);
+				.wid(60;pct);
 			}
 			> .col:nth-child(3) {
-				width: (@pct * .2);
+				.wid(20;pct);
 			}
 		}
 	}

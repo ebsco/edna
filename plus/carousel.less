@@ -7,24 +7,24 @@
 .carousel {
 	border: (@px * .1) solid @colorS4;
 	.pad(15;px);
-	width: @pct;
+	.wid(100;pct);
 	background-color: @colorS1;
 	.carousel-img {
 		.box(border);
-		width: @pct;
+		.wid(100;pct);
 		border: (@px * .1) solid @colorS4;
 		> .img {
 			display: block;
 			border: none;
-			width: @pct;
+			.wid(100;pct);
 		}
 	}
 	.carousel-nav {
 		.clearfix;
-		width: @pct;
+		.wid(100;pct);
 		.mar-3(15;0;0;px);
 		overflow: hidden;
-		height: (@px * 5.5);
+		.ht(55);
 		position: relative;
 	}
 	.transport {
@@ -48,7 +48,7 @@
 		display: inline-block;
 		float: left;
 		overflow: hidden;
-		height: (@px * 5.3);
+		.ht(53);
 		position: absolute;
 		left: (@px * 2);
 		right: (@px * 2);
@@ -56,7 +56,7 @@
 			list-style-type: none;
 			.mar;
 			.pad(0);
-			width: (@px * 100);
+			.wid(1000);
 			position: relative;
 			.carousel-list-item {
 				float: left;
@@ -65,12 +65,12 @@
 				display: inline-block;
 				cursor: pointer;
 				border: (@px * .1) solid @colorS4;
-				width: (@px * 6.7);
+				.wid(67);
 				.box(border);
 				.img {
 					display: block;
 					border: none;
-					width: @pct;
+					.wid(100;pct);
 				}
 			}
 		}

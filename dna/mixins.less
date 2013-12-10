@@ -5,8 +5,81 @@
 
 // MIXINS
 
-// Mixins need to have parenthesis after them
-// in order to be ignored upon compiling.
+
+//----- MIXINS FOR MIXINS -----------------------------//
+
+.unit(@unit) when (@unit = rem), (@unit = px), (@unit = em) {
+	@s: @unit;
+}
+
+
+//----- HEIGHT -----------------------------------------//
+
+.ht(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
+	.unit(@s);
+	height: escape("@{n}@{s}");
+}
+.ht(@n: 0; @s: px) when (@s = pct) {
+	height: percentage(@n/100);
+}
+// min-width
+.min-ht(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
+	.unit(@s);
+	min-height: escape("@{n}@{s}");
+}
+.min-ht(@n: 0; @s: px) when (@s = pct) {
+	min-height: percentage(@n/100);
+}
+.min-ht(@n: 0; @s: px) when (@n = 0) {
+	min-height: @n;
+}
+// max-width
+.max-ht(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
+	.unit(@s);
+	max-height: escape("@{n}@{s}");
+}
+.max-ht(@n: 0; @s: px) when (@s = pct) {
+	max-height: percentage(@n/100);
+}
+.max-ht(@n: 0; @s: px) when (@n = 0) {
+	max-height: @n;
+}
+
+
+//----- WIDTH -----------------------------------------//
+
+.wid(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
+	.unit(@s);
+	width: escape("@{n}@{s}");
+}
+.wid(@n: 0; @s: px) when (@s = pct) {
+	width: percentage(@n/100);
+}
+// min-width
+.min-wid(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
+	.unit(@s);
+	min-width: escape("@{n}@{s}");
+}
+.min-wid(@n: 0; @s: px) when (@s = pct) {
+	min-width: percentage(@n/100);
+}
+.min-wid(@n: 0; @s: px) when (@n = 0) {
+	min-width: @n;
+}
+// max-width
+.max-wid(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
+	.unit(@s);
+	max-width: escape("@{n}@{s}");
+}
+.max-wid(@n: 0; @s: px) when (@s = pct) {
+	max-width: percentage(@n/100);
+}
+.max-wid(@n: 0; @s: px) when (@n = 0) {
+	max-width: @n;
+}
+
+
+//----- FONTSIZE --------------------------------------//
 
 .font-family() {
 	font-family: Helvetica, Arial, sans-serif;
@@ -20,6 +93,9 @@
 .font-family(@ff) when (@ff = mono) {
 	font-family: monospace;
 }
+.font-family(@ff) when (@ff = georgia) {
+	font-family: Georgia, serif;
+}
 .font-color() {
 	color: @font-color;
 }
@@ -31,16 +107,18 @@
 }
 
 
-// CLEAR 
+//----- CLEAR -----------------------------------------//
+
 .clear() {
   clear: both;
 }
 
-// CLEARFIX 
-// IE7
+
+//----- CLEARFIX --------------------------------------//
+
+// ie7
 .clearfix() {
   *zoom: 1;
-
 	&:before,
 	&:after {
 	  display: table;
@@ -53,12 +131,13 @@
 }
 
 
-// HIDING THINGS
-// DO NOT DISPLAY (inaccessible by screen readers)
+//----- HIDDEN THINGS ---------------------------------//
+
+// do not display (inaccessible by screen readers)
 .display-none() {
 	display: none;
 }
-// HIDDEN (accessible by screen readers)
+// hidden (accessible by screen readers)
 .hidden() {
 	position: absolute !important;
 	height: (@px * .1); width: (@px * .1); 
@@ -67,7 +146,9 @@
 	clip: rect((@px * .1), (@px * .1), (@px * .1), (@px * .1));
 }
 
-// TRANSPORT
+
+//----- TRANSPORT -------------------------------------//
+
 .transport-top(@w: (@px * .5)) {
 	border-right-width: @w;
 	border-bottom-width: @w;
@@ -98,7 +179,8 @@
 }
 
 
-// ROTATION
+//----- ROTATION --------------------------------------//
+
 .rotate(@num) {
 	@div: 100;
 	@IE8rot: @num/@div;
@@ -116,7 +198,8 @@
 }
 
 
-// BOX-SIZING
+//----- BOX SIZING ------------------------------------//
+
 .box(@sizing) when (@sizing = content), (@sizing = border) {
 	// should take either CONTENT or BORDER
 	-webkit-box-sizing: escape("@{sizing}-box"); /* Safari/Chrome, other WebKit */
@@ -124,11 +207,6 @@
 	box-sizing: escape("@{sizing}-box");         /* Opera/IE 8+ */
 }
 
-//----- MARGIN & PADDING STUFF ------------------------//
-
-.unit(@unit) when (@unit = rem), (@unit = px) {
-	@s: @unit;
-}
 
 //----- MARGIN ----------------------------------------//
 
@@ -381,7 +459,7 @@
 
 //----- LIGHTEN & DARKEN ----------------------------------------//
 
-// TEXT
+// text
 .lightTxt1(@color) { color: lighten(@color, (@pct * .1) ); }
 .darkTxt1(@color) { color: darken(@color, (@pct * .1) ); }
 .lightTxt2(@color) { color: lighten(@color, (@pct * .2) ); }
@@ -389,7 +467,7 @@
 .lightTxt3(@color) { color: lighten(@color, (@pct * .2) ); }
 .darkTxt3(@color) { color: darken(@color, (@pct * .2) ); }
 
-// BACKGROUND
+// background
 .lightBg1(@color) { background-color: lighten(@color, (@pct * .1) ); }
 .darkBg1(@color) { background-color: darken(@color, (@pct * .1) ); }
 .lightBg2(@color) { background-color: lighten(@color, (@pct * .2) ); }
@@ -397,7 +475,7 @@
 .lightBg3(@color) { background-color: lighten(@color, (@pct * .2) ); }
 .darkBg3(@color) { background-color: darken(@color, (@pct * .2) ); }
 
-// BORDER
+// border
 .lightBorder1(@color) { border-color: lighten(@color, (@pct * .1) ); }
 .darkBorder1(@color) { border-color: darken(@color, (@pct * .1) ); }
 .lightBorder2(@color) { border-color: lighten(@color, (@pct * .2) ); }

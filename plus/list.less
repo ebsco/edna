@@ -82,7 +82,7 @@ ul,ol {
 		&:before {
 			display: inline-block;
 			content: '\25FC';
-			width: (@px * .5);
+			.wid(5);
 			.pad-r;
 			color: @colorS4;
 			.fontsize(1);
@@ -90,7 +90,7 @@ ul,ol {
 		.before { // local mixin
 			.fontsize(1.6);
 			color: @colorS4;
-			height: (@px * 1.4);
+			.ht(14);
 		}
 		&.expand {
 			&:before {

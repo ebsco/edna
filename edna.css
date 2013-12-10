@@ -377,8 +377,8 @@ html {
   height: 100%;
 }
 body {
-  min-width: 600px;
-  max-width: 1600px;
+  min-width: 60px;
+  max-width: 160px;
   margin: auto;
 }
 .l1,
