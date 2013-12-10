@@ -739,7 +739,7 @@ button + .btn,
 input[type=submit] + .btn,
 input[type=reset] + .btn,
 .btn + .btn {
-  margin-left: 10em;
+  margin-left: 1em;
 }
 button.action,
 input[type=submit].action,
