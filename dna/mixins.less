@@ -125,45 +125,12 @@
 }
 
 //----- MARGIN & PADDING STUFF ------------------------//
+
 .unit(@unit) when (@unit = rem), (@unit = px) {
 	@s: @unit;
 }
 
 //----- MARGIN ----------------------------------------//
-
-// .space-m(@n: 0; @s: em) when not (@n = 0) {
-// 	.unit(@s);
-// 	padding: @arguments;
-// }
-// .space-p(@a;@rest...) {
-// 	// .unit(@s);
-// 	padding-top: @arguments;
-// 	padding-right: @arguments;
-// 	padding-bottom: @arguments;
-// 	padding-left: @arguments;
-// }
-
-
-// .mixin (margin; @unit: 3px; @s: em) {
-// 	margin: escape("@{unit}@{s}");
-// }
-// .mixin (padding; @unit: 3px; @s: em) {
-// 	padding: escape("@{unit}@{s}");
-// }
-// .mixin (@_; @unit; @s: em) {
-// 	margin: escape("@{unit}@{s}");
-// }
-
-// @switch: margin;
-
-// .class {
-// 	.mixin(@switch;5; 5;em);
-// }
-
-
-// .example {
-// 	.space-p(3; 2; 3; 4);
-// }
 
 .mar(@n: 0; @s: em) when (@n = 0) {
 	.unit(@s);
