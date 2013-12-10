@@ -13,7 +13,7 @@ input[type=reset],
 	color: @colorP1;
 	background-color: @colorS2;
 	border: solid (@px * .1) @colorS4;
-	.radius( (@px * .3) );
+	.radius;
 	cursor: pointer;
 	text-decoration: none;
 	display: inline-block;
@@ -41,7 +41,7 @@ input[type=reset],
 	+ input[type=submit],
 	+ input[type=reset],
 	+ .btn {
-		margin-left: @px;
+		.mar-l(10);
 	}
 
 	// STATES
@@ -97,17 +97,17 @@ input[type=reset],
 
 // BUTTON GROUPS
 .btn-group {
-	margin-bottom: @em;
+	.mar-b(1;em);
 	.clearfix;
 	.grp-btn,
 	.grp-input,
 	.grp-dropdown {
 		float: left;
-		.radius(0);
+		.radius;
 		border-left-width: 0;
 	}
 	.grp-btn + .grp-btn {
-		.mar-l(0);
+		.mar-l;
 	}
 	:last-child,
 	.last //IE support

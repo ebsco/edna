@@ -7,7 +7,7 @@
 .dd {
 	position: relative;
 	background-color: @colorS2;
-	.radius(@radius);
+	.radius;
 	display: inline-block;
 	line-height: normal;
 
@@ -18,9 +18,9 @@
 		left: -(@px * .1);
 		border: solid (@px * .1) @colorP2;
 		background-color: #FFF;
-		.radius(@radius);
+		.radius;
 		list-style-type: none;
-		.pad(0);
+		.pad;
 		z-index: 10;
 		min-width: (@px * 10);
 	}
@@ -62,7 +62,7 @@
 		display: inline-block;
 		> .top {
 			.transport-top( (@px * .5) );
-			margin-bottom: (@px * .5);
+			.mar-b(5;px);
 		}
 		> .bottom {
 			.transport-bottom( (@px * .5) );

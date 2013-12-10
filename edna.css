@@ -693,8 +693,8 @@ input[type=reset],
   color: #333333;
   background-color: #eaeaea;
   border: solid 1px #c1c1c1;
-  -moz-border-radius: 3pxpx;
-  border-radius: 3pxpx;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
@@ -739,7 +739,7 @@ button + .btn,
 input[type=submit] + .btn,
 input[type=reset] + .btn,
 .btn + .btn {
-  margin-left: 10px;
+  margin-left: 10em;
 }
 button.action,
 input[type=submit].action,
@@ -857,8 +857,8 @@ input[type=reset] input[type=reset][disabled]:hover,
 .btn-group .grp-input,
 .btn-group .grp-dropdown {
   float: left;
-  -moz-border-radius: 0;
-  border-radius: 0;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   border-left-width: 0;
 }
 .btn-group .grp-btn + .grp-btn {
@@ -881,8 +881,8 @@ input[type=reset] input[type=reset][disabled]:hover,
 .dd {
   position: relative;
   background-color: #eaeaea;
-  -moz-border-radius: 3pxpx;
-  border-radius: 3pxpx;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   display: inline-block;
   line-height: normal;
 }
@@ -893,8 +893,8 @@ input[type=reset] input[type=reset][disabled]:hover,
   left: -1px;
   border: solid 1px #474747;
   background-color: #FFF;
-  -moz-border-radius: 3pxpx;
-  border-radius: 3pxpx;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   list-style-type: none;
   padding: 0;
   z-index: 10;

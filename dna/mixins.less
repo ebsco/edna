@@ -117,60 +117,77 @@
 
 
 // BOX-SIZING
-.box(@sizing) {
+.box(@sizing) when (@sizing = content), (@sizing = border) {
 	// should take either CONTENT or BORDER
 	-webkit-box-sizing: escape("@{sizing}-box"); /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: escape("@{sizing}-box");    /* Firefox, other Gecko */
 	box-sizing: escape("@{sizing}-box");         /* Opera/IE 8+ */
 }
 
+//----- MARGIN & PADDING STUFF ------------------------//
+.unit(@unit) when (@unit = rem), (@unit = px) {
+	@s: @unit;
+}
 
 //----- MARGIN ----------------------------------------//
 
 .mar(@n: 0; @s: em) when (@n = 0) {
+	.unit(@s);
 	margin: @n;
 }
-.mar(@n: 0; @s: em) when not (@n = 0) {
+.mar(@n: 0; @s: em;) when not (@n = 0) {
+	.unit(@s);
 	margin: escape("@{n}@{s}");
 }
 // margin top
 .mar-t(@n: 0; @s: em) when (@n = 0) {
+	.unit(@s);
 	margin-top: @n;
 }
 .mar-t(@n: 0; @s: em) when not (@n = 0) {
+	.unit(@s);
 	margin-top: escape("@{n}@{s}");
 }
 // margin right
 .mar-r(@n: 0; @s: em) when (@n = 0) {
+	.unit(@s);
 	margin-right: @n;
 }
 .mar-r(@n: 0; @s: em) when not (@n = 0) {
+	.unit(@s);
 	margin-right: escape("@{n}@{s}");
 }
 // margin bottom
 .mar-b(@n: 0; @s: em) when (@n = 0) {
+	.unit(@s);
 	margin-bottom: @n;
 }
 .mar-b(@n: 0; @s: em) when not (@n = 0) {
+	.unit(@s);
 	margin-bottom: escape("@{n}@{s}");
 }
 // margin left
 .mar-l(@n: 0; @s: em) when (@n = 0) {
+	.unit(@s);
 	margin-left: @n;
 }
 .mar-l(@n: 0; @s: em) when not (@n = 0) {
+	.unit(@s);
 	margin-left: escape("@{n}@{s}");
 }
 // margin 2
 .mar-2(@n1; @n2; @s: em) {
+	.unit(@s);
 	margin: escape("@{n1}@{s}") escape("@{n2}@{s}");
 }
 // margin 3
 .mar-3(@n1; @n2; @n3; @s: em) {
+	.unit(@s);
 	margin: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}");
 }
 // margin 4
 .mar-4(@n1; @n2; @n3; @n4; @s: em) {
+	.unit(@s);
 	margin: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}") escape("@{n4}@{s}");
 }
 
@@ -178,49 +195,62 @@
 //----- PADDING ----------------------------------------//
 
 .pad(@n: 0; @s: em) when (@n = 0) {
+	.unit(@s);
 	padding: @n;
 }
 .pad(@n: 0; @s: em) when not (@n = 0) {
+	.unit(@s);
 	padding: escape("@{n}@{s}");
 }
 // padding top
 .pad-t(@n: 0; @s: em) when (@n = 0) {
+	.unit(@s);
 	padding-top: @n;
 }
 .pad-t(@n: 0; @s: em) when not (@n = 0) {
+	.unit(@s);
 	padding-top: escape("@{n}@{s}");
 }
 // padding right
 .pad-r(@n: 0; @s: em) when (@n = 0) {
+	.unit(@s);
 	padding-right: @n;
 }
 .pad-r(@n: 0; @s: em) when not (@n = 0) {
+	.unit(@s);
 	padding-right: escape("@{n}@{s}");
 }
 // padding bottom
 .pad-b(@n: 0; @s: em) when (@n = 0) {
+	.unit(@s);
 	padding-bottom: @n;
 }
 .pad-b(@n: 0; @s: em) when not (@n = 0) {
+	.unit(@s);
 	padding-bottom: escape("@{n}@{s}");
 }
 // padding left
 .pad-l(@n: 0; @s: em) when (@n = 0) {
+	.unit(@s);
 	padding-left: @n;
 }
 .pad-l(@n: 0; @s: em) when not (@n = 0) {
+	.unit(@s);
 	padding-left: escape("@{n}@{s}");
 }
 // padding 2
 .pad-2(@n1; @n2; @s: em) {
+	.unit(@s);
 	padding: escape("@{n1}@{s}") escape("@{n2}@{s}");
 }
 // padding 3
 .pad-3(@n1; @n2; @n3; @s: em) {
+	.unit(@s);
 	padding: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}");
 }
 // padding 4
 .pad-4(@n1; @n2; @n3; @n4; @s: em) {
+	.unit(@s);
 	padding: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}") escape("@{n4}@{s}");
 }
 
