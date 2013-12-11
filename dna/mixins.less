@@ -8,24 +8,71 @@
 
 //----- MIXINS FOR MIXINS -----------------------------//
 
-.unit(@unit) when (@unit = rem), (@unit = px), (@unit = em) {
-	@s: @unit;
+// figure out the number
+.number(@number: 0;) when not (@number = 0) {
+	@num: @number;
+}
+.number(@number: 0;) when not ( isnumber(@number) ) {
+	@num: 0;
+}
+// figure out the suffix
+.suffix(@suffix: px;) when not (@suffix = px), (@suffix = em), (@suffix = rem) {
+	@suf: /* check values */; 
+}
+.suffix(@suffix: px;) when (@suffix = px) {
+	@suf: @suffix; 
+}
+.suffix(@suffix: em;) when (@suffix = em) {
+	@suf: @suffix; 
+}
+.suffix(@suffix: rem;) when (@suffix = rem) {
+	@suf: @suffix; 
+}
+
+
+.w(@n: 0;@s: px) when not (@n = 0) {
+	.number(@n);
+	.suffix(@s);
+	width: unit(@num,@suf);
+}
+.w(@n: 0;@s: px) when (@n = 0) {
+	.number(@n);
+	.suffix(@s);
+	width: @num;
+}
+.example {
+	// .w(1;pax);
+	.w(1;px);
+	// .w;
+}
+
+
+// units
+.unit(@suffix) when (@suffix = em) {
+	@s: @suffix;
+}
+.unit(@suffix) when (@suffix = px) {
+	@s: @suffix;
+}
+.unit(@suffix) when (@suffix = rem) {
+	@s: @suffix;
+}
+.unit(@suffix) when not (@suffix = em), (@suffix = px), (@suffix = rem) {
+	@s: /* check your values */;
 }
 
 
 //----- HEIGHT -----------------------------------------//
 
 .ht(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
-	.unit(@s);
-	height: escape("@{n}@{s}");
+	height: unit(@n, @s);
 }
 .ht(@n: 0; @s: px) when (@s = pct) {
 	height: percentage(@n/100);
 }
 // min-width
 .min-ht(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
-	.unit(@s);
-	min-height: escape("@{n}@{s}");
+	min-height: unit(@n, @s);
 }
 .min-ht(@n: 0; @s: px) when (@s = pct) {
 	min-height: percentage(@n/100);
@@ -35,8 +82,7 @@
 }
 // max-width
 .max-ht(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
-	.unit(@s);
-	max-height: escape("@{n}@{s}");
+	max-height: unit(@n, @s);
 }
 .max-ht(@n: 0; @s: px) when (@s = pct) {
 	max-height: percentage(@n/100);
@@ -49,16 +95,14 @@
 //----- WIDTH -----------------------------------------//
 
 .wid(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
-	.unit(@s);
-	width: escape("@{n}@{s}");
+	width: unit(@n, @s);
 }
 .wid(@n: 0; @s: px) when (@s = pct) {
 	width: percentage(@n/100);
 }
 // min-width
 .min-wid(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
-	.unit(@s);
-	min-width: escape("@{n}@{s}");
+	min-width: unit(@n, @s);
 }
 .min-wid(@n: 0; @s: px) when (@s = pct) {
 	min-width: percentage(@n/100);
@@ -68,8 +112,8 @@
 }
 // max-width
 .max-wid(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
-	.unit(@s);
-	max-width: escape("@{n}@{s}");
+	// .unit(@s);
+	max-width: unit(@n, @s);
 }
 .max-wid(@n: 0; @s: px) when (@s = pct) {
 	max-width: percentage(@n/100);
@@ -210,127 +254,101 @@
 
 //----- MARGIN ----------------------------------------//
 
-.mar(@n: 0; @s: em) when (@n = 0) {
-	.unit(@s);
+.mar(@n: 0; @s: px) when (@n = 0) {
 	margin: @n;
 }
-.mar(@n: 0; @s: em;) when not (@n = 0) {
-	.unit(@s);
-	margin: escape("@{n}@{s}");
+.mar(@n: 0; @s: px;) when not (@n = 0) {
+	margin: unit(@n, @s);
 }
 // margin top
-.mar-t(@n: 0; @s: em) when (@n = 0) {
-	.unit(@s);
+.mar-t(@n: 0; @s: px) when (@n = 0) {
 	margin-top: @n;
 }
-.mar-t(@n: 0; @s: em) when not (@n = 0) {
-	.unit(@s);
-	margin-top: escape("@{n}@{s}");
+.mar-t(@n: 0; @s: px) when not (@n = 0) {
+	margin-top: unit(@n, @s);
 }
 // margin right
-.mar-r(@n: 0; @s: em) when (@n = 0) {
-	.unit(@s);
+.mar-r(@n: 0; @s: px) when (@n = 0) {
 	margin-right: @n;
 }
-.mar-r(@n: 0; @s: em) when not (@n = 0) {
-	.unit(@s);
-	margin-right: escape("@{n}@{s}");
+.mar-r(@n: 0; @s: px) when not (@n = 0) {
+	margin-right: unit(@n, @s);
 }
 // margin bottom
-.mar-b(@n: 0; @s: em) when (@n = 0) {
-	.unit(@s);
+.mar-b(@n: 0; @s: px) when (@n = 0) {
 	margin-bottom: @n;
 }
-.mar-b(@n: 0; @s: em) when not (@n = 0) {
-	.unit(@s);
-	margin-bottom: escape("@{n}@{s}");
+.mar-b(@n: 0; @s: px) when not (@n = 0) {
+	margin-bottom: unit(@n, @s);
 }
 // margin left
-.mar-l(@n: 0; @s: em) when (@n = 0) {
-	.unit(@s);
+.mar-l(@n: 0; @s: px) when (@n = 0) {
 	margin-left: @n;
 }
-.mar-l(@n: 0; @s: em) when not (@n = 0) {
-	.unit(@s);
-	margin-left: escape("@{n}@{s}");
+.mar-l(@n: 0; @s: px) when not (@n = 0) {
+	margin-left: unit(@n, @s);
 }
 // margin 2
-.mar-2(@n1; @n2; @s: em) {
-	.unit(@s);
-	margin: escape("@{n1}@{s}") escape("@{n2}@{s}");
+.mar-2(@n1; @n2; @s: px) {
+	margin: unit(@n, @s) unit(@n2, @s);
 }
 // margin 3
-.mar-3(@n1; @n2; @n3; @s: em) {
-	.unit(@s);
-	margin: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}");
+.mar-3(@n1; @n2; @n3; @s: px) {
+	margin: unit(@n1, @s) unit(@n2, @s) unit(@n3, @s);
 }
 // margin 4
-.mar-4(@n1; @n2; @n3; @n4; @s: em) {
-	.unit(@s);
-	margin: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}") escape("@{n4}@{s}");
+.mar-4(@n1; @n2; @n3; @n4; @s: px) {
+	margin: unit(@n1, @s) unit(@n2, @s) unit(@n3, @s) unit(@n4, @s);
 }
 
 
 //----- PADDING ----------------------------------------//
 
-.pad(@n: 0; @s: em) when (@n = 0) {
-	.unit(@s);
+.pad(@n: 0; @s: px) when (@n = 0) {
 	padding: @n;
 }
-.pad(@n: 0; @s: em) when not (@n = 0) {
-	.unit(@s);
-	padding: escape("@{n}@{s}");
+.pad(@n: 0; @s: px) when not (@n = 0) {
+	padding: unit(@n, @s);
 }
 // padding top
-.pad-t(@n: 0; @s: em) when (@n = 0) {
-	.unit(@s);
+.pad-t(@n: 0; @s: px) when (@n = 0) {
 	padding-top: @n;
 }
-.pad-t(@n: 0; @s: em) when not (@n = 0) {
-	.unit(@s);
-	padding-top: escape("@{n}@{s}");
+.pad-t(@n: 0; @s: px) when not (@n = 0) {
+	padding-top: unit(@n, @s);
 }
 // padding right
-.pad-r(@n: 0; @s: em) when (@n = 0) {
-	.unit(@s);
+.pad-r(@n: 0; @s: px) when (@n = 0) {
 	padding-right: @n;
 }
-.pad-r(@n: 0; @s: em) when not (@n = 0) {
-	.unit(@s);
-	padding-right: escape("@{n}@{s}");
+.pad-r(@n: 0; @s: px) when not (@n = 0) {
+	padding-right: unit(@n, @s);
 }
 // padding bottom
-.pad-b(@n: 0; @s: em) when (@n = 0) {
-	.unit(@s);
+.pad-b(@n: 0; @s: px) when (@n = 0) {
 	padding-bottom: @n;
 }
-.pad-b(@n: 0; @s: em) when not (@n = 0) {
-	.unit(@s);
-	padding-bottom: escape("@{n}@{s}");
+.pad-b(@n: 0; @s: px) when not (@n = 0) {
+	padding-bottom: unit(@n, @s);
 }
 // padding left
-.pad-l(@n: 0; @s: em) when (@n = 0) {
-	.unit(@s);
+.pad-l(@n: 0; @s: px) when (@n = 0) {
 	padding-left: @n;
 }
-.pad-l(@n: 0; @s: em) when not (@n = 0) {
-	.unit(@s);
-	padding-left: escape("@{n}@{s}");
+.pad-l(@n: 0; @s: px) when not (@n = 0) {
+	padding-left: unit(@n, @s);
 }
 // padding 2
-.pad-2(@n1; @n2; @s: em) {
-	.unit(@s);
-	padding: escape("@{n1}@{s}") escape("@{n2}@{s}");
+.pad-2(@n1; @n2; @s: px) {
+	padding: unit(@n1, @s) unit(@n2, @s);
 }
 // padding 3
-.pad-3(@n1; @n2; @n3; @s: em) {
-	.unit(@s);
-	padding: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}");
+.pad-3(@n1; @n2; @n3; @s: px) {
+	padding: unit(@n1, @s) unit(@n2, @s) unit(@n3, @s);
 }
 // padding 4
-.pad-4(@n1; @n2; @n3; @n4; @s: em) {
-	.unit(@s);
-	padding: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}") escape("@{n4}@{s}");
+.pad-4(@n1; @n2; @n3; @n4; @s: px) {
+	padding: unit(@n1, @s) unit(@n2, @s) unit(@n3, @s) unit(@n4, @s);
 }
 
 
@@ -359,8 +377,8 @@
 	border-radius: @n;
 }
 .radius(@n: unit(@radius); @s: px) when not (@n = 0) {
-	-moz-border-radius: escape("@{n}@{s}");
-	border-radius: escape("@{n}@{s}");
+	-moz-border-radius: unit(@n, @s);
+	border-radius: unit(@n, @s);
 }
 // top radius
 .radius-t(@n: unit(@radius); @s: px) when (@n = 0) {
@@ -370,10 +388,10 @@
 	border-top-right-radius: @n;
 }
 .radius-t(@n: unit(@radius); @s: px) when not (@n = 0) {
-	-moz-border-radius-topleft: escape("@{n}@{s}");
-	-moz-border-radius-topright: escape("@{n}@{s}");
-	border-top-left-radius: escape("@{n}@{s}");
-	border-top-right-radius: escape("@{n}@{s}");
+	-moz-border-radius-topleft: unit(@n, @s);
+	-moz-border-radius-topright: unit(@n, @s);
+	border-top-left-radius: unit(@n, @s);
+	border-top-right-radius: unit(@n, @s);
 }
 // top left radius
 .radius-tl(@n: unit(@radius); @s: px) when (@n = 0) {
@@ -381,8 +399,8 @@
 	border-top-left-radius: @n;
 }
 .radius-tl(@n: unit(@radius); @s: px) when not (@n = 0) {
-	-moz-border-radius-topleft: escape("@{n}@{s}");
-	border-top-left-radius: escape("@{n}@{s}");
+	-moz-border-radius-topleft: unit(@n, @s);
+	border-top-left-radius: unit(@n, @s);
 }
 // top right radius
 .radius-tr(@n: unit(@radius); @s: px) when (@n = 0) {
@@ -390,8 +408,8 @@
 	border-top-right-radius: @n;
 }
 .radius-tr(@n: unit(@radius); @s: px) when not (@n = 0) {
-	-moz-border-radius-topright: escape("@{n}@{s}");
-	border-top-right-radius: escape("@{n}@{s}");
+	-moz-border-radius-topright: unit(@n, @s);
+	border-top-right-radius: unit(@n, @s);
 }
 // bottom radius
 .radius-b(@n: unit(@radius); @s: px) when (@n = 0) {
@@ -401,10 +419,10 @@
 	border-bottom-right-radius: @n;
 }
 .radius-b(@n: unit(@radius); @s: px) when not (@n = 0) {
-	-moz-border-radius-bottomleft: escape("@{n}@{s}");
-	-moz-border-radius-bottomright: escape("@{n}@{s}");
-	border-bottom-left-radius: escape("@{n}@{s}");
-	border-bottom-right-radius: escape("@{n}@{s}");
+	-moz-border-radius-bottomleft: unit(@n, @s);
+	-moz-border-radius-bottomright: unit(@n, @s);
+	border-bottom-left-radius: unit(@n, @s);
+	border-bottom-right-radius: unit(@n, @s);
 }
 // bottom left radius
 .radius-bl(@n: unit(@radius); @s: px) when (@n = 0) {
@@ -412,8 +430,8 @@
 	border-bottom-left-radius: @n;
 }
 .radius-bl(@n: unit(@radius); @s: px) when not (@n = 0) {
-	-moz-border-radius-bottomleft: escape("@{n}@{s}");
-	border-bottom-left-radius: escape("@{n}@{s}");
+	-moz-border-radius-bottomleft: unit(@n, @s);
+	border-bottom-left-radius: unit(@n, @s);
 }
 // bottom right radius
 .radius-br(@n: unit(@radius); @s: px) when (@n = 0) {
@@ -421,8 +439,8 @@
 	border-bottom-right-radius: @n;
 }
 .radius-br(@n: unit(@radius); @s: px) when not (@n = 0) {
-	-moz-border-radius-bottomright: escape("@{n}@{s}");
-	border-bottom-right-radius: escape("@{n}@{s}");
+	-moz-border-radius-bottomright: unit(@n, @s);
+	border-bottom-right-radius: unit(@n, @s);
 }
 // left radius
 .radius-l(@n: unit(@radius); @s: px) when (@n = 0) {
@@ -432,10 +450,10 @@
 	border-bottom-left-radius: @n;
 }
 .radius-l(@n: unit(@radius); @s: px) when not (@n = 0) {
-	-moz-border-radius-topleft: escape("@{n}@{s}");
-	-moz-border-radius-bottomleft: escape("@{n}@{s}");
-	border-top-left-radius: escape("@{n}@{s}");
-	border-bottom-left-radius: escape("@{n}@{s}");
+	-moz-border-radius-topleft: unit(@n, @s);
+	-moz-border-radius-bottomleft: unit(@n, @s);
+	border-top-left-radius: unit(@n, @s);
+	border-bottom-left-radius: unit(@n, @s);
 }
 // right radius
 .radius-r(@n: unit(@radius); @s: px) when (@n = 0) {
@@ -445,15 +463,15 @@
 	border-bottom-right-radius: @n;
 }
 .radius-r(@n: unit(@radius); @s: px) when not (@n = 0) {
-	-moz-border-radius-topright: escape("@{n}@{s}");
-	-moz-border-radius-bottomright: escape("@{n}@{s}");
-	border-top-right-radius: escape("@{n}@{s}");
-	border-bottom-right-radius: escape("@{n}@{s}");
+	-moz-border-radius-topright: unit(@n, @s);
+	-moz-border-radius-bottomright: unit(@n, @s);
+	border-top-right-radius: unit(@n, @s);
+	border-bottom-right-radius: unit(@n, @s);
 }
 // all four radius
 .radius-all(@n1: unit(@radius); @n2: unit(@radius); @n3: unit(@radius); @n4: unit(@radius); @s: px) {
-	-moz-border-radius: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}") escape("@{n4}@{s}");
-	border-radius: escape("@{n1}@{s}") escape("@{n2}@{s}") escape("@{n3}@{s}") escape("@{n4}@{s}");
+	-moz-border-radius: unit(@n1, @s) unit(@n2, @s) unit(@n3, @s) unit(@n4, @s);
+	border-radius: unit(@n1, @s) unit(@n2, @s) unit(@n3, @s) unit(@n4, @s);
 }
 
 
