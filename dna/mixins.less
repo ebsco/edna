@@ -8,57 +8,88 @@
 
 //----- MIXINS FOR MIXINS -----------------------------//
 
-// figure out the number
-.number(@number: 0;) when not (@number = 0) {
-	@num: @number;
-}
-.number(@number: 0;) when not ( isnumber(@number) ) {
-	@num: 0;
-}
-// figure out the suffix
-.suffix(@suffix: px;) when not (@suffix = px), (@suffix = em), (@suffix = rem) {
-	@suf: /* check values */; 
-}
-.suffix(@suffix: px;) when (@suffix = px) {
-	@suf: @suffix; 
-}
-.suffix(@suffix: em;) when (@suffix = em) {
-	@suf: @suffix; 
-}
-.suffix(@suffix: rem;) when (@suffix = rem) {
-	@suf: @suffix; 
+
+//----- CLEAR -----------------------------------------//
+
+.clear() {
+  clear: both;
 }
 
 
-.w(@n: 0;@s: px) when not (@n = 0) {
-	.number(@n);
-	.suffix(@s);
-	width: unit(@num,@suf);
-}
-.w(@n: 0;@s: px) when (@n = 0) {
-	.number(@n);
-	.suffix(@s);
-	width: @num;
-}
-.example {
-	// .w(1;pax);
-	.w(1;px);
-	// .w;
+//----- CLEARFIX --------------------------------------//
+
+// ie7
+.clearfix() {
+  *zoom: 1;
+	&:before,
+	&:after {
+	  display: table;
+	  line-height: 0;
+	  content: "";
+	}
+	&:after {
+	  clear: both;
+	}
 }
 
 
-// units
-.unit(@suffix) when (@suffix = em) {
-	@s: @suffix;
+//----- HIDDEN THINGS ---------------------------------//
+
+// do not display (inaccessible by screen readers)
+.display-none() {
+	display: none;
 }
-.unit(@suffix) when (@suffix = px) {
-	@s: @suffix;
+// hidden (accessible by screen readers)
+.hidden() {
+	position: absolute !important;
+	height: (@px * .1); width: (@px * .1); 
+	overflow: hidden;
+	clip: rect((@px * .1) (@px * .1) (@px * .1) (@px * .1)); /* IE6, IE7 */
+	clip: rect((@px * .1), (@px * .1), (@px * .1), (@px * .1));
 }
-.unit(@suffix) when (@suffix = rem) {
-	@s: @suffix;
+
+
+//----- FONTS --------------------------------------//
+
+.font-family() {
+	font-family: Helvetica, Arial, sans-serif;
 }
-.unit(@suffix) when not (@suffix = em), (@suffix = px), (@suffix = rem) {
-	@s: /* check your values */;
+.font-family(@ff) when (@ff = default) {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.font-family(@ff) when (@ff = code) {
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+.font-family(@ff) when (@ff = mono) {
+	font-family: monospace;
+}
+.font-family(@ff) when (@ff = georgia) {
+	font-family: Georgia, serif;
+}
+.font-color(@color: @font-color) {
+	color: @color;
+}
+.fontsize(@sizeValue) {
+	@remValue: @sizeValue;
+	@pxValue: (@sizeValue * 10);
+	font-size: ~"@{pxValue}px"; // fallback for IE8
+	font-size: ~"@{remValue}rem"; // REMs for awesome browsers
+}
+.lh(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
+	line-height: unit(@n, @s);
+}
+.lh(@n: 0; @s: px) when (@s = pct) {
+	line-height: percentage(@n/100);
+}
+
+
+//----- BOX SIZING ------------------------------------//
+
+.box(@sizing) when (@sizing = content), (@sizing = border) {
+	// should take either CONTENT or BORDER
+	-webkit-box-sizing: escape("@{sizing}-box"); /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: escape("@{sizing}-box");    /* Firefox, other Gecko */
+	box-sizing: escape("@{sizing}-box");         /* Opera/IE 8+ */
 }
 
 
@@ -112,7 +143,6 @@
 }
 // max-width
 .max-wid(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
-	// .unit(@s);
 	max-width: unit(@n, @s);
 }
 .max-wid(@n: 0; @s: px) when (@s = pct) {
@@ -120,135 +150,6 @@
 }
 .max-wid(@n: 0; @s: px) when (@n = 0) {
 	max-width: @n;
-}
-
-
-//----- FONTSIZE --------------------------------------//
-
-.font-family() {
-	font-family: Helvetica, Arial, sans-serif;
-}
-.font-family(@ff) when (@ff = default) {
-	font-family: Helvetica, Arial, sans-serif;
-}
-.font-family(@ff) when (@ff = code) {
-	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-}
-.font-family(@ff) when (@ff = mono) {
-	font-family: monospace;
-}
-.font-family(@ff) when (@ff = georgia) {
-	font-family: Georgia, serif;
-}
-.font-color() {
-	color: @font-color;
-}
-.fontsize(@sizeValue) {
-	@remValue: @sizeValue;
-	@pxValue: (@sizeValue * 10);
-	font-size: ~"@{pxValue}px"; // fallback for IE8
-	font-size: ~"@{remValue}rem"; // REMs for awesome browsers
-}
-
-
-//----- CLEAR -----------------------------------------//
-
-.clear() {
-  clear: both;
-}
-
-
-//----- CLEARFIX --------------------------------------//
-
-// ie7
-.clearfix() {
-  *zoom: 1;
-	&:before,
-	&:after {
-	  display: table;
-	  line-height: 0;
-	  content: "";
-	}
-	&:after {
-	  clear: both;
-	}
-}
-
-
-//----- HIDDEN THINGS ---------------------------------//
-
-// do not display (inaccessible by screen readers)
-.display-none() {
-	display: none;
-}
-// hidden (accessible by screen readers)
-.hidden() {
-	position: absolute !important;
-	height: (@px * .1); width: (@px * .1); 
-	overflow: hidden;
-	clip: rect((@px * .1) (@px * .1) (@px * .1) (@px * .1)); /* IE6, IE7 */
-	clip: rect((@px * .1), (@px * .1), (@px * .1), (@px * .1));
-}
-
-
-//----- TRANSPORT -------------------------------------//
-
-.transport-top(@w: (@px * .5)) {
-	border-right-width: @w;
-	border-bottom-width: @w;
-	border-left-width: @w;
-	margin-bottom: (@w / 2);
-	margin-top: -(@w / 2);
-}
-.transport-right(@w: (@px * .5)) {
-	border-top-width: @w;
-	border-bottom-width: @w;
-	border-left-width: @w;
-	margin-left: (@w / 2);
-	margin-right: -(@w / 2);
-}
-.transport-bottom(@w: (@px * .5)) {
-	border-top-width: @w;
-	border-right-width: @w;
-	border-left-width: @w;
-	margin-bottom: (@w / 2);
-	margin-top: -(@w / 2);
-}
-.transport-left(@w: (@px * .5)) {
-	border-top-width: @w;
-	border-right-width: @w;
-	border-bottom-width: @w;
-	margin-left: (@w / 2);
-	margin-right: -(@w / 2);
-}
-
-
-//----- ROTATION --------------------------------------//
-
-.rotate(@num) {
-	@div: 100;
-	@IE8rot: @num/@div;
-
-	// USING THIS BIT OF LESS
-	// unit(@dimension, [@unit: ""]);
-	// remove or change the unit of a dimension
-
-	filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=@IE8rot); // IE8 and lower
-	-ms-transform: rotate( unit(@num, deg) ); // IE 9 and higher
-	-o-transform: rotate( unit(@num, deg) ); // Opera
-	-moz-transform: rotate( unit(@num, deg) ); // Mozilla
-	-webkit-transform: rotate(unit(@num, deg)); // Safari
-	transform: rotate( unit(@num, deg) );
-}
-
-
-//----- BOX SIZING ------------------------------------//
-
-.box(@sizing) when (@sizing = content), (@sizing = border) {
-	// should take either CONTENT or BORDER
-	-webkit-box-sizing: escape("@{sizing}-box"); /* Safari/Chrome, other WebKit */
-	-moz-box-sizing: escape("@{sizing}-box");    /* Firefox, other Gecko */
-	box-sizing: escape("@{sizing}-box");         /* Opera/IE 8+ */
 }
 
 
@@ -363,7 +264,6 @@
 .border-color(@color: @colorS3) {
 	border-color: @colorP1;
 }
-//.border(@width: (@px * .1), @style: solid, @color: @colorS3) {
 .border(@widthT: (@px * .1); @widthR: (@px * .1); @widthB: (@px * .1); @widthL: (@px * .1); @style: solid; @color: @colorS3) {
 	border-width: @widthT @widthR @widthB @widthL;
 	border-style: @style;
@@ -472,6 +372,57 @@
 .radius-all(@n1: unit(@radius); @n2: unit(@radius); @n3: unit(@radius); @n4: unit(@radius); @s: px) {
 	-moz-border-radius: unit(@n1, @s) unit(@n2, @s) unit(@n3, @s) unit(@n4, @s);
 	border-radius: unit(@n1, @s) unit(@n2, @s) unit(@n3, @s) unit(@n4, @s);
+}
+
+
+//----- TRANSPORT -------------------------------------//
+
+.transport-top(@w: (@px * .5)) {
+	border-right-width: @w;
+	border-bottom-width: @w;
+	border-left-width: @w;
+	margin-bottom: (@w / 2);
+	margin-top: -(@w / 2);
+}
+.transport-right(@w: (@px * .5)) {
+	border-top-width: @w;
+	border-bottom-width: @w;
+	border-left-width: @w;
+	margin-left: (@w / 2);
+	margin-right: -(@w / 2);
+}
+.transport-bottom(@w: (@px * .5)) {
+	border-top-width: @w;
+	border-right-width: @w;
+	border-left-width: @w;
+	margin-bottom: (@w / 2);
+	margin-top: -(@w / 2);
+}
+.transport-left(@w: (@px * .5)) {
+	border-top-width: @w;
+	border-right-width: @w;
+	border-bottom-width: @w;
+	margin-left: (@w / 2);
+	margin-right: -(@w / 2);
+}
+
+
+//----- ROTATION --------------------------------------//
+
+.rotate(@num) {
+	@div: 100;
+	@IE8rot: @num/@div;
+
+	// USING THIS BIT OF LESS
+	// unit(@dimension, [@unit: ""]);
+	// remove or change the unit of a dimension
+
+	filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=@IE8rot); // IE8 and lower
+	-ms-transform: rotate( unit(@num, deg) ); // IE 9 and higher
+	-o-transform: rotate( unit(@num, deg) ); // Opera
+	-moz-transform: rotate( unit(@num, deg) ); // Mozilla
+	-webkit-transform: rotate(unit(@num, deg)); // Safari
+	transform: rotate( unit(@num, deg) );
 }
 
 

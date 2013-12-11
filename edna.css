@@ -341,9 +341,6 @@ table {
  ***********
 ***********/
 /*-------*/
-.example {
-  width: 1px;
-}
 /**********
 	RTL
 **********/
@@ -696,6 +693,9 @@ input[type=reset],
   color: #333333;
   background-color: #eaeaea;
   border: solid 1px #c1c1c1;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: #333333;
   -moz-border-radius: 3px;
   border-radius: 3px;
   cursor: pointer;
