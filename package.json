@@ -9,7 +9,8 @@
     "grunt-contrib-less": "git://github.com/gruntjs/grunt-contrib-less.git",
     "grunt-md2html": "~0.1.4",
     "grunt-express": "~0.3.3",
-    "express": "~3.4.0"
+    "express": "~3.4.0",
+    "grunt-lesslint": "~0.15.0"
   },
   "main": "Gruntfile.js",
   "repository": {
