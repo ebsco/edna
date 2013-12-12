@@ -5,9 +5,17 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		express: {
+			options: {
+				host: 'http://localhost',
+				bases: '.',
+				// server: path.resolve('./express'),
+
+				debug: true,
+				baseUrl: '.'
+			},
 			server: {
 				options: {
-					port: 8001
+					port: 8010
 				}
 			}
 		},
@@ -70,7 +78,19 @@ module.exports = function(grunt) {
 					livereload: true
 				}
 			}
+		},
+
+		lesslint: {
+			src: ["edna.less","plus/plus.less"],
+			options: {
+				imports: ["edna.less","plus/plus.less", "dna/content-styles.less","dna/forms.less"],
+				formatters: {
+					id: "csslint-xml",
+					dest: "lesslint.xml"
+				}
+			}
 		}
+
 
 	});
 
@@ -78,15 +98,24 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-md2html');
+	grunt.loadNpmTasks('grunt-lesslint')
 
 	grunt.registerTask("dev", [
 		"md2html",
-		"less"
+		"less",
+		"lesslint"
 	]);
+	grunt.registerTask('goodserver', function() {
+		grunt.task.run('express');
+		grunt.task.run('less');
+		grunt.task.run('watch');
+		grunt.task.run('lesslint');
+	});
 
 	grunt.registerTask("server", [
 		"express",
 		"less",
+		"lesslint",
 		"watch"
 	]);
 
