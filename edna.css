@@ -569,14 +569,14 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0.75px 0px 0.5px;
+  margin: 0.75rem 0rem 0.5rem;
   line-height: 1.25;
   font-weight: normal;
   color: #474747;
 }
 h1 {
   line-height: 1;
-  margin: 0px 0px 0.636px;
+  margin: 0rem 0rem 0.636rem;
   font-size: 44px;
   font-size: 4.4rem;
 }
@@ -604,7 +604,7 @@ h6 {
   font-style: italic;
 }
 p {
-  margin: 0px 0px 1px;
+  margin: 0rem 0rem 1rem;
 }
 p.lead {
   font-size: 16px;
@@ -645,7 +645,7 @@ blockquote {
   padding-left: 0.5px;
 }
 pre {
-  margin: 0px 0px 1px;
+  margin: 0rem 0rem 1rem;
   font-family: monospace;
 }
 code {
@@ -689,7 +689,7 @@ button,
 input[type=submit],
 input[type=reset],
 .btn {
-  padding: 2.5px 5px;
+  padding: 0.25em 0.5em;
   color: #333333;
   background-color: #eaeaea;
   border: solid 1px #c1c1c1;
@@ -1004,19 +1004,19 @@ td:first-child {
 ul,
 ol {
   margin: 0;
-  padding: 0px 0px 1px 1px;
+  padding: 0rem 0rem 1rem 1rem;
 }
 li > ul,
 li > ol {
-  padding: 0.5px 0px 0.5px 1px;
+  padding: 0.5rem 0rem 0.5rem 1rem;
 }
 dl {
   margin: 0;
-  padding: 0px 0px 1px;
+  padding: 0rem 0rem 1rem;
 }
 dd {
   margin: 0;
-  padding: 0px 0px 0.125px 2px;
+  padding: 0rem 0rem 0.125rem 2rem;
 }
 /***********
  ***********
