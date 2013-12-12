@@ -659,7 +659,7 @@ code {
 input[type=text],
 input[type=search],
 textarea {
-  padding: 0.25px 0.5px;
+  padding: 2.5px 5px;
   color: #333333;
   border: solid 1px #c1c1c1;
   -moz-border-radius: 3px;
