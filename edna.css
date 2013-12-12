@@ -689,7 +689,7 @@ button,
 input[type=submit],
 input[type=reset],
 .btn {
-  padding: 10px 10px;
+  padding: 2.5px 5px;
   color: #333333;
   background-color: #eaeaea;
   border: solid 1px #c1c1c1;
