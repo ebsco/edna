@@ -83,7 +83,7 @@ module.exports = function(grunt) {
 		lesslint: {
 			src: ["edna.less","plus/plus.less"],
 			options: {
-				imports: ["edna.less","plus/plus.less", "dna/content-styles.less","dna/forms.less"],
+				// imports: ["edna.less","plus/plus.less", "dna/content-styles.less","dna/forms.less"],
 				formatters: {
 					id: "csslint-xml",
 					dest: "lesslint.xml"
