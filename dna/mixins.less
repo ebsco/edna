@@ -199,7 +199,7 @@
 }
 // margin 2
 .mar-2(@n1; @n2; @s: @mar-sd) {
-	margin: unit(@n, @s) unit(@n2, @s);
+	margin: unit(@n1, @s) unit(@n2, @s);
 }
 // margin 3
 .mar-3(@n1; @n2; @n3; @s: @mar-sd) {
@@ -218,8 +218,11 @@
 .pad(@n: 0; @s: @pad-sd) when (@n = 0) {
 	padding: @n;
 }
-.pad(@n: 0; @s: @pad-sd) when not (@n = 0) {
+.pad(@n: 0; @s: @pad-sd) when not (@s = pct), (@n = 0) {
 	padding: unit(@n, @s);
+}
+.pad(@n: 0; @s: @pad-sd) when (@s = pct) {
+	padding: percentage(@n/100);
 }
 // padding top
 .pad-t(@n: 0; @s: @pad-sd) when (@n = 0) {

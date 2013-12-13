@@ -897,6 +897,7 @@ input[type=reset] input[type=reset][disabled]:hover,
   border-radius: 3px;
   list-style-type: none;
   padding: 0;
+  padding: 0px;
   z-index: 10;
   min-width: 100px;
 }
