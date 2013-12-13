@@ -6,7 +6,7 @@
 **********/
 
 .tabs {
-	position: relative;
+	.pos(relative);
 	* {
 		.box(border);
 	}
@@ -18,13 +18,13 @@
 	.tab-list {
 		.tab-list-item {
 			float: left;
-			border-width: (@px * .1) (@px * .1) 0 (@px * .1);
+			.bor-w-4(1;1;0;1);
 			border-style: solid;
 			border-color: @colorS3;
 			.pad-2(10; 20; px);
 			.mar-r(-1; px);
 			.mar-b(-1; px);
-			position: relative;
+			.pos(relative);
 			z-index: 30;
 			background-color: @colorS2;
 			cursor: pointer;
@@ -37,7 +37,7 @@
 			&.active {
 				cursor: default;
 				cursor: default;
-				border-bottom: (@px * .1) solid @colorS1;
+				.bor-b(1;solid;@colorS1);
 				background-color: @colorS1;
 				&:hover {
 					background-color: @colorS1;
@@ -52,7 +52,7 @@
 			.radius-br((@px * .3));
 			.radius-bl((@px * .3));
 			.wid(100;pct);
-			border: (@px * .1) solid @colorS3;
+			.bor(1;solid;@colorS3);
 			.pad-2(10; 20; px);
 			display: none;
 			> *:last-child { // remove any extra margin on the last item for better parent padding
@@ -61,7 +61,7 @@
 			&.active {
 				background-color: @colorS1;
 				display: inline-block;
-				position: relative;
+				.pos(relative);
 				z-index: 25;				
 			}
 		}

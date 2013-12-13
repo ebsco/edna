@@ -8,7 +8,7 @@
 table {
 	border-collapse: separate;
 	border-spacing: 0;
-	border: (@px * .1) solid @colorP2;
+	.bor(1;solid;@colorP2);
 	.radius;
 }
 thead tr {
@@ -19,13 +19,13 @@ th {
 	font-weight: bold;
 	.pad-2(10; 20; px);
 	text-align: left;
-	border-left: (@px * .1) solid @colorP2;
+	.bor-l(1;solid;@colorP2);
 }
 td {
 	.pad-2(10; 20; px);
-	border-left: (@px * .1) solid @colorP2;
+	.bor-l(1;solid;@colorP2);
 }
 th:first-child,
 td:first-child {
-	border-left: none;
+	.bor-l;
 }

@@ -5,17 +5,17 @@
 	CAROUSEL
 **********/
 .carousel {
-	border: (@px * .1) solid @colorS4;
+	.bor(1;solid;@colorS4);
 	.pad(15;px);
 	.wid(100;pct);
 	background-color: @colorS1;
 	.carousel-img {
 		.box(border);
 		.wid(100;pct);
-		border: (@px * .1) solid @colorS4;
+		.bor(1;solid;@colorS4);
 		> .img {
 			display: block;
-			border: none;
+			.bor;
 			.wid(100;pct);
 		}
 	}
@@ -25,20 +25,20 @@
 		.mar-3(15;0;0;px);
 		overflow: hidden;
 		.ht(55);
-		position: relative;
+		.pos(relative);
 	}
 	.transport {
-		position: absolute;
+		.pos(absolute);
 		&:nth-child(1),
 		&.first {
-			left: 0;
+			.pos-l;
 			.left {
 				.mar-3(0;0;1;px);
 			}			
 		}
 		&:nth-child(3),
 		.last {
-			right: 0;
+			.pos-r;
 			.right {
 				.mar-3(0;0;5;px);
 			}
@@ -49,27 +49,27 @@
 		float: left;
 		overflow: hidden;
 		.ht(53);
-		position: absolute;
-		left: (@px * 2);
-		right: (@px * 2);
+		.pos(absolute);
+		.pos-l(20);
+		.pos-r(20);
 		.carousel-list {
 			list-style-type: none;
 			.mar;
 			.pad(0);
 			.wid(1000);
-			position: relative;
+			.pos(relative);
 			.carousel-list-item {
 				float: left;
 				.mar-4(0;5;0;0;px);
 				.pad(0);
 				display: inline-block;
 				cursor: pointer;
-				border: (@px * .1) solid @colorS4;
+				.bor(1;solid;@colorS4);
 				.wid(67);
 				.box(border);
 				.img {
 					display: block;
-					border: none;
+					.bor;
 					.wid(100;pct);
 				}
 			}

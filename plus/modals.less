@@ -6,7 +6,7 @@
 **********/
 
 .modal {
-	border: (@px * .1) solid @colorS3;
+	.bor(1;solid;@colorS3);
 	.radius(@radius);
 	box-shadow: 0 0 @px rgba(0,0,0,.5);
 	background-color: @colorS1;
@@ -16,7 +16,7 @@
 		.pad(15;px);
 	}
 	.modal-header {
-		border-bottom: (@px * .1) solid @colorS3;
+		.bor-b(1;solid;@colorS3);
 		.modal-title {
 			.mar;
 		}
@@ -27,7 +27,7 @@
 			color: @colorS3;
 			vertical-align: middle;
 			.pad-2(10;0;px);
-			border: none;
+			.bor;
 			background-color: transparent;
 			&:hover {
 				color: @colorS4;
@@ -35,7 +35,7 @@
 		}
 	}
 	.modal-footer {
-		border-top: (@px * .1) solid @colorS3;
+		.bor-t(1;solid;@colorS3);
 		text-align: right;
 	}
 }

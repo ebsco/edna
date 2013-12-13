@@ -8,11 +8,11 @@
 	color: @colorP2;
 	.pad(15;px);
 	.mar-3(0;0;1);
-	border: solid (@px * .1) darken(@msg, (@pct * .2));
+	.bor(1;solid;darken(@msg, (@pct * .2)));
 	background-color: @msg;
 	.radius;
-	position: relative;
-	min-height: (@px * 5);
+	.pos(relative);
+	.min-ht(50);
 	.box(border);
 	> .icon {
 		display: inline-block;
@@ -36,8 +36,8 @@
 		&:after {
 			color: @colorP1;
 			content: '✕';
-			position: absolute;
-			right: (@px * 2);
+			.pos(absolute);
+			.pos-r(20);
 		}
 	} // end close
 	.msg-action {
@@ -45,25 +45,24 @@
 		&:after {
 			content: '»';
 			display: inline-block;
-			// margin-left: (@px * .5);
 			.mar-l(5);
 		}
 	} // end msg-action
 	&.msg-info {
 		background-color: @msg-info;
-		border-color: darken(@msg-info, (@pct * .2));
+		.bor-c(darken(@msg-info, (@pct * .2)));
 	} // end info
 	&.msg-success {
 		background-color: @msg-success;
-		border-color: darken(@msg-success, (@pct * .2));
+		.bor-c(darken(@msg-success, (@pct * .2)));
 	} // end success
 	&.msg-note {
 		background-color: @msg-note;
-		border-color: darken(@msg-note, (@pct * .2));
+		.bor-c(darken(@msg-note, (@pct * .2)));
 	} // end note
 	&.msg-alert {
 		background-color: @msg-alert;
-		border-color: darken(@msg-alert, (@pct * .2));
+		.bor-c(darken(@msg-alert, (@pct * .2)));
 	} // end alert
 
 }

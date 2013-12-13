@@ -262,57 +262,123 @@
 
 //----- BORDERS ----------------------------------------//
 
-.bunit(@s1: px) when (@s1 = px), (@s1 = em), (@s1 = rem) {
-	@s2: @s1;
-}
 // top
 .bor-t(@w: 0; @s: solid; @c: @colorP1; @u: px) when not (@w = 0) {
-	.bunit(@u);
 	border-top: unit(@w, @u) @s @c;
 }
 .bor-t(@w: 0) when (@w = 0) {
 	border-top: @w;
 }
+.bor-t-w(@w: 0; @u: px) when not (@w = 0) {
+	border-top-width: unit(@w, @u);
+}
+.bor-t-w(@w: 0) when (@w = 0) {
+	border-top-width: @w;
+}
+.bor-t-s(@s: solid) {
+	border-top-style: @s;
+}
+.bor-t-c(@c: @colorP1) {
+	border-top-color: @c;
+}
 // right
 .bor-r(@w: 0; @s: solid; @c: @colorP1; @u: px) when not (@w = 0) {
-	.bunit(@u);
 	border-right: unit(@w, @u) @s @c;
 }
 .bor-r(@w: 0) when (@w = 0) {
 	border-right: @w;
 }
+.bor-r-w(@w: 0; @u: px) when not (@w = 0) {
+	border-right-width: unit(@w, @u);
+}
+.bor-r-w(@w: 0) when (@w = 0) {
+	border-right-width: @w;
+}
+.bor-r-s(@s: solid) {
+	border-right-style: @s;
+}
+.bor-r-c(@c: @colorP1) {
+	border-right-color: @c;
+}
 // bottom
 .bor-b(@w: 0; @s: solid; @c: @colorP1; @u: px) when not (@w = 0) {
-	.bunit(@u);
 	border-bottom: unit(@w, @u) @s @c;
 }
 .bor-b(@w: 0) when (@w = 0) {
 	border-bottom: @w;
 }
+.bor-b-w(@w: 0; @u: px) when not (@w = 0) {
+	border-bottom-width: unit(@w, @u);
+}
+.bor-b-w(@w: 0) when (@w = 0) {
+	border-bottom-width: @w;
+}
+.bor-b-s(@s: solid) {
+	border-bottom-style: @s;
+}
+.bor-b-c(@c: @colorP1) {
+	border-bottom-color: @c;
+}
 // left
 .bor-l(@w: 0; @s: solid; @c: @colorP1; @u: px) when not (@w = 0) {
-	.bunit(@u);
 	border-left: unit(@w, @u) @s @c;
 }
 .bor-l(@w: 0) when (@w = 0) {
 	border-left: @w;
 }
+.bor-l-w(@w: 0; @u: px) when not (@w = 0) {
+	border-left-width: unit(@w, @u);
+}
+.bor-l-w(@w: 0) when (@w = 0) {
+	border-left-width: @w;
+}
+.bor-l-s(@s: solid) {
+	border-left-style: @s;
+}
+.bor-l-c(@c: @colorP1) {
+	border-left-color: @c;
+}
 // border width
 .bor-w(@w: 1; @u: px) {
-	.bunit(@u);
 	border-width: unit(@w, @u);
+}
+.bor-w-2(@w: 1; @u: px) {
+	border-width: unit(@w, @u);
+}
+.bor-w-3(@w: 1; @u: px) {
+	border-width: unit(@w, @u);
+}
+.bor-w-4(@w1: 1; @w2: 1; @w3: 1; @w4: 1; @u: px) {
+	border-width: unit(@w1, @u) unit(@w2, @u) unit(@w3, @u) unit(@w4, @u);
 }
 // border style
 .bor-s(@s: solid) {
+	border-style: @s;
+}
+.bor-s-2(@s: solid) {
+	border-style: @s;
+}
+.bor-s-3(@s: solid) {
+	border-style: @s;
+}
+.bor-s-4(@s: solid) {
 	border-style: @s;
 }
 // border color
 .bor-c(@c: @colorP1) {
 	border-color: @c;
 }
+.bor-c-2(@c: @colorP1) {
+	border-color: @c;
+}
+.bor-c-3(@c: @colorP1) {
+	border-color: @c;
+}
+.bor-c-4(@c: @colorP1) {
+	border-color: @c;
+}
 // all four
 .bor(@w: 1; @s: solid; @c: @colorP1; @u: px) when not (@w = none) {
-	.bunit(@u);
 	border: unit(@w, @u) @s @c;
 }
 .bor(@w) when (@w = none) {

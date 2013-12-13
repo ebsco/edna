@@ -5,7 +5,7 @@
 	TRANSPORT
 **********/
 .transport {
-	@border-width: (unit( (@px) ) * 1.5);
+	@border-width: 15;
 	> .top,
 	> .right,
 	> .bottom,
@@ -16,83 +16,83 @@
 		.ht;
 		display: inline-block;
 
-		border-top: escape("@{border-width}px") solid transparent;
-		border-right: escape("@{border-width}px") solid transparent;
-		border-bottom: escape("@{border-width}px") solid transparent;
-		border-left: escape("@{border-width}px") solid transparent;
+		.bor-t(@border-width;solid;transparent);
+		.bor-r(@border-width;solid;transparent);
+		.bor-b(@border-width;solid;transparent);
+		.bor-l(@border-width;solid;transparent);
 	}
 	> .top {
-		border-bottom-width: escape("@{border-width}px");
-		border-bottom-style: solid;
-		border-bottom-color: @colorS3;
-		border-top-width: 0;
+		.bor-b-w(@border-width);
+		.bor-b-s(solid);
+		.bor-b-c(@colorS3);
+		.bor-t-w;
 		.mar-b(@border-width * .5; px);
 		.mar-t(-@border-width * .5; px);
 		&:hover {
-			border-bottom-color: @colorP4;
+			.bor-b-c(@colorP4);
 		}
 	}
 	> .right {
-		border-left-width: escape("@{border-width}px");
-		border-left-style: solid;
-		border-left-color: @colorS3;
-		border-right-width: 0;
+		.bor-l-w(@border-width);
+		.bor-l-s(solid);
+		.bor-l-c(@colorS3);
+		.bor-r-w;
 		.mar-l(@border-width * .5; px);
 		.mar-r(-@border-width * .5; px);
 		&:hover {
-			border-left-color: @colorP4;
+			.bor-l-c(@colorP4);
 		}
 	}
 	> .bottom {
-		border-top-width: escape("@{border-width}px");
-		border-top-style: solid;
-		border-top-color: @colorS3;
-		border-bottom-width: 0;
+		.bor-t-w(@border-width);
+		.bor-t-s(solid);
+		.bor-t-c(@colorS3);
+		.bor-b-w;
 		.mar-b(@border-width * .5; px);
 		.mar-t(-@border-width * .5; px);
 		&:hover {
-			border-top-color: @colorP4;
+			.bor-t-c(@colorP4);
 		}
 	}
 	> .left {
-		border-right-width: escape("@{border-width}px");
-		border-right-style: solid;
-		border-right-color: @colorS3;
-		border-left-width: 0;
+		.bor-r-w(@border-width);
+		.bor-r-s(solid);
+		.bor-r-c(@colorS3);
+		.bor-l-w;
 		.mar-l(@border-width * .5; px);
 		.mar-r(-@border-width * .5; px);
 		&:hover {
-			border-right-color: @colorP4;
+			.bor-r-c(@colorP4);
 		}
 	}
 
 	&.inactive {
 		> .top {
-			border-bottom-color: @colorS4;
+			.bor-b-c(@colorS4);
 			cursor: default;
 			&:hover {
-				border-bottom-color: @colorS4;
+				.bor-b-c(@colorS4);
 			}
 		}
 		> .right {
-			border-left-color: @colorS4;
+			.bor-l-c(@colorS4);
 			cursor: default;
 			&:hover {
-				border-left-color: @colorS4;
+				.bor-l-c(@colorS4);
 			}
 		}
 		> .bottom {
-			border-top-color: @colorS4;
+			.bor-t-c(@colorS4);
 			cursor: default;
 			&:hover {
-				border-top-color: @colorS4;
+				.bor-t-c(@colorS4);
 			}
 		}
 		> .left {
-			border-right-color: @colorS4;
+			.bor-r-c(@colorS4);
 			cursor: default;
 			&:hover {
-				border-right-color: @colorS4;
+				.bor-r-c(@colorS4);
 			}
 		}
 	}

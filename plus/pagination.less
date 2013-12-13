@@ -15,12 +15,12 @@
 		.pag-list-item {
 			display: inline-block;
 			float: left;
-			border-right: (@px * .1) solid @colorS4;
+			.bor-r(1;solid;@colorS4);
 			.pad-2(0; 10; px);
 			cursor: pointer;
 			color: lighten(@font-color, 20%);
 			&:nth-last-child(1) {
-				border-right: none;
+				.bor-r;
 			}
 			&:hover {
 				background-color: @bg2;
@@ -54,18 +54,18 @@
 		> .right,
 		> .left {
 			color: @colorS4;
-			border-top: (@newPX * .9) solid rgba(0, 0, 0, 0);
-			border-bottom: (@newPX * .9) solid rgba(0, 0, 0, 0);
+			.bor-t( (@newPX * .9);solid;rgb(0, 0, 0));
+			.bor-b( (@newPX * .9);solid;rgb(0, 0, 0));
 		}
 		> .right {
-			border-left: @newPX solid @colorS4;
-			margin-left: (@newPX * .5);
-			margin-right: 0;
+			.bor-l(@newPX;solid;@colorS4);
+			.mar-l(@newPX * .5);
+			.mar-r;
 		}
 		> .left {
-			border-right: @newPX solid @colorS4;
-			margin-left: 0;
-			margin-right: (@newPX * .5);
+			.bor-r(@newPX;solid;@colorS4);
+			.mar-l;
+			.mar-r(@newPX * .5);
 		}
 
 	}

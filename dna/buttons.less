@@ -12,8 +12,7 @@ input[type=reset],
 	.pad-2(.25;.5;em);
 	color: @colorP1;
 	background-color: @colorS2;
-	border: solid (@px * .1) @colorS4;
-	.border();
+	.bor(1;solid;@colorS4);
 	.radius;
 	cursor: pointer;
 	text-decoration: none;
@@ -49,37 +48,37 @@ input[type=reset],
 	&.action {
 		color: @colorP2;
 		background-color: @btn-action;
-		border-color: darken(@btn-action, (@pct * .2));
+		.bor-c( darken(@btn-action, (@pct * .2)) );
 		&:hover {
 			background-color: darken(@btn-action, (@pct * .2));
-			border-color: darken(@btn-action, (@pct * .3));
+			.bor-c(darken(@btn-action, (@pct * .3)));
 		}
 	}
 	&.primary {
 		color: @colorS2;
 		background-color: @btn-primary;
-		border-color: darken(@btn-primary, (@pct * .05));
+		.bor-c( darken(@btn-primary, (@pct * .05)) );
 		&:hover {
 			background-color: darken(@btn-primary, (@pct * .07));
-			border-color: darken(@btn-primary, (@pct * .06));
+			.bor-c(darken(@btn-primary, (@pct * .06)));
 		}
 	}
 	&.cancel {
 		color: @colorP2;
 		background-color: @btn-cancel;
-		border-color: darken(@btn-cancel, (@pct * .2));
+		.bor-c( darken(@btn-cancel, (@pct * .2)) );
 		&:hover {
 			background-color: darken(@btn-cancel, (@pct * .1));
-			border-color: darken(@btn-cancel, (@pct * .2));
+			.bor-c(darken(@btn-cancel, (@pct * .2)));
 		}
 	}
 	&.search {
 		color: @colorS2;
 		background-color: @btn-search;
-		border-color: darken(@btn-search, (@pct * .1));
+		.bor-c( darken(@btn-search, (@pct * .1)) );
 		&:hover {
 			background-color: darken(@btn-search, (@pct * .1));
-			border-color: darken(@btn-search, (@pct * .2));
+			.bor-c(darken(@btn-search, (@pct * .2)));
 		}
 	}
 	&.disabled,
@@ -88,7 +87,7 @@ input[type=reset],
 	input[type=reset][disabled] {
 		color: @colorS4;
 		background-color: @colorS3;
-		border-color: @colorS4;
+		.bor-c(@colorS4);
 		cursor: default;
 		&:hover {
 			background-color: @colorS3;
@@ -105,7 +104,7 @@ input[type=reset],
 	.grp-dropdown {
 		float: left;
 		.radius;
-		border-left-width: 0;
+		.bor-l-w;
 	}
 	.grp-btn + .grp-btn {
 		.mar-l;
@@ -118,7 +117,7 @@ input[type=reset],
 	:first-child,
 	.first //IE support 
 	{
-		border-left-width: (@px * .1);
+		.bor-l-w(1);
 		.radius-all(@radius; 0; 0; @radius);
 	}	
 }
