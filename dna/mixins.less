@@ -173,29 +173,41 @@
 .mar-t(@n: 0; @s: @mar-sd) when (@n = 0) {
 	margin-top: @n;
 }
-.mar-t(@n: 0; @s: @mar-sd) when not (@n = 0) {
+.mar-t(@n: 0; @s: @mar-sd) when not (@s = pct), (@n = 0) {
 	margin-top: unit(@n, @s);
+}
+.mar-t(@n: 0; @s: @mar-sd) when (@s = pct) {
+	margin-top: percentage(@n/100);
 }
 // margin right
 .mar-r(@n: 0; @s: @mar-sd) when (@n = 0) {
 	margin-right: @n;
 }
-.mar-r(@n: 0; @s: @mar-sd) when not (@n = 0) {
+.mar-r(@n: 0; @s: @mar-sd) when not (@s = pct), (@n = 0) {
 	margin-right: unit(@n, @s);
+}
+.mar-r(@n: 0; @s: @mar-sd) when (@s = pct) {
+	margin-right: percentage(@n/100);
 }
 // margin bottom
 .mar-b(@n: 0; @s: @mar-sd) when (@n = 0) {
 	margin-bottom: @n;
 }
-.mar-b(@n: 0; @s: @mar-sd) when not (@n = 0) {
+.mar-b(@n: 0; @s: @mar-sd) when not (@s = pct), (@n = 0) {
 	margin-bottom: unit(@n, @s);
+}
+.mar-b(@n: 0; @s: @mar-sd) when (@s = pct) {
+	margin-bottom: percentage(@n/100);
 }
 // margin left
 .mar-l(@n: 0; @s: @mar-sd) when (@n = 0) {
 	margin-left: @n;
 }
-.mar-l(@n: 0; @s: @mar-sd) when not (@n = 0) {
+.mar-l(@n: 0; @s: @mar-sd) when not (@s = pct), (@n = 0) {
 	margin-left: unit(@n, @s);
+}
+.mar-l(@n: 0; @s: @mar-sd) when (@s = pct) {
+	margin-left: percentage(@n/100);
 }
 // margin 2
 .mar-2(@n1; @n2; @s: @mar-sd) {

@@ -863,6 +863,7 @@ input[type=reset] input[type=reset][disabled]:hover,
 }
 .btn-group .grp-btn + .grp-btn {
   margin-left: 0;
+  margin-left: 0px;
 }
 .btn-group :last-child,
 .btn-group .last {
