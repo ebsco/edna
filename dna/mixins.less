@@ -163,8 +163,11 @@
 .mar(@n: 0; @s: @mar-sd) when (@n = 0) {
 	margin: @n;
 }
-.mar(@n: 0; @s: @mar-sd) when not (@n = 0) {
+.mar(@n: 0; @s: @mar-sd) when not (@s = pct), (@n = 0) {
 	margin: unit(@n, @s);
+}
+.mar(@n: 0; @s: @mar-sd) when (@s = pct) {
+	margin: percentage(@n/100);
 }
 // margin top
 .mar-t(@n: 0; @s: @mar-sd) when (@n = 0) {
@@ -509,7 +512,6 @@
 	-moz-border-radius: unit(@n1, @s) unit(@n2, @s) unit(@n3, @s) unit(@n4, @s);
 	border-radius: unit(@n1, @s) unit(@n2, @s) unit(@n3, @s) unit(@n4, @s);
 }
-
 
 //----- TRANSPORT -------------------------------------//
 

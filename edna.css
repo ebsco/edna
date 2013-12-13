@@ -1001,6 +1001,7 @@ td:first-child {
 ul,
 ol {
   margin: 0;
+  margin: 0px;
   padding: 0rem 0rem 1rem 1rem;
 }
 li > ul,
@@ -1009,10 +1010,12 @@ li > ol {
 }
 dl {
   margin: 0;
+  margin: 0px;
   padding: 0rem 0rem 1rem;
 }
 dd {
   margin: 0;
+  margin: 0px;
   padding: 0rem 0rem 0.125rem 2rem;
 }
 /***********
