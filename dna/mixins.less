@@ -262,70 +262,63 @@
 
 //----- BORDERS ----------------------------------------//
 
-
-
-// .brdr-s(@style2) {
-// 	border-style: @style2;
-// }
-// .brdr-c(@color2) {
-// 	border-color: @color2;
-// }
-// .unit(@suffix2) when ( @suffix2 = px ), ( @suffix2 = em ), ( @suffix2 = rem ) {
-// 	@suffix3: @suffix2;
-// }
-// .brdr-wt(@top2: 0) when not (@top2 = 0) {
-// 	.unit(@suffix1);
-// 	border-top-width: unit(@top2, @suffix1);
-// }
-// .brdr-wt(@top2: 0) when (@top2 = 0) {
-// 	border-top-width: @top2;
-// }
-// .brdr-wr(@right2: 0) when not ( @right2 = 0 ) {
-// 	.unit(@suffix1);
-// 	border-right-width: unit(@right2, @suffix1);
-// }
-// .brdr-wr(@right2: 0) when ( @right2 = 0 ) {
-// 	border-right-width: @right2;
-// }
-// .brdr-wb(@bottom2: 0) when not ( @bottom2 = 0 ) {
-// 	.unit(@suffix1);
-// 	border-bottom-width: unit(@bottom2, @suffix1);
-// }
-// .brdr-wb(@bottom2: 0) when ( @bottom2 = 0 ) {
-// 	border-bottom-width: @bottom2;
-// }
-// .brdr-wl(@left2: 0) when not ( @left2 = 0 ) {
-// 	.unit(@suffix1);
-// 	border-left-width: unit(@left2, @suffix1);
-// }
-// .brdr-wl(@left2: 0) when ( @left2 = 0 ) {
-// 	border-left-width: @left2;
-// }
-// .brdr-w(@suffix1: px; @top1: 0; @right1: 0; @bottom1: 0; @left1: 0;) {
-// 	.brdr-wt(@top1);
-// 	.brdr-wr(@right1);
-// 	.brdr-wb(@bottom1);
-// 	.brdr-wl(@left1);
-// }
-// .brdr-s(@style1: solid) {
-// 	border-style: @style1;
-// }
-// .brdr-c(@color1: #000) {
-// 	border-color: @color1;
-// }
-// .brdr(@suffix0; @top0; @right0; @bottom0; @left0; @style0; @color0) {
-// 	.brdr-w(@suffix0; @top0; @right0; @bottom0; @left0);
-// 	.brdr-s(@style0);
-// 	.brdr-c(@color0);
-// }
-
-// .example {
-// 	.brdr(rem; 0; 2; 3; 4;solid; #FF0000);
-// }
-
-
-
-
+.bunit(@s1: px) when (@s1 = px), (@s1 = em), (@s1 = rem) {
+	@s2: @s1;
+}
+// top
+.bor-t(@w: 0; @s: solid; @c: @colorP1; @u: px) when not (@w = 0) {
+	.bunit(@u);
+	border-top: unit(@w, @u) @s @c;
+}
+.bor-t(@w: 0) when (@w = 0) {
+	border-top: @w;
+}
+// right
+.bor-r(@w: 0; @s: solid; @c: @colorP1; @u: px) when not (@w = 0) {
+	.bunit(@u);
+	border-right: unit(@w, @u) @s @c;
+}
+.bor-r(@w: 0) when (@w = 0) {
+	border-right: @w;
+}
+// bottom
+.bor-b(@w: 0; @s: solid; @c: @colorP1; @u: px) when not (@w = 0) {
+	.bunit(@u);
+	border-bottom: unit(@w, @u) @s @c;
+}
+.bor-b(@w: 0) when (@w = 0) {
+	border-bottom: @w;
+}
+// left
+.bor-l(@w: 0; @s: solid; @c: @colorP1; @u: px) when not (@w = 0) {
+	.bunit(@u);
+	border-left: unit(@w, @u) @s @c;
+}
+.bor-l(@w: 0) when (@w = 0) {
+	border-left: @w;
+}
+// border width
+.bor-w(@w: 1; @u: px) {
+	.bunit(@u);
+	border-width: unit(@w, @u);
+}
+// border style
+.bor-s(@s: solid) {
+	border-style: @s;
+}
+// border color
+.bor-c(@c: @colorP1) {
+	border-color: @c;
+}
+// all four
+.bor(@w: 1; @s: solid; @c: @colorP1; @u: px) when not (@w = none) {
+	.bunit(@u);
+	border: unit(@w, @u) @s @c;
+}
+.bor(@w) when (@w = none) {
+	border: @w;
+}
+// OLD STUFF
 .border-width(@widthT: (@px * .1); @widthR: (@px * .1); @widthB: (@px * .1); @widthL: (@px * .1)) {
 	border-width: @widthT @widthR @widthB @widthL;
 }
@@ -340,6 +333,7 @@
 	border-style: @style;
 	border-color: @colorP1;
 }
+
 
 //----- BORDER RADIUS ----------------------------------------//
 
