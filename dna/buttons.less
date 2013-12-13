@@ -12,7 +12,7 @@ input[type=reset],
 	.pad-2(.25;.5;em);
 	color: @colorP1;
 	background-color: @colorS2;
-	.bor(1;solid;@colorS4);
+	.bor(1;solid;darken(@colorS2, 10%));
 	.radius;
 	cursor: pointer;
 	text-decoration: none;
@@ -21,7 +21,7 @@ input[type=reset],
 	
 	// HOVER STATES
 	&:hover {
-		background-color: darken(@colorS2, (@pct * .1));
+		background-color: darken(@colorS2, 10%);
 		color: @colorP1;
 	}
 

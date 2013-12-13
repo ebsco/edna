@@ -378,11 +378,14 @@
 	border-color: @c;
 }
 // all four
-.bor(@w: 1; @s: solid; @c: @colorP1; @u: px) when not (@w = none) {
+.bor(@w: 0; @s: solid; @c: @colorP1; @u: px) when not (@w = 0) {
 	border: unit(@w, @u) @s @c;
 }
-.bor(@w) when (@w = none) {
+.bor(@w: 0) when (@w = 0) {
 	border: @w;
+}
+.bor-n() {
+	border: none;
 }
 // OLD STUFF
 .border-width(@widthT: (@px * .1); @widthR: (@px * .1); @widthB: (@px * .1); @widthL: (@px * .1)) {
@@ -561,40 +564,45 @@
 
 //----- POSITION --------------------------------------//
 
-.punit(@s1: px) when (@s1 = px), (@s1 = em), (@s1 = rem) {
-	@s2: @s1;
-}
 // top
-.pos-t(@t: 0; @s: px) when not (@t = 0) {
-	.punit(@s);
-	top: unit(@t, @s2);
+.pos-t(@t: 0; @s: px) when not (@s = pct), (@t = 0) {
+	top: unit(@t, @s);
 }
 .pos-t(@t: 0; @s: auto) when (@t = 0) {
 	top: @t;
 }
+.pos-t(@t: 0; @s: auto) when (@s = pct) {
+	top: percentage(@t/100);
+}
 // right
-.pos-r(@r: 0; @s: px) when not (@r = 0) {
-	.punit(@s);
-	right: unit(@r, @s2);
+.pos-r(@r: 0; @s: px) when not (@s = pct), (@r = 0) {
+	right: unit(@r, @s);
 }
 .pos-r(@r: 0; @s: auto) when (@r = 0) {
 	right: @r;
 }
+.pos-r(@r: 0; @s: auto) when (@s = pct) {
+	right: percentage(@r/100);
+}
 // bottom
-.pos-b(@b: 0; @s: px) when not (@b = 0) {
-	.punit(@s);
-	bottom: unit(@b, @s2);
+.pos-b(@b: 0; @s: px) when not (@s = pct), (@b = 0) {
+	bottom: unit(@b, @s);
 }
 .pos-b(@b: 0; @s: auto) when (@b = 0) {
 	bottom: @b;
 }
+.pos-b(@b: 0; @s: auto) when (@s = pct) {
+	bottom: percentage(@b/100);
+}
 // left
-.pos-l(@l: 0; @s: px) when not (@l = 0) {
-	.punit(@s);
-	left: unit(@l, @s2);
+.pos-l(@l: 0; @s: px) when not (@s = pct), (@l = 0) {
+	left: unit(@l, @s);
 }
 .pos-l(@l: 0; @s: auto) when (@l = 0) {
 	left: @l;
+}
+.pos-l(@l: 0; @s: auto) when (@s = pct) {
+	left: percentage(@l/100);
 }
 // position
 .pos(@pos: relative) when (@pos = absolute), (@pos = fixed), (@pos = inherit), (@pos = relative), (@pos = static) {
