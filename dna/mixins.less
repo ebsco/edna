@@ -262,6 +262,70 @@
 
 //----- BORDERS ----------------------------------------//
 
+
+
+// .brdr-s(@style2) {
+// 	border-style: @style2;
+// }
+// .brdr-c(@color2) {
+// 	border-color: @color2;
+// }
+// .unit(@suffix2) when ( @suffix2 = px ), ( @suffix2 = em ), ( @suffix2 = rem ) {
+// 	@suffix3: @suffix2;
+// }
+// .brdr-wt(@top2: 0) when not (@top2 = 0) {
+// 	.unit(@suffix1);
+// 	border-top-width: unit(@top2, @suffix1);
+// }
+// .brdr-wt(@top2: 0) when (@top2 = 0) {
+// 	border-top-width: @top2;
+// }
+// .brdr-wr(@right2: 0) when not ( @right2 = 0 ) {
+// 	.unit(@suffix1);
+// 	border-right-width: unit(@right2, @suffix1);
+// }
+// .brdr-wr(@right2: 0) when ( @right2 = 0 ) {
+// 	border-right-width: @right2;
+// }
+// .brdr-wb(@bottom2: 0) when not ( @bottom2 = 0 ) {
+// 	.unit(@suffix1);
+// 	border-bottom-width: unit(@bottom2, @suffix1);
+// }
+// .brdr-wb(@bottom2: 0) when ( @bottom2 = 0 ) {
+// 	border-bottom-width: @bottom2;
+// }
+// .brdr-wl(@left2: 0) when not ( @left2 = 0 ) {
+// 	.unit(@suffix1);
+// 	border-left-width: unit(@left2, @suffix1);
+// }
+// .brdr-wl(@left2: 0) when ( @left2 = 0 ) {
+// 	border-left-width: @left2;
+// }
+// .brdr-w(@suffix1: px; @top1: 0; @right1: 0; @bottom1: 0; @left1: 0;) {
+// 	.brdr-wt(@top1);
+// 	.brdr-wr(@right1);
+// 	.brdr-wb(@bottom1);
+// 	.brdr-wl(@left1);
+// }
+// .brdr-s(@style1: solid) {
+// 	border-style: @style1;
+// }
+// .brdr-c(@color1: #000) {
+// 	border-color: @color1;
+// }
+// .brdr(@suffix0; @top0; @right0; @bottom0; @left0; @style0; @color0) {
+// 	.brdr-w(@suffix0; @top0; @right0; @bottom0; @left0);
+// 	.brdr-s(@style0);
+// 	.brdr-c(@color0);
+// }
+
+// .example {
+// 	.brdr(rem; 0; 2; 3; 4;solid; #FF0000);
+// }
+
+
+
+
 .border-width(@widthT: (@px * .1); @widthR: (@px * .1); @widthB: (@px * .1); @widthL: (@px * .1)) {
 	border-width: @widthT @widthR @widthB @widthL;
 }
@@ -432,6 +496,49 @@
 	-moz-transform: rotate( unit(@num, deg) ); // Mozilla
 	-webkit-transform: rotate(unit(@num, deg)); // Safari
 	transform: rotate( unit(@num, deg) );
+}
+
+
+//----- POSITION --------------------------------------//
+
+.punit(@s1: px) when (@s1 = px), (@s1 = em), (@s1 = rem) {
+	@s2: @s1;
+}
+// top
+.pos-t(@t: 0; @s: px) when not (@t = 0) {
+	.punit(@s);
+	top: unit(@t, @s2);
+}
+.pos-t(@t: 0; @s: auto) when (@t = 0) {
+	top: @t;
+}
+// right
+.pos-r(@r: 0; @s: px) when not (@r = 0) {
+	.punit(@s);
+	right: unit(@r, @s2);
+}
+.pos-r(@r: 0; @s: auto) when (@r = 0) {
+	right: @r;
+}
+// bottom
+.pos-b(@b: 0; @s: px) when not (@b = 0) {
+	.punit(@s);
+	bottom: unit(@b, @s2);
+}
+.pos-b(@b: 0; @s: auto) when (@b = 0) {
+	bottom: @b;
+}
+// left
+.pos-l(@l: 0; @s: px) when not (@l = 0) {
+	.punit(@s);
+	left: unit(@l, @s2);
+}
+.pos-l(@l: 0; @s: auto) when (@l = 0) {
+	left: @l;
+}
+// position
+.pos(@pos: relative) when (@pos = absolute), (@pos = fixed), (@pos = inherit), (@pos = relative), (@pos = static) {
+	position: @pos;
 }
 
 
