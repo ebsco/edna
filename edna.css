@@ -1151,7 +1151,7 @@ dd {
 .hundred > .third,
 .hundred > .twothird,
 .hundred > .half {
-  padding-left: 15px;
+  padding-left: 2rem;
 }
 .hundred > .fifth:first-child,
 .hundred > .twofifth:first-child,
