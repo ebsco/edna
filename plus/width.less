@@ -43,6 +43,32 @@
 	> .half {
 		.width(50);
 	}
+	// add leading padding between
+	> .fifth,
+	> .twofifth,
+	> .threefifth,
+	> .fourfifth,
+	> .quarter,
+	> .threequarter,
+	> .third,
+	> .twothird,
+	> .half {
+		.pad-l(15);
+	}
+	// remove leading padding on first
+	> .fifth,
+	> .twofifth,
+	> .threefifth,
+	> .fourfifth,
+	> .quarter,
+	> .threequarter,
+	> .third,
+	> .twothird,
+	> .half {
+		&:first-child {
+			.pad-l;
+		}
+	}
 }
 
 

@@ -1142,6 +1142,28 @@ dd {
   /* Opera/IE 8+ */
   clear: none;
 }
+.hundred > .fifth,
+.hundred > .twofifth,
+.hundred > .threefifth,
+.hundred > .fourfifth,
+.hundred > .quarter,
+.hundred > .threequarter,
+.hundred > .third,
+.hundred > .twothird,
+.hundred > .half {
+  padding-left: 15px;
+}
+.hundred > .fifth:first-child,
+.hundred > .twofifth:first-child,
+.hundred > .threefifth:first-child,
+.hundred > .fourfifth:first-child,
+.hundred > .quarter:first-child,
+.hundred > .threequarter:first-child,
+.hundred > .third:first-child,
+.hundred > .twothird:first-child,
+.hundred > .half:first-child {
+  padding-left: 0;
+}
 [dir="rtl"] .fifth,
 [dir="rtl"] .twofifth,
 [dir="rtl"] .threefifth,
