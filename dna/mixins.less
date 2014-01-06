@@ -51,20 +51,17 @@
 
 //----- FONTS --------------------------------------//
 
-.font-family() {
-	font-family: Helvetica, Arial, sans-serif;
+.font-family(@ff) when (@ff = sans) {
+	font-family: Georgia, serif;
 }
-.font-family(@ff) when (@ff = default) {
+.font-family(@ff) when (@ff = serif) {
 	font-family: Helvetica, Arial, sans-serif;
-}
-.font-family(@ff) when (@ff = code) {
-	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
 .font-family(@ff) when (@ff = mono) {
 	font-family: monospace;
 }
-.font-family(@ff) when (@ff = georgia) {
-	font-family: Georgia, serif;
+.font-family(@ff) when (@ff = code) {
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
 .font-color(@color: @font-color) {
 	color: @color;
