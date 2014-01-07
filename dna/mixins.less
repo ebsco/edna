@@ -657,16 +657,15 @@
 //----- GRADIENTS ----------------------------------------//
 
 .gradient(@color: @colorP3) {
-	@start: @color;
-	@stop: lighten(@color, 25%);
+	@top: fadeout(@color, 50%);
+	@bottom: @color;
 	background: @color;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, @start), color-stop(1, @stop));
-	background: -ms-linear-gradient(bottom, @start, @stop);
-	background: -moz-linear-gradient(center bottom, @start 0%, @stop 100%);
-	background: -o-linear-gradient(@stop, @start);
-	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
+	background: -ms-linear-gradient(bottom, @bottom, @top);
+	background: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
+	background: -o-linear-gradient(@top, @bottom);
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom));
 }
-
 
 //----- TRUNCATE ----------------------------------------//
 
