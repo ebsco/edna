@@ -15,11 +15,12 @@
 
 }
 // Set default styles for all P1s
-.l1, .l2, .l3, .l4 {
+.l1, .l2, .l3, .l4, .l5 {
 	.wid(100;pct);
-}
-.l1 {
 	.clearfix;
+}
+// Divide the patterns into two master classes that go in the body tag
+.l1 {
 	&.p1 {
 		> .col {
 			.wid(100;pct);
@@ -27,132 +28,292 @@
 	}
 }
 .l2 {
-	.clearfix;
+	// 80 20
 	&.p1 {
-		> .col {
+		> .col:nth-child(1) {
+			.wid(80;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(20;pct);
+		}
+	}
+	// 75 25
+	&.p2 {
+		> .col:nth-child(1) {
+			.wid(75;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(25;pct);
+		}
+	}
+	// 66 33
+	&.p3 {
+		> .col:nth-child(1) {
+			.wid(66;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(33;pct);
+		}
+	}
+	// 60 40
+	&.p4 {
+		> .col:nth-child(1) {
+			.wid(60;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(40;pct);
+		}
+	}
+	// 50 50
+	&.p5 {
+		> .col:nth-child(1) {
 			.wid(50;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(50;pct);
+		}
+	}
+	// 40 60
+	&.p6 {
+		> .col:nth-child(1) {
+			.wid(40;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(60;pct);
+		}
+	}
+	// 33 66
+	&.p7 {
+		> .col:nth-child(1) {
+			.wid(33;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(66;pct);
+		}
+	}
+	// 25 75
+	&.p8 {
+		> .col:nth-child(1) {
+			.wid(25;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(75;pct);
+		}
+	}
+	// 20 80
+	&.p9 {
+		> .col:nth-child(1) {
+			.wid(20;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(80;pct);
 		}
 	}
 }
 .l3 {
-	.clearfix;
+	// 60 20 20
 	&.p1 {
-		> .col {
+		> .col:nth-child(1) {
+			.wid(60;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(20;pct);
+		}
+		> .col:nth-child(3) {
+			.wid(20;pct);
+		}
+	}
+	// 50 25 25
+	&.p2 {
+		> .col:nth-child(1) {
+			.wid(50;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(25;pct);
+		}
+		> .col:nth-child(3) {
+			.wid(25;pct);
+		}
+	}
+	// 40 40 20
+	&.p3 {
+		> .col:nth-child(1) {
+			.wid(40;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(40;pct);
+		}
+		> .col:nth-child(3) {
+			.wid(20;pct);
+		}
+	}
+	// 40 20 40
+	&.p4 {
+		> .col:nth-child(1) {
+			.wid(40;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(20;pct);
+		}
+		> .col:nth-child(3) {
+			.wid(40;pct);
+		}
+	}
+	// 33 33 33
+	&.p5 {
+		> .col:nth-child(1) {
 			.wid(33;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(33;pct);
+		}
+		> .col:nth-child(3) {
+			.wid(33;pct);
+		}
+	}
+	// 25 25 50
+	&.p6 {
+		> .col:nth-child(1) {
+			.wid(25;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(25;pct);
+		}
+		> .col:nth-child(3) {
+			.wid(50;pct);
+		}
+	}
+	// 25 50 25
+	&.p7 {
+		> .col:nth-child(1) {
+			.wid(25;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(50;pct);
+		}
+		> .col:nth-child(3) {
+			.wid(25;pct);
+		}
+	}
+	// 20 20 60
+	&.p8 {
+		> .col:nth-child(1) {
+			.wid(20;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(20;pct);
+		}
+		> .col:nth-child(3) {
+			.wid(60;pct);
+		}
+	}
+	// 20 60 20
+	&.p9 {
+		> .col:nth-child(1) {
+			.wid(20;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(60;pct);
+		}
+		> .col:nth-child(3) {
+			.wid(20;pct);
 		}
 	}
 }
 .l4 {
-	.clearfix;
+	// 40 20 20 20
 	&.p1 {
-		> .col {
+		> .col:nth-child(1) {
+			.wid(40;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(20;pct);
+		}
+		> .col:nth-child(3) {
+			.wid(20;pct);
+		}
+		> .col:nth-child(4) {
+			.wid(20;pct);
+		}
+	}
+	// 25 25 25 25
+	&.p2 {
+		> .col:nth-child(1) {
+			.wid(25;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(25;pct);
+		}
+		> .col:nth-child(3) {
+			.wid(25;pct);
+		}
+		> .col:nth-child(4) {
 			.wid(25;pct);
 		}
 	}
-}
-// Divide the patterns into two master classes that go in the body tag
-.alpha {
-	.l2 {
-		&.p2 {
-			> .col:nth-child(1) {
-				.wid(40;pct);
-			}
-			> .col:nth-child(2) {
-				.wid(60;pct);
-			}
+	// 20 20 20 40
+	&.p3 {
+		> .col:nth-child(1) {
+			.wid(20;pct);
 		}
-		&.p3 {
-			> .col:nth-child(1) {
-				.wid(30;pct);
-			}
-			> .col:nth-child(2) {
-				.wid(70;pct);
-			}
+		> .col:nth-child(2) {
+			.wid(20;pct);
 		}
-		&.p4 {
-			> .col:nth-child(1) {
-				.wid(20;pct);
-			}
-			> .col:nth-child(2) {
-				.wid(80;pct);
-			}
+		> .col:nth-child(3) {
+			.wid(20;pct);
+		}
+		> .col:nth-child(4) {
+			.wid(40;pct);
 		}
 	}
-	.l3 {
-		&.p2 {
-			> .col:nth-child(1) {
-				.wid(20;pct);
-			}
-			> .col:nth-child(2) {
-				.wid(20;pct);
-			}
-			> .col:nth-child(3) {
-				.wid(60;pct);
-			}
+	// 20 20 40 20
+	&.p4 {
+		> .col:nth-child(1) {
+			.wid(20;pct);
 		}
-		&.p3 {
-			> .col:nth-child(1) {
-				.wid(20;pct);
-			}
-			> .col:nth-child(2) {
-				.wid(60;pct);
-			}
-			> .col:nth-child(3) {
-				.wid(20;pct);
-			}
+		> .col:nth-child(2) {
+			.wid(20;pct);
+		}
+		> .col:nth-child(3) {
+			.wid(40;pct);
+		}
+		> .col:nth-child(4) {
+			.wid(20;pct);
+		}
+	}
+	// 20 40 20 20
+	&.p5 {
+		> .col:nth-child(1) {
+			.wid(20;pct);
+		}
+		> .col:nth-child(2) {
+			.wid(40;pct);
+		}
+		> .col:nth-child(3) {
+			.wid(20;pct);
+		}
+		> .col:nth-child(4) {
+			.wid(20;pct);
 		}
 	}
 }
-// the second master class for the body tag
-.beta {
-	.l2 {
-		&.p2 {
-			> .col:nth-child(1) {
-				.wid(60;pct);
-			}
-			> .col:nth-child(2) {
-				.wid(40;pct);
-			}
+.l5 {
+	// 20 20 20 20 20
+	&.p1 {
+		> .col:nth-child(1) {
+			.wid(20;pct);
 		}
-		&.p3 {
-			> .col:nth-child(1) {
-				.wid(70;pct);
-			}
-			> .col:nth-child(2) {
-				.wid(30;pct);
-			}
+		> .col:nth-child(2) {
+			.wid(20;pct);
 		}
-		&.p4 {
-			> .col:nth-child(1) {
-				.wid(80;pct);
-			}
-			> .col:nth-child(2) {
-				.wid(20;pct);
-			}
+		> .col:nth-child(3) {
+			.wid(20;pct);
 		}
-	}
-	.l3 {
-		&.p2 {
-			> .col:nth-child(1) {
-				.wid(60;pct);
-			}
-			> .col:nth-child(2) {
-				.wid(20;pct);
-			}
-			> .col:nth-child(3) {
-				.wid(20;pct);
-			}
+		> .col:nth-child(4) {
+			.wid(20;pct);
 		}
-		&.p3 { // yes, this pattern is the same as .alpha .l3.p3, don't worry about it
-			> .col:nth-child(1) {
-				.wid(20;pct);
-			}
-			> .col:nth-child(2) {
-				.wid(60;pct);
-			}
-			> .col:nth-child(3) {
-				.wid(20;pct);
-			}
+		> .col:nth-child(5) {
+			.wid(20;pct);
 		}
 	}
 }
