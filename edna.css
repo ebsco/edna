@@ -400,9 +400,9 @@ header,
 .l4,
 footer {
   max-width: 100%;
-}
-head {
-  margin-bottom: 35px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eaeaea;
 }
 /**********
 	LAYOUT
