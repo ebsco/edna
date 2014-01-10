@@ -401,6 +401,9 @@ header,
 footer {
   max-width: 100%;
 }
+head {
+  margin-bottom: 35px;
+}
 /**********
 	LAYOUT
 **********/
