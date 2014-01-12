@@ -1136,21 +1136,21 @@ dd {
 /**********
 	WIDTH
 **********/
-.hundred {
+.w {
   width: 100%;
   display: block;
   *zoom: 1;
 }
-.hundred:before,
-.hundred:after {
+.w:before,
+.w:after {
   display: table;
   line-height: 0;
   content: "";
 }
-.hundred:after {
+.w:after {
   clear: both;
 }
-.hundred > .fifth {
+.w > .w20 {
   width: 20% !important;
   float: left;
   -webkit-box-sizing: border-box;
@@ -1161,40 +1161,7 @@ dd {
   /* Opera/IE 8+ */
   clear: none;
 }
-.hundred > .twofifth {
-  width: 40% !important;
-  float: left;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  clear: none;
-}
-.hundred > .threefifth {
-  width: 60% !important;
-  float: left;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  clear: none;
-}
-.hundred > .fourfifth {
-  width: 80% !important;
-  float: left;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  clear: none;
-}
-.hundred > .quarter {
+.w > .w25 {
   width: 25% !important;
   float: left;
   -webkit-box-sizing: border-box;
@@ -1205,18 +1172,7 @@ dd {
   /* Opera/IE 8+ */
   clear: none;
 }
-.hundred > .threequarter {
-  width: 75% !important;
-  float: left;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  clear: none;
-}
-.hundred > .third {
+.w > .w33 {
   width: 33% !important;
   float: left;
   -webkit-box-sizing: border-box;
@@ -1227,8 +1183,8 @@ dd {
   /* Opera/IE 8+ */
   clear: none;
 }
-.hundred > .twothird {
-  width: 66% !important;
+.w > .w40 {
+  width: 40% !important;
   float: left;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
@@ -1238,7 +1194,7 @@ dd {
   /* Opera/IE 8+ */
   clear: none;
 }
-.hundred > .half {
+.w > .w50 {
   width: 50% !important;
   float: left;
   -webkit-box-sizing: border-box;
@@ -1249,26 +1205,70 @@ dd {
   /* Opera/IE 8+ */
   clear: none;
 }
-.hundred > .fifth,
-.hundred > .twofifth,
-.hundred > .threefifth,
-.hundred > .fourfifth,
-.hundred > .quarter,
-.hundred > .threequarter,
-.hundred > .third,
-.hundred > .twothird,
-.hundred > .half {
+.w > .w60 {
+  width: 60% !important;
+  float: left;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  clear: none;
+}
+.w > .w66 {
+  width: 66% !important;
+  float: left;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  clear: none;
+}
+.w > .w75 {
+  width: 75% !important;
+  float: left;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  clear: none;
+}
+.w > .w80 {
+  width: 80% !important;
+  float: left;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  clear: none;
+}
+.w > .fifth,
+.w > .twofifth,
+.w > .threefifth,
+.w > .fourfifth,
+.w > .quarter,
+.w > .threequarter,
+.w > .third,
+.w > .twothird,
+.w > .half {
   padding-left: 2rem;
 }
-.hundred > .fifth:first-child,
-.hundred > .twofifth:first-child,
-.hundred > .threefifth:first-child,
-.hundred > .fourfifth:first-child,
-.hundred > .quarter:first-child,
-.hundred > .threequarter:first-child,
-.hundred > .third:first-child,
-.hundred > .twothird:first-child,
-.hundred > .half:first-child {
+.w > .fifth:first-child,
+.w > .twofifth:first-child,
+.w > .threefifth:first-child,
+.w > .fourfifth:first-child,
+.w > .quarter:first-child,
+.w > .threequarter:first-child,
+.w > .third:first-child,
+.w > .twothird:first-child,
+.w > .half:first-child {
   padding-left: 0;
 }
 [dir="rtl"] .fifth,
