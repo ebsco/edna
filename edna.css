@@ -1249,37 +1249,37 @@ dd {
   /* Opera/IE 8+ */
   clear: none;
 }
-.w > .fifth,
-.w > .twofifth,
-.w > .threefifth,
-.w > .fourfifth,
-.w > .quarter,
-.w > .threequarter,
-.w > .third,
-.w > .twothird,
-.w > .half {
+.w > .w20,
+.w > .w25,
+.w > .w33,
+.w > .w40,
+.w > .w50,
+.w > .w60,
+.w > .w66,
+.w > .w75,
+.w > .w80 {
   padding-left: 2rem;
 }
-.w > .fifth:first-child,
-.w > .twofifth:first-child,
-.w > .threefifth:first-child,
-.w > .fourfifth:first-child,
-.w > .quarter:first-child,
-.w > .threequarter:first-child,
-.w > .third:first-child,
-.w > .twothird:first-child,
-.w > .half:first-child {
+.w > .w20:first-child,
+.w > .w25:first-child,
+.w > .w33:first-child,
+.w > .w40:first-child,
+.w > .w50:first-child,
+.w > .w60:first-child,
+.w > .w66:first-child,
+.w > .w75:first-child,
+.w > .w80:first-child {
   padding-left: 0;
 }
-[dir="rtl"] .fifth,
-[dir="rtl"] .twofifth,
-[dir="rtl"] .threefifth,
-[dir="rtl"] .threefifth,
-[dir="rtl"] .quarter,
-[dir="rtl"] .threequarter,
-[dir="rtl"] .third,
-[dir="rtl"] .twothird,
-[dir="rtl"] .half {
+[dir="rtl"] .w20,
+[dir="rtl"] .w25,
+[dir="rtl"] .w33,
+[dir="rtl"] .w40,
+[dir="rtl"] .w50,
+[dir="rtl"] .w60,
+[dir="rtl"] .w66,
+[dir="rtl"] .w75,
+[dir="rtl"] .w80 {
   float: right;
 }
 /**********
