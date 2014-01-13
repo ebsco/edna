@@ -14,12 +14,16 @@ body {
 	margin: auto; // align content in center above max-width
 }
  //set padding for elements
-.l1, .l2, .l3, .l4 {
+.l1, .l2, .l3, .l4, .l5 {
 	.pad-2(0;1.5);
 	.box(border);
 }
-header, .l1, .l2, .l3, .l4, footer {
+header, .l1, .l2, .l3, .l4, .l5, footer {
 	.max-wid(100;pct); // main content blocks width
-	.mar-b(30);
 	.pad-b(10);
+}
+header {
+	.pad-b(20);
+	.mar-b(20);
+	border-bottom: 3px solid @colorS4;
 }

@@ -384,7 +384,8 @@ body {
 .l1,
 .l2,
 .l3,
-.l4 {
+.l4,
+.l5 {
   padding: 0px 1.5px;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
@@ -398,10 +399,15 @@ header,
 .l2,
 .l3,
 .l4,
+.l5,
 footer {
   max-width: 100%;
-  margin-bottom: 30px;
   padding-bottom: 10px;
+}
+header {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #c1c1c1;
 }
 /**********
 	LAYOUT
