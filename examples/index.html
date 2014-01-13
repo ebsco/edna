@@ -26,13 +26,6 @@
 		.soon { padding: .25em 5px; color: #999; }
 		.soon:hover { background-color: transparent; cursor: default; }
 
-		.layouts .header, .layouts .col, .layouts .footer { box-sizing: border-box; text-align: center; font-weight: bold; background-color: #FFAB5C; border: 1px solid #FFF; padding: .25em; }
-		.layouts .header > p, .layouts .col > p, .layouts .footer > p { margin: 0; }
-		.layouts .col:nth-child(1) { background-color: #EE5500; }
-		.layouts .col:nth-child(2) { background-color: #EE5500; }
-		.layouts .col:nth-child(3) { background-color: #EE5500; }
-		.layouts .col:last-child { border-right: none; }
-
 		.dis { background-color: #FFF; border: 1px solid #E0E0E0; padding: 10px; border-radius: 5px; }
 		.dis + .dis, .dis + p { margin-top: 15px; }
 		.dis .dis-text {  }
@@ -47,6 +40,8 @@
 		}
 		.dis pre { margin: 0 0 10px 0; }
 		.dis pre:last-child { margin: 10px 0 0 0; }
+		.layouts .col { padding: 10px; border: 1px solid black; background-color: lightblue; }
+		.widget-layouts [class*=w] { padding: 10px; border: 1px solid black; background-color: lightgreen; }
 	</style>
 
 </head>
@@ -56,7 +51,7 @@
 			<h1><a href="/">DNA</a></h1>
 			<p>Really nice typography for HTML elements and really nice design for graphical HTML elements (forms, blockquote, pre, etc.).</p>
 		</div>
-		<div class="l2 p3">
+		<div class="l2 p9">
 			<nav role="navigation" aria-label="DNA parts" class="col">
 
 				<h2 class="nav-heading">DNA</h2>
@@ -64,9 +59,11 @@
 					<li class="nav-item">
 						<h3 class="nav-item nav-heading" data-kind="dna-layouts">Layouts</h3>
 						<ul class="nav-list">
-							<li class="nav-item" data-kind="dna-layouts-l1">One Column</li>
-							<li class="nav-item" data-kind="dna-layouts-l2">Two Column</li>
-							<li class="nav-item" data-kind="dna-layouts-l3">Three Column</li>
+							<li class="nav-item" data-kind="dna-layouts">All Layouts</li>
+							<li class="nav-item" data-kind="plus-widget-layouts">Widget Layouts</li>
+							<!-- <li class="nav-item" data-kind="dna-layouts-l1">One Column</li> -->
+							<!-- <li class="nav-item" data-kind="dna-layouts-l2">Two Column</li> -->
+							<!-- <li class="nav-item" data-kind="dna-layouts-l3">Three Column</li> -->
 							<!-- <li class="nav-item" data-kind="dna-layouts-l4">Four Column</li> -->
 							<!-- <li class="nav-item" data-kind="dna-test">Test</li> -->
 						</ul>
@@ -111,6 +108,9 @@
 			</nav>
 			<div class="col">
 				<section role="main" aria-label="Main Content" class="result"></section>
+			</div>
+			<div class="col">
+				<p>STUFF</p>
 			</div>
 		</div>
 	</div>

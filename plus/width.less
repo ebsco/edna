@@ -5,6 +5,7 @@
 	WIDTH
 **********/
 
+// just a mixin
 .width(@w: @n) {
 	width: percentage(@w/100) !important;
 	float: left;
@@ -12,76 +13,77 @@
 	clear: none;
 }
 
-.hundred {
+// make the classes!
+.w {
 	.wid(100;pct);
 	display: block;
 	.clearfix;
-	> .fifth {
+	> .w20 {
 		.width(20);
 	}
-	> .twofifth {
-		.width(40);
-	}
-	> .threefifth {
-		.width(60);
-	}
-	> .fourfifth {
-		.width(80);
-	}
-	> .quarter {
+	> .w25 {
 		.width(25);
 	}
-	> .threequarter {
-		.width(75);
-	}
-	> .third {
+	> .w33 {
 		.width(33);
 	}
-	> .twothird {
-		.width(66);
+	> .w40 {
+		.width(40);
 	}
-	> .half {
+	> .w50 {
 		.width(50);
 	}
-	// add leading padding between
-	> .fifth,
-	> .twofifth,
-	> .threefifth,
-	> .fourfifth,
-	> .quarter,
-	> .threequarter,
-	> .third,
-	> .twothird,
-	> .half {
+	> .w60 {
+		.width(60);
+	}
+	> .w66 {
+		.width(66);
+	}
+	> .w75 {
+		.width(75);
+	}
+	> .w80 {
+		.width(80);
+	}
+	// add padding between
+	> .w20,
+	> .w25,
+	> .w33,
+	> .w40,
+	> .w50,
+	> .w60,
+	> .w66,
+	> .w75,
+	> .w80 {
 		.pad-l(2;rem);
 	}
-	// remove leading padding on first
-	> .fifth,
-	> .twofifth,
-	> .threefifth,
-	> .fourfifth,
-	> .quarter,
-	> .threequarter,
-	> .third,
-	> .twothird,
-	> .half {
+	// remove padding on first
+	> .w20,
+	> .w25,
+	> .w33,
+	> .w40,
+	> .w50,
+	> .w60,
+	> .w66,
+	> .w75,
+	> .w80 {
 		&:first-child {
 			.pad-l;
 		}
 	}
 }
 
-
+// rtl stuff
 [dir="rtl"] {
-	.fifth,
-	.twofifth,
-	.threefifth,
-	.threefifth,
-	.quarter,
-	.threequarter,
-	.third,
-	.twothird,
-	.half {
+	.w20,
+	.w25,
+	.w33,
+	.w40,
+	.w50,
+	.w60,
+	.w66,
+	.w75,
+	.w80 {
 		float: right;
 	}
 }
