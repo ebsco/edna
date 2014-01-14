@@ -4,25 +4,6 @@
 
 // VARIABLES
 
-// COLORS
-@colorP1: #333;
-@colorP2: #474747;
-@colorP3: #5B5B5B;
-@colorP4: #707070;
-
-@colorS1: #FFF;
-@colorS2: #EAEAEA;
-@colorS3: #D6D6D6;
-@colorS4: #C1C1C1;
-
-
-// FONTS
-@font-size: 62.5%;
-@font-color: #333;
-@link-color: #08C;
-@link-color-active: darken(@link-color, 10%);
-
-
 // MEASURMENTS
 @rem: 1rem;
 @em: 1em;
@@ -30,27 +11,43 @@
 @pct: 100%;
 
 
+// COLORS
+@colorP1: #333333;
+@colorP2: lighten(@colorP1, 10%);
+@colorP3: lighten(@colorP1, 20%);
+@colorP4: lighten(@colorP1, 30%);
+
+@colorS1: #FFFFFF;
+@colorS2: darken(@colorS1, 10%);
+@colorS3: darken(@colorS1, 10%);
+@colorS4: darken(@colorS1, 10%);
+
+
+// FONTS
+@font-color: #333;
+@font-size: 62.5%;
+
+
+// LINKS
+@link-color: #434343;
+@link-color-active: darken(@link-color, 10%);
+
+
 // BACKGROUND COLORS
 @bg1: #EAEAEA;
-@bg2: #D6D6D6;
-@bg3: #C1C1C1;
+@bg2: fade(@bg1,5%);
+@bg3: fade(@bg1,5%);
+
+
+// BORDER COLOR
+@border1: #AAA8A8;
+@border2: fade(@border1, 5%);
+@border3: fade(@border1, 10%);
+@border4: fade(@border1, 15%);
 
 
 // BORDER RADIUS
-@radius: (@px * .3);
-
-// BUTTON COLORS
-@btn-action: #F5DD6A;
-@btn-primary: #007F00;
-@btn-cancel: @colorS4;
-@btn-search: #428BCA;
-
-// MESSAGING COLORS
-@msg: @colorS2;
-@msg-info: #e4f1ff;
-@msg-success: #e6fadf;
-@msg-note: #e7e7b1;
-@msg-alert: #edbdb6;
+@radius: 3px;
 
 
 // BUTTON COLORS
@@ -58,6 +55,7 @@
 @btn-primary: #007F00;
 @btn-cancel: @colorS4;
 @btn-search: #428BCA;
+
 
 // MESSAGING COLORS
 @msg: @colorS2;

@@ -10,8 +10,8 @@ input[type=submit],
 input[type=reset],
 .btn {
 	.pad-2(2.5;5;);
-	color: @colorP1;
-	background-color: @colorS2;
+	color: @colorS4;
+	background-color: fade(#b2a89b,25%);
 	.bor(1;solid;darken(@colorS2, 10%));
 	.radius;
 	cursor: pointer;
@@ -21,8 +21,8 @@ input[type=reset],
 	
 	// HOVER STATES
 	&:hover {
-		background-color: darken(@colorS2, 10%);
-		color: @colorP1;
+		background-color: fade(#b2a89b,50%);
+		color: @colorS4;
 	}
 
 	// TEXT ONLY BUTTONS
