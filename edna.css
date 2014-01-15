@@ -724,20 +724,20 @@ p.lead {
   margin-bottom: 0.725px;
 }
 a {
-  color: #434343;
+  color: #1c71cf;
 }
 a:visited {
-  color: #434343;
+  color: #747577;
 }
 a:hover,
 a:focus {
-  color: #2a2a2a;
+  color: #1658a2;
 }
 a:focus {
   text-decoration: underline;
 }
 a:active {
-  color: #2a2a2a;
+  color: #1658a2;
 }
 strong {
   font-weight: bold;
@@ -826,13 +826,13 @@ input[type=reset].txt,
 .btn.txt {
   border: none;
   background-color: transparent;
-  color: #434343;
+  color: #1c71cf;
 }
 button.txt:hover,
 input[type=submit].txt:hover,
 input[type=reset].txt:hover,
 .btn.txt:hover {
-  color: #2a2a2a;
+  color: #1658a2;
   text-decoration: underline;
 }
 button + button,
