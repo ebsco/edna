@@ -35,7 +35,8 @@ module.exports = function(grunt) {
 				options: {
 					path: ["dna/", "plus/"],
 					compress: false,
-					dumpLineNumbers: true
+					dumpLineNumbers: true,
+					sourceMap: true
 				},
 				files: {
 					"edna.css": "edna.less",
