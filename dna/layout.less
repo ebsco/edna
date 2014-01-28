@@ -12,12 +12,19 @@
 	.box(border);
 	float: left;
 	.wid(100;pct);
-
+	.pad-4(@col-top-padding;@col-right-padding;@col-bottom-padding;@col-left-padding);
+	+ .col {
+		.pad-l(70);
+	}
 }
 // Set default styles for all p1s
 .l1, .l2, .l3, .l4, .l5 {
 	.wid(100;pct);
 	.clearfix;
+	.pad-4(@lay-top-padding;@lay-right-padding;@lay-bottom-padding;@lay-left-padding);
+	&:first-child {
+		.pad-t;
+	}
 }
 // Divide the patterns into two master classes that go in the body tag
 .l1 {

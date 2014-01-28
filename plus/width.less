@@ -5,6 +5,8 @@
 	WIDTH
 **********/
 
+@widget-padding: 4.7; 
+
 // just a mixin
 .width(@w: @n) {
 	width: percentage(@w/100) !important;
@@ -55,7 +57,7 @@
 	> .w66,
 	> .w75,
 	> .w80 {
-		.pad-l(4.7;rem);
+		.pad-2(0;@widget-padding/2;rem);
 	}
 	// remove padding on first
 	> .w20,
@@ -69,6 +71,11 @@
 	> .w80 {
 		&:first-child {
 			.pad-l;
+			.pad-r(@widget-padding;rem);
+		}
+		&:last-child {
+			.pad-r;
+			.pad-l(@widget-padding;rem);
 		}
 	}
 }
