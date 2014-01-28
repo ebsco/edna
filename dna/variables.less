@@ -17,15 +17,17 @@
 @mediaquerys-large: 1200px;
 
 
-// COLORS
+// SKINNING VARIABLES
 @colorP1: #333333;
-@colorP2: lighten(@colorP1, 10%);
-@colorP3: lighten(@colorP1, 20%);
-@colorP4: lighten(@colorP1, 30%);
-
 @colorS1: #FFFFFF;
+
+@colorP2: lighten(@colorP1, 10%);
 @colorS2: darken(@colorS1, 10%);
+
+@colorP3: lighten(@colorP1, 20%);
 @colorS3: darken(@colorS1, 10%);
+
+@colorP4: lighten(@colorP1, 30%);
 @colorS4: darken(@colorS1, 10%);
 
 
@@ -40,6 +42,18 @@
 @link-color-active: darken(@link-color, 10%);
 
 
+// LAYOUT & COLUMNS
+@lay-top-padding: (@px * 7);
+@lay-right-padding: (@px * 2.5);
+@lay-bottom-padding: 0;
+@lay-left-padding: (@px * 2.5);
+
+@col-top-padding: 0;
+@col-right-padding: 0;
+@col-bottom-padding: 0;
+@col-left-padding: 0;
+
+
 // BACKGROUND COLORS
 @bg1: #EAEAEA;
 @bg2: fade(@bg1,5%);
@@ -47,7 +61,6 @@
 
 
 // BORDER COLOR
-//@border1: #AAA8A8;
 @border1: #000000;
 @border2: tint(@border1, 45);
 @border3: tint(@border1, 66);
