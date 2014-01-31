@@ -5,7 +5,6 @@
 	TRANSPORT
 **********/
 .transport {
-	@border-width: 15;
 	> .top,
 	> .right,
 	> .bottom,
@@ -15,83 +14,83 @@
 		.ht;
 		display: inline-block;
 
-		.bor-t(@border-width;solid;transparent);
-		.bor-r(@border-width;solid;transparent);
-		.bor-b(@border-width;solid;transparent);
-		.bor-l(@border-width;solid;transparent);
+		.bor-t(@transport-width;solid;transparent);
+		.bor-r(@transport-width;solid;transparent);
+		.bor-b(@transport-width;solid;transparent);
+		.bor-l(@transport-width;solid;transparent);
 	}
 	> .top {
-		.bor-b-w(@border-width);
+		.bor-b-w(@transport-width);
 		.bor-b-s(solid);
-		.bor-b-c(@border1);
+		.bor-b-c(@transport-color);
 		.bor-t-w;
-		.mar-b(@border-width * .5; px);
-		.mar-t(-@border-width * .5; px);
-		&:hover {
-			.bor-b-c(@colorP4);
-		}
+		.mar-b(@transport-width * .5; px);
+		.mar-t(-@transport-width * .5; px);
+		// &:hover {
+		// 	.bor-b-c(@border2);
+		// }
 	}
 	> .right {
-		.bor-l-w(@border-width);
+		.bor-l-w(@transport-width);
 		.bor-l-s(solid);
-		.bor-l-c(@border1);
+		.bor-l-c(@transport-color);
 		.bor-r-w;
-		.mar-l(@border-width * .5; px);
-		.mar-r(-@border-width * .5; px);
-		&:hover {
-			.bor-l-c(@colorP4);
-		}
+		.mar-l(@transport-width * .5; px);
+		.mar-r(-@transport-width * .5; px);
+		// &:hover {
+		// 	.bor-l-c(@border2);
+		// }
 	}
 	> .bottom {
-		.bor-t-w(@border-width);
+		.bor-t-w(@transport-width);
 		.bor-t-s(solid);
-		.bor-t-c(@border1);
+		.bor-t-c(@transport-color);
 		.bor-b-w;
-		.mar-b(@border-width * .5; px);
-		.mar-t(-@border-width * .5; px);
-		&:hover {
-			.bor-t-c(@colorP4);
-		}
+		.mar-b(@transport-width * .5; px);
+		.mar-t(-@transport-width * .5; px);
+		// &:hover {
+		// 	.bor-t-c(@border2);
+		// }
 	}
 	> .left {
-		.bor-r-w(@border-width);
+		.bor-r-w(@transport-width);
 		.bor-r-s(solid);
-		.bor-r-c(@border1);
+		.bor-r-c(@transport-color);
 		.bor-l-w;
-		.mar-l(@border-width * .5; px);
-		.mar-r(-@border-width * .5; px);
-		&:hover {
-			.bor-r-c(@colorP4);
-		}
+		.mar-l(@transport-width * .5; px);
+		.mar-r(-@transport-width * .5; px);
+		// &:hover {
+		// 	.bor-r-c(@border2);
+		// }
 	}
 
 	&.inactive {
 		> .top {
-			.bor-b-c(@border1);
+			.bor-b-c(@transport-inactive);
 			cursor: default;
 			&:hover {
-				.bor-b-c(@border1);
+				.bor-b-c(@transport-inactive);
 			}
 		}
 		> .right {
-			.bor-l-c(@border1);
+			.bor-l-c(@transport-inactive);
 			cursor: default;
 			&:hover {
-				.bor-l-c(@border1);
+				.bor-l-c(@transport-inactive);
 			}
 		}
 		> .bottom {
-			.bor-t-c(@border1);
+			.bor-t-c(@transport-inactive);
 			cursor: default;
 			&:hover {
-				.bor-t-c(@border1);
+				.bor-t-c(@transport-inactive);
 			}
 		}
 		> .left {
-			.bor-r-c(@border1);
+			.bor-r-c(@transport-inactive);
 			cursor: default;
 			&:hover {
-				.bor-r-c(@border1);
+				.bor-r-c(@transport-inactive);
 			}
 		}
 	}
