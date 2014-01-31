@@ -10,7 +10,7 @@ input[type=submit],
 input[type=reset],
 .btn {
 	.pad-2(2.5;5;);
-	color: @colorS4;
+	color: @colorP3;
 	background-color: fade(#b2a89b,25%);
 	.bor(1;solid;darken(@colorS2, 10%));
 	.radius;
@@ -18,11 +18,11 @@ input[type=reset],
 	text-decoration: none;
 	display: inline-block;
 	.fontsize(1.6);
-	
 	// HOVER STATES
 	&:hover {
 		background-color: fade(#b2a89b,50%);
-		color: @colorS4;
+		color: darken(@colorP3, 5);
+		// .transporthover;
 	}
 
 	// TEXT ONLY BUTTONS
@@ -120,4 +120,8 @@ input[type=reset],
 		.bor-l-w(1);
 		.radius-all(@radius; 0; 0; @radius);
 	}	
+}
+
+button {
+	.transporthover;
 }

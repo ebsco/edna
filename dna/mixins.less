@@ -690,3 +690,22 @@
 	-ms-user-select: none;
 	user-select: none;
 }
+
+
+//----- TRANSPORT HOVER ---------------------------------//
+.transporthover {
+	&:hover {
+		.transport .top {
+			border-bottom-color: @transport-hover;
+		}
+		.transport .right {
+			border-left-color: @transport-hover;
+		}
+		.transport .bottom {
+			border-top-color: @transport-hover;
+		}
+		.transport .left {
+			border-right-color: @transport-hover;
+		}
+	}
+}

@@ -14,12 +14,10 @@
 	.dd-list {
 		//display: none;
 		.min-wid(100);
-		.mar-t(2);
-		.mar-l(1);
 		.pos(absolute);
 		.pos-t(28);
 		.pos-l(-1);
-		.bor(1;solid;@border1);
+		.bor(1;solid;@border3);
 		.radius;
 		.pad;
 		list-style-type: none;
@@ -33,7 +31,7 @@
 		white-space: nowrap;
 		&:hover {
 			background-color: darken(@bg1, 20);
-			color: darken(@font-color, 10%);
+			color: @colorS1;
 		}
 	}
 	.dd-input {
@@ -68,7 +66,6 @@
 		}
 		> .bottom {
 			.transport-bottom( (@px * .5) );
-			.bor-t-c(@border1);
 		}
 	}
 }
