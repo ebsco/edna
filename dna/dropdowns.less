@@ -6,51 +6,51 @@
 **********/
 .dd {
 	position: relative;
-	background-color: @colorS2;
+	background-color: @bg1;
 	.radius;
 	display: inline-block;
 	line-height: normal;
 
 	.dd-list {
-		display: none;
+		//display: none;
+		.min-wid(100);
 		.pos(absolute);
 		.pos-t(28);
 		.pos-l(-1);
-		.bor(1;solid;@colorP2);
-		background-color: #FFF;
+		.bor(1;solid;@border3);
 		.radius;
-		list-style-type: none;
 		.pad;
+		list-style-type: none;
+		background-color: #FFF;
 		z-index: 10;
-		.min-wid(100);
 	}
 	.dd-label {
+		.pad-2(.25; .5; rem);
 		display: block;
-		.pad-2(.25; .5);
 		cursor: pointer;
 		white-space: nowrap;
 		&:hover {
-			background-color: @colorS2;
-			color: darken(@font-color, 10%);
+			background-color: darken(@bg1, 20);
+			color: @colorS1;
 		}
 	}
 	.dd-input {
 		.pos(absolute);
 		.pos-l(-9999);
 		&:checked + .dd-label {
-			background-color: darken(@colorS2, 10%);
+			background-color: darken(@bg2, 10%);
 			color: @font-color;
 			&:hover {
-				background-color: @colorS2;
+				background-color: @bg3;
 			}
 		}
 	}
 	.dd-active {
+		.pad-2(.25; .5; rem);
 		color: @font-color;
 		cursor: pointer;
 		text-decoration: none;
 		cursor: pointer;
-		.pad-2(.25; .5);
 		display: inline-block;
 		&.open {
 			~ .dd-list {
@@ -66,7 +66,6 @@
 		}
 		> .bottom {
 			.transport-bottom( (@px * .5) );
-			.bor-t-c(@colorP4);
 		}
 	}
 }
