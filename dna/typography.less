@@ -56,12 +56,13 @@ a {
 	&:visited {
 		color: desaturate(@link-color, (@pct * .75));
 	}
-	&:hover,
-	&:focus {
+	&:hover {
 		color: darken(@link-color, (@pct * .1));
+		text-decoration: underline;
 	}
 	&:focus {
 		text-decoration: underline;
+		color: darken(@link-color, (@pct * .1));
 	}
 	&:active {
 		color: @link-color-active;

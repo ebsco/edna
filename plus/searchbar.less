@@ -4,15 +4,19 @@
 	.searchbar-wrap {
 		.pos(relative);
 		display: inline;
-		input {
-			.radius-tr(0);
-			.radius-br(0);
-		}
-		.reset {
+		> .reset,
+		> input[type="reset"] {
 			.pos(absolute);
+			.pos-t;
 			.pos-r(5);
-			background-color: rgba(0, 0, 0, 0);
+			.fontsize(2);
+			.lh(2.3;rem);
+			color: #CCC;
+			background-color: transparent;
 			.bor;
+			&:hover {
+				color: darken(#CCC,10);
+			}
 		}
 	}
 	.searchbar-extras {
@@ -20,7 +24,5 @@
 	}
 	.btn.search {
 		.mar-l(-5;px);
-		.radius-tl(0);
-		.radius-bl(0);
 	}
 }
