@@ -15,6 +15,7 @@ body {
 // HEADING LEVELS
 h1, h2, h3, h4, h5, h6 {
 	.mar-3(.75;0;.5;rem);
+	.mar-b(20);
 	line-height: 1.25;
 	font-weight: normal;
 	color: @colorP2;
@@ -22,23 +23,23 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	line-height: 1;
 	.mar-3(0;0;.636;rem);
-	.fontsize(4.4);
+	.fontsize(@h1);
 }
 h2 {
-	.fontsize(3.6);
+	.fontsize(@h2);
 }
 h3 {
-	.fontsize(2.6);
+	.fontsize(@h3);
 }
 h4 {
-	.fontsize(2.2);
+	.fontsize(@h4);
 }
 h5 {
-	.fontsize(1.8);
+	.fontsize(@h5);
 	font-weight: bold;
 }
 h6 {
-	.fontsize(1.6);
+	.fontsize(@h6);
 	font-weight: bold;
 	font-style: italic;
 }
@@ -66,7 +67,6 @@ a {
 	}
 	&:active {
 		color: @link-color-active;
-		text-decoration: underline;
 	}
 }
 a:active {
