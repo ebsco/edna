@@ -11,13 +11,14 @@ html {
 }
 body {
 	.fontsize(1.6);
+	color: @font-color;
 }
 // HEADING LEVELS
 h1, h2, h3, h4, h5, h6 {
 	.mar-3(.75;0;.5;rem);
 	.mar-b(20);
 	line-height: 1.25;
-	font-weight: normal;
+	font-weight: bold;
 	color: @colorP2;
 }
 h1 {
@@ -46,6 +47,7 @@ h6 {
 // PARAGRAPH STYLES
 p {
 	.mar-3(0;0;1;rem);
+	.fontsize(1.2);
 	&.lead {
 		.fontsize(1.6);
 		.mar-b(.725);
@@ -72,6 +74,10 @@ a {
 }
 a:active {
 	
+}
+b,
+strong {
+	color: @strong-font-color;
 }
 // STRONG
 strong {
