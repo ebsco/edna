@@ -11,3 +11,4 @@ plus/plus.css
 .bower.json
 .DS_Store
 examples/.DS_Store
+*.map

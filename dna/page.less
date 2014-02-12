@@ -22,6 +22,23 @@ header, .l1, .l2, .l3, .l4, .l5, footer {
 }
 header {
 	.pad-b(20);
-	.mar-b(20);
-	border-bottom: (@px * .1) solid tint(@border1, 90.5); //#E7E7E7
+	.mar-b(33);
+	border-bottom: (@px * .1) solid @border1;
+	position: relative;
+	&:after {
+		position: absolute;
+		bottom: 0;
+		height: 7px;
+		width: 100%;
+		display: inline-block;
+		content: '';
+		background: #FFFFFF; /* Old browsers */
+		background: -moz-linear-gradient(top,  #FFFFFF 0%, #fcfcfc 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#fcfcfc)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #FFFFFF 0%,#fcfcfc 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #FFFFFF 0%,#fcfcfc 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #FFFFFF 0%,#fcfcfc 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #FFFFFF 0%,#fcfcfc 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */
+	}
 }
