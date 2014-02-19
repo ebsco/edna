@@ -6,30 +6,58 @@
 **********/
 
 .searchbar {
+	width: 100%;
 	.pos(relative);
 
 	.searchbar-wrap {
 		.pos(relative);
-		display: inline;
-		> .reset,
-		> input[type="reset"] {
+		
+		width: 80%;
+		.box(border);
+		margin-left: 1%;
+		float: left;
+		display: inline-block;
+		> input[type="text"] {
+			.fontsize(1.4);
+			width: 100%;
+			height: 30px;
+			border: 1px solid @search-border;
+		}
+		> .reset {
 			.pos(absolute);
-			.pos-t;
-			.pos-r(5);
+			top: 0;
+			right: 5px;
 			.fontsize(2);
-			.lh(2.3;rem);
-			color: #CCC;
+			line-height: 2.3rem;
+			color: @reset;
 			background-color: transparent;
 			.bor;
 			&:hover {
-				color: darken(#CCC,10);
+				color: darken(@reset,10);
 			}
 		}
 	}
-	.searchbar-extras {
-		display: inline-block;
+	> .btn {
+		&.search {
+			.fontsize(1.4);
+			height: 30px;
+			padding: 0 15px;
+			width: auto;
+			margin-left: 10px;
+			max-width: 100px;
+			border: 1px solid @search-border;
+			background-color: @colorP3;
+			color: @colorS1;
+		}
 	}
-	.btn.search {
-		.mar-l(-5;px);
+	> .searchtext-wrap {
+		margin: 16px 0;
+		> .searchbar-link {
+			.fontsize(1.2);
+			margin-left: 15px;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
 	}
 }
