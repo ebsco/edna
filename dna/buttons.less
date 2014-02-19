@@ -9,10 +9,10 @@ button,
 input[type=submit],
 input[type=reset],
 .btn {
-	.pad-2(2.5;5;);
+	padding: 2.5px 2;
 	color: @colorP3;
 	background-color: fade(#b2a89b,25%);
-	.bor(1;solid;darken(@colorS2, 10%));
+	border: 1px solid darken(@colorS2, 10%);
 	.radius;
 	cursor: pointer;
 	text-decoration: none;
@@ -41,45 +41,45 @@ input[type=reset],
 	+ input[type=submit],
 	+ input[type=reset],
 	+ .btn {
-		.mar-l(10);
+		margin-left: 10px;
 	}
 
 	// STATES
 	&.action {
 		color: @colorP2;
 		background-color: @btn-action;
-		.bor-c( darken(@btn-action, (@pct * .2)) );
+		border-color: darken(@btn-action, (@pct * .2));
 		&:hover {
 			background-color: darken(@btn-action, (@pct * .2));
-			.bor-c(darken(@btn-action, (@pct * .3)));
+			border-color: darken(@btn-action, (@pct * .3));
 		}
 	}
 	&.primary {
 		color: @colorS2;
 		background-color: @btn-primary;
-		.bor-c( darken(@btn-primary, (@pct * .05)) );
+		border-color: darken(@btn-primary, (@pct * .05));
 		&:hover {
 			background-color: darken(@btn-primary, (@pct * .07));
-			.bor-c(darken(@btn-primary, (@pct * .06)));
+			border-color: darken(@btn-primary, (@pct * .06));
 		}
 	}
 	&.cancel {
 		color: @colorP2;
 		background-color: @btn-cancel;
-		.bor-c( darken(@btn-cancel, (@pct * .2)) );
+		border-color: darken(@btn-cancel, (@pct * .2));
 		&:hover {
 			background-color: darken(@btn-cancel, (@pct * .1));
-			.bor-c(darken(@btn-cancel, (@pct * .2)));
+			border-color: darken(@btn-cancel, (@pct * .3));
 		}
 	}
 	&.search {
 		.box(border);
 		color: @colorS2;
 		background-color: @btn-search;
-		.bor-c( darken(@btn-search, (@pct * .1)) );
+		border-color: darken(@btn-search, (@pct * .1));
 		&:hover {
 			background-color: darken(@btn-search, (@pct * .1));
-			.bor-c(darken(@btn-search, (@pct * .2)));
+			border-color: darken(@btn-search, (@pct * .2));
 		}
 	}
 	&.disabled,
@@ -88,7 +88,7 @@ input[type=reset],
 	input[type=reset][disabled] {
 		color: @colorS4;
 		background-color: @colorS3;
-		.bor-c(@colorS4);
+		border-color: @colorS4;
 		cursor: default;
 		&:hover {
 			background-color: @colorS3;
@@ -98,7 +98,7 @@ input[type=reset],
 
 // BUTTON GROUPS
 .btn-group {
-	.mar-b(1;em);
+	margin-bottom: 1em;
 	.clearfix;
 	.grp-btn,
 	.grp-input,
@@ -108,7 +108,7 @@ input[type=reset],
 		.bor-l-w;
 	}
 	.grp-btn + .grp-btn {
-		.mar-l;
+		margin-left: 0;
 	}
 	:last-child,
 	.last //IE support
