@@ -6,14 +6,16 @@
 **********/
 
 .msg {
+	width: 100%;
+	margin: 1px 0;
 	color: @colorP2;
-	.pad(15;px);
-	.mar-3(0;0;1;em);
-	.bor(1;solid;darken(@msg, (@pct * .2)));
+	padding: 15px;
+	margin: 0 0 1em;
+	border: 1px solid darken(@msg, (@pct * .2));
 	background-color: @msg;
 	.radius;
 	.pos(relative);
-	.min-ht(50);
+	min-height: 50px;
 	.box(border);
 	> .icon {
 		display: inline-block;
@@ -22,7 +24,7 @@
 		line-height: 1.5rem;
 		// set a constant left padding to accommodate the icon
 		~ .msg-txt {
-			.pad-l(50;px);
+			padding: 50px;
 		}
 		// show an icon
 		&:after {
@@ -30,7 +32,7 @@
 		}
 	} // end icon
 	.msg-txt {
-		.mar;
+		margin: 0;
 	}
 	> .close {
 		cursor: pointer;
@@ -38,32 +40,32 @@
 			color: @colorP1;
 			content: '✕';
 			.pos(absolute);
-			.pos-r(20);
+			right: 20px;
 		}
 	} // end close
 	.msg-action {
-		.mar-l(20;px);
+		margin-left: 20px;
 		&:after {
 			content: '»';
 			display: inline-block;
-			.mar-l(5);
+			margin-left: 5px;
 		}
 	} // end msg-action
 	&.msg-info {
 		background-color: @msg-info;
-		.bor-c(darken(@msg-info, (@pct * .2)));
+		border-color: darken(@msg-info, (@pct * .2));
 	} // end info
 	&.msg-success {
 		background-color: @msg-success;
-		.bor-c(darken(@msg-success, (@pct * .2)));
+		border-color: darken(@msg-success, (@pct * .2));
 	} // end success
 	&.msg-note {
 		background-color: @msg-note;
-		.bor-c(darken(@msg-note, (@pct * .2)));
+		border-color: darken(@msg-note, (@pct * .2));
 	} // end note
 	&.msg-alert {
 		background-color: @msg-alert;
-		.bor-c(darken(@msg-alert, (@pct * .2)));
+		border-color: darken(@msg-alert, (@pct * .2));
 	} // end alert
 
 }
