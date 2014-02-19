@@ -9,23 +9,22 @@
 input[type=text],
 input[type=search],
 textarea {
-	.pad-2(2.5;5);
-	color: @placeholder-color;
-	.bor(1;solid;#CCC);
+	width: 100%;
+	padding: 2.5px 5px;
+	border: 1px solid @search-border;
 	.radius;
-	.fontsize(1.6);
+	.fontsize(1.4);
 	color: @colorS4;
 	.box(border);
-	.radius;
 }
 
 // RADIO / CHECKBOXES
 input[type=radio],
 input[type=checkbox] {
-	.mar-r(5;px);
+	margin: 5px;
 }
 label {
-	.pad-r(1);
+	padding-right: 1px;
 	&:active {
 		text-decoration: underline;
 	}	
@@ -34,9 +33,9 @@ label {
 // RADIO / CHECKBOXES
 .cb-list {
 	list-style: none;
-	.pad-l;
+	padding-left: 0;
 }
 .cb-inline li {
 	display: inline;
-	.pad-3(0; 0; 1);
+	padding: 0 0 1px;
 }

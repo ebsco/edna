@@ -1,0 +1,57 @@
+//
+	//PLUS
+//
+/**********
+	SEARCHBAR
+**********/
+
+.searchbar {
+	width: 100%;
+	.pos(relative);
+
+	.searchbar-wrap {
+		.pos(relative);
+		
+		width: 80%;
+		.box(border);
+		margin-left: 1%;
+		float: left;
+		display: inline-block;
+		> input[type="text"] {
+			height: 30px;
+		}
+		> .reset {
+			.pos(absolute);
+			top: 5px;
+			right: 0;
+			.fontsize(2);
+			line-height: 2rem;
+			color: @reset;
+			background-color: transparent;
+			.bor;
+			&:hover {
+				color: darken(@reset,10);
+			}
+		}
+	}
+	> .btn {
+		&.search {
+			height: 30px;
+			// padding: 0 15px;
+			margin-left: 10px;
+			// border: 1px solid @search-border;
+			// background-color: @colorP3;
+			// color: @colorS1;
+		}
+	}
+	> .searchtext-wrap {
+		margin: 16px 0;
+		> .searchbar-link {
+			.fontsize(1.2);
+			margin-left: 15px;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+}

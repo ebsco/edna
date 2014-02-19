@@ -1,0 +1,49 @@
+//
+	//PLUS
+//
+/**********
+	CAROUSEL
+**********/
+
+.carousel {
+	padding: 0;
+	border: none;
+	width: 100%;
+	.box(border);
+	.pos(relative);
+	.carousel-img {
+		.box(border);
+		width: 100%;
+		border: 1px solid @border1;
+		> .img {
+			display: block;
+			border: none;
+			width: 100%;
+		}
+	}
+	.carousel-nav {
+		.clearfix;
+		width: 100%;
+		margin: 15px 0 0;
+		overflow: hidden;
+		height: 55px;
+		.pos(relative);
+	}
+	.transport {
+		.pos(absolute);
+		right: 5px;
+		top: -40px;
+		&:nth-child(3),
+		.last {
+			right: 0;
+			.right {
+				margin: 0 0 5px;
+			}
+		}
+	}
+	.carousel-inner {
+		.pos(relative);
+		list-style-type: none;
+		padding: 0;
+	}
+}
