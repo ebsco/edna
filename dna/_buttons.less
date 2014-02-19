@@ -9,20 +9,20 @@ button,
 input[type=submit],
 input[type=reset],
 .btn {
-	padding: 2.5px 2;
-	color: @colorP3;
-	background-color: fade(#b2a89b,25%);
-	border: 1px solid darken(@colorS2, 10%);
+	padding: 0 15px;
+	width: auto;
+	color: @colorS1;
+	background-color: @colorP3;
+	border: 1px solid darken(@colorP3, 10%);
 	.radius;
+	.fontsize(1.4);
 	cursor: pointer;
 	text-decoration: none;
 	display: inline-block;
-	.fontsize(1.6);
 	// HOVER STATES
 	&:hover {
 		background-color: fade(#b2a89b,50%);
 		color: darken(@colorP3, 5);
-		// .transporthover;
 	}
 
 	// TEXT ONLY BUTTONS
@@ -76,10 +76,10 @@ input[type=reset],
 		.box(border);
 		color: @colorS2;
 		background-color: @btn-search;
-		border-color: darken(@btn-search, (@pct * .1));
+		border-color: @btn-search-border;
 		&:hover {
 			background-color: darken(@btn-search, (@pct * .1));
-			border-color: darken(@btn-search, (@pct * .2));
+			border-color: darken(@btn-search-border, (@pct * .1));
 		}
 	}
 	&.disabled,
