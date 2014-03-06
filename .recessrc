@@ -1,0 +1,14 @@
+{
+  "includePath": ["less"],
+  "noIDs": false,
+  "noJSPrefix": false,
+  "noOverqualifying": false,
+  "noSummary": false,
+  "noUnderscores": false,
+  "noUniversalSelectors": false,
+  "prefixWhitespace": false,
+  "strictPropertyOrder": true,
+  "stripColors": false,
+  "zeroUnits": false,
+  "inlineImages": false
+}
