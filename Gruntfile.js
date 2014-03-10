@@ -98,13 +98,13 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks('grunt-express');
-	grunt.loadNpmTasks('grunt-md2html');
-	grunt.loadNpmTasks('grunt-lesslint')
+	// grunt.loadNpmTasks('grunt-md2html');
+	// grunt.loadNpmTasks('grunt-lesslint')
 
 	grunt.registerTask("dev", [
-		"md2html",
-		"less",
-		"lesslint"
+		// "md2html",
+		"less"
+		// "lesslint"
 	]);
 	grunt.registerTask('goodserver', function() {
 		grunt.task.run('express');
