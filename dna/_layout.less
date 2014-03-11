@@ -33,36 +33,45 @@
 }
 // set up a 350px width fixed width column
 // remember the 70px padding-left!
-.fixed-col(@side: right) {
-	&.fixed {
+.fixed-col() {
+	&.fixed-r {
 		> .col {
 			width: 100%;
-			padding-@{side}: 420px;
+			padding-right: 420px;
 			&.w350 {
 				width: 420px;
-				float: @side;
-
-				& when (@side = left) {
-					margin-right: -420px;
-				}
-				& when (@side = right) {
-					margin-left: -420px;
-				}
-
-				padding-@{side}: 0;
+				float: right;
+				margin-left: -420px;
+				padding-right: 0;
 			}
 		}
 		@media (max-width: @mediaquery-small) {
 			> .col {
-				padding-@{side}: 0;
+				padding-right: 0;
 
 				&.w350 {
-					& when (@side = left) {
-						padding-right: 0;
-					}
-					& when (@side = right) {
-						padding-left: 0;
-					}
+					padding-left: 0;
+				}
+			}
+		}
+	}
+	&.fixed-l {
+		> .col {
+			width: 100%;
+			padding-left: 490px;
+			&.w350 {
+				width: 420px;
+				float: left;
+				margin-right: -420px;
+				padding-left: 0;
+			}
+		}
+		@media (max-width: @mediaquery-small) {
+			> .col {
+				padding-left: 0;
+
+				&.w350 {
+					padding-right: 0;
 				}
 			}
 		}
