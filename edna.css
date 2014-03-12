@@ -1125,6 +1125,7 @@ p {
 }
 a {
   color: #1c71cf;
+  text-decoration: none;
 }
 a:visited {
   color: #747577;

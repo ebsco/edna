@@ -13,7 +13,7 @@
 	a {
 		color: inherit;
 		font: inherit;
-		text-decoration: inherit;
+		// text-decoration: inherit;
 	}
 	.bar {
 		.pos(relative);
@@ -24,6 +24,12 @@
 		color: #FFF;
 		position: relative;
 		background-color: @nav-item-bg;
+		&:hover {
+			background-color: @nav-item-bg-hover;
+			a {
+				text-decoration: none;
+			}
+		}
 	}
 	.nav {
 		padding: 0;
@@ -32,9 +38,6 @@
 		.nav-item {
 			display: inline-block;
 			cursor: pointer;
-			&:hover {
-				background-color: @nav-item-bg-hover;
-			}
 		}
 	}
 }
