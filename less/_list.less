@@ -26,3 +26,125 @@ dd {
 	margin: 0;
 	padding: 0 0 .125rem 2rem;
 }
+
+//
+	//PLUS
+//
+/**********
+	LISTS
+**********/
+
+// RESET LIST
+ul,ol {
+	&.base {
+		.mar;
+		.pad;
+		list-style-type: none;
+		-webkit-margin-before: 0;
+		-webkit-margin-after: 0;
+		-webkit-margin-start: 0;
+		-webkit-margin-end: 0;
+		-webkit-padding-start: 0;
+		> li {
+			.mar;
+			.pad;
+		}	
+	}
+}
+
+// UNORDERED LIST STYLE TYPES
+.disc {
+	list-style: disc;
+}
+.circle {
+	list-style: circle
+}
+.square {
+	list-style: square;
+}
+
+// ORDERED LIST STYLE TYPES
+.decimal {
+	list-style: decimal;	
+}
+.lower-alpha {
+	list-style: lower-alpha;	
+}
+.upper-alpha {
+	list-style: upper-alpha;	
+}
+.lower-roman {
+	list-style: lower-roman;	
+}
+.upper-roman {
+	list-style: upper-roman;	
+}
+
+// CITATION EXAMPLE
+.citation > dt {
+	.pad(5);
+	.pad-l;
+	float: left;
+	font-weight: bold;
+	clear: left;
+}
+
+.citation > dd {
+	.pad(5);
+}
+
+// TREELIST EXAMPLE
+.tree-list {
+	list-style-type: none;
+	.pad;
+	> .tree-list {
+		.mar-l(15;px);
+	}
+	.list-item {
+		.mar-b(3;px);
+		a {
+			text-decoration: none;
+		}
+		&:before {
+			display: inline-block;
+			content: '\25FC';
+			.wid(5);
+			.pad-r;
+			color: @colorS4;
+			.fontsize(1);
+		}
+		.before { // local mixin
+			.fontsize(1.6);
+			color: @colorS4;
+			.ht(14);
+		}
+		&.expand {
+			&:before {
+				content: '\229E';
+				.before;
+			}
+		}
+		&.collapse {
+			&:before {
+				content: '\229F';
+				.before;
+			}
+		}
+	}
+	.more {
+		.mar-l(15;px);
+		&:after {
+			display: inline-block;
+			content: '\25BC';
+			.mar-l(5;px);
+			color: @link-color;
+			.fontsize(1.2);
+			&:hover {
+				color: @link-color-active;
+			}
+		}
+		a {
+			text-decoration: none;
+		}
+	}
+}
