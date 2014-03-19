@@ -69,6 +69,23 @@
 .font-family() {
     font-family: Helvetica, Arial, sans-serif;
 }
+// new mixin
+.fontfamily(@ff) {
+    & when (@ff = sans) {
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    & when (@ff = serif) {
+        font-family: Georgia, serif;
+    }
+    & when (@ff = mono) {
+        font-family: monospace;
+    }
+    & when (@ff = code) {
+        font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    }
+}
+
+
 .font-color(@color: @font-color) {
     color: @color;
 }
@@ -84,6 +101,16 @@
 .lh(@n: 0; @s: px) when (@s = pct) {
     line-height: percentage(@n/100);
 }
+// new mixin
+.lineheight(@n: 0;@u: px) {
+    & when (@n = 0) {
+        line-height: @n;
+    }
+    & when (@n > 0) {
+        line-height: unit(@n, @u);
+    }
+}
+
 
 
 //----- BOX SIZING ------------------------------------//
@@ -105,6 +132,15 @@
 }
 .ht(@n: 0; @s: @ht-sd) when (@s = pct) {
     height: percentage(@n/100);
+}
+// new mixin
+.hgt(@ht: 0;@u: px) {
+    & when (@ht = 0) {
+        height: @ht;
+    }
+    & when (@ht > 0) {
+        height: unit(@ht, @u);
+    }
 }
 // min-width
 .min-ht(@n: 0; @s: @ht-sd) when (@s = px), (@s = em), (@s = rem) {
