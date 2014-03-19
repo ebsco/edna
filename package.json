@@ -16,5 +16,6 @@
   "repository": {
     "type": "git",
     "url": "http://as-gitmaster.epnet.com:7990/scm/buzz/edna.git"
-  }
+  },
+  "dependencies": {}
 }
