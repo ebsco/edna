@@ -1,25 +1,27 @@
-//
-	//PLUS
-//
-/**********
-	RESULTITEM
-**********/
-
+/* RESULTITEM */
 .resultitem {
-	overflow: hidden;
-	.box(border);
+    // Box-model
+    .box(border);
+    overflow: hidden;
+    
+    .heading {
+        a {
+            // Typography
+            font-weight: normal;
+        }
+    }
 
-	.heading {
-		a {
-			font-weight: normal;
-		}
-	}
-	button {
-		margin-top: 18px;
-		.fontsize(1.2);
-	}
-	.img {
-		width: 150px;
-		float: left;
-	}
+    button {
+        // Box-model
+        margin-top: 18px;
+
+        // Typography
+        .fontsize(1.2);
+    }
+
+    .img {
+        // Box-model
+        float: left;
+        width: 150px;
+    }
 }

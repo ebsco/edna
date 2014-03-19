@@ -1,41 +1,50 @@
-//
-	// EDNA
-//
-/**********
-	INPUTS
-**********/
-
+/* INPUTS */
 // TEXT INPUTS
 input[type=text],
 input[type=search],
 textarea {
-	width: 100%;
-	padding: 2.5px 5px;
-	border: 1px solid @search-border;
-	.radius;
-	.fontsize(1.4);
-	color: @colorS4;
-	.box(border);
+    // Box-model
+    .box(border);
+    width: 100%;
+    padding: 2.5px 5px;
+    
+    // Typography
+    .fontsize(1.4);
+    color: @colorS4;
+    
+    // Visual
+    border: 1px solid @search-border;
+    -moz-border-radius: @radius;
+         border-radius: @radius;
 }
 
 // RADIO / CHECKBOXES
 input[type=radio],
 input[type=checkbox] {
-	margin: 5px;
+    // Box-model
+    margin: 5px;
 }
+
 label {
-	padding-right: 1px;
-	&:active {
-		text-decoration: underline;
-	}	
+    // Box-model
+    padding-right: 1px;
+    &:active {
+        // Typography
+        text-decoration: underline;
+    }   
 }
 
 // RADIO / CHECKBOXES
 .cb-list {
-	list-style: none;
-	padding-left: 0;
+    // Box-model
+    padding-left: 0;
+    
+    // Visual
+    list-style: none; 
 }
+
 .cb-inline li {
-	display: inline;
-	padding: 0 0 1px;
+    // Box-model
+    display: inline;
+    padding: 0 0 1px;
 }

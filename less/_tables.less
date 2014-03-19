@@ -1,31 +1,44 @@
-//
-	// EDNA
-//
-/**********
-	TABLES
-**********/
-
+/* TABLES */
 table {
-	border-collapse: separate;
-	border-spacing: 0;
-	.bor(1;solid;@border1);
-	.radius;
+    // Visual
+    border: 1px solid @border1;
+    border-collapse: separate;
+    border-spacing: 0;
+    -moz-border-radius: @radius;
+         border-radius: @radius;
 }
+
 thead tr {
-	background-color: @colorS2;
-	.radius-all(@radius; @radius; 0; 0);
+    // Visual
+    background-color: @colorS2;
+    -moz-border-radius: @radius @radius 0 0;
+         border-radius: @radius @radius 0 0;
 }
+
 th {
-	font-weight: bold;
-	.pad-2(10; 20; px);
-	text-align: left;
-	.bor-l(1;solid;@border1);
+    // Box-model
+    padding: 10px 20px;
+    
+    // Typography
+    font-weight: bold;
+    text-align: left;
+    
+    // Visual
+    border-left: 1px solid @border1;
 }
+
 td {
-	.pad-2(10; 20; px);
-	.bor-l(1;solid;@border1);
+    // Box-model
+    padding: 10px 20px;
+    
+    // Visual
+    border-left: 1px solid @border1;
 }
-th:first-child,
-td:first-child {
-	.bor-l;
+
+th,
+td {
+    &:first-child {
+        // Visual
+        border-left: none;
+    }
 }

@@ -3,96 +3,107 @@
 
 // make the classes!
 .w {
-  // Box-model
-  display: block;
-  width: 100%;
-  // Misc
-  .clearfix;
-  > .w20 {
     // Box-model
-    width: 20%;
-  }
-  > .w25 {
-    // Box-model
-    width: 25%;
-  }
-  > .w33 {
-    // Box-model
-    width: 33%;
-  }
-  > .w40 {
-    // Box-model
-    width: 40%;
-  }
-  > .w50 {
-    // Box-model
-    width: 50%;
-  }
-  > .w60 {
-    // Box-model
-    width: 60%;
-  }
-  > .w66 {
-    // Box-model
-    width: 66%;
-  }
-  > .w75 {
-    // Box-model
-    width: 75%;
-  }
-  > .w80 {
-    // Box-model
-    width: 80%;
-  }
-  // add padding between
-  > .w20,
-  > .w25,
-  > .w33,
-  > .w40,
-  > .w50,
-  > .w60,
-  > .w66,
-  > .w75,
-  > .w80 {
-    // Box-model
-    float: left;
-    padding: 0 (@widget-padding / 2);
-  }
-  // remove padding on first
-  > .w20,
-  > .w25,
-  > .w33,
-  > .w40,
-  > .w50,
-  > .w60,
-  > .w66,
-  > .w75,
-  > .w80 {
-    &:first-child {
-      // Box-model
-      padding-right: @widget-padding;
-      padding-left: 0;
+    display: block;
+    width: 100%;
+    // Misc
+    .clearfix;
+    
+    > .w20 {
+        // Box-model
+        width: 20%;
     }
-    &:last-child {
-      // Box-model
-      padding-right: 0;
-      padding-left: @widget-padding;
+    
+    > .w25 {
+        // Box-model
+        width: 25%;
     }
-  }
+    
+    > .w33 {
+        // Box-model
+        width: 33%;
+    }
+    
+    > .w40 {
+        // Box-model
+        width: 40%;
+    }
+    
+    > .w50 {
+        // Box-model
+        width: 50%;
+    }
+    
+    > .w60 {
+        // Box-model
+        width: 60%;
+    }
+    
+    > .w66 {
+        // Box-model
+        width: 66%;
+    }
+    
+    > .w75 {
+        // Box-model
+        width: 75%;
+    }
+
+    > .w80 {
+        // Box-model
+        width: 80%;
+    }
+
+    // add padding between
+    > .w20,
+    > .w25,
+    > .w33,
+    > .w40,
+    > .w50,
+    > .w60,
+    > .w66,
+    > .w75,
+    > .w80 {
+        // Box-model
+        float: left;
+        padding: 0 (@widget-padding / 2);
+    }
+
+    // remove padding on first
+    > .w20,
+    > .w25,
+    > .w33,
+    > .w40,
+    > .w50,
+    > .w60,
+    > .w66,
+    > .w75,
+    > .w80 {
+        &:first-child {
+            // Box-model
+            padding-right: @widget-padding;
+            padding-left: 0;
+        }
+        &:last-child {
+            // Box-model
+            padding-right: 0;
+            padding-left: @widget-padding;
+        }
+    }
 }
 
 // rtl stuff
 [dir="rtl"] {
-  .w20,
-  .w25,
-  .w33,
-  .w40,
-  .w50,
-  .w60,
-  .w66,
-  .w75,
-  .w80 {
-    // Box-model
-    float: right;
-  }
+    .w20,
+    .w25,
+    .w33,
+    .w40,
+    .w50,
+    .w60,
+    .w66,
+    .w75,
+    .w80 {
+        // Box-model
+        float: right;
+    }
 }

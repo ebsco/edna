@@ -1,117 +1,162 @@
-//
-	// EDNA
-//
-/**********
-	TYPOGRAPHY
-**********/
+/* TYPOGRAPHY */
+html & {
+    font-size: @font-size; /* set base font to 10 */
+}
 
-// BASE FONT SIZE
-html {
-	font-size: @font-size; /* set base font to 10 */
+body & {
+    // Typography
+    .font-family(sans);
+    .fontsize(1.6);
+    color: @font-color;
 }
-body {
-	.fontsize(1.6);
-	.font-family(sans);
-	color: @font-color;
-}
-// HEADING LEVELS
-h1, h2, h3, h4, h5, h6 {
-	margin-top: 0;
-	margin-bottom: 20px;
-	line-height: 1.25em;
-	font-weight: bold;
-	color: @colorP2;
-	> a {
-		color: @link-color;
-		text-decoration: none;
-	}
-}
-h1 {
-	line-height: 1;
-	margin: 0 0 .636rem;
-	.fontsize(@h1-size);
-}
-h2 {
-	.fontsize(@h2-size);
-	line-height: 22px;
-}
-h3 {
-	.fontsize(@h3-size);
-	margin: 0 0 14px 0;
-}
-h4 {
-	.fontsize(@h4-size);
-}
-h5 {
-	.fontsize(@h5-size);
-	font-weight: bold;
-}
+
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
-	.fontsize(@h6-size);
-	font-weight: bold;
-	font-style: italic;
+    // Box-model
+    margin-top: 0;
+    margin-bottom: 20px;
+    
+    // Typography
+    font-weight: bold;
+    line-height: 1.25em;
+    color: @colorP2;
+    
+    > a {
+        // Typography
+        color: @link-color;
+        text-decoration: none;
+    }
 }
-// PARAGRAPH STYLES
+
+h1 {
+    // Box-model
+    margin: 0 0 .636rem;
+
+    // Typography
+    .fontsize(@h1-size);
+    line-height: 1;
+}
+
+h2 {
+    // Typography
+    .fontsize(@h2-size);
+    line-height: 22px;
+}
+
+h3 {
+    // Box-model
+    margin: 0 0 14px 0;
+    // Typography
+    .fontsize(@h3-size);
+}
+
+h4 {
+    // Typography
+    .fontsize(@h4-size);
+}
+
+h5 {
+    // Typography
+    .fontsize(@h5-size);
+    font-weight: bold;
+}
+
+h6 {
+    // Typography
+    .fontsize(@h6-size);
+    font-style: italic;
+    font-weight: bold;
+}
+
 p {
-	margin: 0;
-	line-height: 19px;
-	.fontsize(1.2);
-	color: @strong-font-color;
+    // Box-model
+    margin: 0;
+
+    // Typography
+    .fontsize(1.2);
+    line-height: 19px;
+    color: @strong-font-color;
 }
-// LINK STYLES
+
 a {
-	color: @link-color;
-	text-decoration: none;
-	&:visited {
-		color: desaturate(@link-color, (@pct * .75));
-	}
-	&:hover {
-		color: darken(@link-color, (@pct * .1));
-		text-decoration: underline;
-	}
-	&:focus {
-		color: darken(@link-color, (@pct * .1));
-		text-decoration: underline;
-	}
-	&:active {
-		color: @link-color-active;
-		text-decoration: underline;
-	}
+    // Typography
+    color: @link-color;
+    text-decoration: none;
+
+    &:visited {
+        // Typography
+        color: desaturate(@link-color, (@pct * .75));
+    }
+
+    &:hover {
+        // Typography
+        color: darken(@link-color, (@pct * .1));
+        text-decoration: underline;
+    }
+
+    &:focus {
+        // Typography
+        color: darken(@link-color, (@pct * .1));
+        text-decoration: underline;
+    }
+
+    &:active {
+        // Typography
+        color: @link-color-active;
+        text-decoration: underline;
+    }
 }
+
 b,
 strong {
-	color: @strong-font-color;
+    // Typography
+    color: @strong-font-color;
 }
-// STRONG
+
 strong {
-	font-weight: bold;
+    // Typography
+    font-weight: bold;
 }
-// EM
+
 em {
-	font-style: italic;
+    // Typography
+    font-style: italic;
 }
-// SUP
+
 sup {
-  top: -(@em * .5);
+    // Positioning
+    top: -(@em * .5);
 }
-// SUB
+
 sub {
-  bottom: -(@em * .25);
+    // Positioning
+    bottom: -(@em * .25);
 }
-// BLOCKQUOTES
+
 blockquote {
-	margin-left: 1.5rem;
-	border-left: .25em solid @colorS3;
-	padding-left: .5rem;
+    // Box-model
+    padding-left: .5rem;
+    margin-left: 1.5rem;
+
+    // Visual
+    border-left: .25em solid @colorS3;
 }
-// PRE
+
 pre {
-	margin: 0 0 1rem;
-	.font-family(mono);
+    // Box-model
+    margin: 0 0 1rem;
+
+    // Typography
+    .font-family(mono);
 }
-// CODE
+
 code {
-	.font-family(code);
-	color: #696;
-	font-weight: normal;
+    // Typography
+    .font-family(code);
+    font-weight: normal;
+    color: #696;
 }

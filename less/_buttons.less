@@ -1,128 +1,176 @@
-//
-	// EDNA
-//
-/**********
-	BUTTONS
-**********/
-
+/* BUTTONS */
 button,
 input[type=submit],
 input[type=reset],
 .btn {
-	padding: 0 15px;
-	width: auto;
-	color: @colorS1;
-	background-color: @colorP3;
-	border: 1px solid darken(@colorP3, 10%);
-	.radius;
-	.fontsize(1.4);
-	cursor: pointer;
-	text-decoration: none;
-	display: inline-block;
-	// HOVER STATES
-	&:hover {
-		background-color: fade(#b2a89b,50%);
-		color: darken(@colorP3, 5);
-	}
+    // Box-model
+    display: inline-block;
+    width: auto;
+    padding: 0 15px;
+    
+    // Typography
+    .fontsize(1.4);
+    color: @colorS1;
+    text-decoration: none;
+    
+    // Visual
+    cursor: pointer;
+    background-color: @colorP3;
+    border: 1px solid darken(@colorP3, 10%);
+    -moz-border-radius: @radius;
+         border-radius: @radius;
+    
+    &:hover {
+        // Typography
+        color: darken(@colorP3, 5);
+        
+        // Visual
+        background-color: fade(#b2a89b,50%);
+        
+    }
 
-	// TEXT ONLY BUTTONS
-	&.txt {
-		border: none;
-		background-color: transparent;
-		color: @link-color;
-		&:hover {
-			color: @link-color-active;
-			text-decoration: underline;
-		}
-	}
+    // TEXT ONLY BUTTONS
+    &.txt {
+        // Typography
+        color: @link-color;
+        
+        // Visual
+        background-color: transparent;
+        border: none;
+        
+        &:hover {
+            // Typography
+            color: @link-color-active;
+            text-decoration: underline;
+        }
+    }
 
-	// LEFT MARGIN FOR BUTTON ROWS
-	+ button,
-	+ input[type=submit],
-	+ input[type=reset],
-	+ .btn {
-		margin-left: 10px;
-	}
+    // LEFT MARGIN FOR BUTTON ROWS
+    + button,
+    + input[type=submit],
+    + input[type=reset],
+    + .btn {
+        // Box-model
+        margin-left: 10px;
+    }
 
-	// STATES
-	&.action {
-		color: @colorP2;
-		background-color: @btn-action;
-		border-color: darken(@btn-action, (@pct * .2));
-		&:hover {
-			background-color: darken(@btn-action, (@pct * .2));
-			border-color: darken(@btn-action, (@pct * .3));
-		}
-	}
-	&.primary {
-		color: @colorS2;
-		background-color: @btn-primary;
-		border-color: darken(@btn-primary, (@pct * .05));
-		&:hover {
-			background-color: darken(@btn-primary, (@pct * .07));
-			border-color: darken(@btn-primary, (@pct * .06));
-		}
-	}
-	&.cancel {
-		color: @colorP2;
-		background-color: @btn-cancel;
-		border-color: darken(@btn-cancel, (@pct * .2));
-		&:hover {
-			background-color: darken(@btn-cancel, (@pct * .1));
-			border-color: darken(@btn-cancel, (@pct * .3));
-		}
-	}
-	&.search {
-		.box(border);
-		color: @colorS2;
-		background-color: @btn-search;
-		border-color: @btn-search-border;
-		&:hover {
-			background-color: darken(@btn-search, (@pct * .1));
-			border-color: darken(@btn-search-border, (@pct * .1));
-		}
-	}
-	&.disabled,
-	button[disabled],
-	input[type=submit][disabled],
-	input[type=reset][disabled] {
-		color: @colorS4;
-		background-color: @colorS3;
-		border-color: @colorS4;
-		cursor: default;
-		&:hover {
-			background-color: @colorS3;
-		}
-	}
+    // STATES
+    &.action {
+        // Typography
+        color: @colorP2;
+        
+        // Visual
+        background-color: @btn-action;
+        border-color: darken(@btn-action, (@pct * .2));
+
+        &:hover {
+            // Visual
+            background-color: darken(@btn-action, (@pct * .2));
+            border-color: darken(@btn-action, (@pct * .3));
+        }
+    }
+    &.primary {
+        // Typography
+        color: @colorS2;
+        
+        // Visual
+        background-color: @btn-primary;
+        border-color: darken(@btn-primary, (@pct * .05));
+
+        &:hover {
+            // Visual
+            background-color: darken(@btn-primary, (@pct * .07));
+            border-color: darken(@btn-primary, (@pct * .06));
+        }
+    }
+    &.cancel {
+        // Typography
+        color: @colorP2;
+        
+        // Visual
+        background-color: @btn-cancel;
+        border-color: darken(@btn-cancel, (@pct * .2));
+
+        &:hover {
+            // Visual
+            background-color: darken(@btn-cancel, (@pct * .1));
+            border-color: darken(@btn-cancel, (@pct * .3));
+        }
+    }
+    &.search {
+        // Box-model
+        .box(border);
+        
+        // Typography
+        color: @colorS2;
+        
+        // Visual
+        background-color: @btn-search;
+        border-color: @btn-search-border;
+
+        &:hover {
+            // Visual
+            background-color: darken(@btn-search, (@pct * .1));
+            border-color: darken(@btn-search-border, (@pct * .1));
+        }
+    }
+    &.disabled,
+    button[disabled],
+    input[type=submit][disabled],
+    input[type=reset][disabled] {
+        // Typography
+        color: @colorS4;
+        cursor: default;
+        
+        // Visual
+        background-color: @colorS3;
+        border-color: @colorS4;
+
+        &:hover {
+            // Visual
+            background-color: @colorS3;
+        }
+    }
 }
 
 // BUTTON GROUPS
 .btn-group {
-	margin-bottom: 1em;
-	.clearfix;
-	.grp-btn,
-	.grp-input,
-	.grp-dropdown {
-		float: left;
-		.radius;
-		.bor-l-w;
-	}
-	.grp-btn + .grp-btn {
-		margin-left: 0;
-	}
-	:last-child,
-	.last //IE support
-	{
-		.radius-all(0; @radius; @radius; 0);
-	}
-	:first-child,
-	.first //IE support 
-	{
-		.bor-l-w(1);
-		.radius-all(@radius; 0; 0; @radius);
-	}	
+    // Box-model
+    margin-bottom: 1em;
+
+    .clearfix;
+    .grp-btn,
+    .grp-input,
+    .grp-dropdown {
+        // Box-model
+        float: left;
+
+        // Visual
+        -moz-border-radius: 3px;
+             border-radius: 3px;
+        border-left-width: 0;
+        
+    }
+    .grp-btn + .grp-btn {
+        // Box-model
+        margin-left: 0;
+    }
+    :last-child,
+    .last { // IE support
+        // Visual
+        -moz-border-radius: 0 @radius @radius 0;
+             border-radius: 0 @radius @radius 0;
+
+    }
+    :first-child,
+    .first { //IE support
+        // Visual
+        -moz-border-radius: @radius 0 0 @radius;
+             border-radius: @radius 0 0 @radius;
+        border-left-width: 1px;
+    }   
 }
 
 button {
-	.transporthover;
+    .transporthover;
 }

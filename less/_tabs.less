@@ -1,69 +1,107 @@
-//
-	//PLUS
-//
-/**********
-	TABS
-**********/
-
+/* TABS */
 .tabs {
-	.pos(relative);
-	* {
-		.box(border);
-	}
-	.tab-list,
-	.tab-content {
-		.pad;
-		list-style-type: none;
-	}
-	.tab-list {
-		.tab-list-item {
-			float: left;
-			.bor-w-4(1;1;0;1);
-			border-style: solid;
-			border-color: @border1;
-			.pad-2(10; 20; px);
-			.mar-r(-1; px);
-			.mar-b(-1; px);
-			.pos(relative);
-			z-index: 30;
-			background-color: @colorS2;
-			cursor: pointer;
-			&:hover {
-				background-color: darken(@colorS2, (@pct * .2));
-			}
-			&:first-child {
-				.radius-tl((@px * .3));
-			}
-			&.active {
-				cursor: default;
-				cursor: default;
-				.bor-b(1;solid;@border1);
-				background-color: @colorS1;
-				&:hover {
-					background-color: @colorS1;
-				}
-			}
-		}
-	}
-	.tab-content {
-		.tab-content-item {
-			.radius-tl(0);
-			.radius-tr(0);
-			.radius-br((@px * .3));
-			.radius-bl((@px * .3));
-			.wid(100;pct);
-			.bor(1;solid;@border1);
-			.pad-2(10; 20; px);
-			display: none;
-			> *:last-child { // remove any extra margin on the last item for better parent padding
-				.mar;
-			}		
-			&.active {
-				background-color: @colorS1;
-				display: inline-block;
-				.pos(relative);
-				z-index: 25;				
-			}
-		}
-	}
+    // Positioning
+    .pos(relative);
+
+    * {
+        // Box-model
+        .box(border);
+    }
+
+    .tab-list,
+    .tab-content {
+        // Box-model
+        padding: 0;
+
+        // Visual
+        list-style-type: none;
+    }
+
+    .tab-list {
+        .tab-list-item {
+            // Positioning
+            .pos(relative);
+            z-index: 30;
+            
+            // Box-model
+            float: left;
+            padding: 10px 20px;
+            margin-right: -1px;
+            margin-bottom: -1px;
+            
+            // Typography
+            cursor: pointer;
+            
+            // Visual
+            background-color: @colorS2;
+            border-color: @border1;
+            border-style: solid;
+            border-width: 1px 1px 0 1px;
+            
+            &:hover {
+                // Visual
+                background-color: darken(@colorS2, (@pct * .2));
+            }
+
+            &:first-child {
+                // Visual
+                -moz-border-radius-topleft: 3px;
+                     border-top-left-radius: 3px;
+            }
+
+            &.active {
+                // Typography
+                cursor: default;
+                
+                // Visual
+                background-color: @colorS1;
+                border-bottom: 1px solid @border1;
+                
+                &:hover {
+                    // Visual
+                    background-color: @colorS1;
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        .tab-content-item {
+            // Positioning
+            
+            // Box-model
+            display: none;
+            width: 100%;
+            padding: 10px 20px;
+            
+            // Visual
+            border: 1px solid @border1;
+
+            -moz-border-radius-topright: 0;
+                 border-top-right-radius: 0;
+            -moz-border-radius-bottomright: 3px;
+                 border-bottom-right-radius: 3px;
+            -moz-border-radius-bottomleft: 3px;
+                 border-bottom-left-radius: 3px;
+            -moz-border-radius-topleft: 0;
+                 border-top-left-radius: 0;
+
+            > *:last-child { // remove any extra margin on the last item for better parent padding
+                // Box-model
+                margin: 0;
+            }
+
+            &.active {
+                // Positioning
+                .pos(relative);
+                z-index: 25;                
+                
+                // Box-model
+                display: inline-block;
+
+                // Visual
+                background-color: @colorS1;
+            }
+        }
+    }
 }

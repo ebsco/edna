@@ -1,150 +1,205 @@
-//
-	// EDNA
-//
-/**********
-	LISTS
-**********/
+/* LISTS */
 ul,
 ol {
-	margin: 0;
-	padding: 0 0 1rem 1rem;
+    // Box-model
+    padding: 0 0 1rem 1rem;
+    margin: 0;
 }
+
 // nested list - adjusts the spacing of a nested list
-li > ul,
-li > ol {
-	padding: .5rem 0 .5rem 1rem;
+li {
+    > ul,
+    > ol {
+        // Box-model
+        padding: .5rem 0 .5rem 1rem;
+    }
 }
+
 // DEFINITION List
 dl {
-	margin: 0;
-	padding: 0 0 1rem;
+    // Box-model
+    padding: 0 0 1rem;
+    margin: 0;
 }
-dt {
 
-}
 dd {
-	margin: 0;
-	padding: 0 0 .125rem 2rem;
+    // Box-model
+    padding: 0 0 .125rem 2rem;
+    margin: 0;
 }
 
 //
-	//PLUS
+    //PLUS
 //
 /**********
-	LISTS
+    LISTS
 **********/
 
 // RESET LIST
-ul,ol {
-	&.base {
-		.mar;
-		.pad;
-		list-style-type: none;
-		-webkit-margin-before: 0;
-		-webkit-margin-after: 0;
-		-webkit-margin-start: 0;
-		-webkit-margin-end: 0;
-		-webkit-padding-start: 0;
-		> li {
-			.mar;
-			.pad;
-		}	
-	}
+ul,
+ol {
+    &.base {
+        // Box-model
+        padding: 0;
+        margin: 0;
+
+        // Visual
+        list-style-type: none;
+        > li {
+            // Box-model
+            padding: 0;
+            margin: 0;
+        }   
+    }
 }
 
 // UNORDERED LIST STYLE TYPES
 .disc {
-	list-style: disc;
+    // Visual
+    list-style: disc;
 }
+
 .circle {
-	list-style: circle
+    // Visual
+    list-style: circle
 }
+
 .square {
-	list-style: square;
+    // Visual
+    list-style: square;
 }
 
 // ORDERED LIST STYLE TYPES
 .decimal {
-	list-style: decimal;	
+    // Visual
+    list-style: decimal;    
 }
+
 .lower-alpha {
-	list-style: lower-alpha;	
+    // Visual
+    list-style: lower-alpha;    
 }
+
 .upper-alpha {
-	list-style: upper-alpha;	
+    // Visual
+    list-style: upper-alpha;    
 }
+
 .lower-roman {
-	list-style: lower-roman;	
+    // Visual
+    list-style: lower-roman;    
 }
+
 .upper-roman {
-	list-style: upper-roman;	
+    // Visual
+    list-style: upper-roman;    
 }
 
 // CITATION EXAMPLE
-.citation > dt {
-	.pad(5);
-	.pad-l;
-	float: left;
-	font-weight: bold;
-	clear: left;
+.citation {
+    > dt {
+        // Box-model
+        float: left;
+        padding: 5px 5px 5px 0;
+        clear: left;
+        
+        // Typography
+        font-weight: bold;
+    }
+    
+    > dd {
+        // Visual
+        padding: 5px;
+    }
 }
 
-.citation > dd {
-	.pad(5);
-}
 
 // TREELIST EXAMPLE
 .tree-list {
-	list-style-type: none;
-	.pad;
-	> .tree-list {
-		.mar-l(15;px);
-	}
-	.list-item {
-		.mar-b(3;px);
-		a {
-			text-decoration: none;
-		}
-		&:before {
-			display: inline-block;
-			content: '\25FC';
-			.wid(5);
-			.pad-r;
-			color: @colorS4;
-			.fontsize(1);
-		}
-		.before { // local mixin
-			.fontsize(1.6);
-			color: @colorS4;
-			.ht(14);
-		}
-		&.expand {
-			&:before {
-				content: '\229E';
-				.before;
-			}
-		}
-		&.collapse {
-			&:before {
-				content: '\229F';
-				.before;
-			}
-		}
-	}
-	.more {
-		.mar-l(15;px);
-		&:after {
-			display: inline-block;
-			content: '\25BC';
-			.mar-l(5;px);
-			color: @link-color;
-			.fontsize(1.2);
-			&:hover {
-				color: @link-color-active;
-			}
-		}
-		a {
-			text-decoration: none;
-		}
-	}
+    // Box-model
+    padding: 0;
+    
+    // Visual
+    list-style-type: none;
+    
+    > .tree-list {
+        // Box-model
+        margin-left: 15px;
+    }
+
+    .list-item {
+        // Box-model
+        margin-bottom: 3px;
+
+        a {
+            // Typography
+            text-decoration: none;
+        }
+
+        &:before {
+            // Box-model
+            display: inline-block;
+            width: 5px;
+            padding-right: 0;
+            
+            // Typography
+            .fontsize(1);
+            color: @colorS4;
+            
+            // Visual
+            content: '\25FC';
+        }
+
+        .before { // local mixin
+            // Box-model
+            height: 14px;
+            
+            // Typography
+            .fontsize(1.6);
+            color: @colorS4;            
+        }
+
+        &.expand {
+            &:before {
+                .before;
+                // Visual
+                content: '\229E';
+            }
+        }
+
+        &.collapse {
+            &:before {
+                .before;
+                // Visual
+                content: '\229F';
+            }
+        }
+    }
+
+    .more {
+        // Box-model
+        margin-left: 15px;
+
+        &:after {
+            // Box-model
+            display: inline-block;
+            margin-left: 5px;
+            
+            // Typography
+            .fontsize(1.2);
+            color: @link-color;
+            
+            // Visual
+            content: '\25BC';
+            
+            &:hover {
+                // Typography
+                color: @link-color-active;
+            }
+        }
+        a {
+            // Typography
+            text-decoration: none;
+        }
+    }
 }

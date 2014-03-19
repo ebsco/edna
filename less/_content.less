@@ -1,26 +1,26 @@
-//
-	//PLUS
-//
-/**********
-	CONTENTBOX
-**********/
-
+/* CONTENTBOX */
 .contentbox {
-	.contentbox-img {
-		.wid(15);
-		float: left;
-	}
-	.contentbox-info {
-		.mar-l(165;px);
-		.contentbox-heading {
-			.bor-b(1;solid;@border1);
-			.mar-t(0);
-			> a {
-				text-decoration: none;
-			}
-		}
-		.contentbox-text {
-			/* styles here */
-		}
-	}
+    .contentbox-img {
+        // Box-model
+        float: left;
+        width: 15px;
+    }
+
+    .contentbox-info {
+        // Box-model
+        margin-left: 165px;
+
+        .contentbox-heading {
+            // Box-model
+            margin-top: 10px;
+            
+            // Visual
+            border-bottom: 1px solid @border1;
+            
+            > a {
+                // Typography
+                text-decoration: none;
+            }
+        }
+    }
 }

@@ -1,57 +1,74 @@
-//
-	//PLUS
-//
-/**********
-	SEARCHBAR
-**********/
-
+/* SEARCHBAR */
 .searchbar {
-	width: 100%;
-	.pos(relative);
+    // Positioning
+    .pos(relative);
+    
+    // Box-model
+    width: 100%;
 
-	.searchbar-wrap {
-		.pos(relative);
-		width: 80%;
-		.box(border);
-		float: left;
-		display: inline-block;
-		> input[type="text"] {
-			height: 30px;
-		}
-		> .reset {
-			.pos(absolute);
-			top: 5px;
-			right: 0;
-			.fontsize(2);
-			line-height: 2rem;
-			color: @reset;
-			background-color: transparent;
-			.bor;
-			&:hover {
-				color: darken(@reset,10);
-			}
-		}
-	}
-	> .btn {
-		&.search {
-			height: 30px;
-			// padding: 0 15px;
-			margin-left: 10px;
-			// border: 1px solid @search-border;
-			// background-color: @colorP3;
-			// color: @colorS1;
-		}
-	}
-	> .searchtext-wrap {
-		margin: 16px 0;
-		> .searchbar-link {
-			.fontsize(1.3);
-			margin-left: 15px;
-			padding: 0;
-			&:first-child {
-				padding-left: 0;
-				margin-left: 0;
-			}
-		}
-	}
+    .searchbar-wrap {
+        // Positioning
+        .pos(relative);
+        
+        // Box-model
+        display: inline-block;
+        .box(border);
+        float: left;
+        width: 80%;
+        
+        > input[type="text"] {
+            // Box-model
+            height: 30px;
+        }
+
+        > .reset {
+            // Positioning
+            .pos(absolute);
+            top: 5px;
+            right: 0;
+            
+            // Typography
+            .fontsize(2);
+            line-height: 2rem;
+            color: @reset;
+            
+            // Visual
+            background-color: transparent;
+            border: none;
+            
+            &:hover {
+                // Typography
+                color: darken(@reset,10);
+            }
+        }
+    }
+
+    > .btn {
+        &.search {
+            // Box-model
+            height: 30px;
+            margin-left: 10px;
+            
+        }
+    }
+
+    > .searchtext-wrap {
+        // Box-model
+        margin: 16px 0;
+
+        > .searchbar-link {
+            // Box-model
+            padding: 0;
+            margin-left: 15px;
+            
+            // Typography
+            .fontsize(1.3);
+            
+            &:first-child {
+                // Box-model
+                padding-left: 0;
+                margin-left: 0;
+            }
+        }
+    }
 }

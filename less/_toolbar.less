@@ -1,103 +1,152 @@
-//
-	//PLUS
-//
-/**********
-	TOOLBAR
-**********/
-
+/* TOOLBAR */
 .toolbar {
-	width: 100%;
-	overflow: visible;
-	background-color: @bgcolor;
-	.fontsize(1.2);
-	a {
-		color: inherit;
-		font: inherit;
-		// text-decoration: inherit;
-	}
-	.bar {
-		.pos(relative);
-	}
-	.nav-item,
-	.user-nav-item {
-		padding: 10px;
-		color: #FFF;
-		position: relative;
-		background-color: @nav-item-bg;
-		&:hover {
-			background-color: @nav-item-bg-hover;
-			a {
-				text-decoration: none;
-			}
-		}
-	}
-	.nav {
-		padding: 0;
-		margin: 0;
-		display: inline-block;
-		.nav-item {
-			display: inline-block;
-			cursor: pointer;
-		}
-	}
+    // Box-model
+    width: 100%;
+    overflow: visible;
+    
+    // Typography
+    .fontsize(1.2);
+    
+    // Visual
+    background-color: @bgcolor;
+    
+    a {
+        // Typography
+        font: inherit;
+        color: inherit;
+    }
+    
+    .bar {
+        // Positioning
+        .pos(relative);
+    }
+    
+    .nav-item,
+    .user-nav-item {
+        // Positioning
+        position: relative;
+        
+        // Box-model
+        padding: 10px;
+        
+        // Typography
+        color: #FFF;
+        
+        // Visual
+        background-color: @nav-item-bg;
+    
+        &:hover {
+            // Visual
+            background-color: @nav-item-bg-hover;
+            a {
+                // Typography
+                text-decoration: none;
+            }
+        }
+    }
+    
+    .nav {
+        // Box-model
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    
+        .nav-item {
+            // Box-model
+            display: inline-block;
+            
+            // Typography
+            cursor: pointer;            
+        }
+    }
 }
 
 .user-nav {
-	display: inline-block;
-	padding: 0;
-	margin: 0;
-	float: right;
-	.user-nav-item {
-		width: auto;
-		height: auto;
-		display: inline-block;
-		float: left;
-		cursor: pointer;
-		vertical-align: top;
+    // Box-model
+    display: inline-block;
+    float: right;
+    padding: 0;
+    margin: 0;
+    
+    .user-nav-item {
+        // Box-model
+        display: inline-block;
+        float: left;
+        width: auto;
+        height: auto;
+        
+        // Typography
+        vertical-align: top;      
+        cursor: pointer;
 
-		a {
-			> .icon {
-				display: inline-block;
-				overflow: hidden;	
-			}
-		}
-		&:hover {
-			background-color: @nav-item-bg-hover;
-		}
-	}
-	.user-nav {
-		display: none;
-	}
-	.folder {
-		a {
-			padding-left: 20px;
-			.icon {
-				background: rgba(0, 0, 0, 0) url('http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/folder-sprite.png') 8px -1px no-repeat;
-				width: 27px;
-				height: 15px;
-				position: absolute;
-				left: 2px;
-			}
-		}
-		&.not-empty {
-			.icon {
-				background-position-y: -101px;
-			}
-		}
-	}
-	.languages {
-		.icon {
-			height: 10px;
-			width: 10px;
-			margin: 0 0 0 5px;
-			background: url('http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/arrow-sprites.png') right -1750px no-repeat;
-		}
-		&:hover {
-			color: #333;
-			background-color: #fff;
-			.icon {
-				background-position: right -1800px;
-			}
-		}	
-	}
+        a {
+            > .icon {
+                // Box-model
+                display: inline-block;
+                overflow: hidden;   
+            }
+        }
+    
+        &:hover {
+            // Visual
+            background-color: @nav-item-bg-hover;
+        }
+    }
+    
+    .user-nav {
+        // Box-model
+        display: none;
+    }
+    
+    .folder {
+        a {
+            // Box-model
+            padding-left: 20px;
+    
+            .icon {
+                // Positioning
+                position: absolute;
+                left: 2px;
+                
+                // Box-model
+                width: 27px;
+                height: 15px;
+                
+                // Visual
+                background: rgba(0, 0, 0, 0) url('http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/folder-sprite.png') 8px -1px no-repeat;
+            }
+        }
+    
+        &.not-empty {
+            .icon {
+                // Visual
+                background-position: 0 -101px;
+            }
+        }
+    }
+    
+    .languages {
+        .icon {
+            // Box-model
+            width: 10px;
+            height: 10px;
+            margin: 0 0 0 5px;
+            
+            // Visual
+            background: url('http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/arrow-sprites.png') right -1750px no-repeat;
+        }
+    
+        &:hover {
+            // Typography
+            color: #333;
+            
+            // Visual
+            background-color: #fff;
+    
+            .icon {
+                // Visual
+                background-position: right -1800px;                
+            }
+        }   
+    }
 }

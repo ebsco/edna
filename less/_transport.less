@@ -1,147 +1,198 @@
-//
-	//PLUS
-//
-/**********
-	TRANSPORT
-**********/
-
+/* TRANSPORT */
 .transport {
-	> .top,
-	> .right,
-	> .bottom,
-	> .left {
-		cursor: pointer;
-		.wid;
-		.ht;
-		display: inline-block;
+    > .top,
+    > .right,
+    > .bottom,
+    > .left {
+        // Box-model
+        display: inline-block;
+        width: 0;
+        height: 0;
+        
+        // Typography
+        cursor: pointer;
 
-		.bor-t(@transport-width;solid;transparent);
-		.bor-r(@transport-width;solid;transparent);
-		.bor-b(@transport-width;solid;transparent);
-		.bor-l(@transport-width;solid;transparent);
-	}
-	> .top {
-		.bor-b-w(@transport-width);
-		.bor-b-s(solid);
-		.bor-b-c(@transport-color);
-		.bor-t-w;
-		.mar-b(@transport-width * .5; px);
-		.mar-t(-@transport-width * .5; px);
-		// &:hover {
-		// 	.bor-b-c(@border2);
-		// }
-	}
-	> .right {
-		.bor-l-w(@transport-width);
-		.bor-l-s(solid);
-		.bor-l-c(@transport-color);
-		.bor-r-w;
-		.mar-l(@transport-width * .5; px);
-		.mar-r(-@transport-width * .5; px);
-		// &:hover {
-		// 	.bor-l-c(@border2);
-		// }
-	}
-	> .bottom {
-		.bor-t-w(@transport-width);
-		.bor-t-s(solid);
-		.bor-t-c(@transport-color);
-		.bor-b-w;
-		.mar-b(@transport-width * .5; px);
-		.mar-t(-@transport-width * .5; px);
-		// &:hover {
-		// 	.bor-t-c(@border2);
-		// }
-	}
-	> .left {
-		.bor-r-w(@transport-width);
-		.bor-r-s(solid);
-		.bor-r-c(@transport-color);
-		.bor-l-w;
-		.mar-l(@transport-width * .5; px);
-		.mar-r(-@transport-width * .5; px);
-		// &:hover {
-		// 	.bor-r-c(@border2);
-		// }
-	}
+        // Visual
+        border-top: @transport-width solid transparent;
+        border-right: @transport-width solid transparent;
+        border-bottom: @transport-width solid transparent;
+        border-left: @transport-width solid transparent;
+    }
+    
+    > .top {
+        // Box-model
+        margin-top: (@transport-width * .5);
+        margin-bottom: (@transport-width * .5);
 
-	&.inactive {
-		> .top {
-			.bor-b-c(@transport-inactive);
-			cursor: default;
-			&:hover {
-				.bor-b-c(@transport-inactive);
-			}
-		}
-		> .right {
-			.bor-l-c(@transport-inactive);
-			cursor: default;
-			&:hover {
-				.bor-l-c(@transport-inactive);
-			}
-		}
-		> .bottom {
-			.bor-t-c(@transport-inactive);
-			cursor: default;
-			&:hover {
-				.bor-t-c(@transport-inactive);
-			}
-		}
-		> .left {
-			.bor-r-c(@transport-inactive);
-			cursor: default;
-			&:hover {
-				.bor-r-c(@transport-inactive);
-			}
-		}
-	}
+        // Visual
+        border-top-width: 0;
+        border-bottom-color: @transport-color;
+        border-bottom-style: solid;
+        border-bottom-width: @transport-width;
+    }
+    
+    > .right {
+        // Box-model
+        margin-right: (@transport-width * .5);
+        margin-left: (@transport-width * .5);
+
+        // Visual
+        border-right-width: 0;
+        border-left-color: @transport-color;
+        border-left-style: solid;
+        border-left-width: @transport-width;
+    }
+    
+    > .bottom {
+        // Box-model
+        margin-bottom: (@transport-width * .5);
+        margin-left: (@transport-width * .5);
+
+        // Visual
+        border-top-color: @transport-color;
+        border-top-style: solid;
+        border-top-width: @transport-width;
+        border-bottom-width: 0;
+    }
+    
+    > .left {
+        // Box-model
+        margin-right: (@transport-width * .5);
+        margin-left: (@transport-width * .5);
+
+        // Visual
+        border-right-color: @transport-color;
+        border-right-style: solid;
+        border-right-width: @transport-width;
+        border-left-width: 0;
+    }
+
+    &.inactive {
+        > .top {
+            // Typography
+            cursor: default;
+            
+            // Visual
+            border-bottom-color: @transport-inactive;
+
+            &:hover {
+                // Visual
+                border-bottom-color: @transport-inactive;
+            }
+        }
+
+        > .right {
+            // Typography
+            cursor: default;
+
+            // Visual
+            border-left-color: @transport-inactive;
+            
+            &:hover {
+                // Visual
+                border-left-color: @transport-inactive;
+            }
+        }
+
+        > .bottom {
+            // Typography
+            cursor: default;
+
+            // Visual
+            border-top-color: @transport-inactive;
+            
+            &:hover {
+                // Visual
+                border-top-color: @transport-inactive;
+            }
+        }
+
+        > .left {
+            // Typography
+            cursor: default;
+
+            // Visual
+            border-right-color: @transport-inactive;
+           
+            &:hover {
+                // Visual
+                border-right-color: @transport-inactive;
+            }
+        }
+    }
 
 
-	&.slim {
-		> .top,
-		> .right,
-		> .bottom,
-		> .left {
-			border-width: 0;
-			.wid(10);
-			.ht(16);
-			border-color: rgba(0, 0, 0, 0);
-			.mar;
-			.pad-4(0;0;0;3;px);
-			&:after {
-				display: inline-block;
-			}
-			&:hover {
-				&:after {
-					color: darken(#CCC, 20%);
-				}
-			}
-		}
-		> .top {
-			.rotate(-90);
-			&:after {
-				color: #CCC;
-				content: '❯';
-			}
-		}
-		> .right {
-			&:after {
-				color: #CCC;
-				content: '❯';
-			}
-		}
-		> .bottom {
-			.rotate(-90);
-			&:after {
-				color: #CCC;
-				content: '❮';
-			}
-		}
-		> .left {
-			&:after {
-				content: '❮';
-				color: #CCC;
-			}
-		}
-	}
+    &.slim {
+        > .top,
+        > .right,
+        > .bottom,
+        > .left {
+            // Box-model
+            width: 10px;
+            height: 16px;
+            padding: 0 0 0 3px;
+            margin: 0;
+            
+            // Visual
+            border-color: rgba(0, 0, 0, 0);           
+            border-width: 0;
+           
+            &:after {
+                // Box-model
+                display: inline-block;
+            }
+            &:hover {
+                &:after {
+                    // Typography
+                    color: darken(#ccc, 20%);
+                }
+            }
+        }
+
+        > .top {
+            // Visual
+            .rotate(-90);
+
+            &:after {
+                // Typography
+                color: #ccc;
+
+                // Visual
+                content: '❯';
+            }
+        }
+
+        > .right {
+            &:after {
+                // Typography
+                color: #ccc;
+
+                // Visual
+                content: '❯';
+            }
+        }
+
+        > .bottom {
+            // Visual
+            .rotate(-90);
+
+            &:after {
+                // Typography
+                color: #ccc;
+
+                // Visual
+                content: '❮';
+            }
+        }
+
+        > .left {
+            &:after {
+                // Typography
+                color: #ccc;
+
+                // Visual
+                content: '❮';
+            }
+        }
+    }
 }

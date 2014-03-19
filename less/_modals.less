@@ -1,41 +1,55 @@
-//
-	//PLUS
-//
-/**********
-	MODALS
-**********/
-
+/* MODALS */
 .modal {
-	.bor(1;solid;@border1);
-	.radius(@radius);
-	box-shadow: 0 0 @px rgba(0,0,0,.5);
-	background-color: @colorS1;
-	.modal-header,
-	.modal-body,
-	.modal-footer {
-		.pad(15;px);
-	}
-	.modal-header {
-		.bor-b(1;solid;@border1);
-		.modal-title {
-			.mar;
-		}
-		> .btn.close {
-			float: right;
-			.fontsize(1.25);
-			line-height: (@em * .625);
-			color: @colorS3;
-			vertical-align: middle;
-			.pad-2(10;0;px);
-			.bor;
-			background-color: transparent;
-			&:hover {
-				color: @colorS4;
-			}
-		}
-	}
-	.modal-footer {
-		.bor-t(1;solid;@colorS3);
-		text-align: right;
-	}
+    // Visual
+    background-color: @colorS1;
+    border: 1px solid @border1;
+    -moz-border-radius: @radius;
+         border-radius: @radius;
+    box-shadow: 0 0 @px rgba(0,0,0,.5);
+
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        // Box-model
+        padding: 15px;
+    }
+
+    .modal-header {
+        // Visual
+        border-bottom: 1px solid @border1;
+
+        .modal-title {
+        // Box-model
+            margin: 0;
+        }
+
+        > .btn.close {
+            // Box-model
+            float: right;
+            padding: 10px 0;
+            
+            // Typography
+            .fontsize(1.25);
+            line-height: (@em * .625);
+            color: @colorS3;
+            vertical-align: middle;
+            
+            // Visual
+            background-color: transparent;
+            border: none;
+            
+            &:hover {
+                // Typography
+                color: @colorS4;
+            }
+        }
+    }
+
+    .modal-footer {
+        // Typography
+        text-align: right;
+        
+        // Visual
+        border-top: 1px solid @colorS3;
+    }
 }

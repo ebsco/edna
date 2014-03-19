@@ -1,48 +1,52 @@
-//
-	//PLUS
-//
-/**********
-	MEDIA FLOAT
-**********/
+/* MEDIA FLOAT */
 
-/* [content] [content] side by side and allow for growth without wrapping */
-/* CONTENT ALIGNED AT TOP */
+// [content] [content] side by side and allow for growth without wrapping
+// CONTENT ALIGNED AT TOP
 .media-content {
-	overflow: hidden;
-
-	/* CONTENT CAN FLOAT LEFT OR RIGHT */
-	.media-left {
-		float: left;
-	}
-	.media-right {
-		float: right;
-	}
-	/* END MEDIA FLOAT */
+    // Box-model
+    overflow: hidden;
+    
+    // CONTENT CAN FLOAT LEFT OR RIGHT
+    .media-left {
+        // Box-model
+        float: left;
+    }
+    
+    .media-right {
+        // Box-model
+        float: right;
+    }
 }
 
-
-/**********
-	MEDIA BLOCK
-**********/
-/* [content] [content] side by side and allow for growth without wrapping */
-/* CONTENT VERTICALLY ALIGNED CENTER BY DEFAULT */
+/* MEDIA BLOCK */
+// [content] [content] side by side and allow for growth without wrapping
+// CONTENT VERTICALLY ALIGNED CENTER BY DEFAULT
 .media-block {
-	display: table;
-	.wid(100;pct);
-	.media-row {
-		display: table-row;
-	}
-	.media-cell {
-		display: table-cell;
-		vertical-align: middle;
-	}
-	/* EXTENDING ALIGNMENT */
-	.media-btm {
-		vertical-align: bottom;
-	}
-	.media-top {
-		vertical-align: top;
-	}
+    // Box-model
+    display: table;
+    width: 100%;
+   
+    .media-row {
+        // Box-model
+        display: table-row;
+    }
+    
+    .media-cell {
+        // Box-model
+        display: table-cell;
+
+        // Typography
+        vertical-align: middle;
+    }
+    
+    // EXTENDING ALIGNMENT
+    .media-btm {
+        // Typography
+        vertical-align: bottom;
+    }
+    
+    .media-top {
+        // Typography
+        vertical-align: top;
+    }
 }
-/* END EXTENDING ALIGNMENT */
-/* END MEDIA BLOCK */

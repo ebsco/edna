@@ -1,63 +1,101 @@
-//
-	//PLUS
-//
-/**********
-	TOGGLES
-**********/
-
+/* TOGGLES */
 .toggle {
-	.pad;
-	list-style-type: none;
-	+ .toggle {
-		.pad-t(15; px);
-	}
-	.toggle-content {
-		display: none;
-		.bor(1;solid;@border1);
-		.radius-br;
-		.radius-bl;
-		.pad(30; px);
-		background-color: @colorS1;
-		> *:last-child { // remove any extra margin on the last item for better parent padding
-			.mar;
-		}
-	}
-	.toggle-tab {
-		.radius;
-		.bor(1;solid;@border1);
-		.pad-2(12; 8; px);
-		background-color: @colorS1;
-		font-weight: bold;
-		cursor: pointer;
-		.icon {
-			.radius;
-			.bor(1;solid;@border1);
-			display: inline-block;
-			.mar-r(10; px);
-			.wid(20);
-			.ht(20);
-			text-align: center;
-			&:before {
-				color: @colorP4;
-				content: '+';
-				display: block;
-			}
-		}
-		&.active {
-			.radius-br(0);
-			.radius-bl(0);
-			.icon {
-				&:before {
-					cursor: default;
-					content: '–';
-					line-height: 1.25rem;
-				}
-			}
-			+ .toggle-content {
-				display: inline-block;
-				.mar-t(-1; px);
-				z-index: 10;
-			}
-		}
-	}
+    // Box-model
+    padding: 0;
+
+    // Visual
+    list-style-type: none;
+    
+    + .toggle {
+        // Box-model
+        padding-top: 15px;
+    }
+
+    .toggle-content {
+        // Box-model
+        display: none;
+        padding: 30px;
+        
+        // Visual
+        background-color: @colorS1;
+        border: 1px solid @border1;
+        -moz-border-radius-bottomright: 3px;
+             border-bottom-right-radius: 3px;
+        -moz-border-radius-bottomleft: 3px;
+             border-bottom-left-radius: 3px;
+        
+        > *:last-child { // remove any extra margin on the last item for better parent padding
+            // Box-model
+            margin: 0;
+        }
+    }
+
+    .toggle-tab {
+        // Box-model
+        padding: 12px 8px;
+        
+        // Typography
+        font-weight: bold;
+        cursor: pointer;
+        
+        // Visual
+        background-color: @colorS1;
+        border: 1px solid @border1;
+        -moz-border-radius: @radius;
+             border-radius: @radius;
+        
+        .icon {
+            // Box-model
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            
+            // Typography
+            text-align: center;
+            
+            // Visual
+            border: 1px solid @border1;
+            -moz-border-radius: @radius;
+                 border-radius: @radius;
+            
+            &:before {
+                // Box-model
+                display: block;
+                
+                // Typography
+                color: @colorP4;
+                
+                // Visual
+                content: '+';
+            }
+        }
+
+        &.active {
+            -moz-border-radius-bottomright: 0;
+                 border-bottom-right-radius: 0;
+            -moz-border-radius-bottomleft: 0;
+                 border-bottom-left-radius: 0;
+            
+            .icon {
+                &:before {
+                    // Typography
+                    line-height: 1.25rem;
+                    cursor: default;
+                    
+                    // Visual
+                    content: '–';    
+                }
+            }
+
+            + .toggle-content {
+                // Positioning
+                z-index: 10;
+
+                // Box-model
+                display: inline-block;
+                margin-top: -1px;                
+            }
+        }
+    }
 }

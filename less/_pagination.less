@@ -1,72 +1,107 @@
-//
-	//PLUS
-//
-/**********
-	PAGINATION
-**********/
-
+/* PAGINATION */
 .pagination {
-	.clearfix;
-	.pag-list {
-		list-style-type: none;
-		display: inline-block;
-		.pad(0);
-		float: left;
-		.pag-list-item {
-			display: inline-block;
-			float: left;
-			.bor-r(1;solid;@colorS4);
-			.pad-2(0; 10; px);
-			cursor: pointer;
-			color: lighten(@font-color, 20%);
-			&:nth-last-child(1) {
-				.bor-r;
-			}
-			&:hover {
-				background-color: @bg2;
-				color: @font-color;
-			}
-			&.inactive {
-				cursor: default;
-				color: lighten(@font-color, 20%);
-				&:hover {
-					background-color: transparent;
-					color: lighten(@font-color, 20%);
-				}
-			}
-			&.active {
-				cursor: default;
-				color: @font-color;
-				background-color: @colorS4;
-				&:hover {
-					background-color: @colorS4;
-					color: @font-color;
-				}
-			}
-		}
-	}
+    // Box-model
+    .clearfix;
+    
+    .pag-list {
+        // Box-model
+        display: inline-block;
+        float: left;
+        padding: 0;
+        
+        // Visual
+        list-style-type: none;
+        
+        .pag-list-item {
+            // Box-model
+            display: inline-block;
+            float: left;
+            padding: 0 10px;
+            
+            // Typography
+            color: lighten(@font-color, 20%);
+            cursor: pointer;
+            
+            // Visual
+            border-radius: 1px solid @colorS4;
+            
+            &:nth-last-child(1) {
+                // Visual
+                border-right: 0;
+            }
+            &:hover {
+                // Typography
+                color: @font-color;
 
-	.transport {
-		@newPX: (@px * 1);
-		display: inline-block;
-		float: left;
+                // Visual
+                background-color: @bg2;
+            }
+            &.inactive {
+                // Typography
+                color: lighten(@font-color, 20%);
+                cursor: default;
+                &:hover {
+                    // Typography
+                    color: lighten(@font-color, 20%);
+                    
+                    // Visual
+                    background-color: transparent;
+                    
+                }
+            }
+            &.active {
+                // Typography
+                color: @font-color;
+                cursor: default;
+                
+                // Visual
+                background-color: @colorS4;
+                
+                &:hover {
+                    // Typography
+                    color: @font-color;
+                    
+                    // Visual
+                    background-color: @colorS4;
+                    
+                }
+            }
+        }
+    }
 
-		> .right,
-		> .left {
-			color: @colorS4;
-			.bor-t( (@newPX * .9);solid;transparent);
-			.bor-b( (@newPX * .9);solid;transparent);
-		}
-		> .right {
-			.bor-l(@newPX;solid;@colorS4);
-			.mar-l(@newPX * .5);
-			.mar-r;
-		}
-		> .left {
-			.bor-r(@newPX;solid;@colorS4);
-			.mar-l;
-			.mar-r(@newPX * .5);
-		}
+    .transport {
+        @newPX: (@px * 1);
+        // Box-model
+        display: inline-block;
+        float: left;
+        
 
-	}
+        > .right,
+        > .left {
+            // Typography
+            color: @colorS4;
+
+            // Visual
+            border-top: (@newPX * .9) solid transparent;
+            border-bottom: (@newPX * .9) solid transparent;
+        }
+        > .right {
+            // Box-model
+            margin-right: 0;
+            margin-left: (@newPX * .5);
+
+            // Visual
+            border-left: @newPX solid @colorS4;
+        }
+        > .left {
+            // Box-model
+            margin-right: (@newPX * .5);
+            margin-left: 0;
+            
+            // Visual
+            border-right: @newPX solid @colorS4;
+            
+        }
+
+    }
 }
