@@ -1,8 +1,8 @@
 /* MODALS */
 .modal {
     // Visual
-    background-color: @colorS1;
-    border: 1px solid @border1;
+    background-color: @modal-bgcolor;
+    border: 1px solid @modal-bordercolor;
     -moz-border-radius: @radius;
          border-radius: @radius;
     box-shadow: 0 0 @px rgba(0,0,0,.5);
@@ -16,7 +16,7 @@
 
     .modal-header {
         // Visual
-        border-bottom: 1px solid @border1;
+        border-bottom: 1px solid @modal-header-border-color;
 
         .modal-title {
         // Box-model
@@ -31,16 +31,16 @@
             // Typography
             .fontsize(1.25);
             line-height: (@em * .625);
-            color: @colorS3;
+            color: @modal-close-color;
             vertical-align: middle;
             
             // Visual
-            background-color: transparent;
-            border: none;
+            background-color: @modal-close-bgcolor;
+            border: @modal-close-bordercolor;
             
             &:hover {
                 // Typography
-                color: @colorS4;
+                color: @modal-close-color-hover;
             }
         }
     }
@@ -50,6 +50,6 @@
         text-align: right;
         
         // Visual
-        border-top: 1px solid @colorS3;
+        border-top: 1px solid @modal-footer-border-color;
     }
 }

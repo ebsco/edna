@@ -8,7 +8,7 @@
     .fontsize(1.2);
     
     // Visual
-    background-color: @bgcolor;
+    background-color: @tbar-color;
     
     a {
         // Typography
@@ -30,14 +30,14 @@
         padding: 10px;
         
         // Typography
-        color: #FFF;
+        color: @usernav-item-color;
         
         // Visual
-        background-color: @nav-item-bg;
+        background-color: @usernav-item-bgcolor;
     
         &:hover {
             // Visual
-            background-color: @nav-item-bg-hover;
+            background-color: @usernav-item-bgcolor-hover;
             a {
                 // Typography
                 text-decoration: none;
@@ -89,7 +89,7 @@
     
         &:hover {
             // Visual
-            background-color: @nav-item-bg-hover;
+            background-color: @usernav-item-bgcolor-hover;
         }
     }
     
@@ -113,7 +113,7 @@
                 height: 15px;
                 
                 // Visual
-                background: rgba(0, 0, 0, 0) url('http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/folder-sprite.png') 8px -1px no-repeat;
+                background: @usernav-item-folder-bgcolor url(@usernav-item-folder-icon) 8px -1px no-repeat;
             }
         }
     
@@ -133,7 +133,7 @@
             margin: 0 0 0 5px;
             
             // Visual
-            background: url('http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/arrow-sprites.png') right -1750px no-repeat;
+            background: url(@usernav-item-language-icon) right -1750px no-repeat;
         }
     
         &:hover {
@@ -141,7 +141,7 @@
             color: #333;
             
             // Visual
-            background-color: #fff;
+            background-color: @usernav-item-language-bgcolor-hover;
     
             .icon {
                 // Visual

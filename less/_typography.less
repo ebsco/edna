@@ -77,9 +77,9 @@ p {
     margin: 0;
 
     // Typography
-    .fontsize(1.2);
+    .fontsize(@p-size);
     line-height: 19px;
-    color: @strong-font-color;
+    color: @p-color;
 }
 
 a {
@@ -89,32 +89,32 @@ a {
 
     &:visited {
         // Typography
-        color: desaturate(@link-color, (@pct * .75));
+        color: @link-color-visited;
     }
 
     &:hover {
         // Typography
-        color: darken(@link-color, (@pct * .1));
-        text-decoration: underline;
+        color: @link-color-hover;
+        text-decoration: @link-decoration-hover;
     }
 
     &:focus {
         // Typography
-        color: darken(@link-color, (@pct * .1));
-        text-decoration: underline;
+        color: @link-color-focus;
+        text-decoration: @link-decoration-focus;
     }
 
     &:active {
         // Typography
         color: @link-color-active;
-        text-decoration: underline;
+        text-decoration: @link-decoration-active;
     }
 }
 
 b,
 strong {
     // Typography
-    color: @strong-font-color;
+    color: @font-color-strong;
 }
 
 strong {
@@ -143,7 +143,7 @@ blockquote {
     margin-left: 1.5rem;
 
     // Visual
-    border-left: .25em solid @colorS3;
+    border-left: .25em solid @blockquote-border-color;
 }
 
 pre {
@@ -158,5 +158,5 @@ code {
     // Typography
     .font-family(code);
     font-weight: normal;
-    color: #696;
+    color: @code-color;
 }

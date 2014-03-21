@@ -19,6 +19,8 @@
         > input[type="text"] {
             // Box-model
             height: 30px;
+            // Visual
+            border-color: @searchbar-input-bordercolor;
         }
 
         > .reset {
@@ -30,15 +32,15 @@
             // Typography
             .fontsize(2);
             line-height: 2rem;
-            color: @reset;
+            color: @searchbar-reset-color;
             
             // Visual
-            background-color: transparent;
-            border: none;
+            background-color: @searchbar-reset-bgcolor;
+            border: @searchbar-reset-bordercolor;
             
             &:hover {
                 // Typography
-                color: darken(@reset,10);
+                color: @searchbar-reset-color-hover;
             }
         }
     }

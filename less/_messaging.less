@@ -11,11 +11,11 @@
     margin: 0 0 1em;
     
     // Typography
-    color: @colorP2;
+    color: @msg-color;
     
     // Visual
-    background-color: @msg;
-    border: 1px solid darken(@msg, (@pct * .2));
+    background-color: @msg-bgcolor;
+    border: 1px solid @msg-bordercolor;
     -moz-border-radius: @radius;
          border-radius: @radius;
 
@@ -55,7 +55,7 @@
             right: 20px;
             
             // Typography
-            color: @colorP1;
+            color: @msg-close-color;
             
             // Visual
             content: '✕';
@@ -77,26 +77,26 @@
 
     &.msg-info {
         // Visual
-        background-color: @msg-info;
-        border-color: darken(@msg-info, (@pct * .2));
+        background-color: @msg-info-bgcolor;
+        border-color: @msg-info-bordercolor;
     }
 
     &.msg-success {
         // Visual
-        background-color: @msg-success;
-        border-color: darken(@msg-success, (@pct * .2));
+        background-color: @msg-success-bgcolor;
+        border-color: @msg-success-bordercolor;
     }
 
     &.msg-note {
         // Visual
-        background-color: @msg-note;
-        border-color: darken(@msg-note, (@pct * .2));
+        background-color: @msg-note-bgcolor;
+        border-color: @msg-note-bordercolor;
     }
 
     &.msg-alert {
         // Visual
-        background-color: @msg-alert;
-        border-color: darken(@msg-alert, (@pct * .2));
+        background-color: @msg-alert-bgcolor;
+        border-color: @msg-alert-bordercolor;
     }
 
 }
