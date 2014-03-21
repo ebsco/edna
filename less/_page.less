@@ -18,17 +18,14 @@ body & {
 .l5 {
     // Box-model
     .box(border);
-    padding: 0 15px;
-}
-
-.l1,
-.l2,
-.l3,
-.l4,
-.l5 {
-    // Box-model
-    max-width: 100%;
-    padding-bottom: 10px;
+    width: @pg-width;
+    min-width: @pg-width-min;
+    max-width: @pg-width-max;
+    padding: @lay-top-padding @lay-right-padding @lay-bottom-padding @lay-left-padding;
+    .clearfix;
+    &:first-child {
+        padding-top: 0;
+    }
 }
 
 header {
