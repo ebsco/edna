@@ -22,13 +22,18 @@ h6 {
     
     // Typography
     font-weight: bold;
-    line-height: 1.25em;
     color: @colorP2;
     
-    > a {
+    > a,
+    > a:visited,
+    > a:focus,
+    > a:active {
         // Typography
         color: @link-color;
         text-decoration: none;
+    }
+    > a:hover {
+        color: @link-color-hover;
     }
 }
 
@@ -38,13 +43,13 @@ h1 {
 
     // Typography
     .fontsize(@h1-size);
-    line-height: 1;
+    line-height: @h1-line-height;
 }
 
 h2 {
     // Typography
     .fontsize(@h2-size);
-    line-height: 22px;
+    line-height: @h2-line-height;
 }
 
 h3 {
@@ -52,17 +57,20 @@ h3 {
     margin: 0 0 14px 0;
     // Typography
     .fontsize(@h3-size);
+    line-height: @h3-line-height;
 }
 
 h4 {
     // Typography
     .fontsize(@h4-size);
+    line-height: @h4-line-height;
 }
 
 h5 {
     // Typography
     .fontsize(@h5-size);
     font-weight: bold;
+    line-height: @h5-line-height;
 }
 
 h6 {
@@ -70,6 +78,7 @@ h6 {
     .fontsize(@h6-size);
     font-style: italic;
     font-weight: bold;
+    line-height: @h6-line-height;
 }
 
 p {
@@ -78,7 +87,7 @@ p {
 
     // Typography
     .fontsize(@p-size);
-    line-height: 19px;
+    line-height: @p-line-height;
     color: @p-color;
 }
 
