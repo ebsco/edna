@@ -33,6 +33,7 @@ header {
     position: relative;
 
     // Box-model
+    min-width: @pg-width-min;
     margin-bottom: 33px;
 
     // Visual
@@ -60,4 +61,8 @@ header {
         content: '';
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@header-border-gradient-stopcolor', endColorstr='@header-border-gradient-startcolor',GradientType=0 ); /* IE6-9 */
     }
+}
+
+footer {
+    min-width: @pg-width-min;
 }
