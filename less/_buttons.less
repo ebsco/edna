@@ -1,7 +1,7 @@
 /* BUTTONS */
 button,
-input[type=submit],
-input[type=reset],
+input[type="submit"],
+input[type="reset"],
 .btn {
     // Box-model
     display: inline-block;
@@ -10,45 +10,45 @@ input[type=reset],
     
     // Typography
     .fontsize(1.4);
-    color: @colorS1;
+    color: @btn-color;
     text-decoration: none;
     
     // Visual
     cursor: pointer;
-    background-color: @colorP3;
-    border: 1px solid darken(@colorP3, 10%);
+    background-color: @btn-bgcolor;
+    border: 1px solid @btn-bordercolor;
     -moz-border-radius: @radius;
          border-radius: @radius;
     
     &:hover {
         // Typography
-        color: darken(@colorP3, 5);
+        color: @btn-color-hover;
         
         // Visual
-        background-color: fade(#b2a89b,50%);
+        background-color: @btn-bgcolor-hover;
         
     }
 
     // TEXT ONLY BUTTONS
     &.txt {
         // Typography
-        color: @link-color;
+        color: @btn-color-txt;
         
         // Visual
-        background-color: transparent;
-        border: none;
+        background-color: @btn-bgcolor-txt;
+        border: @btn-bordercolor-txt;
         
         &:hover {
             // Typography
-            color: @link-color-active;
+            color: @btn-bgcolor-txt-hover;
             text-decoration: underline;
         }
     }
 
     // LEFT MARGIN FOR BUTTON ROWS
     + button,
-    + input[type=submit],
-    + input[type=reset],
+    + input[type="submit"],
+    + input[type="reset"],
     + .btn {
         // Box-model
         margin-left: 10px;
@@ -57,44 +57,44 @@ input[type=reset],
     // STATES
     &.action {
         // Typography
-        color: @colorP2;
+        color: @btn-action-color;
         
         // Visual
-        background-color: @btn-action;
-        border-color: darken(@btn-action, (@pct * .2));
+        background-color: @btn-action-bgcolor;
+        border-color: @btn-action-bordercolor;
 
         &:hover {
             // Visual
-            background-color: darken(@btn-action, (@pct * .2));
-            border-color: darken(@btn-action, (@pct * .3));
+            background-color: @btn-action-bgcolor-hover;
+            border-color: @btn-action-bordercolor-hover;
         }
     }
     &.primary {
         // Typography
-        color: @colorS2;
+        color: @btn-primary-color;
         
         // Visual
-        background-color: @btn-primary;
-        border-color: darken(@btn-primary, (@pct * .05));
+        background-color: @btn-primary-bgcolor;
+        border-color: @btn-primary-bordercolor;
 
         &:hover {
             // Visual
-            background-color: darken(@btn-primary, (@pct * .07));
-            border-color: darken(@btn-primary, (@pct * .06));
+            background-color: @btn-primary-bgcolor-hover;
+            border-color: @btn-primary-bordercolor-hover;
         }
     }
     &.cancel {
         // Typography
-        color: @colorP2;
+        color: @btn-cancel-color;
         
         // Visual
-        background-color: @btn-cancel;
-        border-color: darken(@btn-cancel, (@pct * .2));
+        background-color: @btn-cancel-bgcolor;
+        border-color: @btn-cancel-bordercolor;
 
         &:hover {
             // Visual
-            background-color: darken(@btn-cancel, (@pct * .1));
-            border-color: darken(@btn-cancel, (@pct * .3));
+            background-color: @btn-cancel-bgcolor-hover;
+            border-color: @btn-cancel-bordercolor-hover;
         }
     }
     &.search {
@@ -102,33 +102,33 @@ input[type=reset],
         .box(border);
         
         // Typography
-        color: @colorS2;
+        color: @btn-search-color;
         
         // Visual
-        background-color: @btn-search;
-        border-color: @btn-search-border;
+        background-color: @btn-search-bgcolor;
+        border-color: @btn-search-bordercolor;
 
         &:hover {
             // Visual
-            background-color: darken(@btn-search, (@pct * .1));
-            border-color: darken(@btn-search-border, (@pct * .1));
+            background-color: @btn-search-bgcolor-hover;
+            border-color: @btn-search-bordercolor-hover;
         }
     }
     &.disabled,
     button[disabled],
-    input[type=submit][disabled],
-    input[type=reset][disabled] {
+    input[type="submit"][disabled],
+    input[type="reset"][disabled] {
         // Typography
-        color: @colorS4;
+        color: @btn-disabled-color;
         cursor: default;
         
         // Visual
-        background-color: @colorS3;
-        border-color: @colorS4;
+        background-color: @btn-disabled-bgcolor;
+        border-color: @btn-disabled-bordercolor;
 
         &:hover {
             // Visual
-            background-color: @colorS3;
+            background-color: @btn-disabled-bgcolor-hover;
         }
     }
 }
@@ -146,8 +146,8 @@ input[type=reset],
         float: left;
 
         // Visual
-        -moz-border-radius: 3px;
-             border-radius: 3px;
+        -moz-border-radius: @radius;
+             border-radius: @radius;
         border-left-width: 0;
         
     }

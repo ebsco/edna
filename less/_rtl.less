@@ -12,16 +12,7 @@
     > * {
         // Typography
         unicode-bidi: bidi-override;
-    }
 
-    // override RTL for bidirectional strings
-    > .bidi {
-        // Typography
-        unicode-bidi: embed;
-    }
-
-    // these will let you use
-    > * {
         &[dir="ltr"] {
             .international(ltr, embed);
         }
@@ -29,6 +20,12 @@
         &[dir="rtl"] {
             .international(rtl, embed);
         }
+    }
+
+    // override RTL for bidirectional strings
+    > .bidi {
+        // Typography
+        unicode-bidi: embed;
     }
 
     // want to use the <bdo> element? go right ahead!

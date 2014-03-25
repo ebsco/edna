@@ -19,9 +19,24 @@
         .fontsize(1.2);
     }
 
-    .img {
+    .resultitem-img {
         // Box-model
+        display: inline-block;
+        box-sizing: border-box;
         float: left;
-        width: 150px;
+        width: @resultitem-img-width;
+        margin-top: 5px;
+
+        > .img {
+            // Box-model
+            width: 100%;
+        }
     }
+
+    .resultitem-content {
+        // Box-model
+        .box(border);
+        margin-left: @resultitem-content-margin;
+    }
+
 }

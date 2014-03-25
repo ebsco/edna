@@ -10,7 +10,7 @@
     line-height: normal;
     
     // Visual
-    background-color: @bg1;
+    background-color: @dd-bgcolor;
     -moz-border-radius: @radius;
          border-radius: @radius;
 
@@ -27,8 +27,8 @@
         
         // Typography
         list-style-type: none;
-        background-color: #fff;
-        border: 1px solid @border3;
+        background-color:@dd-list-bgcolor;
+        border: 1px solid @dd-list-bordercolor;
         -moz-border-radius: @radius;
              border-radius: @radius;
     }
@@ -44,10 +44,10 @@
         
         &:hover {
             // Typography
-            color: @colorS1;
+            color: @dd-label-color-hover;
             
             // Visual
-            background-color: darken(@bg1, 20);
+            background-color: @dd-label-bgcolor-hover;
         }
     }
 
@@ -58,14 +58,14 @@
         
         &:checked + .dd-label {
             // Typography
-            color: @font-color;
+            color: @dd-input-color;
             
             // Visual
-            background-color: darken(@bg2, 10%);
+            background-color: @dd-input-bgcolor;
 
             &:hover {
                 // Visual
-                background-color: @bg3;
+                background-color: @dd-input-bgcolor-hover;
             }
         }
     }

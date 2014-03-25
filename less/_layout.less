@@ -18,34 +18,12 @@
     }
 }
 
-// Set default styles for all p1s
-.l1,
-.l2,
-.l3,
-.l4,
-.l5 {
-    // Box-model
-    width: 100%;
-    max-width: 1600px;
-    min-width: 600px;
-    padding: @lay-top-padding @lay-right-padding @lay-bottom-padding @lay-left-padding;
-    .clearfix;
-        
-    &:first-child {
-        padding-top: 0;
-    }
-}
-
 // set up a 350px width fixed width column
 // remember the 70px padding-left!
 .fixed-col() {
     &.fixed-r {
         > .col {
-            // Box-model
-            width: 100%;
-            padding-right: 420px;
-
-            &.w350 {
+            &.fw350 {
                 // Positioning
                 float: right;
                 
@@ -53,6 +31,28 @@
                 width: 420px;
                 padding-right: 0;
                 margin-left: -420px;
+        
+                + .col {
+                    // Box-model
+                    width: 100%;
+                    padding-right: 420px;
+                }
+            }
+
+            &.fw425 {
+                // Positioning
+                float: right;
+                
+                // Box-model
+                width: 495px;
+                padding-right: 0;
+                margin-left: -495px;
+        
+                + .col {
+                    // Box-model
+                    width: 100%;
+                    padding-right: 495px;
+                }
             }
         }
 
@@ -61,7 +61,12 @@
                 // Box-model
                 padding-right: 0;
 
-                &.w350 {
+                &.fw350 {
+                    // Box-model
+                    padding-left: 0;
+                }
+
+                &.fw425 {
                     // Box-model
                     padding-left: 0;
                 }
@@ -71,16 +76,34 @@
 
     &.fixed-l {
         > .col {
-            // Box-model
-            width: 100%;
-            padding-left: 470px;
-            &.w350 {
+            &.fw350 {
                 // Box-model
                 float: left;
                 width: 420px;
                 padding-right: 70px;
                 padding-left: 0;
                 margin-right: -420px;
+        
+                + .col {
+                    // Box-model
+                    width: 100%;
+                    padding-left: 420px;
+                }
+            }
+
+            &.fw425 {
+                // Box-model
+                float: left;
+                width: 495px;
+                padding-right: 70px;
+                padding-left: 0;
+                margin-right: -495px;
+        
+                + .col {
+                    // Box-model
+                    width: 100%;
+                    padding-left: 495px;
+                }
             }
         }
 
@@ -89,7 +112,12 @@
                 // Box-model
                 padding-left: 0;
 
-                &.w350 {
+                &.fw350 {
+                    // Box-model
+                    padding-right: 0;
+                }
+
+                &.fw425 {
                     // Box-model
                     padding-right: 0;
                 }

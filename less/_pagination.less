@@ -19,11 +19,11 @@
             padding: 0 10px;
             
             // Typography
-            color: lighten(@font-color, 20%);
+            color: pg-list-item-color;
             cursor: pointer;
             
             // Visual
-            border-radius: 1px solid @colorS4;
+            border: 1px solid @pg-list-item-bordercolor;
             
             &:nth-last-child(1) {
                 // Visual
@@ -31,38 +31,38 @@
             }
             &:hover {
                 // Typography
-                color: @font-color;
+                color: @pg-list-item-color-hover;
 
                 // Visual
-                background-color: @bg2;
+                background-color: @pg-list-item-bgcolor-hover;
             }
             &.inactive {
                 // Typography
-                color: lighten(@font-color, 20%);
+                color: @pg-list-item-inactive-color;
                 cursor: default;
                 &:hover {
                     // Typography
-                    color: lighten(@font-color, 20%);
+                    color: @pg-list-item-inactive-color-hover;
                     
                     // Visual
-                    background-color: transparent;
+                    background-color: @pg-list-item-inactive-bgcolor-hover;
                     
                 }
             }
             &.active {
                 // Typography
-                color: @font-color;
+                color: @pg-list-item-active-color;
                 cursor: default;
                 
                 // Visual
-                background-color: @colorS4;
+                background-color: @pg-list-item-active-bgcolor;
                 
                 &:hover {
                     // Typography
-                    color: @font-color;
+                    color: @pg-list-item-active-color-hover;
                     
                     // Visual
-                    background-color: @colorS4;
+                    background-color: @pg-list-item-active-bgcolor-hover;
                     
                 }
             }

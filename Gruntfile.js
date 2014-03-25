@@ -90,7 +90,6 @@ module.exports = function(grunt) {
 	grunt.registerTask("server", [
 		"express",
 		"less",
-		"lesslint",
 		"watch"
 	]);
 

@@ -1,7 +1,7 @@
 /* TABLES */
 table {
     // Visual
-    border: 1px solid @border1;
+    border: 1px solid @table-bordercolor;
     border-collapse: separate;
     border-spacing: 0;
     -moz-border-radius: @radius;
@@ -10,7 +10,7 @@ table {
 
 thead tr {
     // Visual
-    background-color: @colorS2;
+    background-color: @table-thead-bgcolor;
     -moz-border-radius: @radius @radius 0 0;
          border-radius: @radius @radius 0 0;
 }
@@ -24,7 +24,7 @@ th {
     text-align: left;
     
     // Visual
-    border-left: 1px solid @border1;
+    border-left: 1px solid @table-th-bordercolor;
 }
 
 td {
@@ -32,7 +32,7 @@ td {
     padding: 10px 20px;
     
     // Visual
-    border-left: 1px solid @border1;
+    border-left: 1px solid @table-td-bordercolor;
 }
 
 th,
