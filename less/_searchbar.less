@@ -28,16 +28,22 @@
             // Positioning
             .pos(absolute);
             top: 5px;
-            right: -5px;
+            right: 0;
+
+            // Box-model
+            padding: 0 10px;
+
             
             // Typography
             .fontsize(2);
             line-height: 2rem;
             color: @searchbar-reset-color;
-            
+
             // Visual
             background-color: @searchbar-reset-bgcolor;
             border: @searchbar-reset-bordercolor;
+            background-image: url("http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/icon-sprites.png");
+            background-position: 8px 145px;
             
             &:hover {
                 // Typography
@@ -57,7 +63,7 @@
 
     > .searchtext-wrap {
         // Box-model
-        margin: 16px 0;
+        margin: 10px 0 20px;
 
         > .searchbar-link {
             // Box-model

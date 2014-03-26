@@ -5,7 +5,7 @@
     overflow: visible;
     
     // Typography
-    .fontsize(1.2);
+    .font-family(tahoma);
     
     // Visual
     background-color: @tbar-color;
@@ -19,45 +19,35 @@
     .bar {
         // Positioning
         .pos(relative);
-    }
-    
-    .nav-item,
-    .user-nav-item {
-        // Positioning
-        position: relative;
-        
-        // Box-model
-        padding: 10px;
-        
-        // Typography
-        color: @usernav-item-color;
-        
+
         // Visual
-        background-color: @usernav-item-bgcolor;
-    
-        &:hover {
-            // Visual
-            background-color: @usernav-item-bgcolor-hover;
-            a {
-                // Typography
-                text-decoration: none;
-            }
-        }
-    }
-    
-    .nav {
+        @color: #fff;
+        @top: fadeout(@color, 70%);
+        @bottom: fadeout(@color, 100%);
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
+        background: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
+        background:  -ms-linear-gradient(bottom, @bottom, @top);
+        background:   -o-linear-gradient(@top, @bottom);
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom));
+    }    
+}
+
+.nav {
+    // Box-model
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+
+    .nav-item {
         // Box-model
         display: inline-block;
-        padding: 0;
-        margin: 0;
-    
-        .nav-item {
-            // Box-model
-            display: inline-block;
-            
-            // Typography
-            cursor: pointer;            
-        }
+        padding: 7px 8px 10px 12px;
+        
+        // Typography
+        .fontsize(1.3);
+        cursor: pointer;
+        font-weight: bold;
+        letter-spacing: 1px;
     }
 }
 
@@ -67,6 +57,9 @@
     float: right;
     padding: 0;
     margin: 0;
+
+    // Visual
+    background-color: @tbar-color;
     
     .user-nav-item {
         // Box-model
@@ -74,31 +67,25 @@
         float: left;
         width: auto;
         height: auto;
-        
+        padding: 8px 12px 11px;
+
         // Typography
+        .fontsize(1.2);
         vertical-align: top;      
         cursor: pointer;
 
-        a {
-            > .icon {
-                // Box-model
-                display: inline-block;
-                overflow: hidden;   
-            }
-        }
+        // Visual
+        background-color: @usernav-item-bgcolor;
     
-        &:hover {
-            // Visual
-            background-color: @usernav-item-bgcolor-hover;
+        > .icon {
+            // Box-model
+            display: inline-block;
+            overflow: hidden;   
         }
-    }
-    
-    .user-nav {
-        // Box-model
-        display: none;
     }
     
     .folder {
+        padding: 8px 12px 11px 9px;
         a {
             // Box-model
             padding-left: 20px;
@@ -126,6 +113,12 @@
     }
     
     .languages {
+        // a usernav inside a usernav
+        .user-nav {
+            // Box-model
+            display: none;
+        }
+        
         .icon {
             // Box-model
             width: 10px;
@@ -150,3 +143,23 @@
         }   
     }
 }
+
+.nav-item,
+.user-nav-item {
+    // Positioning
+    position: relative;
+    
+    // Typography
+    color: @usernav-item-color;
+
+    &:hover {
+        // Visual
+        background-color: @usernav-item-bgcolor-hover;
+        background-color: @usernav-item-bgcolor-hover;
+        a {
+            // Typography
+            text-decoration: none;
+        }
+    }
+}
+
