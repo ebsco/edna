@@ -75,3 +75,34 @@
         }
     }
 }
+
+.ui-autocomplete {
+    .ui-menu-item {
+        margin: 0;
+
+        a {
+            cursor: pointer;
+        }
+
+        &:first-child {
+            margin-top: 0 !important;
+            a {
+                &.ui-state-focus,
+                &.ui-state-active {
+                    margin-top: 0 !important;
+                }
+            }
+
+        }
+
+        &:last-child {
+            margin-bottom: 0 !important;
+            a {
+                &.ui-state-focus,
+                &.ui-state-active {
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+    }
+}
