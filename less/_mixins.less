@@ -73,20 +73,23 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 // new mixin
-// .fontfamily(@ff) {
-//     & when (@ff = sans) {
-//         font-family: Helvetica, Arial, sans-serif;
-//     }
-//     & when (@ff = serif) {
-//         font-family: Georgia, serif;
-//     }
-//     & when (@ff = mono) {
-//         font-family: monospace;
-//     }
-//     & when (@ff = code) {
-//         font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-//     }
-// }
+.fontfamily(@ff) {
+    & when (@ff = sans) {
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    & when (@ff = serif) {
+        font-family: Georgia, serif;
+    }
+    & when (@ff = tahoma) {
+        font-family: Tahoma, sans-serif;
+    }
+    & when (@ff = mono) {
+        font-family: monospace;
+    }
+    & when (@ff = code) {
+        font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    }
+}
 
 
 .font-color(@color: @font-color) {
