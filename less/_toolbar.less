@@ -10,7 +10,7 @@
     // Visual
     background-color: @tbar-color;
     
-    a {
+    .txt-link {
         // Typography
         font: inherit;
         color: inherit;
@@ -31,7 +31,7 @@
         background: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
         background:  -ms-linear-gradient(bottom, @bottom, @top);
         background:   -o-linear-gradient(@top, @bottom);
-        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom));
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
     }    
 }
 
@@ -89,7 +89,7 @@
     
     .folder {
         padding: 8px 12px 11px 9px;
-        a {
+        .txt-link {
             // Box-model
             padding-left: 20px;
     
@@ -103,7 +103,10 @@
                 height: 15px;
                 
                 // Visual
-                background: @usernav-item-folder-bgcolor url(@usernav-item-folder-icon) 8px -1px no-repeat;
+                background-color: @usernav-item-folder-bgcolor;
+                background-image: url(@usernav-item-folder-icon);
+                background-position: 8px -1px;
+                background-repeat: no-repeat;
             }
         }
     
@@ -158,11 +161,9 @@
     &:hover {
         // Visual
         background-color: @usernav-item-bgcolor-hover;
-        background-color: @usernav-item-bgcolor-hover;
-        a {
+        .txt-link {
             // Typography
             text-decoration: none;
         }
     }
 }
-
