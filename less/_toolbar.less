@@ -13,7 +13,14 @@
     .txt-link {
         // Typography
         font: inherit;
-        color: inherit;
+        color: @usernav-item-color;
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+            // Typography
+            color: @usernav-item-color;
+        }
     }
     
     .bar {
