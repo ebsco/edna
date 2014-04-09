@@ -2,9 +2,11 @@
 // Layouts are made up of regions. Regions will have widgets in them.
 // Set up the basic layout region
 .col {
+    // Positioning
+    float: left;
+
     // Box-model
     .box(border);
-    float: left;
     width: 100%;
     padding: @col-top-padding @col-right-padding @col-bottom-padding @col-left-padding;
     
@@ -77,8 +79,10 @@
     &.fixed-l {
         > .col {
             &.fw350 {
-                // Box-model
+                // Positioning
                 float: left;
+                
+                // Box-model
                 width: 420px;
                 padding-right: 70px;
                 padding-left: 0;
@@ -92,8 +96,10 @@
             }
 
             &.fw425 {
-                // Box-model
+                // Positioning
                 float: left;
+                
+                // Box-model
                 width: 495px;
                 padding-right: 70px;
                 padding-left: 0;

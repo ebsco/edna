@@ -78,15 +78,14 @@
     > .w66,
     > .w75,
     > .w80 {
+        // Box-model
+        padding-right: 0;
+        padding-left: @widget-padding;
+
         &:first-child {
             // Box-model
             padding-right: @widget-padding;
             padding-left: 0;
-        }
-        &:last-child {
-            // Box-model
-            padding-right: 0;
-            padding-left: @widget-padding;
         }
     }
 }

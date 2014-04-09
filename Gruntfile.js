@@ -27,7 +27,8 @@ module.exports = function(grunt) {
 					sourceMap: true
 				},
 				files: {
-					"edna.css": "edna.less"
+					"edna.css": "edna.less",
+					"edna.ie.css": "edna.ie.less"
 				}
 			},
 			dist: {
@@ -39,7 +40,8 @@ module.exports = function(grunt) {
 					report: 'gzip'
 				},
 				files: {
-					"edna.min.css": "edna.less"
+					"edna.min.css": "edna.less",
+					"edna.min.ie.css": "edna.ie.less"
 				}
 			}
 		},
