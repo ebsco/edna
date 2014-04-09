@@ -137,6 +137,10 @@
             border-color: @transport-slim-bordercolor;           
             border-width: 0;
            
+            // Typography
+            .fontsize(@transport-slim-fontsize);
+            font-family: @transport-slim-fontfamily;
+
             &:after {
                 // Box-model
                 display: inline-block;
@@ -158,7 +162,7 @@
                 color: @transport-slim-color-enabled;
 
                 // Visual
-                content: '\276F';
+                content: @transport-slim-arrow-top;
             }
         }
 
@@ -168,7 +172,7 @@
                 color: @transport-slim-color-enabled;
 
                 // Visual
-                content: '\276F';
+                content: @transport-slim-arrow-right;
             }
         }
 
@@ -181,7 +185,7 @@
                 color: @transport-slim-color-enabled;
 
                 // Visual
-                content: '\276E';
+                content: @transport-slim-arrow-bottom;
             }
         }
 
@@ -191,7 +195,7 @@
                 color: @transport-slim-color-enabled;
 
                 // Visual
-                content: '\276E';
+                content: @transport-slim-arrow-left;
             }
         }
     }
