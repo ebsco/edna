@@ -44,7 +44,7 @@
     position: absolute !important;
     height: (@px * .1); width: (@px * .1); 
     overflow: hidden;
-    clip: rect((@px * .1) (@px * .1) (@px * .1) (@px * .1)); /* IE6, IE7 */
+    clip: rect((@px * .1) (@px * .1) (@px * .1) (@px * .1)); // IE6, IE7
     clip: rect((@px * .1), (@px * .1), (@px * .1), (@px * .1));
 }
 .off-page {
@@ -123,9 +123,9 @@
 
 .box(@sizing) when (@sizing = content), (@sizing = border) {
     // should take either CONTENT or BORDER
-    -webkit-box-sizing: escape("@{sizing}-box"); /* Safari/Chrome, other WebKit */
-       -moz-box-sizing: escape("@{sizing}-box"); /* Firefox, other Gecko */
-            box-sizing: escape("@{sizing}-box"); /* Opera/IE 8+ */
+    -webkit-box-sizing: escape("@{sizing}-box"); // Safari/Chrome, other WebKit
+       -moz-box-sizing: escape("@{sizing}-box"); // Firefox, other Gecko
+            box-sizing: escape("@{sizing}-box"); // Opera/IE 8+
 }
 
 
