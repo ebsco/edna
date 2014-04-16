@@ -136,17 +136,29 @@
             // Visual
             border-color: @transport-slim-bordercolor;           
             border-width: 0;
+            outline: 0;
            
             // Typography
             .fontsize(@transport-slim-fontsize);
             font-family: @transport-slim-fontfamily;
 
-            &:after {
+            &:after,
+            &::after {
                 // Box-model
                 display: inline-block;
             }
+
+            &:focus {
+                &:after,
+                &::after {
+                    // Visual
+                    outline: auto 5px #98c1e9;
+                }
+            }
+
             &:hover {
-                &:after {
+                &:after,
+                &::after {
                     // Typography
                     color: @transport-slim-color-enabled-hover;
                 }
@@ -157,7 +169,8 @@
             // Visual
             .rotate(-90);
 
-            &:after {
+            &:after,
+            &::after {
                 // Typography
                 color: @transport-slim-color-enabled;
 
@@ -167,7 +180,8 @@
         }
 
         > .right {
-            &:after {
+            &:after,
+            &::after {
                 // Typography
                 color: @transport-slim-color-enabled;
 
@@ -180,17 +194,16 @@
             // Visual
             .rotate(-90);
 
-            &:after {
+            &:after,
+            &::after {
                 // Typography
                 color: @transport-slim-color-enabled;
-
-                // Visual
-                content: @transport-slim-arrow-bottom;
             }
         }
 
         > .left {
-            &:after {
+            &:after,
+            &::after {
                 // Typography
                 color: @transport-slim-color-enabled;
 
