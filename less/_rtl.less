@@ -1,12 +1,5 @@
 /* RTL */
 [dir="rtl"] {
-    // this is a mixin for use below
-    .international(@dir, @uni) {
-        // Typography
-        direction: @dir;
-        unicode-bidi: @uni;
-    }
-
     .international(rtl, bidi-override);
     // set the direction of all text to RTL
     > * {

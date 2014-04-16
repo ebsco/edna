@@ -69,6 +69,7 @@ input[type="reset"],
             border-color: @btn-action-bordercolor-hover;
         }
     }
+
     &.primary {
         // Typography
         color: @btn-primary-color;
@@ -83,6 +84,7 @@ input[type="reset"],
             border-color: @btn-primary-bordercolor-hover;
         }
     }
+
     &.cancel {
         // Typography
         color: @btn-cancel-color;
@@ -97,6 +99,7 @@ input[type="reset"],
             border-color: @btn-cancel-bordercolor-hover;
         }
     }
+
     &.search {
         // Box-model
         .box(border);
@@ -114,6 +117,7 @@ input[type="reset"],
             border-color: @btn-search-bordercolor-hover;
         }
     }
+
     &.disabled,
     button[disabled],
     input[type="submit"][disabled],
@@ -151,10 +155,12 @@ input[type="reset"],
         border-left-width: 0;
         
     }
+
     .grp-btn + .grp-btn {
         // Box-model
         margin-left: 0;
     }
+
     :last-child,
     .last { // IE support
         // Visual
@@ -162,6 +168,7 @@ input[type="reset"],
              border-radius: 0 @radius @radius 0;
 
     }
+    
     :first-child,
     .first { //IE support
         // Visual

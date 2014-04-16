@@ -1,0 +1,39 @@
+/* AUTOCOMPLETE */
+.ui-autocomplete {
+    .ui-menu-item {
+        // Box-model
+        margin: 0;
+
+        a {
+            // Visual
+            cursor: pointer;
+        }
+
+        &:first-child {
+            // Box-model
+            margin-top: 0 !important;
+
+            a {
+                &.ui-state-focus,
+                &.ui-state-active {
+                    // Box-model
+                    margin-top: 0 !important;
+                }
+            }
+
+        }
+
+        &:last-child {
+            // Box-model
+            margin-bottom: 0 !important;
+
+            a {
+                &.ui-state-focus,
+                &.ui-state-active {
+                // Box-model
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+    }
+}

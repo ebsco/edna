@@ -68,40 +68,4 @@
             }
         }
     }
-
-    .transport {
-        @newPX: (@px * 1);
-        // Box-model
-        display: inline-block;
-        float: left;
-        
-
-        > .right,
-        > .left {
-            // Typography
-            color: @colorS4;
-
-            // Visual
-            border-top: (@newPX * .9) solid transparent;
-            border-bottom: (@newPX * .9) solid transparent;
-        }
-        > .right {
-            // Box-model
-            margin-right: 0;
-            margin-left: (@newPX * .5);
-
-            // Visual
-            border-left: @newPX solid @colorS4;
-        }
-        > .left {
-            // Box-model
-            margin-right: (@newPX * .5);
-            margin-left: 0;
-            
-            // Visual
-            border-right: @newPX solid @colorS4;
-            
-        }
-
-    }
 }

@@ -5,6 +5,7 @@
     // Box-model
     display: block;
     width: 100%;
+    
     // Misc
     .clearfix;
     
@@ -84,23 +85,22 @@
 
         &:first-child {
             // Box-model
-            padding-right: @widget-padding;
             padding-left: 0;
         }
     }
 }
 
-// rtl stuff
-[dir="rtl"] {
-    .w20,
-    .w25,
-    .w33,
-    .w40,
-    .w50,
-    .w60,
-    .w66,
-    .w75,
-    .w80 {
+.w20,
+.w25,
+.w33,
+.w40,
+.w50,
+.w60,
+.w66,
+.w75,
+.w80 {
+    // rtl stuff
+    [dir="rtl"] & {
         // Box-model
         float: right;
     }

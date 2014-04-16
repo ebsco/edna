@@ -1,10 +1,6 @@
 @import "_variables.less";
-//
-    // EDNA
-//
 
 // MIXINS
-
 
 //----- MIXINS FOR MIXINS -----------------------------//
 
@@ -748,4 +744,12 @@
             border-right-color: @transport-color-hover;
         }
     }
+}
+
+
+//----- RTL ---------------------------------------------//
+.international(@dir, @uni) {
+    // Typography
+    direction: @dir;
+    unicode-bidi: @uni;
 }
