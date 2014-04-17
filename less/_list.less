@@ -129,7 +129,8 @@ ol {
             text-decoration: none;
         }
 
-        &:before {
+        &:before,
+        &::before {
             // Box-model
             display: inline-block;
             width: 5px;
@@ -153,7 +154,8 @@ ol {
         }
 
         &.expand {
-            &:before {
+            &:before,
+            &::before {
                 .before;
                 // Visual
                 content: '\229E';
@@ -161,7 +163,8 @@ ol {
         }
 
         &.collapse {
-            &:before {
+            &:before,
+            &::before {
                 .before;
                 // Visual
                 content: '\229F';
@@ -173,7 +176,8 @@ ol {
         // Box-model
         margin-left: 15px;
 
-        &:after {
+        &:after,
+        &::after {
             // Box-model
             display: inline-block;
             margin-left: 5px;

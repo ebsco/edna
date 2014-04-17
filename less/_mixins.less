@@ -18,12 +18,15 @@
 .clearfix() {
   *zoom: 1;
     &:before,
-    &:after {
+    &:after,
+    &::before,
+    &::after {
       display: table;
       line-height: 0;
       content: "";
     }
-    &:after {
+    &:after,
+    &::after {
       clear: both;
     }
 }
