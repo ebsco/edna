@@ -1,23 +1,70 @@
 /* AUTOCOMPLETE */
+.ui-helper-hidden-accessible {
+    .off-page;
+}
 .ui-autocomplete {
+    // Box-model
+    padding: 0;
+
+    // Typography
+    color: @ac-color;
+    .fontfamily(sans);
+    .fontsize(@ac-size);
+
+    // Visual
+    background-image: none !important; // important needed to override jQuery UI image
+    background-color: @ac-bgcolor;
+    border: 1px solid @ac-bordercolor;
+    .radius(0);
+    list-style-type: none;
+
     .ui-menu-item {
         // Box-model
         margin: 0;
 
         a {
+            // Box-model
+            display: block;
+            padding: 6px 4px;
+            
+            // Typography
+            line-height: 1.25em;
+            
             // Visual
             cursor: pointer;
+            .truncate;
+
+            &.ui-state-focus,
+            &.ui-state-active {
+                // Box-model
+                margin: 0;
+                
+                // Typography
+                color: @ac-result-color-hover;
+                
+                // Visual
+                background-color: @ac-result-bgcolor-hover;
+            }            
+        }
+       
+        &:hover a {
+            // Typography
+            color: @ac-result-color-hover;
+            text-decoration: none;
+            
+            // Visual
+            background-color: @ac-result-bgcolor-hover;
         }
 
         &:first-child {
             // Box-model
-            margin-top: 0 !important;
+            margin-top: 0;
 
             a {
                 &.ui-state-focus,
                 &.ui-state-active {
                     // Box-model
-                    margin-top: 0 !important;
+                    margin-top: 0;
                 }
             }
 
@@ -25,15 +72,23 @@
 
         &:last-child {
             // Box-model
-            margin-bottom: 0 !important;
+            margin-bottom: 0;
 
             a {
                 &.ui-state-focus,
                 &.ui-state-active {
                 // Box-model
-                    margin-bottom: 0 !important;
+                    margin-bottom: 0;
                 }
             }
         }
+    }
+
+    .ui-corner-all {
+        // Visual
+        background-image: none;
+        .radius(0);
+        border-style: solid;
+        border-width: 0;
     }
 }
