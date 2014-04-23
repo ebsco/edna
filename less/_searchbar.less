@@ -19,7 +19,7 @@
         > input[type="text"] {
             // Box-model
             height: 30px;
-            padding: 2.5px 28px 2.5px 5px;
+            padding: 2.5px 23px 2.5px 5px;
 
             // Visual
             border-color: @searchbar-input-bordercolor;
@@ -28,11 +28,13 @@
         > .reset {
             // Positioning
             .pos(absolute);
-            top: 5px;
-            right: 3px;
+            top: 8px;
+            right: 8px;
 
             // Box-model
-            padding: 0 10px;
+            width: 11px;
+            height: 14px;
+            padding: 0;
 
             
             // Typography
@@ -43,8 +45,9 @@
             // Visual
             background-color: @searchbar-reset-bgcolor;
             background-image: url("http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/icon-sprites.png");
-            background-position: 0 145px;
+            background-position: -2px 141px;
             border: @searchbar-reset-bordercolor;
+            border-radius: 0;
             
             &:hover {
                 // Typography

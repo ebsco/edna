@@ -53,6 +53,12 @@
 // *******
 
 // BUTTONS
+@btn-action: #f5dd6a;
+@btn-primary: #007f00;
+@btn-cancel: @colorS4;
+@btn-search: #1a7a85;
+@btn-search-border: #106175;
+
 @btn-color: @colorS1;
 @btn-color-hover: darken(@colorP3, 5);
 @btn-bgcolor: @colorP3;
@@ -65,39 +71,39 @@
 @btn-bordercolor-txt: none;
 // action button
 @btn-action-color: @colorP2;
-// @btn-action-color-hover: ;
+@btn-action-color-hover: @colorP2;
 @btn-action-bgcolor: #f5dd6a;
 @btn-action-bgcolor-hover: darken(@btn-action-bgcolor, (@pct * .2));
 @btn-action-bordercolor: darken(@btn-action-bgcolor, (@pct * .2));
 @btn-action-bordercolor-hover: darken(@btn-action-bgcolor, (@pct * .3));
 // primary button
 @btn-primary-color: #e6e6e6;
-// @btn-primary-color-hover: ;
+@btn-primary-color-hover: #e6e6e6;
 @btn-primary-bgcolor: #007f00;
 @btn-primary-bgcolor-hover: darken(#007f00, (@pct * .07));
 @btn-primary-bordercolor: darken(#007f00, (@pct * .05));
 @btn-primary-bordercolor-hover: darken(#007f00, (@pct * .06));
 // cancel button
 @btn-cancel-color: @colorP2;
-// @btn-cancel-color-hover: ;
+@btn-cancel-color-hover: @colorP2;
 @btn-cancel-bgcolor: #e6e6e6;
 @btn-cancel-bgcolor-hover: #ccc;
 @btn-cancel-bordercolor: #b3b3b3;
 @btn-cancel-bordercolor-hover: #999;
 // search button
 @btn-search-color: @colorS2;
-// @btn-search-color-hover: ;
+@btn-search-color-hover: @colorS2;
 @btn-search-bgcolor: #1a7a85;
 @btn-search-bgcolor-hover: #12535a;
 @btn-search-bordercolor: #106175;
 @btn-search-bordercolor-hover: #0a3c48;
 // disabled
 @btn-disabled-color: @colorS4;
-// @btn-disabled-color-hover: ;
+@btn-disabled-color-hover: @colorS4;
 @btn-disabled-bgcolor: @colorS3;
 @btn-disabled-bgcolor-hover: @colorS3;
 @btn-disabled-bordercolor: @colorS4;
-// @btn-disabled-bordercolor-hover: ;
+@btn-disabled-bordercolor-hover: @colorS4;
 
 
 // CAROUSEL
@@ -117,9 +123,9 @@
 @dd-list-bgcolor: #fff;
 @dd-list-bordercolor: @border3;
 // labels
-// @dd-label-color: ;
+@dd-label-color: @colorS1;
 @dd-label-color-hover: @colorS1;
-// @dd-label-bgcolor: ;
+@dd-label-bgcolor: @bg1;
 @dd-label-bgcolor-hover: darken(@bg1, 20);
 // inputs
 @dd-input-color: @font-color;
@@ -133,6 +139,7 @@
 
 // INPUTS
 @input-bordercolor: #aaa8a8;
+@placeholder-color: #999;
 
 
 //LAYOUT
@@ -182,7 +189,7 @@
 
 
 // MODALS
-// @modal-color: ;
+@modal-color: @bg1;
 @modal-bgcolor: @colorS1;
 @modal-bordercolor: @border1;
 @modal-header-border-color: @border1;
@@ -201,7 +208,6 @@
 @header-border-gradient-bgcolor: #fff;
 @header-border-gradient-startcolor: #fcfcfc;
 @header-border-gradient-stopcolor: #fff;
-
 
 
 // PAGINATION
@@ -235,9 +241,9 @@
 @searchbar-reset-color: #ccc;
 @searchbar-reset-color-hover: darken(@searchbar-reset-color,10);
 @searchbar-reset-bgcolor: transparent;
-// @searchbar-reset-bgcolor-hover: ;
+@searchbar-reset-bgcolor-hover: transparent;
 @searchbar-reset-bordercolor: none;
-// @searchbar-reset-bordercolor-hover: ;
+@searchbar-reset-bordercolor-hover: none;
 
 
 // SPINNER
@@ -247,7 +253,7 @@
 @spinner-img: @spinner-md;
 
 // TABLES
-// @table-bgcolor: ;
+@table-bgcolor: @bg1;
 @table-bordercolor: @border1;
 @table-thead-bgcolor: @colorS2;
 @table-th-bordercolor: @border1;
@@ -261,12 +267,12 @@
 @tab-bgcolor-hover: fade(@tab-bgcolor, 50%);
 @tab-bgcolor-selected: @colorP1;
 @tab-bordercolor: @border1;
-// @tab-bordercolor-hover: ;
+@tab-bordercolor-hover: @border1;
 // active tabs
 @tab-active-bgcolor: @colorS1;
 @tab-active-bgcolor-hover: @colorS1;
 @tab-active-bordercolor: @border1;
-// @tab-active-bordercolor-hover: ;
+@tab-active-bordercolor-hover: @border1;
 // tab content
 @tab-content-bordercolor: @border1;
 @tab-active-content-bgcolor: @colorS1;
