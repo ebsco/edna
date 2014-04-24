@@ -1,55 +1,162 @@
 /* MODALS */
-.modal {
-    // Visual
-    background-color: @modal-bgcolor;
-    border: 1px solid @modal-bordercolor;
-    -moz-border-radius: @radius;
-         border-radius: @radius;
-    box-shadow: 0 0 @px rgba(0,0,0,.5);
 
-    .modal-header,
-    .modal-body,
-    .modal-footer {
-        // Box-model
-        padding: 15px;
+.ui-widget-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: @ui-dialog-overlay-bgcolor;
+    background-image: url(@ui-dialog-overlay-bgimage);
+    background-position: 50% 50% repeat;
+    background-repeat: repeat;
+    opacity: .50;
+    filter: Alpha(Opacity=50);
+}
+
+.ui-dialog {
+    .radius(9);
+    width: @ui-dialog-width;
+    overflow: hidden;
+    background: @ui-dialog-bgcolor;
+    -webkit-background-clip: padding-box;
+    position: absolute;
+    border: 1px solid @ui-dialog-bordercolor;
+
+    .ui-corner-all {
+        .radius(0);
     }
+}
 
-    .modal-header {
-        // Visual
-        border-bottom: 1px solid @modal-header-border-color;
+.ui-dialog-titlebar {
+    display: block;
+    font-weight: bold;
+    border-radius: 3px;
+    position: relative;
 
-        .modal-title {
-        // Box-model
-            margin: 0;
+    .ui-dialog-titlebar-close {
+        background: none;
+        border: none;
+        top: 22px;
+        right: 20px;
+
+        position: relative;
+        float: right;
+        z-index: 2;
+        width: 11px;
+        height: 14px;
+
+        padding: 0;
+
+        .ui-icon-closethick {
+            display: block;
+            text-indent: -99999px;
+            overflow: hidden;
+            background-repeat: no-repeat;
+
+            width: 20px;
+            height: 20px;
+
+            border-radius: 2px;
+
+            background-color: @ui-dialog-close-bgcolor;
+            background-image: url(@ui-dialog-close-bgimage);
+            background-position: -2px -3px;
+            background-repeat: no-repeat;
+
+            display: block;
         }
 
-        > .btn.close {
-            // Box-model
-            float: right;
-            padding: 10px 0;
-            
-            // Typography
-            .fontsize(1.25);
-            line-height: (@em * .625);
-            color: @modal-close-color;
-            vertical-align: middle;
-            
-            // Visual
-            background-color: @modal-close-bgcolor;
-            border: @modal-close-bordercolor;
-            
-            &:hover {
-                // Typography
-                color: @modal-close-color-hover;
+        .ui-button-text {
+            .off-page;
+        }
+    }
+}
+
+.modal {
+    height: auto !important;
+    padding: 0 30px;
+    position: relative;
+    background: 0;
+    zoom: 1;
+
+        .modal-header {
+            margin: 0 -30px 0;
+            padding: 0 25px 10px;
+            background-image: url(@ui-dialog-header-bgimage);
+            background-repeat: repeat-x;
+            background-position: 0 40px;
+
+            font-weight: bold;
+
+            .ui-dialog-title {
+                .fontsize(2);
+                font-weight: bold;
             }
         }
-    }
 
-    .modal-footer {
-        // Typography
-        text-align: right;
-        
-        // Visual
-        border-top: 1px solid @modal-footer-border-color;
+        .note {
+            border: 1px solid @ui-dialog-note-bordercolor;
+            background-color: @ui-dialog-note-bgcolor;
+            padding: 8px;
+            font-weight: bold;
+            .fontsize(1.2);
+
+            margin: 20px 0;
+        }
+
+        .modal-content {
+            margin-bottom: 20px;
+
+            .label {
+                float: left;
+                text-align: right;
+                font-weight: bold;
+                .fontsize(1.2);
+                padding: 5px 5px 0 0;
+            }
+
+            input[type=text] {
+
+
+                display: block;
+                padding: 4px;
+                width: 80%;
+                color: @ui-dialog-content-input-color;
+
+                display: inline-block;
+
+                margin-bottom: 20px;
+            }
+
+            .error {
+                color: @ui-dialog-content-error-color;
+                font-weight: bold;
+                display: block;
+                margin-left: 65px;
+            }
+
+            .separate-with,
+            .learn-more {
+                display: block;
+                .fontsize(1.2);
+            }
+
+        }
+
+        .modal-footer {
+            padding: 20px 0 0 0;
+
+            .btn {
+                height: 30px;
+            }
+            #iphonelearnmore {
+                display: inline;
+                margin-left: 10px;
+                .fontsize(1.2);
+            }
+        }
+
     }
 }
