@@ -1,12 +1,16 @@
 /* MODALS */
 
 .ui-widget-overlay {
+    // Positioning
     position: absolute;
     top: 0;
     left: 0;
+    
+    // Box-model
     width: 100%;
     height: 100%;
 
+    // Visual
     background-color: @ui-dialog-overlay-bgcolor;
     background-image: url(@ui-dialog-overlay-bgimage);
     background-position: 50% 50% repeat;
@@ -16,56 +20,73 @@
 }
 
 .ui-dialog {
-    .radius(9);
-    width: @ui-dialog-width;
-    overflow: hidden;
+    // Positioning
+    
+    // Box-model
+    width: @ui-dialog-width !important;
+    
+    // Typography
+    
+    // Visual
     background: @ui-dialog-bgcolor;
     -webkit-background-clip: padding-box;
-    position: absolute;
     border: 1px solid @ui-dialog-bordercolor;
+    .radius(9);
+    overflow: hidden;
 
     .ui-corner-all {
+        // Visual
         .radius(0);
     }
 }
 
 .ui-dialog-titlebar {
-    display: block;
-    font-weight: bold;
-    border-radius: 3px;
+    // Positioning
     position: relative;
+    
+    // Box-model
+    display: block;
+    
+    // Typography
+    font-weight: bold;
+    
+    // Visual
+    border-radius: 3px;
 
     .ui-dialog-titlebar-close {
-        background: none;
-        border: none;
+        // Positioning
+        position: relative;
         top: 22px;
         right: 20px;
-
-        position: relative;
-        float: right;
         z-index: 2;
+        
+        // Box-model
+        float: right;
         width: 11px;
         height: 14px;
-
         padding: 0;
-
+        
+        // Visual
+        background: none;
+        border: none;
+        
         .ui-icon-closethick {
+            // Box-model
             display: block;
-            text-indent: -99999px;
-            overflow: hidden;
-            background-repeat: no-repeat;
-
             width: 20px;
             height: 20px;
-
+            
+            // Typography
+            text-indent: -99999px;
+            
+            // Visual
+            overflow: hidden;
+            background-repeat: no-repeat;
             border-radius: 2px;
-
             background-color: @ui-dialog-close-bgcolor;
             background-image: url(@ui-dialog-close-bgimage);
             background-position: -2px -3px;
             background-repeat: no-repeat;
-
-            display: block;
         }
 
         .ui-button-text {
@@ -75,88 +96,112 @@
 }
 
 .modal {
+    // Positioning
+    position: relative;
+    zoom: 1;
+    
+    // Box-model
     height: auto !important;
     padding: 0 30px;
-    position: relative;
+    
+    // Visual
     background: 0;
-    zoom: 1;
 
-        .modal-header {
-            margin: 0 -30px 0;
-            padding: 0 25px 10px;
-            background-image: url(@ui-dialog-header-bgimage);
-            background-repeat: repeat-x;
-            background-position: 0 40px;
+    .modal-header {
+        // Box-model
+        padding: 0 25px 10px;
+        margin: 0 -30px 0;
+        
+        // Typography
+        font-weight: bold;
+        
+        // Visual
+        background-image: url(@ui-dialog-header-bgimage);
+        background-repeat: repeat-x;
+        background-position: 0 40px;
 
+        .ui-dialog-title {
+            // Typography
+            .fontsize(2);
             font-weight: bold;
+        }
+    }
 
-            .ui-dialog-title {
-                .fontsize(2);
-                font-weight: bold;
-            }
+    .note {
+        // Box-model
+        padding: 8px;
+        margin: 20px 0;
+        
+        // Typography
+        .fontsize(1.2);
+        font-weight: bold;
+        
+        // Visual
+        border: 1px solid @ui-dialog-note-bordercolor;
+        background-color: @ui-dialog-note-bgcolor;
+    }
+
+    .modal-content {
+        // Box-model
+        margin-bottom: 20px;
+        
+        // Typography
+        .fontsize(1.2);
+
+        .label {
+            // Box-model
+            padding: 5px 5px 0 0;
+            float: left;
+            
+            // Typography
+            font-weight: bold;
+            text-align: right;
         }
 
-        .note {
-            border: 1px solid @ui-dialog-note-bordercolor;
-            background-color: @ui-dialog-note-bgcolor;
-            padding: 8px;
-            font-weight: bold;
-            .fontsize(1.2);
-
-            margin: 20px 0;
-        }
-
-        .modal-content {
+        input[type=text] {
+            // Box-model
+            display: inline-block;
+            width: 80%;
+            padding: 4px;
             margin-bottom: 20px;
-
-            .label {
-                float: left;
-                text-align: right;
-                font-weight: bold;
-                .fontsize(1.2);
-                padding: 5px 5px 0 0;
-            }
-
-            input[type=text] {
-
-
-                display: block;
-                padding: 4px;
-                width: 80%;
-                color: @ui-dialog-content-input-color;
-
-                display: inline-block;
-
-                margin-bottom: 20px;
-            }
-
-            .error {
-                color: @ui-dialog-content-error-color;
-                font-weight: bold;
-                display: block;
-                margin-left: 65px;
-            }
-
-            .separate-with,
-            .learn-more {
-                display: block;
-                .fontsize(1.2);
-            }
-
+            
+            // Typography
+            color: @ui-dialog-content-input-color;
         }
 
-        .modal-footer {
-            padding: 20px 0 0 0;
-
-            .btn {
-                height: 30px;
-            }
-            #iphonelearnmore {
-                display: inline;
-                margin-left: 10px;
-                .fontsize(1.2);
-            }
+        .error {
+            // Box-model
+            display: block;
+            margin: -17px 0 17px 55px;
+            
+            // Typography
+            color: @ui-dialog-content-error-color;
+            font-weight: bold;
         }
 
+        .separate-with,
+        .learn-more {
+        // Box-model
+            display: block;
+        }
+
+    }
+
+    .modal-footer {
+        // Box-model
+        padding: 20px 0 0 0;
+        
+        // Typography
+        .fontsize(1.2);
+
+        .btn {
+            // Box-model
+            height: 30px;
+        }
+        #iphonelearnmore {
+            // Box-model
+            display: inline;
+            margin-left: 10px;
+        }
     }
 }
