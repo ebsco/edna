@@ -7,16 +7,16 @@
     padding: 0;
 
     // Typography
-    color: @ac-color;
     .fontfamily(sans);
     .fontsize(@ac-size);
+    color: @ac-color;
 
     // Visual
-    background-image: none !important; // important needed to override jQuery UI image
+    list-style-type: none;
     background-color: @ac-bgcolor;
+    background-image: none !important; // important needed to override jQuery UI image
     border: 1px solid @ac-bordercolor;
     .radius(0);
-    list-style-type: none;
 
     .ui-menu-item {
         // Box-model
@@ -28,11 +28,11 @@
             padding: 6px 4px;
             
             // Typography
+            .truncate;
             line-height: 1.25em;
             
             // Visual
             cursor: pointer;
-            .truncate;
 
             &.ui-state-focus,
             &.ui-state-active {
@@ -87,8 +87,8 @@
     .ui-corner-all {
         // Visual
         background-image: none;
-        .radius(0);
         border-style: solid;
         border-width: 0;
+        .radius(0);
     }
 }
