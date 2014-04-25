@@ -1,55 +1,203 @@
 /* MODALS */
-.modal {
+
+.ui-widget-overlay {
+    // Positioning
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    // Box-model
+    width: 100%;
+    height: 100%;
+
     // Visual
-    background-color: @modal-bgcolor;
-    border: 1px solid @modal-bordercolor;
-    -moz-border-radius: @radius;
-         border-radius: @radius;
-    box-shadow: 0 0 @px rgba(0,0,0,.5);
+    background-color: @ui-dialog-overlay-bgcolor;
+    background-image: url(@ui-dialog-overlay-bgimage);
+    background-position: 50% 50% repeat;
+    background-repeat: repeat;
+    opacity: .50;
+    filter: Alpha(Opacity=50);
+}
 
-    .modal-header,
-    .modal-body,
-    .modal-footer {
-        // Box-model
-        padding: 15px;
-    }
+.ui-dialog {
+    // Box-model
+    width: @ui-dialog-width !important;
+    
+    // Visual
+    background: @ui-dialog-bgcolor;
+    -webkit-background-clip: padding-box;
+    border: 1px solid @ui-dialog-bordercolor;
+    .radius(9);
+    overflow: hidden;
 
-    .modal-header {
+    .ui-corner-all {
         // Visual
-        border-bottom: 1px solid @modal-header-border-color;
-
-        .modal-title {
-        // Box-model
-            margin: 0;
-        }
-
-        > .btn.close {
-            // Box-model
-            float: right;
-            padding: 10px 0;
-            
-            // Typography
-            .fontsize(1.25);
-            line-height: (@em * .625);
-            color: @modal-close-color;
-            vertical-align: middle;
-            
-            // Visual
-            background-color: @modal-close-bgcolor;
-            border: @modal-close-bordercolor;
-            
-            &:hover {
-                // Typography
-                color: @modal-close-color-hover;
-            }
-        }
+        .radius(0);
     }
+}
 
-    .modal-footer {
-        // Typography
-        text-align: right;
+.ui-dialog-titlebar {
+    // Positioning
+    position: relative;
+    
+    // Box-model
+    display: block;
+    
+    // Typography
+    font-weight: bold;
+    
+    // Visual
+    border-radius: 3px;
+
+    .ui-dialog-titlebar-close {
+        // Positioning
+        position: relative;
+        top: 22px;
+        right: 20px;
+        z-index: 2;
+        
+        // Box-model
+        float: right;
+        width: 11px;
+        height: 14px;
+        padding: 0;
         
         // Visual
-        border-top: 1px solid @modal-footer-border-color;
+        background: none;
+        border: none;
+        
+        .ui-icon-closethick {
+            // Box-model
+            display: block;
+            width: 20px;
+            height: 20px;
+            
+            // Typography
+            text-indent: -99999px;
+            
+            // Visual
+            overflow: hidden;
+            background-repeat: no-repeat;
+            border-radius: 2px;
+            background-color: @ui-dialog-close-bgcolor;
+            background-image: url(@ui-dialog-close-bgimage);
+            background-position: -2px -3px;
+            background-repeat: no-repeat;
+        }
+
+        .ui-button-text {
+            .off-page;
+        }
+    }
+}
+
+.modal {
+    // Positioning
+    position: relative;
+    zoom: 1;
+    
+    // Box-model
+    height: auto !important;
+    padding: 0 30px;
+    
+    // Visual
+    background: 0;
+
+    .modal-header {
+        // Box-model
+        padding: 0 25px 10px;
+        margin: 0 -30px 0;
+        
+        // Typography
+        font-weight: bold;
+        
+        // Visual
+        background-image: url(@ui-dialog-header-bgimage);
+        background-repeat: repeat-x;
+        background-position: 0 40px;
+
+        .ui-dialog-title {
+            // Typography
+            .fontsize(2);
+            font-weight: bold;
+        }
+    }
+
+    .note {
+        // Box-model
+        padding: 8px;
+        margin: 20px 0;
+        
+        // Typography
+        .fontsize(1.2);
+        font-weight: bold;
+        
+        // Visual
+        border: 1px solid @ui-dialog-note-bordercolor;
+        background-color: @ui-dialog-note-bgcolor;
+    }
+
+    .modal-content {
+        // Box-model
+        margin-bottom: 20px;
+        
+        // Typography
+        .fontsize(1.2);
+
+        .label {
+            // Box-model
+            padding: 5px 5px 0 0;
+            float: left;
+            
+            // Typography
+            font-weight: bold;
+            text-align: right;
+        }
+
+        input[type=text] {
+            // Box-model
+            display: inline-block;
+            width: 80%;
+            padding: 4px;
+            margin-bottom: 20px;
+            
+            // Typography
+            color: @ui-dialog-content-input-color;
+        }
+
+        .error {
+            // Box-model
+            display: block;
+            margin: -17px 0 17px 55px;
+            
+            // Typography
+            color: @ui-dialog-content-error-color;
+            font-weight: bold;
+        }
+
+        .separate-with,
+        .learn-more {
+        // Box-model
+            display: block;
+        }
+
+    }
+
+    .modal-footer {
+        // Box-model
+        padding: 20px 0 0 0;
+        
+        // Typography
+        .fontsize(1.2);
+
+        .btn {
+            // Box-model
+            height: 30px;
+        }
+        #iphonelearnmore {
+            // Box-model
+            display: inline;
+            margin-left: 10px;
+        }
     }
 }
