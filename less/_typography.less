@@ -29,10 +29,18 @@ h6 {
     > a:active {
         // Typography
         color: @link-color;
-        text-decoration: none;
+        text-decoration: @link-decoration;
+    }
+    > a:visited {
+        // Typography
+        color: @link-color-visited;
+        text-decoration: @link-decoration-visited;
     }
     > a:hover {
         color: @link-color-hover;
+    }
+    > a:focus {
+        text-decoration: @link-decoration-focus;
     }
 }
 
@@ -95,6 +103,9 @@ p {
 }
 
 a {
+    // Box Model
+    display: inline-block;
+    
     // Typography
     color: @link-color;
     text-decoration: none;
