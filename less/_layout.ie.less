@@ -2,22 +2,83 @@
 
 // set up a 350px width fixed width column
 // remember the 70px padding-left!
-.fixed-col() {
+.fixed-l {
 
-    // IE7
     .ie7 & {
-        &.fixed-l {
-            > .col {
-                &.fw425 {        
-                    + .col {
-                        // Box-model
-                        width: 55%;
-                    }
+
+        // styles here
+
+    }
+
+
+    // IE8
+    .ie8 & {
+
+        // styles here
+
+    }
+
+    // IE9
+    .ie9 & {
+
+        // styles here
+
+    }
+
+    // IE10
+    .ie10 & {
+
+        // styles here
+
+    }
+
+}
+
+.fixed-r {
+
+    .ie7 & {
+        > .col {
+            // Box-model
+            width: 63%;
+        }
+    }
+
+
+    // IE8
+    .ie8 & {
+        > .col {
+            // Box-model
+            width: 85%;
+            
+            &.fw425 {
+                + .col {
+                    // Box-model
+                    width: 55%;
+                    padding-right: 0;
                 }
             }
         }
     }
+
+    // IE9
+    .ie9 & {
+        > .col:nth-child(1) {
+            // Box-model
+            width: 64%;
+        }
+    }
+
+    // IE10
+    .ie10 & {
+        > .col:nth-child(1) {
+            // Box-model
+            width: 64%;
+        }
+    }
+
 }
+
+
 
 .l1 {
 
@@ -48,7 +109,6 @@
                     width: 20%;
                 }
             }
-            .fixed-col;
         }
 
         // 75 25
@@ -62,7 +122,6 @@
                     width: 25%;
                 }
             }
-            .fixed-col;
         }
 
         // 66 33
@@ -76,7 +135,6 @@
                     width: 33%;
                 }
             }
-            .fixed-col;
         }
 
         // 60 40
@@ -90,7 +148,6 @@
                     width: 40%;
                 }
             }
-            .fixed-col;
         }
 
         // 50 50
@@ -104,7 +161,6 @@
                     width: 50%;
                 }
             }
-            .fixed-col;
         }
 
         // 40 60
@@ -118,7 +174,6 @@
                     width: 60%;
                 }
             }
-            .fixed-col;
         }
 
         // 33 66
@@ -132,7 +187,6 @@
                     width: 66%;
                 }
             }
-            .fixed-col;
         }
 
         // 25 75
@@ -146,7 +200,6 @@
                     width: 75%;
                 }
             }
-            .fixed-col;
         }
 
         // 20 80
@@ -160,7 +213,6 @@
                     width: 80%;
                 }
             }
-            .fixed-col;
         }
     }
 }
