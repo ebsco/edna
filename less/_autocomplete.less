@@ -28,11 +28,17 @@
             padding: 6px 4px;
             
             // Typography
+            color: @ac-result-color;
             .truncate;
             line-height: 1.25em;
             
             // Visual
             cursor: pointer;
+
+            > strong {
+                // Typography
+                color: @ac-result-color;
+            }
 
             &.ui-state-focus,
             &.ui-state-active {
