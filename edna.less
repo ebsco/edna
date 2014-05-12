@@ -33,3 +33,13 @@
 @import "less/_typography.less";
 @import "less/_variables.less";
 @import "less/_width.less";
+
+
+
+
+.my-optional-style(@my-option) when (@my-option = 5) {
+  button {
+    color: white;
+  }
+}
+.my-optional-style(5);
