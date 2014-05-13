@@ -1,85 +1,5 @@
 /* LAYOUT */
 
-// set up a 350px width fixed width column
-// remember the 70px padding-left!
-.fixed-l {
-
-    .ie7 & {
-
-        // styles here
-
-    }
-
-
-    // IE8
-    .ie8 & {
-
-        // styles here
-
-    }
-
-    // IE9
-    .ie9 & {
-
-        // styles here
-
-    }
-
-    // IE10
-    .ie10 & {
-
-        // styles here
-
-    }
-
-}
-
-.fixed-r {
-
-    .ie7 & {
-        > .col {
-            // Box-model
-            width: 63%;
-        }
-    }
-
-
-    // IE8
-    .ie8 & {
-        > .col {
-            // Box-model
-            width: 85%;
-            
-            &.fw425 {
-                + .col {
-                    // Box-model
-                    width: 55%;
-                    padding-right: 0;
-                }
-            }
-        }
-    }
-
-    // IE9
-    .ie9 & {
-        > .col:nth-child(1) {
-            // Box-model
-            width: 64%;
-        }
-    }
-
-    // IE10
-    .ie10 & {
-        > .col:nth-child(1) {
-            // Box-model
-            width: 64%;
-        }
-    }
-
-}
-
-
-
 .l1 {
 
     // IE7
@@ -541,4 +461,82 @@
             }
         }
     }
+}
+
+
+// set up a 350px width fixed width column
+// remember the 70px padding-left!
+.fixed-l {
+
+    .ie7 & {
+        > .col {
+            // Box-model
+            width: 54% !important;
+        }
+    }
+
+    // IE8
+    .ie8 & {
+
+        // styles here
+
+    }
+
+    // IE9
+    .ie9 & {
+
+        // styles here
+
+    }
+
+    // IE10
+    .ie10 & {
+
+        // styles here
+
+    }
+
+}
+
+.fixed-r {
+
+    .ie7 & {
+        > .col {
+            // Box-model
+            width: 63%;
+        }
+    }
+
+    // IE8
+    .ie8 & {
+        > .col {
+            // Box-model
+            width: 85%;
+            
+            &.fw425 {
+                + .col {
+                    // Box-model
+                    width: 55%;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    // IE9
+    .ie9 & {
+        > .col:nth-child(1) {
+            // Box-model
+            width: 64%;
+        }
+    }
+
+    // IE10
+    .ie10 & {
+        > .col:nth-child(1) {
+            // Box-model
+            width: 64%;
+        }
+    }
+
 }
