@@ -5,6 +5,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: @ui-dialog-z-index - 10;
     
     // Box-model
     width: 100%;
@@ -20,6 +21,9 @@
 }
 
 .ui-dialog {
+    // Positioning
+    z-index: @ui-dialog-z-index;
+    
     // Box-model
     width: @ui-dialog-width !important;
     
