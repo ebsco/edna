@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 					path: ["less/"],
 					compress: false,
 					dumpLineNumbers: true,
-					sourceMap: true
+					sourceMap: false
 				},
 				files: {
 					"edna.css": "edna.less",
