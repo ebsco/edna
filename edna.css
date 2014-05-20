@@ -1982,7 +1982,7 @@ a .img {
 }
 .ui-dialog {
   z-index: 100000;
-  width: 615px !important;
+  width: 615px;
   background: #ffffff;
   -webkit-background-clip: padding-box;
   border: 1px solid #cccccc;

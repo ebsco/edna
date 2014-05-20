@@ -46,8 +46,17 @@
   color: #cbcbcb !important;
 }
 /* LAYOUT */
+.ie7 .l1.p1 {
+  clear: both;
+}
 .ie7 .l1.p1 > .col {
   width: 100%;
+}
+.ie8 .l1.p1 {
+  clear: both;
+}
+.ie7 .l2.p1 {
+  clear: both;
 }
 .ie7 .l2.p1 > .col {
   width: 80%;
@@ -102,6 +111,9 @@
 }
 .ie7 .l2.p9 > .col + .col {
   width: 80%;
+}
+.ie7 .l3.p1 {
+  clear: both;
 }
 .ie7 .l3.p1 > .col {
   width: 60%;
@@ -184,6 +196,9 @@
 .ie7 .l3.p9 > .col + .col + .col {
   width: 20%;
 }
+.ie7 .l4.p1 {
+  clear: both;
+}
 .ie7 .l4.p1 > .col {
   width: 40%;
 }
@@ -244,6 +259,9 @@
 .ie7 .l4.p5 > .col + .col + .col + .col {
   width: 20%;
 }
+.ie7 .l5.p1 {
+  clear: both;
+}
 .ie7 .l5.p1 > .col {
   width: 20%;
 }
@@ -266,11 +284,10 @@
   width: 63%;
 }
 .ie8 .fixed-r > .col {
-  width: 85%;
+  width: 63%;
 }
 .ie8 .fixed-r > .col.fw425 + .col {
-  width: 55%;
-  padding-right: 0;
+  width: 33%;
 }
 .ie9 .fixed-r > .col:nth-child(1) {
   width: 64%;
