@@ -98,7 +98,7 @@
   width: 33%;
 }
 .ie7 .l2.p7 > .col + .col {
-  width: 66%;
+  width: 50%;
 }
 .ie7 .l2.p8 > .col {
   width: 25%;
@@ -276,9 +276,6 @@
 }
 .ie7 .l5.p1 > .col + .col + .col + .col + .col {
   width: 20%;
-}
-.ie7 .fixed-l > .col {
-  width: 54% !important;
 }
 .ie7 .fixed-r > .col {
   width: 63%;
