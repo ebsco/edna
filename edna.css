@@ -942,11 +942,6 @@ ol.base > li {
 .col + .col {
   padding-left: 70px;
 }
-@media (max-width: 768px) {
-  .col {
-    width: 100% !important;
-  }
-}
 .l1.p1 > .col {
   width: 100%;
 }
@@ -969,7 +964,6 @@ ol.base > li {
   margin-left: -420px;
 }
 .l2.p1.fixed-r > .col.fw350 + .col {
-  width: 100%;
   padding-right: 420px;
 }
 .l2.p1.fixed-r > .col.fw425 {
@@ -979,7 +973,6 @@ ol.base > li {
   margin-left: -495px;
 }
 .l2.p1.fixed-r > .col.fw425 + .col {
-  width: 100%;
   padding-right: 495px;
 }
 @media (max-width: 768px) {
@@ -1005,7 +998,6 @@ ol.base > li {
   margin-right: -420px;
 }
 .l2.p1.fixed-l > .col.fw350 + .col {
-  width: 100%;
   padding-left: 420px;
 }
 .l2.p1.fixed-l > .col.fw425 {
@@ -1016,7 +1008,6 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p1.fixed-l > .col.fw425 + .col {
-  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1049,7 +1040,6 @@ ol.base > li {
   margin-left: -420px;
 }
 .l2.p2.fixed-r > .col.fw350 + .col {
-  width: 100%;
   padding-right: 420px;
 }
 .l2.p2.fixed-r > .col.fw425 {
@@ -1059,7 +1049,6 @@ ol.base > li {
   margin-left: -495px;
 }
 .l2.p2.fixed-r > .col.fw425 + .col {
-  width: 100%;
   padding-right: 495px;
 }
 @media (max-width: 768px) {
@@ -1085,7 +1074,6 @@ ol.base > li {
   margin-right: -420px;
 }
 .l2.p2.fixed-l > .col.fw350 + .col {
-  width: 100%;
   padding-left: 420px;
 }
 .l2.p2.fixed-l > .col.fw425 {
@@ -1096,7 +1084,6 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p2.fixed-l > .col.fw425 + .col {
-  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1129,7 +1116,6 @@ ol.base > li {
   margin-left: -420px;
 }
 .l2.p3.fixed-r > .col.fw350 + .col {
-  width: 100%;
   padding-right: 420px;
 }
 .l2.p3.fixed-r > .col.fw425 {
@@ -1139,7 +1125,6 @@ ol.base > li {
   margin-left: -495px;
 }
 .l2.p3.fixed-r > .col.fw425 + .col {
-  width: 100%;
   padding-right: 495px;
 }
 @media (max-width: 768px) {
@@ -1165,7 +1150,6 @@ ol.base > li {
   margin-right: -420px;
 }
 .l2.p3.fixed-l > .col.fw350 + .col {
-  width: 100%;
   padding-left: 420px;
 }
 .l2.p3.fixed-l > .col.fw425 {
@@ -1176,7 +1160,6 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p3.fixed-l > .col.fw425 + .col {
-  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1209,7 +1192,6 @@ ol.base > li {
   margin-left: -420px;
 }
 .l2.p4.fixed-r > .col.fw350 + .col {
-  width: 100%;
   padding-right: 420px;
 }
 .l2.p4.fixed-r > .col.fw425 {
@@ -1219,7 +1201,6 @@ ol.base > li {
   margin-left: -495px;
 }
 .l2.p4.fixed-r > .col.fw425 + .col {
-  width: 100%;
   padding-right: 495px;
 }
 @media (max-width: 768px) {
@@ -1245,7 +1226,6 @@ ol.base > li {
   margin-right: -420px;
 }
 .l2.p4.fixed-l > .col.fw350 + .col {
-  width: 100%;
   padding-left: 420px;
 }
 .l2.p4.fixed-l > .col.fw425 {
@@ -1256,7 +1236,6 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p4.fixed-l > .col.fw425 + .col {
-  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1289,7 +1268,6 @@ ol.base > li {
   margin-left: -420px;
 }
 .l2.p5.fixed-r > .col.fw350 + .col {
-  width: 100%;
   padding-right: 420px;
 }
 .l2.p5.fixed-r > .col.fw425 {
@@ -1299,7 +1277,6 @@ ol.base > li {
   margin-left: -495px;
 }
 .l2.p5.fixed-r > .col.fw425 + .col {
-  width: 100%;
   padding-right: 495px;
 }
 @media (max-width: 768px) {
@@ -1325,7 +1302,6 @@ ol.base > li {
   margin-right: -420px;
 }
 .l2.p5.fixed-l > .col.fw350 + .col {
-  width: 100%;
   padding-left: 420px;
 }
 .l2.p5.fixed-l > .col.fw425 {
@@ -1336,7 +1312,6 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p5.fixed-l > .col.fw425 + .col {
-  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1369,7 +1344,6 @@ ol.base > li {
   margin-left: -420px;
 }
 .l2.p6.fixed-r > .col.fw350 + .col {
-  width: 100%;
   padding-right: 420px;
 }
 .l2.p6.fixed-r > .col.fw425 {
@@ -1379,7 +1353,6 @@ ol.base > li {
   margin-left: -495px;
 }
 .l2.p6.fixed-r > .col.fw425 + .col {
-  width: 100%;
   padding-right: 495px;
 }
 @media (max-width: 768px) {
@@ -1405,7 +1378,6 @@ ol.base > li {
   margin-right: -420px;
 }
 .l2.p6.fixed-l > .col.fw350 + .col {
-  width: 100%;
   padding-left: 420px;
 }
 .l2.p6.fixed-l > .col.fw425 {
@@ -1416,7 +1388,6 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p6.fixed-l > .col.fw425 + .col {
-  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1449,7 +1420,6 @@ ol.base > li {
   margin-left: -420px;
 }
 .l2.p7.fixed-r > .col.fw350 + .col {
-  width: 100%;
   padding-right: 420px;
 }
 .l2.p7.fixed-r > .col.fw425 {
@@ -1459,7 +1429,6 @@ ol.base > li {
   margin-left: -495px;
 }
 .l2.p7.fixed-r > .col.fw425 + .col {
-  width: 100%;
   padding-right: 495px;
 }
 @media (max-width: 768px) {
@@ -1485,7 +1454,6 @@ ol.base > li {
   margin-right: -420px;
 }
 .l2.p7.fixed-l > .col.fw350 + .col {
-  width: 100%;
   padding-left: 420px;
 }
 .l2.p7.fixed-l > .col.fw425 {
@@ -1496,7 +1464,6 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p7.fixed-l > .col.fw425 + .col {
-  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1529,7 +1496,6 @@ ol.base > li {
   margin-left: -420px;
 }
 .l2.p8.fixed-r > .col.fw350 + .col {
-  width: 100%;
   padding-right: 420px;
 }
 .l2.p8.fixed-r > .col.fw425 {
@@ -1539,7 +1505,6 @@ ol.base > li {
   margin-left: -495px;
 }
 .l2.p8.fixed-r > .col.fw425 + .col {
-  width: 100%;
   padding-right: 495px;
 }
 @media (max-width: 768px) {
@@ -1565,7 +1530,6 @@ ol.base > li {
   margin-right: -420px;
 }
 .l2.p8.fixed-l > .col.fw350 + .col {
-  width: 100%;
   padding-left: 420px;
 }
 .l2.p8.fixed-l > .col.fw425 {
@@ -1576,7 +1540,6 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p8.fixed-l > .col.fw425 + .col {
-  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1609,7 +1572,6 @@ ol.base > li {
   margin-left: -420px;
 }
 .l2.p9.fixed-r > .col.fw350 + .col {
-  width: 100%;
   padding-right: 420px;
 }
 .l2.p9.fixed-r > .col.fw425 {
@@ -1619,7 +1581,6 @@ ol.base > li {
   margin-left: -495px;
 }
 .l2.p9.fixed-r > .col.fw425 + .col {
-  width: 100%;
   padding-right: 495px;
 }
 @media (max-width: 768px) {
@@ -1645,7 +1606,6 @@ ol.base > li {
   margin-right: -420px;
 }
 .l2.p9.fixed-l > .col.fw350 + .col {
-  width: 100%;
   padding-left: 420px;
 }
 .l2.p9.fixed-l > .col.fw425 {
@@ -1656,7 +1616,6 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p9.fixed-l > .col.fw425 + .col {
-  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
