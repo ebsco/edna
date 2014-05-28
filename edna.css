@@ -167,12 +167,12 @@ table {
 /* AUTOCOMPLETE */
 .ui-helper-hidden-accessible {
   position: absolute !important;
-  height: 1px;
+  display: none;
   width: 1px;
+  height: 1px;
   overflow: hidden;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
-  display: none;
 }
 .ui-autocomplete {
   padding: 0;
@@ -193,11 +193,11 @@ table {
 .ui-autocomplete .ui-menu-item a {
   display: block;
   padding: 6px 4px;
+  line-height: 1.25em;
   color: #000000;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  line-height: 1.25em;
   cursor: pointer;
 }
 .ui-autocomplete .ui-menu-item a > strong {
@@ -932,10 +932,10 @@ ol.base > li {
 }
 /* LAYOUT */
 .col {
-  float: left;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  float: left;
   width: 100%;
   padding: 0 0 0 0;
 }
@@ -1942,12 +1942,12 @@ a .img {
 .ui-dialog {
   z-index: 100000;
   width: 615px;
+  overflow: hidden;
   background: #ffffff;
-  -webkit-background-clip: padding-box;
   border: 1px solid #cccccc;
   -moz-border-radius: 9px;
   border-radius: 9px;
-  overflow: hidden;
+  -webkit-background-clip: padding-box;
 }
 .ui-dialog .ui-corner-all {
   -moz-border-radius: 0;
@@ -1990,18 +1990,18 @@ a .img {
 }
 .modal {
   position: relative;
-  zoom: 1;
   height: auto !important;
   padding: 0 30px;
   background: 0;
+  zoom: 1;
 }
 .modal .modal-header {
   padding: 0 25px 10px;
   margin: 0 -30px 0;
   font-weight: bold;
   background-image: url("http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/modal-gradient.png");
-  background-repeat: repeat-x;
   background-position: 0 40px;
+  background-repeat: repeat-x;
 }
 .modal .modal-header .ui-dialog-title {
   font-size: 20px;
@@ -2014,8 +2014,8 @@ a .img {
   font-size: 12px;
   font-size: 1.2rem;
   font-weight: bold;
-  border: 1px solid #fcc37c;
   background-color: #faf9b9;
+  border: 1px solid #fcc37c;
 }
 .modal .modal-content {
   margin-bottom: 20px;
@@ -2023,8 +2023,8 @@ a .img {
   font-size: 1.2rem;
 }
 .modal .modal-content .label {
-  padding: 5px 5px 0 0;
   float: left;
+  padding: 5px 5px 0 0;
   font-weight: bold;
   text-align: right;
 }
@@ -2038,8 +2038,8 @@ a .img {
 .modal .modal-content .error {
   display: block;
   margin: -17px 0 17px 55px;
-  color: #ff0000;
   font-weight: bold;
+  color: #ff0000;
 }
 .modal .modal-content .separate-with,
 .modal .modal-content .learn-more {
@@ -2067,9 +2067,6 @@ body  {
 }
 .visible {
   display: inline-block;
-}
-.hidden {
-  display: none;
 }
 .l1,
 .l2,
@@ -2180,7 +2177,7 @@ footer {
   display: inline-block;
   float: left;
   padding: 0 10px;
-  color: pg-list-item-color;
+  color: #868686;
   cursor: pointer;
   border: 1px solid #e6e6e6;
 }
@@ -2660,12 +2657,12 @@ footer {
   height: 16px;
   padding: 0 0 0 3px;
   margin: 0;
+  font-family: Arial, "Arial Unicode MS", sans-serif;
+  font-size: 25px;
+  font-size: 2.5rem;
   border-color: rgba(0, 0, 0, 0);
   border-width: 0;
   outline: 0;
-  font-size: 25px;
-  font-size: 2.5rem;
-  font-family: Arial, "Arial Unicode MS", sans-serif;
 }
 .transport.slim > .top:after,
 .transport.slim > .right:after,
