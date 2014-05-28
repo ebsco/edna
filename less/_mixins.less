@@ -41,7 +41,9 @@
 // hidden (accessible by screen readers)
 .hidden() {
     position: absolute !important;
-    height: (@px * .1); width: (@px * .1); 
+    display: none;
+    width: (@px * .1); 
+    height: (@px * .1);
     overflow: hidden;
     clip: rect((@px * .1) (@px * .1) (@px * .1) (@px * .1)); // IE6, IE7
     clip: rect((@px * .1), (@px * .1), (@px * .1), (@px * .1));

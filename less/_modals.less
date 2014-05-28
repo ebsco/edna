@@ -26,13 +26,13 @@
     
     // Box-model
     width: @ui-dialog-width;
+    overflow: hidden;
     
     // Visual
     background: @ui-dialog-bgcolor;
-    -webkit-background-clip: padding-box;
     border: 1px solid @ui-dialog-bordercolor;
     .radius(9);
-    overflow: hidden;
+    -webkit-background-clip: padding-box;
 
     .ui-corner-all {
         // Visual
@@ -98,7 +98,6 @@
 .modal {
     // Positioning
     position: relative;
-    zoom: 1;
     
     // Box-model
     height: auto !important;
@@ -106,6 +105,9 @@
     
     // Visual
     background: 0;
+
+    // Misc
+    zoom: 1;
 
     .modal-header {
         // Box-model
@@ -117,8 +119,8 @@
         
         // Visual
         background-image: url(@ui-dialog-header-bgimage);
-        background-repeat: repeat-x;
         background-position: 0 40px;
+        background-repeat: repeat-x;
 
         .ui-dialog-title {
             // Typography
@@ -137,8 +139,8 @@
         font-weight: bold;
         
         // Visual
-        border: 1px solid @ui-dialog-note-bordercolor;
         background-color: @ui-dialog-note-bgcolor;
+        border: 1px solid @ui-dialog-note-bordercolor;
     }
 
     .modal-content {
@@ -150,8 +152,8 @@
 
         .label {
             // Box-model
-            padding: 5px 5px 0 0;
             float: left;
+            padding: 5px 5px 0 0;
             
             // Typography
             font-weight: bold;
@@ -175,8 +177,8 @@
             margin: -17px 0 17px 55px;
             
             // Typography
-            color: @ui-dialog-content-error-color;
             font-weight: bold;
+            color: @ui-dialog-content-error-color;
         }
 
         .separate-with,
