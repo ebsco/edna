@@ -2484,7 +2484,7 @@ footer {
   background: -moz-linear-gradient(center bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
   background: -ms-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3));
   background: -o-linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33ffffff', endColorstr='#00ffffff', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#9a6978, endColorstr=#712b40);
 }
 .nav {
   display: inline-block;
