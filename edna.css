@@ -2621,32 +2621,19 @@ footer {
   border-right-width: 15px;
   border-left-width: 0;
 }
-.transport.inactive > .top {
+.transport > .inactive {
   cursor: default;
+}
+.transport > .top.inactive {
   border-bottom-color: #d5d5d5;
 }
-.transport.inactive > .top:hover {
-  border-bottom-color: #d5d5d5;
-}
-.transport.inactive > .right {
-  cursor: default;
+.transport > .right.inactive {
   border-left-color: #d5d5d5;
 }
-.transport.inactive > .right:hover {
-  border-left-color: #d5d5d5;
-}
-.transport.inactive > .bottom {
-  cursor: default;
+.transport > .bottom.inactive {
   border-top-color: #d5d5d5;
 }
-.transport.inactive > .bottom:hover {
-  border-top-color: #d5d5d5;
-}
-.transport.inactive > .left {
-  cursor: default;
-  border-right-color: #d5d5d5;
-}
-.transport.inactive > .left:hover {
+.transport > .left.inactive {
   border-right-color: #d5d5d5;
 }
 .transport.slim > .top,
