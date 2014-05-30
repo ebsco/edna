@@ -73,61 +73,36 @@
         border-left-width: 0;
     }
 
-    &.inactive {
-        > .top {
-            // Typography
-            cursor: default;
-            
+    // INACTIVE
+    > .inactive {
+        // Typography
+        cursor: default;
+    }
+
+    .inactive(@side) {
+        &.inactive {
             // Visual
-            border-bottom-color: @transport-inactive;
-
-            &:hover {
-                // Visual
-                border-bottom-color: @transport-inactive;
-            }
-        }
-
-        > .right {
-            // Typography
-            cursor: default;
-
-            // Visual
-            border-left-color: @transport-inactive;
-            
-            &:hover {
-                // Visual
-                border-left-color: @transport-inactive;
-            }
-        }
-
-        > .bottom {
-            // Typography
-            cursor: default;
-
-            // Visual
-            border-top-color: @transport-inactive;
-            
-            &:hover {
-                // Visual
-                border-top-color: @transport-inactive;
-            }
-        }
-
-        > .left {
-            // Typography
-            cursor: default;
-
-            // Visual
-            border-right-color: @transport-inactive;
-           
-            &:hover {
-                // Visual
-                border-right-color: @transport-inactive;
-            }
+            border-@{side}-color: @transport-inactive;
         }
     }
 
+    > .top {
+        .inactive(bottom);
+    }
 
+    > .right {
+        .inactive(left);
+    }
+
+    > .bottom {
+        .inactive(top);
+    }
+
+    > .left {
+        .inactive(right);
+    }
+
+    // SLIM
     &.slim {
         > .top,
         > .right,
