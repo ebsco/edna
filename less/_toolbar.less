@@ -8,7 +8,7 @@
     .fontfamily(tahoma);
     
     // Visual
-    background-color: @tbar-color;
+    // background-color: @tbar-bgcolor;
     
     .txt-link {
         // Typography
@@ -24,6 +24,35 @@
         }
     }
     
+    .personal-nav {
+        // Box-model
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        
+        // Typography
+        .fontsize(1.2);
+        text-align: right;
+        
+        // Visual
+        background-color: @tbar-personal-bgcolor;
+        list-style-type: none;
+
+        > .personal-nav-item {
+            // Box-model
+            display: inline-block;
+            padding: 0 10px;
+
+            // Typography
+            color: #fff;
+            
+            // Misc
+            .clearfix;
+            
+        }        
+
+    }
+
     .bar {
         // Positioning
         .pos(relative);
@@ -32,15 +61,16 @@
         overflow: hidden;
 
         // Visual
+        //background-color: @tbar-bgcolor;
         @color: #fff;
         @top: fadeout(@color, 70%);
         @bottom: fadeout(@color, 100%);
-        background: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
-        background: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
-        background:  -ms-linear-gradient(bottom, @bottom, @top);
-        background:   -o-linear-gradient(@top, @bottom);
+        background: @tbar-bgcolor -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
+        background: @tbar-bgcolor -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
+        background: @tbar-bgcolor  -ms-linear-gradient(bottom, @bottom, @top);
+        background: @tbar-bgcolor   -o-linear-gradient(@top, @bottom);
         filter: progid:DXImageTransform.Microsoft.gradient( GradientType=0,startColorstr=#9a6978, endColorstr=#712b40);
-    }    
+    }
 }
 
 .nav {
@@ -70,7 +100,7 @@
     margin: 0;
 
     // Visual
-    background-color: @tbar-color;
+    background-color: @tbar-bgcolor;
     
     .user-nav-item {
         // Box-model
