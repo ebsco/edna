@@ -2483,12 +2483,12 @@ footer {
   font-size: 12px;
   font-size: 1.2rem;
   text-align: right;
-  background-color: #572131;
+  background-color: #451926;
   list-style-type: none;
 }
 .toolbar .personal-nav > .personal-nav-item {
   display: inline-block;
-  padding: 0 10px;
+  padding: 0 0 0 10px;
   color: #e6e6e6;
   *zoom: 1;
 }
@@ -2503,6 +2503,9 @@ footer {
 .toolbar .personal-nav > .personal-nav-item:after,
 .toolbar .personal-nav > .personal-nav-item::after {
   clear: both;
+}
+.toolbar .personal-nav > .personal-nav-item:last-child .txt-link {
+  text-decoration: underline;
 }
 .toolbar .bar {
   position: relative;
