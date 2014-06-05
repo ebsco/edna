@@ -1008,6 +1008,7 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p1.fixed-l > .col.fw425 + .col {
+  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1084,6 +1085,7 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p2.fixed-l > .col.fw425 + .col {
+  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1160,6 +1162,7 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p3.fixed-l > .col.fw425 + .col {
+  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1236,6 +1239,7 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p4.fixed-l > .col.fw425 + .col {
+  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1312,6 +1316,7 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p5.fixed-l > .col.fw425 + .col {
+  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1388,6 +1393,7 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p6.fixed-l > .col.fw425 + .col {
+  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1464,6 +1470,7 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p7.fixed-l > .col.fw425 + .col {
+  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1540,6 +1547,7 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p8.fixed-l > .col.fw425 + .col {
+  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
@@ -1616,6 +1624,7 @@ ol.base > li {
   margin-right: -495px;
 }
 .l2.p9.fixed-l > .col.fw425 + .col {
+  width: 100%;
   padding-left: 495px;
 }
 @media (max-width: 768px) {
