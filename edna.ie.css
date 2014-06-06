@@ -298,6 +298,30 @@
   display: inline;
   float: left;
 }
+/* SEARCHBAR */
+.ie7 .searchbar .searchbar-wrap > input[type="text"] {
+  padding-right: 0;
+  margin-right: -7px;
+}
+.ie7 .searchbar .searchbar-wrap > .reset {
+  right: 5px;
+}
+.ie7 .searchbar .btn.search {
+  margin-left: 20px;
+}
+/* TOOLBAR */
+.ie7 .toolbar .personal-bar {
+  width: 100%;
+}
+.ie7 .toolbar .personal-bar .personal-nav {
+  width: auto;
+  float: right;
+}
+.ie7 .toolbar .personal-bar .personal-nav .personal-nav-item {
+  display: inline;
+  float: left;
+  text-align: right;
+}
 /* WIDTH */
 .ie7 .w {
   display: block;

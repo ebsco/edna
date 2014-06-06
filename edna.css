@@ -170,9 +170,9 @@ table {
   display: none;
   width: 1px;
   height: 1px;
-  overflow: hidden;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
 }
 .ui-autocomplete {
   padding: 0;
@@ -193,11 +193,11 @@ table {
 .ui-autocomplete .ui-menu-item a {
   display: block;
   padding: 6px 4px;
-  line-height: 1.25em;
-  color: #000000;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  line-height: 1.25em;
+  color: #000000;
   cursor: pointer;
 }
 .ui-autocomplete .ui-menu-item a > strong {
@@ -1984,13 +1984,13 @@ a .img {
   display: block;
   width: 20px;
   height: 20px;
-  text-indent: -99999px;
   overflow: hidden;
-  border-radius: 2px;
+  text-indent: -99999px;
   background-color: rgba(0, 0, 0, 0);
   background-image: url("http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/layout2/modal-close.png");
   background-position: -2px -3px;
   background-repeat: no-repeat;
+  border-radius: 2px;
 }
 .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-button-text {
   display: inline-block;
@@ -2485,35 +2485,42 @@ footer {
 .toolbar .txt-link:visited {
   color: #ffffff;
 }
-.toolbar .personal-nav {
-  padding: 10px;
+.toolbar .personal-bar {
   width: 100%;
+  background-color: #451926;
+}
+.toolbar .personal-bar .personal-nav {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
   font-size: 12px;
   font-size: 1.2rem;
   text-align: right;
-  background-color: #451926;
   list-style-type: none;
 }
-.toolbar .personal-nav > .personal-nav-item {
+.toolbar .personal-bar .personal-nav > .personal-nav-item {
   display: inline-block;
+  float: right;
   padding: 0 0 0 10px;
   color: #e6e6e6;
   *zoom: 1;
 }
-.toolbar .personal-nav > .personal-nav-item:before,
-.toolbar .personal-nav > .personal-nav-item:after,
-.toolbar .personal-nav > .personal-nav-item::before,
-.toolbar .personal-nav > .personal-nav-item::after {
+.toolbar .personal-bar .personal-nav > .personal-nav-item:before,
+.toolbar .personal-bar .personal-nav > .personal-nav-item:after,
+.toolbar .personal-bar .personal-nav > .personal-nav-item::before,
+.toolbar .personal-bar .personal-nav > .personal-nav-item::after {
   display: table;
   line-height: 0;
   content: "";
 }
-.toolbar .personal-nav > .personal-nav-item:after,
-.toolbar .personal-nav > .personal-nav-item::after {
+.toolbar .personal-bar .personal-nav > .personal-nav-item:after,
+.toolbar .personal-bar .personal-nav > .personal-nav-item::after {
   clear: both;
 }
-.toolbar .personal-nav > .personal-nav-item:last-child .txt-link {
+.toolbar .personal-bar .personal-nav > .personal-nav-item:last-child .txt-link {
   text-decoration: underline;
 }
 .toolbar .bar {
@@ -2772,7 +2779,6 @@ footer {
   display: inline-block;
 }
 .dd .transport > .top {
-  margin-bottom: 5px;
   margin-top: -2.5px;
   margin-bottom: 2.5px;
   border-right-width: 5px;
