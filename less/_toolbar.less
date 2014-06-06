@@ -1,4 +1,5 @@
 /* TOOLBAR */
+
 .toolbar {
     // Box-model
     width: 100%;
@@ -6,9 +7,6 @@
     
     // Typography
     .fontfamily(tahoma);
-    
-    // Visual
-    // background-color: @tbar-bgcolor;
     
     .txt-link {
         // Typography
@@ -24,39 +22,48 @@
         }
     }
     
-    .personal-nav {
-        // Box-model
-        padding: 10px;
+    .personal-bar {
+        // Box sizing
         width: 100%;
-        box-sizing: border-box;
-        
-        // Typography
-        .fontsize(1.2);
-        text-align: right;
-        
+
         // Visual
         background-color: @tbar-personal-bgcolor;
-        list-style-type: none;
 
-        > .personal-nav-item {
+        .personal-nav {
             // Box-model
             display: inline-block;
-            padding: 0 0 0 10px;
-
+            .box(border);
+            width: 100%;
+            padding: 10px;
+            
             // Typography
-            color: @colorS2;
+            .fontsize(1.2);
+            text-align: right;
             
-            // Misc
-            .clearfix;
+            // Visual
+            list-style-type: none;
 
-            &:last-child {
-                .txt-link {
-                    // Typography
-                    text-decoration: underline;
+            > .personal-nav-item {
+                // Box-model
+                display: inline-block;
+                float: right;
+                padding: 0 0 0 10px;
+
+                // Typography
+                color: @colorS2;
+                
+                // Misc
+                .clearfix;
+
+                &:last-child {
+                    .txt-link {
+                        // Typography
+                        text-decoration: underline;
+                    }
                 }
+                
             }
-            
-        }        
+        }
 
     }
 
@@ -68,7 +75,6 @@
         overflow: hidden;
 
         // Visual
-        //background-color: @tbar-bgcolor;
         @color: @colorS2;
         @top: fadeout(@color, 70%);
         @bottom: fadeout(@color, 100%);
