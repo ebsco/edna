@@ -9,93 +9,27 @@
     // Misc
     .clearfix;
     
-    > .w20 {
-        // Box-model
-        width: 20%;
-    }
-    
-    > .w25 {
-        // Box-model
-        width: 25%;
-    }
-    
-    > .w33 {
-        // Box-model
-        width: 33%;
-    }
-    
-    > .w40 {
-        // Box-model
-        width: 40%;
-    }
-    
-    > .w50 {
-        // Box-model
-        width: 50%;
-    }
-    
-    > .w60 {
-        // Box-model
-        width: 60%;
-    }
-    
-    > .w66 {
-        // Box-model
-        width: 66%;
-    }
-    
-    > .w75 {
-        // Box-model
-        width: 75%;
+    @list: 20, 25, 33, 40, 50, 60, 66, 75, 80;
+    @listLength: length(@list);
+
+    .loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
+        @arrayVal: extract(@list, @index);
+        @pcnt: percentage(@arrayVal / 100);
+
+        > .w@{arrayVal} {
+            // Box model
+            float: left;
+            padding: 0 @widget-padding 0 0;
+            width: @pcnt;
+
+            // rtl stuff
+            [dir="rtl"] & {
+                // Box-model
+                float: right;
+            }
+        }
+        .loop(@arrayLength, (@index + 1));
     }
 
-    > .w80 {
-        // Box-model
-        width: 80%;
-    }
-
-    // add padding between
-    > .w20,
-    > .w25,
-    > .w33,
-    > .w40,
-    > .w50,
-    > .w60,
-    > .w66,
-    > .w75,
-    > .w80 {
-        // Box-model
-        float: left;
-        padding: 0;
-    }
-
-    // remove padding on first
-    > .w20,
-    > .w25,
-    > .w33,
-    > .w40,
-    > .w50,
-    > .w60,
-    > .w66,
-    > .w75,
-    > .w80 {
-        // Box-model
-        padding-right: @widget-padding;
-    }
-}
-
-.w20,
-.w25,
-.w33,
-.w40,
-.w50,
-.w60,
-.w66,
-.w75,
-.w80 {
-    // rtl stuff
-    [dir="rtl"] & {
-        // Box-model
-        float: right;
-    }
+    .loop(@listLength);
 }
