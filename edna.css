@@ -2222,63 +2222,74 @@ footer {
   clear: both;
 }
 .w > .w20 {
+  float: left;
+  padding: 0 47px 0 0;
   width: 20%;
 }
+[dir="rtl"] .w > .w20 {
+  float: right;
+}
 .w > .w25 {
+  float: left;
+  padding: 0 47px 0 0;
   width: 25%;
 }
+[dir="rtl"] .w > .w25 {
+  float: right;
+}
 .w > .w33 {
+  float: left;
+  padding: 0 47px 0 0;
   width: 33%;
 }
+[dir="rtl"] .w > .w33 {
+  float: right;
+}
 .w > .w40 {
+  float: left;
+  padding: 0 47px 0 0;
   width: 40%;
 }
+[dir="rtl"] .w > .w40 {
+  float: right;
+}
 .w > .w50 {
+  float: left;
+  padding: 0 47px 0 0;
   width: 50%;
 }
+[dir="rtl"] .w > .w50 {
+  float: right;
+}
 .w > .w60 {
+  float: left;
+  padding: 0 47px 0 0;
   width: 60%;
 }
+[dir="rtl"] .w > .w60 {
+  float: right;
+}
 .w > .w66 {
+  float: left;
+  padding: 0 47px 0 0;
   width: 66%;
 }
+[dir="rtl"] .w > .w66 {
+  float: right;
+}
 .w > .w75 {
+  float: left;
+  padding: 0 47px 0 0;
   width: 75%;
 }
-.w > .w80 {
-  width: 80%;
+[dir="rtl"] .w > .w75 {
+  float: right;
 }
-.w > .w20,
-.w > .w25,
-.w > .w33,
-.w > .w40,
-.w > .w50,
-.w > .w60,
-.w > .w66,
-.w > .w75,
 .w > .w80 {
   float: left;
-  padding: 0;
+  padding: 0 47px 0 0;
+  width: 80%;
 }
-.w > .w20,
-.w > .w25,
-.w > .w33,
-.w > .w40,
-.w > .w50,
-.w > .w60,
-.w > .w66,
-.w > .w75,
-.w > .w80 {
-  padding-right: 47px;
-}
-[dir="rtl"] .w20,
-[dir="rtl"] .w25,
-[dir="rtl"] .w33,
-[dir="rtl"] .w40,
-[dir="rtl"] .w50,
-[dir="rtl"] .w60,
-[dir="rtl"] .w66,
-[dir="rtl"] .w75,
-[dir="rtl"] .w80 {
+[dir="rtl"] .w > .w80 {
   float: right;
 }

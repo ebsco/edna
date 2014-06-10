@@ -323,47 +323,9 @@
   text-align: right;
 }
 /* WIDTH */
-.ie7 .w {
-  display: block;
-  width: 100%;
-  *zoom: 1;
-}
-.ie7 .w:before,
-.ie7 .w:after,
-.ie7 .w::before,
-.ie7 .w::after {
-  display: table;
-  line-height: 0;
-  content: "";
-}
-.ie7 .w:after,
-.ie7 .w::after {
-  clear: both;
-}
-.ie7 .w > .w20 {
-  width: 20%;
-}
-.ie7 .w > .w25 {
-  width: 25%;
-}
 .ie7 .w > .w33 {
   width: 29%;
 }
-.ie7 .w > .w40 {
-  width: 40%;
-}
 .ie7 .w > .w50 {
   width: 45%;
-}
-.ie7 .w > .w60 {
-  width: 60%;
-}
-.ie7 .w > .w66 {
-  width: 66%;
-}
-.ie7 .w > .w75 {
-  width: 75%;
-}
-.ie7 .w > .w80 {
-  width: 80%;
 }
