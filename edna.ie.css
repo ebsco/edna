@@ -277,6 +277,7 @@
 .ie7 .l5.p1 > .col + .col + .col + .col + .col {
   width: 20%;
 }
+/* LAYOUT - FIXED */
 .ie7 .fixed-r > .col {
   width: 63%;
 }
