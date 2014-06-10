@@ -15,121 +15,6 @@
     }
 }
 
-// set up a 350px width fixed width column
-// remember the 70px padding-left!
-.fixed-col() {
-    &.fixed-r {
-        clear: both;
-        > .col {
-            // Box-model
-            width: 63%;
-            
-            &.fw350 {
-                // Positioning
-                float: right;
-                
-                // Box-model
-                width: 420px;
-                padding-right: 0;
-                margin-left: -420px;
-        
-                + .col {
-                    // Box-model
-                    padding-right: 420px;
-                }
-            }
-
-            &.fw425 {
-                // Positioning
-                float: right;
-                
-                // Box-model
-                width: 495px;
-                padding-right: 0;
-                margin-left: -495px;
-        
-                + .col {
-                    // Box-model
-                    padding-right: 495px;
-                }
-            }
-        }
-
-        @media (max-width: @mediaquery-small) {
-            > .col {
-                // Box-model
-                padding-right: 0;
-
-                &.fw350 {
-                    // Box-model
-                    padding-top: 70px;
-                    padding-left: 0;
-                }
-
-                &.fw425 {
-                    // Box-model
-                    padding-left: 0;
-                }
-            }
-        }
-    }
-
-    &.fixed-l {
-        clear: both;
-        > .col {
-            &.fw350 {
-                // Positioning
-                float: left;
-                
-                // Box-model
-                width: 420px;
-                padding-right: 70px;
-                padding-left: 0;
-                margin-right: -420px;
-        
-                + .col {
-                    // Box-model
-                    padding-left: 420px;
-                }
-            }
-
-            &.fw425 {
-                // Positioning
-                float: left;
-                
-                // Box-model
-                width: 495px;
-                padding-right: 70px;
-                padding-left: 0;
-                margin-right: -495px;
-        
-                + .col {
-                    // Box-model
-                    width: 100%; // needed or the col gets the un-fixed width percent
-                    padding-left: 495px;
-                }
-            }
-        }
-
-        @media (max-width: @mediaquery-small) {
-            > .col {
-                // Box-model
-                padding-left: 0;
-
-                &.fw350 {
-                    // Box-model
-                    padding-right: 0;
-                }
-
-                &.fw425 {
-                    // Box-model
-                    padding-right: 0;
-                }
-            }
-        }
-    }
-}
-
 // Divide the patterns into two master classes that go in the body tag
 .l1 {
     &.p1 {
@@ -151,7 +36,6 @@
             // Box-model
             width: 20%;
         }
-        .fixed-col;
     }
 
     // 75 25
@@ -164,7 +48,6 @@
             // Box-model
             width: 25%;
         }
-        .fixed-col;
     }
 
     // 66 33
@@ -177,7 +60,6 @@
             // Box-model
             width: 33%;
         }
-        .fixed-col;
     }
 
     // 60 40
@@ -190,7 +72,6 @@
             // Box-model
             width: 40%;
         }
-        .fixed-col;
     }
 
     // 50 50
@@ -203,7 +84,6 @@
             // Box-model
             width: 50%;
         }
-        .fixed-col;
     }
 
     // 40 60
@@ -216,7 +96,6 @@
             // Box-model
             width: 60%;
         }
-        .fixed-col;
     }
 
     // 33 66
@@ -229,7 +108,6 @@
             // Box-model
             width: 66%;
         }
-        .fixed-col;
     }
 
     // 25 75
@@ -242,7 +120,6 @@
             // Box-model
             width: 75%;
         }
-        .fixed-col;
     }
 
     // 20 80
@@ -255,7 +132,6 @@
             // Box-model
             width: 80%;
         }
-        .fixed-col;
     }
 }
 
