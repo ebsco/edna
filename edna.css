@@ -1156,32 +1156,32 @@ ol.base > li {
   width: 20%;
 }
 /* LAYOUT - FIXED */
-.l2.p3 .fixed-r {
+.l2.p3.fixed-r {
   clear: both;
 }
-.l2.p3 .fixed-r > .col {
+.l2.p3.fixed-r > .col {
   width: 63%;
 }
-.l2.p3 .fixed-r > .col.fw350 {
+.l2.p3.fixed-r > .col.fw350 {
   width: 420px;
   float: right;
   padding-right: 0;
   margin-left: -420px;
 }
-.l2.p3 .fixed-r > .col.fw350 + .col {
+.l2.p3.fixed-r > .col.fw350 + .col {
   padding-right: 420px;
 }
-.l2.p7 .fixed-l {
+.l2.p7.fixed-l {
   clear: both;
 }
-.l2.p7 .fixed-l > .col.fw425 {
+.l2.p7.fixed-l > .col.fw425 {
   width: 495px;
   float: left;
   padding-right: 70px;
   padding-left: 0;
   margin-right: -495px;
 }
-.l2.p7 .fixed-l > .col.fw425 + .col {
+.l2.p7.fixed-l > .col.fw425 + .col {
   width: 100%;
   padding-left: 495px;
 }
