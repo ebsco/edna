@@ -109,6 +109,11 @@
         > .right,
         > .bottom,
         > .left {
+            // height: 30px;
+            // width: 30px;
+            text-align: center;
+            line-height: 30px;
+
             // Box-model
             width: 10px;
             height: 16px;
@@ -128,6 +133,12 @@
             &::after {
                 // Box-model
                 display: inline-block;
+                height: 30px;
+                width: 30px;
+
+                // Typography
+                text-align: center;
+                line-height: 30px;
             }
 
             &:focus {
@@ -199,8 +210,8 @@
     .carousel & {
         // Positioning
         .pos(absolute);
-        top: -40px;
-        right: 5px;
+        top: -47px;
+        right: 10px;
         
         &:nth-child(3),
         .last {
