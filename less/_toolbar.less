@@ -6,7 +6,7 @@
     overflow: visible;
     
     // Typography
-    .fontfamily(tahoma);
+    .fontfamily(sans);
     
     .txt-link {
         // Typography
@@ -28,13 +28,15 @@
 
         // Visual
         background-color: @tbar-personal-bgcolor;
+                
+        // Misc
+        .clearfix;
 
         .personal-nav {
             // Box-model
-            display: inline-block;
             .box(border);
             width: 100%;
-            padding: 10px;
+            padding: 9px 10px;
             
             // Typography
             .fontsize(1.2);
@@ -42,6 +44,9 @@
             
             // Visual
             list-style-type: none;
+                
+            // Misc
+            .clearfix;
 
             > .personal-nav-item {
                 // Box-model
@@ -75,8 +80,9 @@
         overflow: hidden;
 
         // Visual
+        // background-color: @tbar-bgcolor;
         @color: @colorS2;
-        @top: fadeout(@color, 70%);
+        @top: fadeout(@color, 90%);
         @bottom: fadeout(@color, 100%);
         background: @tbar-bgcolor -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
         background: @tbar-bgcolor -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
@@ -111,9 +117,6 @@
     float: right;
     padding: 0;
     margin: 0;
-
-    // Visual
-    background-color: @tbar-bgcolor;
     
     .user-nav-item {
         // Box-model
@@ -128,9 +131,6 @@
         vertical-align: top;      
         cursor: pointer;
 
-        // Visual
-        background-color: @usernav-item-bgcolor;
-    
         > .icon {
             // Box-model
             display: inline-block;
