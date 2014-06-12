@@ -760,3 +760,56 @@
     direction: @dir;
     unicode-bidi: @uni;
 }
+
+
+//----- WIDTH -------------------------------------------//
+// takes two arguments, a width and a side
+// w should be any number, minus the units
+// s should be lowercase R or L
+.fixedCol(@w, @s) {
+
+    &.fixed-@{s} {
+        // Box-model
+        clear: both;
+
+        > .col {
+            & when (@s = r) {
+                // Box-model
+                width: 63%;
+            }
+
+            &.fw@{w} {
+                // Box-model
+                width: unit(@w + @p, px);
+            
+                & when (@s = r) {
+                    // Box-model
+                    float: right;
+                    padding-right: 0;
+                    margin-left: unit(-(@w + @p), px);
+                }
+
+                & when (@s = l) {
+                    // Box-model
+                    float: left;
+                    padding-right: unit(@p, px);
+                    padding-left: 0;
+                    margin-right: unit(-(@w + @p), px);
+                }
+
+                + .col {
+                    & when (@s = r) {
+                        // Box-model
+                        padding-right: unit(@w + @p, px);
+                    }
+
+                    & when (@s = l) {
+                        // Box-model
+                        width: 100%;
+                        padding-left: unit(@w + @p, px);
+                    }
+                }
+            }
+        }
+    }
+}
