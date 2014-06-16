@@ -312,6 +312,8 @@
   right: 5px;
 }
 .ie7 .searchbar .btn.search {
+  padding-right: 5px;
+  padding-left: 5px;
   margin-left: 20px;
 }
 /* TOOLBAR */
