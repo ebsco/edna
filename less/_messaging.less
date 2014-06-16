@@ -81,28 +81,8 @@
         }
     }
 
-    &.msg-info {
-        // Visual
-        background-color: @msg-info-bgcolor;
-        border-color: @msg-info-bordercolor;
-    }
-
-    &.msg-success {
-        // Visual
-        background-color: @msg-success-bgcolor;
-        border-color: @msg-success-bordercolor;
-    }
-
-    &.msg-note {
-        // Visual
-        background-color: @msg-note-bgcolor;
-        border-color: @msg-note-bordercolor;
-    }
-
-    &.msg-alert {
-        // Visual
-        background-color: @msg-alert-bgcolor;
-        border-color: @msg-alert-bordercolor;
-    }
+    // loop through array and create a message block for each item in it
+    @list: info, success, note, alert;
+    .msg(length(@list));
 
 }
