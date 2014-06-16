@@ -11,87 +11,8 @@ body & {
     color: @font-color;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    // Box-model
-    margin-top: 0;
-    margin-bottom: 20px;
-    
-    // Typography
-    color: @colorP2;
-    
-    > a,
-    > a:visited,
-    > a:focus,
-    > a:active {
-        // Typography
-        color: @link-color;
-        text-decoration: @link-decoration;
-    }
-    > a:visited {
-        // Typography
-        color: @link-color-visited;
-        text-decoration: @link-decoration-visited;
-    }
-    > a:hover {
-        color: @link-color-hover;
-    }
-    > a:focus {
-        text-decoration: @link-decoration-focus;
-    }
-}
-
-h1 {
-    // Box-model
-    margin: 0 0 .636rem;
-
-    // Typography
-    .fontsize(@h1-size);
-    font-weight: bold;
-    line-height: @h1-line-height;
-}
-
-h2 {
-    // Typography
-    .fontsize(@h2-size);
-    font-weight: normal;
-    line-height: @h2-line-height;
-}
-
-h3 {
-    // Box-model
-    margin: 0 0 10px 0;
-    // Typography
-    .fontsize(@h3-size);
-    font-weight: bold;
-    line-height: @h3-line-height;
-}
-
-h4 {
-    // Typography
-    .fontsize(@h4-size);
-    font-weight: bold;
-    line-height: @h4-line-height;
-}
-
-h5 {
-    // Typography
-    .fontsize(@h5-size);
-    font-weight: bold;
-    line-height: @h5-line-height;
-}
-
-h6 {
-    // Typography
-    .fontsize(@h6-size);
-    font-style: italic;
-    font-weight: bold;
-    line-height: @h6-line-height;
-}
+// make all the headings, level 1-6
+.headings(6); // will error if more than 6
 
 p {
     // Box-model
