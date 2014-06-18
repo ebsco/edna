@@ -199,20 +199,28 @@
 // MESSAGING
 @msg-color: @colorP2;
 @msg-bgcolor: @colorS2;
-@msg-bordercolor: darken(@msg-bgcolor, (@pct * .2));
+@msg-bordercolor: darken(@msg-bgcolor, 10%);
 @msg-close-color: @colorP1;
 // info
-@msg-info-bgcolor: #e4f1ff;
-@msg-info-bordercolor: darken(@msg-info-bgcolor, (@pct * .2));
+@msg-info-color: #e4f1ff;
+@msg-info-bgcolor: fade(@msg-info-color, 10%);
+@msg-info-bordercolor: darken(@msg-info-bgcolor, 10%);
+@msg-info-icon: "http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif";
 //success
-@msg-success-bgcolor: #e6fadf;
-@msg-success-bordercolor: darken(@msg-success-bgcolor, (@pct * .2));
+@msg-success-color: #e6fadf;
+@msg-success-bgcolor: fade(@msg-success-color, 10%);
+@msg-success-bordercolor: darken(@msg-success-bgcolor, 10%);
+@msg-success-icon: "http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif";
 // note
-@msg-note-bgcolor: #e7e7b1;
-@msg-note-bordercolor: darken(@msg-note-bgcolor, (@pct * .2));
+@msg-note-color: #e7e7b1;
+@msg-note-bgcolor: fade(@msg-note-color, 10%);
+@msg-note-bordercolor: darken(@msg-note-bgcolor, 10%);
+@msg-note-icon: "http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif";
 // alert
-@msg-alert-bgcolor: #edbdb6;
-@msg-alert-bordercolor: darken(@msg-alert-bgcolor, (@pct * .2));
+@msg-alert-color: #f00;
+@msg-alert-bgcolor: fade(@msg-alert-color, 10%);
+@msg-alert-bordercolor: darken(@msg-alert-color, 10%);
+@msg-alert-icon: "http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif";
 
 
 // MIXINS
