@@ -1,6 +1,8 @@
 /* SEARCHBAR */
 
 .searchbar {
+    @btnWidth: 95px;
+
     // Positioning
     .pos(relative);
     
@@ -14,8 +16,12 @@
         // Box-model
         display: inline-block;
         .box(border);
-        float: left;
-        width: 80%;
+        float: none;
+        width: 100%; 
+        padding-right: @btnWidth;
+        margin-right: -@btnWidth; 
+        overflow: visible;
+
         
         > input[type="text"] {
             // Box-model
@@ -33,7 +39,7 @@
             // Positioning
             .pos(absolute);
             top: 8px;
-            right: 8px;
+            right: @btnWidth + 10;
 
             // Box-model
             width: 11px;
@@ -63,8 +69,10 @@
         &.search {
             // Box-model
             height: 30px;
-            margin-left: 10px;
-            
+            float: right;
+            margin-right: 5px;
+            margin-left: 0;        
+
             // Typography
             font-weight: bold;
         }

@@ -175,6 +175,7 @@ table {
   overflow: hidden;
 }
 .ui-autocomplete {
+  z-index: 10000;
   padding: 0;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -1297,17 +1298,12 @@ a .img {
 }
 .msg > .icon {
   display: inline-block;
-  float: left;
-  font-size: 25px;
-  font-size: 2.5rem;
-  line-height: 1.5rem;
-}
-.msg > .icon ~ .msg-txt {
-  padding: 50px;
-}
-.msg > .icon:after,
-.msg > .icon::after {
-  content: '\2601';
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  vertical-align: middle;
+  background-image: url("http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif");
+  background-repeat: no-repeat;
 }
 .msg .msg-txt {
   margin: 0;
@@ -1747,8 +1743,11 @@ footer {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  float: left;
-  width: 80%;
+  float: none;
+  width: 100%;
+  padding-right: 95px;
+  margin-right: -95px;
+  overflow: visible;
 }
 .searchbar .searchbar-wrap > input[type="text"] {
   height: 30px;
@@ -1759,7 +1758,7 @@ footer {
 .searchbar .searchbar-wrap > .reset {
   position: absolute;
   top: 8px;
-  right: 8px;
+  right: 105px;
   width: 11px;
   height: 14px;
   padding: 0;
@@ -1778,7 +1777,9 @@ footer {
 }
 .searchbar .btn.search {
   height: 30px;
-  margin-left: 10px;
+  float: right;
+  margin-right: 5px;
+  margin-left: 0;
   font-weight: bold;
 }
 .searchbar > .searchtext-wrap {
