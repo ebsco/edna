@@ -378,3 +378,19 @@
     }
     .msg(@arrayLength, (@index + 1));
 }
+
+
+//----- INACTIVE ----------------------------------------//
+.inactive() {
+    &.inactive:after,
+    &.inactive::after {
+        // Typography
+        color: @transport-inactive;
+        cursor: default;
+        &:hover {
+            color: @transport-inactive;
+            cursor: default;
+        }
+    }
+}
+

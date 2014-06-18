@@ -18,6 +18,7 @@
         
         // Typography
         cursor: pointer;
+        .inactive;        
 
         // Visual
         border-top: @transport-width solid transparent;
@@ -74,43 +75,12 @@
         border-left-width: 0;
     }
 
-    // INACTIVE
-    > .inactive {
-        // Typography
-        cursor: default;
-    }
-
-    .inactive(@side) {
-        &.inactive {
-            // Visual
-            border-@{side}-color: @transport-inactive;
-        }
-    }
-
-    > .top {
-        .inactive(bottom);
-    }
-
-    > .right {
-        .inactive(left);
-    }
-
-    > .bottom {
-        .inactive(top);
-    }
-
-    > .left {
-        .inactive(right);
-    }
-
     // SLIM
     &.slim {
         > .top,
         > .right,
         > .bottom,
         > .left {
-            // height: 30px;
-            // width: 30px;
             text-align: center;
             line-height: 30px;
 
@@ -156,6 +126,9 @@
                     color: @transport-slim-color-enabled-hover;
                 }
             }
+
+            // inactive
+            .inactive;
         }
 
         > .top {
