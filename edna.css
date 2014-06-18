@@ -2111,6 +2111,28 @@ footer {
   border-bottom: 15px solid transparent;
   border-left: 15px solid transparent;
 }
+.transport > .top.inactive:after,
+.transport > .right.inactive:after,
+.transport > .bottom.inactive:after,
+.transport > .left.inactive:after,
+.transport > .top.inactive::after,
+.transport > .right.inactive::after,
+.transport > .bottom.inactive::after,
+.transport > .left.inactive::after {
+  color: #d5d5d5;
+  cursor: default;
+}
+.transport > .top.inactive:after:hover,
+.transport > .right.inactive:after:hover,
+.transport > .bottom.inactive:after:hover,
+.transport > .left.inactive:after:hover,
+.transport > .top.inactive::after:hover,
+.transport > .right.inactive::after:hover,
+.transport > .bottom.inactive::after:hover,
+.transport > .left.inactive::after:hover {
+  color: #d5d5d5;
+  cursor: default;
+}
 .transport > .top {
   margin-top: 7.5px;
   margin-bottom: 7.5px;
@@ -2142,21 +2164,6 @@ footer {
   border-right-style: solid;
   border-right-width: 15px;
   border-left-width: 0;
-}
-.transport > .inactive {
-  cursor: default;
-}
-.transport > .top.inactive {
-  border-bottom-color: #d5d5d5;
-}
-.transport > .right.inactive {
-  border-left-color: #d5d5d5;
-}
-.transport > .bottom.inactive {
-  border-top-color: #d5d5d5;
-}
-.transport > .left.inactive {
-  border-right-color: #d5d5d5;
 }
 .transport.slim > .top,
 .transport.slim > .right,
@@ -2208,6 +2215,28 @@ footer {
 .transport.slim > .bottom:hover::after,
 .transport.slim > .left:hover::after {
   color: #0f2774;
+}
+.transport.slim > .top.inactive:after,
+.transport.slim > .right.inactive:after,
+.transport.slim > .bottom.inactive:after,
+.transport.slim > .left.inactive:after,
+.transport.slim > .top.inactive::after,
+.transport.slim > .right.inactive::after,
+.transport.slim > .bottom.inactive::after,
+.transport.slim > .left.inactive::after {
+  color: #d5d5d5;
+  cursor: default;
+}
+.transport.slim > .top.inactive:after:hover,
+.transport.slim > .right.inactive:after:hover,
+.transport.slim > .bottom.inactive:after:hover,
+.transport.slim > .left.inactive:after:hover,
+.transport.slim > .top.inactive::after:hover,
+.transport.slim > .right.inactive::after:hover,
+.transport.slim > .bottom.inactive::after:hover,
+.transport.slim > .left.inactive::after:hover {
+  color: #d5d5d5;
+  cursor: default;
 }
 .transport.slim > .top {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-0.9);
