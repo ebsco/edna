@@ -42,6 +42,7 @@
     .ui-dialog-titlebar {
         
         .ui-dialog-title {
+            // Box-model
             display: none;
         }
     
@@ -71,7 +72,7 @@
                 
                 // Typography
                 text-indent: -99999px;
-                
+
                 // Visual
                 background-color: @ui-dialog-close-bgcolor;
                 background-image: url(@ui-dialog-close-bgimage);
@@ -80,11 +81,12 @@
                 border-radius: 2px;
             }
             &:hover .ui-icon-closethick {
+                // Visual
                 background-position: -2px -23px;
             }
-
             
             .ui-button-text {
+                // Typography
                 .off-page;
             }
         }
@@ -92,21 +94,27 @@
 
     // CUSTOM CONTENT
     .modal-header {
+        // Box-model
         margin-bottom:  25px;
+
         > .heading {
+            // Typography
             color: @modal-heading-color;
         }
     }
 
     .modal-content {
+        // Box-model
         margin-bottom:  25px;
     }
 
     .modal-footer {
+        // Typography
         .fontsize(1.2);
     }
 
     .msg.msg-note {
+        // Box-model
         margin-bottom: 25px;
     }
 
