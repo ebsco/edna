@@ -371,6 +371,17 @@
         // Visual
         background-color: ~"@{msg-@{arrayVal}-bgcolor}";
         border-color: ~"@{msg-@{arrayVal}-bordercolor}";
+        > .icon {
+            // Box-model
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            
+            // Visual
+            background-image: url(~"@{msg-@{arrayVal}-icon}");
+            background-repeat: no-repeat;
+        }
+
         > .txt {
             // Typography
             color: ~"@{msg-@{arrayVal}-color}";
@@ -430,4 +441,14 @@
     }
 
     .transPos(@n, (@i + 1));
+}
+
+
+//----- MODAL WIDTHS ------------------------------------//
+.modalWidth(@width) {
+    @w: unit(@width, px);
+
+    // Box-model
+    width: @w !important;
+    margin-left: ceil(-(@w / 2));
 }

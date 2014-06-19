@@ -23,8 +23,9 @@
 
 .modal {
     // Positioning
+    left: 50% !important;
     z-index: @index-10 !important;
-    
+        
     // Box-model
     display: inline-block !important;
     overflow: hidden;
@@ -94,10 +95,9 @@
 
     // CUSTOM CONTENT
     .modal-header {
-        // Box-model
-        margin-bottom:  25px;
+            > .heading {
+            margin-bottom:  0;
 
-        > .heading {
             // Typography
             color: @modal-heading-color;
         }
@@ -105,17 +105,24 @@
 
     .modal-content {
         // Box-model
-        margin-bottom:  25px;
+        margin-top:  25px;
     }
 
     .modal-footer {
+        // Box-model
+        margin-top:  25px;
+
         // Typography
         .fontsize(1.2);
     }
 
-    .msg.msg-note {
+    .msg {
         // Box-model
-        margin-bottom: 25px;
+        margin-top: 25px;
+        margin-bottom: 0;
+
+        // Typography
+        .fontsize(1.3);
     }
 
 }
