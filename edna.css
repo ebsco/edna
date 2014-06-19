@@ -1294,8 +1294,8 @@ a .img {
   color: #4d4d4d;
   background-color: #e6e6e6;
   border: 1px solid #cccccc;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 .msg > .icon {
   display: inline-block;
@@ -1332,12 +1332,26 @@ a .img {
   background-color: rgba(228, 241, 255, 0.1);
   border-color: rgba(177, 215, 255, 0.1);
 }
+.msg.msg-info > .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif);
+  background-repeat: no-repeat;
+}
 .msg.msg-info > .txt {
   color: #e4f1ff;
 }
 .msg.msg-success {
   background-color: rgba(230, 250, 223, 0.1);
   border-color: rgba(196, 243, 179, 0.1);
+}
+.msg.msg-success > .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif);
+  background-repeat: no-repeat;
 }
 .msg.msg-success > .txt {
   color: #e6fadf;
@@ -1346,12 +1360,26 @@ a .img {
   background-color: rgba(231, 231, 177, 0.1);
   border-color: rgba(219, 219, 138, 0.1);
 }
+.msg.msg-note > .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif);
+  background-repeat: no-repeat;
+}
 .msg.msg-note > .txt {
   color: #e7e7b1;
 }
 .msg.msg-alert {
   background-color: rgba(255, 0, 0, 0.1);
   border-color: #cc0000;
+}
+.msg.msg-alert > .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif);
+  background-repeat: no-repeat;
 }
 .msg.msg-alert > .txt {
   color: #ff0000;
@@ -1395,6 +1423,7 @@ a .img {
   filter: alpha(opacity=50);
 }
 .modal {
+  left: 50% !important;
   z-index: 100000 !important;
   display: inline-block !important;
   overflow: hidden;
@@ -1441,21 +1470,23 @@ a .img {
   font-size: 0;
   text-indent: -99999px;
 }
-.modal .modal-header {
-  margin-bottom: 25px;
-}
 .modal .modal-header > .heading {
+  margin-bottom: 0;
   color: #4d4d4d;
 }
 .modal .modal-content {
-  margin-bottom: 25px;
+  margin-top: 25px;
 }
 .modal .modal-footer {
+  margin-top: 25px;
   font-size: 12px;
   font-size: 1.2rem;
 }
-.modal .msg.msg-note {
-  margin-bottom: 25px;
+.modal .msg {
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-size: 13px;
+  font-size: 1.3rem;
 }
 /* PAGE */
 html  {
