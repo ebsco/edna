@@ -243,6 +243,7 @@ input[type="reset"],
 .btn {
   display: inline-block;
   width: auto;
+  height: 30px;
   padding: 0 15px;
   font-size: 14px;
   font-size: 1.4rem;
@@ -1393,30 +1394,25 @@ a .img {
   opacity: .50;
   filter: alpha(opacity=50);
 }
-.ui-dialog {
-  z-index: 100000;
-  width: 615px;
+.modal {
+  z-index: 100000 !important;
+  display: inline-block !important;
   overflow: hidden;
   background: #ffffff;
   border: 1px solid #cccccc;
-  -moz-border-radius: 9px;
-  border-radius: 9px;
-  -webkit-background-clip: padding-box;
-}
-.ui-dialog .ui-corner-all {
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
-.ui-dialog-titlebar {
-  position: relative;
-  display: block;
-  font-weight: bold;
+  -moz-border-radius: 3px;
   border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  padding: 25px;
 }
-.ui-dialog-titlebar .ui-dialog-titlebar-close {
+.modal .ui-dialog-titlebar .ui-dialog-title {
+  display: none;
+}
+.modal .ui-dialog-titlebar .ui-dialog-titlebar-close {
   position: relative;
-  top: 22px;
-  right: 20px;
+  top: 0;
+  right: 0;
   z-index: 2;
   float: right;
   width: 11px;
@@ -1425,7 +1421,7 @@ a .img {
   background: none;
   border: none;
 }
-.ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
+.modal .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
   display: block;
   width: 20px;
   height: 20px;
@@ -1437,79 +1433,29 @@ a .img {
   background-repeat: no-repeat;
   border-radius: 2px;
 }
-.ui-dialog-titlebar .ui-dialog-titlebar-close .ui-button-text {
+.modal .ui-dialog-titlebar .ui-dialog-titlebar-close:hover .ui-icon-closethick {
+  background-position: -2px -23px;
+}
+.modal .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-button-text {
   display: inline-block;
   font-size: 0;
   text-indent: -99999px;
 }
-.modal {
-  position: relative;
-  height: auto !important;
-  padding: 0 30px;
-  background: 0;
-  zoom: 1;
-}
 .modal .modal-header {
-  padding: 0 25px 10px;
-  margin: 0 -30px 0;
-  font-weight: bold;
-  background-image: url("http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/modal-gradient.png");
-  background-position: 0 40px;
-  background-repeat: repeat-x;
+  margin-bottom: 25px;
 }
-.modal .modal-header .ui-dialog-title {
-  font-size: 20px;
-  font-size: 2rem;
-  font-weight: bold;
-}
-.modal .note {
-  padding: 8px;
-  margin: 20px 0;
-  font-size: 12px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background-color: #faf9b9;
-  border: 1px solid #fcc37c;
+.modal .modal-header > .heading {
+  color: #4d4d4d;
 }
 .modal .modal-content {
-  margin-bottom: 20px;
-  font-size: 12px;
-  font-size: 1.2rem;
-}
-.modal .modal-content .label {
-  float: left;
-  padding: 5px 5px 0 0;
-  font-weight: bold;
-  text-align: right;
-}
-.modal .modal-content input[type=text] {
-  display: inline-block;
-  width: 80%;
-  padding: 4px;
-  margin-bottom: 20px;
-  color: #6f6f6f;
-}
-.modal .modal-content .error {
-  display: block;
-  margin: -17px 0 17px 55px;
-  font-weight: bold;
-  color: #ff0000;
-}
-.modal .modal-content .separate-with,
-.modal .modal-content .learn-more {
-  display: block;
+  margin-bottom: 25px;
 }
 .modal .modal-footer {
-  padding: 20px 0 0 0;
   font-size: 12px;
   font-size: 1.2rem;
 }
-.modal .modal-footer .btn {
-  height: 30px;
-}
-.modal .modal-footer #iphonelearnmore {
-  display: inline;
-  margin-left: 10px;
+.modal .msg.msg-note {
+  margin-bottom: 25px;
 }
 /* PAGE */
 html  {
@@ -2003,6 +1949,7 @@ footer {
 }
 .toolbar .bar {
   position: relative;
+  padding-bottom: 2px;
   overflow: hidden;
   background: #333333 -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(230, 230, 230, 0)), color-stop(1, rgba(230, 230, 230, 0.1)));
   background: #333333 -moz-linear-gradient(center bottom, rgba(230, 230, 230, 0) 0%, rgba(230, 230, 230, 0.1) 100%);
@@ -2021,7 +1968,6 @@ footer {
   font-size: 13px;
   font-size: 1.3rem;
   font-weight: bold;
-  letter-spacing: 1px;
   cursor: pointer;
 }
 .user-nav {
@@ -2151,19 +2097,19 @@ footer {
 }
 .transport > .bottom {
   margin-bottom: 7.5px;
-  margin-left: 7.5px;
+  margin-top: 7.5px;
+  border-bottom-width: 0;
   border-top-color: #535353;
   border-top-style: solid;
   border-top-width: 15px;
-  border-bottom-width: 0;
 }
 .transport > .left {
-  margin-right: 7.5px;
   margin-left: 7.5px;
+  margin-right: 7.5px;
+  border-left-width: 0;
   border-right-color: #535353;
   border-right-style: solid;
   border-right-width: 15px;
-  border-left-width: 0;
 }
 .transport.slim > .top,
 .transport.slim > .right,
