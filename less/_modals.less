@@ -1,5 +1,6 @@
 /* MODALS */
 
+// modal background screen
 .ui-widget-overlay {
     // Positioning
     position: absolute;
@@ -20,189 +21,93 @@
     filter: Alpha(Opacity=50);
 }
 
-.ui-dialog {
+.modal {
     // Positioning
-    z-index: @index-10;
+    z-index: @index-10 !important;
     
     // Box-model
-    width: @ui-dialog-width;
+    display: inline-block !important;
     overflow: hidden;
     
     // Visual
-    background: @ui-dialog-bgcolor;
-    border: 1px solid @ui-dialog-bordercolor;
-    .radius(9);
+    background: @modal-bgcolor;
+    border: 1px solid @modal-bordercolor;
+    .radius(3);
     -webkit-background-clip: padding-box;
 
-    .ui-corner-all {
-        // Visual
-        .radius(0);
-    }
-}
+    box-shadow: @modal-dropshadow;
+    padding: 25px;
 
-.ui-dialog-titlebar {
-    // Positioning
-    position: relative;
-    
-    // Box-model
-    display: block;
-    
-    // Typography
-    font-weight: bold;
-    
-    // Visual
-    border-radius: 3px;
-
-    .ui-dialog-titlebar-close {
-        // Positioning
-        position: relative;
-        top: 22px;
-        right: 20px;
-        z-index: 2;
+    // JQUERY UI CLASSES
+    .ui-dialog-titlebar {
         
-        // Box-model
-        float: right;
-        width: 11px;
-        height: 14px;
-        padding: 0;
-        
-        // Visual
-        background: none;
-        border: none;
-        
-        .ui-icon-closethick {
-            // Box-model
-            display: block;
-            width: 20px;
-            height: 20px;
-            overflow: hidden;
+        .ui-dialog-title {
+            display: none;
+        }
+    
+        .ui-dialog-titlebar-close {
+            // Positioning
+            position: relative;
+            top: 0;
+            right: 0;
+            z-index: 2;
             
-            // Typography
-            text-indent: -99999px;
+            // Box-model
+            float: right;
+            width: 11px;
+            height: 14px;
+            padding: 0;
             
             // Visual
-            background-color: @ui-dialog-close-bgcolor;
-            background-image: url(@ui-dialog-close-bgimage);
-            background-position: -2px -3px;
-            background-repeat: no-repeat;
-            border-radius: 2px;
-        }
+            background: none;
+            border: none;
+            
+            .ui-icon-closethick {
+                // Box-model
+                display: block;
+                width: 20px;
+                height: 20px;
+                overflow: hidden;
+                
+                // Typography
+                text-indent: -99999px;
+                
+                // Visual
+                background-color: @ui-dialog-close-bgcolor;
+                background-image: url(@ui-dialog-close-bgimage);
+                background-position: -2px -3px;
+                background-repeat: no-repeat;
+                border-radius: 2px;
+            }
+            &:hover .ui-icon-closethick {
+                background-position: -2px -23px;
+            }
 
-        .ui-button-text {
-            .off-page;
+            
+            .ui-button-text {
+                .off-page;
+            }
         }
     }
-}
 
-.modal {
-    // Positioning
-    position: relative;
-    
-    // Box-model
-    height: auto !important;
-    padding: 0 30px;
-    
-    // Visual
-    background: 0;
-
-    // Misc
-    zoom: 1;
-
+    // CUSTOM CONTENT
     .modal-header {
-        // Box-model
-        padding: 0 25px 10px;
-        margin: 0 -30px 0;
-        
-        // Typography
-        font-weight: bold;
-        
-        // Visual
-        background-image: url(@ui-dialog-header-bgimage);
-        background-position: 0 40px;
-        background-repeat: repeat-x;
-
-        .ui-dialog-title {
-            // Typography
-            .fontsize(2);
-            font-weight: bold;
+        margin-bottom:  25px;
+        > .heading {
+            color: @modal-heading-color;
         }
-    }
-
-    .note {
-        // Box-model
-        padding: 8px;
-        margin: 20px 0;
-        
-        // Typography
-        .fontsize(1.2);
-        font-weight: bold;
-        
-        // Visual
-        background-color: @ui-dialog-note-bgcolor;
-        border: 1px solid @ui-dialog-note-bordercolor;
     }
 
     .modal-content {
-        // Box-model
-        margin-bottom: 20px;
-        
-        // Typography
-        .fontsize(1.2);
-
-        .label {
-            // Box-model
-            float: left;
-            padding: 5px 5px 0 0;
-            
-            // Typography
-            font-weight: bold;
-            text-align: right;
-        }
-
-        input[type=text] {
-            // Box-model
-            display: inline-block;
-            width: 80%;
-            padding: 4px;
-            margin-bottom: 20px;
-            
-            // Typography
-            color: @ui-dialog-content-input-color;
-        }
-
-        .error {
-            // Box-model
-            display: block;
-            margin: -17px 0 17px 55px;
-            
-            // Typography
-            font-weight: bold;
-            color: @ui-dialog-content-error-color;
-        }
-
-        .separate-with,
-        .learn-more {
-        // Box-model
-            display: block;
-        }
-
+        margin-bottom:  25px;
     }
 
     .modal-footer {
-        // Box-model
-        padding: 20px 0 0 0;
-        
-        // Typography
         .fontsize(1.2);
-
-        .btn {
-            // Box-model
-            height: 30px;
-        }
-        #iphonelearnmore {
-            // Box-model
-            display: inline;
-            margin-left: 10px;
-        }
     }
+
+    .msg.msg-note {
+        margin-bottom: 25px;
+    }
+
 }
