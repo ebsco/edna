@@ -26,54 +26,9 @@
         border-bottom: @transport-width solid transparent;
         border-left: @transport-width solid transparent;
     }
-    
-    > .top {
-        // Box-model
-        margin-top: @transport-width-short;
-        margin-bottom: @transport-width-short;
 
-        // Visual
-        border-top-width: 0;
-        border-bottom-color: @transport-color;
-        border-bottom-style: solid;
-        border-bottom-width: @transport-width;
-    }
-    
-    > .right {
-        // Box-model
-        margin-right: @transport-width-short;
-        margin-left: @transport-width-short;
-
-        // Visual
-        border-right-width: 0;
-        border-left-color: @transport-color;
-        border-left-style: solid;
-        border-left-width: @transport-width;
-    }
-    
-    > .bottom {
-        // Box-model
-        margin-bottom: @transport-width-short;
-        margin-left: @transport-width-short;
-
-        // Visual
-        border-top-color: @transport-color;
-        border-top-style: solid;
-        border-top-width: @transport-width;
-        border-bottom-width: 0;
-    }
-    
-    > .left {
-        // Box-model
-        margin-right: @transport-width-short;
-        margin-left: @transport-width-short;
-
-        // Visual
-        border-right-color: @transport-color;
-        border-right-style: solid;
-        border-right-width: @transport-width;
-        border-left-width: 0;
-    }
+    @transArr: top, right, bottom, left;
+    .transPos( length(@transArr) );
 
     // SLIM
     &.slim {

@@ -371,6 +371,17 @@
         // Visual
         background-color: ~"@{msg-@{arrayVal}-bgcolor}";
         border-color: ~"@{msg-@{arrayVal}-bordercolor}";
+        .icon {
+            // Box-model
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            
+            // Visual
+            background-image: url(~"@{msg-@{arrayVal}-icon}");
+            background-repeat: no-repeat;
+        }
+
         > .txt {
             // Typography
             color: ~"@{msg-@{arrayVal}-color}";
@@ -394,3 +405,50 @@
     }
 }
 
+
+//----- TRANSPORTS --------------------------------------//
+.transMix() {
+    > .@{val} {
+        // Box-model
+        margin-@{val}: @transport-width-short;
+        margin-@{opp}: @transport-width-short;
+
+        // Visual
+        border-@{val}-width: 0;
+        border-@{opp}-color: @transport-color;
+        border-@{opp}-style: solid;
+        border-@{opp}-width: @transport-width;
+    }        
+}
+.transPos(@n, @i: 1) when (@i =< @n) {
+    @val: extract(@transArr, @i);
+    @opp: null;
+    & when (@val = extract(@transArr, 1)) {
+        @opp: bottom;
+        .transMix;
+    }
+    & when (@val = extract(@transArr, 2)) {
+        @opp: left;
+        .transMix;
+    }
+    & when (@val = extract(@transArr, 3)) {
+        @opp: top;
+        .transMix;
+    }
+    & when (@val = extract(@transArr, 4)) {
+        @opp: right;
+        .transMix;
+    }
+
+    .transPos(@n, (@i + 1));
+}
+
+
+//----- MODAL WIDTHS ------------------------------------//
+.modalWidth(@width) {
+    @w: unit(@width, px);
+
+    // Box-model
+    width: @w !important;
+    margin-left: ceil(-(@w / 2));
+}

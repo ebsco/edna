@@ -243,6 +243,7 @@ input[type="reset"],
 .btn {
   display: inline-block;
   width: auto;
+  height: 30px;
   padding: 0 15px;
   font-size: 14px;
   font-size: 1.4rem;
@@ -1293,8 +1294,8 @@ a .img {
   color: #4d4d4d;
   background-color: #e6e6e6;
   border: 1px solid #cccccc;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 .msg > .icon {
   display: inline-block;
@@ -1302,7 +1303,7 @@ a .img {
   height: 20px;
   margin-right: 15px;
   vertical-align: middle;
-  background-image: url("http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif");
+  background-image: url("buzzImages/msg-error.gif");
   background-repeat: no-repeat;
 }
 .msg .msg-txt {
@@ -1331,12 +1332,26 @@ a .img {
   background-color: rgba(228, 241, 255, 0.1);
   border-color: rgba(177, 215, 255, 0.1);
 }
+.msg.msg-info .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(buzzImages/msg-error.gif);
+  background-repeat: no-repeat;
+}
 .msg.msg-info > .txt {
   color: #e4f1ff;
 }
 .msg.msg-success {
   background-color: rgba(230, 250, 223, 0.1);
   border-color: rgba(196, 243, 179, 0.1);
+}
+.msg.msg-success .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(buzzImages/msg-error.gif);
+  background-repeat: no-repeat;
 }
 .msg.msg-success > .txt {
   color: #e6fadf;
@@ -1345,12 +1360,26 @@ a .img {
   background-color: rgba(231, 231, 177, 0.1);
   border-color: rgba(219, 219, 138, 0.1);
 }
+.msg.msg-note .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(buzzImages/msg-error.gif);
+  background-repeat: no-repeat;
+}
 .msg.msg-note > .txt {
   color: #e7e7b1;
 }
 .msg.msg-alert {
   background-color: rgba(255, 0, 0, 0.1);
   border-color: #cc0000;
+}
+.msg.msg-alert .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(buzzImages/msg-error.gif);
+  background-repeat: no-repeat;
 }
 .msg.msg-alert > .txt {
   color: #ff0000;
@@ -1393,30 +1422,26 @@ a .img {
   opacity: .50;
   filter: alpha(opacity=50);
 }
-.ui-dialog {
-  z-index: 100000;
-  width: 615px;
+.modal {
+  left: 50% !important;
+  z-index: 100000 !important;
+  display: inline-block !important;
   overflow: hidden;
   background: #ffffff;
   border: 1px solid #cccccc;
-  -moz-border-radius: 9px;
-  border-radius: 9px;
-  -webkit-background-clip: padding-box;
-}
-.ui-dialog .ui-corner-all {
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
-.ui-dialog-titlebar {
-  position: relative;
-  display: block;
-  font-weight: bold;
+  -moz-border-radius: 3px;
   border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  padding: 25px;
 }
-.ui-dialog-titlebar .ui-dialog-titlebar-close {
+.modal .ui-dialog-titlebar .ui-dialog-title {
+  display: none;
+}
+.modal .ui-dialog-titlebar .ui-dialog-titlebar-close {
   position: relative;
-  top: 22px;
-  right: 20px;
+  top: 0;
+  right: 0;
   z-index: 2;
   float: right;
   width: 11px;
@@ -1425,7 +1450,7 @@ a .img {
   background: none;
   border: none;
 }
-.ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
+.modal .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
   display: block;
   width: 20px;
   height: 20px;
@@ -1437,79 +1462,31 @@ a .img {
   background-repeat: no-repeat;
   border-radius: 2px;
 }
-.ui-dialog-titlebar .ui-dialog-titlebar-close .ui-button-text {
+.modal .ui-dialog-titlebar .ui-dialog-titlebar-close:hover .ui-icon-closethick {
+  background-position: -2px -23px;
+}
+.modal .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-button-text {
   display: inline-block;
   font-size: 0;
   text-indent: -99999px;
 }
-.modal {
-  position: relative;
-  height: auto !important;
-  padding: 0 30px;
-  background: 0;
-  zoom: 1;
-}
-.modal .modal-header {
-  padding: 0 25px 10px;
-  margin: 0 -30px 0;
-  font-weight: bold;
-  background-image: url("http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/modal-gradient.png");
-  background-position: 0 40px;
-  background-repeat: repeat-x;
-}
-.modal .modal-header .ui-dialog-title {
-  font-size: 20px;
-  font-size: 2rem;
-  font-weight: bold;
-}
-.modal .note {
-  padding: 8px;
-  margin: 20px 0;
-  font-size: 12px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background-color: #faf9b9;
-  border: 1px solid #fcc37c;
+.modal .modal-header > .heading {
+  margin-bottom: 0;
+  color: #4d4d4d;
 }
 .modal .modal-content {
-  margin-bottom: 20px;
-  font-size: 12px;
-  font-size: 1.2rem;
-}
-.modal .modal-content .label {
-  float: left;
-  padding: 5px 5px 0 0;
-  font-weight: bold;
-  text-align: right;
-}
-.modal .modal-content input[type=text] {
-  display: inline-block;
-  width: 80%;
-  padding: 4px;
-  margin-bottom: 20px;
-  color: #6f6f6f;
-}
-.modal .modal-content .error {
-  display: block;
-  margin: -17px 0 17px 55px;
-  font-weight: bold;
-  color: #ff0000;
-}
-.modal .modal-content .separate-with,
-.modal .modal-content .learn-more {
-  display: block;
+  margin-top: 25px;
 }
 .modal .modal-footer {
-  padding: 20px 0 0 0;
+  margin-top: 25px;
   font-size: 12px;
   font-size: 1.2rem;
 }
-.modal .modal-footer .btn {
-  height: 30px;
-}
-.modal .modal-footer #iphonelearnmore {
-  display: inline;
-  margin-left: 10px;
+.modal .msg {
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-size: 13px;
+  font-size: 1.3rem;
 }
 /* PAGE */
 html  {
@@ -1728,7 +1705,7 @@ footer {
   display: inline-block;
   font-size: 0;
   text-indent: -99999px;
-  background-image: url("spinner-md.gif");
+  background-image: url("buzzImages/spinner-circles.gif");
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -2154,19 +2131,19 @@ footer {
 }
 .transport > .bottom {
   margin-bottom: 7.5px;
-  margin-left: 7.5px;
+  margin-top: 7.5px;
+  border-bottom-width: 0;
   border-top-color: #535353;
   border-top-style: solid;
   border-top-width: 15px;
-  border-bottom-width: 0;
 }
 .transport > .left {
-  margin-right: 7.5px;
   margin-left: 7.5px;
+  margin-right: 7.5px;
+  border-left-width: 0;
   border-right-color: #535353;
   border-right-style: solid;
   border-right-width: 15px;
-  border-left-width: 0;
 }
 .transport.slim > .top,
 .transport.slim > .right,
