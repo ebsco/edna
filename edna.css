@@ -1739,6 +1739,7 @@ footer {
 }
 .searchbar .searchbar-wrap {
   position: relative;
+  z-index: 10000;
   display: inline-block;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1776,6 +1777,8 @@ footer {
   color: #b3b3b3;
 }
 .searchbar .btn.search {
+  position: relative;
+  z-index: 20000;
   height: 30px;
   float: right;
   margin-right: 5px;
@@ -2003,6 +2006,7 @@ footer {
 }
 .toolbar .bar {
   position: relative;
+  padding-bottom: 2px;
   overflow: hidden;
   background: #333333 -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(230, 230, 230, 0)), color-stop(1, rgba(230, 230, 230, 0.1)));
   background: #333333 -moz-linear-gradient(center bottom, rgba(230, 230, 230, 0) 0%, rgba(230, 230, 230, 0.1) 100%);
@@ -2021,7 +2025,6 @@ footer {
   font-size: 13px;
   font-size: 1.3rem;
   font-weight: bold;
-  letter-spacing: 1px;
   cursor: pointer;
 }
 .user-nav {
