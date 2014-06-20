@@ -1716,6 +1716,7 @@ footer {
 }
 .searchbar .searchbar-wrap {
   position: relative;
+  z-index: 10000;
   display: inline-block;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1753,6 +1754,8 @@ footer {
   color: #b3b3b3;
 }
 .searchbar .btn.search {
+  position: relative;
+  z-index: 20000;
   height: 30px;
   float: right;
   margin-right: 5px;
