@@ -12,6 +12,7 @@
     .searchbar-wrap {
         // Positioning
         .pos(relative);
+        z-index: @index-1;
         
         // Box-model
         display: inline-block;
@@ -67,6 +68,10 @@
 
     .btn {
         &.search {
+            // Positioning
+            .pos(relative);
+            z-index: @index-2;
+            
             // Box-model
             height: 30px;
             float: right;
