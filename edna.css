@@ -1303,7 +1303,7 @@ a .img {
   height: 20px;
   margin-right: 15px;
   vertical-align: middle;
-  background-image: url("http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif");
+  background-image: url("buzzImages/msg-error.gif");
   background-repeat: no-repeat;
 }
 .msg .msg-txt {
@@ -1332,11 +1332,11 @@ a .img {
   background-color: rgba(228, 241, 255, 0.1);
   border-color: rgba(177, 215, 255, 0.1);
 }
-.msg.msg-info > .icon {
+.msg.msg-info .icon {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url(http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif);
+  background-image: url(buzzImages/msg-error.gif);
   background-repeat: no-repeat;
 }
 .msg.msg-info > .txt {
@@ -1346,11 +1346,11 @@ a .img {
   background-color: rgba(230, 250, 223, 0.1);
   border-color: rgba(196, 243, 179, 0.1);
 }
-.msg.msg-success > .icon {
+.msg.msg-success .icon {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url(http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif);
+  background-image: url(buzzImages/msg-error.gif);
   background-repeat: no-repeat;
 }
 .msg.msg-success > .txt {
@@ -1360,11 +1360,11 @@ a .img {
   background-color: rgba(231, 231, 177, 0.1);
   border-color: rgba(219, 219, 138, 0.1);
 }
-.msg.msg-note > .icon {
+.msg.msg-note .icon {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url(http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif);
+  background-image: url(buzzImages/msg-error.gif);
   background-repeat: no-repeat;
 }
 .msg.msg-note > .txt {
@@ -1374,11 +1374,11 @@ a .img {
   background-color: rgba(255, 0, 0, 0.1);
   border-color: #cc0000;
 }
-.msg.msg-alert > .icon {
+.msg.msg-alert .icon {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url(http://f.cl.ly/items/2e1z1G3D23293x2v1O1i/Error-Buzz.gif);
+  background-image: url(buzzImages/msg-error.gif);
   background-repeat: no-repeat;
 }
 .msg.msg-alert > .txt {
@@ -1705,7 +1705,7 @@ footer {
   display: inline-block;
   font-size: 0;
   text-indent: -99999px;
-  background-image: url("spinner-md.gif");
+  background-image: url("buzzImages/spinner-circles.gif");
   background-position: center center;
   background-repeat: no-repeat;
 }
