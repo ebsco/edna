@@ -1,7 +1,6 @@
 /* SEARCHBAR */
 
 .searchbar {
-    @btnWidth: 95px;
 
     // Positioning
     .pos(relative);
@@ -19,8 +18,8 @@
         .box(border);
         float: none;
         width: 100%; 
-        padding-right: @btnWidth;
-        margin-right: -@btnWidth; 
+        padding-right: @searchbar-btnWidth;
+        margin-right: -@searchbar-btnWidth; 
         overflow: visible;
 
         
@@ -40,7 +39,7 @@
             // Positioning
             .pos(absolute);
             top: 8px;
-            right: @btnWidth + 10;
+            right: @searchbar-btnWidth + 10;
 
             // Box-model
             width: 11px;
