@@ -278,20 +278,20 @@ input[type="reset"].txt:hover,
   text-decoration: underline;
 }
 button + button,
-input[type="submit"] + button,
-input[type="reset"] + button,
-.btn + button,
 button + input[type="submit"],
-input[type="submit"] + input[type="submit"],
-input[type="reset"] + input[type="submit"],
-.btn + input[type="submit"],
 button + input[type="reset"],
-input[type="submit"] + input[type="reset"],
-input[type="reset"] + input[type="reset"],
-.btn + input[type="reset"],
 button + .btn,
+input[type="submit"] + button,
+input[type="submit"] + input[type="submit"],
+input[type="submit"] + input[type="reset"],
 input[type="submit"] + .btn,
+input[type="reset"] + button,
+input[type="reset"] + input[type="submit"],
+input[type="reset"] + input[type="reset"],
 input[type="reset"] + .btn,
+.btn + button,
+.btn + input[type="submit"],
+.btn + input[type="reset"],
 .btn + .btn {
   margin-left: 10px;
 }
@@ -743,14 +743,6 @@ label {
 label:active {
   text-decoration: underline;
 }
-.cb-list {
-  padding-left: 0;
-  list-style: none;
-}
-.cb-inline li {
-  display: inline;
-  padding: 0 0 1px;
-}
 /* DROPDOWNS */
 .dd {
   position: relative;
@@ -898,79 +890,6 @@ ol.base > li {
 }
 .upper-roman {
   list-style: upper-roman;
-}
-.citation > dt {
-  float: left;
-  padding: 5px 5px 5px 0;
-  clear: left;
-  font-weight: bold;
-}
-.citation > dd {
-  padding: 5px;
-}
-.tree-list {
-  padding: 0;
-  list-style-type: none;
-}
-.tree-list > .tree-list {
-  margin-left: 15px;
-}
-.tree-list .list-item {
-  margin-bottom: 3px;
-}
-.tree-list .list-item a {
-  text-decoration: none;
-}
-.tree-list .list-item:before,
-.tree-list .list-item::before {
-  display: inline-block;
-  width: 5px;
-  padding-right: 0;
-  font-size: 10px;
-  font-size: 1rem;
-  color: #e6e6e6;
-  content: '\25FC';
-}
-.tree-list .list-item .before {
-  height: 14px;
-  font-size: 16px;
-  font-size: 1.6rem;
-  color: #e6e6e6;
-}
-.tree-list .list-item.expand:before,
-.tree-list .list-item.expand::before {
-  height: 14px;
-  font-size: 16px;
-  font-size: 1.6rem;
-  color: #e6e6e6;
-  content: '\229E';
-}
-.tree-list .list-item.collapse:before,
-.tree-list .list-item.collapse::before {
-  height: 14px;
-  font-size: 16px;
-  font-size: 1.6rem;
-  color: #e6e6e6;
-  content: '\229F';
-}
-.tree-list .more {
-  margin-left: 15px;
-}
-.tree-list .more:after,
-.tree-list .more::after {
-  display: inline-block;
-  margin-left: 5px;
-  font-size: 12px;
-  font-size: 1.2rem;
-  color: #1c71cf;
-  content: '\25BC';
-}
-.tree-list .more:after:hover,
-.tree-list .more::after:hover {
-  color: #1658a2;
-}
-.tree-list .more a {
-  text-decoration: none;
 }
 /* CONTENTBOX */
 .contentbox .contentbox-img {
