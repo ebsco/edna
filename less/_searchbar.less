@@ -1,5 +1,7 @@
 /* SEARCHBAR */
+
 .searchbar {
+
     // Positioning
     .pos(relative);
     
@@ -9,17 +11,25 @@
     .searchbar-wrap {
         // Positioning
         .pos(relative);
+        z-index: @index-1;
         
         // Box-model
         display: inline-block;
         .box(border);
-        float: left;
-        width: 80%;
+        float: none;
+        width: 100%; 
+        padding-right: @searchbar-btnWidth;
+        margin-right: -@searchbar-btnWidth; 
+        overflow: visible;
+
         
         > input[type="text"] {
             // Box-model
             height: 30px;
             padding: 2.5px 23px 2.5px 5px;
+
+            // Typography
+            .fontfamily(lucida);
 
             // Visual
             border-color: @searchbar-input-bordercolor;
@@ -29,13 +39,12 @@
             // Positioning
             .pos(absolute);
             top: 8px;
-            right: 8px;
+            right: @searchbar-btnWidth + 10;
 
             // Box-model
             width: 11px;
             height: 14px;
             padding: 0;
-
             
             // Typography
             .fontsize(2);
@@ -58,10 +67,18 @@
 
     .btn {
         &.search {
+            // Positioning
+            .pos(relative);
+            z-index: @index-2;
+            
             // Box-model
             height: 30px;
-            margin-left: 10px;
-            
+            float: right;
+            margin-right: 5px;
+            margin-left: 0;        
+
+            // Typography
+            font-weight: bold;
         }
     }
 

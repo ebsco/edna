@@ -48,6 +48,19 @@
 @radius: 3px;
 
 
+// Z-INDEX
+@index-10: 100000;
+@index-9: 90000;
+@index-8: 80000;
+@index-7: 70000;
+@index-6: 60000;
+@index-5: 50000;
+@index-4: 40000;
+@index-3: 30000;
+@index-2: 20000;
+@index-1: 10000;
+
+
 // *******
 // WIDGETS
 // *******
@@ -57,6 +70,7 @@
 @ac-size: 1.3;
 @ac-bgcolor: #fff;
 @ac-bordercolor: #aaa;
+@ac-result-color: #000;
 @ac-result-color-hover: #fff;
 @ac-result-bgcolor-hover: #0080ff;
 
@@ -117,6 +131,7 @@
 
 // CAROUSEL
 @carousel-border: none;
+@carousel-img: "buzzImages/video-js.png";
 @carousel-img-border: @border1;
 
 
@@ -163,6 +178,10 @@
 @col-left-padding: 0;
 
 
+//LAYOUT - FIXED
+@p: 70; // will be converted to pixels
+
+
 // LIST
 @treelist-before-color: @colorS4;
 @treelist-more-color: @link-color;
@@ -170,6 +189,8 @@
 
 
 // LOGO
+@logo-padding-side: 20px;
+@logo-position-top: 16px;
 
 
 // MEDIABLOCK
@@ -178,35 +199,50 @@
 // MESSAGING
 @msg-color: @colorP2;
 @msg-bgcolor: @colorS2;
-@msg-bordercolor: darken(@msg-bgcolor, (@pct * .2));
+@msg-bordercolor: darken(@msg-bgcolor, 10%);
 @msg-close-color: @colorP1;
 // info
-@msg-info-bgcolor: #e4f1ff;
-@msg-info-bordercolor: darken(@msg-info-bgcolor, (@pct * .2));
+@msg-info-color: #e4f1ff;
+@msg-info-bgcolor: fade(@msg-info-color, 10%);
+@msg-info-bordercolor: darken(@msg-info-bgcolor, 10%);
+@msg-info-icon: "buzzImages/msg-error.gif";
 //success
-@msg-success-bgcolor: #e6fadf;
-@msg-success-bordercolor: darken(@msg-success-bgcolor, (@pct * .2));
+@msg-success-color: #e6fadf;
+@msg-success-bgcolor: fade(@msg-success-color, 10%);
+@msg-success-bordercolor: darken(@msg-success-bgcolor, 10%);
+@msg-success-icon: "buzzImages/msg-error.gif";
 // note
-@msg-note-bgcolor: #e7e7b1;
-@msg-note-bordercolor: darken(@msg-note-bgcolor, (@pct * .2));
+@msg-note-color: #e7e7b1;
+@msg-note-bgcolor: fade(@msg-note-color, 10%);
+@msg-note-bordercolor: darken(@msg-note-bgcolor, 10%);
+@msg-note-icon: "buzzImages/msg-error.gif";
 // alert
-@msg-alert-bgcolor: #edbdb6;
-@msg-alert-bordercolor: darken(@msg-alert-bgcolor, (@pct * .2));
+@msg-alert-color: #f00;
+@msg-alert-bgcolor: fade(@msg-alert-color, 10%);
+@msg-alert-bordercolor: darken(@msg-alert-color, 10%);
+@msg-alert-icon: "buzzImages/msg-error.gif";
 
 
 // MIXINS
 
 
 // MODALS
-@modal-color: @bg1;
-@modal-bgcolor: @colorS1;
-@modal-bordercolor: @border1;
-@modal-header-border-color: @border1;
-@modal-close-color: @colorS3;
-@modal-close-color-hover: @colorS4;
-@modal-close-bgcolor: transparent;
-@modal-close-bordercolor: none;
-@modal-footer-border-color: @colorS3;
+@ui-dialog-width: 615px;
+@ui-dialog-bgcolor: #fff;
+@ui-dialog-bordercolor: #ccc;
+@ui-dialog-close-bgcolor: rgba(0, 0, 0, 0);
+@ui-dialog-close-bgimage: "http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/layout2/modal-close.png";
+@ui-dialog-header-bgimage: "http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/modal-gradient.png";
+@ui-dialog-note-bordercolor: #fcc37c;
+@ui-dialog-note-bgcolor: #faf9b9; 
+@ui-dialog-content-input-color: #6f6f6f; 
+@ui-dialog-content-error-color: #f00;
+@ui-dialog-overlay-bgcolor: #111;
+@ui-dialog-overlay-bgimage: "http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/ui-bg_black_75_100x100.png";
+@modal-bgcolor: #fff;
+@modal-bordercolor: #ccc;
+@modal-dropshadow: 2px 2px 4px rgba(0,0,0,.25);
+@modal-heading-color: @colorP2;
 
 
 // PAGE
@@ -246,6 +282,7 @@
 
 
 // SEARCHBAR
+@searchbar-btnWidth: 95px;
 @searchbar-input-bordercolor: @input-bordercolor;
 @searchbar-reset-color: #ccc;
 @searchbar-reset-color-hover: darken(@searchbar-reset-color,10);
@@ -256,10 +293,11 @@
 
 
 // SPINNER
-@spinner-sm: "spinner-sm.gif";
-@spinner-md: "spinner-md.gif";
-@spinner-lg: "spinner-lg.gif";
+@spinner-sm: "buzzImages/spinner-circles.gif";
+@spinner-md: "buzzImages/spinner-circles.gif";
+@spinner-lg: "buzzImages/spinner-circles.gif";
 @spinner-img: @spinner-md;
+
 
 // TABLES
 @table-bgcolor: @bg1;
@@ -296,11 +334,12 @@
 
 
 // TOOLBAR
-@tbar-color: @colorP1;
+@tbar-bgcolor: @colorP1;
+@tbar-personal-bgcolor: overlay(@colorP1, rgba(0,0,0,.2));
 // user navigation
 @usernav-item-color: #fff;
-@usernav-item-bgcolor: @tbar-color;
-@usernav-item-bgcolor-hover: darken(@tbar-color, 5);
+@usernav-item-bgcolor: @tbar-bgcolor;
+@usernav-item-bgcolor-hover: darken(@tbar-bgcolor, 5);
 // user navigation icons
 @usernav-item-folder-bgcolor: rgba(0, 0, 0, 0);
 @usernav-item-folder-icon: "http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/folder-sprite.png";
@@ -356,6 +395,7 @@
 @p-line-height: 19px;
 // links
 @link-color: #1c71cf;
+@link-decoration: none;
 @link-color-visited: desaturate(@link-color, (@pct * .75));
 @link-decoration-visited: underline;
 @link-color-hover: darken(@link-color, (@pct * .1));
@@ -372,4 +412,3 @@
 
 // WIDTH
 @widget-padding: 47px;
-@widget-padding-split: @widget-padding / 2;

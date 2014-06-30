@@ -1,5 +1,12 @@
 /* TRANSPORT */
+
 .transport {
+    // Box-model
+    vertical-align: top;
+
+    // Visual
+    cursor: pointer;
+
     > .top,
     > .right,
     > .bottom,
@@ -11,6 +18,7 @@
         
         // Typography
         cursor: pointer;
+        .inactive;        
 
         // Visual
         border-top: @transport-width solid transparent;
@@ -18,134 +26,44 @@
         border-bottom: @transport-width solid transparent;
         border-left: @transport-width solid transparent;
     }
-    
-    > .top {
-        // Box-model
-        margin-top: @transport-width-short;
-        margin-bottom: @transport-width-short;
 
-        // Visual
-        border-top-width: 0;
-        border-bottom-color: @transport-color;
-        border-bottom-style: solid;
-        border-bottom-width: @transport-width;
-    }
-    
-    > .right {
-        // Box-model
-        margin-right: @transport-width-short;
-        margin-left: @transport-width-short;
+    @transArr: top, right, bottom, left;
+    .transPos( length(@transArr) );
 
-        // Visual
-        border-right-width: 0;
-        border-left-color: @transport-color;
-        border-left-style: solid;
-        border-left-width: @transport-width;
-    }
-    
-    > .bottom {
-        // Box-model
-        margin-bottom: @transport-width-short;
-        margin-left: @transport-width-short;
-
-        // Visual
-        border-top-color: @transport-color;
-        border-top-style: solid;
-        border-top-width: @transport-width;
-        border-bottom-width: 0;
-    }
-    
-    > .left {
-        // Box-model
-        margin-right: @transport-width-short;
-        margin-left: @transport-width-short;
-
-        // Visual
-        border-right-color: @transport-color;
-        border-right-style: solid;
-        border-right-width: @transport-width;
-        border-left-width: 0;
-    }
-
-    &.inactive {
-        > .top {
-            // Typography
-            cursor: default;
-            
-            // Visual
-            border-bottom-color: @transport-inactive;
-
-            &:hover {
-                // Visual
-                border-bottom-color: @transport-inactive;
-            }
-        }
-
-        > .right {
-            // Typography
-            cursor: default;
-
-            // Visual
-            border-left-color: @transport-inactive;
-            
-            &:hover {
-                // Visual
-                border-left-color: @transport-inactive;
-            }
-        }
-
-        > .bottom {
-            // Typography
-            cursor: default;
-
-            // Visual
-            border-top-color: @transport-inactive;
-            
-            &:hover {
-                // Visual
-                border-top-color: @transport-inactive;
-            }
-        }
-
-        > .left {
-            // Typography
-            cursor: default;
-
-            // Visual
-            border-right-color: @transport-inactive;
-           
-            &:hover {
-                // Visual
-                border-right-color: @transport-inactive;
-            }
-        }
-    }
-
-
+    // SLIM
     &.slim {
         > .top,
         > .right,
         > .bottom,
         > .left {
+            text-align: center;
+            line-height: 30px;
+
             // Box-model
             width: 10px;
             height: 16px;
             padding: 0 0 0 3px;
             margin: 0;
+           
+            // Typography
+            font-family: @transport-slim-fontfamily;
+            .fontsize(@transport-slim-fontsize);
             
             // Visual
             border-color: @transport-slim-bordercolor;           
             border-width: 0;
             outline: 0;
-           
-            // Typography
-            .fontsize(@transport-slim-fontsize);
-            font-family: @transport-slim-fontfamily;
 
             &:after,
             &::after {
                 // Box-model
                 display: inline-block;
+                height: 30px;
+                width: 30px;
+
+                // Typography
+                text-align: center;
+                line-height: 30px;
             }
 
             &:focus {
@@ -163,6 +81,9 @@
                     color: @transport-slim-color-enabled-hover;
                 }
             }
+
+            // inactive
+            .inactive;
         }
 
         > .top {
@@ -217,8 +138,8 @@
     .carousel & {
         // Positioning
         .pos(absolute);
-        top: -40px;
-        right: 5px;
+        top: -47px;
+        right: 10px;
         
         &:nth-child(3),
         .last {
@@ -239,13 +160,19 @@
         display: inline-block;
         > .top {
             // Box-model
-            margin-bottom: 5px;
-            // Misc
-            .transport-top( (@px * .5) );
+            margin-top: -((@px * .5) / 2);
+            margin-bottom: ((@px * .5) / 2);
+            border-right-width: (@px * .5);
+            border-bottom-width: (@px * .5);
+            border-left-width: (@px * .5);
         }
         > .bottom {
-            // Misc
-            .transport-bottom( (@px * .5) );
+            // Box-model
+            margin-top: -((@px * .5) / 2);
+            margin-bottom: ((@px * .5) / 2);
+            border-top-width: (@px * .5);
+            border-right-width: (@px * .5);
+            border-left-width: (@px * .5);
         }
     }
 

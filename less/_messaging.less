@@ -1,4 +1,5 @@
 /* MESSAGING */
+
 .msg {
     // Positioning
     .pos(relative);
@@ -16,30 +17,22 @@
     // Visual
     background-color: @msg-bgcolor;
     border: 1px solid @msg-bordercolor;
-    -moz-border-radius: @radius;
-         border-radius: @radius;
+    -moz-border-radius: 2px;
+         border-radius: 2px;
 
     > .icon {
         // Box-model
         display: inline-block;
-        float: left;
+        width: 20px;
+        height: 20px;
+        margin-right: 15px;
         
         // Typography
-        .fontsize(2.5);
-        line-height: 1.5rem;
-
-        // set a constant left padding to accommodate the icon
-        ~ .msg-txt {
-            // Box-model
-            padding: 50px;
-        }
+        vertical-align: middle;
         
-        // show an icon
-        &:after,
-        &::after {
-            // Visual
-            content: '\2601';
-        }
+        // Visual
+        background-image: url(@msg-alert-icon);
+        background-repeat: no-repeat;
     }
 
     .msg-txt {
@@ -80,28 +73,8 @@
         }
     }
 
-    &.msg-info {
-        // Visual
-        background-color: @msg-info-bgcolor;
-        border-color: @msg-info-bordercolor;
-    }
-
-    &.msg-success {
-        // Visual
-        background-color: @msg-success-bgcolor;
-        border-color: @msg-success-bordercolor;
-    }
-
-    &.msg-note {
-        // Visual
-        background-color: @msg-note-bgcolor;
-        border-color: @msg-note-bordercolor;
-    }
-
-    &.msg-alert {
-        // Visual
-        background-color: @msg-alert-bgcolor;
-        border-color: @msg-alert-bordercolor;
-    }
+    // loop through array and create a message block for each item in it
+    @list: info, success, note, alert;
+    .msg(length(@list));
 
 }

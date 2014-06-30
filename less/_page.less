@@ -1,4 +1,5 @@
 /* PAGE */
+
 html & {
     // Box-model
     height: 100%;
@@ -7,17 +8,12 @@ html & {
 html &,
 body & {
     // Typography
-    .fontfamily(serif);
+    .fontfamily(sans);
 }
 
 .visible {
     // Box-model
     display: inline-block;
-}
-
-.hidden {
-    // Box-model
-    .display-none;
 }
 
  //set padding for elements
@@ -59,6 +55,7 @@ header {
         display: inline-block;
         width: 100%;
         height: 7px;
+        margin-bottom: 1px;
         
         // Visual
         background: @header-border-gradient-bgcolor; // Old browsers
