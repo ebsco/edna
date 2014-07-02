@@ -329,6 +329,15 @@
   float: left;
   text-align: right;
 }
+.ie7 .toolbar .bar {
+  width: 100%;
+}
+.ie8 .toolbar .personal-bar {
+  height: 32px;
+}
+.ie8 .toolbar .bar {
+  width: 100%;
+}
 /* WIDTH */
 .ie7 .w > .w33 {
   width: 29%;
