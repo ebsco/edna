@@ -1192,7 +1192,7 @@ a .img {
 }
 .media-block .media-cell {
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: top;
 }
 .media-block .media-btm {
   vertical-align: bottom;
