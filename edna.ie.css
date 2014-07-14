@@ -284,6 +284,7 @@
 .ie7 .l2.p7.fixed-l > .fw425 + .col {
   width: 100%;
   padding-left: 495px;
+  margin-right: -495px;
 }
 .ie9 .l2.p3.fixed-r > .col:nth-child(1) {
   width: 64%;
@@ -299,7 +300,6 @@
 }
 /* MEDIA FLOAT / MEDIA BLOCK  */
 .ie7 .media-block .media-cell {
-  color: red !important;
   display: inline;
   float: left;
 }
