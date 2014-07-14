@@ -1344,7 +1344,7 @@ a .img {
 .modal {
   left: 50% !important;
   z-index: 100000 !important;
-  display: inline-block !important;
+  display: inline-block;
   overflow: hidden;
   background: #ffffff;
   border: 1px solid #cccccc;
@@ -1880,7 +1880,6 @@ footer {
 }
 .toolbar .personal-bar .personal-nav > .personal-nav-item {
   display: inline-block;
-  float: right;
   padding: 0 0 0 10px;
   color: #e6e6e6;
   *zoom: 1;
