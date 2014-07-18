@@ -167,11 +167,18 @@
 
 //----- BOX SIZING ------------------------------------//
 
-.box(@sizing) when (@sizing = content), (@sizing = border) {
+.box(@sizing) {
+    & when (@sizing = content), (@sizing = border) {
     // should take either CONTENT or BORDER
     -webkit-box-sizing: escape("@{sizing}-box"); // Safari/Chrome, other WebKit
        -moz-box-sizing: escape("@{sizing}-box"); // Firefox, other Gecko
             box-sizing: escape("@{sizing}-box"); // Opera/IE 8+
+    }
+    & when (@sizing = inherit) {
+    -webkit-box-sizing: escape("@{sizing}"); // Safari/Chrome, other WebKit
+       -moz-box-sizing: escape("@{sizing}"); // Firefox, other Gecko
+            box-sizing: escape("@{sizing}"); // Opera/IE 8+
+    }
 }
 
 

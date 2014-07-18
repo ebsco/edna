@@ -2,7 +2,15 @@
 
 html & {
     // Box-model
+    .box(border);
     height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    // Box-model
+    .box(inherit);
 }
 
 html &,
@@ -23,7 +31,6 @@ body & {
 .l4,
 .l5 {
     // Box-model
-    .box(border);
     width: @pg-width;
     max-width: @pg-width-max;
     min-width: @pg-width-min;
