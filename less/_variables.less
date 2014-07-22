@@ -4,19 +4,6 @@
 // BASE VARIABLES
 // **************
 
-// SKINNING VARIABLES
-@colorP1: #333;
-@colorS1: #fff;
-
-@colorP2: lighten(@colorP1, 10%);
-@colorS2: darken(@colorS1, 10%);
-
-@colorP3: lighten(@colorP1, 20%);
-@colorS3: darken(@colorS1, 10%);
-
-@colorP4: lighten(@colorP1, 30%);
-@colorS4: darken(@colorS1, 10%);
-
 
 // MEASURMENTS
 @rem: 1rem;
@@ -101,32 +88,32 @@
 @btn-action-bordercolor-hover: darken(@btn-action-bgcolor, (@pct * .3));
 // primary button
 @btn-primary-color: #e6e6e6;
-@btn-primary-color-hover: #e6e6e6;
+@btn-primary-color-hover: @btn-primary-color;
 @btn-primary-bgcolor: #007f00;
 @btn-primary-bgcolor-hover: darken(#007f00, (@pct * .07));
 @btn-primary-bordercolor: darken(#007f00, (@pct * .05));
 @btn-primary-bordercolor-hover: darken(#007f00, (@pct * .06));
 // cancel button
 @btn-cancel-color: @colorP2;
-@btn-cancel-color-hover: @colorP2;
+@btn-cancel-color-hover: @btn-cancel-color;
 @btn-cancel-bgcolor: #e6e6e6;
 @btn-cancel-bgcolor-hover: #ccc;
 @btn-cancel-bordercolor: #b3b3b3;
 @btn-cancel-bordercolor-hover: #999;
 // search button
 @btn-search-color: @colorS2;
-@btn-search-color-hover: @colorS2;
+@btn-search-color-hover: @btn-search-color;
 @btn-search-bgcolor: #1a7a85;
 @btn-search-bgcolor-hover: #12535a;
 @btn-search-bordercolor: #106175;
 @btn-search-bordercolor-hover: #0a3c48;
 // disabled
 @btn-disabled-color: @colorS4;
-@btn-disabled-color-hover: @colorS4;
+@btn-disabled-color-hover: @btn-disabled-color;
 @btn-disabled-bgcolor: @colorS3;
 @btn-disabled-bgcolor-hover: @colorS3;
-@btn-disabled-bordercolor: @colorS4;
-@btn-disabled-bordercolor-hover: @colorS4;
+@btn-disabled-bordercolor:  @colorS4;
+@btn-disabled-bordercolor-hover: @btn-disabled-bordercolor;
 
 
 // CAROUSEL
@@ -139,7 +126,7 @@
 
 
 // CONTENT
-@content-border: border1;
+@content-border: @border1;
 
 
 // DROPDOWN
@@ -163,11 +150,11 @@
 
 // INPUTS
 @input-bordercolor: #aaa8a8;
-@placeholder-color: #999;
+@placeholder-color: #aaa8a8;
 
 
 //LAYOUT
-@lay-top-padding: (@px * 7);
+@lay-top-padding: (@px * 5);
 @lay-right-padding: (@px * 2.5);
 @lay-bottom-padding: 0;
 @lay-left-padding: (@px * 2.5);
@@ -213,12 +200,12 @@
 @msg-success-icon: "buzzImages/msg-error.gif";
 // note
 @msg-note-color: #e7e7b1;
-@msg-note-bgcolor: fade(@msg-note-color, 10%);
-@msg-note-bordercolor: darken(@msg-note-bgcolor, 10%);
+@msg-note-bgcolor: #faf9b9;
+@msg-note-bordercolor: #fcc37c;
 @msg-note-icon: "buzzImages/msg-error.gif";
 // alert
-@msg-alert-color: #f00;
-@msg-alert-bgcolor: fade(@msg-alert-color, 10%);
+@msg-alert-color: #ae0404;
+@msg-alert-bgcolor: #fde3e3;//fade(@msg-alert-color, 10%);
 @msg-alert-bordercolor: darken(@msg-alert-color, 10%);
 @msg-alert-icon: "buzzImages/msg-error.gif";
 
@@ -227,7 +214,7 @@
 
 
 // MODALS
-@ui-dialog-width: 615px;
+@ui-dialog-width: 615px !important;
 @ui-dialog-bgcolor: #fff;
 @ui-dialog-bordercolor: #ccc;
 @ui-dialog-close-bgcolor: rgba(0, 0, 0, 0);
@@ -274,8 +261,8 @@
 
 
 // RESULTITEM
-@resultitem-img-width: 130px;
-@resultitem-img-padding: 20px;
+@resultitem-img-width: 125px;
+@resultitem-img-padding: 15px;
 @resultitem-content-margin: @resultitem-img-width + @resultitem-img-padding;
 @resultitem-img-bordercolor: #c4c4c4;
 
@@ -289,9 +276,9 @@
 @searchbar-reset-color: #ccc;
 @searchbar-reset-color-hover: darken(@searchbar-reset-color,10);
 @searchbar-reset-bgcolor: transparent;
-@searchbar-reset-bgcolor-hover: transparent;
+@searchbar-reset-bgcolor-hover: @searchbar-reset-bgcolor;
 @searchbar-reset-bordercolor: none;
-@searchbar-reset-bordercolor-hover: none;
+@searchbar-reset-bordercolor-hover: @searchbar-reset-bordercolor;
 
 
 // SPINNER
@@ -302,7 +289,7 @@
 
 
 // TABLES
-@table-bgcolor: @bg1;
+@table-bgcolor: #000;
 @table-bordercolor: @border1;
 @table-thead-bgcolor: @colorS2;
 @table-th-bordercolor: @border1;
@@ -312,16 +299,16 @@
 // TABS
 @tab-color: @font-color;
 @tab-color-selected: #fff;
-@tab-bgcolor: @colorS2;
+@tab-bgcolor: rgba(178, 168, 155, 0.25);
 @tab-bgcolor-hover: fade(@tab-bgcolor, 50%);
-@tab-bgcolor-selected: @colorP1;
+@tab-bgcolor-selected: #1a7a85;
 @tab-bordercolor: @border1;
-@tab-bordercolor-hover: @border1;
+@tab-bordercolor-hover: @tab-bordercolor;
 // active tabs
 @tab-active-bgcolor: @colorS1;
 @tab-active-bgcolor-hover: @colorS1;
 @tab-active-bordercolor: @border1;
-@tab-active-bordercolor-hover: @border1;
+@tab-active-bordercolor-hover: @tab-active-bordercolor;
 // tab content
 @tab-content-bordercolor: @border1;
 @tab-active-content-bgcolor: @colorS1;
@@ -337,7 +324,7 @@
 
 // TOOLBAR
 @tbar-bgcolor: @colorP1;
-@tbar-personal-bgcolor: overlay(@colorP1, rgba(0,0,0,.2));
+@tbar-personal-bgcolor: overlay(@colorP1, rgba(0,0,0,.25));
 // user navigation
 @usernav-item-color: #fff;
 @usernav-item-bgcolor: @tbar-bgcolor;
@@ -357,7 +344,7 @@
 @transport-inactive: @border1;
 // slim
 @transport-slim-fontfamily: Arial, "Arial Unicode MS", sans-serif;
-@transport-slim-fontsize: 2.5;
+@transport-slim-fontsize: 2.25;
 @transport-slim-arrow-top: "›";
 @transport-slim-arrow-right: "›";
 @transport-slim-arrow-bottom: "‹";
@@ -367,7 +354,7 @@
 @transport-slim-bordercolor: rgba(0, 0, 0, 0);
 @transport-slim-color-disabled: #9b9b9b;
 @transport-slim-color-enabled: @link-color;
-@transport-slim-color-enabled-hover: #0f2774;
+@transport-slim-color-enabled-hover: darken(@transport-slim-color-enabled, 10);
 
 
 // TYPOGRAPHY
@@ -379,10 +366,10 @@
 // headings
 @h1-size: 1.8;
 @h1-line-height: 30px;
-@h2-size: 1.7;
+@h2-size: 1.8;
 @h2-line-height: 22px;
 @h3-size: 1.7;
-@h3-line-height: 1.25em;
+@h3-line-height: 22px;
 @h4-size: 1.5;
 @h4-line-height: 1.25em;
 @h5-size: 1.4;
@@ -391,18 +378,18 @@
 @h6-line-height: 1.25em;
 @heading-color: @colorP1;
 @subheading-color: #262626;
-// text 
-@p-color: @font-color;
+// text
+@p-color: #262626;
 @p-size: 1.2;
-@p-line-height: 19px;
+@p-line-height: 18px;
 // links
-@link-color: #1c71cf;
+@link-color: #005bc6;
 @link-decoration: none;
-@link-color-visited: desaturate(@link-color, (@pct * .75));
+@link-color-visited: @link-color;
 @link-decoration-visited: underline;
-@link-color-hover: darken(@link-color, (@pct * .1));
+@link-color-hover: darken(@link-color, 10%);
 @link-decoration-hover: underline;
-@link-color-focus: darken(@link-color, (@pct * .1));
+@link-color-focus: darken(@link-color, 10%);
 @link-decoration-focus: underline;
 @link-color-active: darken(@link-color, 10%);
 @link-decoration-active: underline;
