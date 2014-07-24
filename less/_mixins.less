@@ -459,3 +459,20 @@
     width: @w !important;
     margin-left: ceil(-(@w / 2));
 }
+
+
+//----- SKINNING ----------------------------------------//
+.skinning(@arrLen, @i: 1) when (@i =< @arrLen) {
+    
+    @varVal: extract(@varArr, @i);
+    @classVal: extract(@classArr, @i);
+
+    // background skinning
+    .bg-@{classVal} { background-color: @varVal !important; }
+    // font color skinning
+    .color-@{classVal} { color: @varVal !important; }
+    // border-color skinning
+    .border-@{classVal} { border-color: @varVal !important; }
+
+    .skinning(@arrLen, @i + 1);
+}
