@@ -25,20 +25,12 @@ body & {
 }
 
  //set padding for elements
-[class*="l1"],
-[class*="l2"],
-[class*="l3"],
-[class*="l4"],
-[class*="l5"] {
+.pg-dims {
     // Box-model
     width: @pg-width;
     max-width: @pg-width-max;
     min-width: @pg-width-min;
-    padding: @lay-top-padding @lay-right-padding @lay-bottom-padding @lay-left-padding;
     .clearfix;
-    &:first-child {
-        padding-top: 0;
-    }
 }
 
 header {
