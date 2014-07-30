@@ -5,23 +5,20 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		express: {
-			options: {
-				host: 'http://localhost',
-				bases: '.',
-
-				debug: true,
-				baseUrl: '.'
-			},
 			server: {
 				options: {
-					port: 8010
+					port: 8010,
+					host: 'http://localhost',
+					bases: '.',
+					debug: true,
+					baseUrl: '.'
 				}
 			}
 		},
 		less: {
 			dev: {
 				options: {
-					path: ["less/"],
+					path: ["less"],
 					compress: false,
 					dumpLineNumbers: true,
 					sourceMap: false
@@ -33,7 +30,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				options: {
-					path: ["less/"],
+					path: ["less"],
 					compress: true,
 					dumpLineNumbers: false,
 					yuicompress: true,
@@ -42,6 +39,15 @@ module.exports = function(grunt) {
 				files: {
 					"edna.min.css": "edna.less",
 					"edna.min.ie.css": "edna.ie.less"
+				}
+			},
+			styleguide: {
+				options: {
+					path: ["less"],
+					compile: true
+				},
+				files: {
+					"styleguide/edna.css": [ "styleguide/styleguide.less" ]
 				}
 			}
 		},
@@ -56,6 +62,13 @@ module.exports = function(grunt) {
 			dist: {
 				files: ["*.less", "less/*.less", "Gruntfile.js"],
 				tasks: ["less:dist"],
+				options: {
+					livereload: true
+				}
+			},
+			styleguide: {
+				files: ["*.less", "less/*.less", "styleguide/*.html", "styleguide/*.less", "styleguide/styles/*.less"],
+				tasks: ["less:styleguide"],
 				options: {
 					livereload: true
 				}
@@ -78,10 +91,19 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks('grunt-express');
+	grunt.loadNpmTasks('assemble-less');
+
+
+	grunt.registerTask("styleguide", [
+		"less:styleguide",
+		"watch:styleguide"
+	]);
+
 
 	grunt.registerTask("build", [
 		"less"
 	]);
+
 	grunt.registerTask('goodserver', function() {
 		grunt.task.run('express');
 		grunt.task.run('less');
