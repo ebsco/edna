@@ -1,6 +1,6 @@
 /* BUTTONS */
 
-.btngrad(@top, @bottom) {
+.btngrade(@top, @bottom) {
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
     background-image: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
     background-image:  -ms-linear-gradient(bottom, @bottom, @top);
@@ -11,6 +11,10 @@
 
 .btn,
 .btn-mini {
+    & + & {
+        margin-left: 10px;
+    }
+
     // Box-model
     display: inline-block;
     width: auto;
@@ -24,7 +28,7 @@
     cursor: pointer;
     background-color: @btn-default-bgcolor;
     border: 1px solid @btn-default-bordercolor;
-    .btngrad( @btn-default-fade-top, @btn-default-fade-bottom );
+    .btngrade( @btn-default-fade-top, @btn-default-fade-bottom );
  
     &:hover,
     &.hover {
@@ -49,7 +53,7 @@
         // Visual
         background-color: @btn-search-bgcolor;
         border-color: @btn-search-bordercolor;
-        .btngrad( @btn-search-fade-top, @btn-search-fade-bottom );
+        .btngrade( @btn-search-fade-top, @btn-search-fade-bottom );
 
         &:hover,
         &.hover {
@@ -73,7 +77,7 @@
         // Visual
         background-color: @btn-search-known-bgcolor;
         border-color: @btn-search-known-bordercolor;
-        .btngrad( @btn-search-known-fade-top, @btn-search-known-fade-bottom );
+        .btngrade( @btn-search-known-fade-top, @btn-search-known-fade-bottom );
 
         &:hover,
         &.hover {
@@ -97,7 +101,7 @@
         // Visual
         background-color: @btn-primary-bgcolor;
         border-color: @btn-primary-bordercolor;
-        .btngrad( @btn-primary-fade-top, @btn-primary-fade-bottom );
+        .btngrade( @btn-primary-fade-top, @btn-primary-fade-bottom );
 
         &:hover,
         &.hover {
@@ -121,7 +125,7 @@
         // Visual
         background-color: @btn-light-bgcolor;
         border-color: @btn-light-bordercolor;
-        .btngrad( @btn-light-fade-top, @btn-light-fade-bottom );
+        .btngrade( @btn-light-fade-top, @btn-light-fade-bottom );
 
         &:hover,
         &.hover {
@@ -129,7 +133,7 @@
             background-color: 
             @btn-light-bgcolor-hover;
             border-color: @btn-light-bordercolor-hover;
-            .btngrad( darken(@btn-light-fade-top, 20%), darken(@btn-light-fade-bottom, 20%) );
+            .btngrade( darken(@btn-light-fade-top, 20%), darken(@btn-light-fade-bottom, 20%) );
         }
 
         &:active,
@@ -163,6 +167,10 @@
             background-color: @btn-disabled-bgcolor-active;
             border-color: @btn-disabled-bordercolor-active;
         }
+    }
+
+    &.flat {
+        .btngrade( transparent, transparent );
     }
 }
 
