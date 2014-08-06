@@ -378,6 +378,12 @@ table {
   background-image: linear-gradient(#ffffff, rgba(255, 255, 255, 0));
   filter: progid:DXImageTransform.Microsoft.newgradient(startColorstr='#ffffff', endColorstr='rgba(255, 255, 255, 0)', GradientType=0);
 }
+.btn + .btn,
+.btn + .btn-mini,
+.btn-mini + .btn,
+.btn-mini + .btn-mini {
+  margin-left: 10px;
+}
 .btn:hover,
 .btn-mini:hover,
 .btn.hover,
@@ -398,7 +404,7 @@ table {
 .btn-mini.search {
   color: #ffffff;
   background-color: #1a7a85;
-  border-color: #092c30;
+  border-color: #176e78;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0.1)));
   background-image: -moz-linear-gradient(center bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 100%);
   background-image: -ms-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1));
@@ -411,14 +417,14 @@ table {
 .btn.search.hover,
 .btn-mini.search.hover {
   background-color: #12535a;
-  border-color: #010505;
+  border-color: #0f474e;
 }
 .btn.search:active,
 .btn-mini.search:active,
 .btn.search.active,
 .btn-mini.search.active {
   background-color: #166670;
-  border-color: #010505;
+  border-color: #0f474e;
 }
 .btn.search-known,
 .btn-mini.search-known {
@@ -526,6 +532,15 @@ table {
   background-color: #ffffff;
   border-color: #c1c1c1;
 }
+.btn.flat,
+.btn-mini.flat {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, transparent), color-stop(1, transparent));
+  background-image: -moz-linear-gradient(center bottom, transparent 0%, transparent 100%);
+  background-image: -ms-linear-gradient(bottom, transparent, transparent);
+  background-image: -o-linear-gradient(transparent, transparent);
+  background-image: linear-gradient(transparent, transparent);
+  filter: progid:DXImageTransform.Microsoft.newgradient(startColorstr='transparent', endColorstr='transparent', GradientType=0);
+}
 .btn {
   height: 30px;
   padding: 0 15px;
@@ -572,7 +587,7 @@ table {
   color: #333333;
 }
 .btn-txt-link {
-  color: #0e43af;
+  color: #005bc6;
 }
 /* INPUTS */
 input[type="text"],
@@ -1862,7 +1877,7 @@ footer {
   font-weight: bold;
 }
 .searchbar > .searchtext-wrap {
-  margin: 10px 0 20px;
+  margin: 10px 0 35px;
 }
 .searchbar > .searchtext-wrap > .searchbar-link {
   padding: 0;
