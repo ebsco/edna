@@ -78,57 +78,79 @@
 
 
 // BUTTONS
-@btn-action: #f5dd6a;
-@btn-primary: #007f00;
-@btn-cancel: @colorS4;
-@btn-search: #1a7a85;
-@btn-search-border: #106175;
-
-@btn-color: @colorS1;
-@btn-color-hover: darken(@colorP3, 5);
-@btn-bgcolor: @colorP3;
-@btn-bgcolor-hover: fade(#b2a89b,50%);
-@btn-bordercolor: darken(@colorP3, 10%);
-// text buttons
-@btn-color-txt: @link-color;
-@btn-bgcolor-txt: transparent;
-@btn-bgcolor-txt-hover: @link-color-active;
-@btn-bordercolor-txt: none;
-// action button
-@btn-action-color: @colorP2;
-@btn-action-color-hover: @colorP2;
-@btn-action-bgcolor: #f5dd6a;
-@btn-action-bgcolor-hover: darken(@btn-action-bgcolor, (@pct * .2));
-@btn-action-bordercolor: darken(@btn-action-bgcolor, (@pct * .2));
-@btn-action-bordercolor-hover: darken(@btn-action-bgcolor, (@pct * .3));
-// primary button
-@btn-primary-color: #e6e6e6;
-@btn-primary-color-hover: @btn-primary-color;
-@btn-primary-bgcolor: #007f00;
-@btn-primary-bgcolor-hover: darken(#007f00, (@pct * .07));
-@btn-primary-bordercolor: darken(#007f00, (@pct * .05));
-@btn-primary-bordercolor-hover: darken(#007f00, (@pct * .06));
-// cancel button
-@btn-cancel-color: @colorP2;
-@btn-cancel-color-hover: @btn-cancel-color;
-@btn-cancel-bgcolor: #e6e6e6;
-@btn-cancel-bgcolor-hover: #ccc;
-@btn-cancel-bordercolor: #b3b3b3;
-@btn-cancel-bordercolor-hover: #999;
+// default
+@btn-default-color: #424242;
+    @btn-default-color-hover: @btn-default-color;
+@btn-default-bgcolor: #e7e7e7;
+    @btn-default-bgcolor-hover: darken(@btn-default-bgcolor, 20%);
+    @btn-default-bgcolor-active: darken(@btn-default-bgcolor, 10%);
+@btn-default-bordercolor: darken(@btn-default-bgcolor, 20%);
+    @btn-default-bordercolor-hover: darken(@btn-default-bordercolor, 10%);
+    @btn-default-bordercolor-active: @btn-default-bordercolor-hover;
+@btn-default-fade-top: rgba(255,255,255,1);
+@btn-default-fade-bottom: rgba(255,255,255,0);
 // search button
 @btn-search-color: @colorS2;
-@btn-search-color-hover: @btn-search-color;
-@btn-search-bgcolor: #1a7a85;
-@btn-search-bgcolor-hover: #12535a;
-@btn-search-bordercolor: #106175;
-@btn-search-bordercolor-hover: #0a3c48;
-// disabled
-@btn-disabled-color: @colorS4;
-@btn-disabled-color-hover: @btn-disabled-color;
-@btn-disabled-bgcolor: @colorS3;
-@btn-disabled-bgcolor-hover: @colorS3;
-@btn-disabled-bordercolor:  @colorS4;
-@btn-disabled-bordercolor-hover: @btn-disabled-bordercolor;
+    @btn-search-color-hover: @btn-search-color;
+@btn-search-bgcolor: @colorP3;
+    @btn-search-bgcolor-hover: darken(@btn-search-bgcolor, 10%);
+    @btn-search-bgcolor-active: darken(@btn-search-bgcolor, 5%);
+@btn-search-bordercolor: darken(@btn-search-bgcolor, 3%);
+    @btn-search-bordercolor-hover: darken(@btn-search-bordercolor, 10%);
+    @btn-search-bordercolor-active: @btn-search-bordercolor-hover;
+@btn-search-fade-top: rgba(255,255,255,.1);
+@btn-search-fade-bottom: rgba(255,255,255,0);
+// known search button
+@btn-search-known-color: @colorS2;
+    @btn-search-known-color-hover: @btn-search-known-color;
+@btn-search-known-bgcolor: #0b3458;
+    @btn-search-known-bgcolor-hover: @btn-search-known-bgcolor;
+    @btn-search-known-bgcolor-active: @btn-search-known-bgcolor;
+@btn-search-known-bordercolor: #575656;
+    @btn-search-known-bordercolor-hover: @btn-search-known-bordercolor;
+    @btn-search-known-bordercolor-active: @btn-search-known-bordercolor-hover;
+@btn-search-known-fade-top: #1d5b94;
+@btn-search-known-fade-bottom: #104779;
+// primary button
+@btn-primary-color: #424242;
+    @btn-primary-color-hover: darken(@btn-primary-color, 10%);
+@btn-primary-bgcolor: #f9ce5a;
+    @btn-primary-bgcolor-hover: darken(@btn-primary-bgcolor, 20%);
+    @btn-primary-bgcolor-active: darken(@btn-primary-bgcolor, 10%);
+@btn-primary-bordercolor: darken(@btn-primary-bgcolor, 20%);
+    @btn-primary-bordercolor-hover: darken(@btn-primary-bordercolor, 10%);
+    @btn-primary-bordercolor-active: @btn-primary-bordercolor-hover;
+@btn-primary-fade-top: rgba(255,255,255,.6);
+@btn-primary-fade-bottom: rgba(255,255,255,0);
+// light button
+@btn-light-color: @colorS2;
+    @btn-light-color-hover: @btn-light-color;
+@btn-light-bgcolor: #3271cf;
+    @btn-light-bgcolor-hover: darken(@btn-light-bgcolor, 20%);
+    @btn-light-bgcolor-active: darken(@btn-light-bgcolor, 10%);
+@btn-light-bordercolor: transparent;
+    @btn-light-bordercolor-hover: transparent;
+    @btn-light-bordercolor-active: transparent;
+@btn-light-fade-top: #5193f3;
+@btn-light-fade-bottom: #3c84ee;
+// disabled button
+@btn-disabled-color: #c1c1c1;
+    @btn-disabled-color-hover: darken(@btn-disabled-color, 10%);
+@btn-disabled-bgcolor: #fff;
+    @btn-disabled-bgcolor-hover: @btn-disabled-bgcolor;
+    @btn-disabled-bgcolor-active: @btn-disabled-bgcolor;
+@btn-disabled-bordercolor: @btn-disabled-color;
+    @btn-disabled-bordercolor-hover: @btn-disabled-bordercolor;
+    @btn-disabled-bordercolor-active: @btn-disabled-bordercolor-hover;
+// text buttons
+@btn-color-txt: #333;
+@btn-color-txt-link: @link-color;
+@btn-bgcolor-txt: transparent;
+    @btn-bgcolor-txt-hover: transparent;
+    @btn-bgcolor-txt-active: transparent;
+@btn-bordercolor-txt: transparent;
+    @btn-bordercolor-txt-hover: transparent;
+    @btn-bordercolor-txt-active: transparent;
 
 
 // CAROUSEL
@@ -236,8 +258,8 @@
 @ui-dialog-close-bgimage: "http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/layout2/modal-close.png";
 @ui-dialog-header-bgimage: "http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/modal-gradient.png";
 @ui-dialog-note-bordercolor: #fcc37c;
-@ui-dialog-note-bgcolor: #faf9b9; 
-@ui-dialog-content-input-color: #6f6f6f; 
+@ui-dialog-note-bgcolor: #faf9b9;
+@ui-dialog-content-input-color: #6f6f6f;
 @ui-dialog-content-error-color: #f00;
 @ui-dialog-overlay-bgcolor: #111;
 @ui-dialog-overlay-bgimage: "http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/ui-bg_black_75_100x100.png";

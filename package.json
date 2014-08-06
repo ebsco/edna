@@ -5,12 +5,10 @@
     "grunt": "~0.4.1"
   },
   "devDependencies": {
-    "grunt-contrib-watch": "~0.5.1",
+    "grunt-contrib-watch": "^0.5.3",
     "grunt-contrib-less": "git://github.com/gruntjs/grunt-contrib-less.git",
-    "grunt-md2html": "~0.1.4",
-    "grunt-express": "~0.3.3",
-    "express": "~3.4.0",
-    "grunt-lesslint": "~0.15.0"
+    "grunt-express": "^1.4.1",
+    "assemble-less": "^0.7.0"
   },
   "main": "Gruntfile.js",
   "repository": {
