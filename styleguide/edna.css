@@ -1375,6 +1375,31 @@ code {
 .btn-txt-link {
   color: #005bc6;
 }
+/* INPUTS */
+input[type="text"],
+input[type="search"],
+textarea {
+  width: 100%;
+  height: 30px;
+  padding: 2.5px 23px 2.5px 5px;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-family: "Lucida Grande", sans-serif;
+  color: #333333;
+  border: 1px solid #aaa8a8;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 5px;
+}
+label {
+  padding-right: 1px;
+}
+label:active {
+  text-decoration: underline;
+}
 /* STYLEGUIDE STYLES */
 html {
   -webkit-box-sizing: border-box;
@@ -1416,6 +1441,7 @@ html {
   text-decoration: none;
 }
 .sg-heading {
+  position: relative;
   padding: 20px;
   margin-bottom: 0;
   background-color: #eee;
@@ -1424,15 +1450,18 @@ html {
 }
 .sg-element {
   position: relative;
-  padding: 20px;
+  padding: 20px 200px 20px 20px;
   border-top: 1px solid #eee;
   cursor: default;
 }
 .sg-modifier-name {
+  position: absolute;
+  top: 50%;
+  right: 20px;
   font-size: 14px;
-  float: right;
   background-color: #eee;
   padding: 5px 10px;
+  margin-top: -14px;
   border: 1px solid #d5d5d5;
 }
 .sg-heading .sg-modifier-name {
