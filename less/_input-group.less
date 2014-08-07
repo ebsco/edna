@@ -1,5 +1,5 @@
 /* INPUTS */
-@import "../less/_inputs.less";
+@import "../less/_input.less";
 
 // INPUTS
 .input-group {
@@ -67,7 +67,45 @@
                     margin-left: -1px;
                 }
             }
+
+            + .btn-group {
+                display: table-cell;
+    
+                > .btn {
+                    margin-left: -1px;
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
         }
+    }
+
+    .btn-group {
+        display: table-cell;
+        vertical-align: top;
+
+        &:first-child {
+
+            > .btn {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            + .input-reset {
+                display: table-cell;
+    
+                > input {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                    margin-left: -1px
+                }
+            }
+
+            + input {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+
     }
 
 }
