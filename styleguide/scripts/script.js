@@ -4,7 +4,7 @@ $(function() {
         // load the correct content
         $.get(navTitle + '.html', function(data) {
             $('.evt-load').html(data);
-            $('.sg-head-h1').text('Edna Styleguide - ' + navTitle);
+            $('.sg-head-h1').append('<span>').text('Edna Styleguide' + ' - ' + navTitle);
             window.location.hash = navTitle.toLowerCase();
             $('.sg-nav-side-item a[title="' + navTitle + '"]').parent().addClass('active').siblings().removeClass('active');
         });        
