@@ -1,21 +1,61 @@
 /* INPUTS */
 
 // TEXT INPUTS
-input[type="text"],
-input[type="search"],
-textarea {
+input {
     // Box-model
     width: 100%;
-    padding: 2.5px 5px;
-    
+    height: 30px;
+    padding: 2.5px 23px 2.5px 5px;
+
     // Typography
     .fontsize(1.4);
+    font-family: "Lucida Grande",sans-serif;
     color: @colorS4;
     
     // Visual
     border: 1px solid @input-bordercolor;
     -moz-border-radius: @radius;
          border-radius: @radius;
+
+    &:disabled,
+    &.disabled {
+        border-color: @btn-disabled-bordercolor;        
+    }
+}
+
+.input-reset {
+    position: relative;
+
+    > input {
+        padding: 2.5px 25px 2.5px 5px;
+
+        + .reset {
+            // Positioning
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            bottom: 2px;
+
+            // Box-model
+            width: 25px;
+            padding: 0;
+            
+            // Typography
+            .fontsize(1.5);
+            line-height: 1.5rem;
+            color: @searchbar-reset-color;
+
+            // Visual
+            background-color: #fff;
+            border: @searchbar-reset-bordercolor;
+            border-radius: 0;
+
+            &:hover {
+                // Typography
+                color: @searchbar-reset-color-hover;
+            }
+        }
+    }
 }
 
 // RADIO / CHECKBOXES
