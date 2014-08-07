@@ -13,3 +13,4 @@ plus/plus.css
 examples/.DS_Store
 *.map
 npm-debug.log
+styleguide/testing.less
