@@ -1,0 +1,73 @@
+/* INPUTS */
+@import "../less/_inputs.less";
+
+// INPUTS
+.input-group {
+    display: inline-table;
+
+    > input {
+        display: table-cell;
+
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        + .input-group-btn {
+            > .btn {
+                margin-left: -1px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+    }
+
+    > .input-group-btn {
+        display: table-cell;
+
+        &:first-child {
+            >  .btn {
+                margin-right: -1px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            + .input-reset {
+                display: table-cell;
+    
+                > input {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                    margin-left: -1px
+                }
+            }
+
+            + input {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+            
+        }
+    }
+
+    .input-reset {
+        display: table-cell;
+
+        &:first-child {
+            > input {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            + .input-group-btn {
+                display: table-cell;
+
+                > .btn {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                    margin-left: -1px;
+                }
+            }
+        }
+    }
+
+}
