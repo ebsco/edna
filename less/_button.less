@@ -181,7 +181,7 @@
 // button overrides
 .btn {
     // Box-model
-    height: 30px;
+    height: @btn-height;
     padding: 0 15px;
     
     // Typography
@@ -239,10 +239,18 @@
     // overrides to the text buttons
     &-txt {
         color: @btn-color-txt;
+
+        & + & {
+            margin-left: 15px;
+        }
     }
  
     // overrides to the text buttons
     &-txt-link {
         color: @btn-color-txt-link;
+
+        & + & {
+            margin-left: 15px;
+        }
     }
 }
