@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 					compile: true
 				},
 				files: {
-					"styleguide/edna.css": [ "styleguide/styleguide.less" ]
+					"styleguide/edna.css": [ "styleguide/styles/styleguide.less" ]
 				}
 			}
 		},
