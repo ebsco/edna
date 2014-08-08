@@ -378,6 +378,7 @@ table {
 }
 .input-group > .input-group-btn {
   display: table-cell;
+  vertical-align: top;
 }
 .input-group > .input-group-btn:first-child > .btn {
   margin-right: -1px;
@@ -447,6 +448,7 @@ table {
   color: #424242;
   font-weight: bold;
   text-decoration: none;
+  white-space: nowrap;
   cursor: pointer;
   background-color: #e7e7e7;
   border: 1px solid #b4b4b4;
@@ -2018,22 +2020,20 @@ footer {
 .searchbar .btn.search {
   position: relative;
   z-index: 20000;
-  height: 30px;
   float: right;
   margin-right: 5px;
   margin-left: 0;
-  font-weight: bold;
 }
 .searchbar > .searchtext-wrap {
   margin: 10px 0 35px;
 }
-.searchbar > .searchtext-wrap > .searchbar-link {
+.searchbar > .searchtext-wrap > .btn-txt-link {
   padding: 0;
   margin-left: 15px;
   font-size: 13px;
   font-size: 1.3rem;
 }
-.searchbar > .searchtext-wrap > .searchbar-link:first-child {
+.searchbar > .searchtext-wrap > .btn-txt-link:first-child {
   padding-left: 0;
   margin-left: 0;
 }

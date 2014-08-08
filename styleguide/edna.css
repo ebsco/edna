@@ -1154,6 +1154,7 @@ code {
   color: #424242;
   font-weight: bold;
   text-decoration: none;
+  white-space: nowrap;
   cursor: pointer;
   background-color: #e7e7e7;
   border: 1px solid #b4b4b4;
@@ -1485,6 +1486,7 @@ label:active {
 }
 .input-group > .input-group-btn {
   display: table-cell;
+  vertical-align: top;
 }
 .input-group > .input-group-btn:first-child > .btn {
   margin-right: -1px;
