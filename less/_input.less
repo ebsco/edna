@@ -4,12 +4,12 @@
 input {
     // Box-model
     width: 100%;
-    height: 30px;
+    height: @input-height; // same as @btn-height
     padding: 2.5px 23px 2.5px 5px;
 
     // Typography
     .fontsize(1.4);
-    font-family: "Lucida Grande",sans-serif;
+    .fontfamily(lucida);
     color: @colorS4;
     
     // Visual
@@ -19,7 +19,7 @@ input {
 
     &:disabled,
     &.disabled {
-        border-color: @btn-disabled-bordercolor;        
+        border-color: @input-disabled-bordercolor;        
     }
 }
 
@@ -34,25 +34,25 @@ input {
             position: absolute;
             top: 2px;
             right: 2px;
-            bottom: 2px;
 
             // Box-model
             width: 25px;
+            height: @input-height - 4; // take into account the border and border radius
             padding: 0;
             
             // Typography
             .fontsize(1.5);
             line-height: 1.5rem;
-            color: @searchbar-reset-color;
+            color: @input-reset-color;
 
             // Visual
-            background-color: #fff;
-            border: @searchbar-reset-bordercolor;
+            background-color: @input-reset-bgcolor;
+            border: @input-reset-bordercolor;
             border-radius: 0;
 
             &:hover {
                 // Typography
-                color: @searchbar-reset-color-hover;
+                color: @input-reset-color-hover;
             }
         }
     }

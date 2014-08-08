@@ -77,7 +77,8 @@
 @ac-result-bgcolor-hover: #0080ff;
 
 
-// BUTTONS
+// BUTTON
+@btn-height: 30px;
 // default
 @btn-default-color: #424242;
     @btn-default-color-hover: @btn-default-color;
@@ -185,8 +186,14 @@
 // FORMS
 
 
-// INPUTS
+// INPUT
 @input-bordercolor: #aaa8a8;
+@input-height: @btn-height;
+@input-reset-color: #ccc;
+@input-reset-color-hover: darken(@searchbar-reset-color,10);
+@input-reset-bgcolor: #fff;
+@input-reset-bordercolor: @searchbar-reset-bordercolor;
+@input-disabled-bordercolor: @btn-disabled-bordercolor;
 @placeholder-color: #aaa8a8;
 
 
@@ -250,7 +257,7 @@
 // MIXINS
 
 
-// MODALS
+// MODAL
 @ui-dialog-width: 615px !important;
 @ui-dialog-bgcolor: #fff;
 @ui-dialog-bordercolor: #ccc;
@@ -333,7 +340,7 @@
 @table-td-bordercolor: @border1;
 
 
-// TABS
+// TAB
 @tab-color: @font-color;
 @tab-color-selected: #fff;
 @tab-bgcolor: rgba(178, 168, 155, 0.25);
@@ -351,7 +358,7 @@
 @tab-active-content-bgcolor: @colorS1;
 
 
-// TOGGLES
+// TOGGLE
 @tog-bgcolor: @colorS1;
 @tog-bordercolor: @border1;
 @tog-tab-bgcolor: @colorS1;
