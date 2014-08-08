@@ -2,7 +2,7 @@ $(function() {
 
     var loadPg = function(navTitle) {
         // load the correct content
-        $.get(navTitle + '.html', function(data) {
+        $.get('pages/' + navTitle + '.html', function(data) {
             $('.evt-load').html(data);
             $('.sg-head-h1').append('<span>').text('Edna Styleguide' + ' - ' + navTitle);
             window.location.hash = navTitle.toLowerCase();
