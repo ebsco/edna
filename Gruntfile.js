@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 				options: {
 					port: 8010,
 					host: 'http://localhost',
-					bases: '.',
+					bases: 'styleguide/',
 					debug: true,
 					baseUrl: '.'
 				}

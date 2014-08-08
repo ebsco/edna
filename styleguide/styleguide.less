@@ -7,7 +7,10 @@
 @import "../less/_mixins.less";
 @import "../less/_typography.less";
 @import "../less/_layout.less";
-@import "../less/_buttons.less";
+@import "../less/_button.less";
+@import "../less/_button-group.less";
+@import "../less/_input-group.less";
+@import "../less/_transport.less";
 
 /* STYLEGUIDE STYLES */
 
@@ -59,6 +62,7 @@ html {
 }
 
 .sg-heading {
+    position: relative;
     padding: 20px;
     margin-bottom: 0;
     background-color: #eee;
@@ -67,16 +71,19 @@ html {
 }
 .sg-element {
     position: relative;
-    padding: 20px;
+    padding: 20px 200px 20px 20px;
     border-top: 1px solid #eee;
     cursor: default;
 
 }
 .sg-modifier-name {
+    position: absolute;
+    top: 50%;
+    right: 20px;
     font-size: 14px;
-    float: right;
     background-color: #eee;
     padding: 5px 10px;
+    margin-top: -14px;
     border: 1px solid darken(#eee, 10%);
 
     .sg-heading & {
