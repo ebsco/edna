@@ -162,28 +162,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* STYLEGUIDE */
-.sg-heading {
-  padding: 20px;
-  margin-bottom: 0;
-  background-color: #eee;
-  color: #333;
-  font-weight: bold;
-}
-.sg-element {
-  position: relative;
-  padding: 20px;
-  border-top: 1px solid #eee;
-  cursor: default;
-}
-.sg-element .sg-modifier-name {
-  font-size: 14px;
-  float: right;
-  background-color: #eee;
-  padding: 5px 10px;
-  border: 1px solid #d5d5d5;
-}
-/* END STYLEGUIDE */
 .off-page {
   display: inline-block;
   font-size: 0;
@@ -1374,8 +1352,14 @@ code {
 .btn-txt {
   color: #333333;
 }
+.btn-txt + .btn-txt {
+  margin-left: 15px;
+}
 .btn-txt-link {
   color: #005bc6;
+}
+.btn-txt-link + .btn-txt-link {
+  margin-left: 15px;
 }
 /* BUTTON GROUP */
 .btn-group {
@@ -1445,14 +1429,14 @@ input.disabled {
   position: absolute;
   top: 2px;
   right: 2px;
-  bottom: 2px;
   width: 25px;
+  height: 26px;
   padding: 0;
   font-size: 15px;
   font-size: 1.5rem;
   line-height: 1.5rem;
   color: #cccccc;
-  background-color: #fff;
+  background-color: #ffffff;
   border: none;
   border-radius: 0;
 }
@@ -1777,6 +1761,76 @@ label:active {
   margin-right: 5px;
   margin-left: 0;
   border-right: 10px solid #333333;
+}
+/* SEARCHBAR */
+.searchbar {
+  position: relative;
+  width: 100%;
+}
+.searchbar .searchbar-wrap {
+  position: relative;
+  z-index: 10000;
+  display: inline-block;
+  float: none;
+  width: 100%;
+  padding-right: 95px;
+  margin-right: -95px;
+  overflow: visible;
+}
+.searchbar .searchbar-wrap > input[type="text"] {
+  height: 30px;
+  padding: 2.5px 23px 2.5px 5px;
+  font-family: "Lucida Grande", sans-serif;
+  border-color: #aaa8a8;
+}
+.searchbar .searchbar-wrap > .reset {
+  position: absolute;
+  top: 8px;
+  right: 105px;
+  width: 11px;
+  height: 14px;
+  padding: 0;
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #cccccc;
+  background-color: transparent;
+  background-image: url("http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/icon-sprites.png");
+  background-position: -2px 141px;
+  border: none;
+  border-radius: 0;
+}
+.searchbar .searchbar-wrap > .reset:hover {
+  color: #b3b3b3;
+}
+.searchbar .btn.search {
+  position: relative;
+  z-index: 20000;
+  float: right;
+  margin-right: 5px;
+  margin-left: 0;
+}
+.searchbar > .searchtext-wrap {
+  margin: 10px 0 35px;
+}
+.searchbar > .searchtext-wrap > .btn-txt-link {
+  padding: 0;
+  margin-left: 15px;
+  font-size: 13px;
+  font-size: 1.3rem;
+}
+.searchbar > .searchtext-wrap > .btn-txt-link:first-child {
+  padding-left: 0;
+  margin-left: 0;
+}
+.searchbar-input {
+  margin-top: 20px;
+}
+.searchbar-input .input-group {
+  width: 100%;
+}
+.searchbar-options {
+  margin-top: 10px;
 }
 /* STYLEGUIDE STYLES */
 html {
