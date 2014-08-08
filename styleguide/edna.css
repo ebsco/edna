@@ -1422,9 +1422,6 @@ input.disabled {
 .input-reset {
   position: relative;
 }
-.input-reset > input {
-  padding: 2.5px 25px 2.5px 5px;
-}
 .input-reset > input + .reset {
   position: absolute;
   top: 2px;
@@ -1436,7 +1433,7 @@ input.disabled {
   font-size: 1.5rem;
   line-height: 1.5rem;
   color: #cccccc;
-  background-color: #ffffff;
+  background-color: transparent;
   border: none;
   border-radius: 0;
 }
@@ -1489,48 +1486,51 @@ label:active {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.input-group .input-reset {
+.input-group > .input-reset {
   display: table-cell;
 }
-.input-group .input-reset:first-child > input {
+.input-group > .input-reset:first-child > input {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.input-group .input-reset:first-child + .input-group-btn {
+.input-group > .input-reset:first-child + .input-group-btn {
   display: table-cell;
 }
-.input-group .input-reset:first-child + .input-group-btn > .btn {
+.input-group > .input-reset:first-child + .input-group-btn > .btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   margin-left: -1px;
 }
-.input-group .input-reset:first-child + .btn-group {
+.input-group > .input-reset:first-child + .btn-group {
   display: table-cell;
 }
-.input-group .input-reset:first-child + .btn-group > .btn {
+.input-group > .input-reset:first-child + .btn-group > .btn {
   margin-left: -1px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.input-group .btn-group {
+.input-group > .btn-group {
   display: table-cell;
   vertical-align: top;
 }
-.input-group .btn-group:first-child > .btn {
+.input-group > .btn-group:first-child > .btn {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.input-group .btn-group:first-child + .input-reset {
+.input-group > .btn-group:first-child + .input-reset {
   display: table-cell;
 }
-.input-group .btn-group:first-child + .input-reset > input {
+.input-group > .btn-group:first-child + .input-reset > input {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   margin-left: -1px;
 }
-.input-group .btn-group:first-child + input {
+.input-group > .btn-group:first-child + input {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+.input-group > .btn {
+  margin-left: 15px;
 }
 /* TRANSPORT */
 .transport {
@@ -1763,70 +1763,10 @@ label:active {
   border-right: 10px solid #333333;
 }
 /* SEARCHBAR */
-.searchbar {
-  position: relative;
-  width: 100%;
-}
-.searchbar .searchbar-wrap {
-  position: relative;
-  z-index: 10000;
-  display: inline-block;
-  float: none;
-  width: 100%;
-  padding-right: 95px;
-  margin-right: -95px;
-  overflow: visible;
-}
-.searchbar .searchbar-wrap > input[type="text"] {
-  height: 30px;
-  padding: 2.5px 23px 2.5px 5px;
-  font-family: "Lucida Grande", sans-serif;
-  border-color: #aaa8a8;
-}
-.searchbar .searchbar-wrap > .reset {
-  position: absolute;
-  top: 8px;
-  right: 105px;
-  width: 11px;
-  height: 14px;
-  padding: 0;
-  font-size: 20px;
-  font-size: 2rem;
-  line-height: 2rem;
-  color: #cccccc;
-  background-color: transparent;
-  background-image: url("http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/icon-sprites.png");
-  background-position: -2px 141px;
-  border: none;
-  border-radius: 0;
-}
-.searchbar .searchbar-wrap > .reset:hover {
-  color: #b3b3b3;
-}
-.searchbar .btn.search {
-  position: relative;
-  z-index: 20000;
-  float: right;
-  margin-right: 5px;
-  margin-left: 0;
-}
-.searchbar > .searchtext-wrap {
-  margin: 10px 0 35px;
-}
-.searchbar > .searchtext-wrap > .btn-txt-link {
-  padding: 0;
-  margin-left: 15px;
-  font-size: 13px;
-  font-size: 1.3rem;
-}
-.searchbar > .searchtext-wrap > .btn-txt-link:first-child {
-  padding-left: 0;
-  margin-left: 0;
-}
 .searchbar-input {
   margin-top: 20px;
 }
-.searchbar-input .input-group {
+.searchbar-input .input-group .input-reset {
   width: 100%;
 }
 .searchbar-options {
@@ -1900,4 +1840,15 @@ html {
   background-color: #fff;
   font-weight: normal;
   padding: 2px 10px;
+}
+.sg-code {
+  background-color: #272822;
+  border-radius: 5px;
+  padding: 0 20px;
+  overflow: scroll;
+}
+.sg-code > code {
+  color: #ccc;
+  display: block;
+  white-space: pre;
 }
