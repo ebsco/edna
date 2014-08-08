@@ -3,7 +3,7 @@
                     <span class="sg-modifier-name" title="modifier">input</span>
                 </h2>
                 <div class="sg-element">
-                    <input type="text" placeholder="This is an input" />
+                    <input type="text" placeholder="This is an input" tabindex="1" />
                 </div>
             </div>
 
@@ -21,9 +21,9 @@
                     <span class="sg-modifier-name" title="modifier">input</span>
                 </h2>
                 <div class="sg-element">
-                    <div class="input-reset">
-                        <input type="text" placeholder="This is an input" />
-                        <button class="reset">X</button>
-                    </div>
+                    <form class="input-reset">
+                        <input type="text" placeholder="This is an input" tabindex="1" />
+                        <input class="reset" type="reset" value="X" tabindex="2" />
+                    </form>
                 </div>
             </div>
