@@ -1,116 +1,89 @@
 /* INPUTS */
 @import "../less/_input.less";
 
-// INPUTS
+.first-elem() {
+    // Visual
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.second-elem() {
+    + .btn,
+    + .input-group-btn .btn,
+    + .btn-reset,
+    + input,
+    + .input-reset input {
+        // Box-model
+        margin-left: -1px;
+        
+        // Visual
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
 .input-group {
+    // Box-model
     display: inline-table;
 
-    > input {
+    > .btn {
+        // Box-model
         display: table-cell;
 
+        // Visual
+        vertical-align: top;
+
         &:first-child {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+            .first-elem;
+            .second-elem;
         }
-        + .input-group-btn {
-            > .btn {
-                margin-left: -1px;
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
-            }
+    }
+
+    > input {
+        // Box-model
+        display: table-cell;
+
+        // Visual
+        vertical-align: top;
+
+        &:first-child {
+            .first-elem;
+            .second-elem;
         }
     }
 
     > .input-group-btn {
+        // Box-model
         display: table-cell;
+
+        // Visual
         vertical-align: top;
 
         &:first-child {
-            >  .btn {
-                margin-right: -1px;
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-            }
+             .btn {
+                .first-elem;
+             }
 
-            + .input-reset {
-                display: table-cell;
-    
-                > input {
-                    border-top-left-radius: 0;
-                    border-bottom-left-radius: 0;
-                    margin-left: -1px
-                }
-            }
-
-            + input {
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
-            }
-            
+            .second-elem;
         }
     }
 
     > .input-reset {
+        // Box-model
         display: table-cell;
 
-        &:first-child {
-            > input {
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-            }
-
-            + .input-group-btn {
-                display: table-cell;
-
-                > .btn {
-                    border-top-left-radius: 0;
-                    border-bottom-left-radius: 0;
-                    margin-left: -1px;
-                }
-            }
-
-            + .btn-group {
-                display: table-cell;
-    
-                > .btn {
-                    margin-left: -1px;
-                    border-top-left-radius: 0;
-                    border-bottom-left-radius: 0;
-                }
-            }
-        }
-    }
-
-    > .btn-group {
-        display: table-cell;
+        // Visual
         vertical-align: top;
 
         &:first-child {
-
-            > .btn {
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-            }
-            + .input-reset {
-                display: table-cell;
-    
-                > input {
-                    border-top-left-radius: 0;
-                    border-bottom-left-radius: 0;
-                    margin-left: -1px
-                }
+            > input {
+                .first-elem;
             }
 
-            + input {
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
-            }
+            .second-elem;
+
         }
-
+        + .btn {
+            margin-left: 15px;
+        }
     }
-
-    > .btn {
-        margin-left: 15px;
-    }
-
 }
