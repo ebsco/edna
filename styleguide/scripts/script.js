@@ -6,7 +6,7 @@ $(function() {
             $('.evt-load').html(data);
             $('.sg-head-h1').append('<span>').text('Edna Styleguide' + ' - ' + navTitle);
             window.location.hash = navTitle.toLowerCase();
-            $('.sg-nav-side-item a[title="' + navTitle + '"]').parent().addClass('active').siblings().removeClass('active');
+            $('.sg-nav-side-item a[title="' + navTitle + '"]').parent().aselectClass('active').siblings().removeClass('active');
         });        
     }
     
@@ -31,5 +31,13 @@ $(function() {
         var loc = loc.split('#');
         loadPg(loc[1]);
     }
+
+    // dropdowns, opening and closing
+    $(document).on('click', '.select', function() {
+        $(this).children('.select-list').toggleClass('active');
+    });
+    $(document).on('click', '.select-label', function() {
+        $(this).toggleClass('active');
+    });
 
 });

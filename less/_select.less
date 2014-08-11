@@ -1,3 +1,82 @@
+/* SELECTS */
+
+.select {
+    // Positioning
+    position: relative;
+        
+    // Typography
+    line-height: normal;
+    
+    // Visual
+    -moz-border-radius: @radius;
+         border-radius: @radius;
+
+    &-list {
+        // Positioning
+        position: absolute;
+        top: 32px;
+        right: -1px;
+        z-index: 10;
+
+        // Box-model
+        display: none;
+        padding: 0;
+        list-style-type: none;
+
+        // Visual
+        background-color: #fff;
+        border: 1px solid #ccc;
+        -moz-border-radius: 3px;
+             border-radius: 3px;
+        box-shadow: 0 1px 16px rgba(0, 0, 0, 0.25);        
+
+        &.active {
+            display: inline-block;
+        }
+    }
+
+    &-label {
+        // Box-model
+        display: block;
+        padding: 5px 15px;
+        
+        // Typography
+        white-space: nowrap;
+        cursor: pointer;
+
+        &.active {
+            background-color: lighten(@dd-label-bgcolor-hover, 10%);
+        }
+        
+        &:hover {
+            // Typography
+            color: @dd-label-color-hover;
+            
+            // Visual
+            background-color: @dd-label-bgcolor-hover;
+        }
+    }
+
+    &-input {
+        // Positioning
+        .pos(absolute);
+        left: -9999px;
+        
+        &:checked + .dd-label {
+            // Typography
+            color: @dd-input-color;
+            
+            // Visual
+            background-color: @dd-input-bgcolor;
+
+            &:hover {
+                // Visual
+                background-color: @dd-input-bgcolor-hover;
+            }
+        }
+    }
+}
+
 /* DROPDOWNS */
 
 .dd {
