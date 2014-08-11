@@ -685,36 +685,36 @@ table {
   position: relative;
   display: inline;
 }
-.btn-group .btn > .transport {
+.btn-group > .transport {
   display: inline-block;
 }
-.btn-group .btn > .transport > .top,
-.btn-group .btn > .transport > .right,
-.btn-group .btn > .transport > .bottom,
-.btn-group .btn > .transport > .left {
+.btn-group > .transport > .top,
+.btn-group > .transport > .right,
+.btn-group > .transport > .bottom,
+.btn-group > .transport > .left {
   position: relative;
   right: -4px;
 }
-.btn-group .btn > .transport > .top {
+.btn-group > .transport > .top {
   margin-top: 2.5px;
   margin-bottom: 2.5px;
   border-width: 5px;
   top: -2px;
 }
-.btn-group .btn > .transport > .right {
+.btn-group > .transport > .right {
   margin-right: ;
   margin-left: 2.5px;
   border-width: 5px;
   border-right-width: 0;
   top: 1px;
 }
-.btn-group .btn > .transport > .bottom {
+.btn-group > .transport > .bottom {
   margin-bottom: 2.5px;
   margin-top: 2.5px;
   border-width: 5px;
   top: 4px;
 }
-.btn-group .btn > .transport > .left {
+.btn-group > .transport > .left {
   margin-left: 0;
   margin-right: 2.5px;
   border-width: 5px;
