@@ -292,54 +292,6 @@ table {
 .contentbox .contentbox-info .contentbox-heading > a {
   text-decoration: none;
 }
-/* SELECTS */
-.select {
-  position: relative;
-  line-height: normal;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.select-list {
-  position: absolute;
-  top: 32px;
-  right: -1px;
-  z-index: 10;
-  display: none;
-  padding: 0;
-  list-style-type: none;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.25);
-}
-.select-list.active {
-  display: inline-block;
-}
-.select-label {
-  display: block;
-  padding: 5px 15px;
-  white-space: nowrap;
-  cursor: pointer;
-}
-.select-label.active {
-  background-color: #d0d0d0;
-}
-.select-label:hover {
-  color: #ffffff;
-  background-color: #b7b7b7;
-}
-.select-input {
-  position: absolute;
-  left: -9999px;
-}
-.select-input:checked + .dd-label {
-  color: #535353;
-  background-color: rgba(209, 209, 209, 0.05);
-}
-.select-input:checked + .dd-label:hover {
-  background-color: rgba(234, 234, 234, 0.05);
-}
 /* DROPDOWNS */
 .dd {
   position: relative;
@@ -412,14 +364,36 @@ table {
 .input-group {
   display: inline-table;
 }
+.input-group > .btn {
+  display: table-cell;
+  vertical-align: top;
+}
+.input-group > .btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group > .btn:first-child + .btn,
+.input-group > .btn:first-child + .input-group-btn .btn,
+.input-group > .btn:first-child + .btn-reset,
+.input-group > .btn:first-child + input,
+.input-group > .btn:first-child + .input-reset input {
+  margin-left: -1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
 .input-group > input {
   display: table-cell;
+  vertical-align: top;
 }
 .input-group > input:first-child {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.input-group > input + .input-group-btn > .btn {
+.input-group > input:first-child + .btn,
+.input-group > input:first-child + .input-group-btn .btn,
+.input-group > input:first-child + .btn-reset,
+.input-group > input:first-child + input,
+.input-group > input:first-child + .input-reset input {
   margin-left: -1px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -428,67 +402,37 @@ table {
   display: table-cell;
   vertical-align: top;
 }
-.input-group > .input-group-btn:first-child > .btn {
-  margin-right: -1px;
+.input-group > .input-group-btn:first-child .btn {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.input-group > .input-group-btn:first-child + .input-reset {
-  display: table-cell;
-}
-.input-group > .input-group-btn:first-child + .input-reset > input {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+.input-group > .input-group-btn:first-child + .btn,
+.input-group > .input-group-btn:first-child + .input-group-btn .btn,
+.input-group > .input-group-btn:first-child + .btn-reset,
+.input-group > .input-group-btn:first-child + input,
+.input-group > .input-group-btn:first-child + .input-reset input {
   margin-left: -1px;
-}
-.input-group > .input-group-btn:first-child + input {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 .input-group > .input-reset {
   display: table-cell;
+  vertical-align: top;
 }
 .input-group > .input-reset:first-child > input {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.input-group > .input-reset:first-child + .input-group-btn {
-  display: table-cell;
-}
-.input-group > .input-reset:first-child + .input-group-btn > .btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  margin-left: -1px;
-}
-.input-group > .input-reset:first-child + .btn-group {
-  display: table-cell;
-}
-.input-group > .input-reset:first-child + .btn-group > .btn {
+.input-group > .input-reset:first-child + .btn,
+.input-group > .input-reset:first-child + .input-group-btn .btn,
+.input-group > .input-reset:first-child + .btn-reset,
+.input-group > .input-reset:first-child + input,
+.input-group > .input-reset:first-child + .input-reset input {
   margin-left: -1px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.input-group > .btn-group {
-  display: table-cell;
-  vertical-align: top;
-}
-.input-group > .btn-group:first-child > .btn {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.input-group > .btn-group:first-child + .input-reset {
-  display: table-cell;
-}
-.input-group > .btn-group:first-child + .input-reset > input {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  margin-left: -1px;
-}
-.input-group > .btn-group:first-child + input {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.input-group > .btn {
+.input-group > .input-reset + .btn {
   margin-left: 15px;
 }
 /* BUTTONS */
