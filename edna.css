@@ -2626,9 +2626,9 @@ body  {
 }
 h1 {
   margin-top: 0;
-  margin-bottom: .636rem;
-  font-size: 18px;
-  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
   color: #65192c;
   line-height: 30px;
@@ -2655,7 +2655,7 @@ h2 {
   margin-bottom: 20px;
   font-size: 18px;
   font-size: 1.8rem;
-  font-weight: normal;
+  font-weight: bold;
   color: #65192c;
   line-height: 22px;
 }
@@ -2759,7 +2759,8 @@ h6 {
   margin-bottom: 20px;
   font-size: 12px;
   font-size: 1.2rem;
-  font-weight: italic;
+  font-weight: bold;
+  font-style: italic;
   color: #65192c;
   line-height: 1.25em;
 }
@@ -2780,29 +2781,43 @@ h6 > a:hover {
 h6 > a:focus {
   text-decoration: underline;
 }
+.heading {
+  color: #712b40;
+}
+.subheading {
+  color: #262626;
+  font-weight: normal;
+}
 p {
-  margin: 0;
+  margin: 0 0 20px;
   font-size: 12px;
   font-size: 1.2rem;
   line-height: 18px;
   color: #262626;
+}
+p:last-child {
+  margin-bottom: 0;
 }
 a {
   display: inline-block;
   color: #005bc6;
   text-decoration: none;
 }
+a.visited,
 a:visited {
   color: #005bc6;
 }
+a.hover,
 a:hover {
   color: #004493;
   text-decoration: underline;
 }
+a.focus,
 a:focus {
   color: #004493;
   text-decoration: underline;
 }
+a.active,
 a:active {
   color: #004493;
   text-decoration: underline;
@@ -2810,8 +2825,6 @@ a:active {
 b,
 strong {
   color: #000000;
-}
-strong {
   font-weight: bold;
 }
 em {
