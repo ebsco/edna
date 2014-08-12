@@ -112,7 +112,7 @@
         margin-top: 0;
 
         & when (@index = 1) {
-            margin-bottom: .636rem;
+            margin-bottom: 20px;
         }
 
         & when (@index = 2), (@index = 4), (@index = 5), (@index = 6) {
@@ -125,16 +125,12 @@
 
         // Typography
         .fontsize(@sizeVal);
-        & when (@index = 1), (@index = 3), (@index = 4), (@index = 5) {
+        & when (@index = 1), (@index = 2), (@index = 3), (@index = 4), (@index = 5), (@index = 6) {
             font-weight: bold;
         }
 
-        & when (@index = 2) {
-            font-weight: normal;
-        }
-
         & when (@index = 6) {
-            font-weight: italic;
+            font-style: italic;
         }
         color: @colorP2;
         line-height: @varVal;
