@@ -14,14 +14,29 @@ body & {
 // make all the headings, level 1-6
 .headings(6); // will error if more than 6
 
+.heading {
+    // Typography
+    color: @heading-color;
+}
+
+.subheading {
+    // Typography
+    color: @subheading-color;
+    font-weight: normal;
+}
+
 p {
     // Box-model
-    margin: 0;
+    margin: 0 0 20px;
 
     // Typography
     .fontsize(@p-size);
     line-height: @p-line-height;
     color: @p-color;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 a {
@@ -32,23 +47,27 @@ a {
     color: @link-color;
     text-decoration: none;
 
+    &.visited,
     &:visited {
         // Typography
         color: @link-color-visited;
     }
 
+    &.hover,
     &:hover {
         // Typography
         color: @link-color-hover;
         text-decoration: @link-decoration-hover;
     }
 
+    &.focus,
     &:focus {
         // Typography
         color: @link-color-focus;
         text-decoration: @link-decoration-focus;
     }
 
+    &.active,
     &:active {
         // Typography
         color: @link-color-active;
@@ -60,10 +79,6 @@ b,
 strong {
     // Typography
     color: @font-color-strong;
-}
-
-strong {
-    // Typography
     font-weight: bold;
 }
 
