@@ -769,25 +769,6 @@ label:active {
 .col + .col {
   padding-left: 70px;
 }
-.padding {
-  padding: 50px 25px 0 25px;
-  *zoom: 1;
-}
-.padding:before,
-.padding:after,
-.padding::before,
-.padding::after {
-  display: table;
-  line-height: 0;
-  content: "";
-}
-.padding:after,
-.padding::after {
-  clear: both;
-}
-.padding:first-child {
-  padding-top: 0;
-}
 .l1-p1 {
   padding: 50px 25px 0 25px;
   *zoom: 1;
