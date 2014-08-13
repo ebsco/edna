@@ -1,12 +1,12 @@
 /* IMPORTS */
 @import "../../less/_normalize.less";
-@import "../../less/_variables.less";
-@import "../../less/_mixins.less";
+@import (reference) "../../less/_variables.less";
+@import (reference) "../../less/_mixins.less";
 @import "../../less/_typography.less";
-@import "../../less/_layout.less";
 @import "../../less/_button.less";
 @import "../../less/_button-group.less";
-@import "../../less/_select.less";
+@import "../../less/_select";
+@import "../../less/_layout.less";
 @import "../../less/_input-group.less";
 @import "../../less/_searchbar.less";
 @import "../../less/_typography.less";
@@ -125,6 +125,17 @@ html {
         color: #ccc;
         display: block;
         white-space: pre;
+    }
+}
+.sg-layout {
+    padding: 0;
+    .col {
+        padding: 10px 0;
+        background-color: #aca;
+        border-right: 3px solid #fff;
+        &:last-child {
+            border-right-width: 0;
+        }
     }
 }
 pre.prettyprint {
