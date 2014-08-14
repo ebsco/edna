@@ -1956,9 +1956,6 @@ footer {
   unicode-bidi: bidi-override;
 }
 /* SEARCHBAR */
-.searchbar-input {
-  margin-top: 20px;
-}
 .searchbar-input .input-group .input-reset {
   width: 100%;
 }
