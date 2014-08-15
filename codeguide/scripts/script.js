@@ -8,7 +8,7 @@ $(function() {
         $.get('pages/' + navTitle + '.html', function(data) {
             var navTxt = $('[title=' + navTitle + ']').text();
             $('.evt-load').html(data);
-            $('.sg-head-h1').append('<span>').text('Edna Styleguide' + ' - ' + navTxt);
+            $('.Cg-head-h1').append('<span>').text('Edna CODEGUIDE' + ' - ' + navTxt);
             $('[title=' + navTitle + ']').parent().addClass('active').siblings().removeClass('active');
             window.location.hash = navTitle.toLowerCase();
         });        

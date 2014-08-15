@@ -1,0 +1,61 @@
+            <div class="sg-section">
+                <h2 class="sg-heading">HTML Guidelines</h2>
+                <div class="sg-element">
+                    <p class="sg-description">
+                        Don’t omit optional closing tags
+                        Self closing elements should contain the optional forward slash at the end />
+                        Don't use &lt;br /&gt; tags for paragraphs, use &lt;p&gt;
+                    </p>
+                </div>
+            </div>
+                        
+            <div class="sg-section">
+                <h2 class="sg-heading">Doctype</h2>
+                <div class="sg-element">
+                    <p class="sg-description">
+                        Simple, we only work with the HTML5 doctype.
+                    </p>
+                </div>
+                <pre class="sg-code prettyprint lang-html">
+
+&lt;!DOCTYPE html&gt;
+                </pre>
+            </div>
+            <div class="sg-section">
+                <h2 class="sg-heading">Character Encoding</h2>
+                <div class="sg-element">
+                    <p class="sg-description">
+                        Placed below the &lt;head&gt; element and before the &lt;title&gt; element should be your character encoding. This will ensure proper rendering of content.
+                    </p>
+                </div>
+                <pre class="sg-code prettyprint lang-html">
+
+&lt;meta charset="UTF-8" /&gt;
+                </pre>
+            </div>
+            <div class="sg-section">
+                <h2 class="sg-heading">Attribute Order</h2>
+                <div class="sg-element">
+                    <p class="sg-description">
+                        To help read markup more easily HTML attributes should come in this order.
+                    </p>
+                    <ul class="sg-list">
+                        <li>class</li>
+                        <li>id, name</li>
+                        <li>data-*</li>
+                        <li>src, for, type, href</li>
+                        <li>title, alt</li>
+                        <li>aria-*, role</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sg-section">
+                <h2 class="sg-heading">JavaScript Generated Markup</h2>
+                <div class="sg-element">
+                    <p class="sg-description">
+                        Shouldn't be done. No markup should be generated from any javascript.
+                    </p>
+                </div>
+            </div>
+
+            <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=desert"></script>
