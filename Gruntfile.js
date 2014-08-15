@@ -67,7 +67,7 @@ module.exports = function(grunt) {
 				}
 			},
 			codeguide: {
-				files: ["*.less", "less/*.less", "codeguide/*.html", "codeguide/*.less", "codeguide/styles/*.less"],
+				files: ["*.less", "less/*.less", "codeguide/*.html", "codeguide/*.less", "codeguide/styles/*.less", "codeguide/scripts/*.js"],
 				tasks: ["less:codeguide"],
 				options: {
 					livereload: true
