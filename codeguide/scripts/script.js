@@ -1,7 +1,7 @@
 $(function() {
 
     // treelist stuff
-    $(document).on('click', '.list-item a', function() {
+    $(document).on('click', '.list-item .txt-link', function() {
         $('.list-item').removeClass('active');
         $(this).parent('.list-item').addClass('active');
     });
