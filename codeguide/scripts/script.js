@@ -1,5 +1,11 @@
 $(function() {
 
+    // treelist stuff
+    $(document).on('click', '.list-item a', function() {
+        $('.list-item').removeClass('active');
+        $(this).parent('.list-item').addClass('active');
+    });
+
     // get a url hash
     var loc = window.location.hash;
 
@@ -40,5 +46,7 @@ $(function() {
     $(document).on('click', '.select-label', function() {
         $(this).toggleClass('active');
     });
+
+
 
 });

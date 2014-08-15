@@ -712,6 +712,23 @@ table {
   border-width: 5px;
   border-left-width: 0;
 }
+.btn-group > .btn:first-child,
+.btn-group > .btn-mini:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-group > .btn + .btn,
+.btn-group > .btn-mini + .btn,
+.btn-group > .btn + .btn-mini,
+.btn-group > .btn-mini + .btn-mini {
+  margin-left: -5px;
+  border-radius: 0;
+}
+.btn-group > .btn:last-child,
+.btn-group > .btn-mini:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
 /* INPUTS */
 input {
   width: 100%;
@@ -2591,6 +2608,31 @@ td:first-child {
   margin-right: 5px;
   margin-left: 0;
   border-right: 10px solid #333333;
+}
+.treelist .list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.treelist .list .list {
+  list-style-type: none;
+  padding-left: 15px;
+}
+.treelist .list .list-item {
+  padding: 5px;
+  font-weight: bold;
+}
+.treelist .list .list-item > a {
+  cursor: pointer;
+  display: block;
+  font-weight: normal;
+}
+.treelist .list .list-item.active {
+  color: #F00;
+  background-color: #EFEFEF;
+  padding-left: 10px;
+  margin-left: -10px;
+  border-left: 5px solid #008000;
 }
 /* TYPOGRAPHY */
 html  {

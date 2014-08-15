@@ -11,6 +11,7 @@
 @import "../../less/_searchbar.less";
 @import "../../less/_typography.less";
 @import "../../less/_transport.less";
+@import "../../less/_treelist.less";
 
 /* STYLEGUIDE STYLES */
 
@@ -32,13 +33,6 @@ html {
     &-h1 {
         font-size: 36px;
         line-height: 48px;
-    }
-}
-
-.active {
-    > a {
-        background-color: #999 !important;
-        color: #fff !important;
     }
 }
 
@@ -69,6 +63,13 @@ html {
         background-color: #ddd;
         color: #333;
         outline: 0;
+    }
+    
+    .active {
+        > a {
+            background-color: #999 !important;
+            color: #fff !important;
+        }
     }
 }
 
