@@ -2622,7 +2622,7 @@ td:first-child {
   padding: 5px;
   font-weight: bold;
 }
-.treelist .list .list-item > a {
+.treelist .list .list-item > .txt-link {
   cursor: pointer;
   display: block;
   font-weight: normal;
