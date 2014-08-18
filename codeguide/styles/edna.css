@@ -1658,6 +1658,87 @@ label:active {
 .msg.msg-alert > .txt {
   color: #ae0404;
 }
+/* MODALS */
+.ui-widget-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 90000;
+  width: 100%;
+  height: 100%;
+  background-color: #111111;
+  background-image: url("http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/ui-bg_black_75_100x100.png");
+  background-position: 50% 50% repeat;
+  background-repeat: repeat;
+  opacity: .50;
+  filter: alpha(opacity=50);
+}
+.modal {
+  left: 50% !important;
+  z-index: 100000 !important;
+  display: inline-block;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  padding: 25px;
+}
+.modal .ui-dialog-titlebar .ui-dialog-title {
+  display: none;
+}
+.modal .ui-dialog-titlebar .ui-dialog-titlebar-close {
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  float: right;
+  width: 11px;
+  height: 14px;
+  padding: 0;
+  background: none;
+  border: none;
+}
+.modal .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
+  display: block;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  text-indent: -99999px;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/layout2/modal-close.png");
+  background-position: -2px -3px;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+}
+.modal .ui-dialog-titlebar .ui-dialog-titlebar-close:hover .ui-icon-closethick {
+  background-position: -2px -23px;
+}
+.modal .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-button-text {
+  display: inline-block;
+  font-size: 0;
+  text-indent: -99999px;
+}
+.modal .modal-header > .heading {
+  margin-bottom: 0;
+  color: #65192c;
+}
+.modal .modal-content {
+  margin-top: 25px;
+}
+.modal .modal-footer {
+  margin-top: 25px;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+.modal .msg {
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-size: 13px;
+  font-size: 1.3rem;
+}
 /* SEARCHBAR */
 .searchbar-input .input-group .input-reset {
   width: 100%;
@@ -2174,6 +2255,9 @@ html {
   padding: 20px 200px 20px 20px;
   border-top: 1px solid #eee;
   cursor: default;
+}
+.cg-element .modal {
+  width: 100%;
 }
 .cg-element .cg-description {
   font-size: 16px;
