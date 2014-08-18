@@ -11,6 +11,7 @@
 @import "../../less/_searchbar.less";
 @import "../../less/_typography.less";
 @import "../../less/_transport.less";
+@import "../../less/_treelist.less";
 
 /* STYLEGUIDE STYLES */
 
@@ -27,7 +28,7 @@ html {
     .box(inherit);
 }
 
-.sg-head {
+.cg-head {
     color: #333;
     &-h1 {
         font-size: 36px;
@@ -35,38 +36,99 @@ html {
     }
 }
 
-.active {
-    > a {
-        background-color: #999 !important;
-        color: #fff !important;
-    }
-}
+.treelist.cg-nav {
+    .list-item {
+    //     list-style-type: none;
+    //     padding: 0;
+    //     margin: 0;
+    //     outline: 0;
 
-.sg-nav-side {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    outline: 0;
-
-    &-item {
         > a {
             width: 100%;
             padding:  10px;
             background-color: #ccc;
-            color: #333;
-            outline: 0;
-    
+
             &:hover {
                 background-color: #aaa;
                 text-decoration: none;
             }        
         }
+    //     .active {
+    //         > a {
+    //             background-color: #999 !important;
+    //             color: #fff !important;
+    //         }
+    //     }
+
+        &.cg-nav-side-heading {
+            margin-left: -25px;
+            width: 100%;
+            padding:  10px;
+            background-color: #ddd;
+            color: #333;
+            outline: 0;
+        }
+
     }
 }
 
+
+
+
+.treelist.cg-nav {
+
+    .list-item {
+        &.cg-nav-side-item {
+            background-color: #aaa;
+            padding: 0;
+
+            > a {
+                background-color: #eee;
+                color:  #666;
+            }
+
+            &:hover a {
+                background-color: #ccc;
+            }
+
+            &.active {
+                border-left: 10px solid #aaa;
+                padding-left: 0;
+
+                > a {
+                    background: #aaa;
+                    color:  #fff;
+                }
+            }
+
+        }
+    }
+
+}
+
+
+
+
 @sg-padding: 20px;
 
-.sg-heading {
+.cg-head-h1 {
+    font-size: 36px;
+    line-height: 48px;
+    padding: @sg-padding 0;
+    margin: 0;
+
+    > a:active,
+    > a:visited,
+    > a:hover {
+        color: #666;
+    }
+}
+
+.l2-p9 {
+    padding-top: 0;
+}
+
+.cg-heading {
     position: relative;
     padding: (@sg-padding / 2) @sg-padding;
     margin-bottom: 0;
@@ -79,13 +141,13 @@ html {
         color: inherit;
     }
 }
-.sg-element {
+.cg-element {
     position: relative;
     padding: @sg-padding 200px @sg-padding @sg-padding;
     border-top: 1px solid #eee;
     cursor: default;
 
-    .sg-description {
+    .cg-description {
         .fontsize(1.6);
         margin-bottom: @sg-padding;
         &:last-child {
@@ -93,7 +155,25 @@ html {
         }
     }
 }
-.sg-modifier-name {
+.cg-list {
+    padding-left: 20px;
+    margin: 0;
+    list-style-type: circle;
+
+    > li {
+        padding: 5px;
+        background-color: #eee;
+
+        &:nth-child(odd) {
+            background-color: #ddd;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.cg-modifier-name {
     position: absolute;
     top: 50%;
     right: @sg-padding;
@@ -103,19 +183,19 @@ html {
     margin-top: -14px;
     border: 1px solid darken(#eee, 10%);
 
-    .sg-heading & {
+    .cg-heading & {
         background-color: #fff;
         font-weight: normal;
         padding: 2px 10px;
     }
 }
-.sg-section {
+.cg-section {
     min-height: 150px;
 }
-.sg-nav-side-item {
+.cg-nav-side-item {
     outline: 0;
 }
-.sg-code {
+.cg-code {
     background-color: #272822;
     border-radius: 5px;
     padding: 0 20px;
@@ -127,7 +207,7 @@ html {
         white-space: pre;
     }
 }
-.sg-layout {
+.cg-layout {
     padding: 0;
     .col {
         padding: 10px 0;

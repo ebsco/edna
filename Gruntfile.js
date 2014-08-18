@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 				options: {
 					port: 8010,
 					host: 'http://localhost',
-					bases: 'styleguide/',
+					bases: 'codeguide/',
 					debug: true,
 					baseUrl: '.'
 				}
@@ -41,13 +41,13 @@ module.exports = function(grunt) {
 					"edna.min.ie.css": "edna.ie.less"
 				}
 			},
-			styleguide: {
+			codeguide: {
 				options: {
 					path: ["less"],
 					compile: true
 				},
 				files: {
-					"styleguide/styles/edna.css": [ "styleguide/styles/styleguide.less" ]
+					"codeguide/styles/edna.css": [ "codeguide/styles/codeguide.less" ]
 				}
 			}
 		},
@@ -66,9 +66,9 @@ module.exports = function(grunt) {
 					livereload: true
 				}
 			},
-			styleguide: {
-				files: ["*.less", "less/*.less", "styleguide/*.html", "styleguide/*.less", "styleguide/styles/*.less"],
-				tasks: ["less:styleguide"],
+			codeguide: {
+				files: ["*.less", "less/*.less", "codeguide/*.html", "codeguide/*.less", "codeguide/styles/*.less", "codeguide/scripts/*.js"],
+				tasks: ["less:codeguide"],
 				options: {
 					livereload: true
 				}
@@ -94,9 +94,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('assemble-less');
 
 
-	grunt.registerTask("styleguide", [
-		"less:styleguide",
-		"watch:styleguide"
+	grunt.registerTask("codeguide", [
+		"less:codeguide",
+		"watch:codeguide"
 	]);
 
 

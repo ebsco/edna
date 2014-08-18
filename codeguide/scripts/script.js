@@ -1,5 +1,11 @@
 $(function() {
 
+    // treelist stuff
+    $(document).on('click', '.list-item .txt-link', function() {
+        $('.list-item').removeClass('active');
+        $(this).parent('.list-item').addClass('active');
+    });
+
     // get a url hash
     var loc = window.location.hash;
 
@@ -8,7 +14,7 @@ $(function() {
         $.get('pages/' + navTitle + '.html', function(data) {
             var navTxt = $('[title=' + navTitle + ']').text();
             $('.evt-load').html(data);
-            $('.sg-head-h1').append('<span>').text('Edna Styleguide' + ' - ' + navTxt);
+            $('.Cg-head-h1').append('<span>').text('Edna CODEGUIDE' + ' - ' + navTxt);
             $('[title=' + navTitle + ']').parent().addClass('active').siblings().removeClass('active');
             window.location.hash = navTitle.toLowerCase();
         });        
@@ -40,5 +46,7 @@ $(function() {
     $(document).on('click', '.select-label', function() {
         $(this).toggleClass('active');
     });
+
+
 
 });

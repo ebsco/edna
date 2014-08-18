@@ -712,6 +712,23 @@ table {
   border-width: 5px;
   border-left-width: 0;
 }
+.btn-group > .btn:first-child,
+.btn-group > .btn-mini:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-group > .btn + .btn,
+.btn-group > .btn-mini + .btn,
+.btn-group > .btn + .btn-mini,
+.btn-group > .btn-mini + .btn-mini {
+  margin-left: -5px;
+  border-radius: 0;
+}
+.btn-group > .btn:last-child,
+.btn-group > .btn-mini:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
 /* INPUTS */
 input {
   width: 100%;
@@ -1956,9 +1973,6 @@ footer {
   unicode-bidi: bidi-override;
 }
 /* SEARCHBAR */
-.searchbar-input {
-  margin-top: 20px;
-}
 .searchbar-input .input-group .input-reset {
   width: 100%;
 }
@@ -2594,6 +2608,31 @@ td:first-child {
   margin-right: 5px;
   margin-left: 0;
   border-right: 10px solid #333333;
+}
+.treelist .list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.treelist .list .list {
+  padding-left: 15px;
+  list-style-type: none;
+}
+.treelist .list .list-item {
+  padding: 5px;
+  font-weight: bold;
+}
+.treelist .list .list-item > .txt-link {
+  display: block;
+  cursor: pointer;
+  font-weight: normal;
+}
+.treelist .list .list-item.active {
+  padding-left: 10px;
+  margin-left: -10px;
+  color: #ff0000;
+  background-color: #efefef;
+  border-left: 5px solid #008000;
 }
 /* TYPOGRAPHY */
 html  {
