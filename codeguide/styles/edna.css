@@ -1864,6 +1864,7 @@ html {
 .treelist.cg-nav .list-item.cg-nav-side-item > a {
   width: 100%;
   padding: 10px;
+  margin: 0;
   background-color: #eee;
   color: #666;
 }
