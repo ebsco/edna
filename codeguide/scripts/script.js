@@ -2,11 +2,12 @@ $(function() {
 
     // call in scripts
     var scriptArr = [
-        'scripts/treelist.js'
+        'select',
+        'treelist'
     ]
     for(var i = 0; i < scriptArr.length; i++) {
         var imported = document.createElement('script');
-        imported.src = scriptArr[i];
+        imported.src = 'scripts/' + scriptArr[i] + '.js';
         document.head.appendChild(imported);
     }
 
@@ -49,13 +50,5 @@ $(function() {
         var loc = loc.split('#');
         loadPg(loc[1]);
     }
-
-    // dropdowns, opening and closing
-    $(document).on('click', '.select', function() {
-        $(this).children('.select-list').toggleClass('active');
-    });
-    $(document).on('click', '.select-label', function() {
-        $(this).toggleClass('active');
-    });
 
 });
