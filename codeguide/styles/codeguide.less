@@ -36,42 +36,78 @@ html {
     }
 }
 
-.cg-nav-side {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    outline: 0;
+.treelist.cg-nav {
+    .list-item {
+    //     list-style-type: none;
+    //     padding: 0;
+    //     margin: 0;
+    //     outline: 0;
 
-    &-item {
         > a {
             width: 100%;
             padding:  10px;
             background-color: #ccc;
-            color: #333;
-            outline: 0;
-    
+
             &:hover {
                 background-color: #aaa;
                 text-decoration: none;
             }        
         }
-    }
-    &-heading {
-        margin-left: -25px;
-        width: 100%;
-        padding:  10px;
-        background-color: #ddd;
-        color: #333;
-        outline: 0;
-    }
-    
-    .active {
-        > a {
-            background-color: #999 !important;
-            color: #fff !important;
+    //     .active {
+    //         > a {
+    //             background-color: #999 !important;
+    //             color: #fff !important;
+    //         }
+    //     }
+
+        &.cg-nav-side-heading {
+            margin-left: -25px;
+            width: 100%;
+            padding:  10px;
+            background-color: #ddd;
+            color: #333;
+            outline: 0;
         }
+
     }
 }
+
+
+
+
+.treelist.cg-nav {
+
+    .list-item {
+        &.cg-nav-side-item {
+            background-color: #aaa;
+            padding: 0;
+
+            > a {
+                background-color: #eee;
+                color:  #666;
+            }
+
+            &:hover a {
+                background-color: #ccc;
+            }
+
+            &.active {
+                border-left: 10px solid #aaa;
+                padding-left: 0;
+
+                > a {
+                    background: #aaa;
+                    color:  #fff;
+                }
+            }
+
+        }
+    }
+
+}
+
+
+
 
 @sg-padding: 20px;
 

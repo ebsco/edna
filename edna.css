@@ -2610,28 +2610,28 @@ td:first-child {
   border-right: 10px solid #333333;
 }
 .treelist .list {
-  list-style-type: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 .treelist .list .list {
-  list-style-type: none;
   padding-left: 15px;
+  list-style-type: none;
 }
 .treelist .list .list-item {
   padding: 5px;
   font-weight: bold;
 }
 .treelist .list .list-item > .txt-link {
-  cursor: pointer;
   display: block;
+  cursor: pointer;
   font-weight: normal;
 }
 .treelist .list .list-item.active {
-  color: #F00;
-  background-color: #EFEFEF;
   padding-left: 10px;
   margin-left: -10px;
+  color: #ff0000;
+  background-color: #efefef;
   border-left: 5px solid #008000;
 }
 /* TYPOGRAPHY */

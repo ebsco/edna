@@ -1,33 +1,49 @@
 // TREELIST
 
 .treelist {
-
     .list {
-        list-style-type: none;
-        margin: 0;
+        // Box-model
         padding: 0;
+        margin: 0;
+        
+        // Visual
+        list-style-type: none;
 
         & .list {
-            list-style-type: none;
+            // Box-model
             padding-left: 15px;
+            
+            // Visual
+            list-style-type: none;
         }
 
         .list-item {
+            // Box-model
             padding: 5px;
+            
+            // Typography
             font-weight: bold;
 
-            > a {
-                cursor: pointer;
+            > .txt-link {
+                // Box-model
                 display: block;
+                
+                // Visual
+                cursor: pointer;
                 font-weight: normal;
             }
 
             &.active {
-                color: #F00;
-                background-color: #EFEFEF;
+                // Box-model
                 padding-left: 10px;
                 margin-left: -10px;
-                border-left: 5px solid #008000;
+                
+                // Typography
+                color: @treelist-color;
+                
+                // Visual
+                background-color: @treelist-bgcolor;
+                border-left: 5px solid @treelist-bordercolor;
             }
         }
     }
