@@ -19,7 +19,7 @@ $(function() {
 		$.get('pages/' + navTitle + '.html', function(data) {
 			var navTxt = $('[title=' + navTitle + ']').text();
 			$('.evt-load').html(data);
-			$('.cg-head-h1').append('<span>').text('Edna CODEGUIDE' + ' - ' + navTxt);
+			$('.cg-head-h1 a').text('Edna CodeGuide' + ' - ' + navTxt);
 			$('[title=' + navTitle + ']').parent().addClass('active').siblings().removeClass('active');
 			window.location.hash = navTitle.toLowerCase();
 			prettyPrint();
