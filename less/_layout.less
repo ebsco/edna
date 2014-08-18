@@ -8,13 +8,13 @@
     width: 100%;
     padding: @col-top-padding @col-right-padding @col-bottom-padding @col-left-padding;
     
-    + .col {
+    & + & {
         // Box-model
         padding-left: 70px;
     }
 }
 
-.padding {
+.padding() {
     padding: @lay-top-padding @lay-right-padding @lay-bottom-padding @lay-left-padding;
     .clearfix;
     &:first-child {
