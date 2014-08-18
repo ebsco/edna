@@ -1881,6 +1881,20 @@ html {
   background: #aaa;
   color: #fff;
 }
+.cg-head-h1 {
+  font-size: 36px;
+  line-height: 48px;
+  padding: 20px 0;
+  margin: 0;
+}
+.cg-head-h1 > a:active,
+.cg-head-h1 > a:visited,
+.cg-head-h1 > a:hover {
+  color: #666;
+}
+.l2-p9 {
+  padding-top: 0;
+}
 .cg-heading {
   position: relative;
   padding: 10px 20px;
