@@ -700,12 +700,12 @@ table {
 }
 .btn-group > .transport > .bottom {
   top: 4px;
-  margin-bottom: 2.5px;
   margin-top: 2.5px;
+  margin-bottom: 2.5px;
 }
 .btn-group > .transport > .left {
-  margin-left: 0;
   margin-right: 2.5px;
+  margin-left: 0;
   border-left-width: 0;
 }
 .btn-group > .btn:first-child,
