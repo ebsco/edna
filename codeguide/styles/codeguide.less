@@ -30,48 +30,23 @@ html {
 
 .cg-head {
     color: #333;
+    font-size: 36px;
+    line-height: 48px;
+    padding: @sg-padding 0;
+    margin: 0;
+
     &-h1 {
         font-size: 36px;
         line-height: 48px;
     }
-}
 
-.treelist.cg-nav {
-    .list-item {
-    //     list-style-type: none;
-    //     padding: 0;
-    //     margin: 0;
-    //     outline: 0;
-
-        > a {
-            width: 100%;
-            padding:  10px;
-            background-color: #ccc;
-
-            &:hover {
-                background-color: #aaa;
-                text-decoration: none;
-            }        
-        }
-    //     .active {
-    //         > a {
-    //             background-color: #999 !important;
-    //             color: #fff !important;
-    //         }
-    //     }
-
-        &.cg-nav-side-heading {
-            margin-left: -25px;
-            width: 100%;
-            padding:  10px;
-            background-color: #ddd;
-            color: #333;
-            outline: 0;
-        }
-
+    > a,
+    > a:active,
+    > a:visited,
+    > a:hover {
+        color: #666;
     }
 }
-
 
 
 
@@ -83,12 +58,15 @@ html {
             padding: 0;
 
             > a {
+                width: 100%;
+                padding: 10px;
                 background-color: #eee;
-                color:  #666;
+                color: #666;
             }
 
             &:hover a {
                 background-color: #ccc;
+                text-decoration: none;
             }
 
             &.active {
@@ -97,32 +75,26 @@ html {
 
                 > a {
                     background: #aaa;
-                    color:  #fff;
+                    color: #fff;
                 }
             }
+        }
 
+        &.cg-nav-side-heading {
+            margin-left: -25px;
+            width: 100%;
+            padding: 10px;
+            background-color: #ddd;
+            color: #333;
+            outline: 0;
+            border: none;
+            cursor: default;
         }
     }
 
 }
 
-
-
-
 @sg-padding: 20px;
-
-.cg-head-h1 {
-    font-size: 36px;
-    line-height: 48px;
-    padding: @sg-padding 0;
-    margin: 0;
-
-    > a:active,
-    > a:visited,
-    > a:hover {
-        color: #666;
-    }
-}
 
 .l2-p9 {
     padding-top: 0;

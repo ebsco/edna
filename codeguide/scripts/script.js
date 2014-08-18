@@ -1,10 +1,14 @@
 $(function() {
 
-    // treelist stuff
-    $(document).on('click', '.list-item .txt-link', function() {
-        $('.list-item').removeClass('active');
-        $(this).parent('.list-item').addClass('active');
-    });
+    // call in scripts
+    var scriptArr = [
+        'scripts/treelist.js'
+    ]
+    for(var i = 0; i < scriptArr.length; i++) {
+        var imported = document.createElement('script');
+        imported.src = scriptArr[i];
+        document.head.appendChild(imported);
+    }
 
     // get a url hash
     var loc = window.location.hash;
@@ -21,15 +25,22 @@ $(function() {
     }
 
     // do stuff on nav click
-    $(document).on('click', '.evt-active', function() {
+    $(document).on('click', '.evt-active', function(data) {
 
         // get the title of the href clicked
         var navTitle = $(this).children('a').attr('title');
 
         loadPg(navTitle);
 
-        // add the active class
-        $(this).addClass('active').siblings().removeClass('active');
+        var classes = data.currentTarget.className;
+
+        classArr = classes.split(' ');
+        for(var i = 0; i < classArr.length; i++) {
+            if( classArr[i] === 'cg-nav-side-item' ) {
+                $('.cg-nav-side-item').removeClass('active');
+                $(this).addClass('active');
+            }
+        }
         
     })
     

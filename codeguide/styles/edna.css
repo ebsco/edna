@@ -1840,38 +1840,34 @@ html {
 }
 .cg-head {
   color: #333;
+  font-size: 36px;
+  line-height: 48px;
+  padding: 20px 0;
+  margin: 0;
 }
 .cg-head-h1 {
   font-size: 36px;
   line-height: 48px;
 }
-.treelist.cg-nav .list-item > a {
-  width: 100%;
-  padding: 10px;
-  background-color: #ccc;
-}
-.treelist.cg-nav .list-item > a:hover {
-  background-color: #aaa;
-  text-decoration: none;
-}
-.treelist.cg-nav .list-item.cg-nav-side-heading {
-  margin-left: -25px;
-  width: 100%;
-  padding: 10px;
-  background-color: #ddd;
-  color: #333;
-  outline: 0;
+.cg-head > a,
+.cg-head > a:active,
+.cg-head > a:visited,
+.cg-head > a:hover {
+  color: #666;
 }
 .treelist.cg-nav .list-item.cg-nav-side-item {
   background-color: #aaa;
   padding: 0;
 }
 .treelist.cg-nav .list-item.cg-nav-side-item > a {
+  width: 100%;
+  padding: 10px;
   background-color: #eee;
   color: #666;
 }
 .treelist.cg-nav .list-item.cg-nav-side-item:hover a {
   background-color: #ccc;
+  text-decoration: none;
 }
 .treelist.cg-nav .list-item.cg-nav-side-item.active {
   border-left: 10px solid #aaa;
@@ -1881,16 +1877,15 @@ html {
   background: #aaa;
   color: #fff;
 }
-.cg-head-h1 {
-  font-size: 36px;
-  line-height: 48px;
-  padding: 20px 0;
-  margin: 0;
-}
-.cg-head-h1 > a:active,
-.cg-head-h1 > a:visited,
-.cg-head-h1 > a:hover {
-  color: #666;
+.treelist.cg-nav .list-item.cg-nav-side-heading {
+  margin-left: -25px;
+  width: 100%;
+  padding: 10px;
+  background-color: #ddd;
+  color: #333;
+  outline: 0;
+  border: none;
+  cursor: default;
 }
 .l2-p9 {
   padding-top: 0;
