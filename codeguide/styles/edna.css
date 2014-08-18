@@ -1565,6 +1565,174 @@ label:active {
 .searchbar-options {
   margin-top: 10px;
 }
+/* TOOLBAR */
+.toolbar {
+  width: 100%;
+  overflow: visible;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.toolbar .txt-link {
+  font: inherit;
+  color: #ffffff;
+}
+.toolbar .txt-link:hover,
+.toolbar .txt-link:active,
+.toolbar .txt-link:focus,
+.toolbar .txt-link:visited {
+  color: #ffffff;
+}
+.toolbar .personal-bar {
+  width: 100%;
+  background-color: #552030;
+  *zoom: 1;
+}
+.toolbar .personal-bar:before,
+.toolbar .personal-bar:after,
+.toolbar .personal-bar::before,
+.toolbar .personal-bar::after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.toolbar .personal-bar:after,
+.toolbar .personal-bar::after {
+  clear: both;
+}
+.toolbar .personal-bar .personal-nav {
+  width: 100%;
+  padding: 9px 10px;
+  margin: 0;
+  font-size: 12px;
+  font-size: 1.2rem;
+  text-align: right;
+  list-style-type: none;
+  *zoom: 1;
+}
+.toolbar .personal-bar .personal-nav:before,
+.toolbar .personal-bar .personal-nav:after,
+.toolbar .personal-bar .personal-nav::before,
+.toolbar .personal-bar .personal-nav::after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.toolbar .personal-bar .personal-nav:after,
+.toolbar .personal-bar .personal-nav::after {
+  clear: both;
+}
+.toolbar .personal-bar .personal-nav-item {
+  display: inline-block;
+  padding: 0 0 0 10px;
+  color: #ffffff;
+  *zoom: 1;
+}
+.toolbar .personal-bar .personal-nav-item:before,
+.toolbar .personal-bar .personal-nav-item:after,
+.toolbar .personal-bar .personal-nav-item::before,
+.toolbar .personal-bar .personal-nav-item::after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.toolbar .personal-bar .personal-nav-item:after,
+.toolbar .personal-bar .personal-nav-item::after {
+  clear: both;
+}
+.toolbar .personal-bar .txt-link {
+  text-decoration: underline;
+}
+.toolbar .bar {
+  position: relative;
+  padding-bottom: 2px;
+  overflow: hidden;
+  background: #712b40 -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0.1)));
+  background: #712b40 -moz-linear-gradient(center bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 100%);
+  background: #712b40 -ms-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1));
+  background: #712b40 -o-linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#9a6978, endColorstr=#712b40);
+}
+.nav {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+.nav .nav-item {
+  display: inline-block;
+  padding: 7px 8px 10px 12px;
+  font-size: 13px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.user-nav {
+  display: inline-block;
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+.user-nav .user-nav-item {
+  display: inline-block;
+  float: left;
+  width: auto;
+  height: auto;
+  padding: 8px 12px 11px;
+  font-size: 12px;
+  font-size: 1.2rem;
+  vertical-align: top;
+  cursor: pointer;
+}
+.user-nav .user-nav-item > .icon {
+  display: inline-block;
+  overflow: hidden;
+}
+.user-nav .folder {
+  padding: 8px 12px 11px 9px;
+}
+.user-nav .folder .txt-link {
+  padding-left: 20px;
+}
+.user-nav .folder .txt-link .icon {
+  position: absolute;
+  left: 2px;
+  width: 27px;
+  height: 15px;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/folder-sprite.png");
+  background-position: 8px -1px;
+  background-repeat: no-repeat;
+}
+.user-nav .folder.not-empty .icon {
+  background-position: 0 -101px;
+}
+.user-nav .languages .user-nav {
+  display: none;
+}
+.user-nav .languages .icon {
+  width: 10px;
+  height: 10px;
+  margin: 0 0 0 5px;
+  background: url("http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/arrow-sprites.png") right -1750px no-repeat;
+}
+.user-nav .languages:hover {
+  color: #333;
+  background-color: #ffffff;
+}
+.user-nav .languages:hover .icon {
+  background-position: right -1800px;
+}
+.nav-item,
+.user-nav-item {
+  position: relative;
+  color: #ffffff;
+}
+.nav-item:hover,
+.user-nav-item:hover {
+  background-color: #5f2436;
+}
+.nav-item:hover .txt-link,
+.user-nav-item:hover .txt-link {
+  text-decoration: none;
+}
 /* TRANSPORT */
 .transport {
   vertical-align: top;

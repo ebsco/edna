@@ -2244,6 +2244,7 @@ td:first-child {
 .toolbar .personal-bar .personal-nav {
   width: 100%;
   padding: 9px 10px;
+  margin: 0;
   font-size: 12px;
   font-size: 1.2rem;
   text-align: right;
@@ -2262,25 +2263,25 @@ td:first-child {
 .toolbar .personal-bar .personal-nav::after {
   clear: both;
 }
-.toolbar .personal-bar .personal-nav > .personal-nav-item {
+.toolbar .personal-bar .personal-nav-item {
   display: inline-block;
   padding: 0 0 0 10px;
   color: #ffffff;
   *zoom: 1;
 }
-.toolbar .personal-bar .personal-nav > .personal-nav-item:before,
-.toolbar .personal-bar .personal-nav > .personal-nav-item:after,
-.toolbar .personal-bar .personal-nav > .personal-nav-item::before,
-.toolbar .personal-bar .personal-nav > .personal-nav-item::after {
+.toolbar .personal-bar .personal-nav-item:before,
+.toolbar .personal-bar .personal-nav-item:after,
+.toolbar .personal-bar .personal-nav-item::before,
+.toolbar .personal-bar .personal-nav-item::after {
   display: table;
   line-height: 0;
   content: "";
 }
-.toolbar .personal-bar .personal-nav > .personal-nav-item:after,
-.toolbar .personal-bar .personal-nav > .personal-nav-item::after {
+.toolbar .personal-bar .personal-nav-item:after,
+.toolbar .personal-bar .personal-nav-item::after {
   clear: both;
 }
-.toolbar .personal-bar .personal-nav > .personal-nav-item:last-child .txt-link {
+.toolbar .personal-bar .txt-link {
   text-decoration: underline;
 }
 .toolbar .bar {
