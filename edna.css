@@ -1615,7 +1615,7 @@ a .img {
   background-repeat: no-repeat;
 }
 .msg .msg-txt {
-  margin: 0;
+  margin: 0 25px 0 0;
 }
 .msg > .close {
   cursor: pointer;

@@ -1558,6 +1558,106 @@ label:active {
 .input-group > .input-reset + .btn {
   margin-left: 15px;
 }
+/* MESSAGING */
+.msg {
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+  padding: 15px;
+  margin: 0 0 1em;
+  color: #65192c;
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.msg > .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  vertical-align: middle;
+  background-image: url("buzzImages/msg-error.gif");
+  background-repeat: no-repeat;
+}
+.msg .msg-txt {
+  margin: 0 25px 0 0;
+}
+.msg > .close {
+  cursor: pointer;
+}
+.msg > .close:after,
+.msg > .close::after {
+  position: absolute;
+  right: 20px;
+  color: #712b40;
+  content: '✕';
+}
+.msg .msg-action {
+  margin-left: 20px;
+}
+.msg .msg-action:after,
+.msg .msg-action::after {
+  display: inline-block;
+  margin-left: 5px;
+  content: '»';
+}
+.msg.msg-info {
+  background-color: rgba(228, 241, 255, 0.1);
+  border-color: rgba(177, 215, 255, 0.1);
+}
+.msg.msg-info .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(buzzImages/msg-error.gif);
+  background-repeat: no-repeat;
+}
+.msg.msg-info > .txt {
+  color: #e4f1ff;
+}
+.msg.msg-success {
+  background-color: rgba(230, 250, 223, 0.1);
+  border-color: rgba(196, 243, 179, 0.1);
+}
+.msg.msg-success .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(buzzImages/msg-error.gif);
+  background-repeat: no-repeat;
+}
+.msg.msg-success > .txt {
+  color: #e6fadf;
+}
+.msg.msg-note {
+  background-color: #faf9b9;
+  border-color: #fcc37c;
+}
+.msg.msg-note .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(buzzImages/msg-error.gif);
+  background-repeat: no-repeat;
+}
+.msg.msg-note > .txt {
+  color: #e7e7b1;
+}
+.msg.msg-alert {
+  background-color: #fde3e3;
+  border-color: #7c0303;
+}
+.msg.msg-alert .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(buzzImages/msg-error.gif);
+  background-repeat: no-repeat;
+}
+.msg.msg-alert > .txt {
+  color: #ae0404;
+}
 /* SEARCHBAR */
 .searchbar-input .input-group .input-reset {
   width: 100%;
