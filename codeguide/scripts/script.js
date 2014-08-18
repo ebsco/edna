@@ -58,6 +58,4 @@ $(function() {
         $(this).toggleClass('active');
     });
 
-
-
 });
