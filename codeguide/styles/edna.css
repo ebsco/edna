@@ -649,30 +649,26 @@ code {
 .btn-group > .transport > .left {
   position: relative;
   right: -4px;
+  border-width: 5px;
 }
 .btn-group > .transport > .top {
+  top: -2px;
   margin-top: 2.5px;
   margin-bottom: 2.5px;
-  border-width: 5px;
-  top: -2px;
 }
 .btn-group > .transport > .right {
-  margin-right: ;
-  margin-left: 2.5px;
-  border-width: 5px;
-  border-right-width: 0;
   top: 1px;
+  margin-left: 2.5px;
+  border-right-width: 0;
 }
 .btn-group > .transport > .bottom {
+  top: 4px;
   margin-bottom: 2.5px;
   margin-top: 2.5px;
-  border-width: 5px;
-  top: 4px;
 }
 .btn-group > .transport > .left {
   margin-left: 0;
   margin-right: 2.5px;
-  border-width: 5px;
   border-left-width: 0;
 }
 .btn-group > .btn:first-child,
@@ -1958,7 +1954,7 @@ html {
 .cg-code {
   background-color: #272822;
   border-radius: 5px;
-  padding: 0 20px;
+  padding: 0 20px !important;
   overflow: scroll;
 }
 .cg-code > code {
