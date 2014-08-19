@@ -5,7 +5,7 @@
                         Starting with Edna, and Buzz, we are using the LESS preprocessor to write our CSS. Preprocessors add a lot of new things to basic CSS such as nesting selectors, the use of variables and mixins, which are similar to Javascript functions.
                     </p>
                     <p class="cg-description">
-                        <strong>Why LESS?</strong> We started using LESS and not SASS because of the HLM project. For that we used Bootstrap, which was built with LESS. 
+                        We started using LESS and not SASS because of the HLM project. For that we used Bootstrap, which was built with LESS. 
                     </p>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                 <h2 class="cg-heading">File Structure</h2>
                 <div class="cg-element">
                     <p class="cg-description">
-                        The file structure of Edna is fairly simple. We have one directory, less, that contains all our LESS files. Our main files live in the root of Edna. We have three LESS files there, one for the bulk of Edna, one minified version of that, and one file just for IE. These get compiled into files with the same name, but different suffixes.
+                        All files for Edna live in one directory, less. All the compiled files, and the import files that create them, live in the root of the Edna repo.
                     </p>
                     <pre>
 edna
@@ -47,16 +47,27 @@ edna
             </div>
 
             <div class="cg-section">
+                <h2 class="cg-heading">Variables</h2>
+                <div class="cg-element">
+                    <p class="cg-description">
+                        Use variables for values that can change easily without messing up an element; colors, font-family, font-size, etc.
+                    </p>
+                    <pre>
+edna
+└── less
+    └── _variables.less
+                    </pre>
+                </div>
+            </div>
+
+            <div class="cg-section">
                 <h2 class="cg-heading">Nesting</h2>
                 <div class="cg-element">
                     <p class="cg-description">
-                        Nesting is one of the fantastic things included in LESS, but like mentioned above, one can quickly create a ruleset with a ton of selectors, which is not a good thing. One should use better specificity rather than another selector, or <code>!important</code>.
+                        Our first guideline is to <strong class="alert">keep the number of stringed selectors to no more than 3</strong>. Nesting can be dangerous.
                     </p>
                     <p class="cg-description">
-                        Our first guideline is to <strong class="alert">keep the number of stringed selectors to no more than 3</strong>
-                    </p>
-                    <p class="cg-description">
-                        Let's look at some nesting examples
+                        One should use better specificity rather than another selector, or <code>!important</code>.
                     </p>
                 </div>
                 <div class="cg-toggler evt-toggler">Toggle this example</div>
@@ -80,7 +91,7 @@ edna
 }</pre>
                 <div class="cg-toggler evt-toggler">Toggle this example</div>
                 <pre class="cg-code prettyprint lang-css linenums evt-toggled">
-/* THIS IS AN EXAMPLE OF NESTING WHERE WE END UP WITH AN UNRULY STRING OF SELECTORS */
+/* THIS IS AN EXAMPLE OF BAD NESTING WHERE WE END UP WITH AN UNRULY STRING OF SELECTORS */
 
 // here is an example of a nested LESS ruleset
 .first-example {
@@ -114,10 +125,12 @@ edna
 }
 .first-example .second-example .third-example .fourth-example .fifth-example {
   foo: bar;
-}</pre>
+}
+
+/* WHILE THIS ISN'T HORRIBLE IT IS NOT GOOD */</pre>
                 <div class="cg-toggler evt-toggler">Toggle this example</div>
                 <pre class="cg-code prettyprint lang-css linenums evt-toggled">
-/* THIS IS AN EXAMPLE OF NESTING WHERE THINGS JUST GO HAYWIRE */
+/* THIS IS AN EXAMPLE OF BAD NESTING WHERE THINGS JUST GO HAYWIRE */
 
 .first-example,
 .second-example {
@@ -158,5 +171,21 @@ edna
 .second-example .second-example.third-example .second-example .first-example,
 .second-example .second-example.third-example .second-example .second-example {
   foo: bar;
-}</pre>
+}
+
+/* THAT IS JUST CRAZY, DON'T END UP WITH SOMETHING LIKE THIS IN YOUR CSS */</pre>
+            </div>
+
+            <div class="cg-section">
+                <h2 class="cg-heading">Comments</h2>
+                <div class="cg-element">
+                    <p class="cg-description">
+                        Again, comments are awesome, use them.
+                    </p>
+                    <p class="cg-description">
+                        Single line comments are stripped from LESS when compiled. Use these more for comments to other developers, or yourself.
+                    </p>
+                </div>
+                <pre class="cg-code prettyprint lang-css linenums">
+// comment</pre>
             </div>
