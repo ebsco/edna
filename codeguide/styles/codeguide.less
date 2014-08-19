@@ -172,6 +172,12 @@ html {
 }
 .cg-section {
     min-height: 150px;
+
+    .cg-description {
+        .alert {
+            color: red;
+        }
+    }
 }
 .cg-nav-side-item {
     outline: 0;
@@ -181,6 +187,10 @@ html {
     border-radius: 5px;
     padding: 20px !important;
     overflow: scroll;
+
+    &.evt-toggled {
+        height: 50px;
+    }
 
     > code {
         color: #ccc;
@@ -208,3 +218,65 @@ pre.prettyprint {
     overflow: scroll;
     margin: 5px 20px 20px;
 }
+
+
+
+
+.first-example,
+.second-example {
+    foo: bar;
+    & & {
+        foo: bar;
+        &.third-example & {
+            foo: bar;
+        }
+    }
+}
+
+.cg-toggler {
+    border: 1px solid black;
+    border-width: 1px 1px 0 1px;
+    background-color: #eee;
+    display: inline-block;
+    margin-left: 25px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    
+    + .cg-code {
+        margin-top: 0;
+    }
+    + .cg-toggled.cg-code {
+        height: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

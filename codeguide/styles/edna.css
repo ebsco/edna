@@ -2379,6 +2379,9 @@ html {
 .cg-section {
   min-height: 150px;
 }
+.cg-section .cg-description .alert {
+  color: red;
+}
 .cg-nav-side-item {
   outline: 0;
 }
@@ -2387,6 +2390,9 @@ html {
   border-radius: 5px;
   padding: 20px !important;
   overflow: scroll;
+}
+.cg-code.evt-toggled {
+  height: 50px;
 }
 .cg-code > code {
   color: #ccc;
@@ -2412,4 +2418,50 @@ pre.prettyprint {
   white-space: pre !important;
   overflow: scroll;
   margin: 5px 20px 20px;
+}
+.first-example,
+.second-example {
+  foo: bar;
+}
+.first-example .first-example,
+.first-example .second-example,
+.second-example .first-example,
+.second-example .second-example {
+  foo: bar;
+}
+.first-example .first-example.third-example .first-example .first-example,
+.first-example .first-example.third-example .first-example .second-example,
+.first-example .first-example.third-example .second-example .first-example,
+.first-example .first-example.third-example .second-example .second-example,
+.first-example .second-example.third-example .first-example .first-example,
+.first-example .second-example.third-example .first-example .second-example,
+.first-example .second-example.third-example .second-example .first-example,
+.first-example .second-example.third-example .second-example .second-example,
+.second-example .first-example.third-example .first-example .first-example,
+.second-example .first-example.third-example .first-example .second-example,
+.second-example .first-example.third-example .second-example .first-example,
+.second-example .first-example.third-example .second-example .second-example,
+.second-example .second-example.third-example .first-example .first-example,
+.second-example .second-example.third-example .first-example .second-example,
+.second-example .second-example.third-example .second-example .first-example,
+.second-example .second-example.third-example .second-example .second-example {
+  foo: bar;
+}
+.cg-toggler {
+  border: 1px solid black;
+  border-width: 1px 1px 0 1px;
+  background-color: #eee;
+  display: inline-block;
+  margin-left: 25px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.cg-toggler + .cg-code {
+  margin-top: 0;
+}
+.cg-toggler + .cg-toggled.cg-code {
+  height: auto;
 }

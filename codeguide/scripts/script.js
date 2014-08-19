@@ -3,6 +3,7 @@ $(function() {
 	// call in scripts
 	var scriptArr = [
 		'select',
+		'toggle',
 		'treelist'
 	]
 	for(var i = 0; i < scriptArr.length; i++) {
