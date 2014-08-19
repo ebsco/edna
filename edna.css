@@ -1529,29 +1529,53 @@ ol.base > li {
   padding: 0;
   margin: 0;
 }
-.disc {
+.list {
+  padding: 0;
+  list-style-type: none;
+}
+.list .list-item {
+  padding: 0 5px 5px 0;
+}
+.list.disc {
+  margin-left: 25px;
   list-style: disc;
 }
-.circle {
+.list.circle {
+  margin-left: 25px;
   list-style: circle;
 }
-.square {
+.list.square {
+  margin-left: 25px;
   list-style: square;
 }
-.decimal {
+.list.decimal {
+  margin-left: 25px;
   list-style: decimal;
 }
-.lower-alpha {
+.list.lower-alpha {
+  margin-left: 25px;
   list-style: lower-alpha;
 }
-.upper-alpha {
+.list.upper-alpha {
+  margin-left: 25px;
   list-style: upper-alpha;
 }
-.lower-roman {
+.list.lower-roman {
+  margin-left: 25px;
   list-style: lower-roman;
 }
-.upper-roman {
+.list.upper-roman {
+  margin-left: 25px;
   list-style: upper-roman;
+}
+.list.lines .list-item {
+  padding: 5px;
+  margin: 0;
+  background-color: #d6d6d6;
+}
+.list.lines .list-item.odd,
+.list.lines .list-item:nth-child(odd) {
+  background-color: #efefef;
 }
 /* LOGO */
 .logo {
@@ -1606,9 +1630,6 @@ a .img {
   border-radius: 2px;
 }
 .msg > .icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
   margin-right: 15px;
   vertical-align: middle;
   background-image: url("buzzImages/msg-error.gif");
@@ -1616,9 +1637,6 @@ a .img {
 }
 .msg .msg-txt {
   margin: 0 25px 0 0;
-}
-.msg > .close {
-  cursor: pointer;
 }
 .msg > .close:after,
 .msg > .close::after {
@@ -2325,7 +2343,6 @@ td:first-child {
   cursor: pointer;
 }
 .user-nav .user-nav-item > .icon {
-  display: inline-block;
   overflow: hidden;
 }
 .user-nav .folder {
@@ -2868,6 +2885,15 @@ code {
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
   font-weight: normal;
   color: #669966;
+}
+/* UNIVERSAL STYLES */
+.close {
+  cursor: pointer;
+}
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
 }
 /* WIDTH */
 .w {
