@@ -48,44 +48,97 @@ ol {
     }
 }
 
-// UNORDERED LIST STYLE TYPES
-.disc {
+.list {
+    // Box-model
+    padding: 0;
+    
     // Visual
-    list-style: disc;
-}
+    list-style-type: none;
 
-.circle {
-    // Visual
-    list-style: circle
-}
+    .list-item {
+        // Box-model
+        padding: 0 5px 5px 0;
+    }
 
-.square {
-    // Visual
-    list-style: square;
-}
+    // UNORDERED LIST STYLE TYPES
+    &.disc {
+        // Box-model
+        margin-left: 25px;
 
-// ORDERED LIST STYLE TYPES
-.decimal {
-    // Visual
-    list-style: decimal;    
-}
+        // Visual
+        list-style: disc;
+    }
 
-.lower-alpha {
-    // Visual
-    list-style: lower-alpha;    
-}
+    &.circle {
+        // Box-model
+        margin-left: 25px;
+        
+        // Visual
+        list-style: circle
+    }
 
-.upper-alpha {
-    // Visual
-    list-style: upper-alpha;    
-}
+    &.square {
+        // Box-model
+        margin-left: 25px;
+        
+        // Visual
+        list-style: square;
+    }
 
-.lower-roman {
-    // Visual
-    list-style: lower-roman;    
-}
+    // ORDERED LIST STYLE TYPES
+    &.decimal {
+        // Box-model
+        margin-left: 25px;
+        
+        // Visual
+        list-style: decimal;    
+    }
 
-.upper-roman {
-    // Visual
-    list-style: upper-roman;    
+    &.lower-alpha {
+        // Box-model
+        margin-left: 25px;
+        
+        // Visual
+        list-style: lower-alpha;    
+    }
+
+    &.upper-alpha {
+        // Box-model
+        margin-left: 25px;
+        
+        // Visual
+        list-style: upper-alpha;    
+    }
+
+    &.lower-roman {
+        // Box-model
+        margin-left: 25px;
+        
+        // Visual
+        list-style: lower-roman;    
+    }
+
+    &.upper-roman {
+        // Box-model
+        margin-left: 25px;
+        
+        // Visual
+        list-style: upper-roman;    
+    }
+
+    &.lines {
+        .list-item {
+            // Box-model
+            padding: 5px;
+            margin: 0;
+
+            // Visual
+            background-color: darken(#efefef, 10%);
+
+            &.odd,
+            &:nth-child(odd) {
+                background-color: #efefef;
+            }
+        }
+    }
 }
