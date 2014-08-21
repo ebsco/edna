@@ -1309,11 +1309,11 @@ ol.base > li {
   padding: 0 5px 5px 0;
 }
 .list.disc {
-  margin-left: 25px;
+  margin-left: 16px;
   list-style: disc;
 }
 .list.circle {
-  margin-left: 25px;
+  margin-left: circle;
   list-style: circle;
 }
 .list.square {
@@ -1534,9 +1534,14 @@ ol.base > li {
 /* SELECTS */
 .select {
   position: relative;
-  line-height: normal;
+  display: inline-block;
+  padding: 5px 15px;
+  outline: 0;
   -moz-border-radius: 3px;
   border-radius: 3px;
+}
+.select > .transport {
+  vertical-align: middle;
 }
 .select-list {
   position: absolute;

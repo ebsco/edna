@@ -3,13 +3,20 @@
 .select {
     // Positioning
     position: relative;
-        
-    // Typography
-    line-height: normal;
-    
+
+    // Box-model
+    display: inline-block;
+    padding: 5px 15px;
+
     // Visual
+    outline: 0;
     -moz-border-radius: @radius;
          border-radius: @radius;
+
+    > .transport {
+        // Visual
+        vertical-align: middle;
+    }
 
     &-list {
         // Positioning
