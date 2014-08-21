@@ -162,6 +162,31 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* BREADCRUMB */
+.breadcrumb {
+  padding: 10px 0;
+  margin: 0;
+}
+.breadcrumb .list-item {
+  display: inline;
+  float: left;
+}
+.breadcrumb .list-item:after,
+.breadcrumb .list-item::after {
+  content: "/";
+  padding: 0 10px;
+}
+.breadcrumb .list-item:last-child:after,
+.breadcrumb .list-item:last-child::after {
+  content: '';
+  padding: 0;
+}
+.breadcrumb:after,
+.breadcrumb::after {
+  display: table;
+  content: '';
+  clear: both;
+}
 /* BUTTONS */
 .btn,
 .btn-mini {
