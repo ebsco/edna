@@ -2,31 +2,50 @@
 
 // comment
 .breadcrumb {
+    // Box-model
     padding: 10px 0;
     margin: 0;
 
     .list-item {
+        // Box-model
         display: inline;
         float: left;
 
-        &:after,
-        &::after {
-            content: "/";
+        &:before,
+        &::before {
+            // Box-model
             padding: 0 10px;
+            
+            // Visual
+            content: "/";
         }
     
-        &:last-child:after,
-        &:last-child::after {
-            content: '';
-            padding: 0;
+        &:first-child:before,
+        &:first-child::before {
+            // Box-model
+            display: none;
+        }
+
+        // this removes the white space between the :before and the txt-link
+        > .txt-link {
+            // Box-model
+            margin-left: -4px;
+    
+            &:first-child,
+            &:first-child {
+                margin-left: 0;
+            }
         }
     }
 
     &:after,
     &::after {
+        // Box-model
         display: table;
-        content: '';
         clear: both;
+
+        // Visual
+        content: '';
     }
 
 }
