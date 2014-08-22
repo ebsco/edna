@@ -11,15 +11,17 @@
         display: inline;
         float: left;
 
+        // add the dividers between the breadcrumb items
         &:before,
         &::before {
             // Box-model
             padding: 0 10px;
             
             // Visual
-            content: "/";
+            content: @breadcrumb-content;
         }
     
+        // remove breadcrumb divider for first item
         &:first-child:before,
         &:first-child::before {
             // Box-model
@@ -31,6 +33,7 @@
             // Box-model
             margin-left: -4px;
     
+            // without this the first item is too far left
             &:first-child,
             &:first-child {
                 margin-left: 0;
@@ -38,6 +41,7 @@
         }
     }
 
+    // clear after the breadcrumb
     &:after,
     &::after {
         // Box-model
