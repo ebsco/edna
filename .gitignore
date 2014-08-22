@@ -1,5 +1,6 @@
 # DIRECTORIES *
 node_modules/
+codeguide/bower/
 .sass-cache/
 
 # FILES
