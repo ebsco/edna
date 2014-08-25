@@ -1504,36 +1504,13 @@ label:active {
   width: 20%;
 }
 .panel-row {
-  width: 100%;
-  display: table;
-  overflow: hidden;
+  position: relative;
 }
 .panel {
   position: relative;
-  background-color: #efefef;
-  padding: 10px;
-  display: table-cell;
-  min-width: 200px;
 }
-.panel:nth-child(2) {
-  background-color: #d6d6d6;
-  width: 100%;
-  min-width: 400px;
-}
-@media screen and (max-width: 1411px) {
-  .panel {
-    display: block;
-  }
-  .panel.hide {
-    left: -200px;
-  }
-  .hide {
-    left: -200px;
-  }
-  .hide + .panel,
-  .hide + .panel + .panel {
-    left: -200px;
-  }
+.panel.hide {
+  position: absolute;
 }
 /* LAYOUT - FIXED */
 .l2-p3.fixed-r {
