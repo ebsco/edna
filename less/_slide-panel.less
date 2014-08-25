@@ -1,0 +1,109 @@
+/* SLIDE PANELS */
+.slide-main {
+    // Positioning
+    position: relative;
+
+    // Box-model
+    overflow: hidden;
+
+    // position the content
+    .slide-static {
+        // Positioning
+        position: relative;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    // set the transition
+    .slide-static,
+    .slide-right,
+    .slide-left {
+        // Misc
+        transition: .5s;
+    }
+
+    // base styles for sliding content
+    .slide-right,
+    .slide-left {
+        // Positioning
+        position: absolute;
+        top: 0;
+        z-index: 2000;
+        
+        // Box-model
+        width: @slide-width;
+        height: 100%;
+        
+        // Visual
+        background-color: #efefef;
+    }
+
+    // set the side panels to be offscreen by default
+    .slide-right {
+        // Positioning
+        right: -@slide-width;
+    }
+    .slide-left {
+        // Positioning
+        left: -@slide-width;
+    }
+
+    // for the right slide
+    &.open-right {
+        // move the right side
+        .slide-right {
+            // Positioning
+            right: 0;
+
+            // Visual
+            background-image: -moz-linear-gradient(left,  rgba(0,0,0,.25) 0%, rgba(0,0,0,0) 2%);
+            background-image: -webkit-gradient(linear, left top, left top, color-stop(0%,rgba(0,0,0,.25)), color-stop(2%,rgba(0,0,0,0)));
+            background-image: -webkit-linear-gradient(left,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
+            background-image: -o-linear-gradient(left,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
+            background-image: -ms-linear-gradient(left,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
+            background-image: linear-gradient(to right,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#007db9e8',GradientType=1 );
+        }
+        // move the content with the right side
+        .slide-static {
+            // Positioning
+            right: @slide-width;
+            left: -@slide-width;
+        }
+    }
+
+    // for the left slide
+    &.open-left {
+        // move the left side
+        .slide-left {
+            // Positioning
+            left: 0;
+
+            // Visual
+            background-image: -moz-linear-gradient(right,  rgba(0,0,0,.25) 0%, rgba(0,0,0,0) 2%);
+            background-image: -webkit-gradient(linear, right top, right top, color-stop(0%,rgba(0,0,0,.25)), color-stop(2%,rgba(0,0,0,0)));
+            background-image: -webkit-linear-gradient(right,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
+            background-image: -o-linear-gradient(right,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
+            background-image: -ms-linear-gradient(right,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
+            background-image: linear-gradient(to left,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#007db9e8',GradientType=1 );
+        }
+        // move the content with the left side
+        .slide-static {
+            // Positioning
+            left: @slide-width;
+        }
+    }
+
+    // if both side panels are showing
+    &.open-left.open-right {
+        .slide-static {
+            // Positioning
+            left: @slide-width;
+
+            // Box-model
+            margin-right: (@slide-width * 2);
+        }
+    }
+}
