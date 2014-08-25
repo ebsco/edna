@@ -95,6 +95,7 @@ module.exports = function(grunt) {
 
 
 	grunt.registerTask("codeguide", [
+		"express",
 		"less:codeguide",
 		"watch:codeguide"
 	]);
