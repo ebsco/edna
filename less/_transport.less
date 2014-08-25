@@ -210,6 +210,50 @@
             border-right: @newPX solid @colorS4;
             
         }
-
     }
+}
+
+
+
+.transport {
+    @transport-width: 5px;
+    &-top,
+    &-right,
+    &-bottom,
+    &-left {
+        // Positioning
+        position: relative;
+        top: 3px;
+        left: 4px;
+
+        // Box-model
+        display: inline-block;
+        
+        // Typography
+        cursor: pointer;
+        .inactive;        
+
+        // Visual
+        border-top: @transport-width solid transparent;
+        border-right: @transport-width solid transparent;
+        border-bottom: @transport-width solid transparent;
+        border-left: @transport-width solid transparent;
+    }
+    &-top {
+        // Visual
+        border-bottom: @transport-width solid @colorS4;
+    }
+    &-right {
+        // Visual
+        border-left: @transport-width solid @colorS4;
+    }
+    &-bottom {
+        // Visual
+        border-top: @transport-width solid @colorS4;
+    }
+    &-left {
+        // Visual
+        border-right: @transport-width solid @colorS4;
+    }
+
 }
