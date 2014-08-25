@@ -1366,7 +1366,6 @@ label:active {
 }
 .slide-main.open-left.open-right .slide-static {
   left: 200px;
-  margin-right: 400px;
 }
 /* LISTS */
 ul,
