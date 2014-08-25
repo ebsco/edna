@@ -3,7 +3,7 @@ $(function() {
 	// call in scripts
 	var scriptArr = [
 		'select',
-		'layout',
+		'slide-panel',
 		'toggle',
 		'treelist'
 	]
