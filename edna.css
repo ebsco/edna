@@ -244,6 +244,8 @@ table {
 .breadcrumb .list-item {
   display: inline;
   float: left;
+  font-size: 13px;
+  font-size: 1.3rem;
 }
 .breadcrumb .list-item:before,
 .breadcrumb .list-item::before {
@@ -1501,6 +1503,38 @@ label:active {
 .l5-p1 > .col:nth-child(5) {
   width: 20%;
 }
+.panel-row {
+  width: 100%;
+  display: table;
+  overflow: hidden;
+}
+.panel {
+  position: relative;
+  background-color: #efefef;
+  padding: 10px;
+  display: table-cell;
+  min-width: 200px;
+}
+.panel:nth-child(2) {
+  background-color: #d6d6d6;
+  width: 100%;
+  min-width: 400px;
+}
+@media screen and (max-width: 1411px) {
+  .panel {
+    display: block;
+  }
+  .panel.hide {
+    left: -200px;
+  }
+  .hide {
+    left: -200px;
+  }
+  .hide + .panel,
+  .hide + .panel + .panel {
+    left: -200px;
+  }
+}
 /* LAYOUT - FIXED */
 .l2-p3.fixed-r {
   clear: both;
@@ -1572,7 +1606,7 @@ ol.base > li {
   list-style: disc;
 }
 .list.circle {
-  margin-left: circle;
+  margin-left: 16px;
   list-style: circle;
 }
 .list.square {

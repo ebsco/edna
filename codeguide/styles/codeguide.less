@@ -19,6 +19,7 @@
 @import "../../less/_transport.less";
 @import "../../less/_treelist.less";
 @import "../../less/_typography.less";
+@import "../../less/_width.less";
 @import "../../less/_universal.less";
 
 /* STYLEGUIDE STYLES */
@@ -258,7 +259,25 @@ pre.prettyprint {
 }
 
 
-
+.cg-layout {
+    
+    .w20,
+    .w25,
+    .w33,
+    .w40,
+    .w50,
+    .w60,
+    .w66,
+    .w75,
+    .w80 {
+        padding: 10px 0;
+        background-color: #aca;
+        border-right: 3px solid #fff;
+        &:last-child {
+            border-right-width: 0;
+        }
+    }
+}
 
 
 
