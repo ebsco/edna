@@ -10,7 +10,7 @@
   "_target": "develop",
   "_originalSource": "http://as-gitmaster.epnet.com:7990/scm/buzz/edna.git",
   "dependencies": {
-    "jquery": "~2.1.1",
+    "jquery": ">=1.9",
     "google-code-prettify": "~1.0.3"
   }
 }
