@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 					compile: true
 				},
 				files: {
-					"codeguide/styles/edna.css": [ "codeguide/styles/codeguide.less" ]
+					"codeguide/styles/codeguide.css": [ "codeguide/styles/codeguide.less" ]
 				}
 			}
 		},
@@ -95,6 +95,7 @@ module.exports = function(grunt) {
 
 
 	grunt.registerTask("codeguide", [
+		"express",
 		"less:codeguide",
 		"watch:codeguide"
 	]);

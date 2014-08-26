@@ -3,13 +3,24 @@
 .select {
     // Positioning
     position: relative;
-        
+
+    // Box-model
+    display: inline-block;
+    padding: 5px 15px;
+
     // Typography
-    line-height: normal;
-    
+    line-height: unit(@btn-font-size * 20, px);
+    line-height: unit(@btn-font-size * 2, rem);
+
     // Visual
+    outline: 0;
     -moz-border-radius: @radius;
          border-radius: @radius;
+
+    > .transport {
+        // Visual
+        vertical-align: middle;
+    }
 
     &-list {
         // Positioning
@@ -23,6 +34,9 @@
         padding: 0;
         margin: 0;
         list-style-type: none;
+
+        // Typography
+        line-height: normal;
 
         // Visual
         background-color: @select-bgcolor;

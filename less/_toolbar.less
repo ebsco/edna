@@ -26,8 +26,6 @@
         // Box sizing
         width: 100%;
 
-
-
         // Visual
         background-color: @tbar-personal-bgcolor;
                 
@@ -38,6 +36,7 @@
             // Box-model
             width: 100%;
             padding: 9px 10px;
+            margin: 0;
             
             // Typography
             .fontsize(1.2);
@@ -48,27 +47,24 @@
                 
             // Misc
             .clearfix;
-
-            > .personal-nav-item {
-                // Box-model
-                display: inline-block;
-                padding: 0 0 0 10px;
-
-                // Typography
-                color: @colorS2;
-                
-                // Misc
-                .clearfix;
-
-                &:last-child {
-                    .txt-link {
-                        // Typography
-                        text-decoration: underline;
-                    }
-                }
-                
-            }
         }
+
+       .personal-nav-item {
+            // Box-model
+            display: inline-block;
+            padding: 0 0 0 10px;
+
+            // Typography
+            color: @colorS2;
+            
+            // Misc
+            .clearfix;
+        }
+
+        .txt-link {
+            // Typography
+            text-decoration: underline;
+        }            
 
     }
 
@@ -133,7 +129,6 @@
 
         > .icon {
             // Box-model
-            display: inline-block;
             overflow: hidden;   
         }
     }

@@ -1,5 +1,5 @@
             <div class="cg-section">
-                <h2 class="cg-heading">CSS FormatFormat</h2>
+                <h2 class="cg-heading">CSS Format</h2>
                 <div class="cg-element">
                     <ul class="cg-list">
                         <li>One selector per line in multi-selector rulesets</li>
@@ -19,8 +19,7 @@
                         <li>Character entities are preferred whenever feasible. W3C reference list is <a href="http://dev.w3.org/html5/html-author/charref">here</a> (mouseover the desired character).</li>
                     </ul>
                 </div>
-                <pre class="cg-code prettyprint lang-css">
-
+                <pre class="cg-code prettyprint lang-css linenums">
 /* BAD CSS */
 .example1,.example2,.example3
 {
@@ -45,8 +44,7 @@ border: 1px solid #CCCCCC}
 
 .example4[type="text"] {
     border: 1px solid #ccc;
-}
-                </pre>
+}</pre>
             </div>
 
 
@@ -68,39 +66,31 @@ border: 1px solid #CCCCCC}
                     <p class="cg-description">
                         Here is an example of bad stuff:
                     </p>
-                    <pre class="cg-code prettyprint lang-html">
-<!-- BAD HTML WITH INLINE STYLES -->
-&lt;div class="error" style="display: none;"&gt;ERROR&lt;/div&gt;
-                    </pre>
+                    <pre class="cg-code prettyprint lang-html linenums">
+&lt;!-- BAD HTML WITH INLINE STYLES -->
+&lt;div class="error" style="display: none;">ERROR&lt;/div></pre>
                     <p class="cg-description">
                         Here is an example of the above done correctly:
                     </p>
-                    <pre class="cg-code prettyprint lang-css">
-
+                    <pre class="cg-code prettyprint lang-css linenums">
 /* GOOD EXTERNAL CSS */
 .hide {
     display: none;
-}
-                    </pre>
-                    <pre class="cg-code prettyprint lang-html">
-<!-- GOOD HTML -->
-&lt;div class="error hide"&gt;ERROR&lt;/div&gt;
-                    </pre>
+}</pre>
+                    <pre class="cg-code prettyprint lang-html linenums">
+&lt;!-- GOOD HTML -->
+&lt;div class="error hide">ERROR&lt;/div></pre>
                     <p class="cg-description">
                         Now, lets look at positioning a modal:
                     </p>
-                    <pre class="cg-code prettyprint lang-css">
-
+                    <pre class="cg-code prettyprint lang-css linenums">
 /* GOOD EXTERNAL CSS */
 .modal {
     position: absolute;
-}
-                    </pre>
-                    <pre class="cg-code prettyprint lang-html">
-
-&lt;!-- GOOD HTML WITH PROPER USE OF INLINE STYLES --&gt;
-&lt;div class="modal" style="left: 200px; top: 500px;"&gt;Greetings!&lt;/div&gt;
-                    </pre>
+}</pre>
+                    <pre class="cg-code prettyprint lang-html linenums">
+&lt;!-- GOOD HTML WITH PROPER USE OF INLINE STYLES -->
+&lt;div class="modal" style="left: 200px; top: 500px;">Greetings!&lt;/div></pre>
                 </div>
             </div>
 
@@ -111,23 +101,12 @@ border: 1px solid #CCCCCC}
                         When using vendor prefixed properties, indent each property such that the declaration's value lines up vertically for easy multi-line editing.
                     </p>
                 </div>
-                <pre class="cg-code prettyprint lang-css">
-
+                <pre class="cg-code prettyprint lang-css linenums">
 .selector {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
      -mos-box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
           box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
-}
-                </pre>
-            </div>
-
-            <div class="cg-section">
-                <h2 class="cg-heading">Nesting in LESS</h2>
-                <div class="cg-element">
-                    <p class="cg-description">
-                        Avoid unnecessary nesting. Just because you can nest, doesn't mean you always should. Consider nesting only if you must scope styles to a parent and if there are multiple elements to be nested.
-                    </p>
-                </div>
+}</pre>
             </div>
 
             <div class="cg-section">
@@ -139,7 +118,6 @@ border: 1px solid #CCCCCC}
                             <li>Place comments on a new line above their subject</li>
                             <li>Keep line-length to a sensible maximum, e.g., 80 columns</li>
                         </ul>
-                        By using LESS we can write two kinds of comments.
                     </p>
                 </div>
 
@@ -149,21 +127,8 @@ border: 1px solid #CCCCCC}
                         LESS will keep these comments through the compilation process, so make liberal use of comments to break CSS code into discrete sections.
                     </p>
                 </div>
-                <pre class="cg-code prettyprint lang-css">
-
-/* comment */
-                </pre>
-
-                <strong>Single-Line Comments</strong>
-                <div class="cg-element">
-                    <p class="cg-description">
-                        These comments will be stripped from CSS when LESS is compiled. Use these more for developer comments or other comments that the user does not need to know.
-                    </p>
-                </div>
-                <pre class="cg-code prettyprint lang-css">
-
-// comment
-                </pre>
+                <pre class="cg-code prettyprint lang-css linenums">
+/* comment */</pre>
             </div>
 
             <div class="cg-section">
@@ -173,15 +138,13 @@ border: 1px solid #CCCCCC}
                         Keep classes lowercase and use dashes (not underscores or camelCase).
                     </p>
 
-                    <pre class="cg-code prettyprint lang-css">
-
+                    <pre class="cg-code prettyprint lang-css linenums">
 /* BAD CLASS NAMES */
 .className {...}
 .class_name {...}
 
 /* GOOD CLASS NAMES*/
-.class-name {...}
-                    </pre>
+.class-name {...}</pre>
                     <p class="cg-description">
                         Note: Classes prefixed with .ext- are reserved for JavaScript events so do not apply any CSS to them.
                     </p>
@@ -218,11 +181,9 @@ border: 1px solid #CCCCCC}
                         </ul>
                     </p>
                 </div>
-                <pre class="cg-code prettyprint lang-css">
-
+                <pre class="cg-code prettyprint lang-css linenums">
 .class:after,
-.class::after {...}
-                </pre>
+.class::after {...}</pre>
             </div>
 
             <div class="cg-section">
@@ -234,31 +195,3 @@ border: 1px solid #CCCCCC}
                     </ul>
                 </div>
             </div>
-
-
-
-
-
-            <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=desert"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,52 +1,56 @@
 $(function() {
 
-    // treelist stuff
-    $(document).on('click', '.list-item .txt-link', function() {
-        $('.list-item').removeClass('active');
-        $(this).parent('.list-item').addClass('active');
-    });
+	// call in scripts
+	var scriptArr = [
+		'select',
+		'slide-panel',
+		'toggle',
+		'treelist'
+	]
+	for(var i = 0; i < scriptArr.length; i++) {
+		var imported = document.createElement('script');
+		imported.src = 'scripts/' + scriptArr[i] + '.js';
+		document.head.appendChild(imported);
+	}
 
-    // get a url hash
-    var loc = window.location.hash;
+	// get a url hash
+	var loc = window.location.hash;
 
-    var loadPg = function(navTitle, value) {
-        // load the correct content
-        $.get('pages/' + navTitle + '.html', function(data) {
-            var navTxt = $('[title=' + navTitle + ']').text();
-            $('.evt-load').html(data);
-            $('.Cg-head-h1').append('<span>').text('Edna CODEGUIDE' + ' - ' + navTxt);
-            $('[title=' + navTitle + ']').parent().addClass('active').siblings().removeClass('active');
-            window.location.hash = navTitle.toLowerCase();
-        });        
-    }
+	var loadPg = function(navTitle, value) {
+		// load the correct content
+		$.get('pages/' + navTitle + '.html', function(data) {
+			var navTxt = $('[title=' + navTitle + ']').text();
+			$('.evt-load').html(data);
+			$('.cg-head-h1 a').text('Edna CodeGuide' + ' - ' + navTxt);
+			$('[title=' + navTitle + ']').parent().addClass('active').siblings().removeClass('active');
+			window.location.hash = navTitle.toLowerCase();
+			prettyPrint();
+		});        
+	}
 
-    // do stuff on nav click
-    $(document).on('click', '.evt-active', function() {
+	// do stuff on nav click
+	$(document).on('click', '.evt-active', function(data) {
 
-        // get the title of the href clicked
-        var navTitle = $(this).children('a').attr('title');
+		// get the title of the href clicked
+		var navTitle = $(this).children('a').attr('title');
 
-        loadPg(navTitle);
+		loadPg(navTitle);
 
-        // add the active class
-        $(this).addClass('active').siblings().removeClass('active');
-        
-    })
-    
-    // if reloading page look for hash
-    if(loc) {
-        var loc = loc.split('#');
-        loadPg(loc[1]);
-    }
+		var classes = data.currentTarget.className;
 
-    // dropdowns, opening and closing
-    $(document).on('click', '.select', function() {
-        $(this).children('.select-list').toggleClass('active');
-    });
-    $(document).on('click', '.select-label', function() {
-        $(this).toggleClass('active');
-    });
-
-
+		classArr = classes.split(' ');
+		for(var i = 0; i < classArr.length; i++) {
+			if( classArr[i] === 'cg-nav-side-item' ) {
+				$('.cg-nav-side-item').removeClass('active');
+				$(this).addClass('active');
+			}
+		}
+	})
+	
+	// if reloading page look for hash
+	if(loc) {
+		var loc = loc.split('#');
+		loadPg(loc[1]);
+	}
 
 });

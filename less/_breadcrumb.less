@@ -1,0 +1,58 @@
+/* BREADCRUMB */
+
+// comment
+.breadcrumb {
+    // Box-model
+    padding: 10px 0;
+    margin: 0;
+
+    .list-item {
+        // Box-model
+        display: inline;
+        float: left;
+
+        // Typography
+        .fontsize(1.3);        
+
+        // add the dividers between the breadcrumb items
+        &:before,
+        &::before {
+            // Box-model
+            padding: 0 10px;
+            
+            // Visual
+            content: @breadcrumb-content;
+        }
+    
+        // remove breadcrumb divider for first item
+        &:first-child:before,
+        &:first-child::before {
+            // Box-model
+            display: none;
+        }
+
+        // this removes the white space between the :before and the txt-link
+        > .txt-link {
+            // Box-model
+            margin-left: -4px;
+    
+            // without this the first item is too far left
+            &:first-child,
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    // clear after the breadcrumb
+    &:after,
+    &::after {
+        // Box-model
+        display: table;
+        clear: both;
+
+        // Visual
+        content: '';
+    }
+
+}

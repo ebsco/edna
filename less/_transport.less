@@ -18,7 +18,7 @@
         
         // Typography
         cursor: pointer;
-        .inactive;        
+        .inactive;
 
         // Visual
         border-top: @transport-width solid transparent;
@@ -50,7 +50,7 @@
             .fontsize(@transport-slim-fontsize);
             
             // Visual
-            border-color: @transport-slim-bordercolor;           
+            border-color: @transport-slim-bordercolor;
             border-width: 0;
             outline: 0;
 
@@ -210,6 +210,49 @@
             border-right: @newPX solid @colorS4;
             
         }
-
     }
+}
+
+// new one-line transports. could this be the future?
+.transport {
+    @transport-width: 5px;
+    &-top,
+    &-right,
+    &-bottom,
+    &-left {
+        // Positioning
+        position: relative;
+        top: 3px;
+        left: 4px;
+
+        // Box-model
+        display: inline-block;
+        
+        // Typography
+        cursor: pointer;
+        .inactive;
+
+        // Visual
+        border-top: @transport-width solid transparent;
+        border-right: @transport-width solid transparent;
+        border-bottom: @transport-width solid transparent;
+        border-left: @transport-width solid transparent;
+    }
+    &-top {
+        // Visual
+        border-bottom: @transport-width solid @colorS4;
+    }
+    &-right {
+        // Visual
+        border-left: @transport-width solid @colorS4;
+    }
+    &-bottom {
+        // Visual
+        border-top: @transport-width solid @colorS4;
+    }
+    &-left {
+        // Visual
+        border-right: @transport-width solid @colorS4;
+    }
+
 }
