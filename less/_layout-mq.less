@@ -1,0 +1,33 @@
+// SMALL
+@media screen and (min-width: 0) and (max-width: @mediaquery-small) {
+
+    // stuff here
+
+}
+@media screen and (min-width: 0) and (max-width: @mediaquery-small) {
+    @import (multiple) '_slide-panel';
+    [class*="l"][class*="-p"] {
+        .col {
+            width: 100%;
+        }
+    }
+}
+
+// MEDIUM
+@media screen and (min-width: @mediaquery-small) and (max-width: @mediaquery-medium) {
+    @import (multiple) '_slide-panel';
+    [class*="l"][class*="-p"] {
+        .col {
+            width: 100%;
+        }
+    }
+}
+
+// LARGE
+@media screen and (min-width: @mediaquery-medium) {
+    [class*="l"][class*="-p"] {
+        .col {
+            color: blue;
+        }
+    }
+}

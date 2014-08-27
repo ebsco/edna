@@ -12,18 +12,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
 }
-.transporthover:hover .transport .top {
-  border-bottom-color: #3a3a3a;
-}
-.transporthover:hover .transport .right {
-  border-left-color: #3a3a3a;
-}
-.transporthover:hover .transport .bottom {
-  border-top-color: #3a3a3a;
-}
-.transporthover:hover .transport .left {
-  border-right-color: #3a3a3a;
-}
 /* INPUTS */
 .ie7 input[type="text"].placeholdersjs,
 .ie7 input[type="search"].placeholdersjs,
