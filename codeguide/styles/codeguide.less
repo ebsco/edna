@@ -296,8 +296,8 @@ pre.prettyprint {
 @media screen and ( max-width: unit(@mediaquery-small, px) ) {
     body { min-width: unit(@mediaquery-base, px); }
     // slide panel stuff
-    .cg-element {
-        &.mq-pnl { padding: 0; }
+    .cg-element.mq-pnl {
+        padding: 0;
         .l1-p1 { padding: 0; }
         .l3-p7 { padding: 0 10px; }
         .col + .col { padding: 0; }
@@ -314,8 +314,8 @@ pre.prettyprint {
 // MEDIUM
 @media screen and ( min-width: unit( (@mediaquery-small + 1), px) ) and ( max-width: unit(@mediaquery-medium, px) ) {
     // slide panel stuff
-    .cg-element {
-        &.mq-pnl { padding: 0; }
+    .cg-element.mq-pnl {
+        padding: 0;
         .l1-p1 { padding: 0; }
         .l3-p7 { padding: 0; > .col { width: 100%; padding: 0 10px; } }
         .mq-pnl-r,
@@ -329,10 +329,8 @@ pre.prettyprint {
 
     // slide panel stuff
     .slide-nav { display: none; }
-    .cg-element {
-        &.mq-pnl {
-            padding: 20px 0;
-        }
+    .cg-element.mq-pnl {
+        padding: 0;
         .l1-p1 { padding: 0; }
         .l3-p7 { padding: 0; }
         .col + .col { padding: 0; }

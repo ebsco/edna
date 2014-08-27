@@ -2667,18 +2667,18 @@ pre.prettyprint {
   .cg-element.mq-pnl {
     padding: 0;
   }
-  .cg-element .l1-p1 {
+  .cg-element.mq-pnl .l1-p1 {
     padding: 0;
   }
-  .cg-element .l3-p7 {
+  .cg-element.mq-pnl .l3-p7 {
     padding: 0 10px;
   }
-  .cg-element .col + .col {
+  .cg-element.mq-pnl .col + .col {
     padding: 0;
   }
-  .cg-element .mq-pnl-r,
-  .cg-element .mq-pnl-b,
-  .cg-element .mq-pnl-l {
+  .cg-element.mq-pnl .mq-pnl-r,
+  .cg-element.mq-pnl .mq-pnl-b,
+  .cg-element.mq-pnl .mq-pnl-l {
     background-color: #efefef;
   }
   .slide-nav .btn {
@@ -2690,19 +2690,19 @@ pre.prettyprint {
   .cg-element.mq-pnl {
     padding: 0;
   }
-  .cg-element .l1-p1 {
+  .cg-element.mq-pnl .l1-p1 {
     padding: 0;
   }
-  .cg-element .l3-p7 {
+  .cg-element.mq-pnl .l3-p7 {
     padding: 0;
   }
-  .cg-element .l3-p7 > .col {
+  .cg-element.mq-pnl .l3-p7 > .col {
     width: 100%;
     padding: 0 10px;
   }
-  .cg-element .mq-pnl-r,
-  .cg-element .mq-pnl-b,
-  .cg-element .mq-pnl-l {
+  .cg-element.mq-pnl .mq-pnl-r,
+  .cg-element.mq-pnl .mq-pnl-b,
+  .cg-element.mq-pnl .mq-pnl-l {
     background-color: #efefef;
   }
 }
@@ -2711,20 +2711,20 @@ pre.prettyprint {
     display: none;
   }
   .cg-element.mq-pnl {
-    padding: 20px 0;
-  }
-  .cg-element .l1-p1 {
     padding: 0;
   }
-  .cg-element .l3-p7 {
+  .cg-element.mq-pnl .l1-p1 {
     padding: 0;
   }
-  .cg-element .col + .col {
+  .cg-element.mq-pnl .l3-p7 {
     padding: 0;
   }
-  .cg-element .mq-pnl-r,
-  .cg-element .mq-pnl-b,
-  .cg-element .mq-pnl-l {
+  .cg-element.mq-pnl .col + .col {
+    padding: 0;
+  }
+  .cg-element.mq-pnl .mq-pnl-r,
+  .cg-element.mq-pnl .mq-pnl-b,
+  .cg-element.mq-pnl .mq-pnl-l {
     background-color: #efefef;
   }
 }
