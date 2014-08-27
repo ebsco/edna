@@ -2060,15 +2060,20 @@ ol.base > li {
   cursor: default;
 }
 .transport-top {
+  top: -3px;
   border-bottom: 5px solid #333333;
 }
 .transport-right {
+  top: 0;
+  left: 7px;
   border-left: 5px solid #333333;
 }
 .transport-bottom {
   border-top: 5px solid #333333;
 }
 .transport-left {
+  top: 0;
+  left: 2px;
   border-right: 5px solid #333333;
 }
 .treelist .list {
