@@ -264,6 +264,7 @@ table {
 .btn.search-known,
 .btn-mini.search-known {
   color: #ffffff;
+  line-height: 2.3rem;
   background-color: #0b3458;
   border-color: #575656;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #104779), color-stop(1, #1d5b94));
@@ -377,6 +378,12 @@ table {
   background-image: linear-gradient(transparent, transparent);
   filter: progid:DXImageTransform.Microsoft.newgradient(startColorstr='transparent', endColorstr='transparent', GradientType=0);
 }
+.btn.light {
+  line-height: 2.3rem;
+}
+.btn-mini.light {
+  line-height: 1.1rem;
+}
 .btn {
   height: 30px;
   padding: 0 15px;
@@ -392,13 +399,21 @@ table {
 .btn.search-known {
   height: 25px;
 }
+.btn > .light {
+  line-height: 2.8rem;
+}
 .btn-mini {
   height: 18px;
   padding: 0 10px;
   font-size: 11px;
   font-size: 1.1rem;
+  font-size: 11pxpx;
+  font-size: 1.1pxrem;
   -moz-border-radius: 2px;
   border-radius: 2px;
+}
+.btn-mini > .light {
+  line-height: 1.1px;
 }
 .btn-txt,
 .btn-txt-link {

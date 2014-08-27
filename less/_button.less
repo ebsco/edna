@@ -76,6 +76,7 @@
     &.search-known {
         // Typography
         color: @btn-search-known-color;
+        line-height: 2.3rem;
 
         // Visual
         background-color: @btn-search-known-bgcolor;
@@ -124,7 +125,7 @@
     &.light {
         // Typography
         color: @btn-light-color;
-        
+
         // Visual
         background-color: @btn-light-bgcolor;
         border-color: @btn-light-bordercolor;
@@ -146,7 +147,7 @@
             border-color: @btn-light-bordercolor-active;
         }
     }
-
+    
     &.disabled {
         // Typography
         color: @btn-disabled-color;
@@ -177,6 +178,12 @@
         .btngrade( transparent, transparent );
     }
 }
+.btn.light {
+    line-height: 2.3rem;
+}
+.btn-mini.light {
+    line-height: 1.1rem;
+}
 
 // button overrides
 .btn {
@@ -204,6 +211,11 @@
         height: 25px;
     }
 
+    // override for light button line-height
+    > .light {
+        line-height: unit((@btn-font-size * 2), rem);
+    }
+
     // overrides to the mini buttons
     &-mini {
         // Box-model
@@ -211,11 +223,18 @@
         padding: 0 10px;
         
         // Typography
-        .fontsize(1.1);
+        @btn-mini-font-size: 1.1;
+        .fontsize(@btn-mini-font-size);
+        .fontsize( unit((@btn-mini-font-size), px) );
         
         // Visual
         -moz-border-radius: 2px;
              border-radius: 2px;
+
+        // override for light button line-height
+        > .light {
+            line-height: unit((@btn-mini-font-size), px);
+        }
     }
 
     // overrides to the text buttons
