@@ -224,20 +224,6 @@ pre.prettyprint {
     margin: 5px 20px 20px;
 }
 
-
-
-
-.first-example,
-.second-example {
-    foo: bar;
-    & & {
-        foo: bar;
-        &.third-example & {
-            foo: bar;
-        }
-    }
-}
-
 .cg-toggler {
     border: 1px solid black;
     border-width: 1px 1px 0 1px;
@@ -279,31 +265,63 @@ pre.prettyprint {
     }
 }
 
-.slide-main {
-    .panel {
-        padding: 10px;
+// SMALL
+@media screen and (min-width: 0) and (max-width: @mediaquery-small) {
+    body { min-width: 300px; }
+    // slide panel stuff
+    @import "../../less/_slide-panel.less";
+    .cg-element {
+        .l1-p1 { padding: 0; }
+        .l3-p7 { padding: 0 10px; }
+        .col + .col { width: 100%; padding: 0; }
+        .mq-pnl-r,
+        .mq-pnl-b,
+        .mq-pnl-l { background-color: #efefef; }
+        padding: 20px 0 0 !important;
     }
+    // END slide panel stuff
 }
+@media screen and (min-width: 0) and (max-width: @mediaquery-small) {
+    // slide panel stuff
+    @import "../../less/_slide-panel.less";
+    .cg-element {
+        .l1-p1 { padding: 0; }
+        .l3-p7 { padding: 0 10px; }
+        .col + .col { width: 100%; padding: 0; }
+        .mq-pnl-r,
+        .mq-pnl-b,
+        .mq-pnl-l { background-color: #efefef; }
+        padding: 20px 0 0 !important;
+    }
+    // END slide panel stuff
+}
+// MEDIUM
+@media screen and (min-width: @mediaquery-small) and (max-width: @mediaquery-medium) {
+    // slide panel stuff
+    .cg-element {
+        .l1-p1 { padding: 0; }
+        .l3-p7 { padding: 0 10px; }
+        .col + .col { width: 100%; padding: 0; }
+        .mq-pnl-r,
+        .mq-pnl-b,
+        .mq-pnl-l { background-color: #efefef; }
+        padding: 20px 0 0 !important;
+    }
+    // END slide panel stuff
+}
+// LARGE
+@media screen and (min-width: @mediaquery-medium) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // slide panel stuff
+    .slide-nav { display: none; }
+    .cg-element {
+        .l1-p1 { padding: 0; }
+        .l3-p7 { padding: 0 10px; }
+        .col + .col { padding: 0; }
+        .mq-pnl-r,
+        .mq-pnl-b,
+        .mq-pnl-l { background-color: #efefef; }
+        padding: 20px 0 0 !important;
+    }
+    // END slide panel stuff
+}
