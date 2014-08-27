@@ -1,7 +1,9 @@
-/* IMPORTS */
-@import "../../less/_normalize.less";
+// REFERENCE FILES
 @import (reference) "../../less/_variables.less";
 @import (reference) "../../less/_mixins.less";
+
+// BASE FILES
+@import "../../less/_normalize.less";
 @import "../../less/_breadcrumb.less";
 @import "../../less/_button.less";
 @import "../../less/_button-group.less";
@@ -12,18 +14,44 @@
 @import "../../less/_modal.less";
 @import "../../less/_searchbar.less";
 @import "../../less/_select";
-.cg-element {
-    @import "../../less/_tag.less";
-}
 @import "../../less/_toolbar.less";
 @import "../../less/_transport.less";
 @import "../../less/_treelist.less";
 @import "../../less/_typography.less";
 @import "../../less/_width.less";
 @import "../../less/_universal.less";
+// this is needed because Google Prettify uses this class :(
+.cg-element {
+    @import "../../less/_tag.less";
+}
+
+// FILES WITH MEDIA QUERIES
+@import (multiple) "../../less/_layout-mq";
+
+// FILES TO BE USEDE WITHIN MEDIA QUERIES 
+// small
+@media screen and ( max-width: unit(@mediaquery-small, px) ) {
+
+    @import (multiple) "../../less/_slide-panel";
+
+}
+
+// medium
+@media screen and ( min-width: unit( (@mediaquery-small + 1), px) ) and ( max-width: unit(@mediaquery-medium, px) ) {
+
+    @import (multiple) "../../less/_slide-panel";
+
+}
+
+// large
+@media screen and ( min-width: unit( (@mediaquery-medium + 1), px) ) {
+
+    // here be demons
+
+}
+
 
 /* STYLEGUIDE STYLES */
-
 html {
     // Box-model
     .box(border);
@@ -101,7 +129,6 @@ html {
             cursor: default;
         }
     }
-
 }
 
 @sg-padding: 20px;
@@ -266,62 +293,52 @@ pre.prettyprint {
 }
 
 // SMALL
-@media screen and (min-width: 0) and (max-width: @mediaquery-small) {
-    body { min-width: 300px; }
-    // slide panel stuff
-    @import "../../less/_slide-panel.less";
-    .cg-element {
-        .l1-p1 { padding: 0; }
-        .l3-p7 { padding: 0 10px; }
-        .col + .col { width: 100%; padding: 0; }
-        .mq-pnl-r,
-        .mq-pnl-b,
-        .mq-pnl-l { background-color: #efefef; }
-        padding: 20px 0 0 !important;
-    }
-    // END slide panel stuff
-}
-@media screen and (min-width: 0) and (max-width: @mediaquery-small) {
-    // slide panel stuff
-    @import "../../less/_slide-panel.less";
-    .cg-element {
-        .l1-p1 { padding: 0; }
-        .l3-p7 { padding: 0 10px; }
-        .col + .col { width: 100%; padding: 0; }
-        .mq-pnl-r,
-        .mq-pnl-b,
-        .mq-pnl-l { background-color: #efefef; }
-        padding: 20px 0 0 !important;
-    }
-    // END slide panel stuff
-}
-// MEDIUM
-@media screen and (min-width: @mediaquery-small) and (max-width: @mediaquery-medium) {
+@media screen and ( max-width: unit(@mediaquery-small, px) ) {
+    body { min-width: unit(@mediaquery-base, px); }
     // slide panel stuff
     .cg-element {
-        .l1-p1 { padding: 0; }
-        .l3-p7 { padding: 0 10px; }
-        .col + .col { width: 100%; padding: 0; }
-        .mq-pnl-r,
-        .mq-pnl-b,
-        .mq-pnl-l { background-color: #efefef; }
-        padding: 20px 0 0 !important;
-    }
-    // END slide panel stuff
-}
-// LARGE
-@media screen and (min-width: @mediaquery-medium) {
-
-    // slide panel stuff
-    .slide-nav { display: none; }
-    .cg-element {
+        &.mq-pnl { padding: 0; }
         .l1-p1 { padding: 0; }
         .l3-p7 { padding: 0 10px; }
         .col + .col { padding: 0; }
         .mq-pnl-r,
         .mq-pnl-b,
         .mq-pnl-l { background-color: #efefef; }
-        padding: 20px 0 0 !important;
+    }
+    .slide-nav .btn {
+        margin: 0;
+        font-size: 10px;
+    }
+    // END slide panel stuff
+}
+// MEDIUM
+@media screen and ( min-width: unit( (@mediaquery-small + 1), px) ) and ( max-width: unit(@mediaquery-medium, px) ) {
+    // slide panel stuff
+    .cg-element {
+        &.mq-pnl { padding: 0; }
+        .l1-p1 { padding: 0; }
+        .l3-p7 { padding: 0; > .col { width: 100%; padding: 0 10px; } }
+        .mq-pnl-r,
+        .mq-pnl-b,
+        .mq-pnl-l { background-color: #efefef; }
+    }
+    // END slide panel stuff
+}
+// LARGE
+@media screen and ( min-width: unit( (@mediaquery-medium + 1), px) ) {
+
+    // slide panel stuff
+    .slide-nav { display: none; }
+    .cg-element {
+        &.mq-pnl {
+            padding: 20px 0;
+        }
+        .l1-p1 { padding: 0; }
+        .l3-p7 { padding: 0; }
+        .col + .col { padding: 0; }
+        .mq-pnl-r,
+        .mq-pnl-b,
+        .mq-pnl-l { background-color: #efefef; }
     }
     // END slide panel stuff
 }

@@ -1,33 +1,26 @@
-// SMALL
-@media screen and (min-width: 0) and (max-width: @mediaquery-small) {
-
-    // stuff here
-
-}
-@media screen and (min-width: 0) and (max-width: @mediaquery-small) {
-    @import (multiple) '_slide-panel';
+// small
+@media screen and ( max-width: unit(@mediaquery-small, px) ) {
     [class*="l"][class*="-p"] {
         .col {
             width: 100%;
+
+            + .col {
+                padding-left: 0;
+            }
         }
     }
 }
 
-// MEDIUM
-@media screen and (min-width: @mediaquery-small) and (max-width: @mediaquery-medium) {
-    @import (multiple) '_slide-panel';
-    [class*="l"][class*="-p"] {
-        .col {
-            width: 100%;
-        }
-    }
+// medium
+@media screen and ( min-width: unit( (@mediaquery-small + 1), px) ) and ( max-width: unit(@mediaquery-medium, px) ) {
+
+    // here be ghouls
+
 }
 
-// LARGE
-@media screen and (min-width: @mediaquery-medium) {
-    [class*="l"][class*="-p"] {
-        .col {
-            color: blue;
-        }
-    }
+// large
+@media screen and ( min-width: unit( (@mediaquery-medium + 1), px) ) {
+
+    // here be hobos
+
 }
