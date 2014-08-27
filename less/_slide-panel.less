@@ -1,5 +1,6 @@
 /* SLIDE PANELS */
-.slide-main {
+@dimension: 200px;
+.mq-pnl {
     // Positioning
     position: relative;
 
@@ -7,100 +8,53 @@
     overflow: hidden;
 
     // position the content
-    .slide-static {
+    .mq-pnl-static {
         // Positioning
         position: relative;
-        left: 0;
+        top: 0;
         right: 0;
+        bottom: 0;
+        left: 0;
         z-index: 1000;
     }
 
     // set the transition
-    .slide-static,
-    .slide-right,
-    .slide-left {
+    .mq-pnl-static,
+    .mq-pnl-t,
+    .mq-pnl-r,
+    .mq-pnl-b,
+    .mq-pnl-l {
         // Misc
         transition: .5s;
     }
 
     // base styles for sliding content
-    .slide-right,
-    .slide-left {
+    .mq-pnl-t,
+    .mq-pnl-b,
+    .mq-pnl-r,
+    .mq-pnl-l {
         // Positioning
         position: absolute;
-        top: 0;
         z-index: 2000;
+    }
+    .mq-pnl-t,
+    .mq-pnl-b {
+        // Box-model
+        width: 100%;
+    }
+    .mq-pnl-r,
+    .mq-pnl-l {
+        // Positioning
+        top: 0;
         
         // Box-model
-        width: @slide-width;
         height: 100%;
-        
-        // Visual
-        background-color: #efefef;
     }
+}
 
-    // set the side panels to be offscreen by default
-    .slide-right {
-        // Positioning
-        right: -@slide-width;
-    }
-    .slide-left {
-        // Positioning
-        left: -@slide-width;
-    }
-
-    // for the right slide
-    &.open-right {
-        // move the right side
-        .slide-right {
-            // Positioning
-            right: 0;
-
-            // Visual
-            background-image: -moz-linear-gradient(left,  rgba(0,0,0,.25) 0%, rgba(0,0,0,0) 2%);
-            background-image: -webkit-gradient(linear, left top, left top, color-stop(0%,rgba(0,0,0,.25)), color-stop(2%,rgba(0,0,0,0)));
-            background-image: -webkit-linear-gradient(left,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
-            background-image: -o-linear-gradient(left,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
-            background-image: -ms-linear-gradient(left,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
-            background-image: linear-gradient(to right,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#007db9e8',GradientType=1 );
-        }
-        // move the content with the right side
-        .slide-static {
-            // Positioning
-            right: @slide-width;
-            left: -@slide-width;
-        }
-    }
-
-    // for the left slide
-    &.open-left {
-        // move the left side
-        .slide-left {
-            // Positioning
-            left: 0;
-
-            // Visual
-            background-image: -moz-linear-gradient(right,  rgba(0,0,0,.25) 0%, rgba(0,0,0,0) 2%);
-            background-image: -webkit-gradient(linear, right top, right top, color-stop(0%,rgba(0,0,0,.25)), color-stop(2%,rgba(0,0,0,0)));
-            background-image: -webkit-linear-gradient(right,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
-            background-image: -o-linear-gradient(right,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
-            background-image: -ms-linear-gradient(right,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
-            background-image: linear-gradient(to left,  rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 2%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#007db9e8',GradientType=1 );
-        }
-        // move the content with the left side
-        .slide-static {
-            // Positioning
-            left: @slide-width;
-        }
-    }
-
-    // if both side panels are showing
-    &.open-left.open-right {
-        .slide-static {
-            // Positioning
-            left: @slide-width;
-        }
-    }
+.mq-pnl {
+    .slide-panel(85, top);
+    .slide-panel(150, right);
+    .slide-panel(35, bottom);
+    .slide-panel(150, left);
 }
