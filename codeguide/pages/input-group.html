@@ -1,189 +1,183 @@
-			<div class="cg-section">
-				<h2 class="cg-heading">Input Group
-					<span class="cg-modifier-name" title="modifier">.input-group</span>
-				</h2>
-				<div class="cg-element">
-					<div class="input-group">
-						<span class="input-group-btn">
-							<button class="btn" tabindex="1">Click Me</button>
-						</span>
-						<input type="text" placeholder="This is an input" tabindex="1" />
-					</div>
-				</div>
-				
-				<pre class="cg-code prettyprint lang-html linenums">
-&lt;div class="input-group"&gt;
-	&lt;span class="input-group-btn"&gt;
-		&lt;button class="btn" &gt;Click Me&lt;/button&gt;
-	&lt;/span&gt;
-	&lt;input type="text" placeholder="This is an input" /&gt;
-&lt;/div&gt;</pre>
-				<div class="cg-element">
-					<div class="input-group">
-						<input type="text" placeholder="This is an input" tabindex="1" />
-						<span class="input-group-btn">
-							<button class="btn" tabindex="1">Click Me</button>
-						</span>
-					</div>
-				</div>
-				
-				<pre class="cg-code prettyprint lang-html linenums">
-&lt;div class="input-group"&gt;
-	&lt;input type="text" placeholder="This is an input" /&gt;
-	&lt;span class="input-group-btn"&gt;
-		&lt;button class="btn" &gt;Click Me&lt;/button&gt;
-	&lt;/span&gt;
-&lt;/div&gt;</pre>
-			</div>
+        {{#example}}
+            <div class="cg-section">
+                <h2 class="cg-heading">Input Group
+                    <span class="cg-modifier-name" title="modifier">.input-group</span>
+                </h2>
+                <div class="cg-element">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn" tabindex="1">{{button.click}}</button>
+                        </span>
+                        <input type="text" placeholder="{{placeholder}}" tabindex="1" />
+                    </div>
+                </div>
+                
+                <pre class="cg-code prettyprint lang-html linenums">
+&lt;div class="input-group">
+    &lt;span class="input-group-btn">
+        &lt;button class="btn" >{{button.click}}&lt;/button>
+    &lt;/span>
+    &lt;input type="text" placeholder="{{placeholder}}" />
+&lt;/div></pre>
+                <div class="cg-element">
+                    <div class="input-group">
+                        <input type="text" placeholder="{{placeholder}}" tabindex="1" />
+                        <span class="input-group-btn">
+                            <button class="btn" tabindex="1">{{button.click}}</button>
+                        </span>
+                    </div>
+                </div>
+                
+                <pre class="cg-code prettyprint lang-html linenums">
+&lt;div class="input-group">
+    &lt;input type="text" placeholder="{{placeholder}}" />
+    &lt;span class="input-group-btn">
+        &lt;button class="btn" >{{button.click}}&lt;/button>
+    &lt;/span>
+&lt;/div></pre>
+            </div>
 
-			<div class="cg-section">
-				<h2 class="cg-heading">Disabled Input Group
-					<span class="cg-modifier-name" title="modifier">.input-group</span>
-				</h2>
-				<div class="cg-element">
-					<div class="input-group">
-						<span class="input-group-btn">
-							<button class="btn disabled">Click Me</button>
-						</span>
-						<input type="text" placeholder="This is an input" disabled />
-					</div>
-					<span class="cg-modifier-name" title="modifier">:disabled</span>
-				</div>
-				
-				<pre class="cg-code prettyprint lang-html linenums">
-&lt;div class="input-group"&gt;
-	&lt;span class="input-group-btn"&gt;
-		&lt;button class="btn disabled" &gt;Click Me&lt;/button&gt;
-	&lt;/span&gt;
-	&lt;input type="text" placeholder="This is an input" disabled /&gt;
-&lt;/div&gt;</pre>
-				<div class="cg-element">
-					<div class="input-group">
-						<input type="text" placeholder="This is an input" disabled />
-						<span class="input-group-btn">
-							<button class="btn disabled">Click Me</button>
-						</span>
-					</div>
-					<span class="cg-modifier-name" title="modifier">:disabled</span>
-				</div>
-				
-				<pre class="cg-code prettyprint lang-html linenums">
-&lt;div class="input-group"&gt;
-	&lt;input type="text" placeholder="This is an input" disabled /&gt;
-	&lt;span class="input-group-btn"&gt;
-		&lt;button class="btn disabled" &gt;Click Me&lt;/button&gt;
-	&lt;/span&gt;
-&lt;/div&gt;</pre>
-			</div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Disabled Input Group
+                    <span class="cg-modifier-name" title="modifier">.input-group</span>
+                </h2>
+                <div class="cg-element">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn disabled">{{button.click}}</button>
+                        </span>
+                        <input type="text" placeholder="{{placeholder}}" disabled />
+                    </div>
+                    <span class="cg-modifier-name" title="modifier">:disabled</span>
+                </div>
+                
+                <pre class="cg-code prettyprint lang-html linenums">
+&lt;div class="input-group">
+    &lt;span class="input-group-btn">
+        &lt;button class="btn disabled" >{{button.click}}&lt;/button>
+    &lt;/span>
+    &lt;input type="text" placeholder="{{placeholder}}" disabled />
+&lt;/div></pre>
+                <div class="cg-element">
+                    <div class="input-group">
+                        <input type="text" placeholder="{{placeholder}}" disabled />
+                        <span class="input-group-btn">
+                            <button class="btn disabled">{{button.click}}</button>
+                        </span>
+                    </div>
+                    <span class="cg-modifier-name" title="modifier">:disabled</span>
+                </div>
+                
+                <pre class="cg-code prettyprint lang-html linenums">
+&lt;div class="input-group">
+    &lt;input type="text" placeholder="{{placeholder}}" disabled />
+    &lt;span class="input-group-btn">
+        &lt;button class="btn disabled" >{{button.click}}&lt;/button>
+    &lt;/span>
+&lt;/div></pre>
+            </div>
 
-			<div class="cg-section">
-				<h2 class="cg-heading">Input Group with reset
-					<span class="cg-modifier-name" title="modifier">.input-group</span>
-				</h2>
-				<div class="cg-element">
-					<div class="input-group">
-						<span class="input-group-btn">
-							<button class="btn" tabindex="1">Click Me</button>
-						</span>
-						<form id="form-one" class="input-reset">
-							<input type="text" placeholder="This is an input" tabindex="1" />
-							<input class="reset" type="reset" value="X" tabindex="2" />
-						</form>
-					</div>
-				</div>
-				
-				<pre class="cg-code prettyprint lang-html linenums">
-&lt;div class="input-group"&gt;
-	&lt;span class="input-group-btn"&gt;
-		&lt;button class="btn"&gt;Click Me&lt;/button&gt;
-	&lt;/span&gt;
-	&lt;form class="input-reset"&gt;
-		&lt;input type="text" placeholder="This is an input" /&gt;
-		&lt;input class="reset" type="reset" value="X" /&gt;
-	&lt;/form&gt;
-&lt;/div&gt;</pre>
-				<div class="cg-element">
-					<div class="input-group">
-						<form id="form-two" class="input-reset">
-							<input type="text" placeholder="This is an input" tabindex="1" />
-							<input class="reset" type="reset" value="X" tabindex="2" />
-						</form>
-						<span class="input-group-btn">
-							<button class="btn" tabindex="1">Click Me</button>
-						</span>
-					</div>
-				</div>
-				
-				<pre class="cg-code prettyprint lang-html linenums">
-&lt;div class="input-group"&gt;
-	&lt;form class="input-reset"&gt;
-		&lt;input type="text" placeholder="This is an input" /&gt;
-		&lt;input class="reset" type="reset" value="X" /&gt;
-	&lt;/form&gt;
-	&lt;span class="input-group-btn"&gt;
-		&lt;button class="btn"&gt;Click Me&lt;/button&gt;
-	&lt;/span&gt;
-&lt;/div&gt;</pre>
-			</div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Input Group with reset
+                    <span class="cg-modifier-name" title="modifier">.input-group</span>
+                </h2>
+                <div class="cg-element">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn" tabindex="1">{{button.click}}</button>
+                        </span>
+                        <form id="form-one" class="input-reset">
+                            <input type="text" placeholder="{{placeholder}}" tabindex="1" />
+                            <input class="reset" type="reset" value="X" tabindex="2" />
+                        </form>
+                    </div>
+                </div>
+                
+                <pre class="cg-code prettyprint lang-html linenums">
+&lt;div class="input-group">
+    &lt;span class="input-group-btn">
+        &lt;button class="btn">{{button.click}}&lt;/button>
+    &lt;/span>
+    &lt;form class="input-reset">
+        &lt;input type="text" placeholder="{{placeholder}}" />
+        &lt;input class="reset" type="reset" value="X" />
+    &lt;/form>
+&lt;/div></pre>
+                <div class="cg-element">
+                    <div class="input-group">
+                        <form id="form-two" class="input-reset">
+                            <input type="text" placeholder="{{placeholder}}" tabindex="1" />
+                            <input class="reset" type="reset" value="X" tabindex="2" />
+                        </form>
+                        <span class="input-group-btn">
+                            <button class="btn" tabindex="1">{{button.click}}</button>
+                        </span>
+                    </div>
+                </div>
+                
+                <pre class="cg-code prettyprint lang-html linenums">
+&lt;div class="input-group">
+    &lt;form class="input-reset">
+        &lt;input type="text" placeholder="{{placeholder}}" />
+        &lt;input class="reset" type="reset" value="X" />
+    &lt;/form>
+    &lt;span class="input-group-btn">
+        &lt;button class="btn">{{button.click}}&lt;/button>
+    &lt;/span>
+&lt;/div></pre>
+            </div>
 
-			<div class="cg-section">
-				<h2 class="cg-heading">Input Group with Button Group
-					<span class="cg-modifier-name" title="modifier">.input-group</span>
-				</h2>
-				<div class="cg-element">
-					<div class="input-group">
-						<button class="btn btn-group" tabindex="1">
-							Button
-							<span class="transport">
-								<span class="bottom"></span>
-							</span>
-						</button>
-						<form id="form-three" class="input-reset">
-							<input type="text" placeholder="This is an input" tabindex="1" />
-							<input class="reset" type="reset" value="X" tabindex="2" />
-						</form>
-					</div>
-				</div>
-				
-				<pre class="cg-code prettyprint lang-html linenums">
-&lt;div class="input-group"&gt;
-	&lt;button class="btn btn-group"&gt;
-		Button
-		&lt;span class="transport"&gt;
-			&lt;span class="bottom"&gt;&lt;/span&gt;
-		&lt;/span&gt;
-	&lt;/button&gt;
-	&lt;form class="input-reset"&gt;
-		&lt;input type="text" placeholder="This is an input" /&gt;
-		&lt;input class="reset" type="reset" value="X" /&gt;
-	&lt;/form&gt;
-&lt;/div&gt;</pre>
-				<div class="cg-element">
-					<div class="input-group">
-						<form id="form-four" class="input-reset">
-							<input type="text" placeholder="This is an input" tabindex="1" />
-							<input class="reset" type="reset" value="X" tabindex="2" />
-						</form>
-						<button class="btn btn-group" tabindex="1">
-							Button
-							<span class="transport">
-								<span class="bottom"></span>
-							</span>
-						</button>
-					</div>
-				</div>
-				
-				<pre class="cg-code prettyprint lang-html linenums">
-&lt;div class="input-group"&gt;
-	&lt;form class="input-reset"&gt;
-		&lt;input type="text" placeholder="This is an input" /&gt;
-		&lt;input class="reset" type="reset" value="X" /&gt;
-	&lt;/form&gt;
-	&lt;button class="btn btn-group" &gt;
-		Button
-		&lt;span class="transport"&gt;
-			&lt;span class="bottom"&gt;&lt;/span&gt;
-		&lt;/span&gt;
-	&lt;/button&gt;
-&lt;/div&gt;</pre>
-			</div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Input Group with Button Group
+                    <span class="cg-modifier-name" title="modifier">.input-group</span>
+                </h2>
+                <div class="cg-element">
+                    <div class="input-group">
+                        <button class="btn btn-group" tabindex="1">
+                            {{button.group}}
+                            <span class="transport-bottom"></span>
+                        </button>
+                        <form id="form-three" class="input-reset">
+                            <input type="text" placeholder="{{placeholder}}" tabindex="1" />
+                            <input class="reset" type="reset" value="X" tabindex="2" />
+                        </form>
+                    </div>
+                </div>
+                
+                <pre class="cg-code prettyprint lang-html linenums">
+&lt;div class="input-group">
+    &lt;button class="btn btn-group">
+        {{button.group}}
+        &lt;span class="transport-bottom">&lt;/span>
+    &lt;/button>
+    &lt;form class="input-reset">
+        &lt;input type="text" placeholder="{{placeholder}}" />
+        &lt;input class="reset" type="reset" value="X" />
+    &lt;/form>
+&lt;/div></pre>
+                <div class="cg-element">
+                    <div class="input-group">
+                        <form id="form-four" class="input-reset">
+                            <input type="text" placeholder="{{placeholder}}" tabindex="1" />
+                            <input class="reset" type="reset" value="X" tabindex="2" />
+                        </form>
+                        <button class="btn btn-group" tabindex="1">
+                            {{button.group}}
+                            <span class="transport-bottom"></span>
+                        </button>
+                    </div>
+                </div>
+                
+                <pre class="cg-code prettyprint lang-html linenums">
+&lt;div class="input-group">
+    &lt;form class="input-reset">
+        &lt;input type="text" placeholder="{{placeholder}}" />
+        &lt;input class="reset" type="reset" value="X" />
+    &lt;/form>
+    &lt;button class="btn btn-group" >
+        {{button.group}}
+        &lt;span class="transport-bottom">&lt;/span>
+    &lt;/button>
+&lt;/div></pre>
+            </div>
+        {{/example}}

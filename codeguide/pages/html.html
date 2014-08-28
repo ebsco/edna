@@ -1,55 +1,57 @@
-			<div class="cg-section">
-				<h2 class="cg-heading">HTML Guidelines</h2>
-				<div class="cg-element">
-					<p class="cg-description">
-						Don’t omit optional closing tags
-						Self closing elements should contain the optional forward slash at the end />
-						Don't use &lt;br /> tags for paragraphs, use &lt;p>
-					</p>
-				</div>
-			</div>
-						
-			<div class="cg-section">
-				<h2 class="cg-heading">Doctype</h2>
-				<div class="cg-element">
-					<p class="cg-description">
-						Simple, we only work with the HTML5 doctype.
-					</p>
-				</div>
-				<pre class="cg-code prettyprint lang-html linenums">
+        {{#example}}
+            <div class="cg-section">
+                <h2 class="cg-heading">HTML Guidelines</h2>
+                <div class="cg-element">
+                    <p class="cg-description">
+                        Don’t omit optional closing tags
+                        Self closing elements should contain the optional forward slash at the end />
+                        Don't use &lt;br /> tags for paragraphs, use &lt;p>
+                    </p>
+                </div>
+            </div>
+                        
+            <div class="cg-section">
+                <h2 class="cg-heading">Doctype</h2>
+                <div class="cg-element">
+                    <p class="cg-description">
+                        Simple, we only work with the HTML5 doctype.
+                    </p>
+                </div>
+                <pre class="cg-code prettyprint lang-html linenums">
 &lt;!DOCTYPE html></pre>
-			</div>
-			<div class="cg-section">
-				<h2 class="cg-heading">Character Encoding</h2>
-				<div class="cg-element">
-					<p class="cg-description">
-						Placed below the &lt;head> element and before the &lt;title> element should be your character encoding. This will ensure proper rendering of content.
-					</p>
-				</div>
-				<pre class="cg-code prettyprint lang-html linenums">
+            </div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Character Encoding</h2>
+                <div class="cg-element">
+                    <p class="cg-description">
+                        Placed below the &lt;head> element and before the &lt;title> element should be your character encoding. This will ensure proper rendering of content.
+                    </p>
+                </div>
+                <pre class="cg-code prettyprint lang-html linenums">
 &lt;meta charset="UTF-8" /></pre>
-			</div>
-			<div class="cg-section">
-				<h2 class="cg-heading">Attribute Order</h2>
-				<div class="cg-element">
-					<p class="cg-description">
-						To help read markup more easily HTML attributes should come in this order.
-					</p>
-					<ul class="cg-list">
-						<li>class</li>
-						<li>id, name</li>
-						<li>data-*</li>
-						<li>src, for, type, href</li>
-						<li>title, alt</li>
-						<li>aria-*, role</li>
-					</ul>
-				</div>
-			</div>
-			<div class="cg-section">
-				<h2 class="cg-heading">JavaScript Generated Markup</h2>
-				<div class="cg-element">
-					<p class="cg-description">
-						Shouldn't be done. No markup should be generated from any javascript.
-					</p>
-				</div>
-			</div>
+            </div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Attribute Order</h2>
+                <div class="cg-element">
+                    <p class="cg-description">
+                        To help read markup more easily HTML attributes should come in this order.
+                    </p>
+                    <ul class="cg-list">
+                        <li>class</li>
+                        <li>id, name</li>
+                        <li>data-*</li>
+                        <li>src, for, type, href</li>
+                        <li>title, alt</li>
+                        <li>aria-*, role</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cg-section">
+                <h2 class="cg-heading">JavaScript Generated Markup</h2>
+                <div class="cg-element">
+                    <p class="cg-description">
+                        Shouldn't be done. No markup should be generated from any javascript.
+                    </p>
+                </div>
+            </div>
+        {{/example}}

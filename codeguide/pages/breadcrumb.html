@@ -1,34 +1,36 @@
-			<div class="cg-section">
-				<h2 class="cg-heading">Default
-					<span class="cg-modifier-name" title="modifier">.breadcrumb</span>
-				</h2>
+        {{#example}}
+            <div class="cg-section">
+                <h2 class="cg-heading">Default
+                    <span class="cg-modifier-name" title="modifier">.breadcrumb</span>
+                </h2>
 
-				<div class="cg-element">
+                <div class="cg-element">
 
-					<ul class="breadcrumb">
-						<li class="list-item">
-							<a class="txt-link" href="#">Item One</a>
-						</li>
-						<li class="list-item">
-							<a class="txt-link" href="#">Item Two</a>
-						</li>
-						<li class="list-item">
-							<a class="txt-link" href="#">Item Three</a>
-						</li>
-					</ul>
+                    <ul class="breadcrumb">
+                        <li class="list-item">
+                            <a class="txt-link" href="#">{{list}} {{count.one}}</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="txt-link" href="#">{{list}} {{count.two}}</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="txt-link" href="#">{{list}} {{count.three}}</a>
+                        </li>
+                    </ul>
 
-				</div>
-				
-				<pre class="cg-code prettyprint lang-css linenums">
+                </div>
+                
+                <pre class="cg-code prettyprint lang-css linenums">
 &lt;ul class="breadcrumb">
-	&lt;li class="list-item">
-		&lt;a class="txt-link" href="#">Item One&lt;/a>
-	&lt;/li>
-	&lt;li class="list-item">
-		&lt;a class="txt-link" href="#">Item Two&lt;/a>
-	&lt;/li>
-	&lt;li class="list-item">
-		&lt;a class="txt-link" href="#">Item Three&lt;/a>
-	&lt;/li>
+    &lt;li class="list-item">
+        &lt;a class="txt-link" href="#">{{list}} {{count.one}}&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+        &lt;a class="txt-link" href="#">{{list}} {{count.two}}&lt;/a>
+    &lt;/li>
+    &lt;li class="list-item">
+        &lt;a class="txt-link" href="#">{{list}} {{count.three}}&lt;/a>
+    &lt;/li>
 &lt;/ul></pre>
-			</div>
+            </div>
+        {{/example}}

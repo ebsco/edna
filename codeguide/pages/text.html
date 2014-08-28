@@ -1,113 +1,115 @@
-			<div class="cg-section">
-				<h2 class="cg-heading">Basics</h2>
-				<div class="cg-element">
-					<p class="cg-description">
-						We reset the text size, at the <code>html</code> element, using the 62.5% rule. We override this, at the <code>body</code> element, with our base font size. This is currently 16px.
-					</p>
-					<p class="cg-description">
-						We have a handy LESS mixin that we use for fonts. We enter in the value we want and it supplies us with a <code>rem</code> value followed by a <code>px</code> fallback.
-					</p>
-				</div>
-			</div>
+        {{#example}}
+            <div class="cg-section">
+                <h2 class="cg-heading">Basics</h2>
+                <div class="cg-element">
+                    <p class="cg-description">
+                        We reset the text size, at the <code>html</code> element, using the 62.5% rule. We override this, at the <code>body</code> element, with our base font size. This is currently 16px.
+                    </p>
+                    <p class="cg-description">
+                        We have a handy LESS mixin that we use for fonts. We enter in the value we want and it supplies us with a <code>rem</code> value followed by a <code>px</code> fallback.
+                    </p>
+                </div>
+            </div>
 
-			<div class="cg-section">
-				<h2 class="cg-heading">Headings</h2>
-				<div class="cg-element">
-					<h1>Heading</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-					<h2>Heading</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-					<h2>Heading</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-					<h4>Heading</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-					<h5>Heading</h5>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-					<h6>Heading</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
+            <div class="cg-section">
+                <h2 class="cg-heading">headings</h2>
+                <div class="cg-element">
+                    <h1>{{heading}}</h1>
+                    <p>{{lorem}}</p>
+                    <h2>{{heading}}</h2>
+                    <p>{{lorem}}</p>
+                    <h2>{{heading}}</h2>
+                    <p>{{lorem}}</p>
+                    <h4>{{heading}}</h4>
+                    <p>{{lorem}}</p>
+                    <h5>{{heading}}</h5>
+                    <p>{{lorem}}</p>
+                    <h6>{{heading}}</h6>
+                    <p>{{lorem}}</p>
 
-				</div>
-			</div>
+                </div>
+            </div>
 
-			<div class="cg-section">
-				<h2 class="cg-heading">Paragraphs</h2>
-				<div class="cg-element">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-				</div>
-			</div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Paragraphs</h2>
+                <div class="cg-element">
+                    <p>{{lorem}}</p>
+                    <p>{{lorem}}</p>
+                    <p>{{lorem}}</p>
+                </div>
+            </div>
 
-			<div class="cg-section">
-				<h2 class="cg-heading">Anchors</h2>
-				<div class="cg-element">
-					<a href="#">Click Me!</a>
-				</div>
-				<div class="cg-element">
-					<a class="visited" href="#">Click Me!</a>
-					<span class="cg-modifier-name" title="modifier">:visited</span>
-				</div>
-				<div class="cg-element">
-					<a class="hover" href="#">Click Me!</a>
-					<span class="cg-modifier-name" title="modifier">:hover</span>
-				</div>
-				<div class="cg-element">
-					<a class="focus" href="#">Click Me!</a>
-					<span class="cg-modifier-name" title="modifier">:focus</span>
-				</div>
-				<div class="cg-element">
-					<a class="active" href="#">Click Me!</a>
-					<span class="cg-modifier-name" title="modifier">:active</span>
-				</div>
-			</div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Anchors</h2>
+                <div class="cg-element">
+                    <a href="#">Click Me!</a>
+                </div>
+                <div class="cg-element">
+                    <a class="visited" href="#">Click Me!</a>
+                    <span class="cg-modifier-name" title="modifier">:visited</span>
+                </div>
+                <div class="cg-element">
+                    <a class="hover" href="#">Click Me!</a>
+                    <span class="cg-modifier-name" title="modifier">:hover</span>
+                </div>
+                <div class="cg-element">
+                    <a class="focus" href="#">Click Me!</a>
+                    <span class="cg-modifier-name" title="modifier">:focus</span>
+                </div>
+                <div class="cg-element">
+                    <a class="active" href="#">Click Me!</a>
+                    <span class="cg-modifier-name" title="modifier">:active</span>
+                </div>
+            </div>
 
-			<div class="cg-section">
-				<h2 class="cg-heading">Blockquote</h2>
-				<div class="cg-element">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-					<blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</blockquote>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-				</div>
-			</div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Blockquote</h2>
+                <div class="cg-element">
+                    <p>{{lorem}}</p>
+                    <blockquote>{{lorem}}</blockquote>
+                    <p>{{lorem}}</p>
+                </div>
+            </div>
 
-			<div class="cg-section">
-				<h2 class="cg-heading">Strong</h2>
-				<div class="cg-element">
-					<p>Lorem <strong>ipsum dolor</strong> sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-				</div>
-			</div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Strong</h2>
+                <div class="cg-element">
+                    <p><strong>{{lorem}}</strong></p>
+                </div>
+            </div>
 
-			<div class="cg-section">
-				<h2 class="cg-heading">Em</h2>
-				<div class="cg-element">
-					<p>Lorem <em>ipsum dolor</em> sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-				</div>
-			</div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Em</h2>
+                <div class="cg-element">
+                    <p><em>{{lorem}}</em></p>
+                </div>
+            </div>
 
-			<div class="cg-section">
-				<h2 class="cg-heading">Sup</h2>
-				<div class="cg-element">
-					<p>Lorem <sup>ipsum dolor</sup> sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-				</div>
-			</div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Sup</h2>
+                <div class="cg-element">
+                    <p>Lorem <sup>ipsum dolor</sup> sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
+                </div>
+            </div>
 
-			<div class="cg-section">
-				<h2 class="cg-heading">Sub</h2>
-				<div class="cg-element">
-					<p>Lorem <sub>ipsum dolor</sub> sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
-				</div>
-			</div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Sub</h2>
+                <div class="cg-element">
+                    <p>Lorem <sub>ipsum dolor</sub> sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
+                </div>
+            </div>
 
-			<div class="cg-section">
-				<h2 class="cg-heading">Pre</h2>
-				<div class="cg-element">
-					<pre>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</pre>
-				</div>
-			</div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Pre</h2>
+                <div class="cg-element">
+                    <pre>{{lorem}}</pre>
+                </div>
+            </div>
 
-			<div class="cg-section">
-				<h2 class="cg-heading">Code</h2>
-				<div class="cg-element">
-					<code>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</code>
-				</div>
-			</div>
+            <div class="cg-section">
+                <h2 class="cg-heading">Code</h2>
+                <div class="cg-element">
+                    <code>{{lorem}}</code>
+                </div>
+            </div>
+        {{/example}}

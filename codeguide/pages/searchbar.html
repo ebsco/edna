@@ -1,73 +1,75 @@
-			<div class="cg-section">
-				<h2 class="cg-heading">Default
-					<span class="cg-modifier-name" title="modifier">.searchbar</span>
-				</h2>
+        {{#example}}
+            <div class="cg-section">
+                <h2 class="cg-heading">Default
+                    <span class="cg-modifier-name" title="modifier">.searchbar</span>
+                </h2>
 
-				<div class="cg-element">
-					<div class="searchbar">
-						<div class="searchbar-input">
-							<div class="input-group">
-								<span class="input-group-btn">
-									<div class="btn btn-group select" type="search" tabindex="1">
-										Search
-										<div class="transport-bottom"></div>
-										<div class="select-list">
-											<div class="select-item">
-												<label class="select-label">Label One</label>
-												<input type="checkbox" class="select-input" />
-											</div>
-											<div class="select-item">
-												<label class="select-label">Label Two</label>
-												<input type="checkbox" class="select-input" />
-											</div>
-											<div class="select-item">
-												<label class="select-label">Label Three</label>
-												<input type="checkbox" class="select-input" />
-											</div>
-										</div>
-									</div>
-								</span>
-								<form class="input-reset">
-									<input type="text" placeholder="This is an input" tabindex="1" />
-									<input class="reset" type="reset" value="X" tabindex="2" />
-								</form>
-								<button class="btn search" type="search" tabindex="1">Search</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<pre class="cg-code prettyprint lang-html linenums">
-&lt;div class="searchbar"&gt;
-	&lt;div class="searchbar-input"&gt;
-		&lt;div class="input-group"&gt;
-			&lt;span class="input-group-btn"&gt;
-				&lt;div class="btn btn-group select" type="search"&gt;
-					Search
-					&lt;div class="transport-bottom"&gt;&lt;/div&gt;
-					&lt;div class="select-list"&gt;
-						&lt;div class="select-item"&gt;
-							&lt;label class="select-label"&gt;Label One&lt;/label&gt;
-							&lt;input type="checkbox" class="select-input" /&gt;
-						&lt;/div&gt;
-						&lt;div class="select-item"&gt;
-							&lt;label class="select-label"&gt;Label Two&lt;/label&gt;
-							&lt;input type="checkbox" class="select-input" /&gt;
-						&lt;/div&gt;
-						&lt;div class="select-item"&gt;
-							&lt;label class="select-label"&gt;Label Three&lt;/label&gt;
-							&lt;input type="checkbox" class="select-input" /&gt;
-						&lt;/div&gt;
-					&lt;/div&gt;
-				&lt;/div&gt;
-			&lt;/span&gt;
-			&lt;form class="input-reset"&gt;
-				&lt;input type="text" placeholder="This is an input" /&gt;
-				&lt;input class="reset" type="reset" value="X" /&gt;
-			&lt;/form&gt;
-			&lt;button class="btn search" type="search"&gt;Search&lt;/button&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</pre>
+                <div class="cg-element">
+                    <div class="searchbar">
+                        <div class="searchbar-input">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <div class="btn btn-group select" type="search" tabindex="1">
+                                        {{button.select}}
+                                        <div class="transport-bottom"></div>
+                                        <div class="select-list">
+                                            <div class="select-item">
+                                                <label class="select-label">Label One</label>
+                                                <input type="checkbox" class="select-input" />
+                                            </div>
+                                            <div class="select-item">
+                                                <label class="select-label">Label Two</label>
+                                                <input type="checkbox" class="select-input" />
+                                            </div>
+                                            <div class="select-item">
+                                                <label class="select-label">Label Three</label>
+                                                <input type="checkbox" class="select-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
+                                <form class="input-reset">
+                                    <input type="text" placeholder="{{placeholder}}" tabindex="1" />
+                                    <input class="reset" type="reset" value="X" tabindex="2" />
+                                </form>
+                                <button class="btn search" type="search" tabindex="1">{{button.search}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <pre class="cg-code prettyprint lang-html linenums">
+&lt;div class="searchbar">
+    &lt;div class="searchbar-input">
+        &lt;div class="input-group">
+            &lt;span class="input-group-btn">
+                &lt;div class="btn btn-group select" type="search">
+                    {{button.select}}
+                    &lt;div class="transport-bottom">&lt;/div>
+                    &lt;div class="select-list">
+                        &lt;div class="select-item">
+                            &lt;label class="select-label">Label One&lt;/label>
+                            &lt;input type="checkbox" class="select-input" />
+                        &lt;/div>
+                        &lt;div class="select-item">
+                            &lt;label class="select-label">Label Two&lt;/label>
+                            &lt;input type="checkbox" class="select-input" />
+                        &lt;/div>
+                        &lt;div class="select-item">
+                            &lt;label class="select-label">Label Three&lt;/label>
+                            &lt;input type="checkbox" class="select-input" />
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/span>
+            &lt;form class="input-reset">
+                &lt;input type="text" placeholder="This is an input" />
+                &lt;input class="reset" type="reset" value="X" />
+            &lt;/form>
+            &lt;button class="btn search" type="search">{{button.search}}&lt;/button>
+        &lt;/div>
+    &lt;/div>
+&lt;/div></pre>
 
-			</div>
+            </div>
+        {{/example}}
