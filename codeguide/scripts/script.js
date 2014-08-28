@@ -23,9 +23,7 @@ $(function() {
 			$('.cg-head-h1 a').text('Edna CodeGuide' + ' - ' + navTxt);
 			$('[title=' + navTitle + ']').parent().addClass('active').siblings().removeClass('active');
 			window.location.hash = navTitle.toLowerCase();
-			// var template = Handlebars.compile(data);
-			var source = data;
-			var template = Handlebars.compile(source); 
+			var template = Handlebars.compile(data); 
 			var data = { 
 			    example: [ {
 			    	count: {
