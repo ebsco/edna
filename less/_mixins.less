@@ -82,8 +82,8 @@
 .fontsize(@sizeValue) {
     @remValue: @sizeValue;
     @pxValue: (@sizeValue * 10);
-    font-size: ~"@{pxValue}px"; // fallback for IE8
-    font-size: ~"@{remValue}rem"; // REMs for awesome browsers
+    font-size: unit(@pxValue,px); // fallback for IE8
+    font-size: unit(@remValue,rem); // REMs for awesome browsers
 }
 
 .lh(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
