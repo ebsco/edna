@@ -158,7 +158,6 @@
         background-color: @btn-disabled-bgcolor;
         border-color: @btn-disabled-bordercolor;
         box-shadow: none;
-        outline: none;
 
         &:hover,
         &.hover {
@@ -172,6 +171,11 @@
             // Visual
             background-color: @btn-disabled-bgcolor-active;
             border-color: @btn-disabled-bordercolor-active;
+        }
+
+        &:focus {
+            // Visual
+            outline: none;
         }
     }
 
