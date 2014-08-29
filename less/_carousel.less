@@ -50,4 +50,23 @@
         // Visual
         list-style-type: none;
     }
+
+    // CAROUSEL SPECIFIC STYLES
+    .transport {
+        // Positioning
+        .pos(absolute);
+        top: -47px;
+        right: 10px;
+        
+        &:nth-child(3),
+        .last {
+            // Positioning
+            right: 0;
+
+            .right {
+                // Box-model
+                margin: 0 0 5px;
+            }
+        }
+    }    
 }

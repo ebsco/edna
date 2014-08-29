@@ -87,6 +87,28 @@
             }
         }
     }
+
+    // DROPDOWN SPECIFIC STYLES
+    .transport {
+        // Box-model
+        display: inline-block;
+        > .top {
+            // Box-model
+            margin-top: -((@px * .5) / 2);
+            margin-bottom: ((@px * .5) / 2);
+            border-right-width: (@px * .5);
+            border-bottom-width: (@px * .5);
+            border-left-width: (@px * .5);
+        }
+        > .bottom {
+            // Box-model
+            margin-top: -((@px * .5) / 2);
+            margin-bottom: ((@px * .5) / 2);
+            border-top-width: (@px * .5);
+            border-right-width: (@px * .5);
+            border-left-width: (@px * .5);
+        }
+    }    
 }
 
 // when a dropdown is in a button group
