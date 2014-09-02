@@ -16,5 +16,5 @@ Checkout the code-guide [here][5]!
   [1]: http://lesscss.org/
   [2]: http://necolas.github.io/normalize.css/
   [3]: http://smacss.com/
-  [4]: http://www.bleedingcool.com/wp-content/uploads/2010/10/edna-mode.jpg
+  [4]: http://cl.ly/image/0M351m2n0O2g
   [5]: http://eae-buzzdev801.epnet.com:8030
