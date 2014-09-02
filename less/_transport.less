@@ -1,35 +1,6 @@
 /* TRANSPORT */
 
 .transport {
-	// Box-model
-	vertical-align: top;
-
-	// Visual
-	cursor: pointer;
-
-	> .top,
-	> .right,
-	> .bottom,
-	> .left {
-		// Box-model
-		display: inline-block;
-		width: 0;
-		height: 0;
-		
-		// Typography
-		cursor: pointer;
-		.inactive;
-
-		// Visual
-		border-top: @transport-width solid transparent;
-		border-right: @transport-width solid transparent;
-		border-bottom: @transport-width solid transparent;
-		border-left: @transport-width solid transparent;
-	}
-
-	@transArr: top, right, bottom, left;
-	.transPos( length(@transArr) );
-
 	// SLIM
 	&.slim {
 		> .top,
@@ -52,7 +23,6 @@
 			// Visual
 			border-color: @transport-slim-bordercolor;
 			border-width: 0;
-			outline: 0;
 
 			&:after,
 			&::after {
@@ -67,6 +37,9 @@
 			}
 
 			&:focus {
+				// Visual
+				outline: 0;
+	
 				&:after,
 				&::after {
 					// Visual
@@ -82,19 +55,29 @@
 				}
 			}
 
-			// inactive
 			.inactive;
 		}
 
-		> .top {
-			// Visual
-			.rotate(-90);
-
+		> .top,
+		> .right,
+		> .bottom,
+		> .left {
 			&:after,
 			&::after {
 				// Typography
 				color: @transport-slim-color-enabled;
+			}
+		}
 
+		> .top,
+		> .bottom {
+			// Visual
+			.rotate(-90);
+		}
+
+		> .top {
+			&:after,
+			&::after {
 				// Visual
 				content: @transport-slim-arrow-top;
 			}
@@ -103,112 +86,17 @@
 		> .right {
 			&:after,
 			&::after {
-				// Typography
-				color: @transport-slim-color-enabled;
-
 				// Visual
 				content: @transport-slim-arrow-right;
 			}
 		}
 
-		> .bottom {
-			// Visual
-			.rotate(-90);
-
-			&:after,
-			&::after {
-				// Typography
-				color: @transport-slim-color-enabled;
-			}
-		}
-
 		> .left {
 			&:after,
 			&::after {
-				// Typography
-				color: @transport-slim-color-enabled;
-
 				// Visual
 				content: @transport-slim-arrow-left;
 			}
-		}
-	}
-
-	// CAROUSEL SPECIFIC STYLES
-	.carousel & {
-		// Positioning
-		.pos(absolute);
-		top: -47px;
-		right: 10px;
-		
-		&:nth-child(3),
-		.last {
-			// Positioning
-			right: 0;
-
-			.right {
-				// Box-model
-				margin: 0 0 5px;
-			}
-		}
-	}
-
-	// DROPDOWN SPECIFIC STYLES
-
-	.dd & {
-		// Box-model
-		display: inline-block;
-		> .top {
-			// Box-model
-			margin-top: -((@px * .5) / 2);
-			margin-bottom: ((@px * .5) / 2);
-			border-right-width: (@px * .5);
-			border-bottom-width: (@px * .5);
-			border-left-width: (@px * .5);
-		}
-		> .bottom {
-			// Box-model
-			margin-top: -((@px * .5) / 2);
-			margin-bottom: ((@px * .5) / 2);
-			border-top-width: (@px * .5);
-			border-right-width: (@px * .5);
-			border-left-width: (@px * .5);
-		}
-	}
-
-	// PAGINATION SPECIFIC STYLES
-	.pagination & {
-		@newPX: (@px * 1);
-		// Box-model
-		display: inline-block;
-		float: left;
-		
-
-		> .right,
-		> .left {
-			// Typography
-			color: @colorS4;
-
-			// Visual
-			border-top: (@newPX * .9) solid transparent;
-			border-bottom: (@newPX * .9) solid transparent;
-		}
-		> .right {
-			// Box-model
-			margin-right: 0;
-			margin-left: (@newPX * .5);
-
-			// Visual
-			border-left: @newPX solid @colorS4;
-		}
-		> .left {
-			// Box-model
-			margin-right: (@newPX * .5);
-			margin-left: 0;
-			
-			// Visual
-			border-right: @newPX solid @colorS4;
-			
 		}
 	}
 }
@@ -265,5 +153,4 @@
 		// Visual
 		border-right: @transport-width solid @colorS4;
 	}
-
 }
