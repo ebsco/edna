@@ -80,55 +80,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		lesslint: {
-			src: ['edna.less'],
-			options: {
-				imports: [
-					'less/*.less',
-					'!less/_autocomplete.less',
-					'!less/_mixins.less',
-					'!less/_modal.less',
-					'!less/_normalize.less'
-				],
-				csslint: {
-					'important': true,
-					'adjoining-classes': false,
-					'known-properties': false,
-					'box-sizing': true,
-					'box-model': false,
-					'overqualified-elements': true,
-					'display-property-grouping': false,
-					'bulletproof-font-face': false,
-					'compatible-vendor-prefixes': false,
-					'regex-selectors': false,
-					'errors': false,
-					'duplicate-background-images': false,
-					'duplicate-properties': true,
-					'empty-rules': false,
-					'selector-max-approaching': false,
-					'gradients': false,
-					'fallback-colors': false,
-					'font-sizes': false,
-					'font-faces': false,
-					'floats': true,
-					'star-property-hack': false,
-					'outline-none': false,
-					'import': false,
-					'ids': false,
-					'underscore-property-hack': false,
-					'rules-count': false,
-					'qualified-headings': false,
-					'selector-max': false,
-					'shorthand': false,
-					'text-indent': false,
-					'unique-headings': false,
-					'universal-selector': false,
-					'unqualified-attributes': false,
-					'vendor-prefix': true,
-					'zero-units': true
-				}
-			}
-		},
 		cssmetrics: {
 			dev: {
 				src: [
@@ -145,19 +96,18 @@ module.exports = function(grunt) {
 			}
 		}
 
+
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
-	grunt.loadNpmTasks('grunt-lesslint');
 	grunt.loadNpmTasks('grunt-css-metrics');
 	grunt.loadNpmTasks('grunt-shell');
 
 	grunt.registerTask('lint', [
-		'cssmetrics',
-		'lesslint'
+		'cssmetrics'
 	]);
 
 	grunt.registerTask('codeguide', [
