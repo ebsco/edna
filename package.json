@@ -12,8 +12,8 @@
     "grunt-contrib-less": "git://github.com/gruntjs/grunt-contrib-less.git",
     "grunt-express": "^1.4.1",
     "grunt-contrib-csslint": "^0.2.0",
-    "grunt-lesslint": "^1.1.10",
-    "grunt-css-metrics": "^0.1.2"
+    "grunt-css-metrics": "^0.1.2",
+    "grunt-contrib-requirejs": "^0.4.4"
   },
   "main": "Gruntfile.js",
   "repository": {
