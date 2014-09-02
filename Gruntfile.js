@@ -118,7 +118,6 @@ module.exports = function(grunt) {
 
 
 	grunt.registerTask('build', [
-		'shell',
 		'lint',
 		'less'
 	]);
