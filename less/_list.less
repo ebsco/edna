@@ -133,11 +133,11 @@ ol {
             margin: 0;
 
             // Visual
-            background-color: darken(#efefef, 10%);
+            background-color: @list-lines-bgcolor;
 
             &.odd,
             &:nth-child(odd) {
-                background-color: #efefef;
+                background-color: @list-lines-bgcolor-odd;
             }
         }
     }
@@ -150,7 +150,7 @@ ol {
             float: left;
 
             // Visual
-            border-left: 1px solid #efefef;
+            border-left: 1px solid @list-inline-bordercolor;
 
             &:first-child {
                 // Visual

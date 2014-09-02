@@ -1393,11 +1393,11 @@ ol.base > li {
 .list.lines .list-item {
   padding: 5px;
   margin: 0;
-  background-color: #d6d6d6;
+  background-color: #efefef;
 }
 .list.lines .list-item.odd,
 .list.lines .list-item:nth-child(odd) {
-  background-color: #efefef;
+  background-color: #d6d6d6;
 }
 .list.inline .list-item {
   display: inline;
