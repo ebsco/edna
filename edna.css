@@ -1219,7 +1219,7 @@ h6 > a:focus {
 }
 /* LAYOUT */
 .col {
-  float: left;
+  display: table-cell;
   width: 100%;
   padding: 0 0 0 0;
 }
@@ -1246,6 +1246,7 @@ h6 > a:focus {
   padding-top: 0;
 }
 .l1-p1 > .col {
+  display: block;
   width: 100%;
 }
 .l2-p1 {
@@ -2991,6 +2992,7 @@ footer {
 }
 @media screen and (max-width: 599px) {
   [class*="l"][class*="-p"] .col {
+    display: block;
     width: 100%;
   }
   [class*="l"][class*="-p"] .col + .col {

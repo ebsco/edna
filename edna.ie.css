@@ -39,6 +39,10 @@
   color: #cbcbcb !important;
 }
 /* LAYOUT */
+.ie7 .col {
+  display: inline;
+  float: left;
+}
 .ie7 .l1-p1 {
   clear: both;
 }
