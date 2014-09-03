@@ -4,15 +4,6 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-
-		shell: {
-			listFolders: {
-				stdout: false,
-				command: [
-					'./pre-push.sh'
-				].join('&&')
-			}
-		},
 		express: {
 			server: {
 				options: {
@@ -104,7 +95,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-css-metrics');
-	grunt.loadNpmTasks('grunt-shell');
 
 	grunt.registerTask('lint', [
 		'cssmetrics'
