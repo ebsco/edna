@@ -1,6 +1,17 @@
 /****************
 	Edna - v0.1.0
 ****************/
+.off-page {
+  display: inline-block;
+  font-size: 0;
+  text-indent: -99999px;
+}
+.userselect {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
 article,
 aside,
 details,
@@ -1922,8 +1933,28 @@ h6 > a:focus {
 .l2-p3.fixed-r > .col {
   width: 63%;
 }
+.l2-p3.fixed-r > .col.fw350 {
+  width: 420px;
+  float: right;
+  padding-right: 0;
+  margin-left: -420px;
+}
+.l2-p3.fixed-r > .col.fw350 + .col {
+  padding-right: 420px;
+}
 .l2-p7.fixed-l {
   clear: both;
+}
+.l2-p7.fixed-l > .col.fw425 {
+  width: 495px;
+  float: left;
+  padding-right: 70px;
+  padding-left: 0;
+  margin-right: -495px;
+}
+.l2-p7.fixed-l > .col.fw425 + .col {
+  width: 100%;
+  padding-left: 495px;
 }
 /* LOGO */
 .logo {
@@ -2843,6 +2874,17 @@ footer {
 .transport-right.inactive::after,
 .transport-bottom.inactive::after,
 .transport-left.inactive::after {
+  color: #d5d5d5;
+  cursor: default;
+}
+.transport-top.inactive:after:hover,
+.transport-right.inactive:after:hover,
+.transport-bottom.inactive:after:hover,
+.transport-left.inactive:after:hover,
+.transport-top.inactive::after:hover,
+.transport-right.inactive::after:hover,
+.transport-bottom.inactive::after:hover,
+.transport-left.inactive::after:hover {
   color: #d5d5d5;
   cursor: default;
 }
