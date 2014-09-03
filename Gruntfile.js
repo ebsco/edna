@@ -4,6 +4,15 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+
+		shell: {
+			listFolders: {
+				stdout: false,
+				command: [
+					'rm .git/hooks/pre-push'
+				].join('&&')
+			}
+		},
 		express: {
 			server: {
 				options: {
