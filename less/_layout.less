@@ -15,6 +15,9 @@
 }
 
 .padding() {
+    // Box-model
+    display: table;
+    width: 100%;
     padding: @lay-top-padding @lay-right-padding @lay-bottom-padding @lay-left-padding;
     .clearfix;
     &:first-child {
