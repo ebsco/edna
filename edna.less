@@ -48,22 +48,28 @@
 
 // FILES TO BE USEDE WITHIN MEDIA QUERIES 
 // small
-@media screen and ( max-width: unit(@mediaquery-small, px) ) {
+@media screen and ( max-width: unit(@mediaquery-medium, px) ) {
 
 	@import (multiple) 'less/_panel.less';
 
 }
 
 // medium
-@media screen and ( min-width: unit( (@mediaquery-small + 1), px) ) and ( max-width: unit(@mediaquery-medium, px) ) {
+@media screen and ( min-width: unit( (@mediaquery-medium + 1), px) ) and ( max-width: unit(@mediaquery-large, px) ) {
 
 	@import (multiple) 'less/_panel.less';
 
 }
 
 // large
-@media screen and ( min-width: unit( (@mediaquery-medium + 1), px) ) {
+@media screen and ( min-width: unit( (@mediaquery-large + 1), px) ) and ( max-width: unit( (@mediaquery-xlarge - 1), px) ) {
 
-	// here be dragons
+	@import (multiple) 'less/_panel.less';
+
+}
+// xlarge
+@media screen and ( min-width: unit(@mediaquery-xlarge, px) ) {
+
+	// here be ravens
 
 }

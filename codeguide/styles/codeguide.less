@@ -1,6 +1,6 @@
 // REFERENCE FILES
 @import (reference) "../../less/_variables.less";
-@import (reference) "../../less/_mixins.less";
+@import "../../less/_mixins.less";
 
 // BASE FILES
 @import "../../less/_normalize.less";
@@ -20,6 +20,8 @@
 @import "../../less/_typography.less";
 @import "../../less/_width.less";
 @import "../../less/_universal.less";
+// @import "../../less/_panel.less";
+
 // this is needed because Google Prettify uses this class :(
 .cg-element {
 	@import "../../less/_tag.less";
@@ -32,14 +34,14 @@
 // small
 @media screen and ( max-width: unit(@mediaquery-small, px) ) {
 
-	@import (multiple) "../../less/_panel";
+	// @import (multiple) "../../less/_panel";
 
 }
 
 // medium
 @media screen and ( min-width: unit( (@mediaquery-small + 1), px) ) and ( max-width: unit(@mediaquery-medium, px) ) {
 
-	@import (multiple) "../../less/_panel";
+	// @import (multiple) "../../less/_panel";
 
 }
 
@@ -308,12 +310,22 @@ pre.prettyprint {
 body { min-width: unit(@mediaquery-small, px); }
 // SMALL
 @media screen and ( max-width: unit(@mediaquery-medium, px) ) {
+
+	* {
+		// color: blue !important;
+	}
+
+	@import (multiple) "../../less/_panel.less";
+    .slide-panel(85, top);
+    .slide-panel(150, right);
+    .slide-panel(42, bottom);
+    .slide-panel(150, left);
+
 	// slide panel stuff
 	.cg-element.mq-pnl {
 		padding: 0;
 		.l1-p1 { padding: 0; }
-		.l3-p7 { padding: 0 10px; }
-		.col + .col { padding: 0; }
+		.l2-p8 { padding: 0 10px; }
 		.mq-pnl-r,
 		.mq-pnl-b,
 		.mq-pnl-l { background-color: #efefef; }
@@ -326,11 +338,22 @@ body { min-width: unit(@mediaquery-small, px); }
 }
 // MEDIUM
 @media screen and ( min-width: unit( (@mediaquery-medium + 1), px) ) and ( max-width: unit(@mediaquery-large, px) ) {
+
+	* {
+		// color: red !important;
+	}
+
+	@import (multiple) "../../less/_panel.less";
+    .slide-panel(85, top);
+    .slide-panel(150, right);
+    .slide-panel(42, bottom);
+    .slide-panel(150, left);
+
 	// slide panel stuff
 	.cg-element.mq-pnl {
 		padding: 0;
 		.l1-p1 { padding: 0; }
-		.l3-p7 { padding: 0; > .col { width: 100%; padding: 0 10px; } }
+		.l2-p8 { padding: 0 10px; }
 		.mq-pnl-r,
 		.mq-pnl-b,
 		.mq-pnl-l { background-color: #efefef; }
@@ -340,12 +363,16 @@ body { min-width: unit(@mediaquery-small, px); }
 // LARGE
 @media screen and ( min-width: unit( (@mediaquery-large + 1), px) ) and ( max-width: unit( (@mediaquery-xlarge - 1), px) ) {
 
+	* {
+		// color: green !important;
+	}
+
 	// slide panel stuff
 	.slide-nav { display: none; }
 	.cg-element.mq-pnl {
 		padding: 0;
 		.l1-p1 { padding: 0; }
-		.l3-p7 { padding: 0; }
+		.l2-p8 { padding: 0; }
 		.col + .col { padding: 0; }
 		.mq-pnl-r,
 		.mq-pnl-b,
@@ -353,7 +380,7 @@ body { min-width: unit(@mediaquery-small, px); }
 	}
 	// END slide panel stuff
 }
-// LARGE
+// XLARGE
 @media screen and ( min-width: unit(@mediaquery-xlarge, px) ) {
 
 	// slide panel stuff
@@ -361,7 +388,7 @@ body { min-width: unit(@mediaquery-small, px); }
 	.cg-element.mq-pnl {
 		padding: 0;
 		.l1-p1 { padding: 0; }
-		.l3-p7 { padding: 0; }
+		.l2-p8 { padding: 0; }
 		.col + .col { padding: 0; }
 		.mq-pnl-r,
 		.mq-pnl-b,
