@@ -305,9 +305,9 @@ pre.prettyprint {
 	}
 }
 
+body { min-width: unit(@mediaquery-small, px); }
 // SMALL
-@media screen and ( max-width: unit(@mediaquery-small, px) ) {
-	body { min-width: unit(@mediaquery-base, px); }
+@media screen and ( max-width: unit(@mediaquery-medium, px) ) {
 	// slide panel stuff
 	.cg-element.mq-pnl {
 		padding: 0;
@@ -325,7 +325,7 @@ pre.prettyprint {
 	// END slide panel stuff
 }
 // MEDIUM
-@media screen and ( min-width: unit( (@mediaquery-small + 1), px) ) and ( max-width: unit(@mediaquery-medium, px) ) {
+@media screen and ( min-width: unit( (@mediaquery-medium + 1), px) ) and ( max-width: unit(@mediaquery-large, px) ) {
 	// slide panel stuff
 	.cg-element.mq-pnl {
 		padding: 0;
@@ -338,7 +338,23 @@ pre.prettyprint {
 	// END slide panel stuff
 }
 // LARGE
-@media screen and ( min-width: unit( (@mediaquery-medium + 1), px) ) {
+@media screen and ( min-width: unit( (@mediaquery-large + 1), px) ) and ( max-width: unit( (@mediaquery-xlarge - 1), px) ) {
+
+	// slide panel stuff
+	.slide-nav { display: none; }
+	.cg-element.mq-pnl {
+		padding: 0;
+		.l1-p1 { padding: 0; }
+		.l3-p7 { padding: 0; }
+		.col + .col { padding: 0; }
+		.mq-pnl-r,
+		.mq-pnl-b,
+		.mq-pnl-l { background-color: #efefef; }
+	}
+	// END slide panel stuff
+}
+// LARGE
+@media screen and ( min-width: unit(@mediaquery-xlarge, px) ) {
 
 	// slide panel stuff
 	.slide-nav { display: none; }
