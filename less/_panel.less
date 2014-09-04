@@ -36,11 +36,13 @@
         position: absolute;
         z-index: 2000;
     }
+
     .mq-pnl-t,
     .mq-pnl-b {
         // Box-model
         width: 100%;
     }
+
     .mq-pnl-r,
     .mq-pnl-l {
         // Positioning
@@ -49,15 +51,117 @@
         // Box-model
         height: 100%;
     }
+
     .mq-pnl-scroll {
         // Visual
         overflow: auto;
     }
+
+    .mq-pnl-static {
+        &.col {
+            padding: 0;
+            width: 100%;
+        }
+    }
 }
 
-.mq-pnl {
-    .slide-panel(85, top);
-    .slide-panel(150, right);
-    .slide-panel(35, bottom);
-    .slide-panel(150, left);
+.slide-panel(@user-dimension; @side) {
+
+    @dimension: unit(@user-dimension, px);
+
+    & when (@side = top) {
+        .mq-pnl-t {
+            foo: @side;
+            // Box-model
+            height: @dimension !important;
+
+            // Positioning
+            top: -@dimension;
+        }
+        // for the top slide
+        &.mq-pnl-open-t {
+            // move the right side
+            .mq-pnl-t {
+                // Positioning
+                top: 0;
+            }
+            // move the content with the right side
+            .mq-pnl-static {
+                // Positioning
+                top: @dimension;
+            }
+        }
+    }
+
+    & when (@side = right) {
+        .mq-pnl-r {
+            foo: @side;
+            // Box-model
+            width: @dimension !important;
+
+            // Positioning
+            right: -@dimension;
+        }
+        // for the right slide
+        &.mq-pnl-open-r {
+            // move the right side
+            .mq-pnl-r {
+                // Positioning
+                right: 0;
+            }
+            // move the content with the right side
+            .mq-pnl-static {
+                // Positioning
+                right: @dimension;
+                left: -@dimension;
+            }
+        }
+    }
+
+    & when (@side = bottom) {
+        .mq-pnl-b {
+            foo: @side;
+            // Box-model
+            height: @dimension !important;
+
+            // Positioning
+            bottom: -@dimension;
+        }
+        // for the top slide
+        &.mq-pnl-open-b {
+            // move the right side
+            .mq-pnl-b {
+                // Positioning
+                bottom: 0;
+            }
+            // move the content with the right side
+            .mq-pnl-static {
+                // Positioning
+                top: -@dimension;
+            }
+        }
+    }
+
+    & when (@side = left) {
+        .mq-pnl-l {
+            foo: @side;
+            // Box-model
+            width: @dimension !important;
+
+            // Positioning
+            left: -@dimension;
+        }
+        &.mq-pnl-open-l {
+            // move the left side
+            .mq-pnl-l {
+                // Positioning
+                left: 0;
+            }
+            // move the content with the left side
+            .mq-pnl-static {
+                // Positioning
+                left: @dimension;
+            }
+        }
+    }
 }
