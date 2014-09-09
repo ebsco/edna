@@ -24,15 +24,16 @@ function runIt(e) {
     }
     var mainPanel = document.getElementsByClassName('mq-pnl');
     for (var i = 0; i < mainPanel.length; i++) {
-        var blam = mainPanel[i].className;
-        var newBlam = blam.split(' ');
-        for (var j = 0; j < newBlam.length; j++) {
-            var tst = newBlam[j];
+        var panelClasses = mainPanel[i].className;
+        var panelClassesArr = panelClasses.split(' ');
+        for (var j = 0; j < panelClassesArr.length; j++) {
+            var tst = panelClassesArr[j];
             var newTst = tst.split('-');
-            if(newBlam[2]) {
-                $(this).parent('.slide-nav').siblings('.mq-pnl').removeClass(newBlam[2]);
+            if(panelClassesArr[2]) {
+                $('.mq-pnl').removeClass(panelClassesArr[2]);
+            } else {
+                $('.mq-pnl').addClass('mq-pnl-open-' + side);
             }
         }
     }
-    $(this).parent('.slide-nav').siblings('.mq-pnl').toggleClass('mq-pnl-open-' + side);
 }
