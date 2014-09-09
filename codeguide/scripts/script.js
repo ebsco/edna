@@ -5,7 +5,8 @@ $(function() {
 		'select',
 		'slide-panel',
 		'toggle',
-		'treelist'
+		'treelist',
+		'pin'
 	]
 	for(var i = 0; i < scriptArr.length; i++) {
 		var imported = document.createElement('script');

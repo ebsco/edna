@@ -1647,6 +1647,28 @@ ol.base > li {
   font-size: 13px;
   font-size: 1.3rem;
 }
+/* PIN */
+.pin {
+  position: relative;
+  *zoom: 1;
+}
+.pin:before,
+.pin:after,
+.pin::before,
+.pin::after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.pin:after,
+.pin::after {
+  clear: both;
+}
+.pin.fixed {
+  position: fixed;
+  top: 0;
+  width: 250px;
+}
 /* SEARCHBAR */
 .searchbar-input .input-group .input-reset {
   width: 100%;
