@@ -2289,6 +2289,9 @@ html {
 .cg-head > a:hover {
   color: #666;
 }
+.col + .col {
+  padding-left: 50px;
+}
 .treelist.cg-nav .list-item.cg-nav-side-item {
   background-color: #aaa;
   padding: 0;
