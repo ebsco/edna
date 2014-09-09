@@ -1568,7 +1568,7 @@ ol.base > li {
 }
 /* MODALS */
 .ui-widget-overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 90000;
