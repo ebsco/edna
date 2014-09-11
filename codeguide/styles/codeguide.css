@@ -1667,7 +1667,6 @@ ol.base > li {
 .pin.fixed {
   position: fixed;
   top: 0;
-  width: 250px;
 }
 /* SEARCHBAR */
 .searchbar-input .input-group .input-reset {
@@ -2550,7 +2549,6 @@ body {
     width: 100%;
   }
   .mq-pnl-t {
-    foo: top;
     height: 85px !important;
     top: -85px;
   }
@@ -2561,7 +2559,6 @@ body {
     top: 85px;
   }
   .mq-pnl-r {
-    foo: right;
     width: 150px !important;
     right: -150px;
   }
@@ -2573,7 +2570,6 @@ body {
     left: -150px;
   }
   .mq-pnl-b {
-    foo: bottom;
     height: 42px !important;
     bottom: -42px;
   }
@@ -2584,7 +2580,6 @@ body {
     top: -42px;
   }
   .mq-pnl-l {
-    foo: left;
     width: 150px !important;
     left: -150px;
   }
@@ -2614,6 +2609,8 @@ body {
   }
 }
 @media screen and (min-width: 600px) and (max-width: 995px) {
+  @import 'css.css';
+  
   /* SLIDE PANELS */
   .mq-pnl {
     position: relative;
@@ -2658,7 +2655,6 @@ body {
     width: 100%;
   }
   .mq-pnl-t {
-    foo: top;
     height: 85px !important;
     top: -85px;
   }
@@ -2669,7 +2665,6 @@ body {
     top: 85px;
   }
   .mq-pnl-r {
-    foo: right;
     width: 150px !important;
     right: -150px;
   }
@@ -2681,7 +2676,6 @@ body {
     left: -150px;
   }
   .mq-pnl-b {
-    foo: bottom;
     height: 42px !important;
     bottom: -42px;
   }
@@ -2692,7 +2686,6 @@ body {
     top: -42px;
   }
   .mq-pnl-l {
-    foo: left;
     width: 150px !important;
     left: -150px;
   }
