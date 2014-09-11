@@ -20,14 +20,17 @@ $(function() {
 
 	$(window).bind('resize', function(e) {
 		window.resizeEvt;
+		
 		$(window).resize(function() {
 			clearTimeout(window.resizeEvt);
+			
 			window.resizeEvt = setTimeout(function() {
 				var pinW = pin.parent('.col').width();
-				console.log('blam = ' + pinW);
 				pin.css('width', pinW);
 			}, 250);
+
 		});
+
 	});
 
 });
