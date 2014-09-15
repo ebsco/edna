@@ -92,6 +92,44 @@ html {
 	padding-left: 50px;
 }
 
+.cg-element.w {
+	padding: 20px;
+	> .w20 {
+		.safari-scrollbars;
+		padding: 10px 10px 0 10px;
+		height: 300px;
+		overflow: scroll;
+		background-color: #ddd;
+		&:nth-child(odd) {
+			background-color: #efefef;
+		}
+	}
+}
+
+.safari-scrollbars() {
+	&::-webkit-scrollbar {
+	    -webkit-appearance: none;
+
+		&:vertical {
+		    width: 11px;
+		}
+
+		&:horizontal {
+		    height: 11px;
+		}
+	}
+
+	&::-webkit-scrollbar-thumb {
+	    border-radius: 8px;
+	    border: 2px solid white; /* should match background, can't be transparent */
+	    background-color: rgba(0, 0, 0, .5);
+	}
+
+	&::-webkit-scrollbar-track { 
+	    background-color: #fff; 
+	    border-radius: 8px; 
+	} 
+}
 
 .treelist.cg-nav {
 
