@@ -4,33 +4,32 @@
                     <span class="cg-modifier-name" title="modifier">.searchbar</span>
                 </h2>
 
+
                 <div class="cg-element">
                     <div class="searchbar">
                         <div class="searchbar-input">
                             <div class="input-group">
-                                <span class="input-group-btn">
-                                    <div class="btn btn-group select" type="search" tabindex="1">
-                                        {{button.select}}
-                                        <div class="transport-bottom"></div>
-                                        <div class="select-list">
-                                            <div class="select-item">
-                                                <label class="select-label">Label One</label>
-                                                <input type="checkbox" class="select-input" />
-                                            </div>
-                                            <div class="select-item">
-                                                <label class="select-label">Label Two</label>
-                                                <input type="checkbox" class="select-input" />
-                                            </div>
-                                            <div class="select-item">
-                                                <label class="select-label">Label Three</label>
-                                                <input type="checkbox" class="select-input" />
-                                            </div>
+                                <div class="btn btn-group select">
+                                    {{button.select}}
+                                    <div class="transport-bottom"></div>
+                                    <div class="select-list">
+                                        <div class="select-item">
+                                            <label class="select-label">{{list}} {{count.one}}</label>
+                                            <input type="checkbox" class="select-input" />
+                                        </div>
+                                        <div class="select-item">
+                                            <label class="select-label">{{list}} {{count.two}}</label>
+                                            <input type="checkbox" class="select-input" />
+                                        </div>
+                                        <div class="select-item">
+                                            <label class="select-label">{{list}} {{count.three}}</label>
+                                            <input type="checkbox" class="select-input" />
                                         </div>
                                     </div>
-                                </span>
+                                </div>
                                 <form class="input-reset">
-                                    <input type="text" placeholder="{{placeholder}}" tabindex="1" />
-                                    <input class="reset" type="reset" value="X" tabindex="2" />
+                                    <input type="text" placeholder="placeholder text" />
+                                    <input class="reset" type="reset" value="X" />
                                 </form>
                                 <button class="btn search" type="search" tabindex="1">{{button.search}}</button>
                             </div>
@@ -42,31 +41,29 @@
 &lt;div class="searchbar">
     &lt;div class="searchbar-input">
         &lt;div class="input-group">
-            &lt;span class="input-group-btn">
-                &lt;div class="btn btn-group select" type="search">
-                    {{button.select}}
-                    &lt;div class="transport-bottom">&lt;/div>
-                    &lt;div class="select-list">
-                        &lt;div class="select-item">
-                            &lt;label class="select-label">Label One&lt;/label>
-                            &lt;input type="checkbox" class="select-input" />
-                        &lt;/div>
-                        &lt;div class="select-item">
-                            &lt;label class="select-label">Label Two&lt;/label>
-                            &lt;input type="checkbox" class="select-input" />
-                        &lt;/div>
-                        &lt;div class="select-item">
-                            &lt;label class="select-label">Label Three&lt;/label>
-                            &lt;input type="checkbox" class="select-input" />
-                        &lt;/div>
+            &lt;div class="btn btn-group select">
+                {{button.select}}
+                &lt;div class="transport-bottom">&lt;/div>
+                &lt;div class="select-list">
+                    &lt;div class="select-item">
+                        &lt;label class="select-label">{{list}} {{count.one}}&lt;/label>
+                        &lt;input type="checkbox" class="select-input" />
+                    &lt;/div>
+                    &lt;div class="select-item">
+                        &lt;label class="select-label">{{list}} {{count.two}}&lt;/label>
+                        &lt;input type="checkbox" class="select-input" />
+                    &lt;/div>
+                    &lt;div class="select-item">
+                        &lt;label class="select-label">{{list}} {{count.three}}&lt;/label>
+                        &lt;input type="checkbox" class="select-input" />
                     &lt;/div>
                 &lt;/div>
-            &lt;/span>
+            &lt;/div>
             &lt;form class="input-reset">
-                &lt;input type="text" placeholder="This is an input" />
+                &lt;input type="text" placeholder="placeholder text" />
                 &lt;input class="reset" type="reset" value="X" />
             &lt;/form>
-            &lt;button class="btn search" type="search">{{button.search}}&lt;/button>
+            &lt;button class="btn search" type="search" tabindex="1">{{button.search}}&lt;/button>
         &lt;/div>
     &lt;/div>
 &lt;/div></pre>
