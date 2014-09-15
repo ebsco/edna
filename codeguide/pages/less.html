@@ -1,35 +1,35 @@
-        {{#example}}
-            <div class="cg-section">
-                <h2 class="cg-heading">LESS</h2>
-                <div class="cg-element">
-                    <p class="cg-description">
-                        Starting with Edna, and Buzz, we are using the LESS preprocessor to write our CSS. Preprocessors add a lot of new things to basic CSS such as nesting selectors, the use of variables and mixins, which are similar to Javascript functions.
-                    </p>
-                    <p class="cg-description">
-                        We started using LESS and not SASS because of the HLM project. For that we used Bootstrap, which was built with LESS. 
-                    </p>
-                </div>
-            </div>
+	{{#example}}
+		<div class="cg-section">
+			<h2 class="cg-heading">LESS</h2>
+			<div class="cg-element">
+				<p class="cg-description">
+					Starting with Edna, and Buzz, we are using the LESS preprocessor to write our CSS. Preprocessors add a lot of new things to basic CSS such as nesting selectors, the use of variables and mixins, which are similar to Javascript functions.
+				</p>
+				<p class="cg-description">
+					We started using LESS and not SASS because of the HLM project. For that we used Bootstrap, which was built with LESS. 
+				</p>
+			</div>
+		</div>
 
-            <div class="cg-section">
-                <h2 class="cg-heading">Dangers</h2>
-                <div class="cg-element">
-                    <p class="cg-description">
-                        LESS can make it very easy to take just a few lines of LESS CSS and, when compiled, end up with thousands of lines of CSS. Yipes! In order to avoid this some guidelines should be followed.
-                    </p>
-                    <p class="cg-description">
-                        Of course one might not be able to help not following a guideline or two. Just make sure that what is compiled is clean and concise.
-                    </p>
-                </div>
-            </div>
+		<div class="cg-section">
+			<h2 class="cg-heading">Dangers</h2>
+			<div class="cg-element">
+				<p class="cg-description">
+					LESS can make it very easy to take just a few lines of LESS CSS and, when compiled, end up with thousands of lines of CSS. Yipes! In order to avoid this some guidelines should be followed.
+				</p>
+				<p class="cg-description">
+					Of course one might not be able to help not following a guideline or two. Just make sure that what is compiled is clean and concise.
+				</p>
+			</div>
+		</div>
 
-            <div class="cg-section">
-                <h2 class="cg-heading">File Structure</h2>
-                <div class="cg-element">
-                    <p class="cg-description">
-                        All files for Edna live in one directory, less. All the compiled files, and the import files that create them, live in the root of the Edna repo.
-                    </p>
-                    <pre>
+		<div class="cg-section">
+			<h2 class="cg-heading">File Structure</h2>
+			<div class="cg-element">
+				<p class="cg-description">
+					All files for Edna live in one directory, less. All the compiled files, and the import files that create them, live in the root of the Edna repo.
+				</p>
+				<pre>
 edna
 ├── less
 │   ├── _autocomplete.less
@@ -43,117 +43,117 @@ edna
 ├── edna.less
 ├── edna.min.less
 └── edna.ie.less
-                    </pre>
-                </div>
-            </div>
+				</pre>
+			</div>
+		</div>
 
-            <div class="cg-section">
-                <h2 class="cg-heading">Variables</h2>
-                <div class="cg-element">
-                    <p class="cg-description">
-                        Use variables for values that can change easily without messing up an element; colors, font-family, font-size, etc.
-                    </p>
-                    <pre>
+		<div class="cg-section">
+			<h2 class="cg-heading">Variables</h2>
+			<div class="cg-element">
+				<p class="cg-description">
+					Use variables for values that can change easily without messing up an element; colors, font-family, font-size, etc.
+				</p>
+				<pre>
 edna
 └── less
-    └── _variables.less
-                    </pre>
-                </div>
-            </div>
+└── _variables.less
+				</pre>
+			</div>
+		</div>
 
-            <div class="cg-section">
-                <h2 class="cg-heading">Nesting</h2>
-                <div class="cg-element">
-                    <p class="cg-description">
-                        Our first guideline is to <strong class="alert">keep the number of stringed selectors to no more than 3</strong>. Nesting can be dangerous.
-                    </p>
-                    <p class="cg-description">
-                        One should use better specificity rather than another selector, or <code>!important</code>.
-                    </p>
-                </div>
-                <div class="cg-toggler evt-toggler">Toggle this example</div>
-                <pre class="cg-code prettyprint lang-css linenums evt-toggled">
+		<div class="cg-section">
+			<h2 class="cg-heading">Nesting</h2>
+			<div class="cg-element">
+				<p class="cg-description">
+					Our first guideline is to <strong class="alert">keep the number of stringed selectors to no more than 3</strong>. Nesting can be dangerous.
+				</p>
+				<p class="cg-description">
+					One should use better specificity rather than another selector, or <code>!important</code>.
+				</p>
+			</div>
+			<div class="cg-toggler evt-toggler">Toggle this example</div>
+			<pre class="cg-code prettyprint lang-css linenums evt-toggled">
 /* THIS IS AN EXAMPLE OF GOOD NESTING */
 
 // here is an example of a nested LESS ruleset
 .example {
-    foo: bar;
-    .sub-example {
-        foo: bar;
-    }
+foo: bar;
+.sub-example {
+	foo: bar;
+}
 }
 
 // and here is the output
 .example {
-  foo: bar;
+foo: bar;
 }
 .example .sub-example {
-  foo: bar;
+foo: bar;
 }</pre>
-                <div class="cg-toggler evt-toggler">Toggle this example</div>
-                <pre class="cg-code prettyprint lang-css linenums evt-toggled">
+			<div class="cg-toggler evt-toggler">Toggle this example</div>
+			<pre class="cg-code prettyprint lang-css linenums evt-toggled">
 /* THIS IS AN EXAMPLE OF BAD NESTING WHERE WE END UP WITH AN UNRULY STRING OF SELECTORS */
 
 // here is an example of a nested LESS ruleset
 .first-example {
-    foo: bar;
-    .second-example {
-        foo: bar;
-        .third-example {
-            foo: bar;
-            .fourth-example {
-                foo: bar;
-                .fifth-example {
-                    foo: bar;
-                }
-            }
-        }
-    }
+foo: bar;
+.second-example {
+	foo: bar;
+	.third-example {
+		foo: bar;
+		.fourth-example {
+			foo: bar;
+			.fifth-example {
+				foo: bar;
+			}
+		}
+	}
+}
 }
 
 // and here is the output
 .first-example {
-  foo: bar;
+foo: bar;
 }
 .first-example .second-example {
-  foo: bar;
+foo: bar;
 }
 .first-example .second-example .third-example {
-  foo: bar;
+foo: bar;
 }
 .first-example .second-example .third-example .fourth-example {
-  foo: bar;
+foo: bar;
 }
 .first-example .second-example .third-example .fourth-example .fifth-example {
-  foo: bar;
+foo: bar;
 }
 
 /* WHILE THIS ISN'T HORRIBLE IT IS NOT GOOD */</pre>
-                <div class="cg-toggler evt-toggler">Toggle this example</div>
-                <pre class="cg-code prettyprint lang-css linenums evt-toggled">
+			<div class="cg-toggler evt-toggler">Toggle this example</div>
+			<pre class="cg-code prettyprint lang-css linenums evt-toggled">
 /* THIS IS AN EXAMPLE OF BAD NESTING WHERE THINGS JUST GO HAYWIRE */
 
 .first-example,
 .second-example {
-    foo: bar;
-    & & {
-        foo: bar;
-        &.third-example & {
-            foo: bar;
-        }
-    }
+foo: bar;
+& & {
+	foo: bar;
+	&.third-example & {
+		foo: bar;
+	}
+}
 }
 
 // and here is the output
 .first-example,
 .second-example {
-  foo: bar;
+foo: bar;
 }
 .first-example .first-example,
 .first-example .second-example,
 .second-example .first-example,
 .second-example .second-example {
-  foo: bar;
+foo: bar;
 }
 .first-example .first-example.third-example .first-example .first-example,
 .first-example .first-example.third-example .first-example .second-example,
@@ -171,23 +171,206 @@ edna
 .second-example .second-example.third-example .first-example .second-example,
 .second-example .second-example.third-example .second-example .first-example,
 .second-example .second-example.third-example .second-example .second-example {
-  foo: bar;
+foo: bar;
 }
 
 /* THAT IS JUST CRAZY, DON'T END UP WITH SOMETHING LIKE THIS IN YOUR CSS */</pre>
-            </div>
+		</div>
 
-            <div class="cg-section">
-                <h2 class="cg-heading">Comments</h2>
-                <div class="cg-element">
-                    <p class="cg-description">
-                        Again, comments are awesome, use them.
-                    </p>
-                    <p class="cg-description">
-                        Single line comments are stripped from LESS when compiled. Use these more for comments to other developers, or yourself.
-                    </p>
-                </div>
-                <pre class="cg-code prettyprint lang-css linenums">
+		<div class="cg-section">
+			<h2 class="cg-heading">Comments</h2>
+			<div class="cg-element">
+				<p class="cg-description">
+					Again, comments are awesome, use them.
+				</p>
+				<p class="cg-description">
+					Single line comments are stripped from LESS when compiled. Use these more for comments to other developers, or yourself.
+				</p>
+			</div>
+			<pre class="cg-code prettyprint lang-css linenums">
 // comment</pre>
-            </div>
-        {{/example}}
+		</div>
+
+		<div class="cg-section">
+			<h2 class="cg-heading">Declaration Order</h2>
+			<div class="cg-element">
+				<p class="cg-description">
+					For readability, and to keep things in order, let's put our declarations in a specific order. The following comments can be used as a snippet (thanks Sublime Text), and the lists below can help show you where declarations should live.
+				</p>
+			</div>
+			<pre class="cg-code prettyprint lang-css linenums">
+// Positioning
+
+// Box-model
+
+// Typography
+
+// Visual
+
+// Misc</pre>
+			<div class="cg-element w">
+				<ul class="list w20">
+					<li><strong>Position</strong></li>
+					<li>position</li>
+					<li>top</li>
+					<li>right</li>
+					<li>bottom</li>
+					<li>left</li>
+					<li>z-index</li>
+					<li>display</li>
+					<li>box-align</li>
+					<li>box-flex</li>
+					<li>box-orient</li>
+					<li>box-pack</li>
+					<li>box-sizing</li>
+					<li>float</li>
+				</ul>
+				<ul class="list w20">
+					<li><strong>Box-model</strong></li>
+					<li>width</li>
+					<li>height</li>
+					<li>max-width</li>
+					<li>max-height</li>
+					<li>min-width</li>
+					<li>min-height</li>
+					<li>padding</li>
+					<li>padding-top</li>
+					<li>padding-right</li>
+					<li>padding-bottom</li>
+					<li>padding-left</li>
+					<li>margin</li>
+					<li>margin-top</li>
+					<li>margin-right</li>
+					<li>margin-bottom</li>
+					<li>margin-left</li>
+					<li>margin-collapse</li>
+					<li>margin-top-collapse</li>
+					<li>margin-right-collapse</li>
+					<li>margin-bottom-collapse</li>
+					<li>margin-left-collapse</li>
+					<li>overflow</li>
+					<li>overflow-x</li>
+					<li>overflow-y</li>
+					<li>clip</li>
+					<li>clear</li>
+				</ul>
+				<ul class="list w20">
+					<li><strong>Typography</strong></li>
+					<li>font</li>
+					<li>font-family</li>
+					<li>font-size</li>
+					<li>font-smoothing</li>
+					<li>osx-font-smoothing</li>
+					<li>font-style</li>
+					<li>font-weight</li>
+					<li>hyphens</li>
+					<li>src</li>
+					<li>line-height</li>
+					<li>letter-spacing</li>
+					<li>word-spacing</li>
+					<li>color</li>
+					<li>text-align</li>
+					<li>text-decoration</li>
+					<li>text-indent</li>
+					<li>text-overflow</li>
+					<li>text-rendering</li>
+					<li>text-size-adjust</li>
+					<li>text-shadow</li>
+					<li>text-transform</li>
+					<li>word-break</li>
+					<li>word-wrap</li>
+					<li>white-space</li>
+					<li>vertical-align</li>
+					<li>list-style</li>
+					<li>list-style-type</li>
+					<li>list-style-position</li>
+					<li>list-style-image</li>
+					<li>pointer-events</li>
+					<li>cursor</li>
+				</ul>
+				<ul class="list w20">
+					<li><strong>Visual</strong></li>
+					<li>background
+					<li>background-attachment</li>
+					<li>background-color</li>
+					<li>background-image</li>
+					<li>background-position</li>
+					<li>background-repeat</li>
+					<li>background-size</li>
+					<li>border</li>
+					<li>border-collapse</li>
+					<li>border-color</li>
+					<li>border-color</li>
+					<li>border-image</li>
+					<li>border-spacing</li>
+					<li>border-style</li>
+					<li>border-width</li>
+					<li>border-radius</li>
+					<li>border-top</li>
+					<li>border-top-color</li>
+					<li>border-top-style</li>
+					<li>border-top-width</li>
+					<li>border-right</li>
+					<li>border-right-color</li>
+					<li>border-right-style</li>
+					<li>border-right-width</li>
+					<li>border-bottom</li>
+					<li>border-bottom-color</li>
+					<li>border-bottom-style</li>
+					<li>border-bottom-width</li>
+					<li>border-left</li>
+					<li>border-left-color</li>
+					<li>border-left-style</li>
+					<li>border-left-width</li>
+					<li>border-radius-topright</li>
+					<li>border-top-right-radius</li>
+					<li>border-radius-bottomright</li>
+					<li>border-bottom-right-radius</li>
+					<li>border-radius-bottomleft</li>
+					<li>border-bottom-left-radius</li>
+					<li>border-radius-topleft</li>
+					<li>border-top-left-radius</li>
+					<li>box-shadow</li>
+					<li>content</li>
+					<li>quotes</li>
+					<li>outline</li>
+					<li>outline-offset</li>
+					<li>opacity</li>
+					<li>filter</li>
+					<li>visibility</li>
+					<li>size</li>
+					<li>zoom</li>
+					<li>transform</li>
+					<li>table-layout</li>
+					<li>animation</li>
+					<li>animation-delay</li>
+					<li>animation-duration</li>
+					<li>animation-iteration-count</li>
+					<li>animation-name</li>
+					<li>animation-play-state</li>
+					<li>animation-timing-function</li>
+					<li>animation-fill-mode</li>
+					<li>transition</li>
+					<li>transition-delay</li>
+					<li>transition-duration</li>
+					<li>transition-property</li>
+					<li>transition-timing-function</li>
+					<li>background-clip</li>
+					<li>backface-visibility</li>
+				</ul>
+				<ul class="list w20">
+					<li><strong>Misc</strong></li>
+					<li>resize</li>
+					<li>appearance</li>
+					<li>user-select</li>
+					<li>interpolation-mode</li>
+					<li>direction</li>
+					<li>marks</li>
+					<li>page</li>
+					<li>set-link-source</li>
+					<li>unicode-bidi</li>
+					<li>speak</li>
+				</ul>
+			</div>
+		</div>
+	{{/example}}
