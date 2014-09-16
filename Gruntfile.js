@@ -94,8 +94,28 @@ module.exports = function(grunt) {
 					maxFileSize: 1024000
 				}
 			}
-		}
+		},
 
+		grunticon: {
+			dmpIcons: {
+				files: [{
+					expand: true,
+					cwd: 'grunticon',
+					src: ['*.svg', '*.png'],
+					dest: 'grunticon/'
+				}],
+				options: {
+					cssprefix: '.icon.svg-',
+					datasvgcss: 'css/icons.svg.css',
+					datapngcss: 'css/icons.png.css',
+					urlpngcss: 'css/icons.fallback.css',
+					loadersnippet: 'js/grunticon.loader.js',
+					defaultWidth: '32 px',
+					defaultHeight: '32 px',
+					pngfolder: 'png'
+				}
+			}
+		}
 
 	});
 
@@ -105,6 +125,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-css-metrics');
 	grunt.loadNpmTasks('grunt-shell');
+	grunt.loadNpmTasks('grunt-grunticon');
 
 	grunt.registerTask('lint', [
 		'cssmetrics'
