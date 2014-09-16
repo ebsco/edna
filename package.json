@@ -13,7 +13,8 @@
     "grunt-express": "^1.4.1",
     "grunt-contrib-csslint": "^0.2.0",
     "grunt-css-metrics": "^0.1.2",
-    "grunt-shell": "^1.1.1"
+    "grunt-shell": "^1.1.1",
+    "grunt-grunticon": "^1.2.13"
   },
   "main": "Gruntfile.js",
   "repository": {
