@@ -2224,18 +2224,6 @@ code {
   font-weight: normal;
   color: #669966;
 }
-/* TAG */
-.tag {
-  display: inline;
-  padding: 2px 5px;
-  margin: 0 10px;
-  color: #333333;
-  font-size: 12px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background-color: #dddcdc;
-  border-radius: 3px;
-}
 /* WIDTH */
 .w {
   display: block;
@@ -2334,6 +2322,20 @@ code {
   display: inline-block;
   width: 20px;
   height: 20px;
+}
+.cg-element {
+  /* TAG */
+}
+.cg-element .tag {
+  display: inline;
+  padding: 2px 5px;
+  margin: 0 10px;
+  color: #333333;
+  font-size: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #dddcdc;
+  border-radius: 3px;
 }
 @media screen and (max-width: 320px) {
   [class*="l"][class*="-p"] .col {

@@ -106,9 +106,9 @@ module.exports = function(grunt) {
 				}],
 				options: {
 					cssprefix: '.icon.svg-',
-					datasvgcss: 'css/icons.svg.css',
-					datapngcss: 'css/icons.png.css',
-					urlpngcss: 'css/icons.fallback.css',
+					datasvgcss: 'css/icons.svg.less',
+					datapngcss: 'css/icons.png.less',
+					urlpngcss: 'css/icons.fallback.less',
 					loadersnippet: 'js/grunticon.loader.js',
 					defaultWidth: '32 px',
 					defaultHeight: '32 px',
