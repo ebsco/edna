@@ -15,6 +15,7 @@
 @import "../../less/_pin.less";
 @import "../../less/_searchbar.less";
 @import "../../less/_select";
+@import "../../less/_svg.less";
 @import "../../less/_toolbar.less";
 @import "../../less/_transport.less";
 @import "../../less/_treelist.less";
@@ -347,6 +348,24 @@ pre.prettyprint {
 			border-right-width: 0;
 		}
 	}
+}
+
+.list dd {
+    display: inline-block;
+    height: 50px;
+    vertical-align: top;
+    margin-right: 15px;
+
+	+ dt {
+	    display: inline;
+
+		&:after {
+		    content: '';
+		    display: table;
+		    clear: right;
+		}
+	}
+
 }
 
 body { min-width: unit(@mediaquery-small, px); }
