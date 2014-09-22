@@ -112,7 +112,8 @@ module.exports = function(grunt) {
 					loadersnippet: 'js/grunticon.loader.js',
 					defaultWidth: '32 px',
 					defaultHeight: '32 px',
-					pngfolder: 'png'
+					pngfolder: 'png',
+					pngpath: '../png'
 				}
 			}
 		}

@@ -4,14 +4,9 @@ codeguide/bower/
 .sass-cache/
 
 # FILES
-examples/js/bootstrap.js
-examples/js/bootstrap.min.js
-#examples/readme.html
-examples/dna.css
-plus/plus.css
 .bower.json
 .DS_Store
-examples/.DS_Store
-*.map
-npm-debug.log
-styleguide/testing.less
+*.css
+*.png
+grunticon/js
+!codeguide/styles/sons-of-obsidian.css
