@@ -19,8 +19,7 @@ module.exports = function(grunt) {
 					port: 8030,
 					host: 'http://localhost',
 					bases: 'codeguide/',
-					debug: true,
-					baseUrl: '.'
+					debug: true
 				}
 			}
 		},
@@ -34,7 +33,9 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'edna.css': 'edna.less',
-					'edna.ie.css': 'edna.ie.less'
+					'edna.ie.css': 'edna.ie.less',
+					'codeguide/edna.css': 'edna.less',
+					'codeguide/edna.ie.css': 'edna.ie.less'					
 				}
 			},
 			dist: {
@@ -44,7 +45,9 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'edna.min.css': 'edna.less',
-					'edna.min.ie.css': 'edna.ie.less'
+					'edna.min.ie.css': 'edna.ie.less',
+					'codeguide/edna.min.css': 'edna.less',
+					'codeguide/edna.min.ie.css': 'edna.ie.less'					
 				}
 			},
 			codeguide: {
@@ -55,14 +58,6 @@ module.exports = function(grunt) {
 				files: {
 					'codeguide/styles/codeguide.css': [ 'codeguide/styles/codeguide.less' ]
 				}
-			},
-			server: {
-				options: {
-					path: ['less'],
-					compile: true
-				},
-				files: {
-					'codeguide/edna.css': 'edna.less'				}				
 			}
 		},
 		watch: {
@@ -162,8 +157,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('server-deploy', [
 		'grunticon',
-		'less:codeguide',
-		'less:server',
+		'less',
 		'express',
 		'express-keepalive'
 	]);
