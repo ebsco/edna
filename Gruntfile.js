@@ -147,8 +147,16 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('server', [
 		'express',
+		'grunticon',
 		'less',
 		'watch'
+	]);
+
+	grunt.registerTask('server-deploy', [
+		'grunticon',
+		'less',
+		'express',
+		'express-keepalive'
 	]);
 
 };
