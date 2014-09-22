@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 		express: {
 			server: {
 				options: {
-					port: 8010,
+					port: 8030,
 					host: 'http://localhost',
 					bases: 'codeguide/',
 					debug: true,
@@ -55,6 +55,14 @@ module.exports = function(grunt) {
 				files: {
 					'codeguide/styles/codeguide.css': [ 'codeguide/styles/codeguide.less' ]
 				}
+			},
+			server: {
+				options: {
+					path: ['less'],
+					compile: true
+				},
+				files: {
+					'codeguide/edna.css': 'edna.less'				}				
 			}
 		},
 		watch: {
@@ -154,7 +162,8 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('server-deploy', [
 		'grunticon',
-		'less',
+		'less:codeguide',
+		'less:server',
 		'express',
 		'express-keepalive'
 	]);
