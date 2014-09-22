@@ -6,5 +6,7 @@ codeguide/bower/
 # FILES
 .bower.json
 .DS_Store
-.css
+*.css
+*.png
+grunticon/js
 !codeguide/styles/sons-of-obsidian.css
