@@ -11,7 +11,7 @@
 		<path class="print" d="M15,3H1C0.448,3,0,3.447,0,4v5c0,0.552,0.448,1,1,1h1V7h12v3h1c0.553,0,1-0.448,1-1V4C16,3.447,15.553,3,15,3z M2,5H1V4h1V5z"/>
 		<polygon class="print" points="12,13 10,13 10,15 4,15 4,8 3,8 3,16 10,16 13,13 13,8 12,8"/>
 		<polygon class="print" points="4,1 12,1 12,2 13,2 13,0 3,0 3,2 4,2"/>
-		<rect x="5" y="9" class="print" width="6" height="1"/>
-		<rect x="5" y="11" class="print" width="4" height="1"/>
+		<rect class="print" x="5" y="9" width="6" height="1"/>
+		<rect class="print" x="5" y="11" width="4" height="1"/>
 	</g>
 </svg>

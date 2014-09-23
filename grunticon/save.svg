@@ -8,7 +8,7 @@
 		}
 	</style>
 	<g>
-		<rect x="5.62" y="11.254" class="save" width="1.873" height="1.873"/>
+		<rect class="save" x="5.62" y="11.254" width="1.873" height="1.873"/>
 		<path class="save" d="M0,0.015V15h13.112l1.873-1.873V0.015H0z M10.303,14.063H4.684v-3.746h5.619V14.063z M12.176,7.507H2.81V0.951h9.366V7.507z"/>
 	</g>
 </svg>
