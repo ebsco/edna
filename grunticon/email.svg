@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="22px" height="14px" viewBox="0 0 22 14" enable-background="new 0 0 22 14" xml:space="preserve">
-<g>
-	<polygon fill="#474747" points="20.834,0.173 20.641,0.134 1.388,0.134 1.27,0.158 11.017,8.841 	"/>
-	<path fill="#474747" d="M21.922,1.048l-6.933,6.12l6.844,5.989c0.106-0.197,0.183-0.409,0.183-0.646V1.509
-		C22.016,1.345,21.975,1.193,21.922,1.048z"/>
-	<path fill="#474747" d="M0.12,0.978C0.053,1.141,0.013,1.32,0.013,1.509v11.001c0,0.2,0.049,0.388,0.126,0.561l6.908-5.924
-		L0.12,0.978z"/>
-	<polygon fill="#474747" points="11.012,10.68 8.083,8.069 1.315,13.871 1.388,13.886 20.578,13.886 13.95,8.086 	"/>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="14px" viewBox="0 0 22 14" enable-background="new 0 0 22 14" xml:space="preserve">
+	<style>
+		.email {
+			fill: #474747;
+		}
+	</style>
+	<g>
+		<polygon class="email" points="20.834,0.173 20.641,0.134 1.388,0.134 1.27,0.158 11.017,8.841"/>
+		<path class="email" d="M21.922,1.048l-6.933,6.12l6.844,5.989c0.106-0.197,0.183-0.409,0.183-0.646V1.509C22.016,1.345,21.975,1.193,21.922,1.048z"/>
+		<path class="email" d="M0.12,0.978C0.053,1.141,0.013,1.32,0.013,1.509v11.001c0,0.2,0.049,0.388,0.126,0.561l6.908-5.924L0.12,0.978z"/>
+		<polygon class="email" points="11.012,10.68 8.083,8.069 1.315,13.871 1.388,13.886 20.578,13.886 13.95,8.086"/>
+	</g>
 </svg>

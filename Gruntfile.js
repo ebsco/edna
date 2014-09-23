@@ -111,8 +111,8 @@ module.exports = function(grunt) {
 					datapngcss: 'css/icons.png.css',
 					urlpngcss: 'css/icons.fallback.css',
 					loadersnippet: 'js/grunticon.loader.js',
-					defaultWidth: '32 px',
-					defaultHeight: '32 px',
+					defaultWidth: '100%',
+					defaultHeight: '100%',
 					pngfolder: 'png',
 					pngpath: '../png'
 				}
