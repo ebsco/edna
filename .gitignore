@@ -9,4 +9,5 @@ codeguide/bower/
 *.css
 *.png
 grunticon/js
+grunticon/*.html
 !codeguide/styles/sons-of-obsidian.css
