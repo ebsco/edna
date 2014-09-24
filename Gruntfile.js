@@ -114,7 +114,11 @@ module.exports = function(grunt) {
 					defaultWidth: '100%',
 					defaultHeight: '100%',
 					pngfolder: 'png',
-					pngpath: '../png'
+					pngpath: '../png',
+					colors: {
+						light: '#ffffff',
+						dark: '#000000'
+					}
 				}
 			}
 		}
