@@ -106,11 +106,11 @@ module.exports = function(grunt) {
 					dest: 'grunticon/'
 				}],
 				options: {
-					cssprefix: '.icon.svg-',
 					datasvgcss: 'css/icons.svg.css',
 					datapngcss: 'css/icons.png.css',
 					urlpngcss: 'css/icons.fallback.css',
 					loadersnippet: 'js/grunticon.loader.js',
+					template: 'grunticon/default-css.hbs',
 					defaultWidth: '100%',
 					defaultHeight: '100%',
 					pngfolder: 'png',
