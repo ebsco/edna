@@ -61,19 +61,25 @@
 
 .w {
 	margin-top: 5px;
-	> .w33 {
+	
+    .w20 {
+    	text-align: right;
+	    padding: 10px;
+    }
+
+    .w40 {
 	    text-align: center;
 	    padding:  10px;
 
-	    &:last-child {
-	    	 background-color: #ccc;
+	    + .w40 {
+	    	background-color: #ccc;
 	    }
+    }
 
-	    .icon {
-	    	width: 25px;
-			height: 30px;
-	    }
-	}
+    .icon {
+    	width: 25px;
+		height: 30px;
+    }
 }
 
 /* STYLEGUIDE STYLES */
