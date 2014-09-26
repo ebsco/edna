@@ -4,4 +4,14 @@
 	// Visual
 	background-position: center center;
 	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+// pulls in the PNG data fallback for the SVG classes
+@import (less) '../grunticon/css/icons.fallback.css';
+// pulls in the PNG fallback for the SVG classes
+@import (less) '../grunticon/css/icons.png.css';
+// pulls in the SVG classes and prepends them with the .svg class used by Modernizr
+.svg {
+	@import (less) '../grunticon/css/icons.svg.css';
 }
