@@ -4,13 +4,13 @@
 // Set up the basic layout region
 .col {
     // Box-model
-    display: table-cell;
+    display: inline-block;
     width: 100%;
 }
 
 .padding() {
     // Box-model
-    display: table;
+    .box(border);
     width: 100%;
     padding: @lay-top-padding @lay-right-padding @lay-bottom-padding @lay-left-padding;
     .clearfix;
