@@ -28,7 +28,8 @@ module.exports = function(grunt) {
 					path: ['less'],
 					compress: false,
 					dumpLineNumbers: true,
-					sourceMap: false
+					sourceMap: false,
+					report: 'min'
 				},
 				files: {
 					'edna.css': 'edna.less',
@@ -41,6 +42,7 @@ module.exports = function(grunt) {
 				options: {
 					path: ['less'],
 					compress: true,
+					cleancss: true
 				},
 				files: {
 					'edna.min.css': 'edna.less',
@@ -121,6 +123,12 @@ module.exports = function(grunt) {
 					}
 				}
 			}
+		},
+		colorguard: {
+			options: {},
+			files: {
+				src: ['edna.css'],
+			}
 		}
 
 	});
@@ -132,6 +140,13 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-css-metrics');
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-grunticon');
+	grunt.loadNpmTasks('grunt-colorguard');
+
+	grunt.registerTask('colors', [
+		'less:dev',
+		'colorguard',
+		'cssmetrics'
+	]);
 
 	grunt.registerTask('lint', [
 		'cssmetrics'
