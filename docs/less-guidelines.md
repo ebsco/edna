@@ -81,19 +81,19 @@ foo: bar;
  
 // and here is the output
 .first-example {
-foo: bar;
+	foo: bar;
 }
 .first-example .second-example {
-foo: bar;
+	foo: bar;
 }
 .first-example .second-example .third-example {
-foo: bar;
+	foo: bar;
 }
 .first-example .second-example .third-example .fourth-example {
-foo: bar;
+	foo: bar;
 }
 .first-example .second-example .third-example .fourth-example .fifth-example {
-foo: bar;
+	foo: bar;
 }
  
 /* WHILE THIS ISN'T HORRIBLE IT IS NOT GOOD */
@@ -116,13 +116,13 @@ foo: bar;
 // and here is the output
 .first-example,
 .second-example {
-foo: bar;
+	foo: bar;
 }
 .first-example .first-example,
 .first-example .second-example,
 .second-example .first-example,
 .second-example .second-example {
-foo: bar;
+	foo: bar;
 }
 .first-example .first-example.third-example .first-example .first-example,
 .first-example .first-example.third-example .first-example .second-example,
@@ -140,7 +140,7 @@ foo: bar;
 .second-example .second-example.third-example .first-example .second-example,
 .second-example .second-example.third-example .second-example .first-example,
 .second-example .second-example.third-example .second-example .second-example {
-foo: bar;
+	foo: bar;
 }
  
 /* THAT IS JUST CRAZY, DON'T END UP WITH SOMETHING LIKE THIS IN YOUR CSS */
@@ -151,12 +151,14 @@ foo: bar;
 Again, comments are awesome, use them.
 
 Single line comments are stripped from LESS when compiled. Use these more for comments to other developers, or yourself.
+
 ```CSS
 // comment
 ```
 
 ##Declaration Order
 For readability, and to keep things in order, let's put our declarations in a specific order. The following comments can be used as a snippet (thanks Sublime Text), and the lists below can help show you where declarations should live.
+
 ```CSS
 // Positioning
  
@@ -169,76 +171,76 @@ For readability, and to keep things in order, let's put our declarations in a sp
 // Misc
 ```
 
-**Position**  | **Box-model**          | **Typography**      | **Visual**                 | **Misc**
-------------- | ---------------------- | ------------------- | -------------------------- | ------------
-position      | display                | font                | background                 | resize
-top           | float                  | font-family         | background-attachment      | appearance
-right         | width                  | font-size		     | background-color			  | user-select
-bottom        | height                 | font-smoothing      | background-image			  | interpolation-mode
-left          | max-width              | osx-font-smoothing  | background-position		  | direction
-z-index       | max-height             | font-style			 | background-repeat		  | marks
-              | min-width              | font-weight  		 | background-size			  | page
-              | min-height             | hyphens		 	 | border			          | set-link-source
-              | padding                | src                 | border-collapse			  | unicode-bidi
-              | padding-top            | line-height         | border-top			      | speak
-              | padding-right          | letter-spacing      | border-right               |
-              | padding-bottom         | word-spacing        | border-bottom              |
-              | padding-left           | color               | border-left                |
-              | margin                 | text-align          | border-color               |
-              | margin-top             | text-decoration     | border-image               |
-              | margin-right           | text-indent         | border-top-color           |
-              | margin-bottom          | text-overflow       | border-right-color         |
-              | margin-left			   | text-rendering      | border-bottom-color        |
-              | margin-collapse        | text-size-adjust    | border-left-color          |
-              | margin-top-collapse    | text-shadow         | border-spacing             |
-              | margin-right-collapse  | text-transform      | border-style               |
-              | margin-bottom-collapse | word-break          | border-top-style           |
-              | margin-left-collapse   | word-wrap           | border-right-style         |
-              | overflow               | white-space         | border-bottom-style        |
-              | overflow-x             | vertical-align      | border-left-style          |
-              | overflow-y             | list-style          | border-width               |
-              | clip                   | list-style-type     | border-top-width           |
-              | clear				   | list-style-position | border-right-width         |
-              |						   | list-style-image    | border-bottom-width        |
-              |						   | pointer-events      | border-left-width          |
-              |						   | cursor              | border-radius              |
-              |						   |                     | border-top-right-radius    |
-              |						   |                     | border-bottom-right-radius |
-              |						   |                     | border-bottom-left-radius  |
-              |						   |                     | border-top-left-radius     |
-              |						   |                     | border-radius-topright     |
-              |						   |                     | border-radius-bottomright  |
-              |						   |                     | border-radius-bottomleft   |
-              |						   |                     | border-radius-topleft      |
-              |						   |                     | content                    |
-              |						   |                     | quotes                     |
-              |						   |                     | outline                    |
-              |						   |                     | outline-offset             |
-              |						   |                     | opacity                    |
-              |						   |                     | filter                     |
-              |						   |                     | visibility                 |
-              |						   |                     | size                       |
-              |						   |                     | zoom                       |
-              |						   |                     | transform                  |
-              |						   |                     | box-align                  |
-              |						   |                     | box-flex                   |
-              |						   |                     | box-orient                 |
-              |						   |                     | box-pack                   |
-              |						   |                     | box-shadow                 |
-              |						   |                     | box-sizing                 |
-              |						   |                     | table-layout               |
-              |						   |                     | animation                  |
-              |						   |                     | animation-delay            |
-              |						   |                     | animation-duration         |
-              |						   |                     | animation-iteration-count  |
-              |						   |                     | animation-name             |
-              |						   |                     | animation-play-state       |
-              |						   |                     | animation-timing-function  |
-              |						   |                     | animation-fill-mode        |
-              |						   |                     | transition                 |
-              |						   |                     | transition-delay           |
-              |						   |                     | transition-duration        |
-              |						   |                     | transition-property        |
-              |						   |                     | transition-timing-function |
-              |						   |                     | background-clip            |
-              |						   |                     | backface-visibility        |
+**Position**  | **Box-model**          | **Typography**      | **Visual**                 | **Misc**           |
+------------- | ---------------------- | ------------------- | -------------------------- | ------------------ |
+position      | display                | font                | background                 | resize             |
+top           | float                  | font-family         | background-attachment      | appearance         |
+right         | width                  | font-size		     | background-color			  | user-select        |
+bottom        | height                 | font-smoothing      | background-image			  | interpolation-mode |
+left          | max-width              | osx-font-smoothing  | background-position		  | direction          |
+z-index       | max-height             | font-style			 | background-repeat		  | marks              |
+              | min-width              | font-weight  		 | background-size			  | page               |
+              | min-height             | hyphens		 	 | border			          | set-link-source    |
+              | padding                | src                 | border-collapse			  | unicode-bidi       |
+              | padding-top            | line-height         | border-top			      | speak              |
+              | padding-right          | letter-spacing      | border-right               |                    |
+              | padding-bottom         | word-spacing        | border-bottom              |                    |
+              | padding-left           | color               | border-left                |                    |
+              | margin                 | text-align          | border-color               |                    |
+              | margin-top             | text-decoration     | border-image               |                    |
+              | margin-right           | text-indent         | border-top-color           |                    |
+              | margin-bottom          | text-overflow       | border-right-color         |                    |
+              | margin-left			   | text-rendering      | border-bottom-color        |                    |
+              | margin-collapse        | text-size-adjust    | border-left-color          |                    |
+              | margin-top-collapse    | text-shadow         | border-spacing             |                    |
+              | margin-right-collapse  | text-transform      | border-style               |                    |
+              | margin-bottom-collapse | word-break          | border-top-style           |                    |
+              | margin-left-collapse   | word-wrap           | border-right-style         |                    |
+              | overflow               | white-space         | border-bottom-style        |                    |
+              | overflow-x             | vertical-align      | border-left-style          |                    |
+              | overflow-y             | list-style          | border-width               |                    |
+              | clip                   | list-style-type     | border-top-width           |                    |
+              | clear				   | list-style-position | border-right-width         |                    |
+              |						   | list-style-image    | border-bottom-width        |                    |
+              |						   | pointer-events      | border-left-width          |                    |
+              |						   | cursor              | border-radius              |                    |
+              |						   |                     | border-top-right-radius    |                    |
+              |						   |                     | border-bottom-right-radius |                    |
+              |						   |                     | border-bottom-left-radius  |                    |
+              |						   |                     | border-top-left-radius     |                    |
+              |						   |                     | border-radius-topright     |                    |
+              |						   |                     | border-radius-bottomright  |                    |
+              |						   |                     | border-radius-bottomleft   |                    |
+              |						   |                     | border-radius-topleft      |                    |
+              |						   |                     | content                    |                    |
+              |						   |                     | quotes                     |                    |
+              |						   |                     | outline                    |                    |
+              |						   |                     | outline-offset             |                    |
+              |						   |                     | opacity                    |                    |
+              |						   |                     | filter                     |                    |
+              |						   |                     | visibility                 |                    |
+              |						   |                     | size                       |                    |
+              |						   |                     | zoom                       |                    |
+              |						   |                     | transform                  |                    |
+              |						   |                     | box-align                  |                    |
+              |						   |                     | box-flex                   |                    |
+              |						   |                     | box-orient                 |                    |
+              |						   |                     | box-pack                   |                    |
+              |						   |                     | box-shadow                 |                    |
+              |						   |                     | box-sizing                 |                    |
+              |						   |                     | table-layout               |                    |
+              |						   |                     | animation                  |                    |
+              |						   |                     | animation-delay            |                    |
+              |						   |                     | animation-duration         |                    |
+              |						   |                     | animation-iteration-count  |                    |
+              |						   |                     | animation-name             |                    |
+              |						   |                     | animation-play-state       |                    |
+              |						   |                     | animation-timing-function  |                    |
+              |						   |                     | animation-fill-mode        |                    |
+              |						   |                     | transition                 |                    |
+              |						   |                     | transition-delay           |                    |
+              |						   |                     | transition-duration        |                    |
+              |						   |                     | transition-property        |                    |
+              |						   |                     | transition-timing-function |                    |
+              |						   |                     | background-clip            |                    |
+              |						   |                     | backface-visibility        |                    |

@@ -1,9 +1,7 @@
 # Edna
 Checkout the CodeGuide [here][5] for some working examples of CSS and markup!
 
-View some [Guidelines on working with LESS][7]
-
-Learn how to [build a widget][6] 
+View the [Edna docs][6]
 
 **Edna**
 
@@ -20,5 +18,4 @@ Learn how to [build a widget][6]
   [3]: http://smacss.com/
   [4]: http://f.cl.ly/items/1S2c1n3N3Z0A1S3i3W00/ednamode.jpg
   [5]: http://eae-buzzdev801.epnet.com:8030
-  [6]: docs/building-widgets.md
-  [7]: docs/less-guidelines.md
+  [6]: docs/docs.md
