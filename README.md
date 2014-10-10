@@ -1,5 +1,5 @@
 # Edna CSS Framework
-<img src="http://f.cl.ly/items/1S2c1n3N3Z0A1S3i3W00/ednamode.jpg" alt="Drawing" style="width: 75px;float:left;"/>
+<img src="http://f.cl.ly/items/3K052s0y111v1g3w1C2G/sm-edna.jpg" alt="Edna" style="float:left;border:none;"/>
 
 Edna is a custom CSS framework. Dig it!
 
