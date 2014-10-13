@@ -99,13 +99,53 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		csslint: {
+			src: ['edna.css'],
+			options: {
+				"important": true,
+				"adjoining-classes": false,
+				"known-properties": true,
+				"box-sizing": false,
+				"box-model": false,
+				"overqualified-elements": true,
+				"display-property-grouping": true,
+				"bulletproof-font-face": true,
+				"compatible-vendor-prefixes": true,
+				"regex-selectors": true,
+				"errors": true,
+				"duplicate-background-images": false,
+				"duplicate-properties": true,
+				"empty-rules": true,
+				"selector-max-approaching": true,
+				"gradients": true,
+				"fallback-colors": true,
+				"font-sizes": true,
+				"font-faces": true,
+				"floats": true,
+				"star-property-hack": true,
+				"outline-none": true,
+				"import": false,
+				"ids": 2,
+				"underscore-property-hack": true,
+				"rules-count": true,
+				"qualified-headings": true,
+				"selector-max": true,
+				"shorthand": true,
+				"text-indent": true,
+				"unique-headings": true,
+				"universal-selector": true,
+				"unqualified-attributes": true,
+				"vendor-prefix": true,
+				"zero-units": true
+			}
+		},
 		grunticon: {
-			dmpIcons: {
+			icons: {
 				files: [{
 					expand: true,
-					cwd: 'grunticon',
+					cwd: 'grunticon/raw',
 					src: ['*.svg', '*.png'],
-					dest: 'grunticon/'
+					dest: 'grunticon'
 				}],
 				options: {
 					datasvgcss: 'css/icons.svg.css',
@@ -117,9 +157,11 @@ module.exports = function(grunt) {
 					defaultHeight: '100%',
 					pngfolder: 'png',
 					pngpath: '../png',
+					cssprefix: '.icon.svg-',
 					colors: {
 						light: '#ffffff',
-						dark: '#000000'
+						dark: '#000000',
+						custom: '#666666'
 					}
 				}
 			}
@@ -149,7 +191,8 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('lint', [
-		'cssmetrics'
+		'cssmetrics',
+		'csslint'
 	]);
 
 	grunt.registerTask('codeguide', [
@@ -160,9 +203,9 @@ module.exports = function(grunt) {
 
 
 	grunt.registerTask('build', [
+		'less',
 		'lint',
-		'grunticon',
-		'less'
+		'grunticon'
 	]);
 
 	grunt.registerTask('server', [
