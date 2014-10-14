@@ -125,7 +125,7 @@ module.exports = function(grunt) {
 				"star-property-hack": true,
 				"outline-none": true,
 				"import": false,
-				"ids": 2,
+				"ids": true,
 				"underscore-property-hack": true,
 				"rules-count": true,
 				"qualified-headings": true,
@@ -190,8 +190,7 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('lint', [
-		'cssmetrics',
-		'csslint'
+		'cssmetrics'
 	]);
 
 	grunt.registerTask('codeguide', [
@@ -201,9 +200,9 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('build', [
+		'grunticon',
 		'less',
-		'lint',
-		'grunticon'
+		'lint'
 	]);
 
 	grunt.registerTask('server', [
