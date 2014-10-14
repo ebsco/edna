@@ -189,7 +189,7 @@ module.exports = function(grunt) {
 		'cssmetrics'
 	]);
 
-	grunt.registerTasgak('lint', [
+	grunt.registerTask('lint', [
 		'cssmetrics',
 		'csslint'
 	]);
@@ -199,7 +199,6 @@ module.exports = function(grunt) {
 		'less:codeguide',
 		'watch:codeguide'
 	]);
-
 
 	grunt.registerTask('build', [
 		'less',
