@@ -160,8 +160,7 @@ module.exports = function(grunt) {
 					cssprefix: '.icon.svg-',
 					colors: {
 						light: '#ffffff',
-						dark: '#000000',
-						custom: '#666666'
+						dark: '#000000'
 					}
 				}
 			}
@@ -190,7 +189,7 @@ module.exports = function(grunt) {
 		'cssmetrics'
 	]);
 
-	grunt.registerTask('lint', [
+	grunt.registerTasgak('lint', [
 		'cssmetrics',
 		'csslint'
 	]);
