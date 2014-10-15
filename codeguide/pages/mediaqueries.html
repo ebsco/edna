@@ -26,22 +26,22 @@
 body { min-width: unit(@mediaquery-small, px); }
 
 // SMALL
-@media screen and ( max-width: unit(@mediaquery-medium, px) ) {
+@media screen and ( e(@mq-sm) ) {
     // here be dragons
 }
 
 // MEDIUM
-@media screen and ( min-width: unit( (@mediaquery-medium + 1), px) ) and ( max-width: unit(@mediaquery-large, px) ) {
+@media screen and ( e(@mq-md) ) {
     // here be ghouls
 }
 
 // LARGE
-@media screen and ( min-width: unit( (@mediaquery-large + 1), px) ) and ( max-width: unit( (@mediaquery-xlarge - 1), px) ) {
+@media screen and ( e(@mq-lg) ) {
     // here be hooligans
 }
 
 // XLARGE
-@media screen and ( min-width: unit(@mediaquery-xlarge, px) ) {
+@media screen and ( e(@mq-xl) ) {
     // here be goblins
 }</pre>
 
