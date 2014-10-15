@@ -49,27 +49,27 @@
 
 // FILES TO BE USEDE WITHIN MEDIA QUERIES 
 // small
-@media screen and ( max-width: unit(@mediaquery-medium, px) ) {
+@media screen and ( e(@mq-sm) ) {
 
 	@import (multiple) 'less/_panel.less';
 
 }
 
 // medium
-@media screen and ( min-width: unit( (@mediaquery-medium + 1), px) ) and ( max-width: unit(@mediaquery-large, px) ) {
+@media screen and ( e(@mq-md) ) {
 
 	@import (multiple) 'less/_panel.less';
 
 }
 
 // large
-@media screen and ( min-width: unit( (@mediaquery-large + 1), px) ) and ( max-width: unit( (@mediaquery-xlarge - 1), px) ) {
+@media screen and ( e(@mq-lg) ) {
 
 	@import (multiple) 'less/_panel.less';
 
 }
 // xlarge
-@media screen and ( min-width: unit(@mediaquery-xlarge, px) ) {
+@media screen and ( e(@mq-xl) ) {
 
 	// here be ravens
 
