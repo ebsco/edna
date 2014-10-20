@@ -1,12 +1,6 @@
 /* TREELIST */
 
 .treelist {
-	// Positioning
-	// position: fixed; // This will want to be added at some point, but for now, it lives here
-	
-	// Box-model
-	width: inherit;
-
 	.list {
 		// Box-model
 		padding: 0 0 0 10px;
@@ -25,35 +19,37 @@
 
 		.list-item {
 			// Box-model
-			padding: 5px;
-			margin-bottom: 5px;
+			padding: 0;
+			margin: 0;
 			
 			// Typography
-			font-weight: bold;
+			// font-weight: bold;
 
 			> .txt-link {
 				// Box-model
 				display: block;
 				padding: 5px;
-				margin: -5px;
-				
+				margin-bottom: 5px;
+
 				// Typography
 				color: @treelist-color;
 				.fontsize(1.4);
 				font-weight: normal;
-				
+
 				// Visual
 				cursor: pointer;
 			}
 
 			&.active {
-				// Box-model
-				padding-left: @treelist-padding-left;
-				margin-left: @treelist-margin-left;
-				
-				// Visual
-				background-color: @treelist-bgcolor;
-				border-left: @treelist-borderwidth solid @treelist-bordercolor;
+				> .txt-link {
+					// Box-model
+					padding-left: @treelist-padding-left;
+					margin-left: @treelist-margin-left;
+					
+					// Visual
+					background-color: @treelist-bgcolor;
+					border-left: @treelist-borderwidth solid @treelist-bordercolor;
+				}
 			}
 		}
 	}

@@ -159,11 +159,12 @@ html {
 	} 
 }
 
-.treelist.cg-nav {
+.cg-nav {
+	overflow: hidden;
 
 	.list-item {
 		&.cg-nav-side-item {
-			background-color: #aaa;
+			// background-color: #aaa;
 			padding: 0;
 
 			> a {
@@ -171,7 +172,7 @@ html {
 				padding: 10px;
 				margin: 0;
 				background-color: #eee;
-				color: #666;
+				color: #666 !important;
 			}
 
 			&:hover a {
@@ -183,15 +184,19 @@ html {
 				border-left: 10px solid #aaa;
 				padding-left: 0;
 
-				> a {
-					background: #aaa;
-					color: #fff;
+				> .txt-link {
+					background-color: #bbb;
+					color: #666;
+					font-weight: bold;
+					padding-left: 5px;
+					margin-left: -20px;
+					width: auto;
 				}
 			}
 		}
 
 		&.cg-nav-side-heading {
-			margin-left: -25px;
+			// margin-left: -25px;
 			width: 100%;
 			padding: 10px;
 			background-color: #ddd;
@@ -213,6 +218,7 @@ html {
 	position: relative;
 	padding: (@sg-padding / 2) @sg-padding;
 	margin-bottom: 0;
+	margin-top: 0;
 	background-color: #eee;
 	color: #333;
 	
