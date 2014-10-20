@@ -13,6 +13,7 @@
 
 .padding() {
     // Box-model
+    display: table;
     .box(border);
     width: 100%;
     padding: @lay-top-padding @lay-right-padding @lay-bottom-padding @lay-left-padding;
@@ -28,7 +29,6 @@
         .padding;
         > .col {
             // Box-model
-            display: block;
             width: 100%;
         }
     }
