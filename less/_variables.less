@@ -449,9 +449,14 @@
 
 
 // TREELIST
-@treelist-color: #f00;
+@treelist-color: @colorP2;
 @treelist-bgcolor: #efefef;
-@treelist-bordercolor: #008000;
+@treelist-bordercolor: @colorP1;
+@treelist-border-size: 10;
+@treelist-borderwidth: unit(@treelist-border-size, px);
+@treelist-padding-left: unit( @treelist-borderwidth, px );
+@treelist-margin-left: unit( -(@treelist-borderwidth + 5), px  );
+
 
 
 // TYPOGRAPHY
