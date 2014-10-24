@@ -158,10 +158,8 @@ module.exports = function(grunt) {
 					pngfolder: 'png',
 					pngpath: '../png',
 					cssprefix: '.icon.svg-',
-					colors: {
-						light: '#ffffff',
-						dark: '#000000'
-					}
+					stylesheet: 'grunticon/skin.less',
+					lessprefix: 'icon-'
 				}
 			}
 		},
