@@ -14,7 +14,7 @@
     "grunt-contrib-csslint": "^0.2.0",
     "grunt-css-metrics": "^0.1.2",
     "grunt-shell": "^1.1.1",
-    "grunt-grunticon": "^1.2.13",
+    "grunt-grunticon": "git+http://github.com/ebsco/grunticon.git#develop",
     "grunt-colorguard": "^0.2.0"
   },
   "main": "Gruntfile.js",
