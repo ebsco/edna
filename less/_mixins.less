@@ -54,6 +54,18 @@
 }
 
 
+//----- BUTTON GRADIENT ----------------------------//
+
+.btngrade(@top, @bottom) {
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
+    background-image: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
+    background-image:  -ms-linear-gradient(bottom, @bottom, @top);
+    background-image:   -o-linear-gradient(@top, @bottom);
+    background-image:      linear-gradient(@top, @bottom);
+    filter: e(%("progid:DXImageTransform.Microsoft.newgradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom));
+}
+
+
 //----- FONTS --------------------------------------//
 
 .fontfamily(@ff) {
