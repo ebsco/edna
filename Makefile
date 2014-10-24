@@ -18,9 +18,8 @@ deploy :
 
 	make build
 
-	ssh $(deployment_hostname) cd $(app_dir)\; git clone ssh://git@as-gitmaster.epnet.com:7999/buzz/edna.git .
-
-	ssh $(deployment_hostname) cd $(app_dir)\; make build
+	# Copy files over to remote machine
+	scp -r ./ $(deployment_hostname):$(app_dir)
 
 	# start the app
 	ssh $(deployment_hostname) cd $(app_dir)\; make start_app
