@@ -11,7 +11,6 @@ clean :
 
 build :
 	# run the build locally
-	npm cache clean
 	npm install --unsafe-perm
 
 deploy :
