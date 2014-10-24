@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 					'edna.css': 'edna.less',
 					'edna.ie.css': 'edna.ie.less',
 					'codeguide/edna.css': 'edna.less',
-					'codeguide/edna.ie.css': 'edna.ie.less'					
+					'codeguide/edna.ie.css': 'edna.ie.less'
 				}
 			},
 			dist: {
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
 					'edna.min.css': 'edna.less',
 					'edna.min.ie.css': 'edna.ie.less',
 					'codeguide/edna.min.css': 'edna.less',
-					'codeguide/edna.min.ie.css': 'edna.ie.less'					
+					'codeguide/edna.min.ie.css': 'edna.ie.less'
 				}
 			},
 			codeguide: {
@@ -180,6 +180,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-grunticon');
 	grunt.loadNpmTasks('grunt-colorguard');
+	grunt.loadNpmTasks('grunt-eis-release');
 
 	grunt.registerTask('colors', [
 		'less:dev',
