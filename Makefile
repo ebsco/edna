@@ -1,6 +1,6 @@
 packageName=edna
 scmtrigger=false
-branchName=release
+branch=
 app_dir=/home/ep/buzz/interfaces/$(packageName)
 deployment_hostname=ep@eae-buzzdev801.epnet.com
 buildRev=''
@@ -40,7 +40,7 @@ deploy :
 
 release :
 	make build
-	grunt release --branchName=$(branchName) --scmtrigger=$(scmtrigger)
+	grunt release --branch=$(branch) --scmtrigger=$(scmtrigger)
 
 
 start_app :
