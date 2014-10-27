@@ -42,11 +42,6 @@ release :
 	make build
 	grunt release --branchName=$(branchName) --scmtrigger=$(scmtrigger)
 
-	If I have the shell script, call it in the downstream
-	if [ -f 'release_and_trigger.sh' ]; then \
-		source 'release_and_trigger.sh'; \
-	fi
-
 
 start_app :
 	sudo /etc/init.d/node-$(packageName) start
