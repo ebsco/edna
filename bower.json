@@ -1,14 +1,15 @@
 {
   "name": "edna",
-  "_release": "9a983dc5f5",
-  "_resolution": {
-    "type": "branch",
-    "branch": "develop",
-    "commit": "9a983dc5f517cf6621e4f43d532495b9925e631a"
+  "version": "0.0.1",
+  "ignore": [
+    "node_modules",
+    "Makefile"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://as-gitmaster.epnet.com:7990/scm/buzz/edna.git"
   },
-  "_source": "http://as-gitmaster.epnet.com:7990/scm/buzz/edna.git",
-  "_target": "develop",
-  "_originalSource": "http://as-gitmaster.epnet.com:7990/scm/buzz/edna.git",
+  "readme": "README.md",
   "dependencies": {
     "jquery": ">=1.9",
     "google-code-prettify": "~1.0.3"
