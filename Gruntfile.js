@@ -119,7 +119,7 @@ module.exports = function(grunt) {
 				sources: ['edna.css']
 			},
 			options: {
-				outputMetrics: 'error',
+				outputMetrics: true,
 			}
 		},
 		csslint: {
