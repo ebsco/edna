@@ -29,7 +29,7 @@
 
 Before moving on to custom build processes, install dependencies
 
-```shell
+```
 npm install
 ```
 
