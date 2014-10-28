@@ -3,7 +3,6 @@ scmtrigger=false
 branch=
 app_dir=/home/ep/buzz/$(packageName)
 deployment_hostname=ep@eae-buzzdev801.epnet.com
-buildRev=''
 
 clean :
 	ssh $(deployment_hostname) sudo /etc/init.d/node-$(packageName) stop > /dev/null 2>&1
@@ -24,7 +23,7 @@ install :
 
 build :
 	make install
-	grunt --buildNumber=$(buildRev)
+	# grunt
 
 
 deploy :

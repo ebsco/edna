@@ -168,6 +168,9 @@ module.exports = function(grunt) {
 			files: {
 				src: ['edna.css'],
 			}
+		},
+		release: {
+			main: {}
 		}
 
 	});
