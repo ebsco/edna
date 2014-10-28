@@ -29,7 +29,7 @@
 
 Before moving on to custom build processes, install dependencies
 
-```
+```shell
 npm install
 ```
 
@@ -39,7 +39,7 @@ Then, depending on what you want to do, you will need one or more of the followi
 
 Your most basic task. It will get you up and running.
 
-```
+```shell
 grunt build
 ```
 
@@ -49,7 +49,7 @@ grunt lint, [grunt-grunticon][4], [grunt-contrib-less][5]
 
 So you can view Edna locally you will need to run this command. It will watch for any changes you might make to local files and recompile the LESS as you go.
 
-```
+```shell
 grunt server
 ```
 
@@ -59,7 +59,7 @@ grunt server
 
 Do this often to check out how your CSS fares. Also checks filesize and selector count.
 
-```
+```shell
 grunt lint
 ```
 
@@ -69,7 +69,7 @@ grunt lint
 
 This is a specialized task that one won't need to run that often. The [grunt-colorguard][6] is the important task here.
 
-```
+```shell
 grunt colors
 ```
 
