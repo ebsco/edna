@@ -8,14 +8,14 @@
     "install": "bower install --allow-root"
   },
   "devDependencies": {
-    "grunt-contrib-watch": "^0.5.3",
-    "grunt-contrib-less": "git://github.com/gruntjs/grunt-contrib-less.git",
-    "grunt-express": "^1.4.1",
+    "grunt-colorguard": "^0.2.0",
+    "grunt-contrib-analyze-css": "^0.1.2",
     "grunt-contrib-csslint": "^0.2.0",
-    "grunt-css-metrics": "^0.1.2",
-    "grunt-shell": "^1.1.1",
+    "grunt-contrib-less": "git://github.com/gruntjs/grunt-contrib-less.git",
+    "grunt-contrib-watch": "^0.5.3",
+    "grunt-express": "^1.4.1",
     "grunt-grunticon": "git+http://github.com/ebsco/grunticon.git#develop",
-    "grunt-colorguard": "^0.2.0"
+    "grunt-shell": "^1.1.1"
   },
   "main": "Gruntfile.js",
   "repository": {
