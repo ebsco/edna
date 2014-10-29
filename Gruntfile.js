@@ -115,7 +115,8 @@ module.exports = function(grunt) {
 				options: {
 					outputMetrics: true,
 					softFail: true // still defining thresholds
-				}			}
+				}
+			}
 		},
 		csslint: {
 			default: {
