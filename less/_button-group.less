@@ -1,87 +1,59 @@
 /* BUTTON GROUP */
 
 .btn-group {
-    // Positioning
-    position: relative;
-    
-    // Box-model
-    display: inline;
-    white-space: nowrap;
+	position: relative;
 
+	display: inline;
 
-    > .transport {
-        // Box-model
-        display: inline-block;
+	white-space: nowrap;
+	> .transport {
+		display: inline-block;
+		> .top, > .right, > .bottom, > .left {
+			position: relative;
+			right: -4px;
 
-        > .top,
-        > .right,
-        > .bottom,
-        > .left {
-            // Positioning
-            position: relative;
-            right: -4px;
+			border-width: 5px;
+		}
+		> .top {
+			top: -2px;
 
-            // Visual
-            border-width: 5px;
-        }
-        > .top {
-            // Positioning
-            top: -2px;
-            
-            // Box-model
-            margin-top: 2.5px;
-            margin-bottom: 2.5px;
-        }
-        > .right {
-            // Positioning
-            top: 1px;
-            
-            // Box-model
-            margin-left: 2.5px;
-            
-            // Visual
-            border-right-width: 0;
-        }
-        > .bottom {
-            // Positioning
-            top: 4px;
-            
-            // Box-model
-            margin-top: 2.5px;
-            margin-bottom: 2.5px;
-        }
-        > .left {
-            // Box-model
-            margin-right: 2.5px;
-            margin-left: 0;
-            
-            // Visual
-            border-left-width: 0;
-       }
-    }
+			margin-top: 2.5px;
+			margin-bottom: 2.5px;
+		}
+		> .right {
+			top: 1px;
 
-    // multiple inline buttons
-    > .btn,
-    > .btn-mini {
-        &:first-child {
-            // Visual
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-        }
+			margin-left: 2.5px;
 
-        + .btn,
-        + .btn-mini {
-            // Box-model
-            margin-left: -6px;
-            
-            // Visual
-            border-radius: 0;
-        }
+			border-right-width: 0;
+		}
+		> .bottom {
+			top: 4px;
 
-        &:last-child {
-            // Visual
-            border-top-right-radius: 3px;
-            border-bottom-right-radius: 3px;
-        }
-    }
+			margin-top: 2.5px;
+			margin-bottom: 2.5px;
+		}
+		> .left {
+			margin-right: 2.5px;
+			margin-left: 0;
+
+			border-left-width: 0;
+		}
+	}
+	// multiple inline buttons
+	> .btn, > .btn-mini {
+		&:first-child {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+		+ .btn, + .btn-mini {
+			margin-left: -6px;
+
+			border-radius: 0;
+		}
+		&:last-child {
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+		}
+	}
 }

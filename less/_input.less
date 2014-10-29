@@ -2,74 +2,60 @@
 
 // TEXT INPUTS
 input {
-    // Box-model
-    width: 100%;
-    height: @input-height; // same as @btn-height
-    padding: 2.5px 23px 2.5px 5px;
+	width: 100%;
+	height: @input-height; // same as @btn-height
+	padding: 2.5px 23px 2.5px 5px;
 
-    // Typography
-    .fontsize(1.4);
-    .fontfamily(lucida);
-    color: @colorS4;
-    
-    // Visual
-    border: 1px solid @input-bordercolor;
-    -moz-border-radius: @radius;
-         border-radius: @radius;
+	color: @colorS4;
 
-    &:disabled,
-    &.disabled {
-        border-color: @input-disabled-bordercolor;        
-    }
+	border: 1px solid @input-bordercolor;
+	-moz-border-radius: @radius;
+	     border-radius: @radius;
+
+	.fontfamily(lucida);
+	.fontsize(1.4);
+	&:disabled,
+	&.disabled {
+		border-color: @input-disabled-bordercolor;
+	}
 }
 
 .input-reset {
-    position: relative;
+	position: relative;
+	> input {
+		+ .reset {
+			position: absolute;
+			top: 2px;
+			right: 2px;
 
-    > input {
+			width: 25px;
+			height: @input-height - 4; // take into account the border and border radius
+			padding: 0;
 
-        + .reset {
-            // Positioning
-            position: absolute;
-            top: 2px;
-            right: 2px;
+			line-height: 1.5rem;
+			color: @input-reset-color;
 
-            // Box-model
-            width: 25px;
-            height: @input-height - 4; // take into account the border and border radius
-            padding: 0;
-            
-            // Typography
-            .fontsize(1.5);
-            line-height: 1.5rem;
-            color: @input-reset-color;
+			background-color: @input-reset-bgcolor;
+			border: @input-reset-bordercolor;
+			border-radius: 0;
 
-            // Visual
-            background-color: @input-reset-bgcolor;
-            border: @input-reset-bordercolor;
-            border-radius: 0;
-
-            &:hover {
-                // Typography
-                color: @input-reset-color-hover;
-            }
-        }
-    }
+			.fontsize(1.5);
+			&:hover {
+				color: @input-reset-color-hover;
+			}
+		}
+	}
 }
 
 // RADIO / CHECKBOXES
-input[type="radio"],
-input[type="checkbox"] {
-    // Box-model
-    margin: 5px;
+input[type='radio'],
+input[type='checkbox'] {
+	margin: 5px;
 }
 
 label {
-    // Box-model
-    padding-right: 1px;
-    
-    &:active {
-        // Typography
-        text-decoration: underline;
-    }
+	padding-right: 1px;
+	&:active {
+		text-decoration: underline;
+	}
 }

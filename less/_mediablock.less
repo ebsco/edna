@@ -3,50 +3,35 @@
 // [content] [content] side by side and allow for growth without wrapping
 // CONTENT ALIGNED AT TOP
 .media-content {
-    // Box-model
-    overflow: hidden;
-    
-    // CONTENT CAN FLOAT LEFT OR RIGHT
-    .media-left {
-        // Box-model
-        float: left;
-    }
-    
-    .media-right {
-        // Box-model
-        float: right;
-    }
+	overflow: hidden;
+	// CONTENT CAN FLOAT LEFT OR RIGHT
+	.media-left {
+		float: left;
+	}
+	.media-right {
+		float: right;
+	}
 }
 
 // [content] [content] side by side and allow for growth without wrapping
 // CONTENT VERTICALLY ALIGNED CENTER BY DEFAULT
 .media-block {
-    // Box-model
-    display: table;
-    width: 100%;
-   
-    .media-row {
-        // Box-model
-        display: table-row;
-    }
-    
-    // insert into .media-row
-    .media-cell {
-        // Box-model
-        display: table-cell;
+	display: table;
+	width: 100%;
+	.media-row {
+		display: table-row;
+	}
+	// insert into .media-row
+	.media-cell {
+		display: table-cell;
 
-        // Typography
-        vertical-align: top;
-    }
-    
-    // EXTENDING ALIGNMENT
-    .media-btm {
-        // Typography
-        vertical-align: bottom;
-    }
-    
-    .media-top {
-        // Typography
-        vertical-align: top;
-    }
+		vertical-align: top;
+	}
+	// EXTENDING ALIGNMENT
+	.media-btm {
+		vertical-align: bottom;
+	}
+	.media-top {
+		vertical-align: top;
+	}
 }

@@ -1,90 +1,59 @@
 /* LAYOUT - FIXED */
 
 .l2-p7& {
-    &.fixed-l {
-
-        .ie7 & {
-
-            > .fw425 {
-                // Box-model
-                width: 425px;
-
-                + .col {
-                    // Box-model
-                    width: auto;
-                    padding-left: 495px;
-                }
-            }
-
-        }
-
-        // IE8
-        .ie8 & {
-
-            // styles here
-
-        }
-
-        // IE9
-        .ie9 & {
-
-            // styles here
-
-        }
-
-        // IE10
-        .ie10 & {
-
-            // styles here
-
-        }
-
-    }
+	&.fixed-l {
+		.ie7 & {
+			> .fw425 {
+				width: 425px;
+				+ .col {
+					width: auto;
+					padding-left: 495px;
+				}
+			}
+		}
+		// IE8
+		.ie8 & {
+			// styles here
+		}
+		// IE9
+		.ie9 & {
+			// styles here
+		}
+		// IE10
+		.ie10 & {
+			// styles here
+		}
+	}
 }
 
 
 .l2-p3& {
-    &.fixed-r {
-
-        // IE7
-        .ie7 & {
-
-            // styles here
-            
-        }
-
-        // IE8
-        .ie8 & {
-
-            // styles here
-
-        }
-
-        // IE9
-        .ie9 & {
-            > .col:nth-child(1) {
-                // Box-model
-                width: 64%;
-            }
-
-            > .fw350 {
-                // Box-model
-                width: 420px;
-            }
-        }
-
-        // IE10
-        .ie10 & {
-            > .col:nth-child(1) {
-                // Box-model
-                width: 64%;
-            }
-
-            > .fw350 {
-                // Box-model
-                width: 420px;
-            }
-        }
-
-    }
+	&.fixed-r {
+		// IE7
+		.ie7 & {
+			// styles here
+		}
+		// IE8
+		.ie8 & {
+			// styles here
+		}
+		// IE9
+		.ie9 & {
+			> .col:nth-child(1) {
+				width: 64%;
+			}
+			> .fw350 {
+				width: 420px;
+			}
+		}
+		// IE10
+		.ie10 & {
+			> .col:nth-child(1) {
+				width: 64%;
+			}
+			> .fw350 {
+				width: 420px;
+			}
+		}
+	}
 }

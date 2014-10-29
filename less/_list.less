@@ -2,167 +2,121 @@
 
 ul,
 ol {
-    // Box-model
-    padding: 0 0 1rem 1rem;
-    margin: 0;
+	padding: 0 0 1rem 1rem;
+	margin: 0;
 }
 
 // nested list - adjusts the spacing of a nested list
 li {
-    > ul,
-    > ol {
-        // Box-model
-        padding: .5rem 0 .5rem 1rem;
-    }
+	> ul, > ol {
+		padding: .5rem 0 .5rem 1rem;
+	}
 }
 
 // DEFINITION List
 dl {
-    // Box-model
-    padding: 0 0 1rem;
-    margin: 0;
+	padding: 0 0 1rem;
+	margin: 0;
 }
 
 dd {
-    // Box-model
-    padding: 0 0 .125rem 2rem;
-    margin: 0;
+	padding: 0 0 .125rem 2rem;
+	margin: 0;
 }
 
 // RESET LIST
 ul,
 ol {
-    &.base {
-        // Box-model
-        padding: 0;
-        margin: 0;
+	&.base {
+		padding: 0;
+		margin: 0;
 
-        // Visual
-        list-style-type: none;
-
-        > li {
-            // Box-model
-            padding: 0;
-            margin: 0;
-        }   
-    }
+		list-style-type: none;
+		> li {
+			padding: 0;
+			margin: 0;
+		}
+	}
 }
 
 .list {
-    // Box-model
-    padding: 0;
-    
-    // Visual
-    list-style-type: none;
+	padding: 0;
 
-    .list-item {
-        // Box-model
-        padding: 0 5px 5px 0;
-    }
+	list-style-type: none;
+	.list-item {
+		padding: 0 5px 5px 0;
+	}
+	// UNORDERED LIST STYLE TYPES
+	&.disc {
+		margin-left: 16px;
 
-    // UNORDERED LIST STYLE TYPES
-    &.disc {
-        // Box-model
-        margin-left: 16px;
+		list-style: disc;
+	}
+	&.circle {
+		margin-left: 16px;
 
-        // Visual
-        list-style: disc;
-    }
+		list-style: circle;
+	}
+	&.square {
+		margin-left: 25px;
 
-    &.circle {
-        // Box-model
-        margin-left: 16px;
-        
-        // Visual
-        list-style: circle
-    }
+		list-style: square;
+	}
+	// ORDERED LIST STYLE TYPES
+	&.decimal {
+		margin-left: 25px;
 
-    &.square {
-        // Box-model
-        margin-left: 25px;
-        
-        // Visual
-        list-style: square;
-    }
+		list-style: decimal;
+	}
+	&.lower-alpha {
+		margin-left: 25px;
 
-    // ORDERED LIST STYLE TYPES
-    &.decimal {
-        // Box-model
-        margin-left: 25px;
-        
-        // Visual
-        list-style: decimal;    
-    }
+		list-style: lower-alpha;
+	}
+	&.upper-alpha {
+		margin-left: 25px;
 
-    &.lower-alpha {
-        // Box-model
-        margin-left: 25px;
-        
-        // Visual
-        list-style: lower-alpha;    
-    }
+		list-style: upper-alpha;
+	}
+	&.lower-roman {
+		margin-left: 25px;
 
-    &.upper-alpha {
-        // Box-model
-        margin-left: 25px;
-        
-        // Visual
-        list-style: upper-alpha;    
-    }
+		list-style: lower-roman;
+	}
+	&.upper-roman {
+		margin-left: 25px;
 
-    &.lower-roman {
-        // Box-model
-        margin-left: 25px;
-        
-        // Visual
-        list-style: lower-roman;    
-    }
+		list-style: upper-roman;
+	}
+	&.lines {
+		.list-item {
+			padding: 5px;
+			margin: 0;
 
-    &.upper-roman {
-        // Box-model
-        margin-left: 25px;
-        
-        // Visual
-        list-style: upper-roman;    
-    }
+			background-color: @list-lines-bgcolor;
+			&.odd,
+			&:nth-child(odd) {
+				background-color: @list-lines-bgcolor-odd;
+			}
+		}
+	}
+	&.inline {
+		.list-item {
+			display: inline;
+			float: left;
+			padding: 0 10px;
 
-    &.lines {
-        .list-item {
-            // Box-model
-            padding: 5px;
-            margin: 0;
+			border-left: 1px solid @list-inline-bordercolor;
+			&:first-child {
+				border-left: 0 solid transparent;
+			}
+		}
+		&:after,
+		&::after {
+			display: table;
+			clear: both;
 
-            // Visual
-            background-color: @list-lines-bgcolor;
-
-            &.odd,
-            &:nth-child(odd) {
-                background-color: @list-lines-bgcolor-odd;
-            }
-        }
-    }
-
-    &.inline {
-        .list-item {
-            // Box-model
-            display: inline;
-            padding: 0 10px;
-            float: left;
-
-            // Visual
-            border-left: 1px solid @list-inline-bordercolor;
-
-            &:first-child {
-                // Visual
-                border-left: 0 solid transparent;
-            }
-
-        }
-        &:after,
-        &::after {
-            content: '';
-            display: table;
-            clear: both;
-        }
-    }
+			content: '';
+		}
+	}
 }

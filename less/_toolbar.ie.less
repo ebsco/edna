@@ -1,65 +1,40 @@
 /* TOOLBAR */
 
 .toolbar {
+	// IE7
+	.ie7 & {
+		.personal-bar {
+			width: 100%;
+			.personal-nav {
+				float: right;
+				width: auto;
+				.personal-nav-item {
+					display: inline;
+					float: left;
 
-    // IE7
-    .ie7 & {
-
-        .personal-bar {
-            // Box sizing
-            width: 100%;
-            
-            .personal-nav {
-                // Box sizing
-                width: auto;
-                float: right;
-
-                .personal-nav-item {
-                    // Box-model
-                    display: inline;
-                    float: left;
-                    
-                    // Typography
-                    text-align: right;
-                }
-
-            }
-        }
-
-        .bar {
-            // Box sizing
-            width: 100%;
-        }            
-
-    }
-
-    // IE8
-    .ie8 & {
-
-        .personal-bar {
-            // Box sizing
-            height: 32px;
-        }
-
-        .bar {
-            // Box sizing
-            width: 100%;
-        }
-
-    }
-
-    // IE9
-    .ie9 & {
-
-        // styles here
-
-    }
-
-    // IE10
-    .ie10 & {
-
-        // styles here
-
-    }
-
+					text-align: right;
+				}
+			}
+		}
+		.bar {
+			width: 100%;
+		}
+	}
+	// IE8
+	.ie8 & {
+		.personal-bar {
+			height: 32px;
+		}
+		.bar {
+			width: 100%;
+		}
+	}
+	// IE9
+	.ie9 & {
+		// styles here
+	}
+	// IE10
+	.ie10 & {
+		// styles here
+	}
 }
