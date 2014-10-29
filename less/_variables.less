@@ -41,11 +41,11 @@
 @mq-lg-unit: unit( @mediaquery-large, @unit);
 	@mq-lg-unit-floor: unit( @mediaquery-medium, @unit);
 @mq-xl-unit: unit( @mediaquery-xlarge, @unit);
-	@mq-xl-unit-floor: unit( (@mediaquery-xlarge - 1), @unit);
-@mq-sm: " max-width: @{mq-md-unit} ";
-@mq-md: " min-width: @{mq-md-unit} ) and ( max-width: @{mq-lg-unit} ";
-@mq-lg: " min-width: @{mq-lg-unit} ) and ( max-width: @{mq-xl-unit} ";
-@mq-xl: " min-width: @{mq-xl-unit} ";
+    @mq-xl-unit-floor: unit( (@mediaquery-xlarge - 1), @unit);
+@mq-sm: 'max-width: @{mq-md-unit}';
+@mq-md: 'min-width: @{mq-md-unit}) and (max-width: @{mq-lg-unit}';
+@mq-lg: 'min-width: @{mq-lg-unit}) and (max-width: @{mq-xl-unit}';
+@mq-xl: 'min-width: @{mq-xl-unit}';
 
 
 // BACKGROUND COLORS
@@ -93,7 +93,7 @@
 
 
 // BREADCRUMB
-@breadcrumb-content: "/";
+@breadcrumb-content: '/';
 
 
 // BUTTON
@@ -176,7 +176,7 @@
 
 // CAROUSEL
 @carousel-border: none;
-@carousel-img: "buzzImages/video-js.png";
+@carousel-img: 'buzzImages/video-js.png';
 @carousel-img-border: @border1;
 
 
@@ -256,22 +256,22 @@
 @msg-info-color: #e4f1ff;
 @msg-info-bgcolor: fade(@msg-info-color, 10%);
 @msg-info-bordercolor: darken(@msg-info-bgcolor, 10%);
-@msg-info-icon: "buzzImages/msg-error.gif";
+@msg-info-icon: 'buzzImages/msg-error.gif';
 //success
 @msg-success-color: #e6fadf;
 @msg-success-bgcolor: fade(@msg-success-color, 10%);
 @msg-success-bordercolor: darken(@msg-success-bgcolor, 10%);
-@msg-success-icon: "buzzImages/msg-error.gif";
+@msg-success-icon: 'buzzImages/msg-error.gif';
 // note
 @msg-note-color: #e7e7b1;
 @msg-note-bgcolor: #faf9b9;
 @msg-note-bordercolor: #fcc37c;
-@msg-note-icon: "buzzImages/msg-error.gif";
+@msg-note-icon: 'buzzImages/msg-error.gif';
 // alert
 @msg-alert-color: #ae0404;
 @msg-alert-bgcolor: #fde3e3;//fade(@msg-alert-color, 10%);
 @msg-alert-bordercolor: darken(@msg-alert-color, 10%);
-@msg-alert-icon: "buzzImages/msg-error.gif";
+@msg-alert-icon: 'buzzImages/msg-error.gif';
 
 
 // MIXINS
@@ -282,14 +282,14 @@
 @ui-dialog-bgcolor: #fff;
 @ui-dialog-bordercolor: #ccc;
 @ui-dialog-close-bgcolor: rgba(0, 0, 0, 0);
-@ui-dialog-close-bgimage: "http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/layout2/modal-close.png";
-@ui-dialog-header-bgimage: "http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/modal-gradient.png";
+@ui-dialog-close-bgimage: 'http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/layout2/modal-close.png';
+@ui-dialog-header-bgimage: 'http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/modal-gradient.png';
 @ui-dialog-note-bordercolor: #fcc37c;
 @ui-dialog-note-bgcolor: #faf9b9;
 @ui-dialog-content-input-color: #6f6f6f;
 @ui-dialog-content-error-color: #f00;
 @ui-dialog-overlay-bgcolor: #111;
-@ui-dialog-overlay-bgimage: "http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/ui-bg_black_75_100x100.png";
+@ui-dialog-overlay-bgimage: 'http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/ui-bg_black_75_100x100.png';
 @modal-bgcolor: #fff;
 @modal-bordercolor: #ccc;
 @modal-dropshadow: 2px 2px 4px rgba(0,0,0,.25);
@@ -368,9 +368,9 @@
 
 
 // SPINNER
-@spinner-sm: "buzzImages/spinner-circles.gif";
-@spinner-md: "buzzImages/spinner-circles.gif";
-@spinner-lg: "buzzImages/spinner-circles.gif";
+@spinner-sm: 'buzzImages/spinner-circles.gif';
+@spinner-md: 'buzzImages/spinner-circles.gif';
+@spinner-lg: 'buzzImages/spinner-circles.gif';
 @spinner-img: @spinner-md;
 
 
@@ -422,8 +422,8 @@
 @usernav-item-bgcolor-hover: darken(@tbar-bgcolor, 5);
 // user navigation icons
 @usernav-item-folder-bgcolor: rgba(0, 0, 0, 0);
-@usernav-item-folder-icon: "http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/folder-sprite.png";
-@usernav-item-language-icon: "http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/arrow-sprites.png";
+@usernav-item-folder-icon: 'http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/folder-sprite.png';
+@usernav-item-language-icon: 'http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/arrow-sprites.png';
 @usernav-item-language-bgcolor-hover: #fff;
 
 
@@ -434,12 +434,12 @@
 @transport-color-hover: darken(#535353, 10);
 @transport-inactive: @border1;
 // slim
-@transport-slim-fontfamily: Arial, "Arial Unicode MS", sans-serif;
+@transport-slim-fontfamily: Arial, 'Arial Unicode MS', sans-serif;
 @transport-slim-fontsize: 2.25;
-@transport-slim-arrow-top: "›";
-@transport-slim-arrow-right: "›";
-@transport-slim-arrow-bottom: "‹";
-@transport-slim-arrow-left: "‹";
+@transport-slim-arrow-top: '›';
+@transport-slim-arrow-right: '›';
+@transport-slim-arrow-bottom: '‹';
+@transport-slim-arrow-left: '‹';
 @transport-slim-color: #ccc;
 @transport-slim-color-hover: darken(#ccc, 20%);
 @transport-slim-bordercolor: rgba(0, 0, 0, 0);
@@ -459,7 +459,6 @@
 
 
 
- 
 @font-color: #535353;
 @font-color-strong: #000;
 @font-size: 62.5%;

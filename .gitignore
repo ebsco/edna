@@ -11,3 +11,4 @@ codeguide/bower/
 grunticon/js
 grunticon/*.html
 !codeguide/styles/sons-of-obsidian.css
+build.properties.json

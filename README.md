@@ -37,7 +37,7 @@ Then, depending on what you want to do, you will need one or more of the followi
 
 ### Build Edna
 
-Your most basic task. It will get you up and running. 
+Your most basic task. It will get you up and running.
 
 ```
 grunt build
