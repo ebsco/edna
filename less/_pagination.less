@@ -1,107 +1,75 @@
 /* PAGINATION */
 
 .pagination {
-    // Box-model
-    .clearfix;
-    
-    .pag-list {
-        // Box-model
-        display: inline-block;
-        float: left;
-        padding: 0;
-        
-        // Visual
-        list-style-type: none;
-        
-        .pag-list-item {
-            // Box-model
-            display: inline-block;
-            float: left;
-            padding: 0 10px;
-            
-            // Typography
-            color: @pg-list-item-color;
-            cursor: pointer;
-            
-            // Visual
-            border: 1px solid @pg-list-item-bordercolor;
-            
-            &:nth-last-child(1) {
-                // Visual
-                border-right: 0;
-            }
-            &:hover {
-                // Typography
-                color: @pg-list-item-color-hover;
+	.clearfix;
+	.pag-list {
+		display: inline-block;
+		float: left;
+		padding: 0;
 
-                // Visual
-                background-color: @pg-list-item-bgcolor-hover;
-            }
-            &.inactive {
-                // Typography
-                color: @pg-list-item-inactive-color;
-                cursor: default;
-                &:hover {
-                    // Typography
-                    color: @pg-list-item-inactive-color-hover;
-                    
-                    // Visual
-                    background-color: @pg-list-item-inactive-bgcolor-hover;
-                    
-                }
-            }
-            &.active {
-                // Typography
-                color: @pg-list-item-active-color;
-                cursor: default;
-                
-                // Visual
-                background-color: @pg-list-item-active-bgcolor;
-                
-                &:hover {
-                    // Typography
-                    color: @pg-list-item-active-color-hover;
-                    
-                    // Visual
-                    background-color: @pg-list-item-active-bgcolor-hover;
-                    
-                }
-            }
-        }
-    }
-    // PAGINATION SPECIFIC STYLES
-    .transport {
-        @newPX: (@px * 1);
-        // Box-model
-        display: inline-block;
-        float: left;
-        
+		list-style-type: none;
+		.pag-list-item {
+			display: inline-block;
+			float: left;
+			padding: 0 10px;
 
-        > .right,
-        > .left {
-            // Typography
-            color: @colorS4;
+			color: @pg-list-item-color;
+			cursor: pointer;
 
-            // Visual
-            border-top: (@newPX * .9) solid transparent;
-            border-bottom: (@newPX * .9) solid transparent;
-        }
-        > .right {
-            // Box-model
-            margin-right: 0;
-            margin-left: (@newPX * .5);
+			border: 1px solid @pg-list-item-bordercolor;
+			&:nth-last-child(1) {
+				border-right: 0;
+			}
+			&:hover {
+				color: @pg-list-item-color-hover;
 
-            // Visual
-            border-left: @newPX solid @colorS4;
-        }
-        > .left {
-            // Box-model
-            margin-right: (@newPX * .5);
-            margin-left: 0;
-            
-            // Visual
-            border-right: @newPX solid @colorS4;
-            
-        }
-    }
+				background-color: @pg-list-item-bgcolor-hover;
+			}
+			&.inactive {
+				color: @pg-list-item-inactive-color;
+				cursor: default;
+				&:hover {
+					color: @pg-list-item-inactive-color-hover;
+
+					background-color: @pg-list-item-inactive-bgcolor-hover;
+				}
+			}
+			&.active {
+				color: @pg-list-item-active-color;
+				cursor: default;
+
+				background-color: @pg-list-item-active-bgcolor;
+				&:hover {
+					color: @pg-list-item-active-color-hover;
+
+					background-color: @pg-list-item-active-bgcolor-hover;
+				}
+			}
+		}
+	}
+	// PAGINATION SPECIFIC STYLES
+	.transport {
+		display: inline-block;
+		float: left;
+
+		@newPX: (@px * 1);
+		> .right, > .left {
+			color: @colorS4;
+
+			border-top: (@newPX * .9) solid transparent;
+			border-bottom: (@newPX * .9) solid transparent;
+		}
+		> .right {
+			margin-right: 0;
+			margin-left: (@newPX * .5);
+
+			border-left: @newPX solid @colorS4;
+		}
+		> .left {
+			margin-right: (@newPX * .5);
+			margin-left: 0;
+
+			border-right: @newPX solid @colorS4;
+		}
+	}
 }

@@ -1,94 +1,69 @@
 /* SELECTS */
 
 .select {
-    // Positioning
-    position: relative;
+	position: relative;
 
-    // Box-model
-    display: inline-block;
-    padding: 0 15px;
+	display: inline-block;
+	padding: 0 15px;
 
-    // Typography
-    line-height: unit(@btn-font-size * 20, px);
-    line-height: unit(@btn-font-size * 2, rem);
+	line-height: unit(@btn-font-size * 20, px);
+	line-height: unit(@btn-font-size * 2, rem);
 
-    // Visual
-    outline: 0;
-    -moz-border-radius: @radius;
-         border-radius: @radius;
+	-moz-border-radius: @radius;
+	     border-radius: @radius;
+	outline: 0;
+	> .transport {
+		vertical-align: middle;
+	}
+	&-list {
+		position: absolute;
+		top: @select-position;
+		right: -1px;
+		z-index: 10;
 
-    > .transport {
-        // Visual
-        vertical-align: middle;
-    }
+		display: none;
+		padding: 0;
+		margin: 0;
 
-    &-list {
-        // Positioning
-        position: absolute;
-        top: @select-position;
-        right: -1px;
-        z-index: 10;
+		line-height: normal;
+		list-style-type: none;
 
-        // Box-model
-        display: none;
-        padding: 0;
-        margin: 0;
-        list-style-type: none;
+		background-color: @select-bgcolor;
+		border: 1px solid @select-bordercolor;
+		-moz-border-radius: @radius;
+		     border-radius: @radius;
+		box-shadow: 0 1px 16px @select-boxshadow;
+		&.active {
+			display: inline-block;
+		}
+	}
+	&-label {
+		display: block;
+		padding: 5px 15px;
 
-        // Typography
-        line-height: normal;
+		text-align: left;
+		white-space: nowrap;
+		cursor: pointer;
+		&.active {
+			background-color: lighten(@select-label-bgcolor-hover, 10%);
+		}
+		&:hover {
+			color: @select-label-color-hover;
 
-        // Visual
-        background-color: @select-bgcolor;
-        border: 1px solid @select-bordercolor;
-        -moz-border-radius: @radius;
-             border-radius: @radius;
-        box-shadow: 0 1px 16px @select-boxshadow;        
+			background-color: @select-label-bgcolor-hover;
+		}
+	}
+	&-input {
+		.pos(absolute);
+		left: -9999px;
 
-        &.active {
-            display: inline-block;
-        }
-    }
+		&:checked + .dd-label {
+			color: @select-input-color;
 
-    &-label {
-        // Box-model
-        display: block;
-        padding: 5px 15px;
-        
-        // Typography
-        white-space: nowrap;
-        cursor: pointer;
-        text-align: left;
-
-        &.active {
-            background-color: lighten(@select-label-bgcolor-hover, 10%);
-        }
-        
-        &:hover {
-            // Typography
-            color: @select-label-color-hover;
-            
-            // Visual
-            background-color: @select-label-bgcolor-hover;
-        }
-    }
-
-    &-input {
-        // Positioning
-        .pos(absolute);
-        left: -9999px;
-        
-        &:checked + .dd-label {
-            // Typography
-            color: @select-input-color;
-            
-            // Visual
-            background-color: @select-input-bgcolor;
-
-            &:hover {
-                // Visual
-                background-color: @select-input-bgcolor-hover;
-            }
-        }
-    }
+			background-color: @select-input-bgcolor;
+			&:hover {
+				background-color: @select-input-bgcolor-hover;
+			}
+		}
+	}
 }

@@ -3,98 +3,68 @@
 .transport {
 	// SLIM
 	&.slim {
-		> .top,
-		> .right,
-		> .bottom,
-		> .left {
-			text-align: center;
-			line-height: 30px;
-
-			// Box-model
+		> .top, > .right, > .bottom, > .left {
 			width: 10px;
 			height: 16px;
 			padding: 0 0 0 3px;
 			margin: 0;
-		   
-			// Typography
+
 			font-family: @transport-slim-fontfamily;
-			.fontsize(@transport-slim-fontsize);
-			
-			// Visual
+			line-height: 30px;
+			text-align: center;
+
 			border-color: @transport-slim-bordercolor;
 			border-width: 0;
 
+			.fontsize(@transport-slim-fontsize);
+			.inactive;
 			&:after,
 			&::after {
-				// Box-model
 				display: inline-block;
-				height: 30px;
 				width: 30px;
+				height: 30px;
 
-				// Typography
-				text-align: center;
 				line-height: 30px;
+				text-align: center;
 			}
-
 			&:focus {
-				// Visual
 				outline: 0;
-	
 				&:after,
 				&::after {
-					// Visual
 					outline: auto 5px #98c1e9;
 				}
 			}
-
 			&:hover {
 				&:after,
 				&::after {
-					// Typography
 					color: @transport-slim-color-enabled-hover;
 				}
 			}
-
-			.inactive;
 		}
-
-		> .top,
-		> .right,
-		> .bottom,
-		> .left {
+		> .top, > .right, > .bottom, > .left {
 			&:after,
 			&::after {
-				// Typography
 				color: @transport-slim-color-enabled;
 			}
 		}
-
-		> .top,
-		> .bottom {
-			// Visual
+		> .top, > .bottom {
 			.rotate(-90);
 		}
-
 		> .top {
 			&:after,
 			&::after {
-				// Visual
 				content: @transport-slim-arrow-top;
 			}
 		}
-
 		> .right {
 			&:after,
 			&::after {
-				// Visual
 				content: @transport-slim-arrow-right;
 			}
 		}
-
 		> .left {
 			&:after,
 			&::after {
-				// Visual
 				content: @transport-slim-arrow-left;
 			}
 		}
@@ -108,49 +78,39 @@
 	&-right,
 	&-bottom,
 	&-left {
-		// Positioning
 		position: relative;
 		top: 3px;
 		left: 4px;
 
-		// Box-model
 		display: inline-block;
-		
-		// Typography
-		cursor: pointer;
-		.inactive;
 
-		// Visual
+		cursor: pointer;
+
 		border-top: @transport-width solid transparent;
 		border-right: @transport-width solid transparent;
 		border-bottom: @transport-width solid transparent;
 		border-left: @transport-width solid transparent;
+
+		.inactive;
 	}
 	&-top {
-		// Positioning
 		top: -3px;
 
-		// Visual
 		border-bottom: @transport-width solid @colorS4;
 	}
 	&-right {
-		// Positioning
 		top: 0;
 		left: 7px;
 
-		// Visual
 		border-left: @transport-width solid @colorS4;
 	}
 	&-bottom {
-		// Visual
 		border-top: @transport-width solid @colorS4;
 	}
 	&-left {
-		// Positioning
 		top: 0;
 		left: 2px;
 
-		// Visual
 		border-right: @transport-width solid @colorS4;
 	}
 }

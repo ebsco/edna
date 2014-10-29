@@ -1,103 +1,76 @@
 /* TOGGLES */
 
 .toggle {
-    // Box-model
-    padding: 0;
+	padding: 0;
 
-    // Visual
-    list-style-type: none;
-    
-    + .toggle {
-        // Box-model
-        padding-top: 15px;
-    }
+	list-style-type: none;
+	+ .toggle {
+		padding-top: 15px;
+	}
+	.toggle-content {
+		display: none;
+		padding: 30px;
 
-    .toggle-content {
-        // Box-model
-        display: none;
-        padding: 30px;
-        
-        // Visual
-        background-color: @tog-bgcolor;
-        border: 1px solid @tog-bordercolor;
-        -moz-border-radius-bottomright: 3px;
-             border-bottom-right-radius: 3px;
-        -moz-border-radius-bottomleft: 3px;
-             border-bottom-left-radius: 3px;
-        
-        > *:last-child { // remove any extra margin on the last item for better parent padding
-            // Box-model
-            margin: 0;
-        }
-    }
+		background-color: @tog-bgcolor;
+		border: 1px solid @tog-bordercolor;
+		-moz-border-radius-bottomright: 3px;
+		border-bottom-right-radius: 3px;
+		-moz-border-radius-bottomleft: 3px;
+		border-bottom-left-radius: 3px;
+		> *:last-child {
+			// remove any extra margin on the last item for better parent padding
+			margin: 0;
+		}
+	}
+	.toggle-tab {
+		padding: 12px 8px;
 
-    .toggle-tab {
-        // Box-model
-        padding: 12px 8px;
-        
-        // Typography
-        font-weight: bold;
-        cursor: pointer;
-        
-        // Visual
-        background-color: @tog-tab-bgcolor;
-        border: 1px solid @tog-tab-bordercolor;
-        -moz-border-radius: @radius;
-             border-radius: @radius;
-        
-        .icon {
-            // Box-model
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            
-            // Typography
-            text-align: center;
-            
-            // Visual
-            border: 1px solid @tog-tab-icon-bordercolor;
-            -moz-border-radius: @radius;
-                 border-radius: @radius;
-            
-            &:before {
-                // Box-model
-                display: block;
-                
-                // Typography
-                color: @colorP4;
-                
-                // Visual
-                content: '+';
-            }
-        }
+		font-weight: bold;
+		cursor: pointer;
 
-        &.active {
-            -moz-border-radius-bottomright: 0;
-                 border-bottom-right-radius: 0;
-            -moz-border-radius-bottomleft: 0;
-                 border-bottom-left-radius: 0;
-            
-            .icon {
-                &:before,
-                &::before {
-                    // Typography
-                    line-height: 1.25rem;
-                    cursor: default;
-                    
-                    // Visual
-                    content: '–';    
-                }
-            }
+		background-color: @tog-tab-bgcolor;
+		border: 1px solid @tog-tab-bordercolor;
+		-moz-border-radius: @radius;
+		     border-radius: @radius;
+		.icon {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin-right: 10px;
 
-            + .toggle-content {
-                // Positioning
-                z-index: 10;
+			text-align: center;
 
-                // Box-model
-                display: inline-block;
-                margin-top: -1px;                
-            }
-        }
-    }
+			border: 1px solid @tog-tab-icon-bordercolor;
+			-moz-border-radius: @radius;
+			     border-radius: @radius;
+			&:before {
+				display: block;
+
+				color: @colorP4;
+
+				content: '+';
+			}
+		}
+		&.active {
+			-moz-border-radius-bottomright: 0;
+			border-bottom-right-radius: 0;
+			-moz-border-radius-bottomleft: 0;
+			border-bottom-left-radius: 0;
+			.icon {
+				&:before,
+				&::before {
+					line-height: 1.25rem;
+					cursor: default;
+
+					content: '–';
+				}
+			}
+			+ .toggle-content {
+				z-index: 10;
+
+				display: inline-block;
+				margin-top: -1px;
+			}
+		}
+	}
 }

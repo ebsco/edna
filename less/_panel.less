@@ -1,163 +1,126 @@
 /* SLIDE PANELS */
 .mq-pnl {
-    // Positioning
-    position: relative;
-
-    // Box-model
-    overflow: hidden;
-
-    // position the content
-    .mq-pnl-static {
-        // Positioning
-        position: relative;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1000;
-    }
-
-    // set the transition
-    .mq-pnl-static,
-    .mq-pnl-t,
-    .mq-pnl-r,
-    .mq-pnl-b,
-    .mq-pnl-l {
-        // Misc
-        transition: .5s;
-    }
-
-    // base styles for sliding content
-    .mq-pnl-t,
-    .mq-pnl-b,
-    .mq-pnl-r,
-    .mq-pnl-l {
-        // Positioning
-        position: absolute;
-        z-index: 2000;
-    }
-
-    .mq-pnl-t,
-    .mq-pnl-b {
-        // Box-model
-        width: 100%;
-    }
-
-    .mq-pnl-r,
-    .mq-pnl-l {
-        // Positioning
-        top: 0;
-        
-        // Box-model
-        height: 100%;
-    }
-
-    .mq-pnl-scroll {
-        // Visual
-        overflow: auto;
-    }
-
-    .mq-pnl-static {
-        &.col {
-            padding: 0;
-            width: 100%;
-        }
-    }
+	position: relative;
+	 
+	overflow: hidden;
+	// position the content
+	.mq-pnl-static {
+		position: relative;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1000;
+	}
+	// set the transition
+	.mq-pnl-static,
+	.mq-pnl-t,
+	.mq-pnl-r,
+	.mq-pnl-b,
+	.mq-pnl-l {
+		transition: .5s;
+	}
+	// base styles for sliding content
+	.mq-pnl-t,
+	.mq-pnl-b,
+	.mq-pnl-r,
+	.mq-pnl-l {
+		position: absolute;
+		z-index: 2000;
+	}
+	.mq-pnl-t,
+	.mq-pnl-b {
+		width: 100%;
+	}
+	.mq-pnl-r,
+	.mq-pnl-l {
+		top: 0;
+		 
+		height: 100%;
+	}
+	.mq-pnl-scroll {
+		overflow: auto;
+	}
+	.mq-pnl-static {
+		&.col {
+			padding: 0;
+			width: 100%;
+		}
+	}
 }
-
 .slide-panel(@user-dimension; @side) {
+	@dimension: unit(@user-dimension, px);
 
-    @dimension: unit(@user-dimension, px);
+	& when (@side = top) {
+		.mq-pnl-t {
+			height: @dimension !important;
 
-    & when (@side = top) {
-        .mq-pnl-t {
-            // Box-model
-            height: @dimension !important;
+			top: -@dimension;
+		}
+		// for the top slide
+		&.mq-pnl-open-t {
+			// move the right side
+			.mq-pnl-t {
+				top: 0;
+			}
+			// move the content with the right side
+			.mq-pnl-static {
+				top: @dimension;
+			}
+		}
+	}
+	& when (@side = right) {
+		.mq-pnl-r {
+			width: @dimension !important;
 
-            // Positioning
-            top: -@dimension;
-        }
-        // for the top slide
-        &.mq-pnl-open-t {
-            // move the right side
-            .mq-pnl-t {
-                // Positioning
-                top: 0;
-            }
-            // move the content with the right side
-            .mq-pnl-static {
-                // Positioning
-                top: @dimension;
-            }
-        }
-    }
-
-    & when (@side = right) {
-        .mq-pnl-r {
-            // Box-model
-            width: @dimension !important;
-
-            // Positioning
-            right: -@dimension;
-        }
-        // for the right slide
-        &.mq-pnl-open-r {
-            // move the right side
-            .mq-pnl-r {
-                // Positioning
-                right: 0;
-            }
-            // move the content with the right side
-            .mq-pnl-static {
-                // Positioning
-                right: @dimension;
-                left: -@dimension;
-            }
-        }
-    }
-
-    & when (@side = bottom) {
-        .mq-pnl-b {
-            // Box-model
-            height: @dimension !important;
-
-            // Positioning
-            bottom: -@dimension;
-        }
-        // for the top slide
-        &.mq-pnl-open-b {
-            // move the right side
-            .mq-pnl-b {
-                // Positioning
-                bottom: 0;
-            }
-            // move the content with the right side
-            .mq-pnl-static {
-                // Positioning
-                top: -@dimension;
-            }
-        }
-    }
-
-    & when (@side = left) {
-        .mq-pnl-l {
-            // Box-model
-            width: @dimension !important;
-
-            // Positioning
-            left: -@dimension;
-        }
-        &.mq-pnl-open-l {
-            // move the left side
-            .mq-pnl-l {
-                // Positioning
-                left: 0;
-            }
-            // move the content with the left side
-            .mq-pnl-static {
-                // Positioning
-                left: @dimension;
-            }
-        }
-    }
+			right: -@dimension;
+		}
+		// for the right slide
+		&.mq-pnl-open-r {
+			// move the right side
+			.mq-pnl-r {
+				right: 0;
+			}
+			// move the content with the right side
+			.mq-pnl-static {
+				right: @dimension;
+				left: -@dimension;
+			}
+		}
+	}
+	& when (@side = bottom) {
+		.mq-pnl-b {
+			height: @dimension !important;
+			 
+			bottom: -@dimension;
+		}
+		// for the top slide
+		&.mq-pnl-open-b {
+			// move the right side
+			.mq-pnl-b {
+				bottom: 0;
+			}
+			// move the content with the right side
+			.mq-pnl-static {
+				top: -@dimension;
+			}
+		}
+	}
+	& when (@side = left) {
+		.mq-pnl-l {
+			width: @dimension !important;
+			 
+			left: -@dimension;
+		}
+		&.mq-pnl-open-l {
+			// move the left side
+			.mq-pnl-l {
+				left: 0;
+			}
+			// move the content with the left side
+			.mq-pnl-static {
+				left: @dimension;
+			}
+		}
+	}
 }

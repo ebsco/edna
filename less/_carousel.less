@@ -1,72 +1,51 @@
 /* CAROUSEL */
 
 .carousel {
-    // Positioning
-    .pos(relative);
-    
-    // Box-model
-    width: 100%;
-    padding: 0;
-    
-    // Visual
-    border: @carousel-border;
+	width: 100%;
+	padding: 0;
 
-    .carousel-img {
-        // Box-model
-        width: 100%;
-        
-        // Visual
-        border: 1px solid @carousel-img-border;
+	border: @carousel-border;
 
-        > .img {
-            // Box-model
-            display: block;
-            width: 100%;
-            
-            // Visual
-            border: none;
-        }
-    }
+	.pos(relative);
+	.carousel-img {
+		width: 100%;
 
-    .carousel-nav {
-        // Positioning
-        .pos(relative);
+		border: 1px solid @carousel-img-border;
+		> .img {
+			display: block;
+			width: 100%;
 
-        // Box-model
-        width: 100%;
-        height: 55px;
-        margin: 15px 0 0;
-        overflow: hidden;
-        .clearfix;
-    }
+			border: none;
+		}
+	}
+	.carousel-nav {
+		width: 100%;
+		height: 55px;
+		margin: 15px 0 0;
+		overflow: hidden;
 
-    .carousel-inner {
-        // Positioning
-        .pos(relative);
-        
-        // Box-model
-        padding: 0;
+		.clearfix;
+		.pos(relative);
+	}
+	.carousel-inner {
+		padding: 0;
 
-        // Visual
-        list-style-type: none;
-    }
+		list-style-type: none;
 
-    // CAROUSEL SPECIFIC STYLES
-    .transport {
-        // Positioning
-        .pos(absolute);
-        top: -47px;
-        right: 10px;
-        
-        &:nth-child(3),
-        .last {
-            // Positioning
-            right: 0;
+		.pos(relative);
+	}
+	// CAROUSEL SPECIFIC STYLES
+	.transport {
+		top: -47px;
+		right: 10px;
 
-            .right {
-                // Box-model
-                margin: 0 0 5px;
-            }
-        }
-    }    
+		.pos(absolute);
+		&:nth-child(3),
+		.last {
+			right: 0;
+			.right {
+				margin: 0 0 5px;
+			}
+		}
+	}
 }

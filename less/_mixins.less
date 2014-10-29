@@ -117,7 +117,7 @@
 
 	h@{index} {
 
-		// Box-model
+		 
 		margin-top: 0;
 
 		& when (@index = 1) {
@@ -132,7 +132,7 @@
 			margin-bottom: 10px;
 		}
 
-		// Typography
+		 
 		.fontsize(@sizeVal);
 		& when (@index = 1), (@index = 2), (@index = 3), (@index = 4), (@index = 5), (@index = 6) {
 			font-weight: bold;
@@ -148,21 +148,21 @@
 		> a:visited,
 		> a:focus,
 		> a:active {
-			// Typography
+			 
 			color: @link-color;
 			text-decoration: @link-decoration;
 		}
 		> a:visited {
-			// Typography
+			 
 			color: @link-color-visited;
 			text-decoration: @link-decoration-visited;
 		}
 		> a:hover {
-			// Typography
+			 
 			color: @link-color-hover;
 		}
 		> a:focus {
-			// Typography
+			 
 			text-decoration: @link-decoration-focus;
 		}
 	}
@@ -324,7 +324,7 @@
 
 //----- RTL ---------------------------------------------//
 .international(@dir, @uni) {
-	// Typography
+	 
 	direction: @dir;
 	unicode-bidi: @uni;
 }
@@ -337,28 +337,28 @@
 .fixedCol(@w, @s) {
 
 	&.fixed-@{s} {
-		// Box-model
+		 
 		clear: both;
 
 		> .col {
 			& when (@s = r) {
-				// Box-model
+				 
 				width: 63%;
 			}
 
 			&.fw@{w} {
-				// Box-model
+				 
 				width: unit(@w + @p, px);
 			
 				& when (@s = r) {
-					// Box-model
+					 
 					float: right;
 					padding-right: 0;
 					margin-left: unit(-(@w + @p), px);
 				}
 
 				& when (@s = l) {
-					// Box-model
+					 
 					float: left;
 					padding-right: unit(@p, px);
 					padding-left: 0;
@@ -367,12 +367,12 @@
 
 				+ .col {
 					& when (@s = r) {
-						// Box-model
+						 
 						padding-right: unit(@w + @p, px);
 					}
 
 					& when (@s = l) {
-						// Box-model
+						 
 						width: 100%;
 						padding-left: unit(@w + @p, px);
 					}
@@ -389,22 +389,22 @@
 	@arrayVal: extract(@list, @index);
 
 	&.msg-@{arrayVal} {
-		// Visual
+		 
 		background-color: ~"@{msg-@{arrayVal}-bgcolor}";
 		border-color: ~"@{msg-@{arrayVal}-bordercolor}";
 		.icon {
-			// Box-model
+			 
 			display: inline-block;
 			width: 20px;
 			height: 20px;
 			
-			// Visual
+			 
 			background-image: url(~"@{msg-@{arrayVal}-icon}");
 			background-repeat: no-repeat;
 		}
 
 		> .txt {
-			// Typography
+			 
 			color: ~"@{msg-@{arrayVal}-color}";
 		}
 	}
@@ -416,7 +416,7 @@
 .inactive() {
 	&.inactive:after,
 	&.inactive::after {
-		// Typography
+		 
 		color: @transport-inactive;
 		cursor: default;
 		&:hover {
@@ -430,11 +430,11 @@
 //----- TRANSPORTS --------------------------------------//
 .transMix() {
 	> .@{val} {
-		// Box-model
+		 
 		margin-@{val}: @transport-width-short;
 		margin-@{opp}: @transport-width-short;
 
-		// Visual
+		 
 		border-@{val}-width: 0;
 		border-@{opp}-color: @transport-color;
 		border-@{opp}-style: solid;
@@ -469,7 +469,7 @@
 .modalWidth(@width) {
 	@w: unit(@width, px);
 
-	// Box-model
+	 
 	width: @w !important;
 	margin-left: ceil(-(@w / 2));
 }

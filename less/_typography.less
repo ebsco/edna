@@ -1,106 +1,86 @@
 /* TYPOGRAPHY */
 
 html & {
-    font-size: @font-size; // set base font to 10
+	font-size: @font-size; // set base font to 10
 }
 
 body & {
-    // Typography
-    .fontfamily(sans);
-    .fontsize(1.6);
-    color: @font-color;
+	color: @font-color;
+
+	.fontfamily(sans);
+	.fontsize(1.6);
 }
 
 p {
-    // Box-model
-    margin: 0 0 20px;
+	margin: 0 0 20px;
 
-    // Typography
-    .fontsize(@p-size);
-    line-height: @p-line-height;
-    color: @p-color;
+	line-height: @p-line-height;
+	color: @p-color;
 
-    &:last-child {
-        margin-bottom: 0;
-    }
+	.fontsize(@p-size);
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 a {
-    // Box Model
-    display: inline-block;
-    
-    // Typography
-    color: @link-color;
-    text-decoration: none;
+	display: inline-block;
 
-    &:visited {
-        // Typography
-        color: @link-color-visited;
-    }
-
-    &:hover {
-        // Typography
-        color: @link-color-hover;
-        text-decoration: @link-decoration-hover;
-    }
-
-    &:focus {
-        // Typography
-        color: @link-color-focus;
-        text-decoration: @link-decoration-focus;
-    }
-
-    &:active {
-        // Typography
-        color: @link-color-active;
-        text-decoration: @link-decoration-active;
-    }
+	color: @link-color;
+	text-decoration: none;
+	&:visited {
+		color: @link-color-visited;
+	}
+	&:hover {
+		color: @link-color-hover;
+		text-decoration: @link-decoration-hover;
+	}
+	&:focus {
+		color: @link-color-focus;
+		text-decoration: @link-decoration-focus;
+	}
+	&:active {
+		color: @link-color-active;
+		text-decoration: @link-decoration-active;
+	}
 }
 
 b,
 strong {
-    // Typography
-    color: @font-color-strong;
-    font-weight: bold;
+	font-weight: bold;
+	color: @font-color-strong;
 }
 
 em {
-    // Typography
-    font-style: italic;
+	font-style: italic;
 }
 
 sup {
-    // Positioning
-    top: -(@em * .5);
+	top: -(@em * .5);
 }
 
 sub {
-    // Positioning
-    bottom: -(@em * .25);
+	bottom: -(@em * .25);
 }
 
 blockquote {
-    // Box-model
-    padding-left: .5rem;
-    margin-left: 1.5rem;
+	padding-left: .5rem;
+	margin-left: 1.5rem;
 
-    // Visual
-    border-left: .25em solid @blockquote-border-color;
+	border-left: .25em solid @blockquote-border-color;
 }
 
 pre {
-    // Box-model
-    margin: 0 0 1rem;
+	margin: 0 0 1rem;
 
-    // Typography
-    .fontfamily(mono);
+	.fontfamily(mono);
 }
 
 code {
-    // Typography
-    .fontfamily(code);
-    font-weight: normal;
-    color: @code-color;
+	font-weight: normal;
+	color: @code-color;
+
+	.fontfamily(code);
 }
 
 // import the tag stylesheet because it's formatting text

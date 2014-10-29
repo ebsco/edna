@@ -1,103 +1,76 @@
 /* TABS */
 
 .tabs {
-    // Positioning
-    .pos(relative);
+	.pos(relative);
+	.tab-list,
+	.tab-content {
+		padding: 0;
 
-    .tab-list,
-    .tab-content {
-        // Box-model
-        padding: 0;
+		list-style-type: none;
+	}
+	.tab-list {
+		.tab-list-item {
+			z-index: 30;
 
-        // Visual
-        list-style-type: none;
-    }
+			float: left;
+			padding: 10px 20px;
+			margin-right: -1px;
+			margin-bottom: -1px;
 
-    .tab-list {
-        .tab-list-item {
-            // Positioning
-            .pos(relative);
-            z-index: 30;
-            
-            // Box-model
-            float: left;
-            padding: 10px 20px;
-            margin-right: -1px;
-            margin-bottom: -1px;
-            
-            // Typography
-            cursor: pointer;
-            
-            // Visual
-            background-color: @tab-bgcolor;
-            border-color: @tab-bordercolor;
-            border-style: solid;
-            border-width: 1px 1px 0 1px;
-            
-            &:hover {
-                // Visual
-                background-color: darken(@colorS2, (@pct * .2));
-            }
+			cursor: pointer;
 
-            &:first-child {
-                // Visual
-                -moz-border-radius-topleft: 3px;
-                     border-top-left-radius: 3px;
-            }
+			background-color: @tab-bgcolor;
+			border-color: @tab-bordercolor;
+			border-style: solid;
+			border-width: 1px 1px 0 1px;
 
-            &.active {
-                // Typography
-                cursor: default;
-                
-                // Visual
-                background-color: @tab-active-bgcolor;
-                border-bottom: 1px solid @tab-active-bordercolor;
-                
-                &:hover {
-                    // Visual
-                    background-color: @tab-active-bgcolor-hover;
-                }
-            }
-        }
-    }
+			.pos(relative);
+			&:hover {
+				background-color: darken(@colorS2, (@pct * .2));
+			}
+			&:first-child {
+				-moz-border-radius-topleft: 3px;
+				border-top-left-radius: 3px;
+			}
+			&.active {
+				cursor: default;
 
-    .tab-content {
-        .tab-content-item {
-            // Positioning
-            
-            // Box-model
-            display: none;
-            width: 100%;
-            padding: 10px 20px;
-            
-            // Visual
-            border: 1px solid @tab-content-bordercolor;
+				background-color: @tab-active-bgcolor;
+				border-bottom: 1px solid @tab-active-bordercolor;
+				&:hover {
+					background-color: @tab-active-bgcolor-hover;
+				}
+			}
+		}
+	}
+	.tab-content {
+		.tab-content-item {
+			display: none;
+			width: 100%;
+			padding: 10px 20px;
 
-            -moz-border-radius-topright: 0;
-                 border-top-right-radius: 0;
-            -moz-border-radius-bottomright: 3px;
-                 border-bottom-right-radius: 3px;
-            -moz-border-radius-bottomleft: 3px;
-                 border-bottom-left-radius: 3px;
-            -moz-border-radius-topleft: 0;
-                 border-top-left-radius: 0;
+			border: 1px solid @tab-content-bordercolor;
+			-moz-border-radius-topleft: 0;
+			border-top-left-radius: 0;
+			-moz-border-radius-topright: 0;
+			border-top-right-radius: 0;
+			-moz-border-radius-bottomright: 3px;
+			border-bottom-right-radius: 3px;
+			-moz-border-radius-bottomleft: 3px;
+			border-bottom-left-radius: 3px;
+			> *:last-child {
+				// remove any extra margin on the last item for better parent padding
+				margin: 0;
+			}
+			&.active {
+				z-index: 25;
 
-            > *:last-child { // remove any extra margin on the last item for better parent padding
-                // Box-model
-                margin: 0;
-            }
+				display: inline-block;
 
-            &.active {
-                // Positioning
-                .pos(relative);
-                z-index: 25;                
-                
-                // Box-model
-                display: inline-block;
+				background-color: @tab-active-content-bgcolor;
 
-                // Visual
-                background-color: @tab-active-content-bgcolor;
-            }
-        }
-    }
+				.pos(relative);
+			}
+		}
+	}
 }

@@ -2,127 +2,97 @@
 
 // modal background screen
 .ui-widget-overlay {
-    // Positioning
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: @index-9;
-    
-    // Box-model
-    width: 100%;
-    height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: @index-9;
 
-    // Visual
-    background-color: @ui-dialog-overlay-bgcolor;
-    background-image: url(@ui-dialog-overlay-bgimage);
-    background-position: 50% 50% repeat;
-    background-repeat: repeat;
-    opacity: .50;
-    filter: Alpha(Opacity=50);
+	width: 100%;
+	height: 100%;
+
+	background-color: @ui-dialog-overlay-bgcolor;
+	background-image: url(@ui-dialog-overlay-bgimage);
+	background-position: 50% 50% repeat;
+	background-repeat: repeat;
+	opacity: .50;
+
+	filter: Alpha(Opacity=50);
 }
 
 .modal {
-    // Positioning
-    left: 50% !important;
-    z-index: @index-10 !important;
-        
-    // Box-model
-    display: inline-block;
-    overflow: hidden;
-    
-    // Visual
-    background: @modal-bgcolor;
-    border: 1px solid @modal-bordercolor;
-    .radius(3);
-    -webkit-background-clip: padding-box;
+	left: 50% !important;
+	z-index: @index-10 !important;
 
-    box-shadow: @modal-dropshadow;
-    padding: 25px;
+	display: inline-block;
+	padding: 25px;
+	overflow: hidden;
 
-    // JQUERY UI CLASSES
-    .ui-dialog-titlebar {
-        
-        .ui-dialog-title {
-            // Box-model
-            display: none;
-        }
-    
-        .ui-dialog-titlebar-close {
-            // Positioning
-            position: relative;
-            top: 0;
-            right: 0;
-            z-index: 2;
-            
-            // Box-model
-            float: right;
-            width: 11px;
-            height: 14px;
-            padding: 0;
-            
-            // Visual
-            background: none;
-            border: none;
-            
-            .ui-icon-closethick {
-                // Box-model
-                display: block;
-                width: 20px;
-                height: 20px;
-                overflow: hidden;
-                
-                // Typography
-                text-indent: -99999px;
+	background: @modal-bgcolor;
+	-webkit-background-clip: padding-box;
+	border: 1px solid @modal-bordercolor;
+	box-shadow: @modal-dropshadow;
 
-                // Visual
-                background-color: @ui-dialog-close-bgcolor;
-                background-image: url(@ui-dialog-close-bgimage);
-                background-position: -2px -3px;
-                background-repeat: no-repeat;
-                border-radius: 2px;
-            }
-            &:hover .ui-icon-closethick {
-                // Visual
-                background-position: -2px -23px;
-            }
-            
-            .ui-button-text {
-                // Typography
-                .off-page;
-            }
-        }
-    }
+	.radius(3);
+	// JQUERY UI CLASSES
+	.ui-dialog-titlebar {
+		.ui-dialog-title {
+			display: none;
+		}
+		.ui-dialog-titlebar-close {
+			position: relative;
+			top: 0;
+			right: 0;
+			z-index: 2;
 
-    // CUSTOM CONTENT
-    .modal-header {
-            > .heading {
-            margin-bottom:  0;
+			float: right;
+			width: 11px;
+			height: 14px;
+			padding: 0;
 
-            // Typography
-            color: @modal-heading-color;
-        }
-    }
+			background: none;
+			border: none;
+			.ui-icon-closethick {
+				display: block;
+				width: 20px;
+				height: 20px;
+				overflow: hidden;
 
-    .modal-content {
-        // Box-model
-        margin-top:  25px;
-    }
+				text-indent: -99999px;
 
-    .modal-footer {
-        // Box-model
-        margin-top:  25px;
+				background-color: @ui-dialog-close-bgcolor;
+				background-image: url(@ui-dialog-close-bgimage);
+				background-position: -2px -3px;
+				background-repeat: no-repeat;
+				border-radius: 2px;
+			}
+			&:hover .ui-icon-closethick {
+				background-position: -2px -23px;
+			}
+			.ui-button-text {
+				.off-page;
+			}
+		}
+	}
+	// CUSTOM CONTENT
+	.modal-header {
+		> .heading {
+			margin-bottom: 0;
 
-        // Typography
-        .fontsize(1.2);
-    }
+			color: @modal-heading-color;
+		}
+	}
+	.modal-content {
+		margin-top: 25px;
+	}
+	.modal-footer {
+		margin-top: 25px;
 
-    .msg {
-        // Box-model
-        margin-top: 25px;
-        margin-bottom: 0;
+		.fontsize(1.2);
+	}
+	.msg {
+		margin-top: 25px;
+		margin-bottom: 0;
 
-        // Typography
-        .fontsize(1.3);
-    }
-
+		.fontsize(1.3);
+	}
 }

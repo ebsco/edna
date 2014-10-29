@@ -1,217 +1,216 @@
 /* TOOLBAR */
 
 .toolbar {
-    // Box-model
-    width: 100%;
-    overflow: visible;
-    
-    // Typography
-    .fontfamily(sans);
-    
-    .txt-link {
-        // Typography
-        font: inherit;
-        color: @usernav-item-color;
-        
-        &:hover,
-        &:active,
-        &:focus,
-        &:visited {
-            // Typography
-            color: @usernav-item-color;
-        }
-    }
-    
-    .personal-bar {
-        // Box sizing
-        width: 100%;
+	// Box-model
+	width: 100%;
+	overflow: visible;
 
-        // Visual
-        background-color: @tbar-personal-bgcolor;
-                
-        // Misc
-        .clearfix;
+	// Typography
+	.fontfamily(sans);
 
-        .personal-nav {
-            // Box-model
-            width: 100%;
-            padding: 9px 10px;
-            margin: 0;
-            
-            // Typography
-            .fontsize(1.2);
-            text-align: right;
-            
-            // Visual
-            list-style-type: none;
-                
-            // Misc
-            .clearfix;
-        }
+	.txt-link {
+		// Typography
+		font: inherit;
+		color: @usernav-item-color;
 
-       .personal-nav-item {
-            // Box-model
-            display: inline-block;
-            padding: 0 0 0 10px;
+		&:hover,
+		&:active,
+		&:focus,
+		&:visited {
+			// Typography
+			color: @usernav-item-color;
+		}
+	}
 
-            // Typography
-            color: @colorS2;
-            
-            // Misc
-            .clearfix;
-        }
+	.personal-bar {
+		// Box sizing
+		width: 100%;
 
-        .txt-link {
-            // Typography
-            text-decoration: underline;
-        }            
+		// Visual
+		background-color: @tbar-personal-bgcolor;
 
-    }
+		// Misc
+		.clearfix;
 
-    .bar {
-        // Positioning
-        .pos(relative);
+		.personal-nav {
+			// Box-model
+			width: 100%;
+			padding: 9px 10px;
+			margin: 0;
 
-        // Box-model
-        padding-bottom: 2px;
-        overflow: hidden;
+			// Typography
+			.fontsize(1.2);
+			text-align: right;
 
-        // Visual
-        // background-color: @tbar-bgcolor;
-        @color: @colorS2;
-        @top: fadeout(@color, 90%);
-        @bottom: fadeout(@color, 100%);
-        background: @tbar-bgcolor -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
-        background: @tbar-bgcolor -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
-        background: @tbar-bgcolor  -ms-linear-gradient(bottom, @bottom, @top);
-        background: @tbar-bgcolor   -o-linear-gradient(@top, @bottom);
-        filter: progid:DXImageTransform.Microsoft.gradient( GradientType=0,startColorstr=#9a6978, endColorstr=#712b40);
-    }
+			// Visual
+			list-style-type: none;
+
+			// Misc
+			.clearfix;
+		}
+
+		.personal-nav-item {
+			// Box-model
+			display: inline-block;
+			padding: 0 0 0 10px;
+
+			// Typography
+			color: @colorS2;
+
+			// Misc
+			.clearfix;
+		}
+
+		.txt-link {
+			// Typography
+			text-decoration: underline;
+		}
+	}
+
+	.bar {
+		// Positioning
+		.pos(relative);
+
+		// Box-model
+		padding-bottom: 2px;
+		overflow: hidden;
+
+		// Visual
+		// background-color: @tbar-bgcolor;
+		@color: @colorS2;
+		@top: fadeout(@color, 90%);
+		@bottom: fadeout(@color, 100%);
+		background: @tbar-bgcolor -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
+		background: @tbar-bgcolor -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
+		background: @tbar-bgcolor  -ms-linear-gradient(bottom, @bottom, @top);
+		background: @tbar-bgcolor   -o-linear-gradient(@top, @bottom);
+		filter: progid:DXImageTransform.Microsoft.gradient( GradientType=0,startColorstr=#9a6978, endColorstr=#712b40);
+	}
 }
 
 .nav {
-    // Box-model
-    display: inline-block;
-    padding: 0;
-    margin: 0;
+	// Box-model
+	display: inline-block;
+	padding: 0;
+	margin: 0;
 
-    .nav-item {
-        // Box-model
-        display: inline-block;
-        padding: 7px 8px 10px 12px;
-        
-        // Typography
-        .fontsize(1.3);
-        font-weight: bold;
-        cursor: pointer;
-    }
+	.nav-item {
+		// Box-model
+		display: inline-block;
+		padding: 7px 8px 10px 12px;
+
+		// Typography
+		.fontsize(1.3);
+		font-weight: bold;
+		cursor: pointer;
+	}
 }
 
 .user-nav {
-    // Box-model
-    display: inline-block;
-    float: right;
-    padding: 0;
-    margin: 0;
-    
-    .user-nav-item {
-        // Box-model
-        display: inline-block;
-        float: left;
-        width: auto;
-        height: auto;
-        padding: 8px 12px 11px;
+	// Box-model
+	display: inline-block;
+	float: right;
+	padding: 0;
+	margin: 0;
 
-        // Typography
-        .fontsize(1.2);
-        vertical-align: top;      
-        cursor: pointer;
+	.user-nav-item {
+		// Box-model
+		display: inline-block;
+		float: left;
+		width: auto;
+		height: auto;
+		padding: 8px 12px 11px;
 
-        > .icon {
-            // Box-model
-            overflow: hidden;   
-        }
-    }
-    
-    .folder {
-        padding: 8px 12px 11px 9px;
-        
-        .txt-link {
-            // Box-model
-            padding-left: 20px;
-    
-            .icon {
-                // Positioning
-                position: absolute;
-                left: 2px;
-                
-                // Box-model
-                width: 27px;
-                height: 15px;
-                
-                // Visual
-                background-color: @usernav-item-folder-bgcolor;
-                background-image: url(@usernav-item-folder-icon);
-                background-position: 8px -1px;
-                background-repeat: no-repeat;
-            }
-        }
-    
-        &.not-empty {
-            .icon {
-                // Visual
-                background-position: 0 -101px;
-            }
-        }
-    }
-    
-    .languages {
-        // a usernav inside a usernav
-        .user-nav {
-            // Box-model
-            display: none;
-        }
-        
-        .icon {
-            // Box-model
-            width: 10px;
-            height: 10px;
-            margin: 0 0 0 5px;
-            
-            // Visual
-            background: url(@usernav-item-language-icon) right -1750px no-repeat;
-        }
-    
-        &:hover {
-            // Typography
-            color: #333;
-            
-            // Visual
-            background-color: @usernav-item-language-bgcolor-hover;
-    
-            .icon {
-                // Visual
-                background-position: right -1800px;                
-            }
-        }   
-    }
+		// Typography
+		.fontsize(1.2);
+		vertical-align: top;
+		cursor: pointer;
+
+		> .icon {
+			// Box-model
+			overflow: hidden;
+		}
+	}
+
+	.folder {
+		padding: 8px 12px 11px 9px;
+
+		.txt-link {
+			// Box-model
+			padding-left: 20px;
+
+			.icon {
+				// Positioning
+				position: absolute;
+				left: 2px;
+
+				// Box-model
+				width: 27px;
+				height: 15px;
+
+				// Visual
+				background-color: @usernav-item-folder-bgcolor;
+				background-image: url(@usernav-item-folder-icon);
+				background-position: 8px -1px;
+				background-repeat: no-repeat;
+			}
+		}
+
+		&.not-empty {
+			.icon {
+				// Visual
+				background-position: 0 -101px;
+			}
+		}
+	}
+
+	.languages {
+		// a usernav inside a usernav
+		.user-nav {
+			// Box-model
+			display: none;
+		}
+
+		.icon {
+			// Box-model
+			width: 10px;
+			height: 10px;
+			margin: 0 0 0 5px;
+
+			// Visual
+			background: url(@usernav-item-language-icon) right -1750px no-repeat;
+		}
+
+		&:hover {
+			// Typography
+			color: #333;
+
+			// Visual
+			background-color: @usernav-item-language-bgcolor-hover;
+
+			.icon {
+				// Visual
+				background-position: right -1800px;
+			}
+		}
+	}
 }
 
 .nav-item,
 .user-nav-item {
-    // Positioning
-    position: relative;
-    
-    // Typography
-    color: @usernav-item-color;
+	// Positioning
+	position: relative;
 
-    &:hover {
-        // Visual
-        background-color: @usernav-item-bgcolor-hover;
-        
-        .txt-link {
-            // Typography
-            text-decoration: none;
-        }
-    }
+	// Typography
+	color: @usernav-item-color;
+
+	&:hover {
+		// Visual
+		background-color: @usernav-item-bgcolor-hover;
+
+		.txt-link {
+			// Typography
+			text-decoration: none;
+		}
+	}
 }

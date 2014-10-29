@@ -1,105 +1,76 @@
 /* AUTOCOMPLETE */
 
 .ui-helper-hidden-accessible {
-    .hidden;
+	.hidden;
 }
 
 .ui-autocomplete {
-    // Positioning
-    z-index: @index-1;
+	z-index: @index-1;
 
-    // Box-model
-    padding: 0;
+	padding: 0;
 
-    // Typography
-    .fontfamily(sans);
-    .fontsize(@ac-size);
-    color: @ac-color;
+	.fontfamily(sans);
+	.fontsize(@ac-size);
+	color: @ac-color;
+	list-style-type: none;
 
-    // Visual
-    list-style-type: none;
-    background-color: @ac-bgcolor;
-    background-image: none !important; // important needed to override jQuery UI image
-    border: 1px solid @ac-bordercolor;
-    .radius(0);
+	background-color: @ac-bgcolor;
+	background-image: none !important; // important needed to override jQuery UI image
+	border: 1px solid @ac-bordercolor;
+	.radius(0);
 
-    .ui-menu-item {
-        // Box-model
-        margin: 0;
+	.ui-menu-item {
+		margin: 0;
+		a {
+			display: block;
+			padding: 6px 4px;
 
-        a {
-            // Box-model
-            display: block;
-            padding: 6px 4px;
-            
-            // Typography
-            .truncate;
-            line-height: 1.25em;
-            color: @ac-result-color;
-            
-            // Visual
-            cursor: pointer;
+			line-height: 1.25em;
+			color: @ac-result-color;
+			cursor: pointer;
+			.truncate;
 
-            > strong {
-                // Typography
-                color: @ac-result-color;
-            }
+			> strong {
+				color: @ac-result-color;
+			}
+			&.ui-state-focus,
+			&.ui-state-active {
+				margin: 0;
 
-            &.ui-state-focus,
-            &.ui-state-active {
-                // Box-model
-                margin: 0;
-                
-                // Typography
-                color: @ac-result-color-hover;
-                
-                // Visual
-                background-color: @ac-result-bgcolor-hover;
-            }            
-        }
-       
-        &:hover a {
-            // Typography
-            color: @ac-result-color-hover;
-            text-decoration: none;
-            
-            // Visual
-            background-color: @ac-result-bgcolor-hover;
-        }
+				color: @ac-result-color-hover;
 
-        &:first-child {
-            // Box-model
-            margin-top: 0;
+				background-color: @ac-result-bgcolor-hover;
+			}
+		}
+		&:hover a {
+			color: @ac-result-color-hover;
+			text-decoration: none;
 
-            a {
-                &.ui-state-focus,
-                &.ui-state-active {
-                    // Box-model
-                    margin-top: 0;
-                }
-            }
-
-        }
-
-        &:last-child {
-            // Box-model
-            margin-bottom: 0;
-
-            a {
-                &.ui-state-focus,
-                &.ui-state-active {
-                    // Box-model
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
-
-    .ui-corner-all {
-        // Visual
-        background-image: none;
-        border-style: solid;
-        border-width: 0;
-        .radius(0);
-    }
+			background-color: @ac-result-bgcolor-hover;
+		}
+		&:first-child {
+			margin-top: 0;
+			a {
+				&.ui-state-focus,
+				&.ui-state-active {
+					margin-top: 0;
+				}
+			}
+		}
+		&:last-child {
+			margin-bottom: 0;
+			a {
+				&.ui-state-focus,
+				&.ui-state-active {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	.ui-corner-all {
+		background-image: none;
+		border-style: solid;
+		border-width: 0;
+		.radius(0);
+	}
 }

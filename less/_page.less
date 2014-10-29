@@ -1,48 +1,42 @@
 /* PAGE */
 
 html & {
-    // Box-model
-    .box(border);
-    height: 100%;
+	height: 100%;
+
+	.box(border);
 }
 
 *,
 *:before,
 *:after {
-    // Box-model
-    .box(inherit);
+	.box(inherit);
 }
 
 html &,
 body & {
-    // Typography
-    .fontfamily(sans);
+	.fontfamily(sans);
 }
 
 body {
-    min-width: unit(@mediaquery-small, px);
+	min-width: unit(@mediaquery-small, px);
 }
 
 .visible {
-    // Box-model
-    display: inline-block;
+	display: inline-block;
 }
 
- //set padding for elements
+//set padding for elements
 .pg-dims {
-    // Box-model
-    width: @pg-width;
-    max-width: @pg-width-max;
-    min-width: @pg-width-min;
-    .clearfix;
+	width: @pg-width;
+	min-width: @pg-width-min;
+	max-width: @pg-width-max;
+
+	.clearfix;
 }
 
 .col {
-    // Box-model
-    padding: @col-top-padding @col-right-padding @col-bottom-padding @col-left-padding;
-    
-    & + & {
-        // Box-model
-        padding-left: 70px;
-    }
+	padding: @col-top-padding @col-right-padding @col-bottom-padding @col-left-padding;
+	& + & {
+		padding-left: 70px;
+	}
 }

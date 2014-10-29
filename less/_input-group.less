@@ -1,89 +1,62 @@
 /* INPUTS */
-@import "../less/_input.less";
+@import '../less/_input.less';
 
 .first-elem() {
-    // Visual
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
 }
 .second-elem() {
-    + .btn,
-    + .input-group-btn .btn,
-    + .btn-reset,
-    + input,
-    + .input-reset input {
-        // Box-model
-        margin-left: -1px;
-        
-        // Visual
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
+	+ .btn, + .input-group-btn .btn, + .btn-reset, + input, + .input-reset input {
+		margin-left: -1px;
+
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
 }
 
 .input-group {
-    // Box-model
-    display: inline-table;
+	display: inline-table;
+	> .btn {
+		display: table-cell;
 
-    > .btn {
-        // Box-model
-        display: table-cell;
+		vertical-align: top;
+		&:first-child {
+			.first-elem;
+			.second-elem;
+		}
+	}
+	> input {
+		display: table-cell;
 
-        // Visual
-        vertical-align: top;
+		vertical-align: top;
+		&:first-child {
+			.first-elem;
+			.second-elem;
+		}
+	}
+	> .input-group-btn {
+		display: table-cell;
 
-        &:first-child {
-            .first-elem;
-            .second-elem;
-        }
-    }
+		vertical-align: top;
+		&:first-child {
+			.second-elem;
+			.btn {
+				.first-elem;
+			}
+		}
+	}
+	> .input-reset {
+		display: table-cell;
 
-    > input {
-        // Box-model
-        display: table-cell;
-
-        // Visual
-        vertical-align: top;
-
-        &:first-child {
-            .first-elem;
-            .second-elem;
-        }
-    }
-
-    > .input-group-btn {
-        // Box-model
-        display: table-cell;
-
-        // Visual
-        vertical-align: top;
-
-        &:first-child {
-             .btn {
-                .first-elem;
-             }
-
-            .second-elem;
-        }
-    }
-
-    > .input-reset {
-        // Box-model
-        display: table-cell;
-
-        // Visual
-        vertical-align: top;
-
-        &:first-child {
-            > input {
-                .first-elem;
-            }
-
-            .second-elem;
-
-        }
-        + .btn {
-            margin-left: 15px;
-        }
-    }
+		vertical-align: top;
+		&:first-child {
+			.second-elem;
+			> input {
+				.first-elem;
+			}
+		}
+		+ .btn {
+			margin-left: 15px;
+		}
+	}
 }
