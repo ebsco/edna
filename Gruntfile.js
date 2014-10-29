@@ -7,9 +7,7 @@ module.exports = function(grunt) {
 		shell: {
 			listFolders: {
 				stdout: false,
-				command: [
-					'rm .git/hooks/pre-push'
-				].join('&&')
+				command: 'rm .git/hooks/pre-push'
 			}
 		},
 		express: {
@@ -23,55 +21,52 @@ module.exports = function(grunt) {
 			}
 		},
 		less: {
-			dev: {
+			base: {
 				options: {
-					path: ['less'],
-					compress: false,
-					dumpLineNumbers: true,
-					sourceMap: false,
-					report: 'min'
+					sourceMap: true,
+					outputSourceFiles: true,
+					sourceMapURL: 'edna.css.map',
+					sourceMapFilename: 'edna.css.map'
 				},
-				files: {
-					'edna.css': 'edna.less',
-					'edna.ie.css': 'edna.ie.less',
-					'codeguide/edna.css': 'edna.less',
-					'codeguide/edna.ie.css': 'edna.ie.less'
-				}
+				src: 'edna.less',
+				dest: 'edna.css'
 			},
-			dist: {
+			ieStyles: {
 				options: {
-					path: ['less'],
-					compress: true,
-					cleancss: true
+					sourceMap: true,
+					outputSourceFiles: true,
+					sourceMapURL: 'edna.ie.css.map',
+					sourceMapFilename: 'edna.ie.css.map'
 				},
-				files: {
-					'edna.min.css': 'edna.less',
-					'edna.min.ie.css': 'edna.ie.less',
-					'codeguide/edna.min.css': 'edna.less',
-					'codeguide/edna.min.ie.css': 'edna.ie.less'
-				}
+				src: 'edna.ie.less',
+				dest: 'edna.ie.css'
 			},
 			codeguide: {
 				options: {
-					path: ['less'],
-					compile: true
 				},
+				src: 'codeguide/styles/codeguide.less',
+				dest: 'codeguide/styles/codeguide.css'
+			}
+		},
+		cssmin: {
+			default: {
 				files: {
-					'codeguide/styles/codeguide.css': [ 'codeguide/styles/codeguide.less' ]
+					'edna.min.css': 'edna.css',
+					'edna.ie.min.css': 'edna.ie.css'
 				}
 			}
 		},
 		watch: {
 			dev: {
 				files: ['*.less', 'less/*.less', 'Gruntfile.js'],
-				tasks: ['less:dev'],
+				tasks: ['less:base', 'less:ieStyles'],
 				options: {
 					livereload: true
 				}
 			},
 			dist: {
 				files: ['*.less', 'less/*.less', 'Gruntfile.js'],
-				tasks: ['less:dist'],
+				tasks: ['less:base', 'less:ieStyles', 'cssmin'],
 				options: {
 					livereload: true
 				}
@@ -89,7 +84,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: 'grunticon/raw',
-					src: ['*.svg', '*.png'],
+					src: ['*.svg'],
 					dest: 'grunticon'
 				}],
 				options: {
@@ -97,7 +92,7 @@ module.exports = function(grunt) {
 					datapngcss: 'css/icons.png.css',
 					urlpngcss: 'css/icons.fallback.css',
 					loadersnippet: 'js/grunticon.loader.js',
-					template: 'grunticon/default-css.hbs',
+					template: 'grunticon/rule.hbs', // analyzecss task isn't compatible with default
 					defaultWidth: '100%',
 					defaultHeight: '100%',
 					pngfolder: 'png',
@@ -109,22 +104,23 @@ module.exports = function(grunt) {
 			}
 		},
 		colorguard: {
-			options: {},
-			files: {
-				src: ['edna.css'],
+			default: {
+				options: {},
+				src: ['edna.css']
 			}
 		},
 		analyzecss: {
-			prod: {
-				sources: ['edna.css']
-			},
-			options: {
-				outputMetrics: true,
+			default: {
+				sources: ['edna.css', 'edna.ie.css', 'edna.min.css', 'edna.ie.min.css'],
+				options: {
+					outputMetrics: true,
+					softFail: true // still defining thresholds
+				}
 			}
 		},
 		csslint: {
 			default: {
-				src: ['edna.css'],
+				src: ['edna*.css'],
 				options: {
 					csslintrc: '.csslintrc'
 				}
@@ -138,6 +134,7 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-shell');
@@ -146,27 +143,17 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-analyze-css');
 	grunt.loadNpmTasks('grunt-eis-release');
 
-	grunt.registerTask('colors', [
-		'less:dev',
-		'colorguard',
-	]);
-
 	grunt.registerTask('codeguide', [
 		'express',
 		'less:codeguide',
 		'watch:codeguide'
 	]);
 
-	grunt.registerTask('build', [
-		'grunticon',
-		'less',
-		'csslint'
-	]);
-
 	grunt.registerTask('server', [
 		'express',
 		'grunticon',
 		'less',
+		'cssmin',
 		'watch'
 	]);
 
@@ -177,4 +164,21 @@ module.exports = function(grunt) {
 		'express-keepalive'
 	]);
 
+	grunt.registerTask('colors', [
+		'colorguard',
+	]);
+
+	grunt.registerTask('quality-check', [
+		'csslint',
+		'analyzecss'
+	]);
+
+	grunt.registerTask('build', [
+		'grunticon',
+		'less',
+		'cssmin',
+		'quality-check'
+	]);
+
+	grunt.registerTask('default', ['build']);
 };
