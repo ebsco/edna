@@ -24,39 +24,28 @@ module.exports = function(grunt) {
 		},
 		less: {
 			dev: {
-				options: {
-					path: ['less'],
-					compress: false,
-					dumpLineNumbers: true,
-					sourceMap: false,
-					report: 'min'
-				},
+				options: {},
 				files: {
 					'edna.css': 'edna.less',
-					'edna.ie.css': 'edna.ie.less',
-					'codeguide/edna.css': 'edna.less',
-					'codeguide/edna.ie.css': 'edna.ie.less'
+					'edna.ie.css': 'edna.ie.less'
 				}
 			},
 			dist: {
 				options: {
-					path: ['less'],
-					compress: true,
 					cleancss: true
 				},
 				files: {
 					'edna.min.css': 'edna.less',
-					'edna.min.ie.css': 'edna.ie.less',
-					'codeguide/edna.min.css': 'edna.less',
-					'codeguide/edna.min.ie.css': 'edna.ie.less'
+					'edna.min.ie.css': 'edna.ie.less'
 				}
 			},
 			codeguide: {
-				options: {
-					path: ['less'],
-					compile: true
-				},
+				options: {},
 				files: {
+					'codeguide/edna.css': 'edna.less',
+					'codeguide/edna.ie.css': 'edna.ie.less',
+					'codeguide/edna.min.css': 'edna.less',
+					'codeguide/edna.min.ie.css': 'edna.ie.less',
 					'codeguide/styles/codeguide.css': [ 'codeguide/styles/codeguide.less' ]
 				}
 			}
@@ -97,7 +86,7 @@ module.exports = function(grunt) {
 					datapngcss: 'css/icons.png.css',
 					urlpngcss: 'css/icons.fallback.css',
 					loadersnippet: 'js/grunticon.loader.js',
-					template: 'grunticon/default-css.hbs',
+					template: 'grunticon/rule.hbs', // analyzecss task isn't compatible with default
 					defaultWidth: '100%',
 					defaultHeight: '100%',
 					pngfolder: 'png',
@@ -109,22 +98,25 @@ module.exports = function(grunt) {
 			}
 		},
 		colorguard: {
-			options: {},
-			files: {
-				src: ['edna.css'],
+			default: {
+				options: {},
+				files: {
+					src: ['edna.css'],
+				}
 			}
 		},
 		analyzecss: {
-			prod: {
-				sources: ['edna.css']
-			},
-			options: {
-				outputMetrics: true,
+			default: {
+				sources: ['edna.css', 'edna.ie.css', 'edna.min.css', 'edna.min.ie.css'],
+				options: {
+					outputMetrics: true,
+					softFail: true // still defining thresholds
+				}
 			}
 		},
 		csslint: {
 			default: {
-				src: ['edna.css'],
+				src: ['edna*.css'],
 				options: {
 					csslintrc: '.csslintrc'
 				}
@@ -146,21 +138,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-analyze-css');
 	grunt.loadNpmTasks('grunt-eis-release');
 
-	grunt.registerTask('colors', [
-		'less:dev',
-		'colorguard',
-	]);
-
 	grunt.registerTask('codeguide', [
 		'express',
 		'less:codeguide',
 		'watch:codeguide'
-	]);
-
-	grunt.registerTask('build', [
-		'grunticon',
-		'less',
-		'csslint'
 	]);
 
 	grunt.registerTask('server', [
@@ -177,4 +158,20 @@ module.exports = function(grunt) {
 		'express-keepalive'
 	]);
 
+	grunt.registerTask('colors', [
+		'colorguard',
+	]);
+
+	grunt.registerTask('quality-check', [
+		'csslint',
+		'analyzecss'
+	]);
+
+	grunt.registerTask('build', [
+		'grunticon',
+		'less',
+		'quality-check'
+	]);
+
+	grunt.registerTask('default', ['build']);
 };
