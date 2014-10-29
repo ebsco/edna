@@ -7,9 +7,7 @@ module.exports = function(grunt) {
 		shell: {
 			listFolders: {
 				stdout: false,
-				command: [
-					'rm .git/hooks/pre-push'
-				].join('&&')
+				command: 'rm .git/hooks/pre-push'
 			}
 		},
 		express: {
@@ -23,44 +21,52 @@ module.exports = function(grunt) {
 			}
 		},
 		less: {
-			dev: {
-				options: {},
-				files: {
-					'edna.css': 'edna.less',
-					'edna.ie.css': 'edna.ie.less'
-				}
-			},
-			dist: {
+			base: {
 				options: {
-					cleancss: true
+					sourceMap: true,
+					outputSourceFiles: true,
+					sourceMapURL: 'edna.css.map',
+					sourceMapFilename: 'edna.css.map'
 				},
-				files: {
-					'edna.min.css': 'edna.less',
-					'edna.min.ie.css': 'edna.ie.less'
-				}
+				src: 'edna.less',
+				dest: 'edna.css'
+			},
+			ieStyles: {
+				options: {
+					sourceMap: true,
+					outputSourceFiles: true,
+					sourceMapURL: 'edna.ie.css.map',
+					sourceMapFilename: 'edna.ie.css.map'
+				},
+				src: 'edna.ie.less',
+				dest: 'edna.ie.css'
 			},
 			codeguide: {
-				options: {},
+				options: {
+				},
+				src: 'codeguide/styles/codeguide.less',
+				dest: 'codeguide/styles/codeguide.css'
+			}
+		},
+		cssmin: {
+			default: {
 				files: {
-					'codeguide/edna.css': 'edna.less',
-					'codeguide/edna.ie.css': 'edna.ie.less',
-					'codeguide/edna.min.css': 'edna.less',
-					'codeguide/edna.min.ie.css': 'edna.ie.less',
-					'codeguide/styles/codeguide.css': [ 'codeguide/styles/codeguide.less' ]
+					'edna.min.css': 'edna.css',
+					'edna.ie.min.css': 'edna.ie.css'
 				}
 			}
 		},
 		watch: {
 			dev: {
 				files: ['*.less', 'less/*.less', 'Gruntfile.js'],
-				tasks: ['less:dev'],
+				tasks: ['less:base', 'less:ieStyles'],
 				options: {
 					livereload: true
 				}
 			},
 			dist: {
 				files: ['*.less', 'less/*.less', 'Gruntfile.js'],
-				tasks: ['less:dist'],
+				tasks: ['less:base', 'less:ieStyles', 'cssmin'],
 				options: {
 					livereload: true
 				}
@@ -78,7 +84,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: 'grunticon/raw',
-					src: ['*.svg', '*.png'],
+					src: ['*.svg'],
 					dest: 'grunticon'
 				}],
 				options: {
@@ -100,19 +106,16 @@ module.exports = function(grunt) {
 		colorguard: {
 			default: {
 				options: {},
-				files: {
-					src: ['edna.css'],
-				}
+				src: ['edna.css']
 			}
 		},
 		analyzecss: {
 			default: {
-				sources: ['edna.css', 'edna.ie.css', 'edna.min.css', 'edna.min.ie.css'],
+				sources: ['edna.css', 'edna.ie.css', 'edna.min.css', 'edna.ie.min.css'],
 				options: {
 					outputMetrics: true,
 					softFail: true // still defining thresholds
-				}
-			}
+				}			}
 		},
 		csslint: {
 			default: {
@@ -130,6 +133,7 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-shell');
@@ -148,6 +152,7 @@ module.exports = function(grunt) {
 		'express',
 		'grunticon',
 		'less',
+		'cssmin',
 		'watch'
 	]);
 
@@ -170,6 +175,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', [
 		'grunticon',
 		'less',
+		'cssmin',
 		'quality-check'
 	]);
 
