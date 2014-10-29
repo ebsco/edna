@@ -23,7 +23,7 @@ install :
 
 build :
 	make install
-	# grunt
+	grunt
 
 
 deploy :
