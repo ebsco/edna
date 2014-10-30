@@ -1,8 +1,8 @@
-// small
-@media screen and (max-width: unit(@mediaquery-small, px)) {
+// SMALL
+@media @mq-sm {
     [class*="l"][class*="-p"] {
         .col {
-            display: block;
+            display: table;
             width: 100%;
 
             + .col {
@@ -11,17 +11,27 @@
         }
     }
 }
+ 
+// MEDIUM
+@media @mq-md {
+    [class*="l"][class*="-p"] {
+        .col {
+            display: table;
+            width: 100%;
 
-// medium
-@media screen and (min-width: unit( (@mediaquery-small + 1), px)) and (max-width: unit(@mediaquery-medium, px)) {
-
-    // here be ghouls
-
+            + .col {
+                padding-left: 0;
+            }
+        }
+    }
 }
-
-// large
-@media screen and (min-width: unit( (@mediaquery-medium + 1), px)) {
-
-    // here be hobos
-
+ 
+// LARGE
+@media @mq-lg {
+    // here be hooligans
+}
+ 
+// XLARGE
+@media @mq-xl {
+    // here be goblins
 }

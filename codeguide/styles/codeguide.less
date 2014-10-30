@@ -41,21 +41,28 @@
 
 // FILES TO BE USEDE WITHIN MEDIA QUERIES 
 // small
-@media screen and ( max-width: unit(@mediaquery-small, px) ) {
+@media @mq-sm {
 
 	// @import (multiple) '../../less/_panel';
 
 }
 
 // medium
-@media screen and ( min-width: unit( (@mediaquery-small + 1), px) ) and ( max-width: unit(@mediaquery-medium, px) ) {
+@media @mq-md {
 
 	// @import (multiple) '../../less/_panel';
 
 }
 
 // large
-@media screen and ( min-width: unit( (@mediaquery-medium + 1), px) ) {
+@media @mq-lg {
+
+	// here be demons
+
+}
+
+// extra-large
+@media @mq-xl {
 
 	// here be demons
 
@@ -405,7 +412,7 @@ pre.prettyprint {
 
 body { min-width: unit(@mediaquery-small, px); }
 // SMALL
-@media screen and ( max-width: unit(@mediaquery-medium, px) ) {
+@media @mq-sm {
 
 	* {
 		// color: blue !important;
@@ -433,7 +440,7 @@ body { min-width: unit(@mediaquery-small, px); }
 	// END slide panel stuff
 }
 // MEDIUM
-@media screen and ( min-width: unit( (@mediaquery-medium + 1), px) ) and ( max-width: unit(@mediaquery-large, px) ) {
+@media @mq-md {
 
 	@import 'css.css';
 
@@ -459,7 +466,7 @@ body { min-width: unit(@mediaquery-small, px); }
 	// END slide panel stuff
 }
 // LARGE
-@media screen and ( min-width: unit( (@mediaquery-large + 1), px) ) and ( max-width: unit( (@mediaquery-xlarge - 1), px) ) {
+@media @mq-lg {
 
 	* {
 		// color: green !important;
@@ -479,7 +486,7 @@ body { min-width: unit(@mediaquery-small, px); }
 	// END slide panel stuff
 }
 // XLARGE
-@media screen and ( min-width: unit(@mediaquery-xlarge, px) ) {
+@media @mq-xl {
 
 	// slide panel stuff
 	.slide-nav { display: none; }
