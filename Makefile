@@ -14,7 +14,7 @@ clean :
 
 install :
 	if [[ `which npm-preinstall` != *npm-preinstall* ]]; then \
-		npm install -g git+http://as-gitmaster:7990/scm/rd/npm-preinstall.git; \
+		npm install -g git+http://as-gitmaster.epnet.com:7990/scm/rd/npm-preinstall.git; \
 	fi
 
 	npm-preinstall
