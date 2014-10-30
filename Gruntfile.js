@@ -126,22 +126,35 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		kss: {
+			default: {
+				options: {
+					includeType: 'css',
+					includePath: 'edna.css',
+					template: 'kss-template'
+				},
+				files: {
+					'kss-docs': ['less']
+				}
+			}
+		},
 		release: {
 			main: {}
 		}
 
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-express');
-	grunt.loadNpmTasks('grunt-contrib-csslint');
-	grunt.loadNpmTasks('grunt-shell');
-	grunt.loadNpmTasks('grunt-grunticon');
 	grunt.loadNpmTasks('grunt-colorguard');
 	grunt.loadNpmTasks('grunt-contrib-analyze-css');
+	grunt.loadNpmTasks('grunt-contrib-csslint');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-eis-release');
+	grunt.loadNpmTasks('grunt-express');
+	grunt.loadNpmTasks('grunt-grunticon');
+	grunt.loadNpmTasks('grunt-kss');
+	grunt.loadNpmTasks('grunt-shell');
 
 	grunt.registerTask('codeguide', [
 		'express',
