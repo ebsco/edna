@@ -46,6 +46,26 @@ module.exports = function(grunt) {
 				},
 				src: 'codeguide/styles/codeguide.less',
 				dest: 'codeguide/styles/codeguide.css'
+			},
+			kss: {
+				options: {
+					sourceMap: true,
+					outputSourceFiles: true,
+					sourceMapURL: 'edna.css.map',
+					sourceMapFilename: 'kss-docs/public/edna.css.map'
+				},
+				src: 'edna.less',
+				dest: 'kss-docs/public/edna.css'
+			},
+			kssIEStyles: {
+				options: {
+					sourceMap: true,
+					outputSourceFiles: true,
+					sourceMapURL: 'edna.ie.css.map',
+					sourceMapFilename: 'kss-docs/public/edna.ie.css.map'
+				},
+				src: 'edna.ie.less',
+				dest: 'kss-docs/public/edna.ie.css'
 			}
 		},
 		cssmin: {
@@ -129,8 +149,6 @@ module.exports = function(grunt) {
 		kss: {
 			default: {
 				options: {
-					includeType: 'css',
-					includePath: 'edna.css',
 					template: 'kss-template'
 				},
 				files: {
