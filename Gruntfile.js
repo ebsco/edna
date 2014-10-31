@@ -99,7 +99,7 @@ module.exports = function(grunt) {
 				}
 			},
 			kss: {
-				files: ['**/*.less'],
+				files: ['**/*.less', 'less/styleguide.md'],
 				tasks: ['kss', 'less:kss', 'less:kssIEStyles'],
 			}
 		},
