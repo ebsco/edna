@@ -97,6 +97,10 @@ module.exports = function(grunt) {
 				options: {
 					livereload: true
 				}
+			},
+			kss: {
+				files: ['**/*.less'],
+				tasks: ['kss', 'less:kss', 'less:kssIEStyles'],
 			}
 		},
 		grunticon: {
@@ -156,12 +160,30 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		browserSync: {
+			default: {
+				bsFiles: {
+					src: [
+						"kss-docs/public/*.css",
+						"kss-docs/*.html"
+					]
+				},
+				options: {
+					server: {
+						baseDir: "kss-docs"
+					},
+					host: "localhost",
+					watchTask: true
+				}
+			}
+		},
 		release: {
 			main: {}
 		}
 
 	});
 
+	grunt.loadNpmTasks("grunt-browser-sync");
 	grunt.loadNpmTasks('grunt-colorguard');
 	grunt.loadNpmTasks('grunt-contrib-analyze-css');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
@@ -178,6 +200,18 @@ module.exports = function(grunt) {
 		'express',
 		'less:codeguide',
 		'watch:codeguide'
+	]);
+
+	grunt.registerTask('kss-build', [
+		"kss",
+		"less:kss",
+		"less:kssIEStyles",
+	]);
+
+	grunt.registerTask('kss-dev', [
+		"kss-build",
+		"browserSync",
+		"watch:kss",
 	]);
 
 	grunt.registerTask('server', [
