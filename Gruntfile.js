@@ -46,6 +46,26 @@ module.exports = function(grunt) {
 				},
 				src: 'codeguide/styles/codeguide.less',
 				dest: 'codeguide/styles/codeguide.css'
+			},
+			kss: {
+				options: {
+					sourceMap: true,
+					outputSourceFiles: true,
+					sourceMapURL: 'edna.css.map',
+					sourceMapFilename: 'kss-docs/public/edna.css.map'
+				},
+				src: 'edna.less',
+				dest: 'kss-docs/public/edna.css'
+			},
+			kssIEStyles: {
+				options: {
+					sourceMap: true,
+					outputSourceFiles: true,
+					sourceMapURL: 'edna.ie.css.map',
+					sourceMapFilename: 'kss-docs/public/edna.ie.css.map'
+				},
+				src: 'edna.ie.less',
+				dest: 'kss-docs/public/edna.ie.css'
 			}
 		},
 		cssmin: {
@@ -77,6 +97,10 @@ module.exports = function(grunt) {
 				options: {
 					livereload: true
 				}
+			},
+			kss: {
+				files: ['**/*.less'],
+				tasks: ['kss', 'less:kss', 'less:kssIEStyles'],
 			}
 		},
 		grunticon: {
@@ -126,27 +150,68 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		kss: {
+			default: {
+				options: {
+					template: 'kss-template'
+				},
+				files: {
+					'kss-docs': ['less']
+				}
+			}
+		},
+		browserSync: {
+			default: {
+				bsFiles: {
+					src: [
+						"kss-docs/public/*.css",
+						"kss-docs/*.html"
+					]
+				},
+				options: {
+					server: {
+						baseDir: "kss-docs"
+					},
+					host: "localhost",
+					watchTask: true
+				}
+			}
+		},
 		release: {
 			main: {}
 		}
 
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-express');
-	grunt.loadNpmTasks('grunt-contrib-csslint');
-	grunt.loadNpmTasks('grunt-shell');
-	grunt.loadNpmTasks('grunt-grunticon');
+	grunt.loadNpmTasks("grunt-browser-sync");
 	grunt.loadNpmTasks('grunt-colorguard');
 	grunt.loadNpmTasks('grunt-contrib-analyze-css');
+	grunt.loadNpmTasks('grunt-contrib-csslint');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-eis-release');
+	grunt.loadNpmTasks('grunt-express');
+	grunt.loadNpmTasks('grunt-grunticon');
+	grunt.loadNpmTasks('grunt-kss');
+	grunt.loadNpmTasks('grunt-shell');
 
 	grunt.registerTask('codeguide', [
 		'express',
 		'less:codeguide',
 		'watch:codeguide'
+	]);
+
+	grunt.registerTask('kss-build', [
+		"kss",
+		"less:kss",
+		"less:kssIEStyles",
+	]);
+
+	grunt.registerTask('kss-dev', [
+		"kss-build",
+		"browserSync",
+		"watch:kss",
 	]);
 
 	grunt.registerTask('server', [
