@@ -1,5 +1,74 @@
 /* TYPOGRAPHY */
 
+// Typography
+// 
+// Styleguide 5
+
+// Headings
+//
+// Markup:
+// <h{{modifier_class}} class="heading">H{{modifier_class}} Heading</h{{modifier_class}}>
+// 
+// 1			- H1
+// 2			- H2
+// 3			- H3
+// 4			- H4
+// 5			- H5
+// 6			- H6
+//
+// Styleguide 5.1
+
+// Anchor
+//
+// Markup:
+// <a>Click me!</a>
+// 
+// .visited           - Keyboard focus state
+// .hover             - Keyboard focus state
+// .focus             - Keyboard focus state
+// .active            - Keyboard focus state
+// 
+// Styleguide 5.2
+
+// Blockquote
+//
+// Markup:
+// <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lorem lectus, pellentesque in metus molestie, adipiscing tincidunt erat. Curabitur a nibh nunc. Vestibulum dignissim vulputate tortor at mattis. Vivamus ut odio nunc. Duis a aliquet ante. Suspendisse porta eu sem eu adipiscing. Ut tempus eleifend turpis vel viverra. Duis nulla lacus, ultricies sed blandit cursus, sollicitudin id felis.</p>
+// <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lorem lectus, pellentesque in metus molestie, adipiscing tincidunt erat. Curabitur a nibh nunc. Vestibulum dignissim vulputate tortor at mattis. Vivamus ut odio nunc. Duis a aliquet ante. Suspendisse porta eu sem eu adipiscing. Ut tempus eleifend turpis vel viverra. Duis nulla lacus, ultricies sed blandit cursus, sollicitudin id felis.</blockquote>
+// <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lorem lectus, pellentesque in metus molestie, adipiscing tincidunt erat. Curabitur a nibh nunc. Vestibulum dignissim vulputate tortor at mattis. Vivamus ut odio nunc. Duis a aliquet ante. Suspendisse porta eu sem eu adipiscing. Ut tempus eleifend turpis vel viverra. Duis nulla lacus, ultricies sed blandit cursus, sollicitudin id felis.</p>
+// 
+// Styleguide 5.3
+
+// Strong & Em
+//
+// Markup:
+// <p><{{modifier_class}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lorem lectus, pellentesque in metus molestie, adipiscing tincidunt erat. Curabitur a nibh nunc. Vestibulum dignissim vulputate tortor at mattis. Vivamus ut odio nunc. Duis a aliquet ante. Suspendisse porta eu sem eu adipiscing. Ut tempus eleifend turpis vel viverra. Duis nulla lacus, ultricies sed blandit cursus, sollicitudin id felis.</{{modifier_class}}></p>
+//
+// strong		- Strong
+// em			- Em
+//
+// Styleguide 5.4
+
+// Sup & Sub
+//
+// Markup:
+// <p>Lorem <{{modifier_class}}>ipsum dolor sit amet, consectetur adipiscing elit</{{modifier_class}}>. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</p>
+//
+// sup			- Sup
+// sub			- Sub
+//
+// Styleguide 5.5
+
+// Pre & Code
+//
+// Markup:
+// <{{modifier_class}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, justo eu aliquet imperdiet, odio tortor pellentesque eros, a porta arcu tortor ac orci. Nullam non purus lobortis, hendrerit mauris quis, condimentum orci.</{{modifier_class}}>
+//
+// pre			- Pre
+// code			- Code
+//
+// Styleguide 5.6
+
 html & {
 	font-size: @font-size; // set base font to 10
 }
@@ -83,5 +152,4 @@ code {
 	.fontfamily(code);
 }
 
-// import the tag stylesheet because it's formatting text
-@import (once) '_tag.less';
+@import (once) '_tag.less'; // import the tag stylesheet because it's formatting text

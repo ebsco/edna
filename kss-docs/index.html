@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>KSS: Living Styleguide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node" />
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
+  <link rel="stylesheet" href="public/kss.css">
+  <link rel="stylesheet" href="public/style.css">
+  <link rel="stylesheet" href="public/edna.css">
+  <link rel="stylesheet" href="public/edna.ie.css">
+</head>
+<body><div id="kss-wrapper">
+
+<div id="kss-nav">
+  <header id="kss-header">
+    <hgroup><h1>kss-node Styleguide</h1></hgroup>
+  </header>
+  <aside>
+    <nav><ul>
+      <li><a href="index.html">0.0: Overview</a></li>
+      <li><a href="section-1.html">1.0: Buttons</a>
+      </li>
+      <li><a href="section-2.html">2.0: SVG</a>
+      </li>
+      <li><a href="section-4.html">4.0: Lists</a>
+      </li>
+      <li><a href="section-5.html">5.0: Typography</a>
+      </li>
+      <li><a href="section-6.html">6.0: Breadcrumb</a>
+      </li>
+      <li><a href="section-7.html">7.0: Button Groups</a>
+      </li>
+      <li><a href="section-8.html">8.0: Grid</a>
+      </li>
+      <li><a href="section-9.html">9.0: Input Groups</a>
+      </li>
+      <li><a href="section-12.html">12.0: Searchbar</a>
+      </li>
+      <li><a href="section-13.html">13.0: Select</a>
+      </li>
+      <li><a href="section-15.html">15.0: Tag</a>
+      </li>
+      <li><a href="section-16.html">16.0: Toolbar</a>
+      </li>
+      <li><a href="section-18.html">18.0: Treelist</a>
+      </li>
+      <li><a href="section-19.html">19.0: Messaging</a>
+      </li>
+    </ul></nav>
+  </aside>
+</div>
+<div role="main" id="kss-main">
+  <article id="kss-content">
+     <h1 id="general-guidelines">General Guidelines</h1>
+<p>Code should look like it was written by one developer, not many different developers. Once these guidelines and patterns are established, strictly enforce them.</p>
+<h3 id="general-syntax">General Syntax</h3>
+<ul>
+<li>Use tabs for indenting, not spaces.</li>
+<li>Nested elements should be indented once</li>
+<li>Always use double quotes, never single quotes, on attributes</li>
+</ul>
+<h1 id="html-guidelines">HTML Guidelines</h1>
+<p>Don’t omit optional closing tags Self closing elements should contain the optional forward slash at the end <code>/&gt;</code> Don&#39;t use <code>&lt;br /&gt;</code> tags for paragraphs, use <code>&lt;p&gt;</code></p>
+<h3 id="doctype">Doctype</h3>
+<p>Simple, we only work with the HTML5 doctype.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+</code></pre><h3 id="character-encoding">Character Encoding</h3>
+<p>Placed below the <code>&lt;head&gt;</code> element and before the <code>&lt;title&gt;</code> element should be your character encoding. This will ensure proper rendering of content.</p>
+<pre><code>&lt;meta charset=&quot;UTF-8&quot; /&gt;
+</code></pre><h3 id="attribute-order">Attribute Order</h3>
+<p>To help read markup more easily HTML attributes should come in this order.</p>
+<ul>
+<li>class</li>
+<li>id, name</li>
+<li>data-*</li>
+<li>src, for, type, href</li>
+<li>title, alt</li>
+<li>aria-*, role</li>
+</ul>
+<h3 id="javascript-generated-markup">JavaScript Generated Markup</h3>
+<p>Shouldn&#39;t be done. No markup should be generated from any javascript.</p>
+<h1 id="css-format">CSS Format</h1>
+<p>One selector per line in multi-selector rulesets</p>
+<ul>
+<li>Include a single space before the opening bracket of a ruleset</li>
+<li>One declaration per line</li>
+<li>One level of indentation per declaration</li>
+<li>One space after the colon of a declaration</li>
+<li>Use hex values rather than rgb(a) for color values</li>
+<li>Use lowercase and shorthand for hex values</li>
+<li>When using quotes, use single quotes</li>
+<li>Quote attribute values in selectors</li>
+<li>Do not specify units when values are zero</li>
+<li>Include a space after commas in comma-separated properties</li>
+<li>End declaration lines with a semicolon</li>
+<li>Closing bracket should be on its own line</li>
+<li>Include one blank line between each ruleset</li>
+<li>Character entities are preferred whenever feasible. W3C reference list is here (mouseover the desired character).</li>
+</ul>
+<p>Example:</p>
+<pre><code>/* BAD CSS */
+.example1,.example2,.example3
+{
+position:relative;top:0px;left:10px;
+background-color: #FFFFFF;
+font-family:Helvetica,Arial,sans-serif}
+.example4[type=text]
+{
+border: 1px solid #CCCCCC
+
+}
+
+
+/* GOOD CSS */
+.example1,
+.example2,
+.example3 {
+    position: relative;
+    top: 0;
+    left: 10px;
+    background-color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.example4[type=&quot;text&quot;] {
+    border: 1px solid #ccc;
+}
+</code></pre><h3 id="inline-vs-internal-vs-external">Inline vs Internal vs External</h3>
+<p>As a rule we want all of our CSS in external stylesheets. There are some exceptions to this rule though.</p>
+<p>I don&#39;t currently have a use case for Internal stylesheets, though I suppose if there is no other way to bring styles into an HTML document, then this is fine.</p>
+<p>Inline styles should only be used when something needs to be styled dynamically. For example if you open a modal and want it centered on the page, then inline styles are the best.</p>
+<p>If you need to toggle some styles then they should be associated with a class, and not inline.</p>
+<p>Here is an example of bad stuff:</p>
+<pre><code class="lang-html">&lt;!-- BAD HTML WITH INLINE STYLES --&gt;
+&lt;div class=&quot;error&quot; style=&quot;display: none;&quot;&gt;ERROR&lt;/div&gt;
+</code></pre>
+<p>Here is an example of the above done correctly:</p>
+<pre><code class="lang-css">/* GOOD EXTERNAL CSS */
+.hide {
+    display: none;
+}
+</code></pre>
+<pre><code class="lang-html">&lt;!-- GOOD HTML --&gt;
+&lt;div class=&quot;error hide&quot;&gt;ERROR&lt;/div&gt;
+</code></pre>
+<p>Now, lets look at positioning a modal:</p>
+<pre><code class="lang-css">/* GOOD EXTERNAL CSS */
+.modal {
+    position: absolute;
+}
+</code></pre>
+<pre><code class="lang-html">&lt;!-- GOOD HTML WITH PROPER USE OF INLINE STYLES --&gt;
+&lt;div class=&quot;modal&quot; style=&quot;left: 200px; top: 500px;&quot;&gt;Greetings!&lt;/div&gt;
+</code></pre>
+<h3 id="prefixed-properties">Prefixed Properties</h3>
+<p>When using vendor prefixed properties, indent each property such that the declaration&#39;s value lines up vertically for easy multi-line editing.</p>
+<pre><code class="lang-css">.selector {
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+     -mos-box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+}
+</code></pre>
+<h3 id="comments">Comments</h3>
+<p>Comments are awesome, and you should not forget to use them. Great code comments convey context or purpose. Do not simply reiterate a component or class name.</p>
+<p>Place comments on a new line above their subject
+Keep line-length to a sensible maximum, e.g., 80 columns</p>
+<h3 id="multi-line-comments">Multi-Line Comments</h3>
+<p>LESS will keep these comments through the compilation process, so make liberal use of comments to break CSS code into discrete sections.</p>
+<pre><code class="lang-css">/* comment */
+</code></pre>
+<h3 id="class-names">Class Names</h3>
+<p>Keep classes lowercase and use dashes (not underscores or camelCase).</p>
+<pre><code class="lang-css">/* BAD CLASS NAMES */
+.className {...}
+.class_name {...}
+</code></pre>
+<pre><code class="lang-css">/* GOOD CLASS NAMES*/
+.class-name {...}
+</code></pre>
+<p>Note: Classes prefixed with .evt- are reserved for JavaScript events so do not apply any CSS to them.</p>
+<h3 id="selectors">Selectors</h3>
+<ul>
+<li>Use classes over generic element tag for optimum rendering performance.</li>
+<li>Keep selectors short and strive to limit the number of elements in each selector to three.</li>
+<li>Scope classes to the closest parent</li>
+</ul>
+<h3 id="pseudo-classes">Pseudo-Classes</h3>
+<p>Know the difference between these and pseudo-elements</p>
+<h3 id="pseudo-elements">Pseudo-Elements</h3>
+<p>Know the difference between these and pseudo-classes</p>
+<ul>
+<li><p>Use double colons with single colons as a fallback.</p>
+<p>  .class:after,
+  .class::after {...}</p>
+</li>
+</ul>
+<h3 id="organization">Organization</h3>
+<ul>
+<li>Organize sections of code by component</li>
+<li>When using multiple CSS files, break them down by component instead of page</li>
+</ul>
+<h1 id="less">LESS</h1>
+<p>Starting with Edna, and Buzz, we are using the LESS preprocessor to write our CSS. Preprocessors add a lot of new things to basic CSS such as nesting selectors, the use of variables and mixins, which are similar to Javascript functions.</p>
+<p>We started using LESS and not SASS because of the HLM project. For that we used Bootstrap, which was built with LESS.</p>
+<h3 id="dangers">Dangers</h3>
+<p>LESS can make it very easy to take just a few lines of LESS CSS and, when compiled, end up with thousands of lines of CSS. Yipes! In order to avoid this some guidelines should be followed.</p>
+<p>Of course one might not be able to help not following a guideline or two. Just make sure that what is compiled is clean and concise.</p>
+<h3 id="file-structure">File Structure</h3>
+<p>All files for Edna live in one directory, less. All the compiled files, and the import files that create them, live in the root of the Edna repo.</p>
+<pre><code>edna
+├── less
+│   ├── _autocomplete.less
+│   ├── _button-group.less
+│   ├── _button.less
+│   └── _carousel.less
+│   └── etc.
+├── edna.css
+├── edna.min.css
+├── edna.ie.css
+├── edna.less
+├── edna.min.less
+└── edna.ie.less
+</code></pre><h3 id="variables">Variables</h3>
+<p>Use variables for values that can change easily without messing up an element; colors, font-family, font-size, etc.</p>
+<pre><code>edna
+└── less
+└── _variables.less
+</code></pre><h3 id="nesting">Nesting</h3>
+<p>Our first guideline is to keep the number of stringed selectors to no more than 3. Nesting can be dangerous.</p>
+<p>One should use better specificity rather than another selector, or <code>!important</code>.
+Toggle this example</p>
+<pre><code class="lang-css">/* THIS IS AN EXAMPLE OF GOOD NESTING */
+
+// here is an example of a nested LESS ruleset
+.example {
+foo: bar;
+.sub-example {
+    foo: bar;
+}
+}
+
+
+
+// and here is the output
+.example {
+foo: bar;
+}
+.example .sub-example {
+foo: bar;
+}
+</code></pre>
+<p>Toggle this example</p>
+<pre><code class="lang-css">/* THIS IS AN EXAMPLE OF BAD NESTING WHERE WE END UP WITH AN UNRULY STRING OF SELECTORS */
+
+// here is an example of a nested LESS ruleset
+.first-example {
+foo: bar;
+.second-example {
+    foo: bar;
+    .third-example {
+        foo: bar;
+        .fourth-example {
+            foo: bar;
+            .fifth-example {
+                foo: bar;
+            }
+        }
+    }
+}
+}
+
+// and here is the output
+.first-example {
+foo: bar;
+}
+.first-example .second-example {
+foo: bar;
+}
+.first-example .second-example .third-example {
+foo: bar;
+}
+.first-example .second-example .third-example .fourth-example {
+foo: bar;
+}
+.first-example .second-example .third-example .fourth-example .fifth-example {
+foo: bar;
+}
+
+/* WHILE THIS ISN&#39;T HORRIBLE IT IS NOT GOOD */
+Toggle this example
+/* THIS IS AN EXAMPLE OF BAD NESTING WHERE THINGS JUST GO HAYWIRE */
+
+.first-example,
+.second-example {
+foo: bar;
+&amp; &amp; {
+    foo: bar;
+    &amp;.third-example &amp; {
+        foo: bar;
+    }
+}
+}
+
+// and here is the output
+.first-example,
+.second-example {
+foo: bar;
+}
+.first-example .first-example,
+.first-example .second-example,
+.second-example .first-example,
+.second-example .second-example {
+foo: bar;
+}
+.first-example .first-example.third-example .first-example .first-example,
+.first-example .first-example.third-example .first-example .second-example,
+.first-example .first-example.third-example .second-example .first-example,
+.first-example .first-example.third-example .second-example .second-example,
+.first-example .second-example.third-example .first-example .first-example,
+.first-example .second-example.third-example .first-example .second-example,
+.first-example .second-example.third-example .second-example .first-example,
+.first-example .second-example.third-example .second-example .second-example,
+.second-example .first-example.third-example .first-example .first-example,
+.second-example .first-example.third-example .first-example .second-example,
+.second-example .first-example.third-example .second-example .first-example,
+.second-example .first-example.third-example .second-example .second-example,
+.second-example .second-example.third-example .first-example .first-example,
+.second-example .second-example.third-example .first-example .second-example,
+.second-example .second-example.third-example .second-example .first-example,
+.second-example .second-example.third-example .second-example .second-example {
+foo: bar;
+}
+
+/* THAT IS JUST CRAZY, DON&#39;T END UP WITH SOMETHING LIKE THIS IN YOUR CSS */
+</code></pre>
+<h3 id="comments">Comments</h3>
+<p>Again, comments are awesome, use them.</p>
+<p>Single line comments are stripped from LESS when compiled. Use these more for comments to other developers, or yourself.</p>
+<pre><code class="lang-css">// comment
+</code></pre>
+<h3 id="declaration-order">Declaration Order</h3>
+<p>For readability, and to keep things in order, we have a strict declaration order we follow. We use CSS Comb for this, which you can install as a plugin for Sublime Text 2 and Atom. Check out the Getting Started with Buzz Confluence page for links.</p>
+<h1 id="widget-components">Widget Components</h1>
+<h3 id="base-widgets">Base Widgets</h3>
+<p><em>Base widgets</em> are simple widgets. These consist of one thing, such as an image, or a heading, or a list. They can live on their own, or be part of a composite widget. These could also be called child widgets.</p>
+<h3 id="composite-widgets">Composite Widgets</h3>
+<p><em>Composite widgets</em> contain base widgets. These will be for things such as a result item, or a searchbar that includes an input, buttons and a dropdown. These could also be called parent widgets.</p>
+<h3 id="widget-building-rules">Widget Building Rules</h3>
+<p>Parent widgets, apply layout styles for the child widgets inside it.</p>
+<p>Parent widgets classes shouldn&#39;t affect child widgets styles.</p>
+<p>Styles for child widgets should live on that widgets stylesheet, nbot the stylesheet for the parent widget.</p>
+
+  </article>
+</div>
+
+
+<!-- SCRIPTS -->
+<script src="public/kss.js"></script>
+<script src="public/prettify.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var sidebarAdjust = function() {
+      // Match footer/body height
+      var height = Math.max($(window).height(), $('#kss-main').height());
+
+      if ($(window).width() <= 768) {
+        $('#kss-main, #kss-nav').height('auto');
+      } else {
+        $('#kss-main, #kss-nav').height(height);
+      }
+    };
+
+    $(window).resize(sidebarAdjust);
+    $(window).scroll(sidebarAdjust);
+    sidebarAdjust();
+
+    // Ensure code blocks are highlighted properly...
+    $('pre>code').addClass('prettyprint');
+    prettyPrint();
+  });
+</script>
+
+
+</div></body>
+</html>
