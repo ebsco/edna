@@ -151,7 +151,7 @@ window['PR_SHOULD_USE_CONTINUATION'] = true;
    * token style for an sgml tag.
    * @const
    */
-  var PR_TAG = 'tag';
+  var PR_TAG = 'sgml-tag'; // 'tag'; <- conflicted with Edna
   /**
    * token style for a markup declaration such as a DOCTYPE.
    * @const
