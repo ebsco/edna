@@ -1,161 +1,504 @@
-@import 'markdown';
+@import 'markdown.less';
+// REFERENCE FILES
+@import (reference) '../../less/_variables.less';
+@import '../../less/_mixins.less';
 
-#kss-nav {
-	width:20%;
-	background-color:#eee;
+// BASE FILES
+@import '../../less/_normalize.less';
+@import '../../less/_breadcrumb.less';
+@import '../../less/_button.less';
+@import '../../less/_button-group.less';
+@import '../../less/_input-group.less';
+@import '../../less/_layout.less';
+@import '../../less/_list.less';
+@import '../../less/_messaging.less';
+@import '../../less/_modal.less';
+@import '../../less/_pin.less';
+@import '../../less/_searchbar.less';
+@import '../../less/_select';
+@import '../../less/_svg.less';
 
-	nav>ul {
-		padding:0;
-		margin:2em;
-    margin-top:2.5em;
-		list-style-type:none;
-	}
-
-	box-shadow: inset -15px 0px 15px -15px rgba(45, 45, 45, 0.25);
+@import (less) '../../grunticon/css/icons.fallback.css';
+@import (less) '../../grunticon/css/icons.png.css';
+.svg {
+  @import (less) '../../grunticon/css/icons.svg.css';
 }
 
-#kss-header h1 {
-  font-size:1.5em;
-  margin-top:5/3em;
-  margin-left:4/3em;
+@import '../../less/_toolbar.less';
+@import '../../less/_transport.less';
+@import '../../less/_treelist.less';
+@import '../../less/_typography.less';
+@import '../../less/_width.less';
+@import '../../less/_universal.less';
+// @import '../../less/_panel.less';
+
+// this is needed because Google Prettify uses this class :(
+.cg-element {
+  @import '../../less/_tag.less';
 }
 
-#kss-main, #kss-nav {
-	position:absolute;
-	top:0;
-	left:0;
+// FILES WITH MEDIA QUERIES
+@import (multiple) '../../less/_layout-mq';
+
+// FILES TO BE USEDE WITHIN MEDIA QUERIES 
+// small
+@media @mq-sm {
+
+  // @import (multiple) '../../less/_panel';
+
 }
 
-#kss-main {
-	padding-left:2.5%;
-	width:77.5%;
-	max-width:48em;
-	left:20%;
+// medium
+@media @mq-md {
+
+  // @import (multiple) '../../less/_panel';
+
 }
 
-.kss-mod-list {
-  width:100%;
+// large
+@media @mq-lg {
+
+  // here be demons
+
 }
 
-.kss-mod-name {
-  text-align:right;
-  width:20%;
-  font-size:0.75em;
+// extra-large
+@media @mq-xl {
+
+  // here be demons
+
 }
 
-.kss-mod-example {
-  padding-bottom:20px;
-         
-         display:block;
-  &>td { display:block; }
+.w {
+  margin-top: 5px;
+  
+    .w20 {
+      text-align: right;
+      padding: 10px;
+    }
+
+    .w40 {
+      text-align: center;
+      padding:  10px;
+
+      + .w40 {
+        background-color: #ccc;
+      }
+    }
+
+    .icon {
+      width: 25px;
+    height: 30px;
+    }
 }
 
-.kss-markup {
-  margin-bottom:40px;
+/* STYLEGUIDE STYLES */
+html {
+  // Box-model
+  .box(border);
+  height: 100%;
 }
 
-.kss-depth-1 > h1 { font-size: 2.5em * 0.950; }
-.kss-depth-2 > h1 { font-size: 2.5em * 0.900; }
-.kss-depth-3 > h1 { font-size: 2.5em * 0.850; }
-.kss-depth-4 > h1 { font-size: 2.5em * 0.800; }
-.kss-depth-5 > h1 { font-size: 2.5em * 0.750; }
-.kss-depth-6 > h1 { font-size: 2.5em * 0.700; }
-
-// ------------------------------------------------------------------------------
-//   @group prettyprint.js styling
-// ------------------------------------------------------------------------------
-/* Pretty printing styles. Used with prettify.js. */
-
-/* SPAN elements with the classes below are added by prettyprint. */
-.pln { color: #000 }  /* plain text */
-
-@media screen {
-  .str { color: #080 }  /* string content */
-  .kwd { color: #008 }  /* a keyword */
-  .com { color: #800 }  /* a comment */
-  .typ { color: #606 }  /* a type name */
-  .lit { color: #066 }  /* a literal value */
-  /* punctuation, lisp open bracket, lisp close bracket */
-  .pun, .opn, .clo { color: #660 }
-  .tag { color: #008 }  /* a markup tag name */
-  .atn { color: #606 }  /* a markup attribute name */
-  .atv { color: #080 }  /* a markup attribute value */
-  .dec, .var { color: #606 }  /* a declaration; a variable name */
-  .fun { color: red }  /* a function name */
+*,
+*:before,
+*:after {
+  // Box-model
+  .box(inherit);
 }
 
-/* Use higher contrast and text-weight for printable form. */
-@media print, projection {
-  .str { color: #060 }
-  .kwd { color: #006; font-weight: bold }
-  .com { color: #600; font-style: italic }
-  .typ { color: #404; font-weight: bold }
-  .lit { color: #044 }
-  .pun, .opn, .clo { color: #440 }
-  .tag { color: #006; font-weight: bold }
-  .atn { color: #404 }
-  .atv { color: #060 }
-}
+.cg-head {
+  color: #333;
+  font-size: 36px;
+  line-height: 48px;
+  padding: @sg-padding 0;
+  margin: 0;
 
-/* Put a border around prettyprinted code snippets. */
-/*pre.prettyprint { padding: 2px; border: 1px solid #888 }*/
-
-/* Specify class=linenums on a pre to get line numbering */
-ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
-li.L0,
-li.L1,
-li.L2,
-li.L3,
-li.L5,
-li.L6,
-li.L7,
-li.L8 { list-style-type: none }
-/* Alternate shading for lines */
-li.L1,
-li.L3,
-li.L5,
-li.L7,
-li.L9 { background: #eee }
-
-// ------------------------------------------------------------------------------
-//   @group Mobile/Tablet Styling
-// ------------------------------------------------------------------------------
-@media screen and (max-width: 768px) {
-  #kss-main {
-    position:static;
-    width:90%;
-    margin:0 auto;
-    padding-left:0;
+  &-h1 {
+    font-size: 36px;
+    line-height: 48px;
   }
 
-  #kss-nav {
-    position:static;
-    display:block;
-    width:auto;
-    margin:0;
-    background:0;
-    box-shadow:none;
-    border-bottom:1px solid #ddd;
-    nav>ul {
-      margin-top:0.5em;
-      margin-bottom:0.5em;
+  > a,
+  > a:active,
+  > a:visited,
+  > a:hover {
+    color: #666;
+  }
+}
 
-      &>li {
-        display:inline-block;
-        padding-right:1.5em;
-      }
+.col + .col {
+  padding-left: 50px;
+}
+
+.cg-element.w {
+  padding: 20px;
+  > .w20 {
+    .safari-scrollbars;
+    padding: 10px 10px 0 10px;
+    height: 300px;
+    overflow: scroll;
+    background-color: #ddd;
+    &:nth-child(odd) {
+      background-color: #efefef;
+    }
+  }
+}
+
+.safari-scrollbars() {
+  &::-webkit-scrollbar {
+      -webkit-appearance: none;
+
+    &:vertical {
+        width: 11px;
+    }
+
+    &:horizontal {
+        height: 11px;
     }
   }
 
-  #kss-header>hgroup>h1 {
-    margin-top:0;
-    margin-bottom:0;
+  &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      border: 2px solid white; /* should match background, can't be transparent */
+      background-color: rgba(0, 0, 0, .5);
+  }
+
+  &::-webkit-scrollbar-track { 
+      background-color: #fff; 
+      border-radius: 8px; 
+  } 
+}
+
+.cg-nav {
+  overflow: hidden;
+
+  .list-item {
+    &.cg-nav-side-item {
+      // background-color: #aaa;
+      padding: 0;
+
+      > a {
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+        background-color: #eee;
+        color: #666 !important;
+      }
+
+      &:hover a {
+        background-color: #ccc;
+        text-decoration: none;
+      }
+
+      &.active {
+        border-left: 10px solid #aaa;
+        padding-left: 0;
+
+        > .txt-link {
+          background-color: #bbb;
+          color: #666;
+          font-weight: bold;
+          padding-left: 5px;
+          margin-left: -20px;
+          width: auto;
+        }
+      }
+    }
+
+    &.cg-nav-side-heading {
+      // margin-left: -25px;
+      width: 100%;
+      padding: 10px;
+      background-color: #ddd;
+      color: #333;
+      outline: 0;
+      border: none;
+      cursor: default;
+    }
   }
 }
 
-@media screen and (max-width: 640px) {
-  #kss-github {
-    display:none;
+@sg-padding: 20px;
+
+.l2-p9 {
+  padding-top: 0;
+}
+
+.cg-heading {
+  position: relative;
+  padding: (@sg-padding / 2) @sg-padding;
+  margin-bottom: 0;
+  margin-top: 0;
+  background-color: #eee;
+  color: #333;
+  
+  &-sub {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0 20px;
+    color: inherit;
   }
 }
-// @end
+.cg-element {
+  position: relative;
+  padding: @sg-padding 200px @sg-padding @sg-padding;
+  border-top: 1px solid #eee;
+  cursor: default;
+
+  .modal {
+    width: 100%;
+  }
+
+  .cg-description {
+    .fontsize(1.6);
+    margin-bottom: @sg-padding;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.cg-list {
+  padding-left: 20px;
+  margin: 0;
+  list-style-type: circle;
+
+  > li {
+    padding: 5px;
+    background-color: #eee;
+
+    &:nth-child(odd) {
+      background-color: #ddd;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.cg-modifier-name {
+  position: absolute;
+  top: 50%;
+  right: @sg-padding;
+  font-size: 14px;
+  background-color: #eee;
+  padding: 5px 10px;
+  margin-top: -14px;
+  border: 1px solid darken(#eee, 10%);
+
+  .cg-heading & {
+    background-color: #fff;
+    font-weight: normal;
+    padding: 2px 10px;
+  }
+}
+.cg-section {
+  min-height: 150px;
+
+  .cg-description {
+    .alert {
+      color: red;
+    }
+  }
+}
+.cg-nav-side-item {
+  outline: 0;
+}
+.cg-code {
+  background-color: #272822;
+  border-radius: 5px;
+  padding: 20px !important;
+  overflow: scroll;
+
+  &.evt-toggled {
+    height: 50px;
+  }
+
+  > code {
+    color: #ccc;
+    display: block;
+    white-space: pre;
+  }
+  ol.linenums {
+    padding: 0;
+    margin-left: 30px;
+  }
+}
+.cg-layout {
+  padding: 0;
+  .col {
+    padding: 10px 0;
+    background-color: #aca;
+    border-right: 3px solid #fff;
+    &:last-child {
+      border-right-width: 0;
+    }
+  }
+}
+pre.prettyprint {
+  white-space: pre !important;
+  overflow: scroll;
+  margin: 5px 20px 20px;
+}
+
+.cg-toggler {
+  border: 1px solid black;
+  border-width: 1px 1px 0 1px;
+  background-color: #eee;
+  display: inline-block;
+  margin-left: 25px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  
+  + .cg-code {
+    margin-top: 0;
+  }
+  + .cg-toggled.cg-code {
+    height: auto;
+  }
+}
+
+.cg-element {
+  .tag {
+    color: inherit;
+  }
+}
+
+.prettyprint {
+  .tag {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.cg-layout {
+  
+  .w20,
+  .w25,
+  .w33,
+  .w40,
+  .w50,
+  .w60,
+  .w66,
+  .w75,
+  .w80 {
+    padding: 10px 0;
+    background-color: #aca;
+    border-right: 3px solid #fff;
+    &:last-child {
+      border-right-width: 0;
+    }
+  }
+}
+
+.list dd {
+    display: inline-block;
+    height: 50px;
+    vertical-align: top;
+    margin-right: 15px;
+
+  + dt {
+      display: inline;
+
+    &:after {
+        content: '';
+        display: table;
+        clear: right;
+    }
+  }
+
+}
+
+body { min-width: unit(@mediaquery-small, px); }
+// SMALL
+@media @mq-sm {
+
+  * {
+    // color: blue !important;
+  }
+
+  @import (multiple) '../../less/_panel.less';
+    .slide-panel(85, top);
+    .slide-panel(150, right);
+    .slide-panel(42, bottom);
+    .slide-panel(150, left);
+
+  // slide panel stuff
+  .cg-element.mq-pnl {
+    padding: 0;
+    .l1-p1 { padding: 0; }
+    .l2-p8 { padding: 0 10px; }
+    .mq-pnl-r,
+    .mq-pnl-b,
+    .mq-pnl-l { background-color: #efefef; }
+  }
+  .slide-nav .btn {
+    margin: 0;
+    font-size: 10px;
+  }
+  // END slide panel stuff
+}
+// MEDIUM
+@media @mq-md {
+
+  @import 'css.css';
+
+  * {
+    // color: red !important;
+  }
+
+  @import (multiple) '../../less/_panel.less';
+    .slide-panel(85, top);
+    .slide-panel(150, right);
+    .slide-panel(42, bottom);
+    .slide-panel(150, left);
+
+  // slide panel stuff
+  .cg-element.mq-pnl {
+    padding: 0;
+    .l1-p1 { padding: 0; }
+    .l2-p8 { padding: 0 10px; }
+    .mq-pnl-r,
+    .mq-pnl-b,
+    .mq-pnl-l { background-color: #efefef; }
+  }
+  // END slide panel stuff
+}
+// LARGE
+@media @mq-lg {
+
+  * {
+    // color: green !important;
+  }
+
+  // slide panel stuff
+  .slide-nav { display: none; }
+  .cg-element.mq-pnl {
+    padding: 0;
+    .l1-p1 { padding: 0; }
+    .l2-p8 { padding: 0; }
+    .col + .col { padding: 0; }
+    .mq-pnl-r,
+    .mq-pnl-b,
+    .mq-pnl-l { background-color: #efefef; }
+  }
+  // END slide panel stuff
+}
+// XLARGE
+@media @mq-xl {
+
+  // slide panel stuff
+  .slide-nav { display: none; }
+  .cg-element.mq-pnl {
+    padding: 0;
+    .l1-p1 { padding: 0; }
+    .l2-p8 { padding: 0; }
+    .col + .col { padding: 0; }
+    .mq-pnl-r,
+    .mq-pnl-b,
+    .mq-pnl-l { background-color: #efefef; }
+  }
+  // END slide panel stuff
+}
