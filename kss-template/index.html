@@ -61,32 +61,37 @@
 					{{/unlessDepth}}
 
 					<a name="{{reference}}"></a>
-			        <div class="cg-section">
-			            <h2 class="cg-heading">
-							{{ header }}
-							{{#if modifiers}}
-		                    <span class="cg-modifier-name" title="modifier">{{name}}</span>
-							{{/if}}
-			            </h2>
+		            <h2 class="cg-heading">
+						{{ header }}
+		            </h2>
 
-						{{#if description}}
-						<p class="cg-description">{{{description}}}</p>
+					{{#if description}}
+					{{{description}}}
+					{{/if}}
+
+					{{#if markup}}
+
+						{{#if modifiers}}
+
+							{{#eachModifier}}
+					            <div class="cg-element">
+									{{{markup}}}
+				                    <span class="cg-modifier-name" title="modifier">{{name}}</span>
+					            </div>
+							{{/eachModifier}}
+							<pre>{{markup}}</pre>
+
+						{{else}}
+
+				            <div class="cg-element">
+								{{{markup}}}
+				            </div>
+
+							<pre>{{markup}}</pre>
+
 						{{/if}}
 
-						{{#if markup}}
-			            <div class="cg-element">
-							{{{markup}}}
-			            </div>
-
-						{{#eachModifier}}
-			            <div class="cg-element">
-							{{{markup}}}
-		                    <span class="cg-modifier-name" title="modifier">{{name}}</span>
-			            </div>
-						{{/eachModifier}}
-						<pre>{{markup}}</pre>
-						{{/if}}
-		            </div>
+					{{/if}}
 
 
 				{{#unlessDepth 1}}

@@ -26,6 +26,9 @@ html {
 *:after {
   box-sizing: inherit;
 }
+article p {
+  padding: 10px 20px;
+}
 .cg-head {
   color: #333;
   font-size: 36px;
@@ -45,37 +48,6 @@ html {
 }
 .col + .col {
   padding-left: 50px;
-}
-.cg-element.w {
-  padding: 20px;
-}
-.cg-element.w > .w20 {
-  padding: 10px 10px 0 10px;
-  height: 300px;
-  overflow: scroll;
-  background-color: #ddd;
-}
-.cg-element.w > .w20::-webkit-scrollbar {
-  -webkit-appearance: none;
-}
-.cg-element.w > .w20::-webkit-scrollbar:vertical {
-  width: 11px;
-}
-.cg-element.w > .w20::-webkit-scrollbar:horizontal {
-  height: 11px;
-}
-.cg-element.w > .w20::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  border: 2px solid white;
-  /* should match background, can't be transparent */
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.cg-element.w > .w20::-webkit-scrollbar-track {
-  background-color: #fff;
-  border-radius: 8px;
-}
-.cg-element.w > .w20:nth-child(odd) {
-  background-color: #efefef;
 }
 .cg-nav {
   overflow: hidden;
@@ -207,16 +179,16 @@ html {
 .cg-layout {
   padding: 0;
 }
-.cg-layout .col {
+.cg-element .col {
   padding: 10px 0;
   background-color: #aca;
   border-right: 3px solid #fff;
 }
-.cg-layout .col:last-child {
+.cg-element .col:last-child {
   border-right-width: 0;
 }
 pre.prettyprint {
-  white-space: pre !important;
+  white-space: pre-line;
   overflow: scroll;
   margin: 5px 20px 20px;
 }
@@ -246,28 +218,28 @@ pre.prettyprint {
   padding: 0;
   margin: 0;
 }
-.cg-layout .w20,
-.cg-layout .w25,
-.cg-layout .w33,
-.cg-layout .w40,
-.cg-layout .w50,
-.cg-layout .w60,
-.cg-layout .w66,
-.cg-layout .w75,
-.cg-layout .w80 {
+.cg-element .w20,
+.cg-element .w25,
+.cg-element .w33,
+.cg-element .w40,
+.cg-element .w50,
+.cg-element .w60,
+.cg-element .w66,
+.cg-element .w75,
+.cg-element .w80 {
   padding: 10px 0;
   background-color: #aca;
   border-right: 3px solid #fff;
 }
-.cg-layout .w20:last-child,
-.cg-layout .w25:last-child,
-.cg-layout .w33:last-child,
-.cg-layout .w40:last-child,
-.cg-layout .w50:last-child,
-.cg-layout .w60:last-child,
-.cg-layout .w66:last-child,
-.cg-layout .w75:last-child,
-.cg-layout .w80:last-child {
+.cg-element .w20:last-child,
+.cg-element .w25:last-child,
+.cg-element .w33:last-child,
+.cg-element .w40:last-child,
+.cg-element .w50:last-child,
+.cg-element .w60:last-child,
+.cg-element .w66:last-child,
+.cg-element .w75:last-child,
+.cg-element .w80:last-child {
   border-right-width: 0;
 }
 .list dd {
