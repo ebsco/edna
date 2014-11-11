@@ -20,6 +20,9 @@
 	// SLIM
 	&.slim {
 		> .top, > .right, > .bottom, > .left {
+			.fontsize(@transport-slim-fontsize);
+			.inactive;
+
 			width: 10px;
 			height: 16px;
 			padding: 0 0 0 3px;
@@ -31,9 +34,6 @@
 
 			border-color: @transport-slim-bordercolor;
 			border-width: 0;
-
-			.fontsize(@transport-slim-fontsize);
-			.inactive;
 			&:after,
 			&::after {
 				display: inline-block;
@@ -94,6 +94,8 @@
 	&-right,
 	&-bottom,
 	&-left {
+		.inactive;
+
 		position: relative;
 		top: 3px;
 		left: 4px;
@@ -106,8 +108,6 @@
 		border-right: @transport-width solid transparent;
 		border-bottom: @transport-width solid transparent;
 		border-left: @transport-width solid transparent;
-
-		.inactive;
 	}
 	&-top {
 		top: -3px;
@@ -119,6 +119,14 @@
 		left: 7px;
 
 		border-left: @transport-width solid @colorS4;
+		&.thin {
+			.icon.svg-transport-slim-r-dark;
+
+			width: 10px;
+			height: 10px;
+
+			border: none;
+		}
 	}
 	&-bottom {
 		border-top: @transport-width solid @colorS4;
@@ -128,5 +136,13 @@
 		left: 2px;
 
 		border-right: @transport-width solid @colorS4;
+		&.thin {
+			.icon.svg-transport-slim-l-dark;
+
+			width: 10px;
+			height: 10px;
+
+			border: none;
+		}
 	}
 }
