@@ -1,10 +1,8 @@
 # DIRECTORIES *
 node_modules/
-codeguide/bower/
 .sass-cache/
 
 # FILES
-.bower.json
 .DS_Store
 *.css
 *.map
@@ -13,5 +11,4 @@ grunticon/js
 grunticon/*.html
 !kss-template/public/kss.css
 !kss-template/kss-docs/kss.css
-!codeguide/styles/sons-of-obsidian.css
 build.properties.json

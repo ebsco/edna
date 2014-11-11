@@ -201,6 +201,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('server-deploy', [
 		'grunticon',
 		'less',
+		'kss-build',
 		'express',
 		'express-keepalive'
 	]);
