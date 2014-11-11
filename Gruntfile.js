@@ -145,15 +145,15 @@ module.exports = function(grunt) {
 			default: {
 				bsFiles: {
 					src: [
-						"kss-docs/public/*.css",
-						"kss-docs/*.html"
+						'kss-docs/public/*.css',
+						'kss-docs/*.html'
 					]
 				},
 				options: {
 					server: {
-						baseDir: "kss-docs"
+						baseDir: 'kss-docs'
 					},
-					host: "localhost",
+					host: 'localhost',
 					port: 8030,
 					watchTask: true
 				}
@@ -165,7 +165,7 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.loadNpmTasks("grunt-browser-sync");
+	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-colorguard');
 	grunt.loadNpmTasks('grunt-contrib-analyze-css');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
@@ -179,15 +179,16 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-shell');
 
 	grunt.registerTask('kss-build', [
-		"kss",
-		"less:kss",
-		"less:kssIEStyles",
+		'grunticon',
+		'kss',
+		'less:kss',
+		'less:kssIEStyles',
 	]);
 
 	grunt.registerTask('kss-dev', [
-		"kss-build",
-		"browserSync",
-		"watch:kss",
+		'kss-build',
+		'browserSync',
+		'watch:kss',
 	]);
 
 	grunt.registerTask('server', [
@@ -199,8 +200,6 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('server-deploy', [
-		'grunticon',
-		'less',
 		'kss-build',
 		'express',
 		'express-keepalive'
