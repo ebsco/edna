@@ -309,19 +309,13 @@
 
 
 // PAGINATION
-@pg-list-item-color: lighten(@font-color, 20%);
-@pg-list-item-color-hover: @font-color;
-@pg-list-item-bgcolor-hover: @bg2;
-@pg-list-item-bordercolor: @colorS4;
-// active
-@pg-list-item-active-color: @font-color;
-@pg-list-item-active-color-hover: @font-color;
-@pg-list-item-active-bgcolor: @colorS4;
-@pg-list-item-active-bgcolor-hover: @colorS4;
-// inactive
-@pg-list-item-inactive-color: lighten(@font-color, 20%);
-@pg-list-item-inactive-color-hover: lighten(@font-color, 20%);
-@pg-list-item-inactive-bgcolor-hover: transparent;
+@pag-base-color: #76bdf2;
+@pag-bgcolor: lighten(@pag-base-color, 27%);
+@pag-bgcolorhover: darken(@pag-bgcolor, 5%);
+@pag-txt-color-active: #333;
+@pag-txt-bordercolor-active: #ccc;
+@pag-transport-bordercolor: @pag-txt-color-active;
+@pag-transport-borderwidth: @px * .9;
 
 
 // RESULT-ITEM

@@ -2,74 +2,79 @@
 
 .pagination {
 	.clearfix;
-	.pag-list {
-		display: inline-block;
+
+	display: table;
+	.list {
+		display: table-cell;
+	}
+	.list-item {
 		float: left;
 		padding: 0;
-
-		list-style-type: none;
-		.pag-list-item {
-			display: inline-block;
-			float: left;
-			padding: 0 10px;
-
-			color: @pg-list-item-color;
-			cursor: pointer;
-
-			border: 1px solid @pg-list-item-bordercolor;
-			&:nth-last-child(1) {
-				border-right: 0;
-			}
-			&:hover {
-				color: @pg-list-item-color-hover;
-
-				background-color: @pg-list-item-bgcolor-hover;
-			}
-			&.inactive {
-				color: @pg-list-item-inactive-color;
-				cursor: default;
-				&:hover {
-					color: @pg-list-item-inactive-color-hover;
-
-					background-color: @pg-list-item-inactive-bgcolor-hover;
-				}
-			}
-			&.active {
-				color: @pg-list-item-active-color;
+		margin: 0 4px;
+		&.active,
+		&.inactive {
+			.txt-link {
+				color: @pag-txt-color-active;
 				cursor: default;
 
-				background-color: @pg-list-item-active-bgcolor;
-				&:hover {
-					color: @pg-list-item-active-color-hover;
-
-					background-color: @pg-list-item-active-bgcolor-hover;
-				}
+				background-color: transparent;
+				border-color: @pag-txt-bordercolor-active;
 			}
+		}
+		+ .tport {
+			margin-left: 50px;
 		}
 	}
-	// PAGINATION SPECIFIC STYLES
+	.txt-link {
+		min-width: 33px;
+		padding: 5px 0;
+
+		text-align: center;
+
+		background-color: @pag-bgcolor;
+		border: 1px solid @pag-base-color;
+		border-radius: 3px;
+		&:hover {
+			text-decoration: none;
+
+			background-color: @pag-bgcolorhover;
+		}
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+	.tport {
+		.txt-link {
+			padding: 5px 10px;
+		}
+		+ .list-item {
+			margin-left: 50px;
+		}
+	}
 	.transport {
-		display: inline-block;
-		float: left;
-
-		@newPX: (@px * 1);
-		> .right, > .left {
+		&-right,
+		&-left {
 			color: @colorS4;
+			vertical-align: top;
 
-			border-top: (@newPX * .9) solid transparent;
-			border-bottom: (@newPX * .9) solid transparent;
+			border-top: @pag-transport-borderwidth solid transparent;
+			border-bottom: @pag-transport-borderwidth solid transparent;
 		}
-		> .right {
-			margin-right: 0;
-			margin-left: (@newPX * .5);
+		&-right {
+			top: 5px;
+			right: 0;
 
-			border-left: @newPX solid @colorS4;
+			border-right-width: 0;
+			border-left: @pag-transport-borderwidth solid @colorS4;
+			border-left-color: @pag-transport-bordercolor;
 		}
-		> .left {
-			margin-right: (@newPX * .5);
-			margin-left: 0;
+		&-left {
+			top: 5px;
+			left: 0;
 
-			border-right: @newPX solid @colorS4;
+			border-right: @pag-transport-borderwidth solid @colorS4;
+			border-right-color: @pag-transport-bordercolor;
+			border-left-width: 0;
 		}
 	}
 }
