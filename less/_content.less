@@ -1,15 +1,32 @@
-/* CONTENTBOX */
+// Content
+// 
+// I am pretty sure that these are not being used...
+// 
+// Styleguide 5
+
+// Content
+// 
+// Markup:
+// <div class="contentbox">
+// 	<img class="contentbox-img" src="http://cl.ly/image/0k0v2L2q0W1a/jpeg.jpg" />
+// 	<div class="contentbox-info">
+// 		<div class="contentbox-heading">Heading</div>
+// 		Some content here, for your enjoyment!
+// 	</div>
+// </div>
+// 
+// Styleguide 5.1
 
 .contentbox {
 	.contentbox-img {
-		float: left;
-		width: 15px;
+		display: inline-block;
+		width: 150px;
 	}
 	.contentbox-info {
-		margin-left: 165px;
-		.contentbox-heading {
-			margin-top: 10px;
+		display: inline-block;
 
+		vertical-align: top;
+		.contentbox-heading {
 			border-bottom: 1px solid @content-border;
 			> a {
 				text-decoration: none;

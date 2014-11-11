@@ -11,5 +11,7 @@ codeguide/bower/
 *.png
 grunticon/js
 grunticon/*.html
+!kss-template/public/kss.css
+!kss-template/kss-docs/kss.css
 !codeguide/styles/sons-of-obsidian.css
 build.properties.json

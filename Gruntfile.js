@@ -4,18 +4,12 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		shell: {
-			listFolders: {
-				stdout: false,
-				command: 'rm .git/hooks/pre-push'
-			}
-		},
 		express: {
 			server: {
 				options: {
 					port: 8030,
 					host: 'http://localhost',
-					bases: 'codeguide/',
+					bases: 'kss-docs/',
 					debug: true
 				}
 			}
@@ -40,12 +34,6 @@ module.exports = function(grunt) {
 				},
 				src: 'edna.ie.less',
 				dest: 'edna.ie.css'
-			},
-			codeguide: {
-				options: {
-				},
-				src: 'codeguide/styles/codeguide.less',
-				dest: 'codeguide/styles/codeguide.css'
 			},
 			kss: {
 				options: {
@@ -91,15 +79,8 @@ module.exports = function(grunt) {
 					livereload: true
 				}
 			},
-			codeguide: {
-				files: ['*.less', 'less/*.less', 'codeguide/*.html', 'codeguide/*.less', 'codeguide/styles/*.less', 'codeguide/scripts/*.js'],
-				tasks: ['less:codeguide'],
-				options: {
-					livereload: true
-				}
-			},
 			kss: {
-				files: ['**/*.less'],
+				files: ['**/*.less', 'less/styleguide.md'],
 				tasks: ['kss', 'less:kss', 'less:kssIEStyles'],
 			}
 		},
@@ -173,6 +154,7 @@ module.exports = function(grunt) {
 						baseDir: "kss-docs"
 					},
 					host: "localhost",
+					port: 8030,
 					watchTask: true
 				}
 			}
@@ -195,12 +177,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-grunticon');
 	grunt.loadNpmTasks('grunt-kss');
 	grunt.loadNpmTasks('grunt-shell');
-
-	grunt.registerTask('codeguide', [
-		'express',
-		'less:codeguide',
-		'watch:codeguide'
-	]);
 
 	grunt.registerTask('kss-build', [
 		"kss",
