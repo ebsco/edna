@@ -1,18 +1,18 @@
 # Edna CSS Framework
 
 <table border="0">
-	<tr>
-		<td width="100">
-			<img src="http://f.cl.ly/items/3K052s0y111v1g3w1C2G/sm-edna.jpg" alt="Edna" style="float:left;border:none;"/>
-		</td>
-		<td>
-			Edna is a custom CSS framework. Dig it!<br/><br/>
+  <tr>
+    <td width="100">
+      <img src="http://f.cl.ly/items/3K052s0y111v1g3w1C2G/sm-edna.jpg" alt="Edna" style="float:left;border:none;"/>
+    </td>
+    <td>
+      Edna is a custom CSS framework. Dig it!<br/><br/>
 
-			View the <a href="docs/docs.md">Edna docs</a><br/><br/>
+      View the <a href="docs/docs.md">Edna docs</a><br/><br/>
 
-			Checkout the <a href="http://eae-buzzdev801.epnet.com:8030">CodeGuide</a> for some working examples of CSS and markup
-		</td>
-	</tr>
+      Checkout the <a href="http://eae-buzzdev801.epnet.com:8030">CodeGuide</a> for some working examples of CSS and markup
+    </td>
+  </tr>
 </table>
 
 **Edna contains:**
@@ -43,7 +43,27 @@ Your most basic task. It will get you up and running.
 grunt build
 ```
 
-grunt lint, [grunt-grunticon][4], [grunt-contrib-less][5]
+[grunt-grunticon][4], [grunt-contrib-less][5], [grunt-contrib-cssmin][15], grunt quality-check
+
+### Build the Documentation
+
+The documentation is built using KSS(Knyle Style Sheets) from the source. Run the following command to generate the docs into ```kss-docs/'''
+
+```
+grunt kss-build
+```
+
+[grunt-kss][13], [grunt-grunticon][4], [grunt-contrib-less][5]
+
+### Live Docmentation Changes During Development
+
+The documentation pages server as a great sandbox for style development. Using the following command with set up a documentation server that reloads the browser when style files have changed.
+
+```
+grunt-kss-dev
+```
+
+grunt kss-build, [grunt-browser-sync][14], [grunt-contrib-watch][8]
 
 ### Start a Server
 
@@ -53,17 +73,17 @@ So you can view Edna locally you will need to run this command. It will watch fo
 grunt server
 ```
 
-[grunt-express][9], [grunt-grunticon][4], [grunt-contrib-less][5], [grunt-contrib-watch][8]
+[grunt-express][9], [grunt-grunticon][4], [grunt-contrib-less][5], [grunt-contrib-cssmin][15], [grunt-contrib-watch][8]
 
 ### Linting
 
 Do this often to check out how your CSS fares. Also checks filesize and selector count.
 
 ```
-grunt lint
+grunt quality-check
 ```
 
-[grunt-css-metrics][10], [grunt-contrib-csslint][11]
+[grunt-contrib-analyze-css][11], [grunt-css-metrics][10]
 
 ### Check Edna's Colors
 
@@ -73,7 +93,7 @@ This is a specialized task that one won't need to run that often. The [grunt-col
 grunt colors
 ```
 
-[grunt-colorguard][6], [grunt-css-metrics][7]
+[grunt-colorguard][6]
 
 
   [1]: http://eae-buzzdev801.epnet.com:8030
@@ -86,5 +106,8 @@ grunt colors
   [8]: https://github.com/gruntjs/grunt-contrib-watch
   [9]: https://github.com/blai/grunt-express
   [10]: https://github.com/phamann/grunt-css-metrics
-  [11]: https://github.com/gruntjs/grunt-contrib-csslint
+  [11]: https://github.com/DeuxHuitHuit/grunt-contrib-analyze-css
   [12]: docs/docs.md
+  [13]: https://github.com/t32k/grunt-kss
+  [14]: https://github.com/shakyShane/grunt-browser-sync
+  [15]: https://github.com/gruntjs/grunt-contrib-cssmin

@@ -179,8 +179,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-shell');
 
 	grunt.registerTask('kss-build', [
-		'grunticon',
 		'kss',
+		'grunticon',
 		'less:kss',
 		'less:kssIEStyles',
 	]);
