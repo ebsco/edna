@@ -1,8 +1,8 @@
-##General Guidelines
+#General Guidelines
 
 Code should look like it was written by one developer, not many different developers. Once these guidelines and patterns are established, strictly enforce them.
 
-###General Syntax
+##General Syntax
 
 - Use tabs for indenting, not spaces.
 - Nested elements should be indented once
@@ -204,7 +204,7 @@ Know the difference between these and pseudo-classes
 - When using multiple CSS files, break them down by component instead of page
 
 
-##LESS
+#LESS
 
 Starting with Edna, and Buzz, we are using the LESS preprocessor to write our CSS. Preprocessors add a lot of new things to basic CSS such as nesting selectors, the use of variables and mixins, which are similar to Javascript functions.
 

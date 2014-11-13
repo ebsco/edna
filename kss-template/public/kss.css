@@ -188,7 +188,7 @@ article p {
   border-right-width: 0;
 }
 pre.prettyprint {
-  white-space: pre;
+  white-space: pre-wrap;
   overflow: scroll;
   margin: 5px 20px 20px;
 }
