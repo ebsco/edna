@@ -11,5 +11,5 @@ kss-docs/
 grunticon/js
 grunticon/*.html
 !kss-template/public/kss.css
-!kss-template/kss-docs/kss.css
+!kss-template/public/sons-of-obsidian.css
 build.properties.json
