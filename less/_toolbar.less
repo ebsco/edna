@@ -9,29 +9,29 @@
 // Markup:
 // <div class="toolbar">
 //     <div class="personal-bar">
-//         <ul class="personal-nav">
-//             <li class="personal-nav-item">
+//         <ul class="list personal-nav">
+//             <li class="list-item">
 //                 <a href="#" class="txt-link">Item One</a>
 //             </li>
-//             <li class="personal-nav-item">
+//             <li class="list-item">
 //                 <a href="#" class="txt-link">Item Two</a>
 //             </li>
 //         </ul>
 //     </div>
 //     <div class="bar">
-//         <ul class="user-nav">
-//             <li class="user-nav-item">
+//         <ul class="list user-nav">
+//             <li class="list-item">
 //                 <a href="#" class="txt-link">Item One</a>
 //             </li>
-//             <li class="user-nav-item">
+//             <li class="list-item">
 //                 <a href="#" class="txt-link">Item Two</a>
 //             </li>
 //         </ul>
-//         <ul class="nav">
-//             <li class="nav-item">
+//         <ul class="list nav">
+//             <li class="list-item">
 //                 <a href="#" class="txt-link">Item One</a>
 //             </li>
-//             <li class="nav-item">
+//             <li class="list-item">
 //                 <a href="#" class="txt-link">Item Two</a>
 //             </li>
 //         </ul>
@@ -41,10 +41,10 @@
 // Styleguide 23.1
 
 .toolbar {
+	.fontfamily(sans);
+
 	width: 100%;
 	overflow: visible;
-	 
-	.fontfamily(sans);
 	.txt-link {
 		font: inherit;
 		color: @usernav-item-color;
@@ -56,30 +56,29 @@
 		}
 	}
 	.personal-bar {
-		width: 100%;
-	 
-		background-color: @tbar-personal-bgcolor;
-	 
 		.clearfix;
+
+		width: 100%;
+
+		background-color: @tbar-personal-bgcolor;
 		.personal-nav {
+			.fontsize(1.2);
+			.clearfix;
+
 			width: 100%;
 			padding: 9px 10px;
 			margin: 0;
-			 
-			.fontsize(1.2);
-			text-align: right;
-			 
-			list-style-type: none;
 
-			.clearfix;
+			text-align: right;
+			list-style-type: none;
 		}
-		.personal-nav-item {
+		.list-item {
+			.clearfix;
+
 			display: inline-block;
 			padding: 0 0 0 10px;
-			 
+
 			color: @colorS2;
-			 
-			.clearfix;
 		}
 		.txt-link {
 			text-decoration: underline;
@@ -87,32 +86,45 @@
 	}
 	.bar {
 		.pos(relative);
-		 
-		padding-bottom: 2px;
-		overflow: hidden;
-		 
 		// background-color: @tbar-bgcolor;
+
 		@color: @colorS2;
 		@top: fadeout(@color, 90%);
 		@bottom: fadeout(@color, 100%);
+
+		padding-bottom: 2px;
+		overflow: hidden;
+
 		background: @tbar-bgcolor -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
 		background: @tbar-bgcolor -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
 		background: @tbar-bgcolor  -ms-linear-gradient(bottom, @bottom, @top);
 		background: @tbar-bgcolor   -o-linear-gradient(@top, @bottom);
+
 		filter: progid:DXImageTransform.Microsoft.gradient( GradientType=0,startColorstr=#9a6978, endColorstr=#712b40);
 	}
 }
-.nav {	 
+.nav {
 	display: inline-block;
+	width: auto;
 	padding: 0;
 	margin: 0;
-	.nav-item {
+	.list-item {
+		.fontsize(1.3);
+
+		position: relative;
+
 		display: inline-block;
 		padding: 7px 8px 10px 12px;
-		 
-		.fontsize(1.3);
+
 		font-weight: bold;
+		color: @usernav-item-color;
 		cursor: pointer;
+		&:hover {
+			background-color: @usernav-item-bgcolor-hover;
+			.txt-link {
+				text-decoration: none;
+			}
+		}
 	}
 }
 .user-nav {
@@ -120,18 +132,28 @@
 	float: right;
 	padding: 0;
 	margin: 0;
-	.user-nav-item {
+	.list-item {
+		.fontsize(1.2);
+
+		position: relative;
+
 		display: inline-block;
 		float: left;
 		width: auto;
 		height: auto;
 		padding: 8px 12px 11px;
 
-		.fontsize(1.2);
+		color: @usernav-item-color;
 		vertical-align: top;
 		cursor: pointer;
 		> .icon {
 			overflow: hidden;
+		}
+		&:hover {
+			background-color: @usernav-item-bgcolor-hover;
+			.txt-link {
+				text-decoration: none;
+			}
 		}
 	}
 	.folder {
@@ -170,24 +192,12 @@
 			background: url(@usernav-item-language-icon) right -1750px no-repeat;
 		}
 		&:hover {
-			color: #333;			 
+			color: #333;
 
 			background-color: @usernav-item-language-bgcolor-hover;
-			.icon {				 
+			.icon {
 				background-position: right -1800px;
 			}
-		}
-	}
-}
-.nav-item,
-.user-nav-item {
-	position: relative;
-
-	color: @usernav-item-color;
-	&:hover {		 
-		background-color: @usernav-item-bgcolor-hover;
-		.txt-link {			 
-			text-decoration: none;
 		}
 	}
 }

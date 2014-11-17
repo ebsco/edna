@@ -18,17 +18,24 @@
 //
 // Styleguide 26.1
 
+// Paragraph
+//
+// Markup:
+// <p class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lorem lectus, pellentesque in metus molestie, adipiscing tincidunt erat. Curabitur a nibh nunc. Vestibulum dignissim vulputate tortor at mattis. Vivamus ut odio nunc. Duis a aliquet ante. Suspendisse porta eu sem eu adipiscing. Ut tempus eleifend turpis vel viverra. Duis nulla lacus, ultricies sed blandit cursus, sollicitudin id felis.</p>
+//
+// Styleguide 26.2
+
 // Anchor
 //
 // Markup:
-// <a href="#">Click me!</a>
+// <a class="txt-link" href="#">Click me!</a>
 // 
 // .visited           - Keyboard focus state
 // .hover             - Keyboard focus state
 // .focus             - Keyboard focus state
 // .active            - Keyboard focus state
 // 
-// Styleguide 26.2
+// Styleguide 26.3
 
 // Blockquote
 //
@@ -80,7 +87,8 @@ body & {
 	.fontsize(1.6);
 }
 
-p {
+p,
+.txt {
 	margin: 0 0 20px;
 
 	line-height: @p-line-height;
@@ -92,9 +100,8 @@ p {
 	}
 }
 
-a {
-	display: inline-block;
-
+a,
+.txt-link {
 	color: @link-color;
 	text-decoration: none;
 	&:visited {
