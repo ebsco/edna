@@ -8,7 +8,7 @@ Checkout the <a href="http://eae-buzzdev801.epnet.com:8030">CodeGuide</a> for so
 
 **Edna contains:**
 
- - An HTML reset: [normalize.css][2]
+ - A custom HTML reset based on: [normalize.css][2]
  - CSS styling for basic HTML elements
  - A page layout system
  - A widget layout system
