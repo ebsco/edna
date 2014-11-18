@@ -1,19 +1,10 @@
 # Edna CSS Framework
 
-<table border="0">
-  <tr>
-    <td width="100">
-      <img src="http://f.cl.ly/items/3K052s0y111v1g3w1C2G/sm-edna.jpg" alt="Edna" style="float:left;border:none;"/>
-    </td>
-    <td>
-      Edna is a custom CSS framework. Dig it!<br/><br/>
+Edna is a custom CSS framework. Dig it!<br/><br/>
 
-      View the <a href="docs/docs.md">Edna docs</a><br/><br/>
+View the <a href="docs/docs.md">Edna docs</a><br/><br/>
 
-      Checkout the <a href="http://eae-buzzdev801.epnet.com:8030">CodeGuide</a> for some working examples of CSS and markup
-    </td>
-  </tr>
-</table>
+Checkout the <a href="http://eae-buzzdev801.epnet.com:8030">CodeGuide</a> for some working examples of CSS and markup
 
 **Edna contains:**
 
