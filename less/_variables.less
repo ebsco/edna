@@ -32,20 +32,24 @@
 @mediaquery-small: 320;
 @mediaquery-medium: 599;
 @mediaquery-large: 995;
-@mediaquery-xlarge: 1200;
+@mediaquery-xlarge: 1199;
 @unit: px;
 // add the units
-@mq-sm-unit: unit( @mediaquery-small, @unit);
-@mq-md-unit: unit( @mediaquery-medium, @unit);
-	@mq-md-unit-ceil: unit( (@mediaquery-medium + 1), @unit);
-@mq-lg-unit: unit( @mediaquery-large, @unit);
-	@mq-lg-unit-floor: unit( @mediaquery-medium, @unit);
-@mq-xl-unit: unit( @mediaquery-xlarge, @unit);
-    @mq-xl-unit-floor: unit( (@mediaquery-xlarge - 1), @unit);
-@mq-sm: ~'screen and (max-width: @{mq-md-unit})';
-@mq-md: ~'screen and (min-width: @{mq-md-unit}) and (max-width: @{mq-lg-unit})';
-@mq-lg: ~'screen and (min-width: @{mq-lg-unit}) and (max-width: @{mq-xl-unit})';
-@mq-xl: ~'screen and (min-width: @{mq-xl-unit})';
+@mq-sm-unit: unit( @mediaquery-small, @unit); // 320
+
+@mq-md-unit: unit( @mediaquery-medium, @unit); // 599
+	@mq-md-unit-ceil: unit( (@mediaquery-medium + 1), @unit); // 600
+
+@mq-lg-unit: unit( @mediaquery-large, @unit); // 995
+	@mq-lg-unit-ceil: unit( (@mediaquery-medium + 1), @unit); // 996
+
+@mq-xl-unit: unit( @mediaquery-xlarge, @unit); // 1199
+    @mq-xl-unit-ceil: unit( (@mediaquery-xlarge + 1), @unit); // 1200
+
+@mq-sm: ~'screen and (max-width: @{mq-md-unit})'; // 0 - 599
+@mq-md: ~'screen and (min-width: @{mq-md-unit-ceil}) and (max-width: @{mq-lg-unit})'; // 600 - 995
+@mq-lg: ~'screen and (min-width: @{mq-lg-unit-ceil}) and (max-width: @{mq-xl-unit-unit})'; // 996 -1199
+@mq-xl: ~'screen and (min-width: @{mq-xl-unit})'; // 1200
 
 
 // BACKGROUND COLORS

@@ -97,7 +97,7 @@ module.exports = function(grunt) {
 					datapngcss: 'css/icons.png.css',
 					urlpngcss: 'css/icons.fallback.css',
 					loadersnippet: 'js/grunticon.loader.js',
-					template: 'grunticon/rule.hbs', // analyzecss task isn't compatible with default
+					template: 'grunticon/rule.hbs', // analyze task isn't compatible with default
 					defaultWidth: '100%',
 					defaultHeight: '100%',
 					pngfolder: 'png',

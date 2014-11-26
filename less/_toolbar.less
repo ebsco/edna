@@ -105,8 +105,6 @@
 }
 .nav {
 	display: inline-block;
-	width: auto;
-	padding: 0;
 	margin: 0;
 	.list-item {
 		.fontsize(1.3);
@@ -114,23 +112,17 @@
 		position: relative;
 
 		display: inline-block;
-		padding: 7px 8px 10px 12px;
+		padding: 0;
 
 		font-weight: bold;
 		color: @usernav-item-color;
+		vertical-align: top;
 		cursor: pointer;
-		&:hover {
-			background-color: @usernav-item-bgcolor-hover;
-			.txt-link {
-				text-decoration: none;
-			}
-		}
 	}
 }
 .user-nav {
 	display: inline-block;
 	float: right;
-	padding: 0;
 	margin: 0;
 	.list-item {
 		.fontsize(1.2);
@@ -141,7 +133,7 @@
 		float: left;
 		width: auto;
 		height: auto;
-		padding: 8px 12px 11px;
+		padding: 0;
 
 		color: @usernav-item-color;
 		vertical-align: top;
@@ -149,17 +141,9 @@
 		> .icon {
 			overflow: hidden;
 		}
-		&:hover {
-			background-color: @usernav-item-bgcolor-hover;
-			.txt-link {
-				text-decoration: none;
-			}
-		}
 	}
 	.folder {
-		padding: 8px 12px 11px 9px;
 		.txt-link {
-			padding-left: 20px;
 			.icon {
 				position: absolute;
 				left: 2px;
