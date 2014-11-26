@@ -92,28 +92,42 @@
 // Layouts are made up of regions. Regions will have widgets in them.
 // Set up the basic layout region
 .col {
-	display: table-cell;
 	width: 100%;
 
 	vertical-align: top;
 }
 
+// set the padding for the layout
 .padding() {
-	display: table;
-	width: 100%;
-	padding: @lay-top-padding @lay-right-padding @lay-bottom-padding @lay-left-padding;
-
 	.box(border);
 	.clearfix;
+
+	width: 100%;
+	padding: @lay-top-padding @lay-right-padding @lay-bottom-padding @lay-left-padding;
 	&:first-child {
 		padding-top: 0;
 	}
 }
 
+// for interfaces with widths restrictions
+.my-optional-style() when (@fixed-page-width = true) {
+	.clearfix;
+
+	width: @pg-width;
+	min-width: @pg-width-min;
+	max-width: @pg-width-max;
+}
+
+// add other mixins to each layout
+.extra-bits() {
+	.padding;
+	.my-optional-style;
+}
+
 // Divide the patterns into two master classes that go in the body tag
 .l1 {
 	&-p1 {
-		.padding;
+		.extra-bits;
 		> .col {
 			width: 100%;
 		}
@@ -123,7 +137,7 @@
 .l2 {
 	// 80 20
 	&-p1 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 80%;
 		}
@@ -133,7 +147,7 @@
 	}
 	// 75 25
 	&-p2 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 75%;
 		}
@@ -143,7 +157,7 @@
 	}
 	// 66 33
 	&-p3 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 66%;
 		}
@@ -153,7 +167,7 @@
 	}
 	// 60 40
 	&-p4 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 60%;
 		}
@@ -163,7 +177,7 @@
 	}
 	// 50 50
 	&-p5 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 50%;
 		}
@@ -173,7 +187,7 @@
 	}
 	// 40 60
 	&-p6 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 40%;
 		}
@@ -183,7 +197,7 @@
 	}
 	// 33 66
 	&-p7 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 33%;
 		}
@@ -193,7 +207,7 @@
 	}
 	// 25 75
 	&-p8 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 25%;
 		}
@@ -203,7 +217,7 @@
 	}
 	// 20 80
 	&-p9 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 20%;
 		}
@@ -216,7 +230,7 @@
 .l3 {
 	// 60 20 20
 	&-p1 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 60%;
 		}
@@ -229,7 +243,7 @@
 	}
 	// 50 25 25
 	&-p2 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 50%;
 		}
@@ -242,7 +256,7 @@
 	}
 	// 40 40 20
 	&-p3 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 40%;
 		}
@@ -255,7 +269,7 @@
 	}
 	// 40 20 40
 	&-p4 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 40%;
 		}
@@ -268,7 +282,7 @@
 	}
 	// 33 33 33
 	&-p5 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 33%;
 		}
@@ -281,7 +295,7 @@
 	}
 	// 25 25 50
 	&-p6 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 25%;
 		}
@@ -294,7 +308,7 @@
 	}
 	// 25 50 25
 	&-p7 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 25%;
 		}
@@ -307,7 +321,7 @@
 	}
 	// 20 20 60
 	&-p8 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 20%;
 		}
@@ -320,7 +334,7 @@
 	}
 	// 20 60 20
 	&-p9 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 20%;
 		}
@@ -336,7 +350,7 @@
 .l4 {
 	// 40 20 20 20
 	&-p1 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 40%;
 		}
@@ -352,7 +366,7 @@
 	}
 	// 25 25 25 25
 	&-p2 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 25%;
 		}
@@ -368,7 +382,7 @@
 	}
 	// 20 20 20 40
 	&-p3 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 20%;
 		}
@@ -384,7 +398,7 @@
 	}
 	// 20 20 40 20
 	&-p4 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 20%;
 		}
@@ -400,7 +414,7 @@
 	}
 	// 20 40 20 20
 	&-p5 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 20%;
 		}
@@ -419,7 +433,7 @@
 .l5 {
 	// 20 20 20 20 20
 	&-p1 {
-		.padding;
+		.extra-bits;
 		> .col:nth-child(1) {
 			width: 20%;
 		}
