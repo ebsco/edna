@@ -42,26 +42,25 @@
 		.list-item {
 			padding: 0;
 			margin: 0;
-			// font-weight: bold;
-			> .txt-link {
-				display: block;
-				padding: 5px;
-				margin-bottom: 5px;
+		}
+		.txt-link {
+			display: block;
+			padding: 5px;
+			margin-bottom: 5px;
 
-				font-weight: normal;
-				color: @treelist-color;
-				cursor: pointer;
+			font-weight: normal;
+			color: @treelist-color;
+			cursor: pointer;
 
-				.fontsize(1.4);
-			}
-			&.active {
-				> .txt-link {
-					padding-left: @treelist-padding-left;
-					margin-left: @treelist-margin-left;
+			.fontsize(1.4);
+		}
+		&.active {
+			.txt-link {
+				padding-left: @treelist-padding-left;
+				margin-left: @treelist-margin-left;
 
-					background-color: @treelist-bgcolor;
-					border-left: @treelist-borderwidth solid @treelist-bordercolor;
-				}
+				background-color: @treelist-bgcolor;
+				border-left: @treelist-borderwidth solid @treelist-bordercolor;
 			}
 		}
 	}

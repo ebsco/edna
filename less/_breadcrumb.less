@@ -22,30 +22,39 @@
 // Styleguide 1.1
 
 .breadcrumb {
-	padding: 10px 0;
-	margin: 0;
-	.list-item {
-		display: table-cell;
+	z-index: @index-3;
 
+	padding: 10px;
+
+	background-color: @breadcrumb-bgcolor;
+	.list-item {
 		.fontsize(1.3);
-		
+
+		display: inline;
+
+		font-weight: bold;
 		// add the dividers between the breadcrumb items
 		&:before,
 		&::before {
 			padding: 0 10px;
+			padding: 0 2px 0 5px;
 
 			content: @breadcrumb-content;
 		}
 		// remove breadcrumb divider for first item
-		&:first-child:before,
-		&:first-child::before {
-			display: none;
+		&:first-child {
+			&:before,
+			&::before {
+				display: none;
+			}
 		}
 		// this removes the white space between the :before and the txt-link
 		> .txt-link {
 			margin-left: -4px;
+
+			color: @breadcrumb-color; //#0a7690 ? skinning color
+			// white-space: nowrap;
 			// without this the first item is too far left
-			&:first-child,
 			&:first-child {
 				margin-left: 0;
 			}
