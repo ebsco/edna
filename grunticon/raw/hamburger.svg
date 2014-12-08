@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="80px" height="80px" viewBox="0 0 16 16" enable-background="new 0 0 80 80" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="80px" height="80px" viewBox="0 0 35 35" enable-background="new 0 0 80 80" xml:space="preserve">
 	<g>
-		<path class="hamburger" d="M15.5,0h-15C0.2,0,0,0.2,0,0.5v3C0,3.8,0.2,4,0.5,4h15C15.8,4,16,3.8,16,3.5v-3C16,0.2,15.8,0,15.5,0z"/>
-		<path class="hamburger" d="M15.5,6h-15C0.2,6,0,6.2,0,6.5v3C0,9.8,0.2,10,0.5,10h15c0.3,0,0.5-0.2,0.5-0.5v-3C16,6.2,15.8,6,15.5,6z"/>
-		<path class="hamburger" d="M15.5,12h-15C0.2,12,0,12.2,0,12.5v3C0,15.8,0.2,16,0.5,16h15c0.3,0,0.5-0.2,0.5-0.5v-3C16,12.2,15.8,12,15.5,12z"/>
+		<rect class="hamburger" x="5.312" y="9.708" width="25" height="4"/>
+		<rect class="hamburger" x="5.312" y="16.708" width="25" height="4"/>
+		<rect class="hamburger" x="5.312" y="23.709" width="25" height="3.998"/>
 	</g>
 </svg>
