@@ -476,11 +476,11 @@
 
 
 //----- ROTATE ------------------------------------------//
-.rotate(@deg) {
-	-webkit-transform: rotate(@{deg}deg);
-	   -moz-transform: rotate(@{deg}deg);
-	     -o-transform: rotate(@{deg}deg);
-	        transform: rotate(@{deg}deg);
+.rotate(@deg: 0) {
+	-webkit-transform: rotate(~'@{deg}deg');
+	   -moz-transform: rotate(~'@{deg}deg');
+	     -o-transform: rotate(~'@{deg}deg');
+	        transform: rotate(~'@{deg}deg');
 }
 
 
