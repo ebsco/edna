@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="80px" height="80px" viewBox="0 0 35 35" enable-background="new 0 0 80 80" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
 	<g>
-		<rect class="hamburger" x="5.312" y="9.708" width="25" height="4"/>
-		<rect class="hamburger" x="5.312" y="16.708" width="25" height="4"/>
-		<rect class="hamburger" x="5.312" y="23.709" width="25" height="3.998"/>
+		<rect width="16" height="4"/>
+		<rect y="6" width="16" height="4"/>
+		<rect y="12" width="16" height="4"/>
 	</g>
 </svg>
