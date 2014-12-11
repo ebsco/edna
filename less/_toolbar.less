@@ -84,24 +84,6 @@
 			text-decoration: underline;
 		}
 	}
-	.bar {
-		.pos(relative);
-		// background-color: @tbar-bgcolor;
-
-		@color: @colorS2;
-		@top: fadeout(@color, 90%);
-		@bottom: fadeout(@color, 100%);
-
-		padding-bottom: 2px;
-		overflow: hidden;
-
-		background: @tbar-bgcolor -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
-		background: @tbar-bgcolor -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
-		background: @tbar-bgcolor  -ms-linear-gradient(bottom, @bottom, @top);
-		background: @tbar-bgcolor   -o-linear-gradient(@top, @bottom);
-
-		filter: progid:DXImageTransform.Microsoft.gradient( GradientType=0,startColorstr=@top, endColorstr=@bottom);
-	}
 }
 .nav {
 	display: inline-block;
