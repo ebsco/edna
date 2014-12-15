@@ -29,27 +29,27 @@
 
 // MEDIA QUERY DIMENSIONS
 // unit gets applied later
-@mediaquery-small: 320;
-@mediaquery-medium: 599;
-@mediaquery-large: 995;
-@mediaquery-xlarge: 1199;
+@mediaquery-sm: 320;
+@mediaquery-md: 599;
+@mediaquery-lg: 995;
+@mediaquery-xl: 1199;
 @unit: px;
 // add the units
-@mq-sm-unit: unit( @mediaquery-small, @unit); // 320
+@mq-sm-unit: unit( @mediaquery-sm, @unit); // 320
 
-@mq-md-unit: unit( @mediaquery-medium, @unit); // 599
-	@mq-md-unit-ceil: unit( (@mediaquery-medium + 1), @unit); // 600
+@mq-md-unit: unit( @mediaquery-md, @unit); // 599
+	@mq-md-unit-ceil: unit( (@mediaquery-md + 1), @unit); // 600
 
-@mq-lg-unit: unit( @mediaquery-large, @unit); // 995
-	@mq-lg-unit-ceil: unit( (@mediaquery-medium + 1), @unit); // 996
+@mq-lg-unit: unit( @mediaquery-lg, @unit); // 995
+	@mq-lg-unit-ceil: unit( (@mediaquery-lg + 1), @unit); // 996
 
-@mq-xl-unit: unit( @mediaquery-xlarge, @unit); // 1199
-    @mq-xl-unit-ceil: unit( (@mediaquery-xlarge + 1), @unit); // 1200
+@mq-xl-unit: unit( @mediaquery-xl, @unit); // 1199
+    @mq-xl-unit-ceil: unit( (@mediaquery-xl + 1), @unit); // 1200
 
 @mq-sm: ~'screen and (max-width: @{mq-md-unit})'; // 0 - 599
 @mq-md: ~'screen and (min-width: @{mq-md-unit-ceil}) and (max-width: @{mq-lg-unit})'; // 600 - 995
 @mq-lg: ~'screen and (min-width: @{mq-lg-unit-ceil}) and (max-width: @{mq-xl-unit})'; // 996 -1199
-@mq-xl: ~'screen and (min-width: @{mq-xl-unit})'; // 1200
+@mq-xl: ~'screen and (min-width: @{mq-xl-unit-ceil})'; // 1200
 
 
 // BACKGROUND COLORS
@@ -97,6 +97,8 @@
 
 
 // BREADCRUMB
+@breadcrumb-color: @colorP1;
+@breadcrumb-bgcolor: #f0f0f0;
 @breadcrumb-content: '/';
 
 
@@ -286,14 +288,14 @@
 @ui-dialog-bgcolor: #fff;
 @ui-dialog-bordercolor: #ccc;
 @ui-dialog-close-bgcolor: rgba(0, 0, 0, 0);
-@ui-dialog-close-bgimage: 'http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/layout2/modal-close.png';
-@ui-dialog-header-bgimage: 'http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/modal-gradient.png';
+@ui-dialog-close-bgimage: 'buzzImages/modal-close.png';
+@ui-dialog-header-bgimage: 'buzzImages/modal-gradient.png';
 @ui-dialog-note-bordercolor: #fcc37c;
 @ui-dialog-note-bgcolor: #faf9b9;
 @ui-dialog-content-input-color: #6f6f6f;
 @ui-dialog-content-error-color: #f00;
 @ui-dialog-overlay-bgcolor: #111;
-@ui-dialog-overlay-bgimage: 'http://smallcontent.ebsco-content.com/interfacefiles/14.1.0.78.1/ehost/ui-bg_black_75_100x100.png';
+@ui-dialog-overlay-bgimage: 'buzzImages/ui-bg_black_75_100x100.png';
 @modal-bgcolor: #fff;
 @modal-bordercolor: #ccc;
 @modal-dropshadow: 2px 2px 4px rgba(0,0,0,.25);
@@ -403,7 +405,7 @@
 
 // TAG
 @tag-color: #333;
-@tag-bgcolor: #dddcdc;
+@tag-bgcolor: #eee;
 
 
 // TOGGLE
@@ -424,8 +426,8 @@
 @usernav-item-bgcolor-hover: darken(@tbar-bgcolor, 5);
 // user navigation icons
 @usernav-item-folder-bgcolor: rgba(0, 0, 0, 0);
-@usernav-item-folder-icon: 'http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/folder-sprite.png';
-@usernav-item-language-icon: 'http://global.ebsco-content.com/interfacefiles/14.1.0.78/ehost/sprites/arrow-sprites.png';
+@usernav-item-folder-icon: 'buzzImages/folder-sprite.png';
+@usernav-item-language-icon: 'buzzImages/arrow-sprites.png';
 @usernav-item-language-bgcolor-hover: #fff;
 
 
@@ -451,8 +453,8 @@
 
 
 // TREELIST
-@treelist-color: @colorP2;
-@treelist-bgcolor: #efefef;
+@treelist-color: @font-color;
+@treelist-bgcolor: #f0f0f0;
 @treelist-bordercolor: @colorP1;
 @treelist-border-size: 10;
 @treelist-borderwidth: unit(@treelist-border-size, px);
@@ -460,8 +462,8 @@
 @treelist-margin-left: unit( -(@treelist-borderwidth + 5), px  );
 
 
-
-@font-color: #535353;
+// TYPOGRAPHY
+@font-color: #333;
 @font-color-strong: #000;
 @font-size: 62.5%;
 //placeholder
