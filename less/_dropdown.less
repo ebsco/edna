@@ -19,25 +19,15 @@
 	-moz-border-radius: @radius;
 	     border-radius: @radius;
 	.dropdown-list {
-		top: 28px;
-		left: -1px;
-		z-index: 10;
+		.radius;
 
-		min-width: 100px;
 		padding: 0;
 
 		list-style-type: none;
-
-		background-color: @dd-list-bgcolor;
-		border: 1px solid @dd-list-bordercolor;
-		-moz-border-radius: @radius;
-		     border-radius: @radius;
-
-		.pos(absolute);
 	}
 	.dropdown-label {
 		display: block;
-		padding: .25rem .5rem;
+		padding: 5px;
 
 		white-space: nowrap;
 		cursor: pointer;
@@ -48,9 +38,9 @@
 		}
 	}
 	.dropdown-input {
-		left: -9999px;
-
 		.pos(absolute);
+
+		left: -9999px;
 		&:checked + .dd-label {
 			color: @dd-input-color;
 
