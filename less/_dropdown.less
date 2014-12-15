@@ -9,7 +9,7 @@
 // 
 // .msg-alert			- alert messaging
 
-.dd {
+.dropdown {
 	position: relative;
 
 	display: inline-block;
@@ -18,7 +18,7 @@
 
 	-moz-border-radius: @radius;
 	     border-radius: @radius;
-	.dd-list {
+	.dropdown-list {
 		top: 28px;
 		left: -1px;
 		z-index: 10;
@@ -35,7 +35,7 @@
 
 		.pos(absolute);
 	}
-	.dd-label {
+	.dropdown-label {
 		display: block;
 		padding: .25rem .5rem;
 
@@ -47,7 +47,7 @@
 			background-color: @dd-label-bgcolor-hover;
 		}
 	}
-	.dd-input {
+	.dropdown-input {
 		left: -9999px;
 
 		.pos(absolute);
@@ -60,7 +60,7 @@
 			}
 		}
 	}
-	.dd-active {
+	.dropdown-active {
 		display: inline-block;
 		padding: .25rem .5rem;
 
@@ -97,10 +97,10 @@
 
 // when a dropdown is in a button group
 .btn-group {
-	.dd {
+	.dropdown {
 		&:last-child,
 		&.last {
-			.dd-active {
+			.dropdown-active {
 				border-left-width: 0;
 				-moz-border-radius: 0 @radius @radius 0;
 				     border-radius: 0 @radius @radius 0;
@@ -109,7 +109,7 @@
 		&:first-child,
 		&.first {
 			float: left;
-			.dd-active {
+			.dropdown-active {
 				border-left-width: 1px;
 				-moz-border-radius: @radius 0 0 @radius;
 				     border-radius: @radius 0 0 @radius;
