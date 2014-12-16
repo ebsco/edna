@@ -12,18 +12,19 @@ Of course one might not be able to help not following a guideline or two. Just m
 All files for Edna live in one directory, less. All the compiled files, and the import files that create them, live in the root of the Edna repo.
 
 edna
-- less
-       - _autocomplete.less
-       - _button-group.less
-       - _button.less
-       - _carousel.less
-       - etc.
-- edna.css
-- edna.min.css
-- edna.ie.css
-- edna.less
-- edna.min.less
-- edna.ie.less
+
+ - less
+     - _autocomplete.less
+     - _button-group.less
+     - _button.less
+     - _carousel.less
+     - etc.
+ - edna.css
+ - edna.min.css
+ - edna.ie.css
+ - edna.less
+ - edna.min.less
+ - edna.ie.less
 
 ##Variables
 Use variables for values that can change easily without messing up an element; colors, font-family, font-size, etc.
@@ -43,18 +44,18 @@ One should use better specificity rather than another selector, or !important.
  
 // here is an example of a nested LESS ruleset
 .example {
-	foo: bar;
-	.sub-example {
-		foo: bar;
-	}
+       foo: bar;
+       .sub-example {
+              foo: bar;
+       }
 }
  
 // and here is the output
 .example {
-	foo: bar;
+       foo: bar;
 }
 .example .sub-example {
-	foo: bar;
+       foo: bar;
 }
 
 ```
@@ -66,34 +67,34 @@ One should use better specificity rather than another selector, or !important.
 .first-example {
 foo: bar;
 .second-example {
-	foo: bar;
-	.third-example {
-		foo: bar;
-		.fourth-example {
-			foo: bar;
-			.fifth-example {
-				foo: bar;
-			}
-		}
-	}
+       foo: bar;
+       .third-example {
+              foo: bar;
+              .fourth-example {
+                     foo: bar;
+                     .fifth-example {
+                            foo: bar;
+                     }
+              }
+       }
 }
 }
  
 // and here is the output
 .first-example {
-	foo: bar;
+       foo: bar;
 }
 .first-example .second-example {
-	foo: bar;
+       foo: bar;
 }
 .first-example .second-example .third-example {
-	foo: bar;
+       foo: bar;
 }
 .first-example .second-example .third-example .fourth-example {
-	foo: bar;
+       foo: bar;
 }
 .first-example .second-example .third-example .fourth-example .fifth-example {
-	foo: bar;
+       foo: bar;
 }
  
 /* WHILE THIS ISN'T HORRIBLE IT IS NOT GOOD */
@@ -106,23 +107,23 @@ foo: bar;
 .second-example {
 foo: bar;
 & & {
-	foo: bar;
-	&.third-example & {
-		foo: bar;
-	}
+       foo: bar;
+       &.third-example & {
+              foo: bar;
+       }
 }
 }
  
 // and here is the output
 .first-example,
 .second-example {
-	foo: bar;
+       foo: bar;
 }
 .first-example .first-example,
 .first-example .second-example,
 .second-example .first-example,
 .second-example .second-example {
-	foo: bar;
+       foo: bar;
 }
 .first-example .first-example.third-example .first-example .first-example,
 .first-example .first-example.third-example .first-example .second-example,
@@ -140,7 +141,7 @@ foo: bar;
 .second-example .second-example.third-example .first-example .second-example,
 .second-example .second-example.third-example .second-example .first-example,
 .second-example .second-example.third-example .second-example .second-example {
-	foo: bar;
+       foo: bar;
 }
  
 /* THAT IS JUST CRAZY, DON'T END UP WITH SOMETHING LIKE THIS IN YOUR CSS */
