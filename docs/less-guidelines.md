@@ -155,18 +155,3 @@ Single line comments are stripped from LESS when compiled. Use these more for co
 ```CSS
 // comment
 ```
-
-##Declaration Order
-For readability, and to keep things in order, let's put our declarations in a specific order. The following comments can be used as a snippet (thanks Sublime Text), and the lists below can help show you where declarations should live.
-
-```CSS
-// Positioning
- 
-// Box-model
- 
-// Typography
- 
-// Visual
- 
-// Misc
-```
