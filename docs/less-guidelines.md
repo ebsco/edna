@@ -13,11 +13,11 @@ All files for Edna live in one directory, less. All the compiled files, and the 
 
 edna
 - less
--- _autocomplete.less
--- _button-group.less
--- _button.less
--- _carousel.less
--- etc.
+       - _autocomplete.less
+       - _button-group.less
+       - _button.less
+       - _carousel.less
+       - etc.
 - edna.css
 - edna.min.css
 - edna.ie.css
