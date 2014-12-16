@@ -12,18 +12,18 @@ Of course one might not be able to help not following a guideline or two. Just m
 All files for Edna live in one directory, less. All the compiled files, and the import files that create them, live in the root of the Edna repo.
 
 edna
-       less
-              _autocomplete.less
-              _button-group.less
-              _button.less
-              _carousel.less
-              etc.
-       edna.css
-       edna.min.css
-       edna.ie.css
-       edna.less
-       edna.min.less
-       edna.ie.less
+- less
+-- _autocomplete.less
+-- _button-group.less
+-- _button.less
+-- _carousel.less
+-- etc.
+- edna.css
+- edna.min.css
+- edna.ie.css
+- edna.less
+- edna.min.less
+- edna.ie.less
 
 ##Variables
 Use variables for values that can change easily without messing up an element; colors, font-family, font-size, etc.
