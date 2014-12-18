@@ -4,6 +4,9 @@
 
 [How to build a widget][2] 
 
+[CSS Comb][3] 
+
 
   [1]: less-guidelines.md
   [2]: building-widgets.md
+  [3]: css-comb.md
