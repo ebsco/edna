@@ -21,7 +21,7 @@
   "main": "Gruntfile.js",
   "repository": {
     "type": "git",
-    "url": "http://as-gitmaster.epnet.com:7990/scm/buzz/edna.git"
+    "url": "https://github.com/ebsco/edna.git"
   },
   "readme": "README.md",
   "dependencies": {}
