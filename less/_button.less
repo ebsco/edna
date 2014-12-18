@@ -275,14 +275,13 @@
 
 // button overrides
 .btn {	 
+    .radius;
+
 	height: @btn-height;
 	padding: 0 15px;
 	 
 	.fontsize(@btn-font-size);
 	line-height: unit((@btn-font-size * 2), rem);
-
-	-moz-border-radius: @radius;
-		 border-radius: @radius;
 
 	// overrides to the light buttons
 	&.light {
@@ -301,6 +300,8 @@
 
 	// overrides to the mini buttons
 	&-mini {		 
+	    .radius(2);
+
 		height: 18px;
 		padding: 0 10px;
 		 
@@ -308,9 +309,6 @@
 		.fontsize(@btn-mini-font-size);
 		.fontsize( unit((@btn-mini-font-size), px) );
 		 
-		-moz-border-radius: 2px;
-			 border-radius: 2px;
-
 		// override for light button line-height
 		> .light {
 			line-height: unit((@btn-mini-font-size), px);

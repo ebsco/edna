@@ -32,6 +32,8 @@
 // Styleguide 17.1
 
 .select {
+	.radius;
+
 	position: relative;
 
 	display: inline-block;
@@ -40,13 +42,13 @@
 	line-height: unit(@btn-font-size * 20, px);
 	line-height: unit(@btn-font-size * 2, rem);
 
-	-moz-border-radius: @radius;
-	     border-radius: @radius;
 	outline: 0;
 	> .transport {
 		vertical-align: middle;
 	}
 	&-list {
+		.radius;
+
 		position: absolute;
 		top: @select-position;
 		right: -1px;
@@ -61,8 +63,6 @@
 
 		background-color: @select-bgcolor;
 		border: 1px solid @select-bordercolor;
-		-moz-border-radius: @radius;
-		     border-radius: @radius;
 		box-shadow: 0 1px 16px @select-boxshadow;
 		&.active {
 			display: inline-block;
@@ -86,8 +86,8 @@
 	}
 	&-input {
 		.pos(absolute);
-		left: -9999px;
 
+		left: -9999px;
 		&:checked + .dd-label {
 			color: @select-input-color;
 

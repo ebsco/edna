@@ -40,6 +40,8 @@
 }
 
 .modal {
+	.radius(3);
+
 	left: 50% !important;
 	z-index: @index-10 !important;
 
@@ -51,8 +53,6 @@
 	-webkit-background-clip: padding-box;
 	border: 1px solid @modal-bordercolor;
 	box-shadow: @modal-dropshadow;
-
-	.radius(3);
 	// JQUERY UI CLASSES
 	.ui-dialog-titlebar {
 		.ui-dialog-title {
@@ -105,14 +105,14 @@
 		margin-top: 25px;
 	}
 	.modal-footer {
-		margin-top: 25px;
-
 		.fontsize(1.2);
+
+		margin-top: 25px;
 	}
 	.msg {
+		.fontsize(1.3);
+
 		margin-top: 25px;
 		margin-bottom: 0;
-
-		.fontsize(1.3);
 	}
 }
