@@ -4,8 +4,6 @@ Edna is a custom CSS framework. Dig it!<br/><br/>
 
 View the <a href="docs/docs.md">Edna docs</a><br/><br/>
 
-Checkout the <a href="http://eae-buzzdev801.epnet.com:8030">CodeGuide</a> for some working examples of CSS and markup
-
 **Edna contains:**
 
  - A custom HTML reset based on: [normalize.css][2]
