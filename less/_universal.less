@@ -1,6 +1,34 @@
 /* UNIVERSAL STYLES */
 
-// styles that are universal 
+// styles that are universal
+
+html & {
+	height: 100%;
+
+	.box(border);
+}
+
+*,
+*:before,
+*:after {
+	.box(inherit);
+}
+
+html &,
+body & {
+	.fontfamily(sans);
+}
+
+body {
+	min-width: unit(@mediaquery-sm, px);
+}
+
+.col {
+	padding: @col-top-padding @col-right-padding @col-bottom-padding @col-left-padding;
+	& + & {
+		padding-left: 70px;
+	}
+}
 
 .close {
 	cursor: pointer;
@@ -12,4 +40,8 @@
 	height: 25px;
 
 	background-position: top center;
+}
+
+.visible {
+	display: inline-block;
 }
