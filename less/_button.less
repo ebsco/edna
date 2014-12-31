@@ -121,43 +121,6 @@
 // 
 // Styleguide 2.9
 
-.btn-kind(@kind) {
-	&.@{kind} {
-	    color: '@{btn-@{kind}-color}';
-
-		& when (@kind = search-known) {
-		line-height: 2.3rem;
-	    }
-		.bg-border(@kind) {
-	    background-color: '@{btn-@{kind}-bgcolor}';
-	    border-color: '@{btn-@{kind}-bordercolor}';
-	    }
-
-		& when (@kind = disabled) {
-		cursor: default;
-		.bg-border(@kind);
-		box-shadow: none;
-		}
-		& when (@kind = search), (@kind = search-known), (@kind = primary), (@kind = light) {
-		.bg-border(@kind);	
-	    .btngrade( '@{btn-@{kind}-fade-top}', '@{btn-@{kind}-fade-bottom}' );
-	    }
-	    &:hover,
-	    &.hover {
-	        background-color: '@{btn-@{kind}-bgcolor-hover}';
-	        border-color: '@{btn-@{kind}-bordercolor-hover}';
-			& when (@kind = light) {
-			.btngrade( darken(@btn-light-fade-top, 20%), darken(@btn-light-fade-bottom, 20%) );
-		    }
-	    }
-	    &:active,
-	    &.active {
-	        background-color: '@{btn-@{kind}-bgcolor-active}';
-	        border-color: '@{btn-@{kind}-bordercolor-active}';
-	    }
-	}	   
-}
-
 .btn,
 .btn-mini {
 	& + & {
@@ -192,16 +155,110 @@
 		background-image: none !important;
 	}
 
-	// loop through the button kinds and hit the .btn-kind mixin
-	@list: search, search-known, primary, light, disabled;
-	@listLength: length(@list);
-	.loop(@passedIn, @index: 1) when (@index =< @passedIn) {
-		@arrayVal: extract(@list, @index);
-		.btn-kind(@arrayVal);	 
-		.loop(@passedIn, (@index + 1));
+	&.search {
+		color: @btn-search-color;
+		 
+		background-color: @btn-search-bgcolor;
+		border-color: @btn-search-bordercolor;
+		.btngrade( @btn-search-fade-top, @btn-search-fade-bottom );
+		&:hover,
+		&.hover {
+			background-color: @btn-search-bgcolor-hover;
+			border-color: @btn-search-bordercolor-hover;
+		}
+		&:active,
+		&.active {
+			background-color: @btn-search-bgcolor-active;
+			border-color: @btn-search-bordercolor-active;
+		}
 	}
-	.loop(@listLength);
-	// end the loop
+
+	&.search-known {
+		color: @btn-search-known-color;
+		line-height: 2.3rem;
+		 
+		background-color: @btn-search-known-bgcolor;
+		border-color: @btn-search-known-bordercolor;
+		.btngrade( @btn-search-known-fade-top, @btn-search-known-fade-bottom );
+
+		&:hover,
+		&.hover {
+			background-color: @btn-search-known-bgcolor-hover;
+			border-color: @btn-search-known-bordercolor-hover;
+		}
+
+		&:active,
+		&.active {
+			background-color: @btn-search-known-bgcolor-hover;
+			border-color: @btn-search-known-bordercolor-hover;
+		}
+	}
+
+	&.primary {
+		color: @btn-primary-color;
+		 
+		background-color: @btn-primary-bgcolor;
+		border-color: @btn-primary-bordercolor;
+		.btngrade( @btn-primary-fade-top, @btn-primary-fade-bottom );
+
+		&:hover,
+		&.hover {
+			background-color: @btn-primary-bgcolor-hover;
+			border-color: @btn-primary-bordercolor-hover;
+		}
+
+		&:active,
+		&.active {
+			background-color: @btn-primary-bgcolor-active;
+			border-color: @btn-primary-bordercolor-active;
+		}
+	}
+
+	&.light {
+		color: @btn-light-color;
+		 
+		background-color: @btn-light-bgcolor;
+		border-color: @btn-light-bordercolor;
+		.btngrade( @btn-light-fade-top, @btn-light-fade-bottom );
+
+		&:hover,
+		&.hover {
+			background-color: @btn-light-bgcolor-hover;
+			border-color: @btn-light-bordercolor-hover;
+			.btngrade( darken(@btn-light-fade-top, 20%), darken(@btn-light-fade-bottom, 20%) );
+		}
+
+		&:active,
+		&.active {
+			background-color: @btn-light-bgcolor-active;
+			border-color: @btn-light-bordercolor-active;
+		}
+	}
+
+	&.disabled {		 
+		color: @btn-disabled-color;
+		cursor: default;
+
+		background-color: @btn-disabled-bgcolor;
+		border-color: @btn-disabled-bordercolor;
+		box-shadow: none;
+
+		&:hover,
+		&.hover {
+			background-color: @btn-disabled-bgcolor-hover;
+			border-color: @btn-disabled-bordercolor-hover;
+		}
+
+		&:active,
+		&.active {
+			background-color: @btn-disabled-bgcolor-active;
+			border-color: @btn-disabled-bordercolor-active;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
 
 	&.flat {
 		.btngrade( transparent, transparent );
@@ -295,4 +352,3 @@
 		}
 	}
 }
-// 
