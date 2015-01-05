@@ -140,14 +140,14 @@
 		}
 		& when (@kind = search), (@kind = search-known), (@kind = primary), (@kind = light) {
 		.bg-border(@kind);	
-		.btngrade( '@{btn-@{kind}-fade-top}', '@{btn-@{kind}-fade-bottom}' );
+		.btngrade( ~'@{btn-@{kind}-fade-top}', ~'@{btn-@{kind}-fade-bottom}' );
 		}
 		&:hover,
 		&.hover {
 			background-color: '@{btn-@{kind}-bgcolor-hover}';
 			border-color: '@{btn-@{kind}-bordercolor-hover}';
 			& when (@kind = light) {
-			.btngrade( darken(@btn-light-fade-top, 20%), darken(@btn-light-fade-bottom, 20%) );
+			.btngrade( darken(@btn-light-fade-top, 20%), darken(@btn-light-fade-bottom, 20%) ); // these don't work if a passed in variable is used
 			}
 		}
 		&:active,
