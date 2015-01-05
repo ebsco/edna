@@ -123,15 +123,15 @@
 
 .btn-kind(@kind) {
 	&.@{kind} {
-	    color: '@{btn-@{kind}-color}';
+		color: '@{btn-@{kind}-color}';
 
 		& when (@kind = search-known) {
 		line-height: 2.3rem;
-	    }
+		}
 		.bg-border(@kind) {
-	    background-color: '@{btn-@{kind}-bgcolor}';
-	    border-color: '@{btn-@{kind}-bordercolor}';
-	    }
+		background-color: '@{btn-@{kind}-bgcolor}';
+		border-color: '@{btn-@{kind}-bordercolor}';
+		}
 
 		& when (@kind = disabled) {
 		cursor: default;
@@ -140,28 +140,28 @@
 		}
 		& when (@kind = search), (@kind = search-known), (@kind = primary), (@kind = light) {
 		.bg-border(@kind);	
-	    .btngrade( '@{btn-@{kind}-fade-top}', '@{btn-@{kind}-fade-bottom}' );
-	    }
-	    &:hover,
-	    &.hover {
-	        background-color: '@{btn-@{kind}-bgcolor-hover}';
-	        border-color: '@{btn-@{kind}-bordercolor-hover}';
+		.btngrade( '@{btn-@{kind}-fade-top}', '@{btn-@{kind}-fade-bottom}' );
+		}
+		&:hover,
+		&.hover {
+			background-color: '@{btn-@{kind}-bgcolor-hover}';
+			border-color: '@{btn-@{kind}-bordercolor-hover}';
 			& when (@kind = light) {
 			.btngrade( darken(@btn-light-fade-top, 20%), darken(@btn-light-fade-bottom, 20%) );
-		    }
-	    }
-	    &:active,
-	    &.active {
-	        background-color: '@{btn-@{kind}-bgcolor-active}';
-	        border-color: '@{btn-@{kind}-bordercolor-active}';
-	    }
-        
+			}
+		}
+		&:active,
+		&.active {
+			background-color: '@{btn-@{kind}-bgcolor-active}';
+			border-color: '@{btn-@{kind}-bordercolor-active}';
+		}
+
 		& when (@kind = disabled) {
-        &.flat {
-            .btngrade( transparent, transparent );
-        }
-        }
-	}	   
+		&.flat {
+			.btngrade( transparent, transparent );
+		}
+		}
+	}
 }
 
 .btn,
@@ -169,16 +169,16 @@
 	& + & {
 		margin-left: 10px;
 	}
-	 
+
 	display: inline-block;
 	width: auto;
-	 
+
 	color: @btn-default-color;
 	font-weight: bold;
 	text-decoration: none;
 	white-space: nowrap;
 	vertical-align: top;
-	 
+
 	cursor: pointer;
 	background-color: @btn-default-bgcolor;
 	border: 1px solid @btn-default-bordercolor;
@@ -198,16 +198,16 @@
 		background-image: none !important;
 	}
 
-    // loop through the button kinds and hit the .btn-kind mixin
-    @list: search, search-known, primary, light, disabled;
-    @listLength: length(@list);
-    .loop(@passedIn, @index: 1) when (@index =< @passedIn) {
-        @arrayVal: extract(@list, @index);
-        .btn-kind(@arrayVal);	 
-        .loop(@passedIn, (@index + 1));
-    }
-    .loop(@listLength);
-    // end the loop
+	// loop through the button kinds and hit the .btn-kind mixin
+	@list: search, search-known, primary, light, disabled;
+	@listLength: length(@list);
+	.loop(@passedIn, @index: 1) when (@index =< @passedIn) {
+		@arrayVal: extract(@list, @index);
+		.btn-kind(@arrayVal);	 
+		.loop(@passedIn, (@index + 1));
+	}
+	.loop(@listLength);
+	// end the loop
 
 	&.flat {
 		.btngrade( transparent, transparent );
@@ -223,12 +223,12 @@
 }
 
 // button overrides
-.btn {	 
-    .radius;
+.btn {
+	.radius;
 
 	height: @btn-height;
 	padding: 0 15px;
-	 
+	
 	.fontsize(@btn-font-size);
 	line-height: unit((@btn-font-size * 2), rem);
 
@@ -249,7 +249,7 @@
 
 	// overrides to the mini buttons
 	&-mini {		 
-	    .radius(2);
+		.radius(2);
 
 		height: 18px;
 		padding: 0 10px;
@@ -257,7 +257,7 @@
 		@btn-mini-font-size: 1.1;
 		.fontsize(@btn-mini-font-size);
 		.fontsize( unit((@btn-mini-font-size), px) );
-		 
+
 		// override for light button line-height
 		> .light {
 			line-height: unit((@btn-mini-font-size), px);
