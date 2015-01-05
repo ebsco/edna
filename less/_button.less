@@ -124,7 +124,6 @@
 .btn-kind(@kind) {
 	&.@{kind} {
 		color: '@{btn-@{kind}-color}';
-
 		& when (@kind = search-known) {
 		line-height: 2.3rem;
 		}
@@ -132,7 +131,6 @@
 		background-color: '@{btn-@{kind}-bgcolor}';
 		border-color: '@{btn-@{kind}-bordercolor}';
 		}
-
 		& when (@kind = disabled) {
 		cursor: default;
 		.bg-border(@kind);
@@ -155,7 +153,6 @@
 			background-color: '@{btn-@{kind}-bgcolor-active}';
 			border-color: '@{btn-@{kind}-bordercolor-active}';
 		}
-
 		& when (@kind = disabled) {
 		&.flat {
 			.btngrade( transparent, transparent );
