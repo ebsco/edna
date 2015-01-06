@@ -1,6 +1,6 @@
 # Edna CSS Framework
 
-Edna is a custom CSS framework. Dig it!<br/><br/>
+It's a custom CSS framework, dig it!<br/><br/>
 
 ---
 
