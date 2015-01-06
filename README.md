@@ -12,6 +12,7 @@ Edna is a custom CSS framework. Dig it!<br/><br/>
  - A widget layout system
  - CSS styling based on [SMACSS][3]
 
+
  ---
 
 **View the <a href="docs/docs.md">Edna docs</a>**<br/><br/>
