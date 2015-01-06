@@ -18,11 +18,12 @@
 		-moz-border-radius-bottomleft: 3px;
 		border-bottom-left-radius: 3px;
 		> *:last-child {
-			// remove any extra margin on the last item for better parent padding
-			margin: 0;
+			margin: 0; // remove any extra margin on the last item for better parent padding
 		}
 	}
 	.toggle-tab {
+		.radius;
+
 		padding: 12px 8px;
 
 		font-weight: bold;
@@ -30,8 +31,9 @@
 
 		background-color: @tog-tab-bgcolor;
 		border: 1px solid @tog-tab-bordercolor;
-		.radius;
 		.icon {
+			.radius;
+
 			display: inline-block;
 			width: 20px;
 			height: 20px;
@@ -40,7 +42,6 @@
 			text-align: center;
 
 			border: 1px solid @tog-tab-icon-bordercolor;
-			.radius;
 			&:before {
 				display: block;
 
