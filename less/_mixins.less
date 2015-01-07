@@ -2,10 +2,18 @@
 //----- MIXINS FOR MIXINS -----------------------------//
 
 
+//----- COLOR -----------------------------------------//
+
+.overlay-white(@percent, @color) {
+	@white: rgba(255, 255, 255, @percent);
+	@overlay-white: screen(@color, @white);
+}
+
+
 //----- CLEAR -----------------------------------------//
 
 .clear() {
-  clear: both;
+	clear: both;
 }
 
 
@@ -13,18 +21,18 @@
 
 // ie7
 .clearfix() {
-  *zoom: 1;
+	*zoom: 1;
 	&:before,
 	&:after,
 	&::before,
 	&::after {
-	  display: table;
-	  line-height: 0;
-	  content: "";
+		display: table;
+		line-height: 0;
+		content: "";
 	}
 	&:after,
 	&::after {
-	  clear: both;
+		clear: both;
 	}
 }
 
@@ -57,12 +65,12 @@
 //----- BUTTON GRADIENT ----------------------------//
 
 .btngrade(@top, @bottom) {
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
-    background-image: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
-    background-image:  -ms-linear-gradient(bottom, @bottom, @top);
-    background-image:   -o-linear-gradient(@top, @bottom);
-    background-image:      linear-gradient(@top, @bottom);
-    filter: e(%("progid:DXImageTransform.Microsoft.newgradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom));
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
+	background-image: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
+	background-image:  -ms-linear-gradient(bottom, @bottom, @top);
+	background-image:   -o-linear-gradient(@top, @bottom);
+	background-image:      linear-gradient(@top, @bottom);
+	filter: e(%("progid:DXImageTransform.Microsoft.newgradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom));
 }
 
 
@@ -117,7 +125,7 @@
 
 	h@{index} {
 
-		 
+
 		margin-top: 0;
 
 		& when (@index = 1) {
@@ -132,7 +140,7 @@
 			margin-bottom: 10px;
 		}
 
-		 
+
 		.fontsize(@sizeVal);
 		& when (@index = 1), (@index = 2), (@index = 3), (@index = 4), (@index = 5), (@index = 6) {
 			font-weight: bold;
@@ -148,21 +156,21 @@
 		> a:visited,
 		> a:focus,
 		> a:active {
-			 
+
 			color: @link-color;
 			text-decoration: @link-decoration;
 		}
 		> a:visited {
-			 
+
 			color: @link-color-visited;
 			text-decoration: @link-decoration-visited;
 		}
 		> a:hover {
-			 
+
 			color: @link-color-hover;
 		}
 		> a:focus {
-			 
+
 			text-decoration: @link-decoration-focus;
 		}
 	}
@@ -174,15 +182,15 @@
 
 .box(@sizing) {
 	& when (@sizing = content), (@sizing = border) {
-	// should take either CONTENT or BORDER
-	-webkit-box-sizing: escape("@{sizing}-box"); // Safari/Chrome, other WebKit
-	   -moz-box-sizing: escape("@{sizing}-box"); // Firefox, other Gecko
-			box-sizing: escape("@{sizing}-box"); // Opera/IE 8+
+		// should take either CONTENT or BORDER
+		-webkit-box-sizing: escape("@{sizing}-box"); // Safari/Chrome, other WebKit
+		   -moz-box-sizing: escape("@{sizing}-box"); // Firefox, other Gecko
+				box-sizing: escape("@{sizing}-box"); // Opera/IE 8+
 	}
 	& when (@sizing = inherit) {
-	-webkit-box-sizing: escape("@{sizing}"); // Safari/Chrome, other WebKit
-	   -moz-box-sizing: escape("@{sizing}"); // Firefox, other Gecko
-			box-sizing: escape("@{sizing}"); // Opera/IE 8+
+		-webkit-box-sizing: escape("@{sizing}"); // Safari/Chrome, other WebKit
+		   -moz-box-sizing: escape("@{sizing}"); // Firefox, other Gecko
+				box-sizing: escape("@{sizing}"); // Opera/IE 8+
 	}
 }
 
@@ -239,13 +247,13 @@
 .column(@n: 1) {
 	-webkit-column-count: @n;
 	   -moz-column-count: @n;
-	        column-count: @n;
+			column-count: @n;
 
 }
 .column-gap(@n: 0) {
 	-webkit-column-gap: @n;
 	   -moz-column-gap: @n;
-	        column-gap: @n;
+			column-gap: @n;
 
 }
 
@@ -311,7 +319,7 @@
 
 //----- RTL ---------------------------------------------//
 .international(@dir, @uni) {
-	 
+
 	direction: @dir;
 	unicode-bidi: @uni;
 }
@@ -324,28 +332,28 @@
 .fixedCol(@w, @s) {
 
 	&.fixed-@{s} {
-		 
+
 		clear: both;
 
 		> .col {
 			& when (@s = r) {
-				 
+
 				width: 63%;
 			}
 
 			&.fw@{w} {
-				 
+
 				width: unit(@w + @p, px);
-			
+
 				& when (@s = r) {
-					 
+
 					float: right;
 					padding-right: 0;
 					margin-left: unit(-(@w + @p), px);
 				}
 
 				& when (@s = l) {
-					 
+
 					float: left;
 					padding-right: unit(@p, px);
 					padding-left: 0;
@@ -354,12 +362,12 @@
 
 				+ .col {
 					& when (@s = r) {
-						 
+
 						padding-right: unit(@w + @p, px);
 					}
 
 					& when (@s = l) {
-						 
+
 						width: 100%;
 						padding-left: unit(@w + @p, px);
 					}
@@ -376,22 +384,22 @@
 	@arrayVal: extract(@list, @index);
 
 	&.msg-@{arrayVal} {
-		 
+
 		background-color: ~"@{msg-@{arrayVal}-bgcolor}";
 		border-color: ~"@{msg-@{arrayVal}-bordercolor}";
 		.icon {
-			 
+
 			display: inline-block;
 			width: 20px;
 			height: 20px;
 			
-			 
+
 			background-image: url(~"@{msg-@{arrayVal}-icon}");
 			background-repeat: no-repeat;
 		}
 
 		> .txt {
-			 
+
 			color: ~"@{msg-@{arrayVal}-color}";
 		}
 	}
@@ -403,7 +411,7 @@
 .inactive() {
 	&.inactive:after,
 	&.inactive::after {
-		 
+
 		color: @transport-inactive;
 		cursor: default;
 		&:hover {
@@ -417,11 +425,11 @@
 //----- TRANSPORTS --------------------------------------//
 .transMix() {
 	> .@{val} {
-		 
+
 		margin-@{val}: @transport-width-short;
 		margin-@{opp}: @transport-width-short;
 
-		 
+
 		border-@{val}-width: 0;
 		border-@{opp}-color: @transport-color;
 		border-@{opp}-style: solid;
@@ -456,7 +464,7 @@
 .modalWidth(@width) {
 	@w: unit(@width, px);
 
-	 
+
 	width: @w !important;
 	margin-left: ceil(-(@w / 2));
 }
@@ -466,8 +474,8 @@
 .rotate(@deg: 0) {
 	-webkit-transform: rotate(~'@{deg}deg');
 	   -moz-transform: rotate(~'@{deg}deg');
-	     -o-transform: rotate(~'@{deg}deg');
-	        transform: rotate(~'@{deg}deg');
+		 -o-transform: rotate(~'@{deg}deg');
+			transform: rotate(~'@{deg}deg');
 }
 
 
