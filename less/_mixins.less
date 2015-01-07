@@ -4,14 +4,36 @@
 
 //----- COLOR -----------------------------------------//
 
-.overlay-white(@percent, @color) {
+.overlay-white(@percent; @color; @shade: none) {
 	@white: rgba(255, 255, 255, @percent);
-	@overlay-white: screen(@color, @white);
+
+	.get-output(@shade) when (@shade = lighter) {
+		@overlay-white-lighter: screen(@color, @white);
+	}
+	.get-output(@shade) when (@shade = darker) {
+		@overlay-white-darker: screen(@color, @white);
+	}
+	.get-output(@shade) when (default()) {
+		@overlay-white: screen(@color, @white);
+	}
+
+	.get-output(@shade);
 }
 
-.overlay-black(@percent, @color) {
+.overlay-black(@percent; @color; @shade: none) {
 	@black: rgba(0, 0, 0, @percent);
-	@overlay-black: multiply(@color, @black);
+
+	.get-output(@shade) when (@shade = lighter) {
+		@overlay-black-lighter: multiply(@color, @black);
+	}
+	.get-output(@shade) when (@shade = darker) {
+		@overlay-black-darker: multiply(@color, @black);
+	}
+	.get-output(@shade) when (default()) {
+		@overlay-black: multiply(@color, @black);
+	}
+
+	.get-output(@shade);
 }
 
 
