@@ -212,12 +212,12 @@
 		// should take either CONTENT or BORDER
 		-webkit-box-sizing: escape("@{sizing}-box"); // Safari/Chrome, other WebKit
 		   -moz-box-sizing: escape("@{sizing}-box"); // Firefox, other Gecko
-				box-sizing: escape("@{sizing}-box"); // Opera/IE 8+
+		        box-sizing: escape("@{sizing}-box"); // Opera/IE 8+
 	}
 	& when (@sizing = inherit) {
 		-webkit-box-sizing: escape("@{sizing}"); // Safari/Chrome, other WebKit
 		   -moz-box-sizing: escape("@{sizing}"); // Firefox, other Gecko
-				box-sizing: escape("@{sizing}"); // Opera/IE 8+
+		        box-sizing: escape("@{sizing}"); // Opera/IE 8+
 	}
 }
 
@@ -228,11 +228,11 @@
 @radius-sd: px;
 .radius(@n: unit(@radius); @s: @radius-sd) when (@n = 0) {
 	-moz-border-radius: @n;
-	border-radius: @n;
+	     border-radius: @n;
 }
 .radius(@n: unit(@radius); @s: @radius-sd) when not (@n = 0) {
 	-moz-border-radius: unit(@n, @s);
-	border-radius: unit(@n, @s);
+	     border-radius: unit(@n, @s);
 }
 
 //----- TRANSPORT -------------------------------------//
@@ -274,7 +274,7 @@
 .column(@n: 1) {
 	-webkit-column-count: @n;
 	   -moz-column-count: @n;
-			column-count: @n;
+	        column-count: @n;
 
 }
 
@@ -292,9 +292,9 @@
 	filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=@IE8rot); // IE8 and lower
 	-webkit-transform: rotate(unit(@num, deg)); // Safari
 	   -moz-transform: rotate( unit(@num, deg) ); // Mozilla
-		-ms-transform: rotate( unit(@num, deg) ); // IE 9 and higher
-		 -o-transform: rotate( unit(@num, deg) ); // Opera
-			transform: rotate( unit(@num, deg) );
+	    -ms-transform: rotate( unit(@num, deg) ); // IE 9 and higher
+	     -o-transform: rotate( unit(@num, deg) ); // Opera
+	        transform: rotate( unit(@num, deg) );
 }
 
 
@@ -334,7 +334,7 @@
 	-webkit-user-select: none;
 	 -khtml-user-select: none;
 	   -moz-user-select: none;
-		-ms-user-select: none;
+	    -ms-user-select: none;
 }
 
 
