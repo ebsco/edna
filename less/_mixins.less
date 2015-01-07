@@ -2,10 +2,45 @@
 //----- MIXINS FOR MIXINS -----------------------------//
 
 
+//----- COLOR -----------------------------------------//
+
+.overlay-white(@percent; @color; @shade: none) {
+	@white: rgba(255, 255, 255, @percent);
+
+	.get-output(@shade) when (@shade = lighter) {
+		@overlay-white-lighter: screen(@color, @white);
+	}
+	.get-output(@shade) when (@shade = darker) {
+		@overlay-white-darker: screen(@color, @white);
+	}
+	.get-output(@shade) when (default()) {
+		@overlay-white: screen(@color, @white);
+	}
+
+	.get-output(@shade);
+}
+
+.overlay-black(@percent; @color; @shade: none) {
+	@black: rgba(0, 0, 0, @percent);
+
+	.get-output(@shade) when (@shade = lighter) {
+		@overlay-black-lighter: multiply(@color, @black);
+	}
+	.get-output(@shade) when (@shade = darker) {
+		@overlay-black-darker: multiply(@color, @black);
+	}
+	.get-output(@shade) when (default()) {
+		@overlay-black: multiply(@color, @black);
+	}
+
+	.get-output(@shade);
+}
+
+
 //----- CLEAR -----------------------------------------//
 
 .clear() {
-  clear: both;
+	clear: both;
 }
 
 
@@ -13,18 +48,18 @@
 
 // ie7
 .clearfix() {
-  *zoom: 1;
+	*zoom: 1;
 	&:before,
 	&:after,
 	&::before,
 	&::after {
-	  display: table;
-	  line-height: 0;
-	  content: "";
+		display: table;
+		line-height: 0;
+		content: "";
 	}
 	&:after,
 	&::after {
-	  clear: both;
+		clear: both;
 	}
 }
 
@@ -57,12 +92,12 @@
 //----- BUTTON GRADIENT ----------------------------//
 
 .btngrade(@top, @bottom) {
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
-    background-image: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
-    background-image:  -ms-linear-gradient(bottom, @bottom, @top);
-    background-image:   -o-linear-gradient(@top, @bottom);
-    background-image:      linear-gradient(@top, @bottom);
-    filter: e(%("progid:DXImageTransform.Microsoft.newgradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom));
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
+	background-image: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
+	background-image:  -ms-linear-gradient(bottom, @bottom, @top);
+	background-image:   -o-linear-gradient(@top, @bottom);
+	background-image:      linear-gradient(@top, @bottom);
+	filter: e(%("progid:DXImageTransform.Microsoft.newgradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom));
 }
 
 
@@ -117,7 +152,7 @@
 
 	h@{index} {
 
-		 
+
 		margin-top: 0;
 
 		& when (@index = 1) {
@@ -132,7 +167,7 @@
 			margin-bottom: 10px;
 		}
 
-		 
+
 		.fontsize(@sizeVal);
 		& when (@index = 1), (@index = 2), (@index = 3), (@index = 4), (@index = 5), (@index = 6) {
 			font-weight: bold;
@@ -148,21 +183,21 @@
 		> a:visited,
 		> a:focus,
 		> a:active {
-			 
+
 			color: @link-color;
 			text-decoration: @link-decoration;
 		}
 		> a:visited {
-			 
+
 			color: @link-color-visited;
 			text-decoration: @link-decoration-visited;
 		}
 		> a:hover {
-			 
+
 			color: @link-color-hover;
 		}
 		> a:focus {
-			 
+
 			text-decoration: @link-decoration-focus;
 		}
 	}
@@ -174,15 +209,15 @@
 
 .box(@sizing) {
 	& when (@sizing = content), (@sizing = border) {
-	// should take either CONTENT or BORDER
-	-webkit-box-sizing: escape("@{sizing}-box"); // Safari/Chrome, other WebKit
-	   -moz-box-sizing: escape("@{sizing}-box"); // Firefox, other Gecko
-			box-sizing: escape("@{sizing}-box"); // Opera/IE 8+
+		// should take either CONTENT or BORDER
+		-webkit-box-sizing: escape("@{sizing}-box"); // Safari/Chrome, other WebKit
+		   -moz-box-sizing: escape("@{sizing}-box"); // Firefox, other Gecko
+		        box-sizing: escape("@{sizing}-box"); // Opera/IE 8+
 	}
 	& when (@sizing = inherit) {
-	-webkit-box-sizing: escape("@{sizing}"); // Safari/Chrome, other WebKit
-	   -moz-box-sizing: escape("@{sizing}"); // Firefox, other Gecko
-			box-sizing: escape("@{sizing}"); // Opera/IE 8+
+		-webkit-box-sizing: escape("@{sizing}"); // Safari/Chrome, other WebKit
+		   -moz-box-sizing: escape("@{sizing}"); // Firefox, other Gecko
+		        box-sizing: escape("@{sizing}"); // Opera/IE 8+
 	}
 }
 
@@ -193,11 +228,11 @@
 @radius-sd: px;
 .radius(@n: unit(@radius); @s: @radius-sd) when (@n = 0) {
 	-moz-border-radius: @n;
-	border-radius: @n;
+	     border-radius: @n;
 }
 .radius(@n: unit(@radius); @s: @radius-sd) when not (@n = 0) {
 	-moz-border-radius: unit(@n, @s);
-	border-radius: unit(@n, @s);
+	     border-radius: unit(@n, @s);
 }
 
 //----- TRANSPORT -------------------------------------//
@@ -263,9 +298,9 @@
 	filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=@IE8rot); // IE8 and lower
 	-webkit-transform: rotate(unit(@num, deg)); // Safari
 	   -moz-transform: rotate( unit(@num, deg) ); // Mozilla
-		-ms-transform: rotate( unit(@num, deg) ); // IE 9 and higher
-		 -o-transform: rotate( unit(@num, deg) ); // Opera
-			transform: rotate( unit(@num, deg) );
+	    -ms-transform: rotate( unit(@num, deg) ); // IE 9 and higher
+	     -o-transform: rotate( unit(@num, deg) ); // Opera
+	        transform: rotate( unit(@num, deg) );
 }
 
 
@@ -305,13 +340,13 @@
 	-webkit-user-select: none;
 	 -khtml-user-select: none;
 	   -moz-user-select: none;
-		-ms-user-select: none;
+	    -ms-user-select: none;
 }
 
 
 //----- RTL ---------------------------------------------//
 .international(@dir, @uni) {
-	 
+
 	direction: @dir;
 	unicode-bidi: @uni;
 }
@@ -324,28 +359,28 @@
 .fixedCol(@w, @s) {
 
 	&.fixed-@{s} {
-		 
+
 		clear: both;
 
 		> .col {
 			& when (@s = r) {
-				 
+
 				width: 63%;
 			}
 
 			&.fw@{w} {
-				 
+
 				width: unit(@w + @p, px);
-			
+
 				& when (@s = r) {
-					 
+
 					float: right;
 					padding-right: 0;
 					margin-left: unit(-(@w + @p), px);
 				}
 
 				& when (@s = l) {
-					 
+
 					float: left;
 					padding-right: unit(@p, px);
 					padding-left: 0;
@@ -354,12 +389,12 @@
 
 				+ .col {
 					& when (@s = r) {
-						 
+
 						padding-right: unit(@w + @p, px);
 					}
 
 					& when (@s = l) {
-						 
+
 						width: 100%;
 						padding-left: unit(@w + @p, px);
 					}
@@ -376,22 +411,22 @@
 	@arrayVal: extract(@list, @index);
 
 	&.msg-@{arrayVal} {
-		 
+
 		background-color: ~"@{msg-@{arrayVal}-bgcolor}";
 		border-color: ~"@{msg-@{arrayVal}-bordercolor}";
 		.icon {
-			 
+
 			display: inline-block;
 			width: 20px;
 			height: 20px;
 			
-			 
+
 			background-image: url(~"@{msg-@{arrayVal}-icon}");
 			background-repeat: no-repeat;
 		}
 
 		> .txt {
-			 
+
 			color: ~"@{msg-@{arrayVal}-color}";
 		}
 	}
@@ -403,7 +438,7 @@
 .inactive() {
 	&.inactive:after,
 	&.inactive::after {
-		 
+
 		color: @transport-inactive;
 		cursor: default;
 		&:hover {
@@ -417,11 +452,11 @@
 //----- TRANSPORTS --------------------------------------//
 .transMix() {
 	> .@{val} {
-		 
+
 		margin-@{val}: @transport-width-short;
 		margin-@{opp}: @transport-width-short;
 
-		 
+
 		border-@{val}-width: 0;
 		border-@{opp}-color: @transport-color;
 		border-@{opp}-style: solid;
@@ -456,7 +491,7 @@
 .modalWidth(@width) {
 	@w: unit(@width, px);
 
-	 
+
 	width: @w !important;
 	margin-left: ceil(-(@w / 2));
 }
