@@ -11,4 +11,4 @@ Here is a link to the Sublime Text [User Settings][2]
 
 
   [1]: http://csscomb.com/
-  [2]: http://confluence.epnet.com/display/webdev/CSSComb+-+Sublime%2C+Settings+-+User
+  [2]: sublime-text-settings.md
