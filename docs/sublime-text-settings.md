@@ -1,5 +1,7 @@
 Here is the CSS Comb Sublime Text 2 User Settings
-`{
+
+```json
+{
     // Full list of supported options and acceptable values can be found here:
     // https://github.com/csscomb/csscomb.js/blob/master/doc/options.md
     "config": {
@@ -373,4 +375,4 @@ Here is the CSS Comb Sublime Text 2 User Settings
         ]
     }
 }
-`
+```
