@@ -1,7 +1,7 @@
-Page Layout
+**Page Layout**
 ---
 
-All page layout is handled with Edna and tables. Kidding. No tables are used here, instead we use parent and child element classes.
+All page layout is handled with Edna and tables. Kidding. No tables are used here, instead we use parent and child element elements.
 
 A single page can up to five columns in which to store content. To get the hang of this let's build a page with a three-column layout.
 
@@ -81,3 +81,8 @@ Here is a full breakdown of all the column widths currently available in Edna
 	 - `p5` - 20% / 40% / 20% / 20%
  - `l5`
 	 - `p1` - 20% / 20% / 20% / 20% / 20%
+
+
+####**Some Notes**
+- Even if you are using a one-column layout you should still have a parent and child element.
+- These are not to be used as anything other than page layout. We have classes specifically for widget layout.
