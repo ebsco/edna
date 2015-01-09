@@ -1,4 +1,5 @@
-#Edna Docs
+**Edna Docs**
+---
 
 [Guidelines on working with LESS][1]
 

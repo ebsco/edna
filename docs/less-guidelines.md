@@ -1,9 +1,11 @@
-##LESS
+**LESS**
+---
+
 Starting with Edna, and Buzz, we are using the LESS preprocessor to write our CSS. Preprocessors add a lot of new things to basic CSS such as nesting selectors, the use of variables and mixins, which are similar to Javascript functions.
 
 We started using LESS and not SASS because of the HLM project. For that we used Bootstrap, which was built with LESS.
 
-##Dangers
+##**Dangers**
 LESS can make it very easy to take just a few lines of LESS CSS and, when compiled, end up with thousands of lines of CSS. Yipes! In order to avoid this some guidelines should be followed.
 
 Of course one might not be able to help not following a guideline or two. Just make sure that what is compiled is clean and concise.
@@ -33,7 +35,7 @@ edna
        less
        _variables.less
 
-##Nesting
+##**Nesting**
 Our first guideline is to **keep the number of stringed selectors to no more than 3**. Nesting can be dangerous.
 
 One should use better specificity rather than another selector, or !important.
@@ -148,7 +150,7 @@ foo: bar;
 ```
 
 
-##Comments
+##**Comments**
 Again, comments are awesome, use them.
 
 Single line comments are stripped from LESS when compiled. Use these more for comments to other developers, or yourself.
