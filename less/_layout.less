@@ -110,6 +110,10 @@
 	&:first-child {
 		padding-top: 0;
 	}
+
+	@media @mq-sm {
+	padding: @lay-top-padding (@lay-right-padding - 10) @lay-bottom-padding (@lay-left-padding - 10);
+	}
 }
 
 // for interfaces with widths restrictions
