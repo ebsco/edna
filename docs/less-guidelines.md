@@ -3,12 +3,12 @@ Starting with Edna, and Buzz, we are using the LESS preprocessor to write our CS
 
 We started using LESS and not SASS because of the HLM project. For that we used Bootstrap, which was built with LESS.
 
-##Dangers
+####**Dangers**
 LESS can make it very easy to take just a few lines of LESS CSS and, when compiled, end up with thousands of lines of CSS. Yipes! In order to avoid this some guidelines should be followed.
 
 Of course one might not be able to help not following a guideline or two. Just make sure that what is compiled is clean and concise.
 
-##File Structure
+####**File Structure**
 All files for Edna live in one directory, less. All the compiled files, and the import files that create them, live in the root of the Edna repo.
 
 edna
@@ -26,14 +26,14 @@ edna
  - edna.min.less
  - edna.ie.less
 
-##Variables
+####**Variables**
 Use variables for values that can change easily without messing up an element; colors, font-family, font-size, etc.
 
 edna
        less
        _variables.less
 
-##Nesting
+####**Nesting**
 Our first guideline is to **keep the number of stringed selectors to no more than 3**. Nesting can be dangerous.
 
 One should use better specificity rather than another selector, or !important.
@@ -148,7 +148,7 @@ foo: bar;
 ```
 
 
-##Comments
+####**Comments**
 Again, comments are awesome, use them.
 
 Single line comments are stripped from LESS when compiled. Use these more for comments to other developers, or yourself.
