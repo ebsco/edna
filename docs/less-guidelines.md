@@ -1,4 +1,6 @@
-##LESS
+**LESS**
+---
+
 Starting with Edna, and Buzz, we are using the LESS preprocessor to write our CSS. Preprocessors add a lot of new things to basic CSS such as nesting selectors, the use of variables and mixins, which are similar to Javascript functions.
 
 We started using LESS and not SASS because of the HLM project. For that we used Bootstrap, which was built with LESS.
