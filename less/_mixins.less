@@ -489,23 +489,24 @@
 
 //----- MODAL WIDTHS ------------------------------------//
 .modalWidth(@origWidth; @u: px) {
-	@halfWidth: ceil(-(@origWidth / 2));
-	& when (@u = px) {
-		width: unit(@origWidth, @u) !important;
+    @halfWidth: ceil(-(@origWidth / 2));
+    & when (@u = px) {
+	   	width: unit(@origWidth, @u) !important;
 		margin-left: unit(@halfWidth, @u);
-	}
-	& when (@u = %) {
-		& when (@origWidth =< 100) {
-			width: unit(@origWidth, @u) !important;
-			margin-left: unit(@halfWidth, @u);
-		}
-		& when (@origWidth > 100) {
-			@tenWidth: @origWidth / 10;
-			@halfWidth: -(@tenWidth / 2);
-			width: unit(@tenWidth, @u) !important;
-			margin-left: unit(@halfWidth, @u);
-		}
-	}
+    }
+    & when (@u = pct) {
+        @hundredWidth: (@origWidth / 100);
+        @halfWidth: -(@hundredWidth / 2);
+        & when (@origWidth =< 100) {
+            width: percentage(@hundredWidth) !important;
+            margin-left: percentage(@halfWidth);
+        }
+        & when (@origWidth > 100) {
+	        @tenWidth: @hundredWidth / 10;
+            width: percentage(@hundredWidth) !important;
+            margin-left: percentage(@halfWidth);
+        }
+    }
 }
 
 
