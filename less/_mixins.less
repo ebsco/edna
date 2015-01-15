@@ -461,7 +461,7 @@
 		border-@{opp}-color: @transport-color;
 		border-@{opp}-style: solid;
 		border-@{opp}-width: @transport-width;
-	}        
+	}
 }
 .transPos(@n, @i: 1) when (@i =< @n) {
 	@val: extract(@transArr, @i);
@@ -488,13 +488,25 @@
 
 
 //----- MODAL WIDTHS ------------------------------------//
-.modalWidth(@width) {
-	@w: unit(@width, px);
-
-
-	width: @w !important;
-	margin-left: ceil(-(@w / 2));
-}
+	.modalWidth(@origWidth; @u: px) {
+	@halfWidth: ceil(-(@origWidth / 2));
+		& when (@u = px) {
+			width: unit(@origWidth, @u) !important;
+			margin-left: unit(@halfWidth, @u);
+		}
+		& when (@u = %) {
+			& when (@origWidth < 100) {
+				width: unit(@origWidth, @u) !important;
+				margin-left: unit(@halfWidth, @u);
+			}
+			& when (@origWidth > 100) {
+				@tenWidth: @origWidth / 10;
+				@halfWidth: -(@tenWidth / 2);
+				width: unit(@tenWidth, @u) !important;
+				margin-left: unit(@halfWidth, @u);
+			}
+		}
+	}
 
 
 //----- ROTATE ------------------------------------------//
