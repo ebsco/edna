@@ -20,7 +20,7 @@ It's a custom CSS framework, dig it!<br/><br/>
 
 ## Working With Edna
 
-Before moving on to custom build processes, install dependencies
+Before moving on to custom build processes you will need to install some NPM dependencies
 
 ```
 npm install
