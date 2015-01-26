@@ -11,4 +11,4 @@ Here is a link to the Sublime Text [User Settings][2]
 
 
   [1]: http://csscomb.com/
-  [2]: sublime-text-settings.md
+  [2]: https://github.com/ebsco/edna/blob/develop/docs/sublime-text-settings.md
