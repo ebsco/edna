@@ -438,10 +438,10 @@
 	&.inactive:after,
 	&.inactive::after {
 
-		color: @transport-inactive;
+		color: @transport-inactive !important;
 		cursor: default;
 		&:hover {
-			color: @transport-inactive;
+			color: @transport-inactive !important;
 			cursor: default;
 		}
 	}
@@ -536,3 +536,9 @@
 
 
 //----- SLIDE PANEL -------------------------------------//
+.transition(@kind; @speed) {
+	-webkit-transition: @kind @speed;
+	   -moz-transition: @kind @speed;
+	     -o-transition: @kind @speed;
+	        transition: @kind @speed;
+}
