@@ -1,10 +1,9 @@
 **Page Layout**
 ---
 
-All page layout is handled with Edna and tables. Kidding. No tables are used here, instead we use parent and child element elements.
+Edna has some predetermined layouts that you can use in your designs. We list the dimensions of the layouts below. A single page can up to five columns in which to store content. To get the hang of this let's build a page with a three-column layout.
 
-A single page can up to five columns in which to store content. To get the hang of this let's build a page with a three-column layout.
-
+**Let's Add Some Structure To A Page**
 First we need those parent and child elements on the page.
 
     <div>
@@ -31,7 +30,7 @@ Now is when we add a class to the parent element. This class will tell the three
 
 This will give us a layout with three columns, each with a width of 33%. 
 
-**Let's break apart that parent class**
+**Let's Break Apart That Parent Class**
 This class is made up of two parts.
 
  - The first part, `l3` tells you that you are creating a three-column layout. `l2` for two columns, `l4` for four, etc.
@@ -81,6 +80,11 @@ Here is a full breakdown of all the column widths currently available in Edna
 	 - `p5` - 20% / 40% / 20% / 20%
  - `l5`
 	 - `p1` - 20% / 20% / 20% / 20% / 20%
+
+**Padding**
+We use padding on each layout row and cell within it so things don't butt up against each other. Between layout rows we have **40px** of `padding-bottom`. On the sides of the layout rows we have **25px** of `padding-left` and `padding-right`.
+
+In order to give space between the columns in the layout rows we apply a `padding-left` of **70px**. This `padding-left` is removed from the `:first-child`.
 
 
 ####**Some Notes**
