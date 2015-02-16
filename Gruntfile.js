@@ -169,7 +169,25 @@ module.exports = function(grunt) {
 			}
 		},
 		release: {
-			main: {}
+			options: {
+				buildTargets: ['build'],
+				bump: {
+					createTag: true
+				}
+			},
+			develop: {
+				options: {
+					branch: 'origin/develop'
+				}
+			},
+			production: {
+				options: {
+					branch: 'origin/release',
+					bump: {
+						createTag: true
+					}
+				}
+			}
 		}
 
 	});
