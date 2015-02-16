@@ -13,12 +13,12 @@ install :
 
 release :
 	make install
-	grunt release:production --branch=$(branch) --scmtrigger=$(scmtrigger) --dry-run=true
+	grunt release:production --branch=$(branch) --scmtrigger=$(scmtrigger)
 
 
 develop :
 	make install
-	grunt release:develop --branch=$(branch) --scmtrigger=$(scmtrigger) --sourceMaps=true --dry-run=true
+	grunt release:develop --branch=$(branch) --scmtrigger=$(scmtrigger)
 
 
 deploy :
