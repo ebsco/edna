@@ -5,7 +5,7 @@ app_dir=/home/ep/buzz/$(packageName)
 deployment_hostname=ep@eae-buzzdev801.epnet.com
 
 get-preinstall :
-	npm install -g git+http://as-gitmaster.epnet.com:7990/scm/rd/npm-preinstall.git#v0.2.5
+	npm install -g git+http://as-gitmaster.epnet.com:7990/scm/rd/npm-preinstall.git#v0.2.6
 
 
 release :

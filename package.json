@@ -12,7 +12,7 @@
     "grunt-contrib-cssmin": "^0.10.0",
     "grunt-contrib-less": "^0.12.0",
     "grunt-contrib-watch": "^0.5.3",
-    "grunt-eis-release": "git+http://as-gitmaster.epnet.com:7990/scm/rd/grunt-eis-release.git#v0.2.0",
+    "grunt-eis-release": "git+http://as-gitmaster.epnet.com:7990/scm/rd/grunt-eis-release.git#v0.2.1",
     "grunt-express": "^1.4.1",
     "grunt-grunticon": "git+http://github.com/ebsco/grunticon.git#develop",
     "grunt-kss": "git+http://github.com/ebsco/grunt-kss.git",
