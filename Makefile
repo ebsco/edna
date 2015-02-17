@@ -9,7 +9,7 @@ get-preinstall :
 
 
 release :
-	get-preinstall
+	make get-preinstall
 	npm-preinstall
 	npm install --unsafe-perm
 
@@ -17,7 +17,7 @@ release :
 
 
 develop :
-	get-preinstall
+	make get-preinstall
 	npm-preinstall no-sync
 	npm install --unsafe-perm
 
