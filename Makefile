@@ -4,20 +4,17 @@ branch=
 app_dir=/home/ep/buzz/$(packageName)
 deployment_hostname=ep@eae-buzzdev801.epnet.com
 
-install :
-	npm install -g git+http://as-gitmaster.epnet.com:7990/scm/rd/npm-preinstall.git#v0.2.2
 
+release :
+	npm install -g git+http://as-gitmaster.epnet.com:7990/scm/rd/npm-preinstall.git#v0.2.2
 	npm-preinstall
 	npm install --unsafe-perm
 
-
-release :
-	make install
 	grunt release:production --branch=$(branch) --scmtrigger=$(scmtrigger)
 
 
 develop :
-	make install
+	npm install --unsafe-perm
 	grunt release:develop --branch=$(branch) --scmtrigger=$(scmtrigger)
 
 
