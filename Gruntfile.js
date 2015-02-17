@@ -171,8 +171,9 @@ module.exports = function(grunt) {
 		release: {
 			options: {
 				buildTargets: ['build'],
+				bumpSegment: 'prerelease',
 				bump: {
-					createTag: true
+					createTag: false
 				}
 			},
 			develop: {
