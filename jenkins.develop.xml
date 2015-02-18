@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>-1</daysToKeep>
+    <numToKeep>5</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <jenkins.plugins.hipchat.HipChatNotifier_-HipChatJobProperty plugin="hipchat@0.1.4">
+      <room></room>
+      <startNotification>false</startNotification>
+    </jenkins.plugins.hipchat.HipChatNotifier_-HipChatJobProperty>
+    <org.bstick12.jenkinsci.plugins.leastload.LeastLoadDisabledProperty plugin="leastload@1.0.3">
+      <leastLoadDisabled>false</leastLoadDisabled>
+    </org.bstick12.jenkinsci.plugins.leastload.LeastLoadDisabledProperty>
+    <hudson.plugins.disk__usage.DiskUsageProperty plugin="disk-usage@0.23"/>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.2.12">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>git@github.com:ebsco/edna.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>origin/develop</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <browser class="hudson.plugins.git.browser.AssemblaWeb">
+      <url></url>
+    </browser>
+    <submoduleCfg class="list"/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.LocalBranch>
+        <localBranch>develop</localBranch>
+      </hudson.plugins.git.extensions.impl.LocalBranch>
+      <hudson.plugins.git.extensions.impl.UserExclusion>
+        <excludedUsers>Colt Forsythe
+root
+wylie</excludedUsers>
+      </hudson.plugins.git.extensions.impl.UserExclusion>
+      <hudson.plugins.git.extensions.impl.WipeWorkspace/>
+    </extensions>
+  </scm>
+  <assignedNode>LinSlave01||LinSlave02</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.SCMTrigger>
+      <spec>H/5 * * * *</spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>scp root@eae-jenkins.epnet.com:/root/.jenkins/jobs/$JOB_NAME/builds/$BUILD_ID/changelog.xml EDNA_changes.txt</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>make deploy</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>EDNA_changes.txt,build.properties.json</artifacts>
+      <latestOnly>false</latestOnly>
+      <allowEmptyArchive>false</allowEmptyArchive>
+    </hudson.tasks.ArtifactArchiver>
+    <hudson.tasks.BuildTrigger>
+      <childProjects>Buzz-Framework-Develop</childProjects>
+      <threshold>
+        <name>SUCCESS</name>
+        <ordinal>0</ordinal>
+        <color>BLUE</color>
+        <completeBuild>true</completeBuild>
+      </threshold>
+    </hudson.tasks.BuildTrigger>
+  </publishers>
+  <buildWrappers/>
+</project>
