@@ -178,8 +178,7 @@ module.exports = function(grunt) {
 			},
 			develop: {
 				options: {
-					branch: 'origin/release-no-tag'
-					// branch: 'origin/develop'
+					branch: 'origin/develop'
 				}
 			},
 			production: {

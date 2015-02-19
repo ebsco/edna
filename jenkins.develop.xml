@@ -28,7 +28,7 @@
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>origin/release-no-tag</name>
+        <name>origin/develop</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -36,7 +36,7 @@
     <extensions>
       <hudson.plugins.git.extensions.impl.WipeWorkspace/>
       <hudson.plugins.git.extensions.impl.LocalBranch>
-        <localBranch>release-no-tag</localBranch>
+        <localBranch>develop</localBranch>
       </hudson.plugins.git.extensions.impl.LocalBranch>
       <hudson.plugins.git.extensions.impl.UserExclusion>
         <excludedUsers>Colt Forsythe
@@ -72,7 +72,7 @@ wylie</excludedUsers>
       <allowEmptyArchive>false</allowEmptyArchive>
     </hudson.tasks.ArtifactArchiver>
     <hudson.tasks.BuildTrigger>
-      <childProjects>BuzzFrameworkDevelop</childProjects>
+      <childProjects>Buzz-Framework-Develop</childProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
