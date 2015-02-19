@@ -1,0 +1,33 @@
+// layout loop
+
+@media @mq-md, @mq-lg, @mq-xl {
+	.grid {
+		@list: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+		@listLength: length(@list);
+
+		.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
+			@arrayVal: extract(@list, @index);
+			@pcnt: percentage(@arrayVal / @listLength);
+
+			.col@{arrayVal} {
+				display: block;
+				float: left;
+				width: @pcnt;
+				padding: 0 15px;
+			}
+			.loop(@arrayLength, (@index + 1));
+		}
+		.loop(@listLength);
+	}
+
+	.grid {
+		width: 100%;
+		&:before,
+		&:after {
+			display: table;
+			clear: both;
+
+			content: '';
+		}
+	}
+}
