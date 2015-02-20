@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description></description>
+  <description>EDNA CSS Framework</description>
   <logRotator class="hudson.tasks.LogRotator">
     <daysToKeep>-1</daysToKeep>
     <numToKeep>5</numToKeep>
@@ -10,10 +10,6 @@
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <jenkins.plugins.hipchat.HipChatNotifier_-HipChatJobProperty plugin="hipchat@0.1.4">
-      <room></room>
-      <startNotification>false</startNotification>
-    </jenkins.plugins.hipchat.HipChatNotifier_-HipChatJobProperty>
     <org.bstick12.jenkinsci.plugins.leastload.LeastLoadDisabledProperty plugin="leastload@1.0.3">
       <leastLoadDisabled>false</leastLoadDisabled>
     </org.bstick12.jenkinsci.plugins.leastload.LeastLoadDisabledProperty>
@@ -41,7 +37,8 @@
       <hudson.plugins.git.extensions.impl.UserExclusion>
         <excludedUsers>Colt Forsythe
 root
-wylie</excludedUsers>
+eae-builduser
+BuildUser</excludedUsers>
       </hudson.plugins.git.extensions.impl.UserExclusion>
     </extensions>
   </scm>
