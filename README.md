@@ -6,7 +6,7 @@ It's a custom CSS framework, dig it!<br/><br/>
 
 **Edna contains:**
 
- - A custom HTML reset based on: [normalize.css][2]
+ - A custom HTML reset based on:  [normalize.css][2]
  - CSS styling for basic HTML elements
  - A page layout system
  - A widget layout system

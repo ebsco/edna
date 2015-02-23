@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description></description>
+  <description>EDNA CSS Framework</description>
   <logRotator class="hudson.tasks.LogRotator">
     <daysToKeep>-1</daysToKeep>
     <numToKeep>5</numToKeep>
@@ -10,10 +10,6 @@
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <jenkins.plugins.hipchat.HipChatNotifier_-HipChatJobProperty plugin="hipchat@0.1.4">
-      <room></room>
-      <startNotification>false</startNotification>
-    </jenkins.plugins.hipchat.HipChatNotifier_-HipChatJobProperty>
     <org.bstick12.jenkinsci.plugins.leastload.LeastLoadDisabledProperty plugin="leastload@1.0.3">
       <leastLoadDisabled>false</leastLoadDisabled>
     </org.bstick12.jenkinsci.plugins.leastload.LeastLoadDisabledProperty>
@@ -32,26 +28,24 @@
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
-    <browser class="hudson.plugins.git.browser.AssemblaWeb">
-      <url></url>
-    </browser>
     <submoduleCfg class="list"/>
     <extensions>
+      <hudson.plugins.git.extensions.impl.WipeWorkspace/>
       <hudson.plugins.git.extensions.impl.LocalBranch>
         <localBranch>develop</localBranch>
       </hudson.plugins.git.extensions.impl.LocalBranch>
       <hudson.plugins.git.extensions.impl.UserExclusion>
         <excludedUsers>Colt Forsythe
 root
-wylie</excludedUsers>
+eae-builduser
+BuildUser</excludedUsers>
       </hudson.plugins.git.extensions.impl.UserExclusion>
-      <hudson.plugins.git.extensions.impl.WipeWorkspace/>
     </extensions>
   </scm>
   <assignedNode>LinSlave01||LinSlave02</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
-  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
     <hudson.triggers.SCMTrigger>
@@ -65,7 +59,7 @@ wylie</excludedUsers>
       <command>scp root@eae-jenkins.epnet.com:/root/.jenkins/jobs/$JOB_NAME/builds/$BUILD_ID/changelog.xml EDNA_changes.txt</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>make deploy</command>
+      <command>make develop scmtrigger=${BUILD_CAUSE_SCMTRIGGER} branch=${GIT_BRANCH}</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
