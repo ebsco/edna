@@ -89,7 +89,6 @@ grunt colors
 [grunt-colorguard][6]
 
 
-  [1]: http://eae-buzzdev801.epnet.com:8030
   [2]: http://necolas.github.io/normalize.css/
   [3]: http://smacss.com/
   [4]: https://github.com/filamentgroup/grunticon
