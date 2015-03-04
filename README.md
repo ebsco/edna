@@ -1,6 +1,6 @@
 # Edna CSS Framework
 
-It's a custom CSS framework, dig it!<br/><br/>
+It's a custom CSS framework, dig it!
 
 ---
 
@@ -14,7 +14,7 @@ It's a custom CSS framework, dig it!<br/><br/>
 
 ---
 
-**View the <a href="docs/docs.md">Edna docs</a>**<br/><br/>
+**View the <a href="docs/docs.md">Edna docs</a>**
 
 ---
 
