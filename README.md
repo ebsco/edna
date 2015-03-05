@@ -1,6 +1,6 @@
 # Edna CSS Framework
 
-It's a custom CSS framework, dig it!<br/><br/>
+It's a custom CSS framework, dig it!
 
 ---
 
@@ -14,7 +14,7 @@ It's a custom CSS framework, dig it!<br/><br/>
 
 ---
 
-**View the <a href="docs/docs.md">Edna docs</a>**<br/><br/>
+**View the [Edna docs][1]**
 
 ---
 
@@ -89,7 +89,7 @@ grunt colors
 [grunt-colorguard][6]
 
 
-  [1]: http://eae-buzzdev801.epnet.com:8030
+  [1]: docs/docs.md
   [2]: http://necolas.github.io/normalize.css/
   [3]: http://smacss.com/
   [4]: https://github.com/filamentgroup/grunticon
