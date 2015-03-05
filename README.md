@@ -1,4 +1,4 @@
-# Edna CSS Framework
+#Edna CSS Framework
 
 It's a custom CSS framework, dig it!
 
@@ -18,7 +18,7 @@ It's a custom CSS framework, dig it!
 
 ---
 
-## Working With Edna
+##Working With Edna
 
 Before moving on to custom build processes you will need to install some NPM dependencies
 
@@ -28,7 +28,7 @@ npm install
 
 Then, depending on what you want to do, you will need one or more of the following build processes.
 
-### Build Edna
+###Build Edna
 
 Your most basic task. It will get you up and running.
 
@@ -38,7 +38,7 @@ grunt build
 
 [grunt-grunticon][4], [grunt-contrib-less][5], [grunt-contrib-cssmin][15], grunt quality-check
 
-### Build the Documentation
+###Build the Documentation
 
 The documentation is built using KSS(Knyle Style Sheets) from the source. Run the following command to generate the docs into ```kss-docs/'''
 
@@ -48,7 +48,7 @@ grunt kss-build
 
 [grunt-kss][13], [grunt-grunticon][4], [grunt-contrib-less][5]
 
-### Live Docmentation Changes During Development
+###Live Docmentation Changes During Development
 
 The documentation pages server as a great sandbox for style development. Using the following command with set up a documentation server that reloads the browser when style files have changed.
 
@@ -58,7 +58,7 @@ grunt-kss-dev
 
 grunt kss-build, [grunt-browser-sync][14], [grunt-contrib-watch][8]
 
-### Start a Server
+###Start a Server
 
 So you can view Edna locally you will need to run this command. It will watch for any changes you might make to local files and recompile the LESS as you go.
 
@@ -68,7 +68,7 @@ grunt server
 
 [grunt-express][9], [grunt-grunticon][4], [grunt-contrib-less][5], [grunt-contrib-cssmin][15], [grunt-contrib-watch][8]
 
-### Linting
+###Linting
 
 Do this often to check out how your CSS fares. Also checks filesize and selector count.
 
@@ -78,7 +78,7 @@ grunt quality-check
 
 [grunt-contrib-analyze-css][11], [grunt-css-metrics][10]
 
-### Check Edna's Colors
+###Check Edna's Colors
 
 This is a specialized task that one won't need to run that often. The [grunt-colorguard][6] is the important task here.
 
