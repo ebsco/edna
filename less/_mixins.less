@@ -47,17 +47,23 @@
 //----- CLEARFIX --------------------------------------//
 
 // ie7
-.clearfix() {
+.clearfix {
 	*zoom: 1;
 	&:before,
-	&:after,
+	&:after {
+		display: table;
+		line-height: 0;
+		content: "";
+	}
 	&::before,
 	&::after {
 		display: table;
 		line-height: 0;
 		content: "";
 	}
-	&:after,
+	&:after {
+		clear: both;
+	}
 	&::after {
 		clear: both;
 	}
