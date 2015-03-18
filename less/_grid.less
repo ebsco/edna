@@ -77,7 +77,7 @@
 // other CSS for the container of the new columns
 .grid {
 	.clearfix;
-	
+
 	width: 100%;
 	&:before,
 	&:after {
@@ -97,52 +97,22 @@
 		// break out the value from the list
 		@arrayVal: extract(@list, @index);
 		// this declaration block gets output. once per key in the @list array 
+		@pcnt: percentage(@arrayVal / @listLength);
+		// this declaration block gets output. once per key in the @list array 
 		.col@{arrayVal} {
 			display: block;
 			float: left;
 			padding: 0 15px;
+			@media @mq-sm, @mq-md {
+				width: 100;
+			}
+			@media @mq-lg, @mq-xl {
+				width: @pcnt;
+			}
 		}
 		// loop the loop
 		.loop(@arrayLength, (@index + 1));
 	}
 	// do all the loop stuff
 	.loop(@listLength);
-
-	// layout loop
-	@media @mq-sm, @mq-md {
-		& {		
-			// loop
-			.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
-				// break out the value from the list
-				@arrayVal: extract(@list, @index);
-				// this declaration block gets output. once per key in the @list array 
-				.col@{arrayVal} {
-					width: 100;
-				}
-				// loop the loop
-				.loop(@arrayLength, (@index + 1));
-			}
-			// do all the loop stuff
-			.loop(@listLength);
-		}
-	}
-	@media @mq-lg, @mq-xl {
-		& {
-			// loop
-			.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
-				// break out the value from the list
-				@arrayVal: extract(@list, @index);
-				// create the percent by dividing the arrayVal by the listLength
-				@pcnt: percentage(@arrayVal / @listLength);
-				// this declaration block gets output. once per key in the @list array 
-				.col@{arrayVal} {
-					width: @pcnt;
-				}
-				// loop the loop
-				.loop(@arrayLength, (@index + 1));
-			}
-			// do all the loop stuff
-			.loop(@listLength);
-		}
-	}
 }
