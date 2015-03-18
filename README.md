@@ -49,7 +49,7 @@ grunt kss-build
 
 [grunt-kss][13], [grunt-grunticon][4], [grunt-contrib-less][5]
 
-###Live Docmentation Changes During Development
+###Live Documentation Changes During Development
 
 The documentation pages server as a great sandbox for style development. Using the following command with set up a documentation server that reloads the browser when style files have changed.
 
