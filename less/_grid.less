@@ -77,15 +77,18 @@
 // other CSS for the container of the new columns
 .grid {
 	@grid-sides: 15px;
+	@side-gutter: 25px;
+	
 	.clearfix;
 
 	padding-top: 0;
+	padding-bottom: 20px;
 	margin-right: -@grid-sides;
 	margin-left: -@grid-sides;
 
 	// add padding to consecutive .grids
 	& + & {
-		padding-top: 40px;
+		padding-top: 20px;
 	}
 
 	// the items to loop through
@@ -116,4 +119,22 @@
 	}
 	// do all the loop stuff
 	.loop(@listLength);
+
+	// in case of pages with no side gutters
+	&.full-page {
+		// don't need the side gutters on a full-width page
+		margin-right: -@side-gutter;
+		margin-left: -@side-gutter;
+		@media  @mq-sm, @mq-md {
+			& {
+				> [class*='col'] {
+					padding: 0;
+				}
+			}
+		}
+	}
+	&.max-width {
+		max-width: 1280px;
+		margin: 0 auto;
+	}
 }
