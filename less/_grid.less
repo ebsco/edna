@@ -79,16 +79,13 @@
 	@grid-sides: 15px;
 	.clearfix;
 
-	padding: 0 25px 40px 25px;
+	padding-top: 0;
 	margin-right: -@grid-sides;
 	margin-left: -@grid-sides;
 
-	&:before,
-	&:after {
-		display: table;
-		clear: both;
-
-		content: '';
+	// add padding to consecutive .grids
+	& + & {
+		padding-top: 40px;
 	}
 
 	// the items to loop through
