@@ -16,10 +16,8 @@
 	.get-output(@shade) when (default()) {
 		@overlay-white: screen(@color, @white);
 	}
-
 	.get-output(@shade);
 }
-
 .overlay-black(@percent; @color; @shade: none) {
 	@black: rgba(0, 0, 0, @percent);
 
@@ -32,7 +30,6 @@
 	.get-output(@shade) when (default()) {
 		@overlay-black: multiply(@color, @black);
 	}
-
 	.get-output(@shade);
 }
 
@@ -96,7 +93,6 @@
 	clip: rect((@px * .1), (@px * .1), (@px * .1), (@px * .1));
 	overflow: hidden;
 }
-
 .off-page {
 	display: inline-block;
 	font-size: 0;
@@ -146,18 +142,15 @@
 		font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 	}
 }
-
 .fontsize(@sizeValue) {
 	@remValue: @sizeValue;
 	@pxValue: (@sizeValue * 10);
 	font-size: unit(@pxValue,px); // fallback for IE8
 	font-size: unit(@remValue,rem); // REMs for awesome browsers
 }
-
 .lh(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
 	line-height: unit(@n, @s);
 }
-
 .lh(@n: 0; @s: px) when (@s = pct) {
 	line-height: percentage(@n/100);
 }
@@ -175,27 +168,21 @@
 
 	h@{index} {
 
-
 		margin-top: 0;
 
 		& when (@index = 1) {
 			margin-bottom: 20px;
 		}
-
 		& when (@index = 2), (@index = 4), (@index = 5), (@index = 6) {
 			margin-bottom: 20px;
 		}
-
 		& when (@index = 3) {
 			margin-bottom: 10px;
 		}
-
-
 		.fontsize(@sizeVal);
 		& when (@index = 1), (@index = 2), (@index = 3), (@index = 4), (@index = 5), (@index = 6) {
 			font-weight: bold;
 		}
-
 		& when (@index = 6) {
 			font-style: italic;
 		}
@@ -206,21 +193,17 @@
 		> a:visited,
 		> a:focus,
 		> a:active {
-
 			color: @link-color;
 			text-decoration: @link-decoration;
 		}
 		> a:visited {
-
 			color: @link-color-visited;
 			text-decoration: @link-decoration-visited;
 		}
 		> a:hover {
-
 			color: @link-color-hover;
 		}
 		> a:focus {
-
 			text-decoration: @link-decoration-focus;
 		}
 	}
@@ -267,7 +250,6 @@
 	border-bottom-width: @w;
 	border-left-width: @w;
 }
-
 .transport-right(@w: (@px * .5)) {
 	margin-right: -(@w / 2);
 	margin-left: (@w / 2);
@@ -275,7 +257,6 @@
 	border-bottom-width: @w;
 	border-left-width: @w;
 }
-
 .transport-bottom(@w: (@px * .5)) {
 	margin-top: -(@w / 2);
 	margin-bottom: (@w / 2);
@@ -283,7 +264,6 @@
 	border-right-width: @w;
 	border-left-width: @w;
 }
-
 .transport-left(@w: (@px * .5)) {
 	margin-right: -(@w / 2);
 	margin-left: (@w / 2);
@@ -373,7 +353,6 @@
 
 //----- RTL ---------------------------------------------//
 .international(@dir, @uni) {
-
 	direction: @dir;
 	unicode-bidi: @uni;
 }
@@ -384,44 +363,33 @@
 // w should be any number, minus the units
 // s should be lowercase R or L
 .fixedCol(@w, @s) {
-
 	&.fixed-@{s} {
-
 		clear: both;
 
 		> .col {
 			& when (@s = r) {
-
 				width: 63%;
 			}
 
 			&.fw@{w} {
-
 				width: unit(@w + @p, px);
 
 				& when (@s = r) {
-
 					float: right;
 					padding-right: 0;
 					margin-left: unit(-(@w + @p), px);
 				}
-
 				& when (@s = l) {
-
 					float: left;
 					padding-right: unit(@p, px);
 					padding-left: 0;
 					margin-right: unit(-(@w + @p), px);
 				}
-
 				+ .col {
 					& when (@s = r) {
-
 						padding-right: unit(@w + @p, px);
 					}
-
 					& when (@s = l) {
-
 						width: 100%;
 						padding-left: unit(@w + @p, px);
 					}
@@ -438,22 +406,18 @@
 	@arrayVal: extract(@list, @index);
 
 	&.msg-@{arrayVal} {
-
 		background-color: ~"@{msg-@{arrayVal}-bgcolor}";
 		border-color: ~"@{msg-@{arrayVal}-bordercolor}";
+		
 		.icon {
-
 			display: inline-block;
 			width: 20px;
 			height: 20px;
-			
 
 			background-image: url(~"@{msg-@{arrayVal}-icon}");
 			background-repeat: no-repeat;
 		}
-
 		> .txt {
-
 			color: ~"@{msg-@{arrayVal}-color}";
 		}
 	}
@@ -465,9 +429,9 @@
 .inactive() {
 	&.inactive:after,
 	&.inactive::after {
-
 		color: @transport-inactive !important;
 		cursor: default;
+
 		&:hover {
 			color: @transport-inactive !important;
 			cursor: default;
@@ -479,10 +443,8 @@
 //----- TRANSPORTS --------------------------------------//
 .transMix() {
 	> .@{val} {
-
 		margin-@{val}: @transport-width-short;
 		margin-@{opp}: @transport-width-short;
-
 
 		border-@{val}-width: 0;
 		border-@{opp}-color: @transport-color;
