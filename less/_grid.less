@@ -144,7 +144,6 @@
 // another loop, but this time for grid column borders
 .grid {
 	@list: top, right, bottom, left;
-	@listLength: length(@list);
 	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
 		@arrayVal: extract(@list, @index);
 		.border-@{arrayVal} {
@@ -152,5 +151,5 @@
 		}
 		.loop(@arrayLength, (@index + 1));
 	}
-	.loop(@listLength);
+	.loop(length(@list));
 }
