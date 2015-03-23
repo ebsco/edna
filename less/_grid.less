@@ -134,7 +134,23 @@
 		max-width: 1280px;
 		margin: 0 auto;
 	}
+	// when there is no container for the grid remove the negative margins
+	&.no-container {
+		margin-right: 0;
+		margin-left: 0;
+	}
 }
-.border-before {
-	border-left: 1px solid #e2e2e2;
+
+// another loop, but this time for grid column borders
+.grid {
+	@list: top, right, bottom, left;
+	@listLength: length(@list);
+	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
+		@arrayVal: extract(@list, @index);
+		.border-@{arrayVal} {
+			border-@{arrayVal}: 1px solid @grid-border-color;
+		}
+		.loop(@arrayLength, (@index + 1));
+	}
+	.loop(@listLength);
 }
