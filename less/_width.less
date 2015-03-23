@@ -108,9 +108,10 @@
 
 	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
 		@arrayVal: extract(@list, @index);
+		@classVal: floor(@arrayVal);
 		@pcnt: percentage(@arrayVal / 100);
 
-		> .w@{arrayVal} {
+		> .w@{classVal} {
 			 
 			float: left;
 			padding: 0 @widget-padding 0 0;
