@@ -21,4 +21,4 @@ We have some custom labels in Edna and I thought a little explanation of them wo
 
 **question** - When you have a question, and you create an issue, add this label. I don't see a use case where a pull request will ever need this label, but if you have a question and it comes across in a pull request, add this label.
 
-**wontfix** - 
+**wontfix** - This is for issues or pull requests that we don't plan on fixing.
