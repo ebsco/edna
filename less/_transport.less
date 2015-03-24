@@ -16,83 +16,6 @@
 // 
 // Styleguide 24.1
 
-.transport {
-	&.slim {
-		> .top,
-		> .right,
-		> .bottom,
-		> .left {
-			.fontsize(@transport-slim-fontsize);
-			.inactive;
-
-			width: 10px;
-			height: 16px;
-			padding: 0 0 0 3px;
-			margin: 0;
-
-			font-family: @transport-slim-fontfamily;
-			line-height: 30px;
-			text-align: center;
-
-			border-color: @transport-slim-bordercolor;
-			border-width: 0;
-			&:after,
-			&::after {
-				display: inline-block;
-				width: 30px;
-				height: 30px;
-
-				line-height: 30px;
-				text-align: center;
-			}
-			&:focus {
-				outline: 0;
-				&:after,
-				&::after {
-					outline: auto 5px #98c1e9;
-				}
-			}
-			&:hover {
-				&:after,
-				&::after {
-					color: @transport-slim-color-enabled-hover;
-				}
-			}
-		}
-		> .top,
-		> .right,
-		> .bottom,
-		> .left {
-			&:after,
-			&::after {
-				color: @transport-slim-color-enabled;
-			}
-		}
-		> .top,
-		> .bottom {
-			.rotate(-90);
-		}
-		> .top {
-			&:after,
-			&::after {
-				content: @transport-slim-arrow-top;
-			}
-		}
-		> .right {
-			&:after,
-			&::after {
-				content: @transport-slim-arrow-right;
-			}
-		}
-		> .left {
-			&:after,
-			&::after {
-				content: @transport-slim-arrow-left;
-			}
-		}
-	}
-}
-
 // new one-line transports. could this be the future?
 .transport {
 	@transport-width: 5px;
@@ -126,14 +49,6 @@
 		left: 7px;
 
 		border-left: @transport-width solid @colorS4;
-		&.thin {
-			.icon.svg-transport-slim-r-dark;
-
-			width: 10px;
-			height: 10px;
-
-			border: none;
-		}
 	}
 	&-bottom {
 		border-top: @transport-width solid @colorS4;
@@ -143,13 +58,5 @@
 		left: 2px;
 
 		border-right: @transport-width solid @colorS4;
-		&.thin {
-			.icon.svg-transport-slim-l-dark;
-
-			width: 10px;
-			height: 10px;
-
-			border: none;
-		}
 	}
 }

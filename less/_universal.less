@@ -1,11 +1,38 @@
 /* UNIVERSAL STYLES */
 
-// styles that are universal 
+// styles that are universal
+
+html & {
+	.box(border);
+
+	height: 100%;
+}
+
+*,
+*:before,
+*:after {
+	.box(inherit);
+}
+
+html &,
+body & {
+	.fontfamily(sans);
+}
+
+body {
+	min-width: unit(@mediaquery-sm, px);
+}
+
+.col {
+	padding: @col-top-padding @col-right-padding @col-bottom-padding @col-left-padding;
+	& + & {
+		padding-left: 70px;
+	}
+}
 
 .close {
 	cursor: pointer;
 }
-
 
 .icon {
 	display: inline-block;
@@ -13,4 +40,21 @@
 	height: 25px;
 
 	background-position: top center;
+}
+
+.visible {
+	display: inline-block;
+}
+
+.highlight {
+	@space: 2px;
+
+	padding-top: @space;
+	padding-bottom: @space;
+
+	background-color: @highlight-bgcolor;
+}
+
+.selected.highlight {
+	background-color: @selected-highlight-bgcolor;
 }

@@ -33,6 +33,10 @@
 
 // TEXT INPUTS
 input {
+	.radius;
+	.fontfamily(lucida);
+	.fontsize(1.4);
+
 	width: 100%;
 	height: @input-height; // same as @btn-height
 	padding: 2.5px 23px 2.5px 5px;
@@ -40,11 +44,6 @@ input {
 	color: @colorS4;
 
 	border: 1px solid @input-bordercolor;
-	-moz-border-radius: @radius;
-	     border-radius: @radius;
-
-	.fontfamily(lucida);
-	.fontsize(1.4);
 	&:disabled,
 	&.disabled {
 		border-color: @input-disabled-bordercolor;
@@ -55,6 +54,8 @@ input {
 	position: relative;
 	> input {
 		+ .reset {
+			.fontsize(1.5);
+
 			position: absolute;
 			top: 2px;
 			right: 2px;
@@ -69,8 +70,6 @@ input {
 			background-color: @input-reset-bgcolor;
 			border: @input-reset-bordercolor;
 			border-radius: 0;
-
-			.fontsize(1.5);
 			&:hover {
 				color: @input-reset-color-hover;
 			}
@@ -81,7 +80,17 @@ input {
 // RADIO / CHECKBOXES
 input[type='radio'],
 input[type='checkbox'] {
-	margin: 5px;
+	.fontsize(1.5);
+	.lh(16);
+
+	display: inline-block;
+	width: auto;
+	height: 16px;
+	padding-left: 20px;
+	margin: 4px 0 0;
+
+	vertical-align: bottom;
+	cursor: pointer;
 }
 
 label {

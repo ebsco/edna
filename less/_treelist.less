@@ -29,9 +29,11 @@
 // Styleguide 25.1
 
 .treelist {
+	foo: bar;
 	.list {
-		padding: 0 0 0 10px;
-		margin-bottom: 5px;
+		width: auto;
+		// padding: 0 0 0 10px;
+		// margin-bottom: 5px;
 
 		list-style-type: none;
 		.list {
@@ -42,26 +44,27 @@
 		.list-item {
 			padding: 0;
 			margin: 0;
-			// font-weight: bold;
-			> .txt-link {
-				display: block;
-				padding: 5px;
-				margin-bottom: 5px;
+		}
+		.txt-link {
+			.fontsize(1.4);
 
-				font-weight: normal;
-				color: @treelist-color;
-				cursor: pointer;
+			display: block;
+			padding: 5px;
+			margin: 0;
 
-				.fontsize(1.4);
-			}
-			&.active {
-				> .txt-link {
-					padding-left: @treelist-padding-left;
-					margin-left: @treelist-margin-left;
+			font-weight: normal;
+			color: @treelist-color;
+			cursor: pointer;
 
-					background-color: @treelist-bgcolor;
-					border-left: @treelist-borderwidth solid @treelist-bordercolor;
-				}
+			border: none;
+		}
+		&.active {
+			.txt-link {
+				padding-left: @treelist-padding-left;
+				margin-left: @treelist-margin-left;
+
+				background-color: @treelist-bgcolor;
+				border-left: @treelist-borderwidth solid @treelist-bordercolor;
 			}
 		}
 	}

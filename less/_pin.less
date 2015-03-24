@@ -1,13 +1,14 @@
 /* PIN */
 
 .pin {
+	.clearfix;
+
 	position: relative;
 
 	width: inherit;
-
-	.clearfix;
 	&.fixed {
 		position: fixed;
 		top: 0;
+		z-index: @index-3;
 	}
 }

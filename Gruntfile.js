@@ -85,27 +85,36 @@ module.exports = function(grunt) {
 			}
 		},
 		grunticon: {
-			icons: {
+			options: {
+				datasvgcss: 'css/icons.svg.css',
+				datapngcss: 'css/icons.png.css',
+				urlpngcss: 'css/icons.fallback.css',
+				loader: true,
+				loadersnippet: 'js/grunticon.loader.js',
+				template: 'grunticon/rule.hbs', // analyze task isn't compatible with default
+				defaultWidth: '100%',
+				defaultHeight: '100%',
+				pngfolder: 'png',
+				pngpath: '../png',
+				cssprefix: '.icon.svg-',
+				stylesheet: 'grunticon/skin.less',
+				lessprefix: 'icon-'
+			},
+			default: {
 				files: [{
 					expand: true,
 					cwd: 'grunticon/raw',
 					src: ['*.svg'],
 					dest: 'grunticon'
-				}],
-				options: {
-					datasvgcss: 'css/icons.svg.css',
-					datapngcss: 'css/icons.png.css',
-					urlpngcss: 'css/icons.fallback.css',
-					loadersnippet: 'js/grunticon.loader.js',
-					template: 'grunticon/rule.hbs', // analyze task isn't compatible with default
-					defaultWidth: '100%',
-					defaultHeight: '100%',
-					pngfolder: 'png',
-					pngpath: '../png',
-					cssprefix: '.icon.svg-',
-					stylesheet: 'grunticon/skin.less',
-					lessprefix: 'icon-'
-				}
+				}]
+			},
+			kss: {
+				files: [{
+					expand: true,
+					cwd: 'grunticon/raw',
+					src: ['*.svg'],
+					dest: 'kss-docs/public'
+				}]
 			}
 		},
 		colorguard: {
@@ -160,7 +169,26 @@ module.exports = function(grunt) {
 			}
 		},
 		release: {
-			main: {}
+			options: {
+				buildTargets: ['build'],
+				bumpSegment: 'prerelease',
+				bump: {
+					createTag: false
+				}
+			},
+			develop: {
+				options: {
+					branch: 'origin/develop'
+				}
+			},
+			production: {
+				options: {
+					branch: 'origin/release',
+					bump: {
+						createTag: true
+					}
+				}
+			}
 		}
 
 	});
@@ -180,7 +208,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('kss-build', [
 		'kss',
-		'grunticon',
+		'grunticon:kss',
 		'less:kss',
 		'less:kssIEStyles',
 	]);
@@ -193,7 +221,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('server', [
 		'express',
-		'grunticon',
+		'grunticon:default',
 		'less',
 		'cssmin',
 		'watch'
@@ -215,7 +243,7 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('build', [
-		'grunticon',
+		'grunticon:default',
 		'less',
 		'cssmin',
 		'quality-check'

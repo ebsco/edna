@@ -5,31 +5,31 @@
 }
 
 .ui-autocomplete {
+	.fontfamily(sans);
+	.fontsize(@ac-size);
+	.radius(0);
+
 	z-index: @index-1;
 
 	padding: 0;
 
-	.fontfamily(sans);
-	.fontsize(@ac-size);
 	color: @ac-color;
 	list-style-type: none;
 
 	background-color: @ac-bgcolor;
 	background-image: none !important; // important needed to override jQuery UI image
 	border: 1px solid @ac-bordercolor;
-	.radius(0);
-
 	.ui-menu-item {
 		margin: 0;
 		a {
+			.truncate;
+
 			display: block;
 			padding: 6px 4px;
 
 			line-height: 1.25em;
 			color: @ac-result-color;
 			cursor: pointer;
-			.truncate;
-
 			> strong {
 				color: @ac-result-color;
 			}
@@ -74,9 +74,10 @@
 		}
 	}
 	.ui-corner-all {
+		.radius(0);
+
 		background-image: none;
 		border-style: solid;
 		border-width: 0;
-		.radius(0);
 	}
 }

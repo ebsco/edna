@@ -11,6 +11,9 @@
 	<meta name="generator" content="kss-node" />
 	<meta name="viewport" content="width=device-width">
 
+	<script src="public/js/grunticon.loader.js" type="text/javascript"></script>
+	<script type="text/javascript">grunticon(["public/css/icons.svg.css", "public/css/icons.png.css", "public/css/icons.fallback.css"]);</script>
+
 	<link rel="stylesheet" href="public/edna.css">
 	<link rel="stylesheet" href="public/edna.ie.css">
 	<link rel="stylesheet" href="public/kss.css">
@@ -55,9 +58,9 @@
 				{{{overview}}}
 			{{else}}
 
-				{{#eachSection rootNumber}}
+				{{#eachSection rootName}}
 					{{#unlessDepth 1}}
-				<section class="cg-section kss-depth-{{ refDepth }}">
+				<section class="cg-section kss-depth-{{ depth }}">
 					{{/unlessDepth}}
 
 					<a name="{{reference}}"></a>

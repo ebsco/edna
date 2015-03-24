@@ -1,0 +1,155 @@
+/* GRID */
+
+// Grid
+// 
+// In the future Edna will use a 12 column grid for layout. This will eventually take over for the layout files. In the interim we will have both solutions.
+// 
+// Styleguide 28
+
+// Columns
+// 
+// Markup:
+// <div class="grid">
+//     <div class="{{modifier_class}}"></div>
+// </div>
+// 
+// col1			- second kind
+// col2			- second kind
+// col3			- second kind
+// col4			- second kind
+// col5			- second kind
+// col6			- second kind
+// col7			- second kind
+// col8			- second kind
+// col9			- second kind
+// col10		- second kind
+// col11		- second kind
+// col12		- second kind
+// 
+// Styleguide 28.1
+
+// Two Column Layout
+// 
+// Markup:
+// <div class="grid">
+//     <div class="col2"></div>
+//     <div class="col10"></div>
+// </div>
+// 
+// Styleguide 28.2
+
+// Three Column Layout
+// 
+// Markup:
+// <div class="grid">
+//     <div class="col3"></div>
+//     <div class="col6"></div>
+//     <div class="col3"></div>
+// </div>
+// 
+// Styleguide 28.3
+
+// Four Column Layout
+// 
+// Markup:
+// <div class="grid">
+//     <div class="col3"></div>
+//     <div class="col3"></div>
+//     <div class="col3"></div>
+//     <div class="col3"></div>
+// </div>
+// 
+// Styleguide 28.4
+
+// Five Column Layout
+// 
+// Markup:
+// <div class="grid">
+//     <div class="col2"></div>
+//     <div class="col2"></div>
+//     <div class="col4"></div>
+//     <div class="col2"></div>
+//     <div class="col2"></div>
+// </div>
+// 
+// Styleguide 28.5
+
+// other CSS for the container of the new columns
+.grid {
+
+	.clearfix;
+
+	padding-bottom: 20px;
+	margin-right: -@grid-sides;
+	margin-left: -@grid-sides;
+
+	// add padding to consecutive .grids
+	& + & {
+		padding-top: 20px;
+	}
+
+	// the items to loop through
+	@list: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+	// get the length of @list
+	@listLength: length(@list);
+
+	// loop
+	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
+		// break out the value from the list
+		@arrayVal: extract(@list, @index);
+		// this declaration block gets output. once per key in the @list array 
+		@pcnt: percentage(@arrayVal / @listLength);
+		// this declaration block gets output. once per key in the @list array 
+		.col@{arrayVal} {
+			display: block;
+			float: left;
+			padding: 0 @grid-sides;
+			@media @mq-sm, @mq-md {
+				width: 100%;
+			}
+			@media @mq-lg, @mq-xl {
+				width: @pcnt;
+			}
+		}
+		// loop the loop
+		.loop(@arrayLength, (@index + 1));
+	}
+	// do all the loop stuff
+	.loop(@listLength);
+
+	// in case of pages with no side gutters
+	&.full-page {
+		// don't need the side gutters on a full-width page
+		margin-right: -@side-gutter;
+		margin-left: -@side-gutter;
+		@media  @mq-sm, @mq-md {
+			& {
+				> [class*='col'] {
+					padding: 0;
+				}
+			}
+		}
+	}
+	&.max-width {
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+	// when there is no container for the grid remove the negative margins
+	&.no-container {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+// another loop, but this time for grid column borders
+.grid {
+	@list: top, right, bottom, left;
+	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
+		@arrayVal: extract(@list, @index);
+		.border-@{arrayVal} {
+			border-@{arrayVal}: 1px solid @grid-border-color;
+		}
+		.loop(@arrayLength, (@index + 1));
+	}
+	.loop(length(@list));
+}

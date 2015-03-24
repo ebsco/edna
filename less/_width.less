@@ -103,14 +103,15 @@
 	 
 	.clearfix;
 	
-	@list: 20, 25, 33, 40, 50, 60, 66, 75, 80;
+	@list: 100/5, 100/4, 100/3, (100/5)*2, 100/2, (100/5)*3, (100/3)*2, (100/4)*3, (100/5)*4;
 	@listLength: length(@list);
 
 	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
 		@arrayVal: extract(@list, @index);
+		@classVal: floor(@arrayVal);
 		@pcnt: percentage(@arrayVal / 100);
 
-		> .w@{arrayVal} {
+		> .w@{classVal} {
 			 
 			float: left;
 			padding: 0 @widget-padding 0 0;

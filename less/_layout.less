@@ -93,7 +93,7 @@
 // Set up the basic layout region
 .col {
 	float: left;
-	width: 100%;
+	// width: 100%;
 
 	vertical-align: top;
 }
@@ -103,10 +103,16 @@
 	.box(border);
 	.clearfix;
 
+	@lay-bottom-padding: (@px * 4);
+
 	width: 100%;
 	padding: @lay-top-padding @lay-right-padding @lay-bottom-padding @lay-left-padding;
 	&:first-child {
 		padding-top: 0;
+	}
+
+	@media @mq-sm {
+	padding: @lay-top-padding (@lay-right-padding - 10) @lay-bottom-padding (@lay-left-padding - 10);
 	}
 }
 

@@ -84,23 +84,6 @@
 			text-decoration: underline;
 		}
 	}
-	.bar {
-		.pos(relative);
-		// background-color: @tbar-bgcolor;
-
-		@color: @tbar-bgcolor;
-		@top: lighten(@color, 10%);
-		@bottom: @color;
-
-		padding-bottom: 2px;
-		overflow: hidden;
-
-		background: @color;
-		background: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
-		background: linear-gradient(to bottom, @top, @bottom);
-
-		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='@{top}', endColorstr='@{bottom}');
-	}
 }
 .nav {
 	display: inline-block;
@@ -139,27 +122,6 @@
 		cursor: pointer;
 		> .icon {
 			overflow: hidden;
-		}
-	}
-	.folder {
-		.txt-link {
-			.icon {
-				position: absolute;
-				left: 2px;
-
-				width: 27px;
-				height: 15px;
-
-				background-color: @usernav-item-folder-bgcolor;
-				background-image: url(@usernav-item-folder-icon);
-				background-position: 8px -1px;
-				background-repeat: no-repeat;
-			}
-		}
-		&.not-empty {
-			.icon {
-				background-position: 0 -101px;
-			}
 		}
 	}
 	.languages {
