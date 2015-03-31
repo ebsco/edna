@@ -4,6 +4,10 @@
   "peerDependencies": {
     "grunt": "~0.4.1"
   },
+  "publishConfig": {
+    "registry": "http://artifactory.epnet.com:8081/artifactory/api/npm/eae-npm-release",
+    "tag": "develop"
+  },
   "devDependencies": {
     "grunt-browser-sync": "^1.5.3",
     "grunt-colorguard": "^0.2.0",
