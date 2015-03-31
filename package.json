@@ -1,6 +1,6 @@
 {
   "name": "edna",
-  "version": "0.0.18-26",
+  "version": "0.0.18-27",
   "peerDependencies": {
     "grunt": "~0.4.1"
   },
