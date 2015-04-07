@@ -132,6 +132,11 @@
 	}
 	&.max-width {
 		max-width: 1280px;
+		margin: auto;
+		@media @mq-sm, @mq-md, @mq-lg {
+			margin-right: -@side-gutter;
+			margin-left: -@side-gutter;
+		}
 	}
 	// when there is no container for the grid remove the negative margins
 	&.no-container {
