@@ -131,9 +131,11 @@
 		}
 	}
 	&.max-width {
-		max-width: 1280px;
+		@max-width: 1280px;
+		max-width: @max-width;
 		margin: auto;
-		@media @mq-sm, @mq-md, @mq-lg {
+		@media screen and (min-width: unit(@mediaquery-sm, px)) and (max-width: @max-width - 1) {
+
 			margin-right: -@side-gutter;
 			margin-left: -@side-gutter;
 		}
