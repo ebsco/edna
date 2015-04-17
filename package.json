@@ -1,11 +1,11 @@
 {
   "name": "edna",
-  "version": "0.0.18-30",
+  "version": "1.0.18-30",
   "peerDependencies": {
     "grunt": "~0.4.1"
   },
   "publishConfig": {
-    "registry": "http://artifactory.epnet.com:8081/artifactory/api/npm/eae-npm-release",
+    "registry": "https://registry.npmjs.org/",
     "tag": "develop"
   },
   "devDependencies": {
