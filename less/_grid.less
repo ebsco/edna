@@ -132,6 +132,16 @@
 	// do all the loop stuff
 	.loop(@listLength);
 
+	// borders between grid columns
+	&-border {
+		&-right {
+			border-right: 1px solid #e6e6e6;
+		}
+		&-left {
+			border-left: 1px solid #e6e6e6;
+		}
+	}
+
 	// in case of pages with no side gutters
 	&.full-page {
 		// don't need the side gutters on a full-width page
