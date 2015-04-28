@@ -551,3 +551,18 @@
 		}
 	}
 }
+
+
+//----- MEDIA QUERRY MIXIN ------------------------------//
+@fix-mqs: false;
+@old-ie: false;
+
+.respond-min(@width; @rules) when (@old-ie = true) and (@fix-mqs >= @width) {
+	@rules();
+}
+
+.respond-min(@width; @rules) when (@old-ie = false) {
+	@media screen and (min-width: @width) {
+		@rules();
+	}
+}
