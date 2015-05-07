@@ -34,6 +34,13 @@
 }
 
 
+//----- CLEAR -----------------------------------------//
+
+.clear() {
+	clear: both;
+}
+
+
 //----- CLEARFIX --------------------------------------//
 
 // ie7
@@ -70,6 +77,11 @@
 
 
 //----- HIDDEN THINGS ---------------------------------//
+
+// do not display (inaccessible by screen readers)
+.display-none() {
+	display: none;
+}
 
 // hidden (accessible by screen readers)
 .hidden {
@@ -223,6 +235,37 @@
 	     border-radius: unit(@n, @s);
 }
 
+//----- TRANSPORT -------------------------------------//
+
+.transport-top(@w: (@px * .5)) {
+	margin-top: -(@w / 2);
+	margin-bottom: (@w / 2);
+	border-right-width: @w;
+	border-bottom-width: @w;
+	border-left-width: @w;
+}
+.transport-right(@w: (@px * .5)) {
+	margin-right: -(@w / 2);
+	margin-left: (@w / 2);
+	border-top-width: @w;
+	border-bottom-width: @w;
+	border-left-width: @w;
+}
+.transport-bottom(@w: (@px * .5)) {
+	margin-top: -(@w / 2);
+	margin-bottom: (@w / 2);
+	border-top-width: @w;
+	border-right-width: @w;
+	border-left-width: @w;
+}
+.transport-left(@w: (@px * .5)) {
+	margin-right: -(@w / 2);
+	margin-left: (@w / 2);
+	border-top-width: @w;
+	border-right-width: @w;
+	border-bottom-width: @w;
+}
+
 
 //----- COLUMNS ---------------------------------------//
 .column(@n: 1) {
@@ -240,6 +283,46 @@
 	-webkit-column-break-inside:avoid;
 	page-break-inside: avoid;
 	break-inside: avoid;
+}
+
+
+//----- ROTATION --------------------------------------//
+
+.rotate(@num) {
+	@div: 100;
+	@IE8rot: @num/@div;
+
+	// USING THIS BIT OF LESS
+	// unit(@dimension, [@unit: ""]);
+	// remove or change the unit of a dimension
+
+	filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=@IE8rot); // IE8 and lower
+	-webkit-transform: rotate(unit(@num, deg)); // Safari
+	   -moz-transform: rotate( unit(@num, deg) ); // Mozilla
+	    -ms-transform: rotate( unit(@num, deg) ); // IE 9 and higher
+	     -o-transform: rotate( unit(@num, deg) ); // Opera
+	        transform: rotate( unit(@num, deg) );
+}
+
+
+//----- POSITION --------------------------------------//
+
+.pos(@pos: relative) when (@pos = absolute), (@pos = fixed), (@pos = inherit), (@pos = relative), (@pos = static) {
+	position: @pos;
+}
+
+
+//----- GRADIENTS ----------------------------------------//
+
+.gradient(@color: @colorP3) {
+	@top: fadeout(@color, 50%);
+	@bottom: @color;
+	background: @color;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
+	background: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
+	background:  -ms-linear-gradient(bottom, @bottom, @top);
+	background:   -o-linear-gradient(@top, @bottom);
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom));
 }
 
 
@@ -351,6 +434,42 @@
 }
 
 
+//----- TRANSPORTS --------------------------------------//
+.transMix() {
+	> .@{val} {
+		margin-@{val}: @transport-width-short;
+		margin-@{opp}: @transport-width-short;
+
+		border-@{val}-width: 0;
+		border-@{opp}-color: @transport-color;
+		border-@{opp}-style: solid;
+		border-@{opp}-width: @transport-width;
+	}
+}
+.transPos(@n, @i: 1) when (@i =< @n) {
+	@val: extract(@transArr, @i);
+	@opp: null;
+	& when (@val = extract(@transArr, 1)) {
+		@opp: bottom;
+		.transMix;
+	}
+	& when (@val = extract(@transArr, 2)) {
+		@opp: left;
+		.transMix;
+	}
+	& when (@val = extract(@transArr, 3)) {
+		@opp: top;
+		.transMix;
+	}
+	& when (@val = extract(@transArr, 4)) {
+		@opp: right;
+		.transMix;
+	}
+
+	.transPos(@n, (@i + 1));
+}
+
+
 //----- MODAL WIDTHS ------------------------------------//
 .modalWidth(@origWidth; @u: px) {
     @halfWidth: ceil(-(@origWidth / 2));
@@ -374,6 +493,15 @@
 }
 
 
+//----- ROTATE ------------------------------------------//
+.rotate(@deg: 0) {
+	-webkit-transform: rotate(~'@{deg}deg');
+	   -moz-transform: rotate(~'@{deg}deg');
+	     -o-transform: rotate(~'@{deg}deg');
+	        transform: rotate(~'@{deg}deg');
+}
+
+
 //----- SKINNING ----------------------------------------//
 .skinning(@arrLen, @i: 1) when (@i =< @arrLen) {
 	
@@ -388,6 +516,15 @@
 	.border-@{classVal} { border-color: @varVal !important; }
 
 	.skinning(@arrLen, @i + 1);
+}
+
+
+//----- SLIDE PANEL -------------------------------------//
+.transition(@kind; @speed) {
+	-webkit-transition: @kind @speed;
+	   -moz-transition: @kind @speed;
+	     -o-transition: @kind @speed;
+	        transition: @kind @speed;
 }
 
 
@@ -406,20 +543,5 @@
 		&:-ms-input-placeholder {
 			color: red;
 		}
-	}
-}
-
-
-//----- MEDIA QUERRY MIXIN ------------------------------//
-@fix-mqs: false;
-@old-ie: false;
-
-.respond-min(@width; @rules) when (@old-ie = true) and (@fix-mqs >= @width) {
-	@rules();
-}
-
-.respond-min(@width; @rules) when (@old-ie = false) {
-	@media screen and (min-width: @width) {
-		@rules();
 	}
 }
