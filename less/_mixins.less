@@ -401,42 +401,6 @@
 }
 
 
-//----- TRANSPORTS --------------------------------------//
-.transMix() {
-	> .@{val} {
-		margin-@{val}: @transport-width-short;
-		margin-@{opp}: @transport-width-short;
-
-		border-@{val}-width: 0;
-		border-@{opp}-color: @transport-color;
-		border-@{opp}-style: solid;
-		border-@{opp}-width: @transport-width;
-	}
-}
-.transPos(@n, @i: 1) when (@i =< @n) {
-	@val: extract(@transArr, @i);
-	@opp: null;
-	& when (@val = extract(@transArr, 1)) {
-		@opp: bottom;
-		.transMix;
-	}
-	& when (@val = extract(@transArr, 2)) {
-		@opp: left;
-		.transMix;
-	}
-	& when (@val = extract(@transArr, 3)) {
-		@opp: top;
-		.transMix;
-	}
-	& when (@val = extract(@transArr, 4)) {
-		@opp: right;
-		.transMix;
-	}
-
-	.transPos(@n, (@i + 1));
-}
-
-
 //----- MODAL WIDTHS ------------------------------------//
 .modalWidth(@origWidth; @u: px) {
     @halfWidth: ceil(-(@origWidth / 2));
