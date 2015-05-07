@@ -21,12 +21,13 @@
 // Styleguide 12.1
 
 .msg {
-	.pos(relative);
 	.radius(2);
 	.msg(length(@list));
 	// loop through array and create a message block for each item in it
 
 	@list: info, success, note, alert;
+
+	position: relative;
 
 	width: 100%;
 	min-height: 50px;
@@ -51,8 +52,7 @@
 	> .close {
 		&:after,
 		&::after {
-			.pos(absolute);
-
+			position: absolute;
 			right: 20px;
 
 			color: @msg-close-color;
