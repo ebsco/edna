@@ -148,12 +148,6 @@
 	font-size: unit(@pxValue,px); // fallback for IE8
 	font-size: unit(@remValue,rem); // REMs for awesome browsers
 }
-.lh(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
-	line-height: unit(@n, @s);
-}
-.lh(@n: 0; @s: px) when (@s = pct) {
-	line-height: percentage(@n/100);
-}
 
 
 //----- HEADINGS --------------------------------------//
