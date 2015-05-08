@@ -21,22 +21,28 @@
 // Styleguide 12.1
 
 .msg {
-	.pos(relative);	 
+	.radius(2);
+	.msg(length(@list));
+	// loop through array and create a message block for each item in it
+
+	@list: info, success, note, alert;
+
+	position: relative;
+
 	width: 100%;
 	min-height: 50px;
 	padding: 15px;
 	margin: 0 0 1em;
-	 
+
 	color: @msg-color;
 
 	background-color: @msg-bgcolor;
 	border: 1px solid @msg-bordercolor;
-	.radius(2);
 	> .icon {
 		margin-right: 15px;
-		 
+
 		vertical-align: middle;
-		 
+
 		background-image: url(@msg-alert-icon);
 		background-repeat: no-repeat;
 	}
@@ -45,10 +51,10 @@
 	}
 	> .close {
 		&:after,
-		&::after { 
-			.pos(absolute);
+		&::after {
+			position: absolute;
 			right: 20px;
-			 
+
 			color: @msg-close-color;
 
 			content: '✕';
@@ -64,7 +70,4 @@
 			content: '»';
 		}
 	}
-	// loop through array and create a message block for each item in it
-	@list: info, success, note, alert;
-	.msg(length(@list));
 }

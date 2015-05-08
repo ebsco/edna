@@ -34,13 +34,6 @@
 }
 
 
-//----- CLEAR -----------------------------------------//
-
-.clear() {
-	clear: both;
-}
-
-
 //----- CLEARFIX --------------------------------------//
 
 // ie7
@@ -147,12 +140,6 @@
 	@pxValue: (@sizeValue * 10);
 	font-size: unit(@pxValue,px); // fallback for IE8
 	font-size: unit(@remValue,rem); // REMs for awesome browsers
-}
-.lh(@n: 0; @s: px) when (@s = px), (@s = em), (@s = rem) {
-	line-height: unit(@n, @s);
-}
-.lh(@n: 0; @s: px) when (@s = pct) {
-	line-height: percentage(@n/100);
 }
 
 
@@ -292,32 +279,6 @@
 }
 
 
-//----- ROTATION --------------------------------------//
-
-.rotate(@num) {
-	@div: 100;
-	@IE8rot: @num/@div;
-
-	// USING THIS BIT OF LESS
-	// unit(@dimension, [@unit: ""]);
-	// remove or change the unit of a dimension
-
-	filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=@IE8rot); // IE8 and lower
-	-webkit-transform: rotate(unit(@num, deg)); // Safari
-	   -moz-transform: rotate( unit(@num, deg) ); // Mozilla
-	    -ms-transform: rotate( unit(@num, deg) ); // IE 9 and higher
-	     -o-transform: rotate( unit(@num, deg) ); // Opera
-	        transform: rotate( unit(@num, deg) );
-}
-
-
-//----- POSITION --------------------------------------//
-
-.pos(@pos: relative) when (@pos = absolute), (@pos = fixed), (@pos = inherit), (@pos = relative), (@pos = static) {
-	position: @pos;
-}
-
-
 //----- GRADIENTS ----------------------------------------//
 
 .gradient(@color: @colorP3) {
@@ -440,42 +401,6 @@
 }
 
 
-//----- TRANSPORTS --------------------------------------//
-.transMix() {
-	> .@{val} {
-		margin-@{val}: @transport-width-short;
-		margin-@{opp}: @transport-width-short;
-
-		border-@{val}-width: 0;
-		border-@{opp}-color: @transport-color;
-		border-@{opp}-style: solid;
-		border-@{opp}-width: @transport-width;
-	}
-}
-.transPos(@n, @i: 1) when (@i =< @n) {
-	@val: extract(@transArr, @i);
-	@opp: null;
-	& when (@val = extract(@transArr, 1)) {
-		@opp: bottom;
-		.transMix;
-	}
-	& when (@val = extract(@transArr, 2)) {
-		@opp: left;
-		.transMix;
-	}
-	& when (@val = extract(@transArr, 3)) {
-		@opp: top;
-		.transMix;
-	}
-	& when (@val = extract(@transArr, 4)) {
-		@opp: right;
-		.transMix;
-	}
-
-	.transPos(@n, (@i + 1));
-}
-
-
 //----- MODAL WIDTHS ------------------------------------//
 .modalWidth(@origWidth; @u: px) {
     @halfWidth: ceil(-(@origWidth / 2));
@@ -496,15 +421,6 @@
             margin-left: percentage(@halfWidth);
         }
     }
-}
-
-
-//----- ROTATE ------------------------------------------//
-.rotate(@deg: 0) {
-	-webkit-transform: rotate(~'@{deg}deg');
-	   -moz-transform: rotate(~'@{deg}deg');
-	     -o-transform: rotate(~'@{deg}deg');
-	        transform: rotate(~'@{deg}deg');
 }
 
 
@@ -549,20 +465,5 @@
 		&:-ms-input-placeholder {
 			color: red;
 		}
-	}
-}
-
-
-//----- MEDIA QUERRY MIXIN ------------------------------//
-@fix-mqs: false;
-@old-ie: false;
-
-.respond-min(@width; @rules) when (@old-ie = true) and (@fix-mqs >= @width) {
-	@rules();
-}
-
-.respond-min(@width; @rules) when (@old-ie = false) {
-	@media screen and (min-width: @width) {
-		@rules();
 	}
 }
