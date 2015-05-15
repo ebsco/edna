@@ -180,23 +180,6 @@
 @carousel-img: 'buzzImages/video-js.png';
 
 
-// CONTENT-STYLES
-
-
-// DROPDOWN
-@dd-list-bgcolor: #fff;
-// labels
-@dd-label-bgcolor-hover: darken(@bg1, 20);
-// inputs
-@dd-input-color: @font-color;
-@dd-input-bgcolor: darken(@bg2, 10%);
-@dd-input-bgcolor-hover: @bg3;
-@dd-active-color: @font-color;
-
-
-// FORMS
-
-
 // GRID
 @grid-sides: 20px;
 @side-gutter: 25px;
@@ -212,12 +195,9 @@
 // INPUT
 @input-bordercolor: #aaa8a8;
 @input-height: @btn-height;
-@input-reset-color: #ccc;
-@input-reset-color-hover: darken(@searchbar-reset-color,10);
 @input-reset-bgcolor: transparent;
 @input-reset-bordercolor: @searchbar-reset-bordercolor;
 @input-disabled-bordercolor: @btn-disabled-bordercolor;
-@placeholder-color: #aaa8a8;
 
 
 //LAYOUT
@@ -236,22 +216,7 @@
 @p: 70; // will be converted to pixels
 
 
-// LIST
-@list-lines-bgcolor: #efefef;
-@list-lines-bgcolor-odd: darken(@list-lines-bgcolor, 10%);
-@list-inline-bordercolor: #efefef;
-
-
-// LOGO
-@logo-padding-side: 20px;
-@logo-position-top: 16px;
-
-
-// MEDIABLOCK
-
-
 // MESSAGING
-@msg-bordercolor: darken(@msg-bgcolor, 10%);
 // info
 @msg-info-color: #e4f1ff;
 @msg-info-bgcolor: fade(@msg-info-color, 10%);
@@ -272,9 +237,6 @@
 @msg-alert-bgcolor: #fde3e3;//fade(@msg-alert-color, 10%);
 @msg-alert-bordercolor: darken(@msg-alert-color, 10%);
 @msg-alert-icon: 'buzzImages/msg-error.gif';
-
-
-// MIXINS
 
 
 // MODAL
@@ -311,10 +273,6 @@
 @pag-base-color: lighten(@colorP1, 45%); // close to the mocks
 @pag-bgcolor: lighten(@pag-base-color, 23%);
 @pag-bgcolorhover: darken(@pag-bgcolor, 5%);
-@pag-txt-color-active: #333;
-@pag-txt-bordercolor-active: #ccc;
-@pag-transport-bordercolor: @pag-txt-color-active;
-@pag-transport-borderwidth: @px * .9;
 
 
 // RESULT-ITEM
@@ -346,13 +304,9 @@
 @select-bgcolor-bgcolor-hover: #ccc;
 @select-bordercolor: @select-bgcolor-bgcolor-hover;
 // label
-@select-label-bgcolor: @bg1;
 @select-label-bgcolor-hover: darken(@bg1, 20);
 // input
-@select-input-color: @font-color;
 @select-input-bgcolor: darken(@bg2, 10%);
-@select-input-bgcolor-hover: @bg3;
-@select-active-color: @font-color;
 
 
 // SPINNER
@@ -366,58 +320,19 @@
 @spinner-img: @spinner-md;
 
 
-// TABLES
-@table-bgcolor: #000;
-@table-bordercolor: @border1;
-@table-th-bordercolor: @border1;
-@table-td-bordercolor: @border1;
-
-
-// TAB
-@tab-color: @font-color;
-@tab-color-selected: #fff;
-@tab-bgcolor: rgba(178, 168, 155, 0.25);
-@tab-bgcolor-hover: fade(@tab-bgcolor, 50%);
-@tab-bgcolor-selected: #1a7a85;
-@tab-bordercolor: @border1;
-@tab-bordercolor-hover: @tab-bordercolor;
-// active tabs
-@tab-active-bordercolor: @border1;
-@tab-active-bordercolor-hover: @tab-active-bordercolor;
-// tab content
-@tab-content-bordercolor: @border1;
-
-
-// TAG
-@tag-color: #333;
-@tag-bgcolor: #eee;
-
-
-// TOGGLE
-@tog-bordercolor: @border1;
-@tog-tab-bordercolor: @border1;
-@tog-tab-icon-bordercolor: @border1;
-
-
 // TOOLBAR
 @tbar-personal-bgcolor: overlay(@colorP1, rgba(0,0,0,.25));
 @tbar-height: 35px;
 // user navigation
-@usernav-item-color: #fff;
 @usernav-item-bgcolor-hover: darken(@colorP1, 5);
 // user navigation icons
-@usernav-item-folder-bgcolor: rgba(0, 0, 0, 0);
 @usernav-item-folder-icon: 'buzzImages/folder-sprite.png';
 @usernav-item-language-icon: 'buzzImages/arrow-sprites.png';
-@usernav-item-language-bgcolor-hover: #fff;
 
 
 // TRANSPORT
 @transport-width: 15px;
 @transport-width-short: (@transport-width * .5);
-@transport-color: #535353;
-@transport-color-hover: darken(#535353, 10);
-@transport-inactive: @border1;
 // slim
 @transport-slim-fontfamily: Arial, 'Arial Unicode MS', sans-serif;
 @transport-slim-fontsize: 2.25;
@@ -431,17 +346,6 @@
 @transport-slim-color-disabled: #9b9b9b;
 @transport-slim-color-enabled: @link-color;
 @transport-slim-color-enabled-hover: darken(@transport-slim-color-enabled, 10);
-
-
-// TREELIST
-@treelist-color: @font-color;
-@treelist-bgcolor: #f0f0f0;
-@treelist-border-size: 10;
-@treelist-borderwidth: unit(@treelist-border-size, px);
-@treelist-padding-left: unit( @treelist-borderwidth, px );
-@treelist-margin-left: unit( -(@treelist-borderwidth + 5), px  );
-@treelist-arrow-color: #999;
-@treelist-arrow-color-active: @font-color;
 
 
 // TYPOGRAPHY
