@@ -32,21 +32,21 @@
 		white-space: nowrap;
 		cursor: pointer;
 		&:hover {
-			color: @dd-label-color-hover;
+			color: @colorS1;
 
-			background-color: @dd-label-bgcolor-hover;
+			background-color: darken(@bg1, 20);
 		}
 	}
 	.dropdown-input {
-		.pos(absolute);
+		position: absolute;
 
 		left: -9999px;
 		&:checked + .dd-label {
-			color: @dd-input-color;
+			color: @font-color;
 
-			background-color: @dd-input-bgcolor;
+			background-color: darken(@bg2, 10%);
 			&:hover {
-				background-color: @dd-input-bgcolor-hover;
+				background-color: @bg3;
 			}
 		}
 	}
