@@ -46,7 +46,7 @@
 	> .transport {
 		vertical-align: middle;
 	}
-	&-list {
+	.select-list {
 		.radius;
 
 		position: absolute;
@@ -68,13 +68,13 @@
 			display: inline-block;
 		}
 	}
-	&-label {
+	.select-label {
 		display: block;
 		padding: 5px 15px;
 
-		text-align: left;
-		white-space: nowrap;
-		cursor: pointer;
+		// text-align: left;
+		// white-space: nowrap;
+		// cursor: pointer;
 		&.active {
 			background-color: lighten(@select-label-bgcolor-hover, 10%);
 		}
@@ -84,7 +84,7 @@
 			background-color: @select-label-bgcolor-hover;
 		}
 	}
-	&-input {
+	.select-input {
 		position: absolute;
 
 		left: -9999px;
