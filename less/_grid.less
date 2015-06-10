@@ -93,7 +93,7 @@
 .grid {
 
 	.clearfix;
-
+	
 	padding-bottom: (@grid-top-bottom / 2);
 	margin-right: -@grid-sides;
 	margin-left: -@grid-sides;
@@ -114,18 +114,50 @@
 		@arrayVal: extract(@list, @index);
 		// this declaration block gets output. once per key in the @list array 
 		@pcnt: percentage(@arrayVal / @listLength);
-		// this declaration block gets output. once per key in the @list array 
+		// this declaration block gets output. once per key in the @list array
 		.col@{arrayVal} {
 			display: block;
 			float: left;
-			padding: 0 @grid-sides;
-			@media @mq-sm, @mq-md {
-				width: 100%;
+			padding: 10px @grid-sides;
+			width: 100%;
+			// THREE COLUMN
+			& when (@arrayVal = 4) {
+				@media screen and (min-width: 996px) {
+					width: 50%;
+					&:last-child {
+						width: 100%;
+					}
+				}
+				@media screen and (min-width: 1280px) {
+					width: @pcnt;
+					&:last-child {
+						width: @pcnt;
+					}
+				}
 			}
-			@media @mq-lg, @mq-xl {
-				width: @pcnt;
+			// FOUR COLUMN when last column is larger than the first two
+			& when (@arrayVal = 3) {
+				@media screen and (min-width: 996px) {
+					width: 50%;
+				}
+				@media screen and (min-width: 1280px) {
+					width: @pcnt;
+					// works if last column is longer than first two
+					:not(.col@{arrayVal}) {
+						@NewArrayVal: 12 - (@arrayVal * 2);
+						@aNewArrayVal: percentage(@NewArrayVal / @listLength);
+						width: @aNewArrayVal;
+					}
+				}
+			}
+			// FOUR COLUMN when first column is larger than the last two
+			& when (@arrayVal > 1) {
+				@media screen and (min-width: 1280px) {
+					width: @pcnt;
+				}
 			}
 		}
+		
 		// loop the loop
 		.loop(@arrayLength, (@index + 1));
 	}
@@ -181,7 +213,7 @@
 				padding-bottom: 0;
 			}
 		}
-	}	
+	}
 }
 
 // another loop, but this time for grid column borders
