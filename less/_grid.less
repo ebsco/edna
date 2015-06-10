@@ -122,13 +122,13 @@
 			width: 100%;
 			// THREE COLUMN
 			& when (@arrayVal = 4) {
-				@media screen and (min-width: 996px) {
+				@media @mq-md {
 					width: 50%;
 					&:last-child {
 						width: 100%;
 					}
 				}
-				@media screen and (min-width: 1280px) {
+				@media @mq-lg {
 					width: @pcnt;
 					&:last-child {
 						width: @pcnt;
@@ -137,10 +137,10 @@
 			}
 			// FOUR COLUMN when last column is larger than the first two
 			& when (@arrayVal = 3) {
-				@media screen and (min-width: 996px) {
+				@media @mq-md {
 					width: 50%;
 				}
-				@media screen and (min-width: 1280px) {
+				@media @mq-lg {
 					width: @pcnt;
 					// works if last column is longer than first two
 					:not(.col@{arrayVal}) {
@@ -152,7 +152,7 @@
 			}
 			// FOUR COLUMN when first column is larger than the last two
 			& when (@arrayVal > 1) {
-				@media screen and (min-width: 1280px) {
+				@media @mq-lg {
 					width: @pcnt;
 				}
 			}
