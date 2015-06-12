@@ -31,3 +31,5 @@ deploy :
 
 	# start the app
 	ssh $(deployment_hostname) cd $(app_dir)\; sudo /etc/init.d/node-$(packageName) start
+
+include node_modules/buzz-makefile/shared.mk
