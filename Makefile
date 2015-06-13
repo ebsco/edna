@@ -1,4 +1,5 @@
 scmtrigger=false
+npmPublish = true
 branch=develop
 packageName=edna
 app_dir=/home/ep/buzz/$(packageName)
@@ -13,7 +14,10 @@ build :
 	make _cleanup;
 
 test :
-	grunt quality-check;
+	if [[ -f outdated ]]; \
+	then \
+		grunt quality-check; \
+	fi;
 
 publish :
 	make _publish;

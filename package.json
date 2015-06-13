@@ -6,6 +6,7 @@
     "tag": "develop"
   },
   "devDependencies": {
+    "buzz-makefile": "^1.0.1",
     "grunt": "~0.4.1",
     "grunt-browser-sync": "^1.5.3",
     "grunt-colorguard": "^0.2.0",
@@ -24,6 +25,5 @@
     "type": "git",
     "url": "https://github.com/ebsco/edna.git"
   },
-  "readme": "README.md",
-  "dependencies": {}
+  "readme": "README.md"
 }
