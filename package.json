@@ -1,14 +1,12 @@
 {
   "name": "edna",
   "version": "1.0.19",
-  "peerDependencies": {
-    "grunt": "~0.4.1"
-  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "tag": "develop"
   },
   "devDependencies": {
+    "grunt": "~0.4.1",
     "grunt-browser-sync": "^1.5.3",
     "grunt-colorguard": "^0.2.0",
     "grunt-contrib-analyze-css": "^0.1.2",
@@ -17,8 +15,8 @@
     "grunt-contrib-less": "^0.12.0",
     "grunt-contrib-watch": "^0.5.3",
     "grunt-express": "^1.4.1",
-    "grunt-grunticon": "^1.2.13",
-    "grunt-kss": "^0.4.0",
+    "grunt-grunticon": "~1.2.13",
+    "grunt-kss": "^2.0.0",
     "grunt-shell": "^1.1.1"
   },
   "main": "Gruntfile.js",
