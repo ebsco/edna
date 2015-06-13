@@ -1,35 +1,31 @@
 scmtrigger=false
-branch=
+branch=develop
 packageName=edna
 app_dir=/home/ep/buzz/$(packageName)
 deployment_hostname=ep@eae-buzzdev801.epnet.com
 
-release :
-	npm install --unsafe-perm
+build :
+	make _check;
+	if [[ -f outdated ]]; \
+	then \
+		grunt build; \
+	fi;
+	make _cleanup;
 
-	grunt release:production --branch=$(branch) --scmtrigger=$(scmtrigger)
+test :
+	grunt quality-check;
 
-
-develop :
-	npm install --unsafe-perm
-
-	grunt release:develop --branch=$(branch) --scmtrigger=$(scmtrigger)
-
+publish :
+	make _publish;
 
 deploy :
-	make develop
-
-	# Stop the app
-	ssh $(deployment_hostname) cd $(app_dir)\; sudo /etc/init.d/node-$(packageName) stop > /dev/null 2>&1
-
-	# Get rid of old installs
-	ssh $(deployment_hostname) sudo rm -rf $(app_dir)
-	ssh $(deployment_hostname) mkdir -p $(app_dir)
-
-	# Copy files over to remote machine
-	scp -r ./ $(deployment_hostname):$(app_dir)
-
-	# start the app
-	ssh $(deployment_hostname) cd $(app_dir)\; sudo /etc/init.d/node-$(packageName) start
+	if [[ -f outdated ]]; \
+	then \
+		ssh $(deployment_hostname) cd $(app_dir)\; sudo /etc/init.d/node-$(packageName) stop > /dev/null 2>&1; \
+		ssh $(deployment_hostname) sudo rm -rf $(app_dir); \
+		ssh $(deployment_hostname) mkdir -p $(app_dir); \
+		scp -r ./ $(deployment_hostname):$(app_dir); \
+		ssh $(deployment_hostname) cd $(app_dir)\; sudo /etc/init.d/node-$(packageName) start; \
+	fi;
 
 include node_modules/buzz-makefile/shared.mk
