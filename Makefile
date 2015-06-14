@@ -1,10 +1,12 @@
-scmtrigger=false
+segment = patch
 npmPublish = true
-remote=origin
-branch=develop
-packageName=edna
-app_dir=/home/ep/buzz/$(packageName)
-deployment_hostname=ep@eae-buzzdev801.epnet.com
+remote = origin
+branch = develop
+createTag = false
+scmtrigger = false
+packageName = edna
+app_dir = /home/ep/buzz/$(packageName)
+deployment_hostname = ep@eae-buzzdev801.epnet.com
 
 build :
 	make _check;
