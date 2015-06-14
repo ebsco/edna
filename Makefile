@@ -1,5 +1,6 @@
 scmtrigger=false
 npmPublish = true
+remote=origin
 branch=develop
 packageName=edna
 app_dir=/home/ep/buzz/$(packageName)
