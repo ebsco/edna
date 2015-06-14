@@ -1,12 +1,12 @@
-segment = patch
-remote = origin
-branch = develop
-packageName = edna
-npmPublish = true
-createTag = false
-scmtrigger = false
-app_dir = /home/ep/buzz/$(packageName)
-deployment_hostname = ep@eae-buzzdev801.epnet.com
+segment=patch
+remote=origin
+branch=develop
+packageName=edna
+npmPublish=true
+createTag=false
+scmtrigger=false
+app_dir=/home/ep/buzz/$(packageName)
+deployment_hostname=ep@eae-buzzdev801.epnet.com
 
 build :
 	make _check;
