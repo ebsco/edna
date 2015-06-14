@@ -1,8 +1,8 @@
 {
   "name": "edna",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
+    "registry": "http://artifactory.epnet.com:8081/artifactory/api/npm/eae-npm-release",
     "tag": "develop"
   },
   "devDependencies": {
