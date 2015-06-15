@@ -46,7 +46,7 @@
 	> .transport {
 		vertical-align: middle;
 	}
-	&-list {
+	.select-list {
 		.radius;
 
 		position: absolute;
@@ -68,32 +68,32 @@
 			display: inline-block;
 		}
 	}
-	&-label {
+	.select-label {
 		display: block;
 		padding: 5px 15px;
 
-		text-align: left;
-		white-space: nowrap;
-		cursor: pointer;
+		// text-align: left;
+		// white-space: nowrap;
+		// cursor: pointer;
 		&.active {
 			background-color: lighten(@select-label-bgcolor-hover, 10%);
 		}
 		&:hover {
-			color: @select-label-color-hover;
+			color: @colorS1;
 
 			background-color: @select-label-bgcolor-hover;
 		}
 	}
-	&-input {
-		.pos(absolute);
+	.select-input {
+		position: absolute;
 
 		left: -9999px;
 		&:checked + .dd-label {
-			color: @select-input-color;
+			color: @font-color;
 
 			background-color: @select-input-bgcolor;
 			&:hover {
-				background-color: @select-input-bgcolor-hover;
+				background-color: @bg3;
 			}
 		}
 	}

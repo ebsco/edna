@@ -32,9 +32,8 @@
 
 
 // TEXT INPUTS
-input {
+.input-txt {
 	.radius;
-	.fontfamily(lucida);
 	.fontsize(1.4);
 
 	width: 100%;
@@ -52,7 +51,7 @@ input {
 
 .input-reset {
 	position: relative;
-	> input {
+	> .input-txt {
 		+ .reset {
 			.fontsize(1.5);
 
@@ -65,13 +64,13 @@ input {
 			padding: 0;
 
 			line-height: 1.5rem;
-			color: @input-reset-color;
+			color: darken(#ccc,10);
 
-			background-color: @input-reset-bgcolor;
+			background-color: transparent;
 			border: @input-reset-bordercolor;
 			border-radius: 0;
 			&:hover {
-				color: @input-reset-color-hover;
+				color: darken(#ccc,10);
 			}
 		}
 	}
@@ -81,7 +80,6 @@ input {
 input[type='radio'],
 input[type='checkbox'] {
 	.fontsize(1.5);
-	.lh(16);
 
 	display: inline-block;
 	width: auto;
@@ -89,6 +87,7 @@ input[type='checkbox'] {
 	padding-left: 20px;
 	margin: 4px 0 0;
 
+	line-height: 16px;
 	vertical-align: bottom;
 	cursor: pointer;
 }
