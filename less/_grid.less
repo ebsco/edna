@@ -2,7 +2,22 @@
 
 // Grid
 // 
-// In the future Edna will use a 12 column grid for layout. This will eventually take over for the layout files. In the interim we will have both solutions.
+// Edna uses two kinds of layout systems, the old one named **layout**, and this new 12 column grid. We have two until we can phase the old one out for this one.
+//
+// To make a grid you should start out with an element with the class name `grid`, this sets up the grid row.
+// Inside this grid row you add the grid columns.
+// These grid columns are another element with the class name `col#` where the # is a number 1-12.
+// The numbers in the column classes should to total 12.
+//
+// Here is an example
+// ```
+// <div class="grid">
+// 	<div class="col4"></div>
+// 	<div class="col8"></div>
+// </div>
+// ```
+//
+// Below you can see all the columns as well as some examples of two-column, three-column, four-column, and five-column designs.
 // 
 // Styleguide 28
 
@@ -79,13 +94,13 @@
 
 	.clearfix;
 
-	padding-bottom: 20px;
+	padding-bottom: (@grid-top-bottom / 2);
 	margin-right: -@grid-sides;
 	margin-left: -@grid-sides;
 
 	// add padding to consecutive .grids
 	& + & {
-		padding-top: 20px;
+		padding-top: (@grid-top-bottom / 2);
 	}
 
 	// the items to loop through
@@ -117,6 +132,16 @@
 	// do all the loop stuff
 	.loop(@listLength);
 
+	// borders between grid columns
+	&-border {
+		&-right {
+			border-right: 1px solid #e6e6e6;
+		}
+		&-left {
+			border-left: 1px solid #e6e6e6;
+		}
+	}
+
 	// in case of pages with no side gutters
 	&.full-page {
 		// don't need the side gutters on a full-width page
@@ -131,14 +156,32 @@
 		}
 	}
 	&.max-width {
-		max-width: 1280px;
-		margin: 0 auto;
+		@max-width: 1280px;
+		max-width: @max-width;
+		margin: auto;
+		@media screen and (min-width: unit(@mediaquery-sm, px)) and (max-width: @max-width - 1) {
+
+			margin-right: -@side-gutter;
+			margin-left: -@side-gutter;
+		}
 	}
 	// when there is no container for the grid remove the negative margins
 	&.no-container {
 		margin-right: 0;
 		margin-left: 0;
 	}
+	// space between columns when they are at 100% width
+	@media @mq-sm, @mq-md {
+		[class*='col'] {
+			padding-bottom: (@grid-top-bottom / 2);
+			+ [class*='col'] {
+				padding-top: (@grid-top-bottom / 2);
+			}
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}	
 }
 
 // another loop, but this time for grid column borders

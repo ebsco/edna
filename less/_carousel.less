@@ -3,7 +3,7 @@
 // These are awful, but can be handy.
 
 .carousel {
-	.pos(relative);
+	position: relative;
 
 	width: 100%;
 	padding: 0;
@@ -12,7 +12,7 @@
 	.carousel-img {
 		width: 100%;
 
-		border: 1px solid @carousel-img-border;
+		border: 1px solid @border1;
 		> .img {
 			display: block;
 			width: 100%;
@@ -22,7 +22,7 @@
 	}
 	.carousel-nav {
 		.clearfix;
-		.pos(relative);
+		position: relative;
 
 		width: 100%;
 		height: 55px;
@@ -30,7 +30,7 @@
 		overflow: hidden;
 	}
 	.carousel-inner {
-		.pos(relative);
+		position: relative;
 
 		padding: 0;
 
@@ -38,7 +38,7 @@
 	}
 	// CAROUSEL SPECIFIC STYLES
 	.transport {
-		.pos(absolute);
+		position: absolute;
 		&:nth-child(3),
 		.last {
 			right: 0;
