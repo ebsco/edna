@@ -15,11 +15,4 @@ _build :
 _test :
 	grunt quality-check
 
-_deploy :
-	ssh $(deployment_hostname) cd $(app_dir)\; sudo /etc/init.d/node-$(packageName) stop > /dev/null 2>&1; \
-	ssh $(deployment_hostname) sudo rm -rf $(app_dir); \
-	ssh $(deployment_hostname) mkdir -p $(app_dir); \
-	scp -r ./ $(deployment_hostname):$(app_dir); \
-	ssh $(deployment_hostname) cd $(app_dir)\; sudo /etc/init.d/node-$(packageName) start; \
-
 include node_modules/buzz-makefile/shared.mk
