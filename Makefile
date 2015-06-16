@@ -15,4 +15,7 @@ _build :
 _test :
 	grunt quality-check
 
+_precommit :
+	echo 'Happy EDNA is commiting'
+
 include node_modules/buzz-makefile/shared.mk
