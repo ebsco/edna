@@ -13,3 +13,4 @@ grunticon/*.html
 !kss-template/public/kss.css
 !kss-template/public/sons-of-obsidian.css
 build.properties.json
+*.log

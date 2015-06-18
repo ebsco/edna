@@ -167,30 +167,7 @@ module.exports = function(grunt) {
 					watchTask: true
 				}
 			}
-		},
-		release: {
-			options: {
-				buildTargets: ['build'],
-				bumpSegment: 'prerelease',
-				bump: {
-					createTag: false
-				}
-			},
-			develop: {
-				options: {
-					branch: 'origin/develop'
-				}
-			},
-			production: {
-				options: {
-					branch: 'origin/release',
-					bump: {
-						createTag: true
-					}
-				}
-			}
 		}
-
 	});
 
 	grunt.loadNpmTasks('grunt-browser-sync');
@@ -200,7 +177,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-eis-release');
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-grunticon');
 	grunt.loadNpmTasks('grunt-kss');
