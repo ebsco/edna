@@ -1,8 +1,8 @@
-segment=patch
+segment=prerelease
 remote=origin
 branch=develop
 packageName=edna
-npmPublish=true
+npmPublish=false
 createTag=false
 scmtrigger=false
 upstream=""
