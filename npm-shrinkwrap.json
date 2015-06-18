@@ -1,6 +1,6 @@
 {
   "name": "edna",
-  "version": "0.0.18-26",
+  "version": "1.0.33-0",
   "dependencies": {
     "grunt": {
       "version": "0.4.5",
