@@ -181,6 +181,37 @@
 				padding-bottom: 0;
 			}
 		}
+	}
+
+	// 3 COLUMNS
+	[class*='col'] {
+		@media @mq-md {
+			.sss&,
+			.ssw& {
+				width: 50%;
+				&:nth-child(3) {
+					width: 100%;
+				}
+			}
+			.sws& {
+				width: 100%;
+			}
+			.wss& {
+				width: 50%;
+				&:nth-child(1) {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	// 4 COLUMNS
+	[class*='col'] {
+		@media @mq-md {
+			.ssss& {
+				width: 50%;
+			}
+		}
 	}	
 }
 
