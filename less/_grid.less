@@ -92,7 +92,7 @@
 // other CSS for the container of the new columns
 .grid {
 	.clearfix;
-	
+
 	padding-bottom: (@grid-top-bottom / 2);
 	margin-right: -@grid-sides;
 	margin-left: -@grid-sides;
@@ -179,8 +179,8 @@
 		}
 	}
 	// create some new and interesting patterns when at certain breakpoints
-	[class*='col'] {
-		@media @mq-md {
+	@media @mq-md {
+		[class*='col'] {
 			&.md-col6 {
 				width: 50%;
 			}
