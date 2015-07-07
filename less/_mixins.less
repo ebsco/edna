@@ -79,7 +79,7 @@
 // hidden (accessible by screen readers)
 .hidden {
 	position: absolute !important;
-	width: (@px * .1); 
+	width: (@px * .1);
 	height: (@px * .1);
 	clip: rect((@px * .1) (@px * .1) (@px * .1) (@px * .1)); // IE6, IE7
 	clip: rect((@px * .1), (@px * .1), (@px * .1), (@px * .1));
@@ -108,7 +108,7 @@
 	background-image:  -ms-linear-gradient(bottom, @bottom, @top);
 	background-image:   -o-linear-gradient(@top, @bottom);
 	background-image:      linear-gradient(@top, @bottom);
-	filter: e(%("progid:DXImageTransform.Microsoft.newgradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@top, endColorstr=@bottom, gradientType='0');
 }
 
 
@@ -368,7 +368,7 @@
 	&.msg-@{arrayVal} {
 		background-color: ~"@{msg-@{arrayVal}-bgcolor}";
 		border-color: ~"@{msg-@{arrayVal}-bordercolor}";
-		
+
 		.icon {
 			display: inline-block;
 			width: 20px;
@@ -425,7 +425,7 @@
 
 //----- SKINNING ----------------------------------------//
 .skinning(@arrLen, @i: 1) when (@i =< @arrLen) {
-	
+
 	@varVal: extract(@varArr, @i);
 	@classVal: extract(@classArr, @i);
 
