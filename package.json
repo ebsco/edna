@@ -1,14 +1,13 @@
 {
   "name": "edna",
-  "version": "1.0.18-37",
-  "peerDependencies": {
-    "grunt": "~0.4.1"
-  },
+  "version": "1.0.33-4",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
+    "registry": "http://artifactory.epnet.com:8081/artifactory/api/npm/eae-npm-release",
     "tag": "develop"
   },
   "devDependencies": {
+    "buzz-makefile": "~1.3.0",
+    "grunt": "^0.4.1",
     "grunt-browser-sync": "^1.5.3",
     "grunt-colorguard": "^0.2.0",
     "grunt-contrib-analyze-css": "^0.1.2",
@@ -16,10 +15,9 @@
     "grunt-contrib-cssmin": "^0.10.0",
     "grunt-contrib-less": "^0.12.0",
     "grunt-contrib-watch": "^0.5.3",
-    "grunt-eis-release": "git+http://as-gitmaster.epnet.com:7990/scm/rd/grunt-eis-release.git#v0.2.5",
     "grunt-express": "^1.4.1",
-    "grunt-grunticon": "git+http://github.com/ebsco/grunticon.git#develop",
-    "grunt-kss": "git+http://github.com/ebsco/grunt-kss.git",
+    "grunt-grunticon": "~1.2.13",
+    "grunt-kss": "^2.0.0",
     "grunt-shell": "^1.1.1"
   },
   "main": "Gruntfile.js",
@@ -27,6 +25,5 @@
     "type": "git",
     "url": "https://github.com/ebsco/edna.git"
   },
-  "readme": "README.md",
-  "dependencies": {}
+  "readme": "README.md"
 }
