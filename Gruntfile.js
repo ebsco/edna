@@ -167,30 +167,7 @@ module.exports = function(grunt) {
 					watchTask: true
 				}
 			}
-		},
-		release: {
-			options: {
-				buildTargets: ['build'],
-				bumpSegment: 'prerelease',
-				bump: {
-					createTag: false
-				}
-			},
-			develop: {
-				options: {
-					branch: 'origin/develop'
-				}
-			},
-			production: {
-				options: {
-					branch: 'origin/release',
-					bump: {
-						createTag: true
-					}
-				}
-			}
 		}
-
 	});
 
 	grunt.loadNpmTasks('grunt-browser-sync');
@@ -200,7 +177,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-eis-release');
 	grunt.loadNpmTasks('grunt-express');
 	grunt.loadNpmTasks('grunt-grunticon');
 	grunt.loadNpmTasks('grunt-kss');
@@ -233,21 +209,31 @@ module.exports = function(grunt) {
 		'express-keepalive'
 	]);
 
-	grunt.registerTask('colors', [
-		'colorguard',
-	]);
+	grunt.registerTask('build', function(mode) {
+		var tasksToRun = [];
 
-	grunt.registerTask('quality-check', [
-		'csslint',
-		'analyzecss'
-	]);
+		tasksToRun = tasksToRun.concat([
+			'less',
+			'cssmin'
+		]);
+		if (grunt.option('grunticon')) {
+			tasksToRun = tasksToRun.concat([
+				'grunticon:default',
+			]);
+		}
+		if (grunt.option('lint')) {
+			tasksToRun = tasksToRun.concat([
+				'csslint',
+				'analyzecss'
+			]);
+		}
+		if (grunt.option('color')) {
+			tasksToRun = tasksToRun.concat([
+				'colorguard'
+			]);
+		}
 
-	grunt.registerTask('build', [
-		'grunticon:default',
-		'less',
-		'cssmin',
-		'quality-check'
-	]);
+		grunt.task.run(tasksToRun);
+	});
 
-	grunt.registerTask('default', ['build']);
 };

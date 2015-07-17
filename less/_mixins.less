@@ -79,8 +79,7 @@
 // hidden (accessible by screen readers)
 .hidden {
 	position: absolute !important;
-	display: none;
-	width: (@px * .1); 
+	width: (@px * .1);
 	height: (@px * .1);
 	clip: rect((@px * .1) (@px * .1) (@px * .1) (@px * .1)); // IE6, IE7
 	clip: rect((@px * .1), (@px * .1), (@px * .1), (@px * .1));
@@ -109,7 +108,7 @@
 	background-image:  -ms-linear-gradient(bottom, @bottom, @top);
 	background-image:   -o-linear-gradient(@top, @bottom);
 	background-image:      linear-gradient(@top, @bottom);
-	filter: e(%("progid:DXImageTransform.Microsoft.newgradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom));
+	filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom);
 }
 
 
@@ -289,7 +288,7 @@
 	background: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
 	background:  -ms-linear-gradient(bottom, @bottom, @top);
 	background:   -o-linear-gradient(@top, @bottom);
-	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom));
+	filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom);
 }
 
 
@@ -369,7 +368,7 @@
 	&.msg-@{arrayVal} {
 		background-color: ~"@{msg-@{arrayVal}-bgcolor}";
 		border-color: ~"@{msg-@{arrayVal}-bordercolor}";
-		
+
 		.icon {
 			display: inline-block;
 			width: 20px;
@@ -426,7 +425,7 @@
 
 //----- SKINNING ----------------------------------------//
 .skinning(@arrLen, @i: 1) when (@i =< @arrLen) {
-	
+
 	@varVal: extract(@varArr, @i);
 	@classVal: extract(@classArr, @i);
 

@@ -91,7 +91,6 @@
 
 // other CSS for the container of the new columns
 .grid {
-
 	.clearfix;
 
 	padding-bottom: (@grid-top-bottom / 2);
@@ -102,12 +101,10 @@
 	& + & {
 		padding-top: (@grid-top-bottom / 2);
 	}
-
 	// the items to loop through
 	@list: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 	// get the length of @list
 	@listLength: length(@list);
-
 	// loop
 	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
 		// break out the value from the list
@@ -131,7 +128,6 @@
 	}
 	// do all the loop stuff
 	.loop(@listLength);
-
 	// borders between grid columns
 	&-border {
 		&-right {
@@ -141,7 +137,6 @@
 			border-left: 1px solid #e6e6e6;
 		}
 	}
-
 	// in case of pages with no side gutters
 	&.full-page {
 		// don't need the side gutters on a full-width page
@@ -155,6 +150,7 @@
 			}
 		}
 	}
+	// when the page has a max-width set
 	&.max-width {
 		@max-width: 1280px;
 		max-width: @max-width;
@@ -181,7 +177,18 @@
 				padding-bottom: 0;
 			}
 		}
-	}	
+	}
+	// create some new and interesting patterns when at certain breakpoints
+	@media @mq-md {
+		[class*='col'] {
+			&.md-col6 {
+				width: 50%;
+			}
+			&.md-col12 {
+				width: 100%;
+			}
+		}
+	}
 }
 
 // another loop, but this time for grid column borders
