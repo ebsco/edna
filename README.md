@@ -36,8 +36,24 @@ Your most basic task. It will get you up and running.
 ```
 grunt build
 ```
+The default task that runs [grunt-contrib-less][5] and [grunt-contrib-cssmin][15].
 
-[grunt-grunticon][4], [grunt-contrib-less][5], [grunt-contrib-cssmin][15], grunt quality-check
+**Build Options**
+
+```
+grunt build --grunticon
+```
+This runs [grunt-grunticon][4] so you can get some fancy SVG icons.
+
+```
+grunt build --lint
+```
+This runs [grunt-contrib-csslint][16] and [https://github.com/gruntjs/grunt-contrib-sass][17]. Both of these will go through the CSS and show you errors.
+
+```
+grunt build --colors
+```
+This runs [grunt-colorguard][6] which will give you a bunch of information on all the colors used in Edna.
 
 ###Build the Documentation
 
@@ -46,8 +62,7 @@ The documentation is built using KSS(Knyle Style Sheets) from the source. Run th
 ```
 grunt kss-build
 ```
-
-[grunt-kss][13], [grunt-grunticon][4], [grunt-contrib-less][5]
+This runs [grunt-kss][13], [grunt-grunticon][4] and [grunt-contrib-less][5].
 
 ###Live Documentation Changes During Development
 
@@ -57,7 +72,7 @@ The documentation pages server as a great sandbox for style development. Using t
 grunt-kss-dev
 ```
 
-grunt kss-build, [grunt-browser-sync][14], [grunt-contrib-watch][8]
+This runs the `grunt kss-build` task above along with [grunt-browser-sync][14] and [grunt-contrib-watch][8].
 
 ###Start a Server
 
@@ -67,27 +82,7 @@ So you can view Edna locally you will need to run this command. It will watch fo
 grunt server
 ```
 
-[grunt-express][9], [grunt-grunticon][4], [grunt-contrib-less][5], [grunt-contrib-cssmin][15], [grunt-contrib-watch][8]
-
-###Linting
-
-Do this often to check out how your CSS fares. Also checks filesize and selector count.
-
-```
-grunt quality-check
-```
-
-[grunt-contrib-analyze-css][11], [grunt-css-metrics][10]
-
-###Check Edna's Colors
-
-This is a specialized task that one won't need to run that often. The [grunt-colorguard][6] is the important task here.
-
-```
-grunt colors
-```
-
-[grunt-colorguard][6]
+This runs a whole slew of things: [grunt-express][9], [grunt-grunticon][4], [grunt-contrib-less][5], [grunt-contrib-cssmin][15] and [grunt-contrib-watch][8]
 
 
   [1]: docs/docs.md
@@ -105,3 +100,5 @@ grunt colors
   [13]: https://github.com/t32k/grunt-kss
   [14]: https://github.com/shakyShane/grunt-browser-sync
   [15]: https://github.com/gruntjs/grunt-contrib-cssmin
+  [16]: https://github.com/gruntjs/grunt-contrib-csslint
+  [17]: https://github.com/gruntjs/grunt-contrib-sass
