@@ -233,21 +233,31 @@ module.exports = function(grunt) {
 		'express-keepalive'
 	]);
 
-	grunt.registerTask('colors', [
-		'colorguard',
-	]);
+	grunt.registerTask('build', function(mode) {
+		var tasksToRun = [];
 
-	grunt.registerTask('quality-check', [
-		'csslint',
-		'analyzecss'
-	]);
+		tasksToRun = tasksToRun.concat([
+			'less',
+			'cssmin'
+		]);
+		if (grunt.option('grunticon')) {
+			tasksToRun = tasksToRun.concat([
+				'grunticon:default',
+			]);
+		}
+		if (grunt.option('lint')) {
+			tasksToRun = tasksToRun.concat([
+				'csslint',
+				'analyzecss'
+			]);
+		}
+		if (grunt.option('color')) {
+			tasksToRun = tasksToRun.concat([
+				'colorguard'
+			]);
+		}
 
-	grunt.registerTask('build', [
-		'grunticon:default',
-		'less',
-		'cssmin',
-		'quality-check'
-	]);
+		grunt.task.run(tasksToRun);
+	});
 
-	grunt.registerTask('default', ['build']);
 };
