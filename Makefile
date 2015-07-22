@@ -5,6 +5,7 @@ packageName=edna
 npmPublish=false
 createTag=false
 scmtrigger=false
+dev=true
 upstream=""
 app_dir=/home/ep/buzz/$(packageName)
 deployment_hostname=ep@eae-buzzdev801.epnet.com
