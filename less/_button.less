@@ -121,118 +121,141 @@
 // 
 // Styleguide 2.9
 
-.btn-kind(@kind) {
-	&.@{kind} {
-		color: ~'@{btn-@{kind}-color}';
-		& when (@kind = search-known) {
-		line-height: 2.3rem;
-		}
-		.bg-border(@kind) {
-		background-color: ~'@{btn-@{kind}-bgcolor}';
-		border-color: ~'@{btn-@{kind}-bordercolor}';
-		}
-		& when (@kind = disabled) {
-		cursor: default;
-		.bg-border(@kind);
-		box-shadow: none;
-		}
-		& when (@kind = search), (@kind = search-known), (@kind = primary), (@kind = light) {
-		.bg-border(@kind);	
-		.btngrade( ~'@{btn-@{kind}-fade-top}', ~'@{btn-@{kind}-fade-bottom}' );
-		}
-		&:hover,
-		&.hover {
-			background-color: ~'@{btn-@{kind}-bgcolor-hover}';
-			border-color: ~'@{btn-@{kind}-bordercolor-hover}';
-			& when (@kind = light) {
-			.btngrade( darken(@btn-light-fade-top, 20%), darken(@btn-light-fade-bottom, 20%) ); // these don't work if a passed in variable is used
-			}
-		}
-		&:active,
-		&.active {
-			background-color: ~'@{btn-@{kind}-bgcolor-active}';
-			border-color: ~'@{btn-@{kind}-bordercolor-active}';
-		}
-		& when (@kind = disabled) {
-		&.flat {
-			.btngrade( transparent, transparent );
-		}
-		}
-	}
-}
+// .btn-kind(@kind) {
+// 	&.@{kind} {
+// 		color: ~'@{btn-@{kind}-color}';
+// 		& when (@kind = search-known) {
+// 		line-height: 2.3rem;
+// 		}
+// 		.bg-border(@kind) {
+// 		background-color: ~'@{btn-@{kind}-bgcolor}';
+// 		border-color: ~'@{btn-@{kind}-bordercolor}';
+// 		}
+// 		& when (@kind = disabled) {
+// 		cursor: default;
+// 		.bg-border(@kind);
+// 		box-shadow: none;
+// 		}
+// 		& when (@kind = search), (@kind = search-known), (@kind = primary), (@kind = light) {
+// 		.bg-border(@kind);	
+// 		.btngrade( ~'@{btn-@{kind}-fade-top}', ~'@{btn-@{kind}-fade-bottom}' );
+// 		}
+// 		&:hover,
+// 		&.hover {
+// 			background-color: ~'@{btn-@{kind}-bgcolor-hover}';
+// 			border-color: ~'@{btn-@{kind}-bordercolor-hover}';
+// 			& when (@kind = light) {
+// 			.btngrade( darken(@btn-light-fade-top, 20%), darken(@btn-light-fade-bottom, 20%) ); // these don't work if a passed in variable is used
+// 			}
+// 		}
+// 		&:active,
+// 		&.active {
+// 			background-color: ~'@{btn-@{kind}-bgcolor-active}';
+// 			border-color: ~'@{btn-@{kind}-bordercolor-active}';
+// 		}
+// 		& when (@kind = disabled) {
+// 		&.flat {
+// 			.btngrade( transparent, transparent );
+// 		}
+// 		}
+// 	}
+// }
 
 .btn {
+	.fontsize(1.9);
+
+	@btn-height: 40px;
+	@color: #333;
+
 	& + & {
 		margin-left: 10px;
 	}
 
-	.fontsize(1.9);
-
-	height: @searchbar-input-height;
+	height: @btn-height;
 	padding: 0 21px;
-
-	font-weight: normal;
-	color: @colorS1;
-
-	background-color: #faa33d;
-	background-image: none;
-	border: 1px solid #faa33d;
-	border-radius: 3px;
-	.icon {
-		display: none;
-	}
+	border-width: 1px;
+	border-style: solid;
+	background-color: @btn-bg;
+	border-color: @btn-border;
 	&:hover {
-		background-color: darken(#faa33d, 5%);
-		border: 1px solid darken(#faa33d, 5%);
+		background-color: @btn-bg-hover;
+		border-color: @btn-border-hover;
 	}
 
+	// font-weight: normal; DONT THINK WE NEED THIS, WILL CHECK OTHER BROWSERS BESIDES CHROME
+	vertical-align: top;
+	cursor: pointer;
 
-	// & + & {
-	// 	margin-left: 10px;
-	// }
+	// background-image: none; DONT THINK WE NEED THIS, WILL CHECK OTHER BROWSERS BESIDES CHROME
+	border-color: @btn-border;
+	border-radius: 4px;
+	.icon {
+		display: none; // WHAT IS THIS DOING?
+	}
+	// button variations
+	@list: primary, search, cancel, disabled;
+	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
+		@classVal: extract(@list, @index);
 
-	// display: inline-block;
-	// width: auto;
+		// change the font-size and height of the searchbar buttons
+		& when (@classVal = search) {
+			&.@{classVal} {
+				background-color: ~'@{btn-@{classVal}-bg}';
+				border-color: ~'@{btn-@{classVal}-border}';
+				color: @colorS1;
 
-	// color: @btn-default-color;
-	// font-weight: bold;
-	// text-decoration: none;
-	// white-space: nowrap;
-	// vertical-align: top;
+				height: @searchbar-input-height;
 
-	// cursor: pointer;
-	// background-color: @btn-default-bgcolor;
-	// border: 1px solid @btn-default-bordercolor;
-	// .btngrade( @btn-default-fade-top, @btn-default-fade-bottom );
+				&:hover {
+					background-color: ~'@{btn-@{classVal}-bg-hover}';
+					border-color: ~'@{btn-@{classVal}-border-hover}';
+				}
+			}
+		}
+		// change the font-size and height of the searchbar buttons
+		& when (@classVal = primary) {
+			&.@{classVal} {
+				background-color: ~'@{btn-@{classVal}-bg}';
+				border-color: ~'@{btn-@{classVal}-border}';
+				color: @color;
 
-	// &:hover,
-	// &.hover {
-	// 	background-color: @btn-default-bgcolor-hover;
-	// 	border-color: @btn-default-bordercolor-hover;
-	// }
+				&:hover {
+					background-color: ~'@{btn-@{classVal}-bg-hover}';
+					border-color: ~'@{btn-@{classVal}-border-hover}';
+				}
+			}
+		}
+		// light colored backgrounds require a darker font-color
+		& when (@classVal = cancel) {
+			&.@{classVal} {
+				background-color: ~'@{btn-@{classVal}-bg}';
+				border-color: ~'@{btn-@{classVal}-border}';
 
-	// &:active,
-	// &.active {
-	// 	background-color: @btn-default-bgcolor-active;
-	// 	border-color: @btn-default-bordercolor-active;
-	// 	box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
-	// 	background-image: none !important;
-	// }
+				color: @color;
+				// color: ~'@{btn-@{classVal}-color}';
+				&:hover {
+					background-color: ~'@{btn-@{classVal}-bg-hover}';
+					border-color: ~'@{btn-@{classVal}-border-hover}';
+				}
+			}
+		}
+		// light colored backgrounds require a darker font-color
+		& when (@classVal = disabled) {
+			&.@{classVal}, &[@{classVal}] {
+				background-color: ~'@{btn-@{classVal}-bg}';
+				border-color: ~'@{btn-@{classVal}-border}';
 
-	// // loop through the button kinds and hit the .btn-kind mixin
-	// @list: search, search-known, primary, light, disabled;
-	// @listLength: length(@list);
-	// .loop(@passedIn, @index: 1) when (@index =< @passedIn) {
-	// 	@arrayVal: extract(@list, @index);
-	// 	.btn-kind(@arrayVal);	 
-	// 	.loop(@passedIn, (@index + 1));
-	// }
-	// .loop(@listLength);
-	// // end the loop
+				color: ~'@{btn-@{classVal}-color}';
+				&:hover {
+					background-color: ~'@{btn-@{classVal}-bg}';
+					border-color: ~'@{btn-@{classVal}-border}';
+				}
+			}
+		}
 
-	// &.flat {
-	// 	.btngrade( transparent, transparent );
-	// }
+		.loop(@arrayLength, (@index + 1));
+	}
+	.loop( length(@list) );
 }
 
 
@@ -251,45 +274,35 @@
 // button overrides
 .btn {
 	// .radius;
-
 	// height: @btn-height;
 	// padding: 0 15px;
-	
 	// .fontsize(@btn-font-size);
 	// line-height: unit((@btn-font-size * 2), rem);
-
 	// // overrides to the light buttons
 	// &.light {
 	// 	height: 25px;
 	// }
-
 	// // overrides to the known buttons
 	// &.search-known {
 	// 	height: 25px;
 	// }
-
 	// // override for light button line-height
 	// > .light {
 	// 	line-height: unit((@btn-font-size * 2), rem);
 	// }
-
 	// // overrides to the mini buttons
 	// &-mini {		 
 	// 	.radius(2);
-
 	// 	height: 18px;
 	// 	padding: 0 10px;
-		 
 	// 	@btn-mini-font-size: 1.1;
 	// 	.fontsize(@btn-mini-font-size);
 	// 	.fontsize( unit((@btn-mini-font-size), px) );
-
 	// 	// override for light button line-height
 	// 	> .light {
 	// 		line-height: unit((@btn-mini-font-size), px);
 	// 	}
 	// }
-
 	// // overrides to the text buttons
 	// &-txt,
 	// &-txt-link {
@@ -297,7 +310,6 @@
 	// 	border-color: @btn-bordercolor-txt;
 	// 	padding: 0;
 	// 	font-size: 13px;
-
 	// 	&:hover,
 	// 	&.hover,
 	// 	&:active,
@@ -308,20 +320,16 @@
 	// 		box-shadow: none;
 	// 	}
 	// }
-
 	// // overrides to the text buttons
 	// &-txt {
 	// 	color: @btn-color-txt;
-
 	// 	& + & {
 	// 		margin-left: 15px;
 	// 	}
 	// }
-
 	// // overrides to the text buttons
 	// &-txt-link {
 	// 	color: @btn-color-txt-link;
-
 	// 	& + & {
 	// 		margin-left: 15px;
 	// 	}

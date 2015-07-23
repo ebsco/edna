@@ -89,6 +89,39 @@
 @breadcrumb-content: '/';
 
 
+// NEW BUTTONS
+@btn-bg: #efefef;
+	@btn-bg-hover: darken(@btn-bg, 10%);
+	// @btn-border: darken(@btn-bg, 10%);
+	@btn-border: @btn-bg;
+		@btn-border-hover: darken(@btn-bg-hover, 10%);
+	@btn-color: #666;
+
+@btn-primary-bg: #fcd37e;
+	@btn-primary-bg-hover: darken(@btn-primary-bg, 10%);
+	// @btn-primary-border: darken(@btn-primary-bg, 10%);
+	@btn-primary-border: @btn-primary-bg;
+		@btn-primary-border-hover: darken(@btn-primary-border, 10%);
+
+@btn-search-bg: @colorP3;
+	@btn-search-bg-hover: darken(@btn-search-bg, 10%);
+	// @btn-search-border: @btn-search-bg;
+	@btn-search-border: @btn-search-bg;
+		@btn-search-border-hover: darken(@btn-search-border, 10%);
+
+@btn-cancel-bg: #d7d7d7;
+	@btn-cancel-bg-hover: darken(@btn-cancel-bg, 10%);
+	// @btn-cancel-border: darken(@btn-cancel-bg, 10%);
+	@btn-cancel-border: @btn-cancel-bg;
+		@btn-cancel-border-hover: darken(@btn-cancel-border, 10%);
+	@btn-cancel-color: #666;
+
+@btn-disabled-bg: #fff;
+	@btn-disabled-bg-hover: #fff;
+	@btn-disabled-border: #c1c1c1;
+	@btn-disabled-color: #c1c1c1;
+
+
 // BUTTON
 @btn-height: 30px;
 @btn-font-size: 1.4;
