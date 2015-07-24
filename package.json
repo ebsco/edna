@@ -1,12 +1,11 @@
 {
   "name": "edna",
-  "version": "1.0.33-4",
+  "version": "1.0.37",
   "publishConfig": {
     "registry": "http://artifactory.epnet.com:8081/artifactory/api/npm/eae-npm-release",
     "tag": "develop"
   },
   "devDependencies": {
-    "buzz-makefile": "~1.3.0",
     "grunt": "^0.4.1",
     "grunt-browser-sync": "^1.5.3",
     "grunt-colorguard": "^0.2.0",
