@@ -5,6 +5,7 @@ packageName=edna
 npmPublish=false
 createTag=false
 scmtrigger=false
+dev=true
 upstream=""
 app_dir=/home/ep/buzz/$(packageName)
 deployment_hostname=ep@eae-buzzdev801.epnet.com
@@ -13,7 +14,7 @@ _build :
 	grunt build
 
 _test :
-	grunt quality-check
+	grunt build --lint
 
 _precommit :
 	echo 'Happy EDNA is commiting'
