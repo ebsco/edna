@@ -1,3 +1,6 @@
+body {
+  margin: 0 25px;
+}
 .w {
   margin-top: 5px;
 }
@@ -256,10 +259,10 @@ pre.prettyprint {
   display: table;
   clear: right;
 }
-.grid [class*=col] {
+.cg-element .grid [class*=col] {
   padding: 10px;
   background-color: red;
 }
-.grid [class*=col]:nth-child(1n+2) {
+.cg-element .grid [class*=col]:nth-child(1n+2) {
   border-left: 1px solid #fff;
 }
