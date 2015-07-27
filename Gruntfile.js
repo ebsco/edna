@@ -167,28 +167,6 @@ module.exports = function(grunt) {
 					watchTask: true
 				}
 			}
-		},
-		release: {
-			options: {
-				buildTargets: ['build'],
-				bumpSegment: 'prerelease',
-				bump: {
-					createTag: false
-				}
-			},
-			develop: {
-				options: {
-					branch: 'origin/develop'
-				}
-			},
-			production: {
-				options: {
-					branch: 'origin/release',
-					bump: {
-						createTag: true
-					}
-				}
-			}
 		}
 
 	});
