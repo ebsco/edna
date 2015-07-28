@@ -50,9 +50,9 @@
 	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
 		@classVal: extract(@list, @index);
 
-		&.@{classVal} {
-			// change stuff for the searchbar buttons
-			& when (@classVal = search) {
+		// change stuff for the searchbar buttons
+		& when (@classVal = search) {
+			&.@{classVal} {
 				background-color: ~'@{btn-@{classVal}-bg}';
 				border-color: ~'@{btn-@{classVal}-border}';
 				color: @colorS1;
@@ -64,8 +64,10 @@
 					border-color: ~'@{btn-@{classVal}-border-hover}';
 				}
 			}
-			// change stuff for the primary buttons
-			& when (@classVal = primary) {
+		}
+		// change stuff for the primary buttons
+		& when (@classVal = primary) {
+			&.@{classVal} {
 				background-color: ~'@{btn-@{classVal}-bg}';
 				border-color: ~'@{btn-@{classVal}-border}';
 				color: @color;
@@ -75,8 +77,10 @@
 					border-color: ~'@{btn-@{classVal}-border-hover}';
 				}
 			}
-			// light colored backgrounds require a darker font-color
-			& when (@classVal = cancel) {
+		}
+		// light colored backgrounds require a darker font-color
+		& when (@classVal = cancel) {
+			&.@{classVal} {
 				background-color: ~'@{btn-@{classVal}-bg}';
 				border-color: ~'@{btn-@{classVal}-border}';
 
@@ -87,15 +91,18 @@
 					border-color: ~'@{btn-@{classVal}-border-hover}';
 				}
 			}
-			// disabled buttons are... disabled!
-			& when (@classVal = disabled) {
-				background-color: ~'@{btn-@{classVal}-bg}';
-				border-color: ~'@{btn-@{classVal}-border}';
+		}
+		// disabled buttons are... disabled!
+		& when (@classVal = disabled) {
+			&.@{classVal},
+			&[@{classVal}] {
+				background-color: ~'@{btn-@{classVal}-bg}' !important;
+				border-color: ~'@{btn-@{classVal}-border}' !important;
 
-				color: ~'@{btn-@{classVal}-color}';
+				color: ~'@{btn-@{classVal}-color}' !important;
 				&:hover {
-					background-color: ~'@{btn-@{classVal}-bg}';
-					border-color: ~'@{btn-@{classVal}-border}';
+					background-color: ~'@{btn-@{classVal}-bg}' !important;
+					border-color: ~'@{btn-@{classVal}-border}' !important;
 				}
 			}
 		}
