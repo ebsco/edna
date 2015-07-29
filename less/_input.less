@@ -96,3 +96,23 @@ label {
 		text-decoration: underline;
 	}
 }
+
+.input-checkbox {
+	vertical-align: top;
+}
+.checkbox-label {
+	display: block;
+	margin-bottom: @label-spacing;
+
+	font-size: @label-font-size;
+}
+@media screen and (min-width: 900px) {
+	.checkbox-label {
+		display: inline-block;
+		padding-right: 1rem;
+	}
+}
+
+.nested-input {
+	width: 3rem;
+}
