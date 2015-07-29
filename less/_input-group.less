@@ -122,19 +122,18 @@
 }
 // this is overriding some border radii and requiring the addition of border-radius: 3px; in Buzz
 .second-elem() {
-	+ .btn,
-	+ .input-group-btn .btn,
-	+ .btn-reset, + input,
-	+ .input-reset input {
-		margin-left: -2px;
-
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-	}
+	// + .btn,
+	// + .input-group-btn .btn,
+	// + .btn-reset, + input,
+	// + .input-reset input {
+	// 	margin-left: -2px;
+	// 	border-top-left-radius: 0;
+	// 	border-bottom-left-radius: 0;
+	// }
 }
 
 .input-group {
-	display: inline-table;
+	display: table-row;
 	> .btn {
 		display: table-cell;
 
@@ -156,6 +155,7 @@
 }
 .input-group-btn {
 	display: table-cell;
+	padding-left: 10px;
 
 	vertical-align: top;
 	&:first-child {
@@ -171,9 +171,6 @@
 	vertical-align: top;
 	&:first-child {
 		.second-elem;
-		> input {
-			.first-elem;
-		}
 	}
 	+ .btn {
 		margin-left: 15px;
