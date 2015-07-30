@@ -33,12 +33,12 @@
 
 // TEXT INPUTS
 .input-txt {
-	.radius;
+	.radius(4);
 	.fontsize(1.4);
 
 	width: 100%;
 	height: @searchbar-input-height; // same as @btn-height
-	padding: 2.5px 23px 2.5px 5px;
+	padding: 0 35px 0 12px;
 
 	color: @colorS4;
 
@@ -51,27 +51,26 @@
 
 .input-reset {
 	position: relative;
-	> .input-txt {
-		+ .reset {
-			.fontsize(1.5);
+	.reset {
+		.fontsize(1.5);
 
-			position: absolute;
-			top: 2px;
-			right: 2px;
+		position: absolute;
+		top: 50%;
+		right: 7px;
 
-			width: 25px;
-			height: @input-height - 4; // take into account the border and border radius
-			padding: 0;
+		width: 25px;
+		height: @input-height - 4; // take into account the border and border radius
+		padding: 0;
+		margin-top: -((@input-height - 4) / 2);
 
-			line-height: 1.5rem;
+		line-height: 1.5rem;
+		color: darken(#ccc,10);
+
+		background-color: transparent;
+		border: @input-reset-bordercolor;
+		border-radius: 0;
+		&:hover {
 			color: darken(#ccc,10);
-
-			background-color: transparent;
-			border: @input-reset-bordercolor;
-			border-radius: 0;
-			&:hover {
-				color: darken(#ccc,10);
-			}
 		}
 	}
 }
@@ -97,4 +96,24 @@ label {
 	&:active {
 		text-decoration: underline;
 	}
+}
+
+.input-checkbox {
+	vertical-align: top;
+}
+.checkbox-label {
+	display: block;
+	margin-bottom: @label-spacing;
+
+	font-size: @label-font-size;
+}
+@media screen and (min-width: 900px) {
+	.checkbox-label {
+		display: inline-block;
+		padding-right: 1rem;
+	}
+}
+
+.nested-input {
+	width: 3rem;
 }
