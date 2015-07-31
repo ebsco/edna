@@ -51,7 +51,7 @@
 
 		position: absolute;
 		top: @select-position;
-		right: -1px;
+		right: 0;
 		z-index: 10;
 
 		display: none;
@@ -69,12 +69,12 @@
 		}
 	}
 	.select-label {
+		.fontsize(1.4);
+
 		display: block;
 		padding: 5px 15px;
 
-		// text-align: left;
-		// white-space: nowrap;
-		// cursor: pointer;
+		text-align: left;
 		&.active {
 			background-color: lighten(@select-label-bgcolor-hover, 10%);
 		}
@@ -86,7 +86,6 @@
 	}
 	.select-input {
 		position: absolute;
-
 		left: -9999px;
 		&:checked + .dd-label {
 			color: @font-color;
