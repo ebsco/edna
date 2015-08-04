@@ -107,7 +107,7 @@ The `.max-width` class sets a max-width to the grid and aligns it to the center 
 ```
 
 **Funky Grid Patterns**
-The `.max-width` class sets a max-width to the grid and aligns it to the center of the browser.
+Here we use classes on the columns to cause some funky wrapping of columns at small and medium breakpoints.
  
 ```
 	<div class="grid">
