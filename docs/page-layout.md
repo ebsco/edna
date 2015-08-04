@@ -1,92 +1,118 @@
 **Page Layout**
 ---
 
-Edna has some predetermined layouts that you can use in your designs. We list the dimensions of the layouts below. A single page can up to five columns in which to store content. To get the hang of this let's build a page with a three-column layout.
+Edna now uses a 12-column grid for page layout! This system should be much easier than our last layout system for folks to understand and use.
 
-**Let's Add Some Structure To A Page**
-First we need those parent and child elements on the page.
+To make a grid you should start out with an element with the class name `grid`, this sets up the grid row.
+Inside this grid row you add the grid columns. These grid columns are another element with the class name `col#` where the # is a number 1-12. The numbers in the column classes should to total 12.
 
-    <div>
-    	<div></div>
-    	<div></div>
-    	<div></div>
-    </div>
+Here is an example
 
-Each of the three child `div` will be a column in our three-column layout and they all get the same class `.col`
+```
+	<div class="grid">
+		<div class="col4"></div>
+		<div class="col8"></div>
+	</div>
+```
+Below you can see all the columns as well as some examples of two-column, three-column, four-column, and five-column designs.
 
-    <div>
-    	<div class="col"></div>
-    	<div class="col"></div>
-    	<div class="col"></div>
-    </div>
+**Columns**
+Markup:
 
-Now is when we add a class to the parent element. This class will tell the three columns what their width will be.
+```
+	<div class="grid">
+		<div class="col12"></div>
+	</div>
+```
+	
+**Two Column Layout**
 
-    <div class="l3-p5">
-    	<div class="col"></div>
-    	<div class="col"></div>
-    	<div class="col"></div>
-    </div>
+```
+	<div class="grid">
+		<div class="col2"></div>
+		<div class="col10"></div>
+	</div>
+```
 
-This will give us a layout with three columns, each with a width of 33%. 
+**Three Column Layout**
 
-**Let's Break Apart That Parent Class**
-This class is made up of two parts.
+```
+	<div class="grid">
+		<div class="col3"></div>
+		<div class="col6"></div>
+		<div class="col3"></div>
+	</div>
+```
 
- - The first part, `l3` tells you that you are creating a three-column layout. `l2` for two columns, `l4` for four, etc.
- - The second part is the pattern of those columns. In the example above, `p5` we end up with columns that are 33% wide. 
-	 - One can use any of these percentages, so long as the total of them equals 100% (unless you are using the 33% & 66%).
-	 - Following is a list of all the percentages available
-		 - 20%
-		 - 25%
-		 - 33%
-		 - 40%
-		 - 50%
-		 - 60%
-		 - 75%
-		 - 80%
-		 - 100%
+**Four Column Layout**
 
+```
+	<div class="grid">
+		<div class="col3"></div>
+		<div class="col3"></div>
+		<div class="col3"></div>
+		<div class="col3"></div>
+	</div>
+```
 
-Here is a full breakdown of all the column widths currently available in Edna
+**Five Column Layout**
+	
+```
+	<div class="grid">
+		<div class="col2"></div>
+		<div class="col2"></div>
+		<div class="col4"></div>
+		<div class="col2"></div>
+		<div class="col2"></div>
+	</div>
+```
 
- - `l1`
-	 - 100%
- - `l2`
-	 - `p1` - 80% / 20%
-	 - `p2` - 75% / 25%
-	 - `p3` - 66% / 33%
-	 - `p4` - 60% / 40%
-	 - `p5` - 50% / 50%
-	 - `p6` - 40% / 60%
-	 - `p7` - 33% / 66%
-	 - `p8` - 25% / 75%
-	 - `p9` - 20% / 80%
- - `l3`
-	 - `p1` - 60% / 20% / 20%
-	 - `p2` - 50% / 25% / 25%
-	 - `p3` - 40% / 40% / 20%
-	 - `p4` - 40% / 20% / 40%
-	 - `p5` - 33% / 33% / 33%
-	 - `p6` - 25% / 25% / 50%
-	 - `p7` - 25% / 50% / 25%
-	 - `p8` - 20% / 20% / 60%
-	 - `p9` - 20% / 60% / 20%
- - `l4`
-	 - `p1` - 40% / 20% / 20% / 20%
-	 - `p2` - 25% / 25% / 25% / 25%
-	 - `p3` - 20% / 20% / 20% / 40%
-	 - `p4` - 20% / 20% / 40% / 20%
-	 - `p5` - 20% / 40% / 20% / 20%
- - `l5`
-	 - `p1` - 20% / 20% / 20% / 20% / 20%
+**Full Page Grid**
+The `.full-page` class is used when you want to ignore the padding on either side of the browser window. This removes margin on the right and left the same width as the `@side-gutter` variable.
 
-**Padding**
-We use padding on each layout row and cell within it so things don't butt up against each other. Between layout rows we have **40px** of `padding-bottom`. On the sides of the layout rows we have **25px** of `padding-left` and `padding-right`.
+```
+	<div class="grid full-page">
+		<div class="col2"></div>
+		<div class="col2"></div>
+		<div class="col4"></div>
+		<div class="col2"></div>
+		<div class="col2"></div>
+	</div>
+```
 
-In order to give space between the columns in the layout rows we apply a `padding-left` of **70px**. This `padding-left` is removed from the `:first-child`.
+**No Container Grid**
+The `.no-container` class is used when you have no container for the grid that has any side padding.
 
+```
+	<div class="grid no-container">
+		<div class="col2"></div>
+		<div class="col2"></div>
+	   <div class="col4"></div>
+		<div class="col2"></div>
+		<div class="col2"></div>
+	</div>
+```
 
-####**Some Notes**
-- Even if you are using a one-column layout you should still have a parent and child element.
-- These are not to be used as anything other than page layout. We have classes specifically for widget layout.
+**Max-Width Grid**
+The `.max-width` class sets a max-width to the grid and aligns it to the center of the browser.
+
+```
+	<div class="grid max-width">
+		<div class="col2"></div>
+		<div class="col2"></div>
+		<div class="col4"></div>
+		<div class="col2"></div>
+		<div class="col2"></div>
+	</div>
+```
+
+**Funky Grid Patterns**
+The `.max-width` class sets a max-width to the grid and aligns it to the center of the browser.
+ 
+```
+	<div class="grid">
+		<div class="col4 md-col6"></div>
+		<div class="col4 md-col6"></div>
+		<div class="col4 md-col12"></div>
+	</div>
+```
