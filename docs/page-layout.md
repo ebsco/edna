@@ -21,7 +21,7 @@ Markup:
 
 ```
 	<div class="grid">
-	    <div class="col12"></div>
+		<div class="col12"></div>
 	</div>
 ```
 	
@@ -30,7 +30,7 @@ Markup:
 ```
 	<div class="grid">
 		<div class="col2"></div>
-	    <div class="col10"></div>
+		<div class="col10"></div>
 	</div>
 ```
 
@@ -38,9 +38,9 @@ Markup:
 
 ```
 	<div class="grid">
-	    <div class="col3"></div>
-	    <div class="col6"></div>
-	    <div class="col3"></div>
+		<div class="col3"></div>
+		<div class="col6"></div>
+		<div class="col3"></div>
 	</div>
 ```
 
@@ -48,10 +48,10 @@ Markup:
 
 ```
 	<div class="grid">
-	    <div class="col3"></div>
-	    <div class="col3"></div>
-	    <div class="col3"></div>
-	    <div class="col3"></div>
+		<div class="col3"></div>
+		<div class="col3"></div>
+		<div class="col3"></div>
+		<div class="col3"></div>
 	</div>
 ```
 
@@ -59,11 +59,11 @@ Markup:
 	
 ```
 	<div class="grid">
-	    <div class="col2"></div>
-	    <div class="col2"></div>
-	    <div class="col4"></div>
-	    <div class="col2"></div>
-	    <div class="col2"></div>
+		<div class="col2"></div>
+		<div class="col2"></div>
+		<div class="col4"></div>
+		<div class="col2"></div>
+		<div class="col2"></div>
 	</div>
 ```
 
@@ -72,11 +72,11 @@ The `.full-page` class is used when you want to ignore the padding on either sid
 
 ```
 	<div class="grid full-page">
-	    <div class="col2"></div>
-	    <div class="col2"></div>
-	    <div class="col4"></div>
-	    <div class="col2"></div>
-	    <div class="col2"></div>
+		<div class="col2"></div>
+		<div class="col2"></div>
+		<div class="col4"></div>
+		<div class="col2"></div>
+		<div class="col2"></div>
 	</div>
 ```
 
@@ -85,11 +85,11 @@ The `.no-container` class is used when you have no container for the grid that h
 
 ```
 	<div class="grid no-container">
-	    <div class="col2"></div>
-	    <div class="col2"></div>
+		<div class="col2"></div>
+		<div class="col2"></div>
 	   <div class="col4"></div>
-	    <div class="col2"></div>
-	    <div class="col2"></div>
+		<div class="col2"></div>
+		<div class="col2"></div>
 	</div>
 ```
 
@@ -98,11 +98,11 @@ The `.max-width` class sets a max-width to the grid and aligns it to the center 
 
 ```
 	<div class="grid max-width">
-	    <div class="col2"></div>
-	    <div class="col2"></div>
-	    <div class="col4"></div>
-	    <div class="col2"></div>
-	    <div class="col2"></div>
+		<div class="col2"></div>
+		<div class="col2"></div>
+		<div class="col4"></div>
+		<div class="col2"></div>
+		<div class="col2"></div>
 	</div>
 ```
 
@@ -111,8 +111,8 @@ The `.max-width` class sets a max-width to the grid and aligns it to the center 
  
 ```
 	<div class="grid">
-	    <div class="col4 md-col6"></div>
-	    <div class="col4 md-col6"></div>
-	    <div class="col4 md-col12"></div>
+		<div class="col4 md-col6"></div>
+		<div class="col4 md-col6"></div>
+		<div class="col4 md-col12"></div>
 	</div>
 ```
