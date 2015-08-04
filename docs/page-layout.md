@@ -87,7 +87,7 @@ The `.no-container` class is used when you have no container for the grid that h
 	<div class="grid no-container">
 		<div class="col2"></div>
 		<div class="col2"></div>
-	   <div class="col4"></div>
+		<div class="col4"></div>
 		<div class="col2"></div>
 		<div class="col2"></div>
 	</div>
