@@ -43,10 +43,44 @@
 	border-color: @btn-border;
 	border-radius: 4px;
 	// button variations
-	@list: primary, search, cancel, disabled;
+	@list: primary, action, search, cancel, select, disabled;
 	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
 		@classVal: extract(@list, @index);
 
+		// change stuff for the primary buttons
+		& when (@classVal = primary) {
+			&.@{classVal} {
+				background-color: ~'@{btn-@{classVal}-bg}';
+				border-color: ~'@{btn-@{classVal}-border}';
+				color: @color;
+
+				&:hover {
+					background-color: ~'@{btn-@{classVal}-bg-hover}';
+					border-color: ~'@{btn-@{classVal}-border-hover}';
+				}
+			}
+		}
+		// action buttons!
+		& when (@classVal = action) {
+			&.@{classVal} {
+				border-color: #90c8e9;
+				background-color: #fff;
+				height: 30px;
+				font-size: 13px;
+				padding: 5px 15px 0 20px;
+
+				.icon {
+					width: 14px;
+					height: 14px;
+					margin: 0 7px 0 -7px;
+					vertical-align: initial;
+				}
+				&:hover {
+					border-color: #528DB0;
+					background-color: rgba(171, 216, 245, 0.458824);
+				}
+			}
+		}
 		// change stuff for the searchbar buttons
 		& when (@classVal = search) {
 			&.@{classVal} {
@@ -55,19 +89,6 @@
 				color: @colorS1;
 
 				height: @searchbar-input-height;
-
-				&:hover {
-					background-color: ~'@{btn-@{classVal}-bg-hover}';
-					border-color: ~'@{btn-@{classVal}-border-hover}';
-				}
-			}
-		}
-		// change stuff for the primary buttons
-		& when (@classVal = primary) {
-			&.@{classVal} {
-				background-color: ~'@{btn-@{classVal}-bg}';
-				border-color: ~'@{btn-@{classVal}-border}';
-				color: @color;
 
 				&:hover {
 					background-color: ~'@{btn-@{classVal}-bg-hover}';
@@ -86,6 +107,14 @@
 				&:hover {
 					background-color: ~'@{btn-@{classVal}-bg-hover}';
 					border-color: ~'@{btn-@{classVal}-border-hover}';
+				}
+			}
+		}
+		// light colored backgrounds require a darker font-color
+		& when (@classVal = select) {
+			&.@{classVal} {
+				&:hover {
+					background-color: #fff;
 				}
 			}
 		}
