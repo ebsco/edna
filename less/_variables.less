@@ -98,22 +98,40 @@
 	@btn-bg-hover: darken(@btn-bg, 20.1%);
 	@btn-border: @btn-bg;
 		@btn-border-hover: darken(@btn-bg, 20.1%);
+		@btn-border-active: darken(@btn-bg-hover, 20.1%);
+		@btn-boxshadow-active: darken(@btn-bg-hover, 15%);
 	@btn-color: #666;
+
+
+// acton
+@btn-action-bg: #fff;
+	@btn-action-bg-hover: rgba(171, 216, 245, 0.458824);
+	@btn-action-border: #90c8e9;
+		@btn-action-border-hover: #528db0;
+		@btn-action-border-active: #2b6587;
+		@btn-action-bg-active: #97c5e6;
+
 // primary
 @btn-primary-bg: #fcd37e;
 	@btn-primary-bg-hover: darken(@btn-primary-bg, 20.1%);
 	@btn-primary-border: @btn-primary-bg;
 		@btn-primary-border-hover: darken(@btn-primary-border, 20.1%);
+		@btn-primary-border-active: darken(@btn-primary-bg-hover, 20.1%);
+		@btn-primary-boxshadow-active: darken(@btn-primary-bg-hover, 15%);
 // search
 @btn-search-bg: @colorP3;
 	@btn-search-bg-hover: darken(@btn-search-bg, 20.1%); // #cb7919;
 	@btn-search-border: @btn-search-bg;
 		@btn-search-border-hover: darken(@btn-search-bg, 20.1%); // #cb7919;
+		@btn-search-border-active: darken(@btn-search-bg-hover, 20.1%); // #cb7919;
+		@btn-search-boxshadow-active: darken(@btn-search-bg-hover, 15%);
 // cancel
 @btn-cancel-bg: #f3f3f3; // #d7d7d7;
 	@btn-cancel-bg-hover: darken(@btn-cancel-bg, 20.1%);
 	@btn-cancel-border: @btn-cancel-bg;
 		@btn-cancel-border-hover: darken(@btn-cancel-border, 20.1%);
+		@btn-cancel-border-active: darken(@btn-cancel-bg-hover, 20.1%); // #cb7919;
+		@btn-cancel-boxshadow-active: darken(@btn-cancel-bg-hover, 15%);
 	@btn-cancel-color: #666;
 //disabled
 @btn-disabled-bg: #fff;
