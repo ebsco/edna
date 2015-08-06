@@ -64,11 +64,15 @@
 				}
 				&:hover {
 					border-color: ~'@{btn-@{classVal}-border-hover}';
-					background-color: ~'@{btn-@{classVal}-bg-hover}';
 				}
 				&:active {
 					border-color: ~'@{btn-@{classVal}-border-active}';
-					background-color: ~'@{btn-@{classVal}-bg-active}';
+					-webkit-box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+					box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+				}
+				&:hover,
+				&:active {
+					background-color: ~'@{btn-@{classVal}-bg-hover}';
 				}
 			}
 		}
