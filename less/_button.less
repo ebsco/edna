@@ -43,35 +43,36 @@
 	border-color: @btn-border;
 	border-radius: 4px;
 	// button variations
-	@list: primary, search, cancel, disabled;
+	@list: action, cancel, disabled, primary, search, select;
 	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
 		@classVal: extract(@list, @index);
 
-		// change stuff for the searchbar buttons
-		& when (@classVal = search) {
+		// action buttons!
+		& when (@classVal = action) {
 			&.@{classVal} {
-				background-color: ~'@{btn-@{classVal}-bg}';
 				border-color: ~'@{btn-@{classVal}-border}';
-				color: @colorS1;
+				background-color: ~'@{btn-@{classVal}-bg}';
+				height: 30px;
+				font-size: 13px;
+				padding: 5px 15px 0 20px;
 
-				height: @searchbar-input-height;
-
+				.icon {
+					width: 14px;
+					height: 14px;
+					margin: 0 7px 0 -7px;
+					vertical-align: initial;
+				}
 				&:hover {
-					background-color: ~'@{btn-@{classVal}-bg-hover}';
 					border-color: ~'@{btn-@{classVal}-border-hover}';
 				}
-			}
-		}
-		// change stuff for the primary buttons
-		& when (@classVal = primary) {
-			&.@{classVal} {
-				background-color: ~'@{btn-@{classVal}-bg}';
-				border-color: ~'@{btn-@{classVal}-border}';
-				color: @color;
-
-				&:hover {
+				&:active {
+					border-color: ~'@{btn-@{classVal}-border-active}';
+					-webkit-box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+					box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+				}
+				&:hover,
+				&:active {
 					background-color: ~'@{btn-@{classVal}-bg-hover}';
-					border-color: ~'@{btn-@{classVal}-border-hover}';
 				}
 			}
 		}
@@ -81,11 +82,18 @@
 				background-color: ~'@{btn-@{classVal}-bg}';
 				border-color: ~'@{btn-@{classVal}-border}';
 
-				color: @color;
-				// color: ~'@{btn-@{classVal}-color}';
+				color: ~'@{btn-@{classVal}-color}';
 				&:hover {
-					background-color: ~'@{btn-@{classVal}-bg-hover}';
 					border-color: ~'@{btn-@{classVal}-border-hover}';
+				}
+				&:active {
+					border-color: ~'@{btn-@{classVal}-border-active}';
+					-webkit-box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+					box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+				}
+				&:hover,
+				&:active {
+					background-color: ~'@{btn-@{classVal}-bg-hover}';
 				}
 			}
 		}
@@ -100,6 +108,63 @@
 				&:hover {
 					background-color: ~'@{btn-@{classVal}-bg}' !important;
 					border-color: ~'@{btn-@{classVal}-border}' !important;
+				}
+			}
+		}
+		// change stuff for the primary buttons
+		& when (@classVal = primary) {
+			&.@{classVal} {
+				background-color: ~'@{btn-@{classVal}-bg}';
+				border-color: ~'@{btn-@{classVal}-border}';
+				color: @color;
+
+				&:hover {
+					border-color: ~'@{btn-@{classVal}-border-hover}';
+				}
+				&:active {
+					border-color: ~'@{btn-@{classVal}-border-active}';
+					-webkit-box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+					box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+				}
+				&:hover,
+				&:active {
+					background-color: ~'@{btn-@{classVal}-bg-hover}';
+				}
+			}
+		}
+		// change stuff for the searchbar buttons
+		& when (@classVal = search) {
+			&.@{classVal} {
+				background-color: ~'@{btn-@{classVal}-bg}';
+				border-color: ~'@{btn-@{classVal}-border}';
+				color: @colorS1;
+
+				height: @searchbar-input-height;
+
+				&:hover {
+					border-color: ~'@{btn-@{classVal}-border-hover}';
+				}
+				&:active {
+					// border: 1px solid #995609;
+					// -webkit-box-shadow: #995609 0 3px 3px 0 inset;
+					// box-shadow: #995609 0 3px 3px 0 inset;
+
+					border-color: ~'@{btn-@{classVal}-border-active}';
+					-webkit-box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+					box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+				}
+
+				&:hover,
+				&:active {
+					background-color: ~'@{btn-@{classVal}-bg-hover}';
+				}
+			}
+		}
+		// light colored backgrounds require a darker font-color
+		& when (@classVal = select) {
+			&.@{classVal} {
+				&:hover {
+					background-color: #fff;
 				}
 			}
 		}
