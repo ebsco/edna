@@ -163,6 +163,7 @@
 		// light colored backgrounds require a darker font-color
 		& when (@classVal = select) {
 			&.@{classVal} {
+				.select;
 				&:hover {
 					background-color: #fff;
 				}
