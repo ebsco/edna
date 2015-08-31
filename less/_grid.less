@@ -188,19 +188,29 @@
 	}
 	// when the page has a max-width set
 	&.max-width {
-		@max-width: 1280px;
 		max-width: @max-width;
-		margin: auto;
 		@media screen and (min-width: unit(@mediaquery-sm, px)) and (max-width: @max-width - 1) {
 
 			margin-right: -@side-gutter;
 			margin-left: -@side-gutter;
+		}
+		& when (@align-center = true) {
+			 > [class*='col'] {
+				margin: auto;
+			}
 		}
 	}
 	// when there is no container for the grid remove the negative margins
 	&.no-container {
 		margin-right: 0;
 		margin-left: 0;
+	}
+	// when the page has a fixed page-width
+	& when (@fixed-page-width = true) {
+		.clearfix;
+
+		width: @pg-width;
+		max-width: @pg-width-max;
 	}
 	// space between columns when they are at 100% width
 	@media @mq-sm, @mq-md {
