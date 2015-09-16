@@ -152,10 +152,10 @@
 			display: block;
 			float: left;
 			padding: 0 @grid-sides;
-			@media @mq-sm, @mq-md {
+			@media @mq-sm {
 				width: 100%;
 			}
-			@media @mq-lg, @mq-xl {
+			@media @mq-md, @mq-lg, @mq-xl {
 				width: @pcnt;
 			}
 		}
@@ -189,7 +189,7 @@
 	// when the page has a max-width set
 	&.max-width {
 		max-width: @pg-width-max;
-		margin: auto;
+		margin: auto; // this should leave? half of me says YES!
 		> [class*='col'] {
 			&:first-child {
 				padding-left: 0;
