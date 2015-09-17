@@ -92,72 +92,49 @@
 // BUTTON
 @btn-height: 30px;
 @btn-font-size: 1.4;
+
 // default
-@btn-default-color: #424242;
-	@btn-default-color-hover: @btn-default-color;
-@btn-default-bgcolor: #e7e7e7;
-	@btn-default-bgcolor-hover: darken(@btn-default-bgcolor, 20%);
-	@btn-default-bgcolor-active: darken(@btn-default-bgcolor, 10%);
-@btn-default-bordercolor: darken(@btn-default-bgcolor, 20%);
-	@btn-default-bordercolor-hover: darken(@btn-default-bordercolor, 10%);
-	@btn-default-bordercolor-active: @btn-default-bordercolor-hover;
-@btn-default-fade-top: rgba(255,255,255,1);
-@btn-default-fade-bottom: rgba(255,255,255,0);
-// search button
-@btn-search-color: @colorS2;
-	@btn-search-color-hover: @colorS2;
-@btn-search-bgcolor: @colorP3;
-	@btn-search-bgcolor-hover: darken(@btn-search-bgcolor, 10%);
-	@btn-search-bgcolor-active: darken(@btn-search-bgcolor, 5%);
-@btn-search-bordercolor: darken(@btn-search-bgcolor, 3%);
-	@btn-search-bordercolor-hover: darken(@btn-search-bordercolor, 10%);
-	@btn-search-bordercolor-active: @btn-search-bordercolor-hover;
-@btn-search-fade-top: rgba(255,255,255,.1);
-@btn-search-fade-bottom: rgba(255,255,255,0);
-// known search button
-@btn-search-known-color: @colorS2;
-	@btn-search-known-color-hover: @btn-search-known-color;
-@btn-search-known-bgcolor: #0b3458;
-	@btn-search-known-bgcolor-hover: @btn-search-known-bgcolor;
-	@btn-search-known-bgcolor-active: @btn-search-known-bgcolor;
-@btn-search-known-bordercolor: #575656;
-	@btn-search-known-bordercolor-hover: @btn-search-known-bordercolor;
-	@btn-search-known-bordercolor-active: @btn-search-known-bordercolor-hover;
-@btn-search-known-fade-top: #1d5b94;
-@btn-search-known-fade-bottom: #104779;
-// primary button
-@btn-primary-color: #424242;
-	@btn-primary-color-hover: darken(@btn-primary-color, 10%);
-@btn-primary-bgcolor: #f9ce5a;
-	@btn-primary-bgcolor-hover: darken(@btn-primary-bgcolor, 20%);
-	@btn-primary-bgcolor-active: darken(@btn-primary-bgcolor, 10%);
-@btn-primary-bordercolor: darken(@btn-primary-bgcolor, 20%);
-	@btn-primary-bordercolor-hover: darken(@btn-primary-bordercolor, 10%);
-	@btn-primary-bordercolor-active: @btn-primary-bordercolor-hover;
-@btn-primary-fade-top: rgba(255,255,255,.6);
-@btn-primary-fade-bottom: rgba(255,255,255,0);
-// light button
-@btn-light-color: @colorS2;
-	@btn-light-color-hover: @btn-light-color;
-@btn-light-bgcolor: #3271cf;
-	@btn-light-bgcolor-hover: darken(@btn-light-bgcolor, 20%);
-	@btn-light-bgcolor-active: darken(@btn-light-bgcolor, 10%);
-@btn-light-bordercolor: transparent;
-	@btn-light-bordercolor-hover: transparent;
-	@btn-light-bordercolor-active: transparent;
-@btn-light-fade-top: #5193f3;
-@btn-light-fade-bottom: #3c84ee;
-// disabled button
-@btn-disabled-color: #c1c1c1;
-	@btn-disabled-color-hover: darken(@btn-disabled-color, 10%);
-@btn-disabled-bgcolor: #fff;
-	@btn-disabled-bgcolor-hover: @btn-disabled-bgcolor;
-	@btn-disabled-bgcolor-active: @btn-disabled-bgcolor;
-@btn-disabled-bordercolor: @btn-disabled-color;
-	@btn-disabled-bordercolor-hover: @btn-disabled-bordercolor;
-	@btn-disabled-bordercolor-active: @btn-disabled-bordercolor-hover;
-@btn-disabled-fade-top: transparent;
-@btn-disabled-fade-bottom: transparent;
+@btn-bg: #efefef;
+	@btn-bg-hover: darken(@btn-bg, 20.1%);
+	@btn-border: @btn-bg;
+		@btn-border-hover: darken(@btn-bg, 20.1%);
+		@btn-border-active: darken(@btn-bg-hover, 20.1%);
+		@btn-boxshadow-active: darken(@btn-bg-hover, 15%);
+	@btn-color: #666;
+// acton
+@btn-action-bg: #fff;
+	@btn-action-bg-hover: rgba(171, 216, 245, 0.458824);
+	@btn-action-border: #90c8e9;
+		@btn-action-border-hover: #528db0;
+		@btn-action-border-active: #2b6587;
+		@btn-action-boxshadow-active: #97c5e6;
+// primary
+@btn-primary-bg: #fcd37e;
+	@btn-primary-bg-hover: darken(@btn-primary-bg, 20.1%);
+	@btn-primary-border: @btn-primary-bg;
+		@btn-primary-border-hover: darken(@btn-primary-border, 20.1%);
+		@btn-primary-border-active: darken(@btn-primary-bg-hover, 20.1%);
+		@btn-primary-boxshadow-active: darken(@btn-primary-bg-hover, 15%);
+// search
+@btn-search-bg: @colorP3;
+	@btn-search-bg-hover: darken(@btn-search-bg, 20.1%); // #cb7919;
+	@btn-search-border: @btn-search-bg;
+		@btn-search-border-hover: darken(@btn-search-bg, 20.1%); // #cb7919;
+		@btn-search-border-active: darken(@btn-search-bg-hover, 20.1%); // #cb7919;
+		@btn-search-boxshadow-active: darken(@btn-search-bg-hover, 15%);
+// cancel
+@btn-cancel-bg: #f3f3f3; // #d7d7d7;
+	@btn-cancel-bg-hover: darken(@btn-cancel-bg, 20.1%);
+	@btn-cancel-border: @btn-cancel-bg;
+		@btn-cancel-border-hover: darken(@btn-cancel-border, 20.1%);
+		@btn-cancel-border-active: darken(@btn-cancel-bg-hover, 20.1%); // #cb7919;
+		@btn-cancel-boxshadow-active: darken(@btn-cancel-bg-hover, 15%);
+	@btn-cancel-color: #666;
+//disabled
+@btn-disabled-bg: #fff;
+	@btn-disabled-bg-hover: #fff;
+	@btn-disabled-border: #c1c1c1;
+	@btn-disabled-color: #c1c1c1;
 // text buttons
 @btn-color-txt: #333;
 @btn-color-txt-link: @link-color;
@@ -191,7 +168,7 @@
 @input-height: @btn-height;
 @input-reset-bgcolor: transparent;
 @input-reset-bordercolor: @searchbar-reset-bordercolor;
-@input-disabled-bordercolor: @btn-disabled-bordercolor;
+@input-disabled-bordercolor: @btn-disabled-border;
 
 
 //LAYOUT
@@ -271,7 +248,7 @@
 
 
 // SELECT
-@select-position: @btn-height + 2;
+@select-position: @btn-height + 12;
 @select-boxshadow: rgba(0, 0, 0, 0.25);
 @select-bgcolor: #fff;
 @select-bgcolor-bgcolor-hover: #ccc;

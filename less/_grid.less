@@ -19,29 +19,7 @@
 //
 // Below you can see all the columns as well as some examples of two-column, three-column, four-column, and five-column designs.
 // 
-// Styleguide 28
-
-// Columns
-// 
-// Markup:
-// <div class="grid">
-//     <div class="{{modifier_class}}"></div>
-// </div>
-// 
-// col1			- second kind
-// col2			- second kind
-// col3			- second kind
-// col4			- second kind
-// col5			- second kind
-// col6			- second kind
-// col7			- second kind
-// col8			- second kind
-// col9			- second kind
-// col10		- second kind
-// col11		- second kind
-// col12		- second kind
-// 
-// Styleguide 28.1
+// Styleguide 6
 
 // Two Column Layout
 // 
@@ -51,7 +29,7 @@
 //     <div class="col10"></div>
 // </div>
 // 
-// Styleguide 28.2
+// Styleguide 6.1
 
 // Three Column Layout
 // 
@@ -62,7 +40,7 @@
 //     <div class="col3"></div>
 // </div>
 // 
-// Styleguide 28.3
+// Styleguide 6.2
 
 // Four Column Layout
 // 
@@ -74,7 +52,7 @@
 //     <div class="col3"></div>
 // </div>
 // 
-// Styleguide 28.4
+// Styleguide 6.3
 
 // Five Column Layout
 // 
@@ -87,7 +65,65 @@
 //     <div class="col2"></div>
 // </div>
 // 
-// Styleguide 28.5
+// Styleguide 6.4
+
+// Full Page Grid
+//
+// The `.full-page` class is used when you want to ignore the padding on either side of the browser window. This removes margin on the right and left the same width as the `@side-gutter` variable.
+// 
+// Markup:
+// <div class="grid full-page">
+//     <div class="col2"></div>
+//     <div class="col2"></div>
+//     <div class="col4"></div>
+//     <div class="col2"></div>
+//     <div class="col2"></div>
+// </div>
+// 
+// Styleguide 6.5
+
+// No Container Grid
+//
+// The `.no-container` class is used when you have no container for the grid that has any side padding.
+// 
+// Markup:
+// <div class="grid no-container">
+//     <div class="col2"></div>
+//     <div class="col2"></div>
+//     <div class="col4"></div>
+//     <div class="col2"></div>
+//     <div class="col2"></div>
+// </div>
+// 
+// Styleguide 6.6
+
+// Max-Width Grid
+//
+// The `.max-width` class sets a max-width to the grid and aligns it to the center of the browser.
+// 
+// Markup:
+// <div class="grid max-width">
+//     <div class="col2"></div>
+//     <div class="col2"></div>
+//     <div class="col4"></div>
+//     <div class="col2"></div>
+//     <div class="col2"></div>
+// </div>
+// 
+// Styleguide 6.7
+
+// Funky Grid Patterns
+//
+// Here we use classes on the columns to cause some funky wrapping of columns at small and medium breakpoints.
+// 
+// Markup:
+// <div class="grid">
+//     <div class="col4 md-col6"></div>
+//     <div class="col4 md-col6"></div>
+//     <div class="col4 md-col12"></div>
+// </div>
+// 
+// Styleguide 6.8
 
 // other CSS for the container of the new columns
 .grid {
@@ -116,10 +152,10 @@
 			display: block;
 			float: left;
 			padding: 0 @grid-sides;
-			@media @mq-sm, @mq-md {
+			@media @mq-sm {
 				width: 100%;
 			}
-			@media @mq-lg, @mq-xl {
+			@media @mq-md, @mq-lg, @mq-xl {
 				width: @pcnt;
 			}
 		}
@@ -152,11 +188,17 @@
 	}
 	// when the page has a max-width set
 	&.max-width {
-		@max-width: 1280px;
-		max-width: @max-width;
-		margin: auto;
-		@media screen and (min-width: unit(@mediaquery-sm, px)) and (max-width: @max-width - 1) {
-
+		max-width: @pg-width-max;
+		margin: auto; // this should leave? half of me says YES!
+		> [class*='col'] {
+			&:first-child {
+				padding-left: 0;
+			}
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+		@media screen and (min-width: unit(@mediaquery-sm, px)) and (max-width: @pg-width-max - 1) {
 			margin-right: -@side-gutter;
 			margin-left: -@side-gutter;
 		}
@@ -169,9 +211,9 @@
 	// space between columns when they are at 100% width
 	@media @mq-sm, @mq-md {
 		[class*='col'] {
-			padding-bottom: (@grid-top-bottom / 2);
+			padding-bottom: @grid-top-bottom;
 			+ [class*='col'] {
-				padding-top: (@grid-top-bottom / 2);
+				padding-bottom: @grid-top-bottom;
 			}
 			&:last-child {
 				padding-bottom: 0;

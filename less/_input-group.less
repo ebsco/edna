@@ -2,178 +2,48 @@
 // 
 // These are inputs with something else attached to them, such as a button, or a select menu.
 // 
-// Styleguide 8
-
-// Button on Left
-// 
-// Markup:
-// <div class="input-group">
-//     <span class="input-group-btn">
-//         <button class="btn" tabindex="1">Click me!</button>
-//     </span>
-//     <input type="text" placeholder="placeholder text" tabindex="1" />
-// </div>
-// 
-// Styleguide 8.1
-
-// Button on Right
-// 
-// Markup:
-// <div class="input-group">
-//     <input type="text" placeholder="placeholder text" tabindex="1" />
-//     <span class="input-group-btn">
-//         <button class="btn" tabindex="1">Click me!</button>
-//     </span>
-// </div>
-// 
-// Styleguide 8.2
-
-// Disabled Button on Left
-// 
-// Markup:
-// <div class="input-group">
-//     <span class="input-group-btn">
-//         <button class="btn disabled">Click me!</button>
-//     </span>
-//     <input type="text" placeholder="placeholder text" disabled />
-// </div>
-// 
-// Styleguide 8.3
-
-// Disabled Button on Right
-// 
-// Markup:
-// <div class="input-group">
-//     <input type="text" placeholder="placeholder text" disabled />
-//     <span class="input-group-btn">
-//         <button class="btn disabled">Click me!</button>
-//     </span>
-// </div>
-// 
-// Styleguide 8.4
-
-// Button on Left with Reset
-// 
-// Markup:
-// <div class="input-group">
-//     <span class="input-group-btn">
-//         <button class="btn" tabindex="1">Click me!</button>
-//     </span>
-//     <form id="form-one" class="input-reset">
-//         <input type="text" placeholder="placeholder text" tabindex="1" />
-//         <input class="reset" type="reset" value="X" tabindex="2" />
-//     </form>
-// </div>
-// 
-// Styleguide 8.5
+// Styleguide 9
 
 // Button on Right with Reset
 // 
 // Markup:
 // <div class="input-group">
 //     <form id="form-two" class="input-reset">
-//         <input type="text" placeholder="placeholder text" tabindex="1" />
+//         <input class="input-txt" type="text" placeholder="placeholder text" tabindex="1" />
 //         <input class="reset" type="reset" value="X" tabindex="2" />
 //     </form>
 //     <span class="input-group-btn">
-//         <button class="btn" tabindex="1">Click me!</button>
+//         <button class="btn search" tabindex="1">Click me!</button>
 //     </span>
 // </div>
 // 
-// Styleguide 8.6
-
-// Select on Left and Reset
-// 
-// Markup:
-// <div class="input-group">
-//     <button class="btn btn-group" tabindex="1">
-//         Button Group
-//         <span class="transport-bottom"></span>
-//     </button>
-//     <form id="form-three" class="input-reset">
-//         <input type="text" placeholder="placeholder text" tabindex="1" />
-//         <input class="reset" type="reset" value="X" tabindex="2" />
-//     </form>
-// </div>
-// 
-// Styleguide 8.7
-
-// Select on Right and Reset
-// 
-// Markup:
-// <div class="input-group">
-//     <form id="form-four" class="input-reset">
-//         <input type="text" placeholder="placeholder text" tabindex="1" />
-//         <input class="reset" type="reset" value="X" tabindex="2" />
-//     </form>
-//     <button class="btn btn-group" tabindex="1">
-//         Button Group
-//         <span class="transport-bottom"></span>
-//     </button>
-// </div>
-// 
-// Styleguide 8.8
+// Styleguide 9.1
 
 @import '../less/_input.less';
 
-.first-elem() {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-.second-elem() {
-	+ .btn,
-	+ .input-group-btn .btn,
-	+ .btn-reset, + input,
-	+ .input-reset input {
-		margin-left: -2px;
-
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-	}
-}
-
 .input-group {
-	display: inline-table;
+	display: table-row;
 	> .btn {
 		display: table-cell;
 
 		vertical-align: top;
-		&:first-child {
-			.first-elem;
-			.second-elem;
-		}
 	}
 	> input {
 		display: table-cell;
 
 		vertical-align: top;
-		&:first-child {
-			.first-elem;
-			.second-elem;
-		}
 	}
 }
 .input-group-btn {
 	display: table-cell;
+	padding-left: 10px;
 
 	vertical-align: top;
-	&:first-child {
-		.second-elem;
-		.btn {
-			.first-elem;
-		}
-	}
 }
 .input-reset {
 	display: table-cell;
 
 	vertical-align: top;
-	&:first-child {
-		.second-elem;
-		> input {
-			.first-elem;
-		}
-	}
 	+ .btn {
 		margin-left: 15px;
 	}

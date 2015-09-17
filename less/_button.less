@@ -1,264 +1,186 @@
 // Buttons
 // 
-// I am going to assume that you know what a button is.
+// Let's assume that you know what a button is...
 // 
 // Styleguide 2
 
-// Basic Buttons
-// 
-// A majority of buttons in the site are built from the same base class.
+// Basic Button
 // 
 // Markup:
-// <button class="{{modifier_class}}">Button Element</button>
+// <button class="btn {{modifier_class}}">Button</button>
 // 
-// .btngrade                 - Cursor hover state
-// .btn.hover                - Cursor hover state
-// .btn.active               - Keyboard focus state
+// .search               - Used in search pattern
+// .primary              - Primary button choice
+// .cancel              - Cancel button choice
+// .disabled             - Disabled input state
 // 
 // Styleguide 2.1
 
-// Search Button
-// 
-// A majority of buttons in the site are built from the same base class.
-// 
-// Markup:
-// <button class="btn {{modifier_class}}">Button Element</button>
-// 
-// .search               - Used in search pattern
-// .search.hover         - Used in search pattern
-// .search.active        - Used in search pattern
-// 
-// Styleguide 2.2
+.btn {
+	.fontsize(1.9);
 
-// Known Search Button
-// 
-// A majority of buttons in the site are built from the same base class.
-// 
-// Markup:
-// <button class="btn {{modifier_class}}">Button Element</button>
-// 
-// .search-known         - Used in search pattern
-// .search-known.hover   - Used in search pattern
-// .search-known.active  - Used in search pattern
-// 
-// Styleguide 2.3
+	@btn-height: 40px;
+	@color: #333;
 
-// Primary Button
-// 
-// A majority of buttons in the site are built from the same base class.
-// 
-// Markup:
-// <button class="btn {{modifier_class}}">Button Element</button>
-// 
-// .primary              - Primary button choice
-// .primary.hover        - Primary button choice
-// .primary.active       - Primary button choice
-// 
-// Styleguide 2.4
-
-// Light Button
-// 
-// A majority of buttons in the site are built from the same base class.
-// 
-// Markup:
-// <button class="btn {{modifier_class}}">Button Element</button>
-// 
-// .light                - Used in light design
-// .light.hover          - Used in light design
-// .light.active         - Used in light design
-// 
-// Styleguide 2.5
-
-// Disabled Button
-// 
-// A majority of buttons in the site are built from the same base class.
-// 
-// Markup:
-// <button class="btn {{modifier_class}}">Button Element</button>
-// 
-// .disabled             - Disabled input state
-// .disabled.hover       - Disabled input state
-// .disabled.active      - Disabled input state
-// 
-// Styleguide 2.6
-
-// Mini Buttons
-// 
-// Markup:
-// <button class="btn-mini {{modifier_class}}">Button Element</button>
-// 
-// .active               - Keyboard focus state
-// .hover                - Cursor hover state
-// .search               - Used in search pattern
-// .light                - Used in light design
-// .light.hover          - Used in light design
-// .light.active         - Used in light design
-// .disabled             - Disabled input state
-// .disabled.hover       - Disabled input state
-// .disabled.active      - Disabled input state
-// 
-// Styleguide 2.7
-
-// Text Buttons
-// 
-// Markup:
-// <button class="{{modifier_class}}">Button Element</button>
-// 
-// .btn-txt		                 - Cursor hover state
-// .btn-txt.hover                - Cursor hover state
-// .btn-txt.active               - Keyboard focus state
-// 
-// Styleguide 2.8
-
-// Text Button Links
-// 
-// Markup:
-// <button class="{{modifier_class}}">Button Element</button>
-// 
-// .btn-txt-link	                  - Cursor hover state
-// .btn-txt-link.hover                - Cursor hover state
-// .btn-txt-link.active               - Keyboard focus state
-// 
-// Styleguide 2.9
-
-.btn-kind(@kind) {
-	&.@{kind} {
-		color: ~'@{btn-@{kind}-color}';
-		& when (@kind = search-known) {
-		line-height: 2.3rem;
-		}
-		.bg-border(@kind) {
-		background-color: ~'@{btn-@{kind}-bgcolor}';
-		border-color: ~'@{btn-@{kind}-bordercolor}';
-		}
-		& when (@kind = disabled) {
-		cursor: default;
-		.bg-border(@kind);
-		box-shadow: none;
-		}
-		& when (@kind = search), (@kind = search-known), (@kind = primary), (@kind = light) {
-		.bg-border(@kind);	
-		.btngrade( ~'@{btn-@{kind}-fade-top}', ~'@{btn-@{kind}-fade-bottom}' );
-		}
-		&:hover,
-		&.hover {
-			background-color: ~'@{btn-@{kind}-bgcolor-hover}';
-			border-color: ~'@{btn-@{kind}-bordercolor-hover}';
-			& when (@kind = light) {
-			.btngrade( darken(@btn-light-fade-top, 20%), darken(@btn-light-fade-bottom, 20%) ); // these don't work if a passed in variable is used
-			}
-		}
-		&:active,
-		&.active {
-			background-color: ~'@{btn-@{kind}-bgcolor-active}';
-			border-color: ~'@{btn-@{kind}-bordercolor-active}';
-		}
-		& when (@kind = disabled) {
-		&.flat {
-			.btngrade( transparent, transparent );
-		}
-		}
-	}
-}
-
-.btn,
-.btn-mini {
 	& + & {
 		margin-left: 10px;
 	}
 
-	display: inline-block;
-	width: auto;
-
-	color: @btn-default-color;
-	font-weight: bold;
-	text-decoration: none;
-	white-space: nowrap;
-	vertical-align: top;
-
-	cursor: pointer;
-	background-color: @btn-default-bgcolor;
-	border: 1px solid @btn-default-bordercolor;
-	.btngrade( @btn-default-fade-top, @btn-default-fade-bottom );
-
-	&:hover,
-	&.hover {
-		background-color: @btn-default-bgcolor-hover;
-		border-color: @btn-default-bordercolor-hover;
-	}
-
-	&:active,
-	&.active {
-		background-color: @btn-default-bgcolor-active;
-		border-color: @btn-default-bordercolor-active;
-		box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
-		background-image: none !important;
-	}
-
-	// loop through the button kinds and hit the .btn-kind mixin
-	@list: search, search-known, primary, light, disabled;
-	@listLength: length(@list);
-	.loop(@passedIn, @index: 1) when (@index =< @passedIn) {
-		@arrayVal: extract(@list, @index);
-		.btn-kind(@arrayVal);	 
-		.loop(@passedIn, (@index + 1));
-	}
-	.loop(@listLength);
-	// end the loop
-
-	&.flat {
-		.btngrade( transparent, transparent );
-	}
-}
-
-.btn.light {
-	line-height: 2.3rem;
-}
-
-.btn-mini.light {
-	line-height: 1.1rem;
-}
-
-// button overrides
-.btn {
-	.radius;
-
 	height: @btn-height;
-	padding: 0 15px;
-	
-	.fontsize(@btn-font-size);
-	line-height: unit((@btn-font-size * 2), rem);
-
-	// overrides to the light buttons
-	&.light {
-		height: 25px;
+	padding: 0 21px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: @btn-bg;
+	border-color: @btn-border;
+	&:hover {
+		background-color: @btn-bg-hover;
+		border-color: @btn-border-hover;
 	}
 
-	// overrides to the known buttons
-	&.search-known {
-		height: 25px;
-	}
+	vertical-align: top;
+	cursor: pointer;
 
-	// override for light button line-height
-	> .light {
-		line-height: unit((@btn-font-size * 2), rem);
-	}
+	border-color: @btn-border;
+	border-radius: 4px;
+	// button variations
+	@list: action, cancel, disabled, primary, search, select;
+	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
+		@classVal: extract(@list, @index);
 
-	// overrides to the mini buttons
-	&-mini {		 
-		.radius(2);
+		// action buttons!
+		& when (@classVal = action) {
+			&.@{classVal} {
+				border-color: ~'@{btn-@{classVal}-border}';
+				background-color: ~'@{btn-@{classVal}-bg}';
+				height: 30px;
+				font-size: 13px;
+				padding: 5px 15px 0 20px;
 
-		height: 18px;
-		padding: 0 10px;
-		 
-		@btn-mini-font-size: 1.1;
-		.fontsize(@btn-mini-font-size);
-		.fontsize( unit((@btn-mini-font-size), px) );
-
-		// override for light button line-height
-		> .light {
-			line-height: unit((@btn-mini-font-size), px);
+				.icon {
+					width: 14px;
+					height: 14px;
+					margin: 0 7px 0 -7px;
+					vertical-align: initial;
+				}
+				&:hover {
+					border-color: ~'@{btn-@{classVal}-border-hover}';
+				}
+				&:active {
+					border-color: ~'@{btn-@{classVal}-border-active}';
+					-webkit-box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+					box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+				}
+				&:hover,
+				&:active {
+					background-color: ~'@{btn-@{classVal}-bg-hover}';
+				}
+			}
 		}
+		// light colored backgrounds require a darker font-color
+		& when (@classVal = cancel) {
+			&.@{classVal} {
+				background-color: ~'@{btn-@{classVal}-bg}';
+				border-color: ~'@{btn-@{classVal}-border}';
+
+				color: ~'@{btn-@{classVal}-color}';
+				&:hover {
+					border-color: ~'@{btn-@{classVal}-border-hover}';
+				}
+				&:active {
+					border-color: ~'@{btn-@{classVal}-border-active}';
+					-webkit-box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+					box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+				}
+				&:hover,
+				&:active {
+					background-color: ~'@{btn-@{classVal}-bg-hover}';
+				}
+			}
+		}
+		// disabled buttons are... disabled!
+		& when (@classVal = disabled) {
+			&.@{classVal},
+			&[@{classVal}] {
+				background-color: ~'@{btn-@{classVal}-bg}' !important;
+				border-color: ~'@{btn-@{classVal}-border}' !important;
+
+				color: ~'@{btn-@{classVal}-color}' !important;
+				&:hover {
+					background-color: ~'@{btn-@{classVal}-bg}' !important;
+					border-color: ~'@{btn-@{classVal}-border}' !important;
+				}
+			}
+		}
+		// change stuff for the primary buttons
+		& when (@classVal = primary) {
+			&.@{classVal} {
+				background-color: ~'@{btn-@{classVal}-bg}';
+				border-color: ~'@{btn-@{classVal}-border}';
+				color: @color;
+
+				&:hover {
+					border-color: ~'@{btn-@{classVal}-border-hover}';
+				}
+				&:active {
+					border-color: ~'@{btn-@{classVal}-border-active}';
+					-webkit-box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+					box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+				}
+				&:hover,
+				&:active {
+					background-color: ~'@{btn-@{classVal}-bg-hover}';
+				}
+			}
+		}
+		// change stuff for the searchbar buttons
+		& when (@classVal = search) {
+			&.@{classVal} {
+				background-color: ~'@{btn-@{classVal}-bg}';
+				border-color: ~'@{btn-@{classVal}-border}';
+				color: @colorS1;
+
+				height: @searchbar-input-height;
+
+				&:hover {
+					border-color: ~'@{btn-@{classVal}-border-hover}';
+				}
+				&:active {
+					// border: 1px solid #995609;
+					// -webkit-box-shadow: #995609 0 3px 3px 0 inset;
+					// box-shadow: #995609 0 3px 3px 0 inset;
+
+					border-color: ~'@{btn-@{classVal}-border-active}';
+					-webkit-box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+					box-shadow: ~'@{btn-@{classVal}-boxshadow-active}' 0 3px 3px 0 inset;
+				}
+
+				&:hover,
+				&:active {
+					background-color: ~'@{btn-@{classVal}-bg-hover}';
+				}
+			}
+		}
+		// light colored backgrounds require a darker font-color
+		& when (@classVal = select) {
+			.@{classVal} & {
+				.select;
+				&:hover {
+					background-color: #fff;
+				}
+			}
+		}
+
+		.loop(@arrayLength, (@index + 1));
+	}
+	.loop( length(@list) );
+
+	// when you have an icon in a button
+	.icon {
+		width: 18px;
+		height: 18px;
+		margin: -5px 5px 0 -5px;
+		vertical-align: middle;
+		background-size: 100%;
 	}
 
 	// overrides to the text buttons
