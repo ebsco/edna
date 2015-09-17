@@ -152,10 +152,10 @@
 			display: block;
 			float: left;
 			padding: 0 @grid-sides;
-			@media @mq-sm, @mq-md {
+			@media @mq-sm {
 				width: 100%;
 			}
-			@media @mq-lg, @mq-xl {
+			@media @mq-md, @mq-lg, @mq-xl {
 				width: @pcnt;
 			}
 		}
@@ -188,11 +188,17 @@
 	}
 	// when the page has a max-width set
 	&.max-width {
-		@max-width: 1280px;
-		max-width: @max-width;
-		margin: auto;
-		@media screen and (min-width: unit(@mediaquery-sm, px)) and (max-width: @max-width - 1) {
-
+		max-width: @pg-width-max;
+		margin: auto; // this should leave? half of me says YES!
+		> [class*='col'] {
+			&:first-child {
+				padding-left: 0;
+			}
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+		@media screen and (min-width: unit(@mediaquery-sm, px)) and (max-width: @pg-width-max - 1) {
 			margin-right: -@side-gutter;
 			margin-left: -@side-gutter;
 		}
@@ -205,9 +211,9 @@
 	// space between columns when they are at 100% width
 	@media @mq-sm, @mq-md {
 		[class*='col'] {
-			padding-bottom: (@grid-top-bottom / 2);
+			padding-bottom: @grid-top-bottom;
 			+ [class*='col'] {
-				padding-top: (@grid-top-bottom / 2);
+				padding-bottom: @grid-top-bottom;
 			}
 			&:last-child {
 				padding-bottom: 0;
