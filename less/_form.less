@@ -2,7 +2,7 @@
 // 
 // These elegant styles help guide the display of form components to a more pleasing state.
 // 
-// Styleguide 29
+// Styleguide 5
 
 @import '_input.less';
 @import '_input-group.less';
@@ -24,7 +24,6 @@ fieldset {
 
 @field-max-width: 30em;
 
-
 // Form Groups
 // 
 // Groups allow consistent spacing between input groupings, and are often started with a heading.
@@ -34,7 +33,8 @@ fieldset {
 //   <label class="group-heading">Form Grouping!</label>
 // </div>
 // 
-// Styleguide 29.1
+// Styleguide 5.1
+
 .form-group {
 	margin-bottom: @group-spacing;
 }
@@ -46,7 +46,6 @@ fieldset {
 	font-size: @heading-font-size;
 	font-weight: bold;
 }
-
 
 // Form Fields
 // 
@@ -63,7 +62,8 @@ fieldset {
 //   <input class="input-field" type="text" />
 // </div>
 // 
-// Styleguide 29.2
+// Styleguide 5.2
+
 .field {
 	margin-bottom: @field-spacing;
 }
@@ -74,40 +74,4 @@ fieldset {
 
 	font-size: @label-font-size;
 	font-weight: bold;
-}
-
-.input-checkbox {
-	vertical-align: top;
-}
-.checkbox-label {
-	display: block;
-	margin-bottom: @label-spacing;
-
-	font-size: @label-font-size;
-}
-@media screen and (min-width: 900px) {
-	.checkbox-label {
-		display: inline-block;
-		padding-right: 1rem;
-	}
-}
-
-.nested-input {
-	width: 3rem;
-}
-
-.input-field {
-	display: block;
-	width: 100%;
-	max-width: @field-max-width;
-	margin-bottom: @label-spacing;
-
-	line-height: 1.75;
-}
-
-.field-help {
-	display: block;
-
-	font-size: @label-font-size;
-	font-style: italic;
 }
