@@ -5,6 +5,9 @@
     "registry": "http://artifactory.epnet.com:8081/artifactory/api/npm/eae-npm-release",
     "tag": "develop"
   },
+  "scripts": {
+    "test": "grunt"
+  },
   "devDependencies": {
     "grunt": "^0.4.1",
     "grunt-browser-sync": "^1.5.3",
