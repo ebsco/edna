@@ -1,6 +1,6 @@
 {
   "name": "edna",
-  "version": "1.0.58",
+  "version": "1.0.65",
   "publishConfig": {
     "registry": "http://artifactory.epnet.com:8081/artifactory/api/npm/eae-npm-release",
     "tag": "develop"
@@ -15,7 +15,7 @@
     "grunt-contrib-less": "^0.12.0",
     "grunt-contrib-watch": "^0.5.3",
     "grunt-express": "^1.4.1",
-    "grunt-grunticon": "~1.2.13",
+    "grunt-grunticon": "git+http://github.com/ebsco/grunticon.git#develop",
     "grunt-kss": "^2.0.0",
     "grunt-shell": "^1.1.1"
   },
