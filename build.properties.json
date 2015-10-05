@@ -1,6 +1,6 @@
 {
 	"name": "edna",
-	"version": "1.1.0-1",
+	"version": "1.1.0-2",
 	"problems": [
 		"extraneous: buzz-makefile@2.5.0 /jenkins/workspace/edna-develop/node_modules/buzz-makefile"
 	],
@@ -29,15 +29,15 @@
 			"from": "git+http://github.com/ebsco/grunticon.git#develop",
 			"resolved": "git+ssh://git@github.com/ebsco/grunticon.git#3cf7f65600e553a4c74e562e6168319ca8352e78"
 		},
-		"grunt-browser-sync": {
-			"version": "1.9.2",
-			"from": "grunt-browser-sync@>=1.5.3 <2.0.0",
-			"resolved": "http://artifactory.epnet.com:8081/artifactory/api/npm/eis-npm-release/grunt-browser-sync/-/grunt-browser-sync-1.9.2.tgz"
-		},
 		"grunt-colorguard": {
 			"version": "0.2.0",
 			"from": "grunt-colorguard@>=0.2.0 <0.3.0",
 			"resolved": "http://artifactory.epnet.com:8081/artifactory/api/npm/eis-npm-release/grunt-colorguard/-/grunt-colorguard-0.2.0.tgz"
+		},
+		"grunt-browser-sync": {
+			"version": "1.9.2",
+			"from": "grunt-browser-sync@>=1.5.3 <2.0.0",
+			"resolved": "http://artifactory.epnet.com:8081/artifactory/api/npm/eis-npm-release/grunt-browser-sync/-/grunt-browser-sync-1.9.2.tgz"
 		},
 		"grunt-contrib-analyze-css": {
 			"version": "0.1.2",
@@ -75,5 +75,5 @@
 			"resolved": "http://artifactory.epnet.com:8081/artifactory/api/npm/eis-npm-release/grunt-shell/-/grunt-shell-1.1.2.tgz"
 		}
 	},
-	"commit": "9230b1baaf2770fae3f2bca53b8325dd9bc0df06"
+	"commit": "3c99fbd59c42910b11942eef13749291c00f7a2d"
 }
