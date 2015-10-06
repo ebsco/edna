@@ -1,6 +1,6 @@
 {
 	"name": "edna",
-	"version": "1.0.68",
+	"version": "1.0.69",
 	"problems": [
 		"extraneous: buzz-makefile@2.5.0 /jenkins/workspace/edna-release/node_modules/buzz-makefile"
 	],
@@ -54,11 +54,6 @@
 			"from": "grunt-contrib-cssmin@>=0.10.0 <0.11.0",
 			"resolved": "http://artifactory.epnet.com:8081/artifactory/api/npm/eis-npm-release/grunt-contrib-cssmin/-/grunt-contrib-cssmin-0.10.0.tgz"
 		},
-		"grunt-contrib-less": {
-			"version": "0.12.0",
-			"from": "grunt-contrib-less@>=0.12.0 <0.13.0",
-			"resolved": "http://artifactory.epnet.com:8081/artifactory/api/npm/eis-npm-release/grunt-contrib-less/-/grunt-contrib-less-0.12.0.tgz"
-		},
 		"grunt-express": {
 			"version": "1.4.1",
 			"from": "grunt-express@>=1.4.1 <2.0.0",
@@ -73,7 +68,12 @@
 			"version": "1.1.2",
 			"from": "grunt-shell@>=1.1.1 <2.0.0",
 			"resolved": "http://artifactory.epnet.com:8081/artifactory/api/npm/eis-npm-release/grunt-shell/-/grunt-shell-1.1.2.tgz"
+		},
+		"grunt-contrib-less": {
+			"version": "0.12.0",
+			"from": "grunt-contrib-less@>=0.12.0 <0.13.0",
+			"resolved": "http://artifactory.epnet.com:8081/artifactory/api/npm/eis-npm-release/grunt-contrib-less/-/grunt-contrib-less-0.12.0.tgz"
 		}
 	},
-	"commit": "90d40e04aa7783926d17eecb6ab7f68502667532"
+	"commit": "10032227a1e2777ac2ca23954e67b9e8deb9fc35"
 }
