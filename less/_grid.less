@@ -1,7 +1,7 @@
 /* GRID */
 
 // Grid
-// 
+//
 // Edna uses two kinds of layout systems, the old one named **layout**, and this new 12 column grid. We have two until we can phase the old one out for this one.
 //
 // To make a grid you should start out with an element with the class name `grid`, this sets up the grid row.
@@ -18,32 +18,32 @@
 // ```
 //
 // Below you can see all the columns as well as some examples of two-column, three-column, four-column, and five-column designs.
-// 
+//
 // Styleguide 6
 
 // Two Column Layout
-// 
+//
 // Markup:
 // <div class="grid">
 //     <div class="col2"></div>
 //     <div class="col10"></div>
 // </div>
-// 
+//
 // Styleguide 6.1
 
 // Three Column Layout
-// 
+//
 // Markup:
 // <div class="grid">
 //     <div class="col3"></div>
 //     <div class="col6"></div>
 //     <div class="col3"></div>
 // </div>
-// 
+//
 // Styleguide 6.2
 
 // Four Column Layout
-// 
+//
 // Markup:
 // <div class="grid">
 //     <div class="col3"></div>
@@ -51,11 +51,11 @@
 //     <div class="col3"></div>
 //     <div class="col3"></div>
 // </div>
-// 
+//
 // Styleguide 6.3
 
 // Five Column Layout
-// 
+//
 // Markup:
 // <div class="grid">
 //     <div class="col2"></div>
@@ -64,13 +64,13 @@
 //     <div class="col2"></div>
 //     <div class="col2"></div>
 // </div>
-// 
+//
 // Styleguide 6.4
 
 // Full Page Grid
 //
 // The `.full-page` class is used when you want to ignore the padding on either side of the browser window. This removes margin on the right and left the same width as the `@side-gutter` variable.
-// 
+//
 // Markup:
 // <div class="grid full-page">
 //     <div class="col2"></div>
@@ -79,13 +79,13 @@
 //     <div class="col2"></div>
 //     <div class="col2"></div>
 // </div>
-// 
+//
 // Styleguide 6.5
 
 // No Container Grid
 //
 // The `.no-container` class is used when you have no container for the grid that has any side padding.
-// 
+//
 // Markup:
 // <div class="grid no-container">
 //     <div class="col2"></div>
@@ -94,13 +94,13 @@
 //     <div class="col2"></div>
 //     <div class="col2"></div>
 // </div>
-// 
+//
 // Styleguide 6.6
 
 // Max-Width Grid
 //
 // The `.max-width` class sets a max-width to the grid and aligns it to the center of the browser.
-// 
+//
 // Markup:
 // <div class="grid max-width">
 //     <div class="col2"></div>
@@ -109,20 +109,20 @@
 //     <div class="col2"></div>
 //     <div class="col2"></div>
 // </div>
-// 
+//
 // Styleguide 6.7
 
 // Funky Grid Patterns
 //
 // Here we use classes on the columns to cause some funky wrapping of columns at small and medium breakpoints.
-// 
+//
 // Markup:
 // <div class="grid">
 //     <div class="col4 md-col6"></div>
 //     <div class="col4 md-col6"></div>
 //     <div class="col4 md-col12"></div>
 // </div>
-// 
+//
 // Styleguide 6.8
 
 // other CSS for the container of the new columns
@@ -145,17 +145,17 @@
 	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
 		// break out the value from the list
 		@arrayVal: extract(@list, @index);
-		// this declaration block gets output. once per key in the @list array 
+		// this declaration block gets output. once per key in the @list array
 		@pcnt: percentage(@arrayVal / @listLength);
-		// this declaration block gets output. once per key in the @list array 
+		// this declaration block gets output. once per key in the @list array
 		.col@{arrayVal} {
 			display: block;
 			float: left;
 			padding: 0 @grid-sides;
-			@media @mq-sm {
+			@media @mq-sm, @mq-md {
 				width: 100%;
 			}
-			@media @mq-md, @mq-lg, @mq-xl {
+			@media @mq-lg, @mq-xl {
 				width: @pcnt;
 			}
 		}
