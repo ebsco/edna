@@ -151,12 +151,13 @@
 		.col@{arrayVal} {
 			display: block;
 			float: left;
-			padding: 0 @grid-sides;
 			@media @mq-sm, @mq-md {
 				width: 100%;
+				padding: 0;
 			}
 			@media @mq-lg, @mq-xl {
 				width: @pcnt;
+				padding: 0 @grid-sides;
 			}
 		}
 		// loop the loop
