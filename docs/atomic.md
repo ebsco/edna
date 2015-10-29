@@ -8,7 +8,7 @@ The proposal is to transform Edna into an [_Atomic CSS_](http://www.smashingmaga
 
 Doing all of this work will be time consuming and a major overhaul to our CSS, but is a needed change to combat some of the issues we are seeing with our current CSS scheme. 
 
-### Issues We are Seeing
+### Issues We're Seeing
 - **specificity** issues in Buzz thanks to class names already being used in Edna.
 - we **can't easily reuse** blocks of CSS.
 - we have a lot of **bloated stylesheets** in both Edna and Buzz.
