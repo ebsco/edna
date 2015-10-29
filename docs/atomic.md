@@ -14,7 +14,7 @@ Doing all of this work will be time consuming and a major overhaul to our CSS, b
 - we have a lot of **bloated stylesheets** in both Edna and Buzz.
 - we have **no naming convention** in either Edna or Buzz. Everything has become all willy-nilly.
 
-#### How Do We Solve These Issues?
+### How Do We Solve These Issues?
 - The **specificity** issues will be solved in a couple of ways:
   - Classes in Edna will be different than those in Buzz. Using the _Atomic CSS_ will give us abstracted class names that only trickle up to Buzz by way of LESS mixins.
   - _BEM_ in Buzz will help create more specific class names that are used in less often.
