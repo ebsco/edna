@@ -21,7 +21,7 @@ Doing all of this work will be time consuming and a major overhaul to our CSS, b
 - In Edna we will be able to **reuse blocks** of CSS easier because the Atomic class names will do minimal work and have no bloat within each declaration block. 
 - **Removing the bloat** and having smaller declaration blocks in Edna will instantly cut down on bloat and give us more reusable declarations. This should also trickle up into Buzz.
 - Both Edna and Buzz will use separate **naming conventions**, which will also help cut down on our specificity issues.
-  - The Edna class names will follow the [Emmet](http://docs.emmet.io/cheat-sheet/) naming convention.
+  - ~~The Edna class names will follow the [Emmet](http://docs.emmet.io/cheat-sheet/) naming convention.~~ This might not be the way to go…
   - Buzz will use the [_BEM_](http://getbem.com/naming/) naming convention.
 
 ## How Do We Make This Happen
