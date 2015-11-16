@@ -27,6 +27,14 @@
 
 
 // MEDIA QUERY DIMENSIONS
+// mobile-first media-query variables
+@sm-mq: 320px;
+@md-mq: 600px;
+@lg-mq: 996px;
+@xl-mq: 1200px;
+
+// ------------------------------
+// WILL BE DEPRECATED WHEN THE MOBILE-FIRST TRANSITION IS COMPLETE
 // unit gets applied later
 @mediaquery-sm: 320;
 @mediaquery-md: 599;
@@ -49,6 +57,8 @@
 @mq-md: ~'screen and (min-width: @{mq-md-unit-ceil}) and (max-width: @{mq-lg-unit})'; // 600 - 995
 @mq-lg: ~'screen and (min-width: @{mq-lg-unit-ceil}) and (max-width: @{mq-xl-unit})'; // 996 -1199
 @mq-xl: ~'screen and (min-width: @{mq-xl-unit-ceil})'; // 1200
+// WILL BE DEPRECATED WHEN THE MOBILE-FIRST TRANSITION IS COMPLETE
+// ------------------------------
 
 
 // BACKGROUND COLORS
