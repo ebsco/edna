@@ -12,7 +12,7 @@ button {
 	font-size: 1em;
 	
 	.respond-min(600px, {
-		font-size 1.4em;
+		font-size: 1.4em;
 	});
 }
 ```
