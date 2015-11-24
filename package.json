@@ -16,7 +16,6 @@
     "grunt-contrib-watch": "^0.5.3",
     "grunt-express": "^1.4.1",
     "grunt-grunticon": "git+http://github.com/ebsco/grunticon.git#develop",
-    "grunt-kss": "^2.0.0",
     "grunt-shell": "^1.1.1"
   },
   "main": "Gruntfile.js",
