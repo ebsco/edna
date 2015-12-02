@@ -1,6 +1,6 @@
 {
 	"name": "edna",
-	"version": "1.1.0-11",
+	"version": "1.1.0-12",
 	"problems": [
 		"extraneous: buzz-makefile@2.5.3 /jenkins/workspace/edna-develop/node_modules/buzz-makefile"
 	],
@@ -18,6 +18,16 @@
 			"version": "0.4.5",
 			"from": "grunt@>=0.4.1 <0.5.0",
 			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt/-/grunt-0.4.5.tgz"
+		},
+		"grunt-contrib-watch": {
+			"version": "0.5.3",
+			"from": "grunt-contrib-watch@>=0.5.3 <0.6.0",
+			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-contrib-watch/-/grunt-contrib-watch-0.5.3.tgz"
+		},
+		"grunt-grunticon": {
+			"version": "1.2.14",
+			"from": "git+http://github.com/ebsco/grunticon.git#develop",
+			"resolved": "git+ssh://git@github.com/ebsco/grunticon.git#3cf7f65600e553a4c74e562e6168319ca8352e78"
 		},
 		"grunt-browser-sync": {
 			"version": "1.9.2",
@@ -49,20 +59,10 @@
 			"from": "grunt-contrib-less@>=0.12.0 <0.13.0",
 			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-contrib-less/-/grunt-contrib-less-0.12.0.tgz"
 		},
-		"grunt-contrib-watch": {
-			"version": "0.5.3",
-			"from": "grunt-contrib-watch@>=0.5.3 <0.6.0",
-			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-contrib-watch/-/grunt-contrib-watch-0.5.3.tgz"
-		},
 		"grunt-express": {
 			"version": "1.4.1",
 			"from": "grunt-express@>=1.4.1 <2.0.0",
 			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-express/-/grunt-express-1.4.1.tgz"
-		},
-		"grunt-grunticon": {
-			"version": "1.2.14",
-			"from": "git+http://github.com/ebsco/grunticon.git#develop",
-			"resolved": "git+ssh://git@github.com/ebsco/grunticon.git#3cf7f65600e553a4c74e562e6168319ca8352e78"
 		},
 		"grunt-shell": {
 			"version": "1.1.2",
@@ -70,5 +70,5 @@
 			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-shell/-/grunt-shell-1.1.2.tgz"
 		}
 	},
-	"commit": "65d6572a69b1e1e2e54ae29d14923a59c26c5de6"
+	"commit": "a2375a1bf8e56b0d5913f1d28e4cd94af46134e8"
 }
