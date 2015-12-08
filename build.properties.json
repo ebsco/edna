@@ -1,18 +1,18 @@
 {
 	"name": "edna",
-	"version": "1.1.0-12",
+	"version": "1.1.0-13",
 	"problems": [
-		"extraneous: buzz-makefile@2.5.3 /jenkins/workspace/edna-develop/node_modules/buzz-makefile"
+		"extraneous: buzz-makefile@2.6.0 /jenkins/workspace/edna-develop/node_modules/buzz-makefile"
 	],
 	"dependencies": {
 		"buzz-makefile": {
-			"version": "2.5.3",
+			"version": "2.6.0",
 			"extraneous": true,
 			"problems": [
-				"extraneous: buzz-makefile@2.5.3 /jenkins/workspace/edna-develop/node_modules/buzz-makefile"
+				"extraneous: buzz-makefile@2.6.0 /jenkins/workspace/edna-develop/node_modules/buzz-makefile"
 			],
 			"from": "buzz-makefile@latest",
-			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/buzz-makefile/-/buzz-makefile-2.5.3.tgz"
+			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/buzz-makefile/-/buzz-makefile-2.6.0.tgz"
 		},
 		"grunt": {
 			"version": "0.4.5",
@@ -70,5 +70,5 @@
 			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-shell/-/grunt-shell-1.1.2.tgz"
 		}
 	},
-	"commit": "a2375a1bf8e56b0d5913f1d28e4cd94af46134e8"
+	"commit": "7d6400db388465eeda735cff9041ea82ecd3cf60"
 }
