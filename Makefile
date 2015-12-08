@@ -19,4 +19,7 @@ _test :
 _precommit :
 	echo 'Happy EDNA is commiting'
 
+_deploy :
+	exit 0
+
 include node_modules/buzz-makefile/shared.mk
