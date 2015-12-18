@@ -1,6 +1,6 @@
 {
 	"name": "edna",
-	"version": "1.1.0-13",
+	"version": "1.1.0-14",
 	"problems": [
 		"extraneous: buzz-makefile@2.6.0 /jenkins/workspace/edna-develop/node_modules/buzz-makefile"
 	],
@@ -70,5 +70,5 @@
 			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-shell/-/grunt-shell-1.1.2.tgz"
 		}
 	},
-	"commit": "7d6400db388465eeda735cff9041ea82ecd3cf60"
+	"commit": "258690a5ac7a85b68036b995abc235f312050872"
 }
