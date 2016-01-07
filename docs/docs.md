@@ -1,15 +1,18 @@
 **Edna Docs**
 ---
 
-[Guidelines on working with LESS][1]
+[Atomic Edna][1]
 
-[How to build a widget][2] 
+[Guidelines on working with LESS][2]
 
-[CSS Comb][3] 
+[How to build a widget][3]
 
-[Page Layouts][4] 
+[CSS Comb][4]
 
-  [1]: less-guidelines.md
-  [2]: building-widgets.md
-  [3]: css-comb.md
-  [4]: page-layout.md
+[Page Layouts][5]
+
+  [1]: atomic.md
+  [2]: less-guidelines.md
+  [3]: building-widgets.md
+  [4]: css-comb.md
+  [5]: page-layout.md

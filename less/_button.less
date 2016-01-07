@@ -37,7 +37,6 @@
 		border-color: @btn-border-hover;
 	}
 
-	vertical-align: top;
 	cursor: pointer;
 
 	border-color: @btn-border;
@@ -54,13 +53,13 @@
 				background-color: ~'@{btn-@{classVal}-bg}';
 				height: 30px;
 				font-size: 13px;
-				padding: 5px 15px 0 20px;
+				padding: 0 15px 0 20px;
 
 				.icon {
 					width: 14px;
 					height: 14px;
 					margin: 0 7px 0 -7px;
-					vertical-align: initial;
+					vertical-align: top;
 				}
 				&:hover {
 					border-color: ~'@{btn-@{classVal}-border-hover}';

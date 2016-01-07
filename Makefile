@@ -1,6 +1,5 @@
 segment=prerelease
 remote=origin
-branch=develop
 packageName=edna
 npmPublish=false
 createTag=false

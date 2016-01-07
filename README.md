@@ -10,7 +10,7 @@ It's a custom CSS framework, dig it!
  - CSS styling for basic HTML elements
  - A page layout system
  - A widget layout system
- - CSS styling based on [SMACSS][3]
+ - ~~CSS styling based on [SMACSS][3]~~
 
 ---
 
