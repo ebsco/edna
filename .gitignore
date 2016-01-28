@@ -7,7 +7,6 @@ kss-docs/
 .DS_Store
 *.css
 *.map
-*.png
 grunticon/js
 grunticon/*.html
 !kss-template/public/kss.css
