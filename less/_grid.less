@@ -69,7 +69,7 @@
 
 // Full Page Grid
 //
-// The `.full-page` class is used when you want to ignore the padding on either side of the browser window. This removes margin on the right and left the same width as the `@side-gutter` variable.
+// The `.full-page` class is used when you want to ignore the padding on either side of the browser window. This removes margin on the right and left the same width as the `@page-gutter` variable.
 //
 // Markup:
 // <div class="grid full-page">
@@ -176,9 +176,9 @@
 	}
 	// in case of pages with no side gutters
 	&.full-page {
-		// don't need the side gutters on a full-width page
-		margin-right: -@side-gutter;
-		margin-left: -@side-gutter;
+		// don't need the page gutters on a full-width page
+		margin-right: -@page-gutter;
+		margin-left: -@page-gutter;
 		@media  @mq-sm, @mq-md {
 			& {
 				> [class*='col'] {
@@ -200,8 +200,8 @@
 			}
 		}
 		@media screen and (min-width: unit(@mediaquery-sm, px)) and (max-width: @pg-width-max - 1) {
-			margin-right: -@side-gutter;
-			margin-left: -@side-gutter;
+			margin-right: -@page-gutter;
+			margin-left: -@page-gutter;
 		}
 	}
 	// when there is no container for the grid remove the negative margins
