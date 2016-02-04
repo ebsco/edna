@@ -130,8 +130,8 @@
 	.clearfix;
 
 	padding-bottom: (@grid-top-bottom / 2);
-	margin-right: -@grid-sides;
-	margin-left: -@grid-sides;
+	margin-right: -(@grid-sides / 2);
+	margin-left: -(@grid-sides / 2);
 
 	// add padding to consecutive .grids
 	& + & {
@@ -157,7 +157,7 @@
 			}
 			@media @mq-lg, @mq-xl {
 				width: @pcnt;
-				padding: 0 @grid-sides;
+				padding: 0 (@grid-sides / 2);
 			}
 		}
 		// loop the loop
