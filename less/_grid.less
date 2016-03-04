@@ -160,6 +160,11 @@
 				padding: 0 @grid-sides;
 			}
 		}
+		&_reverse {
+          .col@{arrayVal} {
+			float: right;
+          }
+		}
 		// loop the loop
 		.loop(@arrayLength, (@index + 1));
 	}
