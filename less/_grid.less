@@ -69,7 +69,7 @@
 
 // Full Page Grid
 //
-// The `.full-page` class is used when you want to ignore the padding on either side of the browser window. This removes margin on the right and left the same width as the `@side-gutter` variable.
+// The `.full-page` class is used when you want to ignore the padding on either side of the browser window. This removes margin on the right and left the same width as the `@grid-sides` variable.
 //
 // Markup:
 // <div class="grid full-page">
@@ -160,11 +160,6 @@
 				padding: 0 @grid-sides;
 			}
 		}
-		&_reverse {
-          .col@{arrayVal} {
-			float: right;
-          }
-		}
 		// loop the loop
 		.loop(@arrayLength, (@index + 1));
 	}
@@ -182,8 +177,8 @@
 	// in case of pages with no side gutters
 	&.full-page {
 		// don't need the side gutters on a full-width page
-		margin-right: -@side-gutter;
-		margin-left: -@side-gutter;
+		margin-right: -@grid-sides;
+		margin-left: -@grid-sides;
 		@media  @mq-sm, @mq-md {
 			& {
 				> [class*='col'] {
@@ -194,8 +189,7 @@
 	}
 	// when the page has a max-width set
 	&.max-width {
-		max-width: @pg-width-max;
-		margin: auto; // this should leave? half of me says YES!
+		// max-width: @pg-width-max;
 		> [class*='col'] {
 			&:first-child {
 				padding-left: 0;
@@ -205,8 +199,25 @@
 			}
 		}
 		@media screen and (min-width: unit(@mediaquery-sm, px)) and (max-width: @pg-width-max - 1) {
-			margin-right: -@side-gutter;
-			margin-left: -@side-gutter;
+			margin-right: -@grid-sides;
+			margin-left: -@grid-sides;
+		}
+	}
+	&_reverse {
+		> [class*='col'] {
+			float: right;
+		}
+		&.max-width {
+			> [class*='col'] {
+				&:first-child {
+					padding-right: inherit;
+					padding-left: inherit;
+				}
+				&:last-child {
+					padding-left: inherit;
+					padding-right: inherit;
+				}
+			}
 		}
 	}
 	// when there is no container for the grid remove the negative margins
