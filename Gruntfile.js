@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 					'edna.ie.min.css': 'edna.ie.css'
 				}
 			}
-		}
+		},
 		grunticon: {
 			options: {
 				datasvgcss: 'css/icons.svg.css',
