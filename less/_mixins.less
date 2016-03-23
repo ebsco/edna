@@ -1,42 +1,8 @@
 // MIXINS
-//----- MIXINS FOR MIXINS -----------------------------//
-
-
-//----- COLOR -----------------------------------------//
-
-.overlay-white(@percent; @color; @shade: none) {
-	@white: rgba(255, 255, 255, @percent);
-
-	.get-output(@shade) when (@shade = lighter) {
-		@overlay-white-lighter: screen(@color, @white);
-	}
-	.get-output(@shade) when (@shade = darker) {
-		@overlay-white-darker: screen(@color, @white);
-	}
-	.get-output(@shade) when (default()) {
-		@overlay-white: screen(@color, @white);
-	}
-	.get-output(@shade);
-}
-.overlay-black(@percent; @color; @shade: none) {
-	@black: rgba(0, 0, 0, @percent);
-
-	.get-output(@shade) when (@shade = lighter) {
-		@overlay-black-lighter: multiply(@color, @black);
-	}
-	.get-output(@shade) when (@shade = darker) {
-		@overlay-black-darker: multiply(@color, @black);
-	}
-	.get-output(@shade) when (default()) {
-		@overlay-black: multiply(@color, @black);
-	}
-	.get-output(@shade);
-}
 
 
 //----- CLEARFIX --------------------------------------//
 
-// ie7
 .clearfix {
 	*zoom: 1;
 	&:before,
@@ -69,12 +35,16 @@
 }
 
 
-//----- HIDDEN THINGS ---------------------------------//
+//----- TRUNCATE ----------------------------------------//
 
-// do not display (inaccessible by screen readers)
-.display-none() {
-	display: none;
+.truncate() {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
+
+
+//----- HIDDEN THINGS ---------------------------------//
 
 // hidden (accessible by screen readers)
 .hidden {
@@ -92,24 +62,13 @@
 	float: left;
 }
 
+
 //----- VISIBLE THINGS ---------------------------------//
 
 .list-item-visible() {
 	display: table-cell;
 
 	vertical-align: middle;
-}
-
-
-//----- BUTTON GRADIENT ----------------------------//
-
-.btngrade(@top, @bottom) {
-	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
-	background-image: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
-	background-image:  -ms-linear-gradient(bottom, @bottom, @top);
-	background-image:   -o-linear-gradient(@top, @bottom);
-	background-image:      linear-gradient(@top, @bottom);
-	filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom);
 }
 
 
@@ -143,123 +102,6 @@
 }
 
 
-//----- HEADINGS --------------------------------------//
-
-.headings(@num, @index: 1) when (@index <= @num) {
-
-	@size: @h1-size, @h2-size, @h3-size, @h4-size, @h5-size, @h6-size;
-	@vars: @h1-line-height, @h2-line-height, @h3-line-height, @h4-line-height, @h5-line-height, @h6-line-height;
-
-	@sizeVal: extract(@size, @index);
-	@varVal: extract(@vars, @index);
-
-	h@{index} {
-
-		margin-top: 0;
-
-		& when (@index = 1) {
-			margin-bottom: 20px;
-		}
-		& when (@index = 2), (@index = 4), (@index = 5), (@index = 6) {
-			margin-bottom: 20px;
-		}
-		& when (@index = 3) {
-			margin-bottom: 10px;
-		}
-		.fontsize(@sizeVal);
-		& when (@index = 1), (@index = 2), (@index = 3), (@index = 4), (@index = 5), (@index = 6) {
-			font-weight: bold;
-		}
-		& when (@index = 6) {
-			font-style: italic;
-		}
-		color: @colorP2;
-		line-height: @varVal;
-
-		> a,
-		> a:visited,
-		> a:focus,
-		> a:active {
-			color: @link-color;
-			text-decoration: @link-decoration;
-		}
-		> a:visited {
-			color: @link-color-visited;
-			text-decoration: @link-decoration-visited;
-		}
-		> a:hover {
-			color: @link-color-hover;
-		}
-		> a:focus {
-			text-decoration: @link-decoration-focus;
-		}
-	}
-	.headings(@num, (@index + 1));
-}
-
-
-//----- BOX SIZING ------------------------------------//
-
-.box(@sizing) {
-	& when (@sizing = content), (@sizing = border) {
-		// should take either CONTENT or BORDER
-		-webkit-box-sizing: escape("@{sizing}-box"); // Safari/Chrome, other WebKit
-		   -moz-box-sizing: escape("@{sizing}-box"); // Firefox, other Gecko
-		        box-sizing: escape("@{sizing}-box"); // Opera/IE 8+
-	}
-	& when (@sizing = inherit) {
-		-webkit-box-sizing: escape("@{sizing}"); // Safari/Chrome, other WebKit
-		   -moz-box-sizing: escape("@{sizing}"); // Firefox, other Gecko
-		        box-sizing: escape("@{sizing}"); // Opera/IE 8+
-	}
-}
-
-
-//----- BORDER RADIUS ----------------------------------------//
-
-// set default value
-@radius-sd: px;
-.radius(@n: unit(@radius); @s: @radius-sd) when (@n = 0) {
-	-moz-border-radius: @n;
-	     border-radius: @n;
-}
-.radius(@n: unit(@radius); @s: @radius-sd) when not (@n = 0) {
-	-moz-border-radius: unit(@n, @s);
-	     border-radius: unit(@n, @s);
-}
-
-//----- TRANSPORT -------------------------------------//
-
-.transport-top(@w: (@px * .5)) {
-	margin-top: -(@w / 2);
-	margin-bottom: (@w / 2);
-	border-right-width: @w;
-	border-bottom-width: @w;
-	border-left-width: @w;
-}
-.transport-right(@w: (@px * .5)) {
-	margin-right: -(@w / 2);
-	margin-left: (@w / 2);
-	border-top-width: @w;
-	border-bottom-width: @w;
-	border-left-width: @w;
-}
-.transport-bottom(@w: (@px * .5)) {
-	margin-top: -(@w / 2);
-	margin-bottom: (@w / 2);
-	border-top-width: @w;
-	border-right-width: @w;
-	border-left-width: @w;
-}
-.transport-left(@w: (@px * .5)) {
-	margin-right: -(@w / 2);
-	margin-left: (@w / 2);
-	border-top-width: @w;
-	border-right-width: @w;
-	border-bottom-width: @w;
-}
-
-
 //----- COLUMNS ---------------------------------------//
 .column(@n: 1) {
 	-webkit-column-count: @n;
@@ -276,29 +118,6 @@
 	-webkit-column-break-inside:avoid;
 	page-break-inside: avoid;
 	break-inside: avoid;
-}
-
-
-//----- GRADIENTS ----------------------------------------//
-
-.gradient(@color: @colorP3) {
-	@top: fadeout(@color, 50%);
-	@bottom: @color;
-	background: @color;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, @bottom), color-stop(1, @top));
-	background: -moz-linear-gradient(center bottom, @bottom 0%, @top 100%);
-	background:  -ms-linear-gradient(bottom, @bottom, @top);
-	background:   -o-linear-gradient(@top, @bottom);
-	filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@top,@bottom);
-}
-
-
-//----- TRUNCATE ----------------------------------------//
-
-.truncate() {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
 }
 
 
