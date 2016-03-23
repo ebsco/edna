@@ -4,23 +4,13 @@
 //----- CLEARFIX --------------------------------------//
 
 .clearfix {
-	*zoom: 1;
 	&:before,
 	&:after {
 		display: table;
-		line-height: 0;
-		content: "";
-	}
-	&::before,
-	&::after {
-		display: table;
-		line-height: 0;
-		content: "";
+
+		content: ' ';
 	}
 	&:after {
-		clear: both;
-	}
-	&::after {
 		clear: both;
 	}
 }
@@ -39,6 +29,7 @@
 
 .truncate() {
 	overflow: hidden;
+
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
@@ -48,18 +39,23 @@
 
 // hidden (accessible by screen readers)
 .hidden {
-	position: absolute !important;
-	width: (@px * .1);
-	height: (@px * .1);
-	clip: rect((@px * .1) (@px * .1) (@px * .1) (@px * .1)); // IE6, IE7
-	clip: rect((@px * .1), (@px * .1), (@px * .1), (@px * .1));
+	position: absolute;
+
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
 	overflow: hidden;
+	clip: rect(0 0 0 0);
+
+	border: 0;
 }
 .off-page {
 	display: inline-block;
+	float: left;
+
 	font-size: 0;
 	text-indent: -99999px;
-	float: left;
 }
 
 
@@ -82,7 +78,7 @@
 		font-family: Georgia, serif;
 	}
 	& when (@ff = lucida) {
-		font-family: "Lucida Grande", sans-serif;
+		font-family: 'Lucida Grande', sans-serif;
 	}
 	& when (@ff = tahoma) {
 		font-family: Tahoma, sans-serif;
@@ -91,12 +87,13 @@
 		font-family: monospace;
 	}
 	& when (@ff = code) {
-		font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+		font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
 	}
 }
 .fontsize(@sizeValue) {
 	@remValue: @sizeValue;
 	@pxValue: (@sizeValue * 10);
+
 	font-size: unit(@pxValue,px); // fallback for IE8
 	font-size: unit(@remValue,rem); // REMs for awesome browsers
 }
@@ -107,7 +104,6 @@
 	-webkit-column-count: @n;
 	   -moz-column-count: @n;
 	        column-count: @n;
-
 }
 .column-gap(@n: 0) {
 	-webkit-column-gap: @n;
@@ -115,19 +111,19 @@
 	        column-gap: @n;
 }
 .column-break() {
-	-webkit-column-break-inside:avoid;
+	-webkit-column-break-inside: avoid;
 	page-break-inside: avoid;
 	break-inside: avoid;
 }
 
 
 //----- USER SELECT -------------------------------------//
-
 .userselect {
 	-webkit-user-select: none;
-	 -khtml-user-select: none;
 	   -moz-user-select: none;
 	    -ms-user-select: none;
+
+	-khtml-user-select: none;
 }
 
 
@@ -135,137 +131,6 @@
 .international(@dir, @uni) {
 	direction: @dir;
 	unicode-bidi: @uni;
-}
-
-
-//----- FIXED WIDTH COLUMNS -----------------------------//
-// takes two arguments, a width and a side
-// w should be any number, minus the units
-// s should be lowercase R or L
-.fixedCol(@w, @s) {
-	&.fixed-@{s} {
-		clear: both;
-
-		> .col {
-			& when (@s = r) {
-				width: 63%;
-			}
-
-			&.fw@{w} {
-				width: unit(@w + @p, px);
-
-				& when (@s = r) {
-					float: right;
-					padding-right: 0;
-					margin-left: unit(-(@w + @p), px);
-				}
-				& when (@s = l) {
-					float: left;
-					padding-right: unit(@p, px);
-					padding-left: 0;
-					margin-right: unit(-(@w + @p), px);
-				}
-				+ .col {
-					& when (@s = r) {
-						padding-right: unit(@w + @p, px);
-					}
-					& when (@s = l) {
-						width: 100%;
-						padding-left: unit(@w + @p, px);
-					}
-				}
-			}
-		}
-	}
-}
-
-
-//----- MESSAGING ---------------------------------------//
-// get the array from the messaging stylesheet and loop through it
-.msg(@arrayLength, @index: 1) when (@index =< @arrayLength) {
-	@arrayVal: extract(@list, @index);
-
-	&.msg-@{arrayVal} {
-		background-color: ~"@{msg-@{arrayVal}-bgcolor}";
-		border-color: ~"@{msg-@{arrayVal}-bordercolor}";
-
-		.icon {
-			display: inline-block;
-			width: 20px;
-			height: 20px;
-
-			background-image: url(~"@{msg-@{arrayVal}-icon}");
-			background-repeat: no-repeat;
-		}
-		> .txt {
-			color: ~"@{msg-@{arrayVal}-color}";
-		}
-	}
-	.msg(@arrayLength, (@index + 1));
-}
-
-
-//----- INACTIVE ----------------------------------------//
-.inactive() {
-	&.inactive:after,
-	&.inactive::after {
-		color: @border1 !important;
-		cursor: default;
-
-		&:hover {
-			color: @border1 !important;
-			cursor: default;
-		}
-	}
-}
-
-
-//----- MODAL WIDTHS ------------------------------------//
-.modalWidth(@origWidth; @u: px) {
-    @halfWidth: ceil(-(@origWidth / 2));
-    & when (@u = px) {
-	   	width: unit(@origWidth, @u) !important;
-		margin-left: unit(@halfWidth, @u);
-    }
-    & when (@u = pct) {
-        @hundredWidth: (@origWidth / 100);
-        @halfWidth: -(@hundredWidth / 2);
-        & when (@origWidth =< 100) {
-            width: percentage(@hundredWidth) !important;
-            margin-left: percentage(@halfWidth);
-        }
-        & when (@origWidth > 100) {
-	        @tenWidth: @hundredWidth / 10;
-            width: percentage(@hundredWidth) !important;
-            margin-left: percentage(@halfWidth);
-        }
-    }
-}
-
-
-//----- SKINNING ----------------------------------------//
-.skinning(@arrLen, @i: 1) when (@i =< @arrLen) {
-
-	@varVal: extract(@varArr, @i);
-	@classVal: extract(@classArr, @i);
-
-	// background skinning
-	.bg-@{classVal} { background-color: @varVal !important; }
-	// font color skinning
-	.color-@{classVal} { color: @varVal !important; }
-	// border-color skinning
-	.border-@{classVal} { border-color: @varVal !important; }
-
-	.skinning(@arrLen, @i + 1);
-}
-
-
-//----- SLIDE PANEL -------------------------------------//
-.transition(@kind; @speed) {
-	-webkit-transition: @kind @speed;
-	   -moz-transition: @kind @speed;
-	     -o-transition: @kind @speed;
-	        transition: @kind @speed;
 }
 
 
@@ -284,20 +149,5 @@
 		&:-ms-input-placeholder {
 			color: red;
 		}
-	}
-}
-
-
-//----- MEDIA QUERRY MIXIN ------------------------------//
-@fix-mqs: false;
-@old-ie: false;
-
-.respond-min(@width; @rules) when (@old-ie = true) and (@fix-mqs >= @width) {
-	@rules();
-}
-
-.respond-min(@width; @rules) when (@old-ie = false) {
-	@media screen and (min-width: @width) {
-		@rules();
 	}
 }
