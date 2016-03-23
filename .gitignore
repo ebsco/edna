@@ -1,6 +1,5 @@
 # DIRECTORIES *
 node_modules/
-kss-docs/
 .sass-cache/
 
 # FILES
@@ -9,8 +8,6 @@ kss-docs/
 *.map
 grunticon/js
 grunticon/*.html
-!kss-template/public/kss.css
-!kss-template/public/sons-of-obsidian.css
 *.log
 npm-shrinkwrap.json
 version
