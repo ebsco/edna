@@ -14,23 +14,12 @@ module.exports = function(grunt) {
 				},
 				src: 'edna.less',
 				dest: 'edna.css'
-			},
-			ieStyles: {
-				options: {
-					sourceMap: true,
-					outputSourceFiles: true,
-					sourceMapURL: 'edna.ie.css.map',
-					sourceMapFilename: 'edna.ie.css.map'
-				},
-				src: 'edna.ie.less',
-				dest: 'edna.ie.css'
 			}
 		},
 		cssmin: {
 			default: {
 				files: {
-					'edna.min.css': 'edna.css',
-					'edna.ie.min.css': 'edna.ie.css'
+					'edna.min.css': 'edna.css'
 				}
 			}
 		},
@@ -67,7 +56,7 @@ module.exports = function(grunt) {
 		},
 		analyzecss: {
 			default: {
-				sources: ['edna.css', 'edna.ie.css', 'edna.min.css', 'edna.ie.min.css'],
+				sources: ['edna.css', 'edna.min.css'],
 				options: {
 					outputMetrics: true,
 					softFail: true // still defining thresholds
