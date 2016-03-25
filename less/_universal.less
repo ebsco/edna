@@ -18,15 +18,9 @@ body & {
 }
 
 body {
-	min-width: unit(@mediaquery-sm, px);
+	min-width: @sm-mq;
 }
 
-.col {
-	padding: @col-top-padding @col-right-padding @col-bottom-padding @col-left-padding;
-	& + & {
-		padding-left: 70px;
-	}
-}
 // for bits like the close button on a modal, seems like this should be elsewhere...
 .close {
 	cursor: pointer;
@@ -34,19 +28,6 @@ body {
 
 .visible {
 	display: inline-block;
-}
-
-.highlight {
-	@space: 2px;
-
-	padding-top: @space;
-	padding-bottom: @space;
-
-	background-color: @highlight-bgcolor;
-}
-
-.selected.highlight {
-	background-color: @selected-highlight-bgcolor;
 }
 
 // get rid of that nasty space under an image when it's wrapped in an anchor
