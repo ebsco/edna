@@ -26,11 +26,14 @@
 		.col@{arrayVal} {
 			display: block;
 			float: left;
-			@media @mq-sm, @mq-md {
+
+			@media screen and (max-width: @sm-mq),
+				   screen and (max-width: @md-mq) {
 				width: 100%;
 				padding: 0 @grid-sides;
 			}
-			@media @mq-lg, @mq-xl {
+			@media screen and (max-width: @lg-mq),
+				   screen and (max-width: @xl-mq) {
 				width: @pcnt;
 				padding: 0 @grid-sides;
 			}
@@ -54,7 +57,8 @@
 		// don't need the page gutters on a full-width page
 		margin-right: -@page-gutter;
 		margin-left: -@page-gutter;
-		@media  @mq-sm, @mq-md {
+		@media screen and (max-width: @sm-mq),
+			   screen and (max-width: @md-mq) {
 			& {
 				> [class*='col'] {
 					padding: 0;
@@ -74,7 +78,7 @@
 				padding-right: 0;
 			}
 		}
-		@media screen and (min-width: unit(@mediaquery-sm, px)) and (max-width: @pg-width-max - 1) {
+		@media screen and (min-width: @md-mq) and (max-width: @pg-width-max - 1) {
 			margin-right: -@page-gutter;
 			margin-left: -@page-gutter;
 		}
@@ -85,7 +89,8 @@
 		margin-left: 0;
 	}
 	// space between columns when they are at 100% width
-	@media @mq-sm, @mq-md {
+	@media screen and (max-width: @sm-mq),
+		   screen and (max-width: @md-mq) {
 		[class*='col'] {
 			padding-bottom: @grid-top-bottom;
 			+ [class*='col'] {
@@ -97,7 +102,7 @@
 		}
 	}
 	// create some new and interesting patterns when at certain breakpoints
-	@media @mq-md {
+	@media screen and (max-width: @md-mq) {
 		[class*='col'] {
 			&.md-col6 {
 				width: 50%;
