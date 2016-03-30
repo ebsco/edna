@@ -23,31 +23,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		grunticon: {
-			options: {
-				datasvgcss: 'css/icons.svg.css',
-				datapngcss: 'css/icons.png.css',
-				urlpngcss: 'css/icons.fallback.css',
-				loader: true,
-				loadersnippet: 'js/grunticon.loader.js',
-				template: 'grunticon/rule.hbs', // analyze task isn't compatible with default
-				defaultWidth: '100%',
-				defaultHeight: '100%',
-				pngfolder: 'png',
-				pngpath: '../png',
-				cssprefix: '.icon.svg-',
-				stylesheet: 'grunticon/skin.less',
-				lessprefix: 'icon-'
-			},
-			default: {
-				files: [{
-					expand: true,
-					cwd: 'grunticon/raw',
-					src: ['*.svg'],
-					dest: 'grunticon'
-				}]
-			}
-		},
 		colorguard: {
 			default: {
 				options: {},
@@ -79,7 +54,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-grunticon');
 	grunt.loadNpmTasks('grunt-shell');
 
 	grunt.registerTask('build', function(mode) {
@@ -89,11 +63,6 @@ module.exports = function(grunt) {
 			'less',
 			'cssmin'
 		]);
-		if (grunt.option('grunticon')) {
-			tasksToRun = tasksToRun.concat([
-				'grunticon:default',
-			]);
-		}
 		if (grunt.option('lint')) {
 			tasksToRun = tasksToRun.concat([
 				'csslint',
