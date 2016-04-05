@@ -23,7 +23,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>git@github.com:ebsco/edna.git</url>
+        <url>https://github.com/ebsco/edna.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -38,9 +38,7 @@
         <localBranch>develop</localBranch>
       </hudson.plugins.git.extensions.impl.LocalBranch>
       <hudson.plugins.git.extensions.impl.UserExclusion>
-        <excludedUsers>Jenkins slave user - Created by Chef
-jenkins
-svc_eaebuild</excludedUsers>
+        <excludedUsers>svc_eaebuild</excludedUsers>
       </hudson.plugins.git.extensions.impl.UserExclusion>
     </extensions>
   </scm>
@@ -58,12 +56,18 @@ svc_eaebuild</excludedUsers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
+      <command># Tell git to use .git-credentials
+git config --local credential.helper store
+    
+# Update/store the jenkins config, in case it has changed
+mkdir -p tasks/jenkins
+curl ${JOB_URL}/config.xml -o tasks/jenkins/develop.xml
+git add tasks/jenkins/develop.xml
+git commit -am &quot;Update Jenkins config&quot;
+git push origin ${GIT_BRANCH#*/}</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
       <command>if [ &quot;${BUILD_CAUSE_SCMTRIGGER}&quot; = &quot;true&quot; ]; then
-
-	# Update/store the jenkins config, in case it has changed
-	mkdir -p tasks/jenkins
-	curl ${JOB_URL}/config.xml -o tasks/jenkins/develop.xml
-	git add tasks/jenkins/develop.xml
 
 	# Install
 	npm install --unsafe-perm;
@@ -77,26 +81,20 @@ svc_eaebuild</excludedUsers>
 
 	# Commit/push
 	git commit -am &quot;Version ${version} of ${name}&quot;;
-	git push origin develop
+	git push origin ${GIT_BRANCH#*/}
 
 	# Publish
 	npm publish
+    
+    sleep 3
+  	java -jar /home/jenkins/jenkins-cli.jar -s http://10.80.12.108:8080/ -i /home/jenkins/id_rsa build BuzzFramework-Develop
 
 fi</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>BuzzFramework-Develop</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-        <completeBuild>true</completeBuild>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
     <hudson.tasks.Mailer plugin="mailer@1.11">
-      <recipients> aortlieb@ebsco.com cmannu@ebsco.com smahobia@ebsco.com epeacock@ebsco.com dpatrikas@ebsco.com doliver@ebsco.com jquinlan@ebsco.com ebibeault@ebsco.com wfisher@ebsco.com j.miller@ebsco.com</recipients>
+      <recipients> aortlieb@ebsco.com cmannu@ebsco.com smahobia@ebsco.com epeacock@ebsco.com dpatrikas@ebsco.com doliver@ebsco.com jquinlan@ebsco.com ebibeault@ebsco.com wfisher@ebsco.com j.miller@ebsco.com ccorcoran@ebsco.com krosen@ebsco.com ddesjardins@ebsco.com ncasellini@ebsco.com</recipients>
       <dontNotifyEveryUnstableBuild>true</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>true</sendToIndividuals>
     </hudson.tasks.Mailer>
