@@ -34,6 +34,7 @@
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <submoduleCfg class="list"/>
     <extensions>
+      <hudson.plugins.git.extensions.impl.CleanBeforeCheckout/>
       <hudson.plugins.git.extensions.impl.LocalBranch>
         <localBranch>develop</localBranch>
       </hudson.plugins.git.extensions.impl.LocalBranch>
@@ -42,7 +43,7 @@
       </hudson.plugins.git.extensions.impl.UserExclusion>
     </extensions>
   </scm>
-  <assignedNode>lin-slave-eae-1</assignedNode>
+  <assignedNode>linux</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
@@ -56,21 +57,17 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command># Tell git to use .git-credentials
-git config --local credential.helper store
+      <command>if [ &quot;${BUILD_CAUSE_SCMTRIGGER}&quot; = &quot;true&quot; ]; then    
+	# Update/store the jenkins config, in case it has changed
+	mkdir -p tasks/jenkins
+	curl ${JOB_URL}/config.xml -o tasks/jenkins/develop.xml
+	git add tasks/jenkins/develop.xml
     
-# Update/store the jenkins config, in case it has changed
-mkdir -p tasks/jenkins
-curl ${JOB_URL}/config.xml -o tasks/jenkins/develop.xml
-git add tasks/jenkins/develop.xml
-git commit -am &quot;Update Jenkins config&quot;
-git push origin ${GIT_BRANCH#*/}</command>
-    </hudson.tasks.Shell>
-    <hudson.tasks.Shell>
-      <command>if [ &quot;${BUILD_CAUSE_SCMTRIGGER}&quot; = &quot;true&quot; ]; then
-
+	# Tell git to use .git-credentials
+	git config --local credential.helper store
+    
 	# Install
-	npm install --unsafe-perm;
+	npm install --registry &quot;http://artifactory.epnet.com:8081/artifactory/api/npm/eis-npm-build&quot;
 
 	# Version
 	name=`node -p &quot;require(&apos;./package.json&apos;).name&quot;`;
@@ -94,8 +91,8 @@ fi</command>
   </builders>
   <publishers>
     <hudson.tasks.Mailer plugin="mailer@1.11">
-      <recipients> aortlieb@ebsco.com cmannu@ebsco.com smahobia@ebsco.com epeacock@ebsco.com dpatrikas@ebsco.com doliver@ebsco.com jquinlan@ebsco.com ebibeault@ebsco.com wfisher@ebsco.com j.miller@ebsco.com ccorcoran@ebsco.com krosen@ebsco.com ddesjardins@ebsco.com ncasellini@ebsco.com</recipients>
-      <dontNotifyEveryUnstableBuild>true</dontNotifyEveryUnstableBuild>
+      <recipients> aortlieb@ebsco.com cmannu@ebsco.com smahobia@ebsco.com epeacock@ebsco.com dpatrikas@ebsco.com doliver@ebsco.com jquinlan@ebsco.com ebibeault@ebsco.com wfisher@ebsco.com j.miller@ebsco.com ccorcoran@ebsco.com krosen@ebsco.com ddesjardins@ebsco.com ncasellini@ebsco.com ewaecker@ebsco.com</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>true</sendToIndividuals>
     </hudson.tasks.Mailer>
   </publishers>
