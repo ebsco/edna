@@ -1,14 +1,16 @@
+@import '_variables.scss';
+@import '_mixins.scss';
 /* TYPOGRAPHY */
 
-html & {
-	font-size: @font-size; // set base font to 10
+html {
+	font-size: $font-size; // set base font to 10
 }
 
-body & {
-	.fontfamily(sans);
-	.fontsize(1.6);
+body {
+	@include fontfamily(sans);
+	font-size: 1.6rem;
 
-	color: @font-color;
+	color: $font-color;
 }
 
 h1,
@@ -24,7 +26,7 @@ h6 {
 
 p,
 .txt {
-	.fontsize(1.6);
+	font-size: 1.6rem;
 
 	margin: 0 0 20px;
 
@@ -37,22 +39,22 @@ p,
 
 a,
 .txt-link {
-	color: @link-color;
+	color: $link-color;
 	text-decoration: none;
 	&:visited {
-		color: @link-color-visited;
+		color: $link-color-visited;
 	}
 	&:hover {
-		color: @link-color-hover;
-		text-decoration: @link-decoration-hover;
+		color: $link-color-hover;
+		text-decoration: $link-decoration-hover;
 	}
 	&:focus {
-		color: @link-color-focus;
-		text-decoration: @link-decoration-focus;
+		color: $link-color-focus;
+		text-decoration: $link-decoration-focus;
 	}
 	&:active {
-		color: @link-color-active;
-		text-decoration: @link-decoration-active;
+		color: $link-color-active;
+		text-decoration: $link-decoration-active;
 	}
 }
 
@@ -67,29 +69,29 @@ em {
 }
 
 sup {
-	top: -(@em * .5);
+	top: -($em * .5);
 }
 
 sub {
-	bottom: -(@em * .25);
+	bottom: -($em * .25);
 }
 
 blockquote {
 	padding-left: .5rem;
 	margin-left: 1.5rem;
 
-	border-left: .25em solid @colorS3;
+	border-left: .25em solid $colorS3;
 }
 
 pre {
-	.fontfamily(mono);
+	@include fontfamily(mono);
 
 	margin: 0 0 1rem;
 }
 
 code {
-	.fontfamily(code);
+	@include fontfamily(code);
 
 	font-weight: normal;
-	color: @code-color;
+	color: $code-color;
 }

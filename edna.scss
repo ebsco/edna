@@ -3,12 +3,11 @@
 ****************/
 
 // REFERENCE FILES
-@import (reference) 'sass/_variables.less';
+@import 'sass/_variables.scss';
 
 // BASE FILES
-@import 'sass/_normalize.less';
-@import 'sass/_mixins.less';
-@import 'sass/_grid.less';
-@import 'sass/_svg.less';
-@import 'sass/_typography.less';
-@import 'sass/_universal.less';
+@import 'sass/_normalize.scss';
+@import 'sass/_mixins.scss';
+// @import 'sass/_grid.scss';
+@import 'sass/_typography.scss';
+@import 'sass/_universal.scss';
