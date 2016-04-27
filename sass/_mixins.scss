@@ -3,7 +3,7 @@
 
 //----- CLEARFIX --------------------------------------//
 
-.clearfix {
+@mixin clearfix {
 	&:before,
 	&:after {
 		display: table;
@@ -18,7 +18,7 @@
 
 //----- SINGLE LINE --------------------------------------//
 
-.single-line {
+@mixin single-line {
 	overflow: hidden;
 
 	white-space: nowrap;
@@ -27,7 +27,7 @@
 
 //----- TRUNCATE ----------------------------------------//
 
-.truncate() {
+@mixin truncate() {
 	overflow: hidden;
 
 	text-overflow: ellipsis;
@@ -38,7 +38,7 @@
 //----- HIDDEN THINGS ---------------------------------//
 
 // hidden (accessible by screen readers)
-.hidden {
+@mixin hidden {
 	position: absolute;
 
 	width: 1px;
@@ -50,7 +50,7 @@
 
 	border: 0;
 }
-.off-page {
+@mixin off-page {
 	display: inline-block;
 	float: left;
 
@@ -61,7 +61,7 @@
 
 //----- VISIBLE THINGS ---------------------------------//
 
-.list-item-visible() {
+@mixin list-item-visible() {
 	display: table-cell;
 
 	vertical-align: middle;
@@ -70,47 +70,40 @@
 
 //----- FONTS --------------------------------------//
 
-.fontfamily(@ff) {
-	& when (@ff = sans) {
+@mixin fontfamily($ff) {
+	@if $ff == sans {
 		font-family: Helvetica, Arial, sans-serif;
 	}
-	& when (@ff = serif) {
+	@else if $ff == serif {
 		font-family: Georgia, serif;
 	}
-	& when (@ff = lucida) {
+	@else if $ff == lucida {
 		font-family: 'Lucida Grande', sans-serif;
 	}
-	& when (@ff = tahoma) {
+	@else if $ff == tahoma {
 		font-family: Tahoma, sans-serif;
 	}
-	& when (@ff = mono) {
+	@else if $ff == mono {
 		font-family: monospace;
 	}
-	& when (@ff = code) {
+	@else if $ff == code {
 		font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
 	}
-}
-.fontsize(@sizeValue) {
-	@remValue: @sizeValue;
-	@pxValue: (@sizeValue * 10);
-
-	font-size: unit(@pxValue,px); // fallback for IE8
-	font-size: unit(@remValue,rem); // REMs for awesome browsers
 }
 
 
 //----- COLUMNS ---------------------------------------//
-.column(@n: 1) {
-	-webkit-column-count: @n;
-	   -moz-column-count: @n;
-	        column-count: @n;
+@mixin column($n: 1) {
+	-webkit-column-count: $n;
+	   -moz-column-count: $n;
+	        column-count: $n;
 }
-.column-gap(@n: 0) {
-	-webkit-column-gap: @n;
-	   -moz-column-gap: @n;
-	        column-gap: @n;
+@mixin column-gap($n: 0) {
+	-webkit-column-gap: $n;
+	   -moz-column-gap: $n;
+	        column-gap: $n;
 }
-.column-break() {
+@mixin column-break() {
 	-webkit-column-break-inside: avoid;
 	page-break-inside: avoid;
 	break-inside: avoid;
@@ -118,7 +111,7 @@
 
 
 //----- USER SELECT -------------------------------------//
-.userselect {
+@mixin userselect {
 	-webkit-user-select: none;
 	   -moz-user-select: none;
 	    -ms-user-select: none;
@@ -128,14 +121,14 @@
 
 
 //----- RTL ---------------------------------------------//
-.international(@dir, @uni) {
-	direction: @dir;
-	unicode-bidi: @uni;
+@mixin international($dir, $uni) {
+	direction: $dir;
+	unicode-bidi: $uni;
 }
 
 
 //----- ERROR -------------------------------------------//
-.error() {
+@mixin error() {
 	.error& {
 		&::-webkit-input-placeholder {
 			color: red;
