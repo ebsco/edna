@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>7</daysToKeep>
+        <numToKeep>25</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+    <org.bstick12.jenkinsci.plugins.leastload.LeastLoadDisabledProperty plugin="leastload@1.0.3">
+      <leastLoadDisabled>false</leastLoadDisabled>
+    </org.bstick12.jenkinsci.plugins.leastload.LeastLoadDisabledProperty>
+    <com.chikli.hudson.plugin.naginator.NaginatorOptOutProperty plugin="naginator@1.16.1">
+      <optOut>false</optOut>
+    </com.chikli.hudson.plugin.naginator.NaginatorOptOutProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.4.0">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/ebsco/edna.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/1.x</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.CleanBeforeCheckout/>
+      <hudson.plugins.git.extensions.impl.LocalBranch>
+        <localBranch>1.x</localBranch>
+      </hudson.plugins.git.extensions.impl.LocalBranch>
+      <hudson.plugins.git.extensions.impl.UserExclusion>
+        <excludedUsers>svc_eaebuild</excludedUsers>
+      </hudson.plugins.git.extensions.impl.UserExclusion>
+    </extensions>
+  </scm>
+  <assignedNode>linux</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.SCMTrigger>
+      <spec>H/5 * * * *</spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command># if [ &quot;${BUILD_CAUSE_SCMTRIGGER}&quot; = &quot;true&quot; ]; then    
+	# Update/store the jenkins config, in case it has changed
+	mkdir -p tasks/jenkins
+	curl ${JOB_URL}/config.xml -o tasks/jenkins/1.x.xml
+	git add tasks/jenkins/1.x.xml
+    
+	# Tell git to use .git-credentials
+	git config --local credential.helper store
+    
+	# Install
+	npm install --registry &quot;http://artifactory.epnet.com:8081/artifactory/api/npm/eis-npm-build&quot;
+
+	# Version
+	name=`node -p &quot;require(&apos;./package.json&apos;).name&quot;`;
+	version=`npm version prerelease --git-tag-version false`
+
+	# Build/test
+	grunt build --lint;
+
+	# Commit/push
+	git commit -am &quot;Version ${version} of ${name}&quot;;
+	git push origin ${GIT_BRANCH#*/}
+
+	# Publish
+	npm publish
+    
+    sleep 3
+  	# java -jar /home/jenkins/jenkins-cli.jar -s http://10.80.12.108:8080/ -i /home/jenkins/id_rsa build BuzzFramework-Develop
+
+# fi</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.Mailer plugin="mailer@1.11">
+      <recipients> aortlieb@ebsco.com cmannu@ebsco.com smahobia@ebsco.com epeacock@ebsco.com dpatrikas@ebsco.com doliver@ebsco.com jquinlan@ebsco.com ebibeault@ebsco.com wfisher@ebsco.com j.miller@ebsco.com ccorcoran@ebsco.com krosen@ebsco.com ddesjardins@ebsco.com ncasellini@ebsco.com ewaecker@ebsco.com</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>true</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers/>
+</project>
