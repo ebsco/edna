@@ -43,7 +43,7 @@
       </hudson.plugins.git.extensions.impl.UserExclusion>
     </extensions>
   </scm>
-  <assignedNode>linux</assignedNode>
+  <assignedNode>lin-slave-eae-2.novalocal</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
