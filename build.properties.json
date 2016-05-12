@@ -1,6 +1,6 @@
 {
 	"name": "edna",
-	"version": "1.2.0-7",
+	"version": "1.2.0-10",
 	"problems": [
 		"extraneous: buzz-makefile@2.7.0 /jenkins/workspace/edna-develop/node_modules/buzz-makefile"
 	],
@@ -19,20 +19,15 @@
 			"from": "grunt@>=0.4.1 <0.5.0",
 			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt/-/grunt-0.4.5.tgz"
 		},
-		"grunt-contrib-watch": {
-			"version": "0.5.3",
-			"from": "grunt-contrib-watch@>=0.5.3 <0.6.0",
-			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-contrib-watch/-/grunt-contrib-watch-0.5.3.tgz"
-		},
-		"grunt-grunticon": {
-			"version": "1.2.14",
-			"from": "git+http://github.com/ebsco/grunticon.git#develop",
-			"resolved": "git+ssh://git@github.com/ebsco/grunticon.git#3cf7f65600e553a4c74e562e6168319ca8352e78"
-		},
 		"grunt-browser-sync": {
 			"version": "1.9.2",
 			"from": "grunt-browser-sync@>=1.5.3 <2.0.0",
 			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-browser-sync/-/grunt-browser-sync-1.9.2.tgz"
+		},
+		"grunt-colorguard": {
+			"version": "0.2.0",
+			"from": "grunt-colorguard@>=0.2.0 <0.3.0",
+			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-colorguard/-/grunt-colorguard-0.2.0.tgz"
 		},
 		"grunt-contrib-analyze-css": {
 			"version": "0.1.2",
@@ -44,11 +39,6 @@
 			"from": "grunt-contrib-csslint@>=0.3.1 <0.4.0",
 			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-contrib-csslint/-/grunt-contrib-csslint-0.3.1.tgz"
 		},
-		"grunt-colorguard": {
-			"version": "0.2.0",
-			"from": "grunt-colorguard@>=0.2.0 <0.3.0",
-			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-colorguard/-/grunt-colorguard-0.2.0.tgz"
-		},
 		"grunt-contrib-cssmin": {
 			"version": "0.10.0",
 			"from": "grunt-contrib-cssmin@>=0.10.0 <0.11.0",
@@ -59,16 +49,26 @@
 			"from": "grunt-contrib-less@>=0.12.0 <0.13.0",
 			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-contrib-less/-/grunt-contrib-less-0.12.0.tgz"
 		},
+		"grunt-contrib-watch": {
+			"version": "0.5.3",
+			"from": "grunt-contrib-watch@>=0.5.3 <0.6.0",
+			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-contrib-watch/-/grunt-contrib-watch-0.5.3.tgz"
+		},
 		"grunt-express": {
 			"version": "1.4.1",
 			"from": "grunt-express@>=1.4.1 <2.0.0",
 			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-express/-/grunt-express-1.4.1.tgz"
 		},
+		"grunt-grunticon": {
+			"version": "1.2.14",
+			"from": "git+http://github.com/ebsco/grunticon.git#develop",
+			"resolved": "git+ssh://git@github.com/ebsco/grunticon.git#3cf7f65600e553a4c74e562e6168319ca8352e78"
+		},
 		"grunt-shell": {
-			"version": "1.1.2",
+			"version": "1.2.1",
 			"from": "grunt-shell@>=1.1.1 <2.0.0",
-			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-shell/-/grunt-shell-1.1.2.tgz"
+			"resolved": "http://edc-artifactory.epnet.com/artifactory/api/npm/eis-npm-release/grunt-shell/-/grunt-shell-1.2.1.tgz"
 		}
 	},
-	"commit": "4086a63276a1ccbaa099b28405e884d083bed207"
+	"commit": "4297102dd43078d60af15f82ead3018139cf5bed"
 }
