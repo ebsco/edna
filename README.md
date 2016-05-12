@@ -2,6 +2,8 @@
 
 It's a custom CSS framework, dig it!
 
+**THIS VERSION OF EDNA SHOULD ONLY BE USED FOR THE NEW REACT BUZZ**
+
 ---
 
 **Edna contains:**

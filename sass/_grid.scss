@@ -1,0 +1,133 @@
+/* GRID */
+
+// other CSS for the container of the new columns
+.grid {
+	.clearfix;
+
+	padding-bottom: (@grid-top-bottom / 2);
+	margin-right: -@grid-sides;
+	margin-left: -@grid-sides;
+
+	// add padding to consecutive .grids
+	& + & {
+		padding-top: (@grid-top-bottom / 2);
+	}
+	// the items to loop through
+	@list: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+	// get the length of @list
+	@listLength: length(@list);
+	// loop
+	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
+		// break out the value from the list
+		@arrayVal: extract(@list, @index);
+		// this declaration block gets output. once per key in the @list array
+		@pcnt: percentage(@arrayVal / @listLength);
+		// this declaration block gets output. once per key in the @list array
+		.col@{arrayVal} {
+			display: block;
+			float: left;
+
+			@media screen and (max-width: @sm-mq),
+				   screen and (max-width: @md-mq) {
+				width: 100%;
+				padding: 0 @grid-sides;
+			}
+			@media screen and (max-width: @lg-mq),
+				   screen and (max-width: @xl-mq) {
+				width: @pcnt;
+				padding: 0 @grid-sides;
+			}
+		}
+		// loop the loop
+		.loop(@arrayLength, (@index + 1));
+	}
+	// do all the loop stuff
+	.loop(@listLength);
+	// borders between grid columns
+	&-border {
+		&-right {
+			border-right: 1px solid #e6e6e6;
+		}
+		&-left {
+			border-left: 1px solid #e6e6e6;
+		}
+	}
+	// in case of pages with no side gutters
+	&.full-page {
+		// don't need the page gutters on a full-width page
+		margin-right: -@page-gutter;
+		margin-left: -@page-gutter;
+		@media screen and (max-width: @sm-mq),
+			   screen and (max-width: @md-mq) {
+			& {
+				> [class*='col'] {
+					padding: 0;
+				}
+			}
+		}
+	}
+	// when the page has a max-width set
+	&.max-width {
+		max-width: @pg-width-max;
+		margin: auto; // this should leave? half of me says YES!
+		> [class*='col'] {
+			&:first-child {
+				padding-left: 0;
+			}
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+		@media screen and (min-width: @md-mq) and (max-width: @pg-width-max - 1) {
+			margin-right: -@page-gutter;
+			margin-left: -@page-gutter;
+		}
+	}
+	// when there is no container for the grid remove the negative margins
+	&.no-container {
+		margin-right: 0;
+		margin-left: 0;
+	}
+	// space between columns when they are at 100% width
+	@media screen and (max-width: @sm-mq),
+		   screen and (max-width: @md-mq) {
+		[class*='col'] {
+			padding-bottom: @grid-top-bottom;
+			+ [class*='col'] {
+				padding-bottom: @grid-top-bottom;
+			}
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
+	// create some new and interesting patterns when at certain breakpoints
+	@media screen and (max-width: @md-mq) {
+		[class*='col'] {
+			&.md-col6 {
+				width: 50%;
+			}
+			&.md-col12 {
+				width: 100%;
+			}
+		}
+	}
+}
+
+// another loop, but this time for grid column borders
+.grid {
+	@list: top, right, bottom, left;
+	.loop(@arrayLength, @index: 1) when (@index =< @arrayLength) {
+		@arrayVal: extract(@list, @index);
+		.border-@{arrayVal} {
+			border-@{arrayVal}: 1px solid @grid-border-color;
+		}
+		.loop(@arrayLength, (@index + 1));
+	}
+	.loop(length(@list));
+}
+
+.page-gutter {
+	padding-right: @page-gutter;
+	padding-left: @page-gutter;
+}

@@ -1,0 +1,127 @@
+// MIXINS
+
+
+//----- CLEARFIX --------------------------------------//
+
+@mixin clearfix {
+	&:before,
+	&:after {
+		display: table;
+
+		content: ' ';
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+//----- SINGLE LINE --------------------------------------//
+
+@mixin single-line {
+	overflow: hidden;
+
+	white-space: nowrap;
+}
+
+
+//----- TRUNCATE ----------------------------------------//
+
+@mixin truncate() {
+	overflow: hidden;
+
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+//----- HIDDEN THINGS ---------------------------------//
+
+// hidden (accessible by screen readers)
+@mixin hidden {
+	position: absolute;
+
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+
+	border: 0;
+}
+@mixin off-page {
+	display: inline-block;
+	float: left;
+
+	font-size: 0;
+	text-indent: -99999px;
+}
+
+
+//----- VISIBLE THINGS ---------------------------------//
+
+@mixin list-item-visible() {
+	display: table-cell;
+
+	vertical-align: middle;
+}
+
+
+//----- FONTS --------------------------------------//
+
+@mixin fontfamily($ff) {
+	@if $ff == sans {
+		font-family: Helvetica, Arial, sans-serif;
+	}
+	@else if $ff == serif {
+		font-family: Georgia, serif;
+	}
+	@else if $ff == lucida {
+		font-family: 'Lucida Grande', sans-serif;
+	}
+	@else if $ff == tahoma {
+		font-family: Tahoma, sans-serif;
+	}
+	@else if $ff == mono {
+		font-family: monospace;
+	}
+	@else if $ff == code {
+		font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+	}
+}
+
+
+//----- COLUMNS ---------------------------------------//
+@mixin column($n: 1) {
+	-webkit-column-count: $n;
+	   -moz-column-count: $n;
+	        column-count: $n;
+}
+@mixin column-gap($n: 0) {
+	-webkit-column-gap: $n;
+	   -moz-column-gap: $n;
+	        column-gap: $n;
+}
+@mixin column-break() {
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+	break-inside: avoid;
+}
+
+
+//----- USER SELECT -------------------------------------//
+@mixin userselect {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+
+	-khtml-user-select: none;
+}
+
+
+//----- RTL ---------------------------------------------//
+@mixin international($dir, $uni) {
+	direction: $dir;
+	unicode-bidi: $uni;
+}

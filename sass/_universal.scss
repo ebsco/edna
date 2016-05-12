@@ -1,0 +1,40 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+/* UNIVERSAL */
+
+html {
+	box-sizing: border-box;
+
+	height: 100%;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+html,
+body {
+	@include fontfamily(sans);
+}
+
+body {
+	min-width: $sm-mq;
+}
+
+// for bits like the close button on a modal, seems like this should be elsewhere...
+.close {
+	cursor: pointer;
+}
+
+.visible {
+	display: inline-block;
+}
+
+// get rid of that nasty space under an image when it's wrapped in an anchor
+.img {
+	a {
+		display: block;
+	}
+}

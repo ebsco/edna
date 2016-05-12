@@ -1,17 +1,13 @@
 # DIRECTORIES *
 node_modules/
-kss-docs/
 .sass-cache/
 
 # FILES
 .DS_Store
 *.css
 *.map
-*.png
 grunticon/js
 grunticon/*.html
-!kss-template/public/kss.css
-!kss-template/public/sons-of-obsidian.css
 *.log
 npm-shrinkwrap.json
 version
