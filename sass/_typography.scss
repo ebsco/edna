@@ -1,5 +1,5 @@
 @import '_variables.scss';
-@import '_mixins.scss';
+
 /* TYPOGRAPHY */
 
 html {
@@ -7,91 +7,8 @@ html {
 }
 
 body {
-	@include fontfamily(sans);
+	font-family: Helvetica, Arial, sans-serif;
 	font-size: 1.6rem;
 
 	color: $font-color;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	&:focus {
-		outline: 0;
-	}
-}
-
-p,
-.txt {
-	font-size: 1.6rem;
-
-	margin: 0 0 20px;
-
-	line-height: 18px;
-	color: #262626;
-	&:last-child {
-		margin-bottom: 0;
-	}
-}
-
-a,
-.txt-link {
-	color: $link-color;
-	text-decoration: none;
-	&:visited {
-		color: $link-color-visited;
-	}
-	&:hover {
-		color: $link-color-hover;
-		text-decoration: $link-decoration-hover;
-	}
-	&:focus {
-		color: $link-color-focus;
-		text-decoration: $link-decoration-focus;
-	}
-	&:active {
-		color: $link-color-active;
-		text-decoration: $link-decoration-active;
-	}
-}
-
-b,
-strong,
-.bold {
-	font-weight: bold;
-}
-
-em {
-	font-style: italic;
-}
-
-sup {
-	top: -($em * .5);
-}
-
-sub {
-	bottom: -($em * .25);
-}
-
-blockquote {
-	padding-left: .5rem;
-	margin-left: 1.5rem;
-
-	border-left: .25em solid $colorS3;
-}
-
-pre {
-	@include fontfamily(mono);
-
-	margin: 0 0 1rem;
-}
-
-code {
-	@include fontfamily(code);
-
-	font-weight: normal;
-	color: $code-color;
 }

@@ -13,7 +13,7 @@ _build :
 	grunt build
 
 _test :
-	grunt build --lint
+	grunt build
 
 _precommit :
 	echo 'Happy EDNA is commiting'
