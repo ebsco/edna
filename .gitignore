@@ -6,8 +6,6 @@ node_modules/
 .DS_Store
 *.css
 *.map
-grunticon/js
-grunticon/*.html
 *.log
 npm-shrinkwrap.json
 version
