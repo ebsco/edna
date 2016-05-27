@@ -57,7 +57,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command># if [ &quot;${BUILD_CAUSE_SCMTRIGGER}&quot; = &quot;true&quot; ]; then    
+      <command>#if [ &quot;${BUILD_CAUSE_SCMTRIGGER}&quot; = &quot;true&quot; ]; then    
 	# Update/store the jenkins config, in case it has changed
 	mkdir -p tasks/jenkins
 	curl ${JOB_URL}/config.xml -o tasks/jenkins/develop.xml
@@ -71,7 +71,7 @@
 
 	# Version
 	name=`node -p &quot;require(&apos;./package.json&apos;).name&quot;`;
-	version=`npm version prerelease --git-tag-version false`
+	version=`npm version patch --git-tag-version false`
 
 	# Build/test
 	grunt build --lint;
@@ -83,12 +83,12 @@
 	# Publish
 	npm publish
 
-# fi</command>
+#fi</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
     <hudson.tasks.Mailer plugin="mailer@1.11">
-      <recipients></recipients>
+      <recipients> aortlieb@ebsco.com cmannu@ebsco.com smahobia@ebsco.com epeacock@ebsco.com dpatrikas@ebsco.com doliver@ebsco.com jquinlan@ebsco.com ebibeault@ebsco.com wfisher@ebsco.com j.miller@ebsco.com ccorcoran@ebsco.com krosen@ebsco.com ddesjardins@ebsco.com ncasellini@ebsco.com ewaecker@ebsco.com</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>true</sendToIndividuals>
     </hudson.tasks.Mailer>
