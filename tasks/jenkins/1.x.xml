@@ -43,7 +43,7 @@
       </hudson.plugins.git.extensions.impl.UserExclusion>
     </extensions>
   </scm>
-  <assignedNode>lin-slave-eae-2.novalocal</assignedNode>
+  <assignedNode>linux</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
@@ -57,7 +57,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command># if [ &quot;${BUILD_CAUSE_SCMTRIGGER}&quot; = &quot;true&quot; ]; then    
+      <command>#if [ &quot;${BUILD_CAUSE_SCMTRIGGER}&quot; = &quot;true&quot; ]; then    
 	# Update/store the jenkins config, in case it has changed
 	mkdir -p tasks/jenkins
 	curl ${JOB_URL}/config.xml -o tasks/jenkins/1.x.xml
@@ -71,7 +71,7 @@
 
 	# Version
 	name=`node -p &quot;require(&apos;./package.json&apos;).name&quot;`;
-	version=`npm version prerelease --git-tag-version false`
+	version=`npm version patch --git-tag-version false`
 
 	# Build/test
 	grunt build --lint;
@@ -84,9 +84,9 @@
 	npm publish
     
     sleep 3
-  	# java -jar /home/jenkins/jenkins-cli.jar -s http://10.80.12.108:8080/ -i /home/jenkins/id_rsa build BuzzFramework-Develop
+ # 	java -jar /home/jenkins/jenkins-cli.jar -s http://10.80.12.108:8080/ -i /home/jenkins/id_rsa build BuzzFramework-Develop
 
-# fi</command>
+#fi</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
