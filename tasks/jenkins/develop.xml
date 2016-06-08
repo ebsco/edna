@@ -57,7 +57,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>#if [ &quot;${BUILD_CAUSE_SCMTRIGGER}&quot; = &quot;true&quot; ]; then    
+      <command>if [ &quot;${BUILD_CAUSE_SCMTRIGGER}&quot; = &quot;true&quot; ]; then    
 	# Update/store the jenkins config, in case it has changed
 	mkdir -p tasks/jenkins
 	curl ${JOB_URL}/config.xml -o tasks/jenkins/develop.xml
@@ -83,7 +83,7 @@
 	# Publish
 	npm publish
 
-#fi</command>
+fi</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
