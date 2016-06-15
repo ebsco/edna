@@ -57,7 +57,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>#if [ &quot;${BUILD_CAUSE_SCMTRIGGER}&quot; = &quot;true&quot; ]; then    
+      <command>if [ &quot;${BUILD_CAUSE_SCMTRIGGER}&quot; = &quot;true&quot; ]; then    
 	# Update/store the jenkins config, in case it has changed
 	mkdir -p tasks/jenkins
 	curl ${JOB_URL}/config.xml -o tasks/jenkins/1.x.xml
@@ -84,9 +84,9 @@
 	npm publish
     
     sleep 3
- # 	java -jar /home/jenkins/jenkins-cli.jar -s http://10.80.12.108:8080/ -i /home/jenkins/id_rsa build BuzzFramework-Develop
+  	java -jar /home/jenkins/jenkins-cli.jar -s http://10.80.12.108:8080/ -i /home/jenkins/id_rsa build BuzzFramework-Develop
 
-#fi</command>
+fi</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
