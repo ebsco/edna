@@ -25,9 +25,11 @@
 .breadcrumb {
 	z-index: @index-3;
 
-	padding: 5px;
+	padding: 5px 5px 15px 5px;
 
 	line-height: 10px;
+
+	border-bottom: 1px solid #e6e6e6;
 
 	background-color: @breadcrumb-bgcolor;
 	.list-item {
@@ -35,7 +37,6 @@
 
 		display: inline;
 
-		font-weight: bold;
 		// add the dividers between the breadcrumb items
 		&:before,
 		&::before {
@@ -55,7 +56,6 @@
 		> .txt-link {
 			margin-left: -4px;
 
-			color: @colorP1; //#0a7690 ? skinning color
 			// without this the first item is too far left
 			&:first-child {
 				margin-left: 0;
