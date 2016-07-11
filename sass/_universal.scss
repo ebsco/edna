@@ -34,7 +34,7 @@ body {
 
 // get rid of that nasty space under an image when it's wrapped in an anchor
 .img {
-	a {
+	a & {
 		display: block;
 	}
 }
