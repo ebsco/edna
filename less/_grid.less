@@ -173,6 +173,14 @@
 		&-left {
 			border-left: 1px solid #e6e6e6;
 		}
+		&-right,
+		&-left {
+			@media  @mq-sm, @mq-md {
+				& {
+					border-width: 0; // removing the border when the columns have become stacked rather than side-by-side
+				}
+			}
+		}
 	}
 	// in case of pages with no side gutters
 	&.full-page {
