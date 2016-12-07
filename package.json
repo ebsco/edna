@@ -1,6 +1,6 @@
 {
   "name": "edna",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "publishConfig": {
     "registry": "http://artifactory.epnet.com:8081/artifactory/api/npm/eae-npm-build",
     "tag": "develop"
